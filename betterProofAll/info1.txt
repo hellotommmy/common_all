@@ -1,0 +1,1500 @@
+Collected Build Outputs
+=======================
+
+---- Build Output for FixIBDataFilled ----
+
+Started at Sun Nov 10 22:04:24 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixIBDataFilled
+
+Finished at Sun Nov 10 22:04:27 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixIDDataFilled ----
+
+Started at Sun Nov 10 22:04:30 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixIDDataFilled
+
+Finished at Sun Nov 10 22:04:33 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixIIAGO_WritePullDropFilled ----
+
+Started at Sun Nov 10 22:04:36 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixIIAGO_WritePullDropFilled
+
+Finished at Sun Nov 10 22:04:39 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixIIAGO_WritePullFilled ----
+
+Started at Sun Nov 10 22:04:42 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixIIAGO_WritePullFilled
+Running FixIIAGO_WritePullFilled ...
+FixIIAGO_WritePullFilled: theory FixIIAGO_WritePullFilled.FixIIAGO_WritePullFilled
+Timing FixIIAGO_WritePullFilled (8 threads, 130.272s elapsed time, 220.406s cpu time, 18.859s GC time, factor 1.69)
+Finished FixIIAGO_WritePullFilled (0:02:11 elapsed time)
+
+Finished at Sun Nov 10 22:06:58 GMT+8 2024
+0:02:15 elapsed time
+
+
+---- Build Output for FixIMADDataFilled ----
+
+Started at Sun Nov 10 22:07:01 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixIMADDataFilled
+
+Finished at Sun Nov 10 22:07:04 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixIMADGOFilled ----
+
+Started at Sun Nov 10 22:07:07 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixIMADGOFilled
+
+Finished at Sun Nov 10 22:07:10 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixIMAGOFilled ----
+
+Started at Sun Nov 10 22:07:14 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixIMAGOFilled
+
+Finished at Sun Nov 10 22:07:17 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixIMDDataFilled ----
+
+Started at Sun Nov 10 22:07:20 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixIMDDataFilled
+
+Finished at Sun Nov 10 22:07:23 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixInvalidDirtyEvictFilled ----
+
+Started at Sun Nov 10 22:07:26 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixInvalidDirtyEvictFilled
+
+Finished at Sun Nov 10 22:07:29 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixInvalidLoadFilled ----
+
+Started at Sun Nov 10 22:07:32 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixInvalidLoadFilled
+
+Finished at Sun Nov 10 22:07:35 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixInvalidRdOwnFilled ----
+
+Started at Sun Nov 10 22:07:38 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixInvalidRdOwnFilled
+
+Finished at Sun Nov 10 22:07:41 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixInvalidRdSharedFilled ----
+
+Started at Sun Nov 10 22:07:44 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixInvalidRdSharedFilled
+
+Finished at Sun Nov 10 22:07:47 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixInvalidStoreFilled ----
+
+Started at Sun Nov 10 22:07:51 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixInvalidStoreFilled
+Running FixInvalidStoreFilled ...
+FixInvalidStoreFilled: theory FixInvalidStoreFilled.FixInvalidStoreFilled
+Timing FixInvalidStoreFilled (8 threads, 126.322s elapsed time, 219.641s cpu time, 17.719s GC time, factor 1.74)
+Finished FixInvalidStoreFilled (0:02:07 elapsed time)
+
+Finished at Sun Nov 10 22:10:02 GMT+8 2024
+0:02:11 elapsed time
+
+
+---- Build Output for FixISADDataFilled ----
+
+Started at Sun Nov 10 22:10:05 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixISADDataFilled
+
+Finished at Sun Nov 10 22:10:08 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixISADGOFilled ----
+
+Started at Sun Nov 10 22:10:11 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixISADGOFilled
+
+Finished at Sun Nov 10 22:10:14 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixISAGOFilled ----
+
+Started at Sun Nov 10 22:10:18 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixISAGOFilled
+
+Finished at Sun Nov 10 22:10:21 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixISDDataFilled ----
+
+Started at Sun Nov 10 22:10:24 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixISDDataFilled
+Running FixISDDataFilled ...
+FixISDDataFilled: theory FixISDDataFilled.FixISDDataFilled
+Timing FixISDDataFilled (8 threads, 107.195s elapsed time, 214.078s cpu time, 16.656s GC time, factor 2.00)
+Finished FixISDDataFilled (0:01:48 elapsed time)
+
+Finished at Sun Nov 10 22:12:17 GMT+8 2024
+0:01:52 elapsed time
+
+
+---- Build Output for FixISDIDataFilled ----
+
+Started at Sun Nov 10 22:12:20 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixISDIDataFilled
+
+Finished at Sun Nov 10 22:12:23 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixISDSnpInvFilled ----
+
+Started at Sun Nov 10 22:12:26 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixISDSnpInvFilled
+
+Finished at Sun Nov 10 22:12:29 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixMADDataFilled ----
+
+Started at Sun Nov 10 22:12:32 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixMADDataFilled
+Running FixMADDataFilled ...
+FixMADDataFilled: theory FixMADDataFilled.FixMADDataFilled
+Timing FixMADDataFilled (8 threads, 78.329s elapsed time, 201.828s cpu time, 15.844s GC time, factor 2.58)
+Finished FixMADDataFilled (0:01:19 elapsed time)
+
+Finished at Sun Nov 10 22:13:56 GMT+8 2024
+0:01:23 elapsed time
+
+
+---- Build Output for FixMADRspIFwdMFilled ----
+
+Started at Sun Nov 10 22:13:59 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixMADRspIFwdMFilled
+
+Finished at Sun Nov 10 22:14:02 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixMARspIFwdMFilled ----
+
+Started at Sun Nov 10 22:14:05 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixMARspIFwdMFilled
+
+Finished at Sun Nov 10 22:14:08 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixMARspIHitSEFilled ----
+
+Started at Sun Nov 10 22:14:11 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixMARspIHitSEFilled
+
+Finished at Sun Nov 10 22:14:14 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixMBDataFilled ----
+
+Started at Sun Nov 10 22:14:17 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixMBDataFilled
+
+Finished at Sun Nov 10 22:14:20 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixMDDataFilled ----
+
+Started at Sun Nov 10 22:14:24 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixMDDataFilled
+*** Cannot load theory file "/cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/FixMDDataFilled/BasicInvariants.thy"
+*** The error(s) above occurred for theory "FixMDDataFilled.BasicInvariants"
+*** (required by "FixMDDataFilled.FixMDDataFilled") (line 2 of "/cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/FixMDDataFilled/FixMDDataFilled.thy")
+*** Cannot load theory file "/cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/FixMDDataFilled/BasicInvariants.thy"
+*** No such file: "/cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/FixMDDataFilled/BasicInvariants.thy"
+*** The error(s) above occurred in session "FixMDDataFilled" (line 1 of "/cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/FixMDDataFilled/ROOT")
+
+
+---- Build Output for FixMIAGO_WritePullFilled ----
+
+Started at Sun Nov 10 22:14:29 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixMIAGO_WritePullFilled
+Running FixMIAGO_WritePullFilled ...
+FixMIAGO_WritePullFilled: theory FixMIAGO_WritePullFilled.FixMIAGO_WritePullFilled
+FixMIAGO_WritePullFilled FAILED (see also "isabelle build_log -H Error FixMIAGO_WritePullFilled")
+*** Cheating requires quick_and_dirty mode!
+*** At command "sorry" (line 1965 of "~/Documents/GitHub/betterProof/FixMIAGO_WritePullFilled/FixMIAGO_WritePullFilled.thy")
+Unfinished session(s): FixMIAGO_WritePullFilled
+
+Finished at Sun Nov 10 22:14:37 GMT+8 2024
+0:00:08 elapsed time
+
+
+---- Build Output for FixMIASnpDataInvalidFilled ----
+
+Started at Sun Nov 10 22:14:41 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixMIASnpDataInvalidFilled
+
+Finished at Sun Nov 10 22:14:44 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixMIASnpDataSharedFilled ----
+
+Started at Sun Nov 10 22:14:47 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixMIASnpDataSharedFilled
+Running FixMIASnpDataSharedFilled ...
+FixMIASnpDataSharedFilled: theory FixMIASnpDataSharedFilled.FixMIASnpDataSharedFilled
+Timing FixMIASnpDataSharedFilled (8 threads, 77.250s elapsed time, 191.625s cpu time, 16.016s GC time, factor 2.48)
+Finished FixMIASnpDataSharedFilled (0:01:18 elapsed time)
+
+Finished at Sun Nov 10 22:16:09 GMT+8 2024
+0:01:22 elapsed time
+
+
+---- Build Output for FixMIASnpInvFilled ----
+
+Started at Sun Nov 10 22:16:13 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixMIASnpInvFilled
+
+Finished at Sun Nov 10 22:16:16 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixModifiedDirtyEvictFilled ----
+
+Started at Sun Nov 10 22:16:19 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixModifiedDirtyEvictFilled
+
+Finished at Sun Nov 10 22:16:22 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixModifiedDirtyEvictPreviousFilled ----
+
+Started at Sun Nov 10 22:16:25 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixModifiedDirtyEvictPreviousFilled
+
+Finished at Sun Nov 10 22:16:28 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixModifiedEvictFilled ----
+
+Started at Sun Nov 10 22:16:31 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixModifiedEvictFilled
+
+Finished at Sun Nov 10 22:16:34 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixModifiedLoadFilled ----
+
+Started at Sun Nov 10 22:16:37 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixModifiedLoadFilled
+
+Finished at Sun Nov 10 22:16:40 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixModifiedRdOwnFilled ----
+
+Started at Sun Nov 10 22:16:43 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixModifiedRdOwnFilled
+
+Finished at Sun Nov 10 22:16:46 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixModifiedRdSharedFilled ----
+
+Started at Sun Nov 10 22:16:49 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixModifiedRdSharedFilled
+
+Finished at Sun Nov 10 22:16:53 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixModifiedSnpDataInvalidFilled ----
+
+Started at Sun Nov 10 22:16:56 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixModifiedSnpDataInvalidFilled
+
+Finished at Sun Nov 10 22:16:59 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixModifiedSnpDataSharedFilled ----
+
+Started at Sun Nov 10 22:17:02 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixModifiedSnpDataSharedFilled
+*** Cannot load theory file "/cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/FixModifiedSnpDataSharedFilled/BasicInvariants.thy"
+*** The error(s) above occurred for theory "FixModifiedSnpDataSharedFilled.BasicInvariants"
+*** (required by "FixModifiedSnpDataSharedFilled.FixModifiedSnpDataSharedFilled") (line 2 of "/cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/FixModifiedSnpDataSharedFilled/FixModifiedSnpDataSharedFilled.thy")
+*** Cannot load theory file "/cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/FixModifiedSnpDataSharedFilled/BasicInvariants.thy"
+*** No such file: "/cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/FixModifiedSnpDataSharedFilled/BasicInvariants.thy"
+*** The error(s) above occurred in session "FixModifiedSnpDataSharedFilled" (line 1 of "/cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/FixModifiedSnpDataSharedFilled/ROOT")
+
+
+---- Build Output for FixModifiedSnpInvFilled ----
+
+Started at Sun Nov 10 22:17:07 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixModifiedSnpInvFilled
+
+Finished at Sun Nov 10 22:17:10 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixModifiedStoreFilled ----
+
+Started at Sun Nov 10 22:17:13 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixModifiedStoreFilled
+
+Finished at Sun Nov 10 22:17:16 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixSADDataFilled ----
+
+Started at Sun Nov 10 22:17:19 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSADDataFilled
+
+Finished at Sun Nov 10 22:17:22 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSADRspIFwdMFilled ----
+
+Started at Sun Nov 10 22:17:25 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSADRspIFwdMFilled
+
+Finished at Sun Nov 10 22:17:28 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSADRspSFwdMFilled ----
+
+Started at Sun Nov 10 22:17:32 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSADRspSFwdMFilled
+
+Finished at Sun Nov 10 22:17:35 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSARspIFwdMFilled ----
+
+Started at Sun Nov 10 22:17:38 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSARspIFwdMFilled
+
+Finished at Sun Nov 10 22:17:41 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSARspSFwdMFilled ----
+
+Started at Sun Nov 10 22:17:44 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSARspSFwdMFilled
+
+Finished at Sun Nov 10 22:17:47 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixSBDataFilled ----
+
+Started at Sun Nov 10 22:17:50 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSBDataFilled
+
+Finished at Sun Nov 10 22:17:53 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixSDDataFilled ----
+
+Started at Sun Nov 10 22:17:57 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSDDataFilled
+Running FixSDDataFilled ...
+FixSDDataFilled: theory FixSDDataFilled.FixSDDataFilled
+Timing FixSDDataFilled (8 threads, 74.711s elapsed time, 219.594s cpu time, 16.172s GC time, factor 2.94)
+Finished FixSDDataFilled (0:01:15 elapsed time)
+
+Finished at Sun Nov 10 22:19:17 GMT+8 2024
+0:01:20 elapsed time
+
+
+---- Build Output for FixShared_CleanEvict_LastFilled ----
+
+Started at Sun Nov 10 22:19:20 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixShared_CleanEvict_LastFilled
+
+Finished at Sun Nov 10 22:19:23 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixShared_CleanEvict_NotLastDataFilled ----
+
+Started at Sun Nov 10 22:19:26 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixShared_CleanEvict_NotLastDataFilled
+*** Cannot load theory file "/cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/FixShared_CleanEvict_NotLastDataFilled/BasicInvariants.thy"
+*** The error(s) above occurred for theory "FixShared_CleanEvict_NotLastDataFilled.BasicInvariants"
+*** (required by "FixShared_CleanEvict_NotLastDataFilled.FixShared_CleanEvict_NotLastDataFilled") (line 2 of "/cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/FixShared_CleanEvict_NotLastDataFilled/FixShared_CleanEvict_NotLastDataFilled.thy")
+*** Cannot load theory file "/cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/FixShared_CleanEvict_NotLastDataFilled/BasicInvariants.thy"
+*** No such file: "/cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/FixShared_CleanEvict_NotLastDataFilled/BasicInvariants.thy"
+*** The error(s) above occurred in session "FixShared_CleanEvict_NotLastDataFilled" (line 1 of "/cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/FixShared_CleanEvict_NotLastDataFilled/ROOT")
+
+
+---- Build Output for FixShared_CleanEvict_NotLastDropFilled ----
+
+Started at Sun Nov 10 22:19:31 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixShared_CleanEvict_NotLastDropFilled
+
+Finished at Sun Nov 10 22:19:34 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixShared_CleanEvictNoData_LastFilled ----
+
+Started at Sun Nov 10 22:19:37 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixShared_CleanEvictNoData_LastFilled
+
+Finished at Sun Nov 10 22:19:40 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixShared_CleanEvictNoData_NotLastFilled ----
+
+Started at Sun Nov 10 22:19:43 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixShared_CleanEvictNoData_NotLastFilled
+
+Finished at Sun Nov 10 22:19:46 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSharedDirtyEvictFilled ----
+
+Started at Sun Nov 10 22:19:49 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSharedDirtyEvictFilled
+
+Finished at Sun Nov 10 22:19:52 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSharedEvictDataFilled ----
+
+Started at Sun Nov 10 22:19:55 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSharedEvictDataFilled
+
+Finished at Sun Nov 10 22:19:58 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSharedEvictFilled ----
+
+Started at Sun Nov 10 22:20:01 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSharedEvictFilled
+
+Finished at Sun Nov 10 22:20:05 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSharedLoadFilled ----
+
+Started at Sun Nov 10 22:20:07 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSharedLoadFilled
+
+Finished at Sun Nov 10 22:20:11 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSharedRdOwnFilled ----
+
+Started at Sun Nov 10 22:20:14 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSharedRdOwnFilled
+
+Finished at Sun Nov 10 22:20:17 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSharedRdOwnSelfFilled ----
+
+Started at Sun Nov 10 22:20:20 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSharedRdOwnSelfFilled
+
+Finished at Sun Nov 10 22:20:23 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSharedRdSharedFilled ----
+
+Started at Sun Nov 10 22:20:26 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSharedRdSharedFilled
+
+Finished at Sun Nov 10 22:20:29 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSharedSnpInvFilled ----
+
+Started at Sun Nov 10 22:20:32 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSharedSnpInvFilled
+
+Finished at Sun Nov 10 22:20:35 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSharedStoreFilled ----
+
+Started at Sun Nov 10 22:20:38 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSharedStoreFilled
+
+Finished at Sun Nov 10 22:20:41 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixSIACGOFilled ----
+
+Started at Sun Nov 10 22:20:44 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSIACGOFilled
+
+Finished at Sun Nov 10 22:20:47 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSIAGO_WritePullDropFilled ----
+
+Started at Sun Nov 10 22:20:51 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSIAGO_WritePullDropFilled
+Running FixSIAGO_WritePullDropFilled ...
+FixSIAGO_WritePullDropFilled: theory FixSIAGO_WritePullDropFilled.FixSIAGO_WritePullDropFilled
+FixSIAGO_WritePullDropFilled FAILED (see also "isabelle build_log -H Error FixSIAGO_WritePullDropFilled")
+*** Cheating requires quick_and_dirty mode!
+*** At command "sorry" (line 4935 of "~/Documents/GitHub/betterProof/FixSIAGO_WritePullDropFilled/FixSIAGO_WritePullDropFilled.thy")
+Unfinished session(s): FixSIAGO_WritePullDropFilled
+
+Finished at Sun Nov 10 22:22:53 GMT+8 2024
+0:02:02 elapsed time
+
+
+---- Build Output for FixSIAGO_WritePullFilled ----
+
+Started at Sun Nov 10 22:22:56 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSIAGO_WritePullFilled
+
+Finished at Sun Nov 10 22:22:59 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSIASnpInvFilled ----
+
+Started at Sun Nov 10 22:23:03 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSIASnpInvFilled
+
+Finished at Sun Nov 10 22:23:06 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSMADDataFilled ----
+
+Started at Sun Nov 10 22:23:09 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSMADDataFilled
+
+Finished at Sun Nov 10 22:23:12 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSMADGOFilled ----
+
+Started at Sun Nov 10 22:23:15 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSMADGOFilled
+
+Finished at Sun Nov 10 22:23:18 GMT+8 2024
+0:00:02 elapsed time
+
+
+---- Build Output for FixSMADSnpInvFilled ----
+
+Started at Sun Nov 10 22:23:21 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSMADSnpInvFilled
+
+Finished at Sun Nov 10 22:23:24 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSMAGOFilled ----
+
+Started at Sun Nov 10 22:23:27 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSMAGOFilled
+
+Finished at Sun Nov 10 22:23:30 GMT+8 2024
+0:00:03 elapsed time
+
+
+---- Build Output for FixSMDDataFilled ----
+
+Started at Sun Nov 10 22:23:33 GMT+8 2024 (polyml-5.9.1_x86_64_32-windows on DESKTOP-32SPPMC)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-windows"
+ML_HOME="/cygdrive/c/Users/Chengsong/Desktop/Isabelle2024/contrib/polyml-5.9.1/x86_64_32-windows"
+ML_SYSTEM="polyml-5.9.1"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/BaseProofAll
+Session Unsorted/FixSMDDataFilled
+Running FixSMDDataFilled ...
+FixSMDDataFilled: theory FixSMDDataFilled.FixSMDDataFilled
+Timing FixSMDDataFilled (8 threads, 121.962s elapsed time, 202.203s cpu time, 14.438s GC time, factor 1.66)
+Finished FixSMDDataFilled (0:02:03 elapsed time)
+
+Finished at Sun Nov 10 22:25:41 GMT+8 2024
+0:02:07 elapsed time
+

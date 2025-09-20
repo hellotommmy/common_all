@@ -1,0 +1,105 @@
+val st_act_errs_no_num =
+   [(Action
+      {text = "theory Toy imports BasicInvariants\nbegin", transition =
+       Transition
+        {markers = [], name = "theory", pos = {line=1, offset=1, end_offset=7}, timing = 0.000,
+         trans = [Init fn]}},
+     <Isar in theory mode>, NONE),
+    (Action
+      {text = "\n", transition =
+       Transition
+        {markers = [], name = "<ignored>", pos = {line=2, offset=41, end_offset=42}, timing = 0.000,
+         trans = [Keep (fn, NONE)]}},
+     <Isar in theory mode>, NONE),
+    (Action
+      {text =
+       "lemma\n  fixes x :: nat\n  assumes \"foo x ∧ bar x ∧ baz x ∧ qux x\"\n  shows \"(foo (f x) ∨ x < x * x + 1) ∧(bar (f x) ∨ 2 * x ≤ x⇧2 + 1)  ∧(baz (f x) ∨ x < x + 1)  ∧ (qux (f x) ∨ x < x + 1)\"",
+       transition =
+       Transition
+        {markers = [], name = "lemma", pos = {line=3, offset=42, end_offset=47}, timing = 0.000,
+         trans = [Transaction (fn, NONE)]}},
+     <Isar in proof mode>, NONE),
+    (Action
+      {text = "\n", transition =
+       Transition
+        {markers = [], name = "<ignored>", pos = {line=6, offset=228, end_offset=229}, timing = 0.000,
+         trans = [Keep (fn, NONE)]}},
+     <Isar in proof mode>, NONE),
+    (Action
+      {text = "proof -", transition =
+       Transition
+        {markers = [], name = "proof", pos = {line=7, offset=229, end_offset=234}, timing = 0.000,
+         trans = [Transaction (fn, NONE)]}},
+     <Isar in proof mode>, NONE),
+    (Action
+      {text = "\n  ", transition =
+       Transition
+        {markers = [], name = "<ignored>", pos = {line=7, offset=236, end_offset=239}, timing = 0.000,
+         trans = [Keep (fn, NONE)]}},
+     <Isar in proof mode>, NONE),
+    (Action
+      {text = "show ?thesis", transition =
+       Transition
+        {markers = [], name = "show", pos = {line=8, offset=239, end_offset=243}, timing = 0.000,
+         trans = [Transaction (fn, NONE), Transaction (fn, NONE)]}},
+     <Isar in proof mode>, NONE),
+    (Action
+      {text = "\n  ", transition =
+       Transition
+        {markers = [], name = "<ignored>", pos = {line=8, offset=251, end_offset=254}, timing = 0.000,
+         trans = [Keep (fn, NONE)]}},
+     <Isar in proof mode>, NONE),
+    (Action
+      {text = "proof (intro conjI)", transition =
+       Transition
+        {markers = [], name = "proof", pos = {line=9, offset=254, end_offset=259}, timing = 0.000,
+         trans = [Transaction (fn, NONE)]}},
+     <Isar in proof mode>, NONE),
+    (Action
+      {text = "\n    ", transition =
+       Transition
+        {markers = [], name = "<ignored>", pos = {line=9, offset=273, end_offset=278}, timing = 0.000,
+         trans = [Keep (fn, NONE)]}},
+     <Isar in proof mode>, NONE),
+    (Action
+      {text = "show g1p: \"foo (f x) ∨ x < x * x + 1\"", transition =
+       Transition
+        {markers = [], name = "show", pos = {line=10, offset=278, end_offset=282}, timing = 0.000,
+         trans = [Transaction (fn, NONE), Transaction (fn, NONE)]}},
+     <Isar in proof mode>, NONE),
+    (Action
+      {text = "\n      ", transition =
+       Transition
+        {markers = [], name = "<ignored>", pos = {line=10, offset=315, end_offset=322}, timing =
+         0.000, trans = [Keep (fn, NONE)]}},
+     <Isar in proof mode>, NONE),
+    (Action
+      {text =
+       "apply (smt (verit) less_add_one add_le_same_cancel1 diisors_zero le_square less_add_same_cancel2 less_one linorder_neqE_nat mult.right_neutral nat_0_less_mult_iff nat_mult_less_cancel_disj not_add_less2 not_one_le_zero trans_less_add1 trans_less_add2)",
+       transition =
+       Transition
+        {markers = [], name = "apply", pos = {line=11, offset=322, end_offset=327}, timing = 0.000,
+         trans = [Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT (<context>, ERROR "Undefined fact: \"diisors_zero\" <markup>"),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text = " ", transition =
+       Transition
+        {markers = [], name = "<ignored>", pos = {line=11, offset=573, end_offset=574}, timing =
+         0.000, trans = [Keep (fn, ...)]}},
+     <Isar in proof mode>, NONE),
+    (Action
+      {text = "done", transition =
+       Transition {markers = [], name = "done", pos = {line=11, offset=574, end_offset=578}, ...}},
+     <Isar in proof mode>,
+     SOME (CONTEXT (<context>, ERROR "..."), "At command \"<markup>\" <markup>")),
+    (Action {text = "\n    ", transition = Transition {markers = [...], name = "...", ...}},
+     <Isar in proof mode>, NONE),
+    (Action {text = "sorry", transition = Transition {markers = [...], ...}}, <Isar in proof mode>,
+     NONE),
+    (Action {text = "...", transition = ...}, <Isar in proof mode>, NONE),
+    (Action {text = "...", transition = ...}, <Isar in proof mode>, NONE),
+    (..., <Isar in proof mode>, ...), ...]:
+   (Actions.T * Toplevel.state * (exn * string) option) list

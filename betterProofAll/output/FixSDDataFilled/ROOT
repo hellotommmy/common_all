@@ -1,0 +1,4 @@
+session "Temp" = BaseProofAll +
+  options [document = false]
+  theories
+    FixSDDataFilled

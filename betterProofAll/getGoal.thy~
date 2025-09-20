@@ -1,0 +1,271 @@
+(* ML ‹
+first_draft_fix_timeouts \<^theory> file_with_errors
+› *)
+theory getGoal
+  imports  BasicInvariants
+begin
+declare [[ML_print_depth = 4000000]]
+ML_file "~/Documents/GitHub/DeepIsaHOL/src/main/ml/pred.ML"
+ML_file "~/Documents/GitHub/DeepIsaHOL/src/main/ml/ops.ML"
+ML_file "~/Documents/GitHub/DeepIsaHOL/src/main/ml/get.ML"
+ML_file "~/Documents/GitHub/DeepIsaHOL/src/main/ml/sections.ML"
+ML_file "~/Documents/GitHub/DeepIsaHOL/src/main/ml/seps.ML"
+ML_file "~/Documents/GitHub/DeepIsaHOL/src/main/ml/actions.ML"
+ML_file "~/Documents/GitHub/DeepIsaHOL/src/main/ml/data.ML"
+ML_file "~/Documents/GitHub/DeepIsaHOL/src/main/ml/print.ML"
+ML_file "~/Documents/GitHub/DeepIsaHOL/src/main/ml/json_maker.ML"
+ML_file "~/Documents/GitHub/DeepIsaHOL/src/main/ml/g2tac_formatter.ML"
+ML_file "~/Documents/GitHub/DeepIsaHOL/src/main/ml/writer.ML"
+ML_file "~/Documents/GitHub/betterProof/HammerAlt.ML"
+
+
+ML ‹
+fun print_string_op NONE = "NoID"
+| print_string_op (SOME s) = s
+fun writeFileln dirname content =
+    let val fd = TextIO.openAppend (dirname ^ print_string_op (Position.id_of (Position.thread_data ())) ^ LargeInt.toString (Time.toMilliseconds (Time.now ())) ^ ".thy")
+        val _ = TextIO.output (fd, String.concat [content, "\n"]) 
+        val _ = writeln content
+        val _ = TextIO.closeOut fd
+    in () end;
+›
+
+ML ‹
+
+
+val test_file = "C:\\Users\\Chengsong\\Documents\\GitHub\\betterProof\\Toy.thy"
+
+›
+ML ‹
+val acts = Actions.make \<^theory> (Ops.read_file test_file)
+
+›
+ML ‹
+val acts1 = Actions.make_pos \<^theory> (Ops.read_file test_file) (Actions.pos_of (Ops.ith 5 acts))
+›
+ML ‹
+    fun fix_refine_goal st act' =
+      let
+        val thy = Toplevel.theory_of st;
+        val ctxt = Toplevel.context_of st;
+        val prf = Toplevel.proof_of st;
+        val prf_goals = #goal (Proof.goal prf);
+        val (objs, _) = Logic.strip_horn (Thm.prop_of prf_goals);
+        val (new_act, new_st, new_err) = if null objs
+          then (Actions.void, st, NONE)
+          else let
+            val nxt_goal = hd objs; (* ideally we would find the objective most similar
+              to the original action, and not the head *)
+            val goal_txt = Print.string_of_pretty (Syntax.pretty_term ctxt nxt_goal);
+            val splitted = Pred.split (fn c => str c = "\"") (String.explode (Actions.text_of act'))
+            val _ = if null splitted then Output.error_message "empty splitted" else ();
+            val declaration =
+              Pred.split (fn c => str c = "\"") (String.explode (Actions.text_of act'))
+              |> hd |> String.implode;
+            val new_act = Actions.make_one thy (declaration ^ " " ^ (enclose "\"" "\"" goal_txt));
+            val _ = warning ("Fixed to " ^ Actions.text_of new_act)
+            val (new_st, new_err) = Actions.apply_safe new_act st;
+          in (new_act, new_st, new_err) end
+       in (new_act, new_st, new_err) end
+
+    fun is_refine_mssg ((_, txt), _) = Pred.contains "Failed to refine any pending goal" txt;
+    fun is_refine (act, exn) = exists is_refine_mssg (Runtime.exn_messages exn)
+      andalso (member (op =) ["have", "hence", "show", "thus"] (Actions.kind_of act));
+
+    fun is_proof_error_msg ((_, txt), _) = Pred.contains "Failed to apply initial" txt orelse Pred.contains "Undefined fact" txt;
+    fun is_proof (act, exn) = exists is_proof_error_msg (Runtime.exn_messages exn)
+      andalso (Pred.contains "apply" (Actions.text_of act) orelse Pred.contains "by" (Actions.text_of act));
+    fun is_timeout exn = (case exn of Timeout.TIMEOUT _ => true | _ => false);
+    val might_timeout = Actions.on_kind (Pred.is "apply")
+      andf Actions.on_text (Pred.contains "smt" orf Pred.contains "metis");
+
+fun process_all {err_timeout_in_secs=t} acts =
+  let
+    (* Handling "Failed to refine any pending goal" *)
+
+
+
+    (* Handling proof timeouts *)
+    val timeout = Time.fromSeconds t
+
+
+    fun fix_timeout st =
+      let
+        val thy = Toplevel.theory_of st;
+        val (_, str2) = Hammer_Alt.hammer_away 1 (Toplevel.proof_of st);
+        val new_act = Actions.make_one thy (Hammer_Alt.extract_one_liner_proof (YXML.content_of str2));
+        val (new_st, new_err) = Actions.apply_safe new_act st;
+      in (new_act, new_st, new_err) end
+
+    fun do_next act' (_:Actions.T, st, _:(exn * string) option) =
+      let val _ = tracing ("processing " ^ Actions.text_of act') in
+      if Toplevel.is_proof st
+      then
+        let
+          val (st', err') = if might_timeout act' then
+              (case Ops.apply_with_timeout timeout (Actions.apply_safe act') st of
+                Exn.Exn exn => (st, SOME (exn, "TIMEOUT"))
+                | Exn.Res res => res)
+            else Actions.apply_safe act' st
+          val (fixed_act', fixed_st', fixed_err') =
+            (case err' of
+              SOME (exn, _) =>
+                if is_refine (act', exn) then fix_refine_goal st act'
+                else if is_timeout exn then fix_timeout st
+                else (act', st', err')
+              | NONE => (act', st', err'))
+        in (fixed_act', fixed_st', fixed_err') end
+      else let
+        val (st', err') = Actions.apply_safe act' st
+      in (act', st', err') end end
+  in Ops.log_fold do_next (Actions.void, Toplevel.make_state NONE, NONE) acts end;
+
+fun extracts_good_trace_texts []  = ""
+  | extracts_good_trace_texts (( (ac,st,err)) :: rest)  = 
+   ( case err of NONE => (Actions.text_of (ac)) ^ extracts_good_trace_texts rest  | 
+                  _  =>  "sorry" ^ extracts_good_trace_texts rest )
+
+›
+
+(* this is how one would test it *)
+ML ‹
+val file_with_errors = "~/Documents/GitHub/betterProof/FixIDData.thy"
+val actions = Actions.make' \<^theory> (File.read (Path.explode file_with_errors));
+›
+ML ‹
+(*
+val fixed_trace = process_all {err_timeout_in_secs=30} actions
+val jonathan_text = extracts_good_trace_texts fixed_trace
+val _ = writeFileln "C:\\Users\\Chengsong\\Documents\\GitHub\\betterProof\\Janathan" jonathan_text
+*)
+›
+(* we would like this to return an empty list *)
+ML ‹
+val new_errors = filter (fn (_, _, err) => is_some err) fixed_trace
+
+›
+(* we still would have to change the function so that it either, (1) rewrites the file with the
+actions listed below, or (2) just replaces the targeted error (harder)  *)
+ML ‹
+val jonathan_text = String.concat (map (fn (act, _, _) => Actions.text_of act) fixed_trace)
+val _ = writeFileln "C:\\Users\\Chengsong\\Documents\\GitHub\\betterProof\\Jonathan" jonathan_text
+›
+
+
+ML ‹
+
+val st_act_errs = Ops.enumerate (Actions.timed_apply_all {timeout_in_secs=60, no_batches=10, debug=false} acts (Toplevel.make_state NONE))
+
+val second = Ops.ith 2 st_act_errs
+
+
+›
+
+ML ‹
+val st_act_errs_no_num = (Actions.timed_apply_all {timeout_in_secs=60, no_batches=2, debug=false} acts (Toplevel.make_state NONE))
+
+›
+
+ML ‹
+fun extract_texts [] fixcount = ""
+  | extract_texts ((_, (ac,st,err)) :: rest) fixcount = 
+   ( case err of NONE => (Actions.text_of (ac)) ^ extract_texts rest fixcount | 
+                  _  => (if fixcount > 0 then 
+      let val (acnew, stnew, errnew) = fix_refine_goal  st ac in
+        Actions.text_of acnew ^ extract_texts rest (fixcount-1) end 
+      else (Actions.text_of (ac)) ^ extract_texts rest fixcount))
+
+val nice = extract_texts st_act_errs 1
+fun get_text_after_pos p t = Position.id_of p t
+
+(*using a "finite state machine" to record which error mode the cursor is currently at *)
+fun extract_and_fix_texts [] fixcount _ = ""
+  | extract_and_fix_texts ((_, (ac,st,err)) :: rest) fixcount NONE = 
+   (case err of NONE => (Actions.text_of (ac)) ^ extract_and_fix_texts rest fixcount NONE | 
+                SOME (exn, _) => 
+      (if is_refine (ac,exn)  then 
+        let val (acnew, stnew, ernew) = fix_refine_goal  st ac in
+          Actions.text_of acnew ^ extract_and_fix_texts rest 1 (SOME (acnew, stnew, ernew)) end 
+      else if is_proof (ac, exn) then
+        (let val thy = Toplevel.theory_of st;
+          val acnew1 = Actions.make_one thy ("sorry");
+          val (stnew1, ernew1) = Actions.apply_safe acnew1 st in ("sorry" ^extract_and_fix_texts rest 2 (SOME (acnew1, stnew1, ernew1))) 
+        end)  
+      else (Actions.text_of (ac)) ^ extract_and_fix_texts rest fixcount NONE))
+(*the trace has been changed to the new state, old text still needed for processing*)
+  | extract_and_fix_texts ((_, (ac, st, err)) :: rest) fixcount (SOME (acnew, stnew, ernew)) = 
+(*simplifying assumption: if no errors in old state, then new state is in sync with good bits of old state
+and we can safely continue using old text *)
+    (case err of NONE => (let val thy = Toplevel.theory_of stnew;
+      val good_old_action_text = Actions.text_of (ac)
+      val acnew1 = Actions.make_one thy (good_old_action_text);
+      val (stnew1, ernew1) = Actions.apply_safe acnew1 stnew in (good_old_action_text ^ extract_and_fix_texts rest fixcount (SOME (acnew1, stnew1, ernew1))) 
+        end) 
+     |               SOME (exn,s)  => 
+      if fixcount = 1 then
+        (let val thy = Toplevel.theory_of stnew;
+          val acnew1 = Actions.make_one thy ("sorry");
+          val (stnew1, ernew1) = Actions.apply_safe acnew1 stnew in ("sorry" ^extract_and_fix_texts rest 0 (SOME (acnew1, stnew1, ernew1))) 
+        end) 
+      else (*fixcount = 2, proof error, should have been fixed. *)
+        (let val thy = Toplevel.theory_of stnew;
+            val good_old_action_text = Actions.text_of (ac);
+            val acnew1 = Actions.make_one thy (good_old_action_text);
+            val (stnew1, ernew1) = Actions.apply_safe acnew1 stnew 
+         in (good_old_action_text ^ extract_and_fix_texts rest 0 (SOME (acnew, stnew, ernew))) 
+        end))
+val nicer = extract_and_fix_texts st_act_errs 0 NONE
+val _ = writeFileln "C:\\Users\\Chengsong\\Documents\\GitHub\\betterProof\\C1hengsong" nicer
+(*            val new_act = Actions.make_one thy (declaration ^ " " ^ (enclose "\"" "\"" goal_txt));
+            val _ = warning ("Fixed to " ^ Actions.text_of new_act)
+            val (new_st, new_err) = Actions.apply_safe new_act st;*)
+›
+
+ML ‹
+val (_, (prev_act, prev_st, errp)) = Ops.ith 9 st_act_errs
+›
+ML ‹
+val (_, (act, st, err)) = Ops.ith 10 st_act_errs
+›
+
+ML ‹
+val act' = hd (Actions.make (Toplevel.theory_of prev_st) "show g1p: \"foo (f x) ∨ x < x * x + 1\"")
+›
+ML ‹
+val (new_st, new_err) = Actions.apply_safe act' prev_st
+›
+ML ‹
+Get.user_state {break_lines=false} prev_st
+›
+ML ‹val objective = #goal ( Proof.goal (Toplevel.proof_of prev_st))›
+(*It might be desirable to just extract the goal and execute the "show goal" transition at the
+Isabelle/ML level. Although it is shown on the proof panel (and might appear to the reader as)
+ separate goals, they are represented internally like this:
+"foo (f x) ∨ x < x * x + 1 ⟹
+    bar (f x) ∨ 2 * x ≤ x⇧2 + 1 ⟹
+    baz (f x) ∨ x < x + 1 ⟹
+    qux (f x) ∨ x < x + 1 ⟹
+    ((foo (f x) ∨ x < x * x + 1) ∧
+     (bar (f x) ∨ 2 * x ≤ x⇧2 + 1) ∧ (baz (... ...) ∨ x < x + 1) ∧ (qux (... ...) ∨ x < x + 1))":
+   thm
+The feasible way of "goal fixing" seems to be getting the pretty-printed goal as a string,
+and parse that string into a transition. It would  be nice to have "bidirectional editing"
+for theory text and proof state internal representation.
+*)
+ML ‹
+Thm.concl_of objective
+›
+ML ‹
+(Toplevel.context_of prev_st) (Print.YX) (Thm.concl_of objective)
+›
+
+ML ‹
+Print.term_string (Toplevel.context_of prev_st) (Print.YX) (Thm.concl_of objective)
+›
+ML ‹
+val goaltxt = Print.string_of_pretty (Ops.ith 2 (Toplevel.pretty_state prev_st))
+
+›
+ML \<open>
+val goaltrans = Path.explode goaltxt
+\<close>

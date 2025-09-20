@@ -1,0 +1,432 @@
+\documentclass[10pt,conference]{IEEEtran}
+
+\newcommand\CXLcache{\texttt{CXL.cache}}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{isabelle}
+\usepackage{isabellesym}
+\usepackage{mathtools}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage[customcolors]{hf-tikz}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{booktabs}
+
+\usepackage{etoolbox}
+\usepackage{xcolor}
+\usepackage{soul}
+\definecolor{colorADDEDfg}{HTML}{238b45}
+\definecolor{colorADDEDbg}{HTML}{cef0d8}
+\definecolor{colorDELETEDfg}{HTML}{969696}
+\definecolor{colorsketch}{HTML}{2541db}
+\definecolor{colorsledge}{HTML}{c95faf}
+\definecolor{colorsledgebg}{HTML}{f7e1f2}
+\definecolor{colorpreamble}{HTML}{006400}
+\definecolor{colorpreamblebg}{HTML}{90EE90}
+\definecolor{colorproof}{HTML}{800080}
+
+\definecolor{lightblue}{RGB}{230, 240, 255}
+\definecolor{lightred}{RGB}{255, 230, 230}
+
+% correct bad hyphenation here
+\usepackage{framed}
+\definecolor{shadecolor}{HTML}{EEEEEE}
+\newcommand\rulename[1]{\textsc{#1}}
+\usepackage{ifthen}
+
+\newcommand{\makestep}[2]{%
+  \xrightarrow[% 
+    {\mathclap{\scriptscriptstyle
+      \ifstrempty{#2}{}{#2}
+    }}%
+  ]{%
+    {\mathclap{\scriptscriptstyle
+      \ifstrempty{#1}{}{#1}
+    }}%
+  }%
+}
+
+\lstdefinelanguage{sml}{
+    morekeywords={fun, let, val, in, end, NONE, SOME},
+    sensitive=true,
+    morecomment=[l]{(*},
+    morecomment=[s]{(*}{*)},
+    morestring=[b]",
+}
+
+% Define Isabelle/ML language settings
+\lstdefinelanguage{isabelle}{
+    morekeywords={val, Outer_Syntax, command, Scan, Parse, Toplevel, keep_proof, hammer_away, o},
+    sensitive=true,
+    morecomment=[l]{(*},
+    morecomment=[s]{(*}{*)},
+    morestring=[b]",
+    moredelim=[s][\bfseries\color{blue}]{\<^command_keyword>\<open>}{\<close>}, % For commands
+}
+
+% Customize the appearance of the code
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{blue},
+    commentstyle=\itshape\color{gray},
+    stringstyle=\color{teal},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=5pt,
+    breaklines=true,
+    showstringspaces=false,
+    tabsize=4,
+    frame=single,
+    emph={writeFileln},                 % Highlight 'writeFileln'
+    emphstyle=\color{red}\bfseries,     % Set the style for emphasis
+}
+
+\makeatletter
+\def\iddots{\mathinner{\mkern1mu\raise\p@
+\vbox{\kern7\p@\hbox{.}}\mkern2mu
+\raise4\p@\hbox{.}\mkern2mu\raise7\p@\hbox{.}\mkern1mu}}
+\makeatother
+
+\newcommand\textsledge[1]{\textcolor{colorsledge}{\sethlcolor{colorsledgebg}\hl{#1}}}
+\newcommand\textpreamble[1]{\textcolor{colorpreamble}
+{\sethlcolor{colorpreamblebg}\hl{#1}}}
+\newcommand\SWMRP{\texttt{SWMR}^+}
+\newcommand\SWMR{\texttt{SWMR}}
+\newcommand\textproof[1]{\textcolor{colorproof}{#1}}
+\usepackage[most]{tcolorbox}
+
+\newcommand\Sketch{\texttt{Sketch}}
+\newcommand\conjunctcount{796}
+\newcommand\rulecount{68}
+\newcommand\strengthenedrulecount{13}
+\newcommand\conjunctrulecount{54,128}
+\newcommand\filecount{74}
+\newcommand\const[1]{\textsf{#1}}
+
+\newcommand\field[1]{\textsf{#1}}
+\newcommand\Initial[1]{\texttt{InitialState}(#1)}
+\newcommand\DTHReqI{\field{D2HReq1}}
+\newcommand\DTHReqII{\field{D2HReq2}}
+\newcommand\DTHRspI{\field{D2HRsp1}}
+\newcommand\DTHRspII{\field{D2HRsp2}}
+\newcommand\DTHDataI{\field{D2HData1}}
+\newcommand\DTHDataII{\field{D2HData2}}
+\newcommand\HTDReqI{\field{H2DReq1}}
+\newcommand\HTDReqII{\field{H2DReq2}}
+\newcommand\HTDRspI{\field{H2DRsp1}}
+\newcommand\HTDRspII{\field{H2DRsp2}}
+\newcommand\HTDDataI{\field{H2DData1}}
+\newcommand\HTDDataII{\field{H2DData2}}
+\newcommand\devcacheI{\field{DCache1}}
+\newcommand\devcacheII{\field{DCache2}}
+\newcommand\hcache{\field{HCache}}
+\newcommand\DBufferI{\field{DBuffer1}}
+\newcommand\DBufferII{\field{DBuffer2}}
+\newcommand\DProgI{\field{DProg1}}
+\newcommand\DProgII{\field{DProg2}}
+\newcommand\devcachei[1]{\field{Cachelines(Dev)}_{#1}}
+\newcommand\dprogi[1]{\field{AuxStates.DeviceProgram}_{#1}}
+\newcommand\dthreqi[1]{\field{Channels.D2HReq}_{#1}}
+\newcommand\State{\field{State}}
+\newcommand\val{\field{Val}}
+\newcommand\dthdatai[1]{\field{D2HData}_{#1}}
+\newcommand\htddatai[1]{\field{H2DData}_{#1}}
+\newcommand\DTHReq{\var{D2HReq}}
+\newcommand\Modified{\STATE{M}}
+\newcommand\Exclusive{\STATE{E}}
+\newcommand\Shared{\STATE{S}}
+\newcommand\Invalid{\STATE{I}}
+\newcommand\STATE[1]{\textsf{#1}}
+\newcommand\head{\field{head}}
+\newcommand\Load{\texttt{Load}}
+\newcommand\Store{\texttt{Store}}
+\newcommand\RdOwn{\const{RdOwn}}
+\newcommand\auto{\texttt{auto}}
+\newcommand\simp{\texttt{simp}}
+
+\newcommand\infrule[3]{
+\begin{shaded*}
+\noindent\raggedright
+$\begin{array}{@{}l@{~}l@{}}
+\multicolumn{2}{@{}l@{}}{\rulename{#1}} \\
+\textbf{guards:}
+#2
+\textbf{actions:}
+#3
+\end{array}$
+\end{shaded*}
+}
+% Transient states
+\newcommand\TSTATE[2]{\STATE{#1}^{\STATE{#2}}}
+\newcommand\ISD{\TSTATE{IS}{D}}
+\newcommand\IMD{\TSTATE{IM}{D}}
+\newcommand\ISA{\TSTATE{IS}{A}}
+\newcommand\IMA{\TSTATE{IM}{A}}
+\newcommand\SMA{\TSTATE{SM}{A}}
+\newcommand\SMD{\TSTATE{SM}{D}}
+\newcommand\SMAD{\TSTATE{SM}{AD}}
+\newcommand\MIAD{\TSTATE{MI}{AD}}
+\newcommand\MIA{\TSTATE{MI}{A}}
+\newcommand\SIAD{\TSTATE{SI}{AD}}
+\newcommand\ISDI{\TSTATE{IS}{DI}}
+\newcommand\IIA{\TSTATE{II}{A}}
+\newcommand\SIA{\TSTATE{SI}{A}}
+\newcommand\SIAC{\TSTATE{SI}{AC}}
+\newcommand\ISAD{\TSTATE{IS}{AD}}
+\newcommand\IMAD{\TSTATE{IM}{AD}}
+\newcommand\SAD{\TSTATE{S}{AD}}
+\newcommand\SA{\TSTATE{S}{A}}
+\newcommand\SD{\TSTATE{S}{D}}
+\newcommand\MAD{\TSTATE{M}{AD}}
+\newcommand\MD{\TSTATE{M}{D}}
+\newcommand\ID{\TSTATE{I}{D}}
+\newcommand\MA{\TSTATE{M}{A}}
+\newcommand\tid{\texttt{txid}}
+\newcommand\supersketchthree{\texttt{super\_sketch3}}
+
+\newcommand{\CT}[1]{\textcolor{green}{[CT: #1]}}
+\newcommand{\AD}[1]{\textcolor{red}{[AD: #1]}}
+\newcommand{\JW}[1]{\textcolor{blue}{[JW: #1]}}
+\newcommand{\JM}[1]{\textcolor{orange}{JM: #1}}
+
+\newcommand\sketch{\texttt{sketch}}
+\newcommand\supersketchone{\texttt{super\_sketch1}}
+
+\newcommand{\supersketch}{\texttt{super\_sketch}}
+\newcommand{\superfix}{\texttt{super\_fix}}
+\newcommand{\sledgehammer}{\texttt{sledgehammer}}
+\newcommand{\precond}{\texttt{precond}}
+
+\begin{document}
+
+\title{The Burden of Proof: Automated Tooling for Rapid Iteration on Large Mechanised Proofs}
+
+\author{
+\IEEEauthorblockN{Chengsong Tan\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, Alastair F. Donaldson\IEEEauthorrefmark{1}, Jonathan Juli\'an Huerta y Munive\IEEEauthorrefmark{3}, and John Wickerson\IEEEauthorrefmark{1}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}Imperial College London, UK \\ Email: \{c.tan, alastair.donaldson, j.wickerson\}@imperial.ac.uk}
+\IEEEauthorblockA{\IEEEauthorrefmark{2}Kaihong, China}
+\IEEEauthorblockA{\IEEEauthorrefmark{3}Czech Technical University, Czech Republic \\ Email: huertjon@cvut.cz}
+}
+
+\maketitle
+
+\begin{abstract}
+We report on challenges and solutions in making large mechanised proofs scale, based on our experience proving the correctness of a cache-coherence protocol in Isabelle/HOL. Our proof required hundreds of iterations to get right and led to an inductive invariant with nearly 800 conjuncts, yielding over 54,000 proof obligations in total. This was beyond what we could handle manually with standard Isabelle tools. 
+
+To address these scalability challenges, we developed \supersketch{}, a tool that automates the generation of multi-subgoal proofs in Isabelle/HOL. Rather than manually calling \sledgehammer{} for each subgoal, \supersketch{} automatically orchestrates a combination of proof tactics, calls to \sledgehammer{}, and case splitting to prove the majority of subgoals in a single command. This greatly reduces the amount of human effort required, allowing proof engineers to focus on the few subgoals that are truly difficult.
+
+However, proof scripts produced this way can sometimes break when the definitions or invariants they depend on change—an inevitable occurrence in large-scale, evolving proofs. Hence we also present \superfix{}, a new utility that emulates a human user’s process of “proof repair,” fixing broken lines with local, automated calls to \sledgehammer{} and judiciously inserting placeholders for tasks that genuinely require human insight. We applied this approach to lift restrictions in our model while retaining its correctness proof. 
+
+We discuss how these methods allowed us to rapidly iterate on a large mechanised proof, and how such tooling could be extended for broader use. Our work provides insights into large-scale proof engineering and highlights the need for better integrated proof-maintenance techniques in interactive theorem proving.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Proof Engineering, Proof Automation, Mechanised Proof, Isabelle, Cache Coherence, CXL, SWMR
+\end{IEEEkeywords}
+
+\section{Introduction}
+\label{sec:intro}
+
+There is a growing need for strong automation in interactive theorem provers (ITPs)~\cite{isabelle,coq,lean,agda,sledgehammersmt}, to handle proofs at increasing scale. Large mechanised proofs can exceed hundreds of thousands of lines and require many person-years of development (e.g.\ seL4~\cite{sel4}, CompCert~\cite{compcert}, CakeML~\cite{cakeml}). While crafting the key lemmas and invariants is intellectually challenging, a great deal of time is also spent on tedious tasks: confirming that (often trivial) individual subgoals follow after applying induction or case analysis, or revising proof scripts that break under small changes in earlier definitions.
+
+Isabelle/HOL~\cite{isabelle} is popular in part because of its powerful automation utilities, notably \sledgehammer{}~\cite{automationprototype,metisreconstruction}. However, \sledgehammer{} still requires per-subgoal invocation, potentially with minutes of solver time each, plus manual integration of the final proof snippet into the user’s Isar script. This is frustrating when the high-level argument is already sound: the user is forced into mechanical, error-prone, and time-consuming chores, repeated for every subgoal.
+
+We faced exactly this problem in a large, evolving mechanised proof of a cache-coherence protocol~\cite{cxlcacheformal}. Toward the end, we had to prove over 54,000 subgoals, each iteration requiring dozens of hours of solver time plus active manual intervention to adopt \sledgehammer{} proofs, fix broken lines, and re-check thousands of definitions. We found it was infeasible to complete the final refinement of our inductive invariant using only standard Isabelle facilities and manual editing.
+
+\medskip\noindent
+\textbf{Contribution 1: The challenges of working on a large-scale mechanised proof about emerging hardware.}
+Over the last two years, we have built a mechanised proof (about 310k lines across \filecount{} theory files) of coherence properties for \CXLcache{}, part of the Compute Express Link (CXL) interconnect~\cite{cxl31}. Our main goal was to prove a standard coherence invariant known as Single-Writer-Multiple-Reader (\(\SWMR\)) holds for any reachable state. However, \(\SWMR\) is not inductive as stated, so we had to strengthen it into a conjunction of nearly 800 formulas. Each formula had to be shown preserved by each of the 68 transition rules in \CXLcache{}, creating a matrix of 54,128 proof obligations. Repeated refinement of the invariant demanded many cycles of adding formulas, re-checking all lemmas, removing or reworking some formulas, and so on. This iterative approach pushed Isabelle/jEdit beyond comfortable limits.
+
+\medskip\noindent
+\textbf{Contribution 2: Experience implementing \supersketch{} to accelerate proof development.}
+To cope with these scalability bottlenecks, we developed \supersketch{}, a tool that streamlines multi-subgoal proof generation in Isabelle/HOL. The high-level idea is to embed calls to \sledgehammer{} (and simpler tactics) in a single high-level command that systematically tries to discharge all subgoals. \supersketch{} also attempts local case-splits on subgoals that fail on a first pass, returning either a fully proven subgoal or a placeholder indicating human intervention is required. We discuss the design of \supersketch{}, and how we used it to fill in the majority of proof details each time we revised the inductive invariant. This tool proved critical to scaling our proof, reducing the overhead per iteration by orders of magnitude. 
+
+\medskip\noindent
+\textbf{Contribution 3: Automatically fixing broken proof scripts with \superfix{}.}
+Even with \supersketch{}, revision in an upstream definition or invariant can globally invalidate many local proofs, requiring (sometimes trivial) manual fixes. To address this, we introduce \superfix{}, a proof-repair tool that programmatically processes a theory script—line by line—attempting to fix errors using local \sledgehammer{} calls, simple rewrite updates, or insertion of a \texttt{sorry} marker when automation fails. We demonstrate its effectiveness in dropping simplifying restrictions in our model while still retaining the coherence proof, something we had previously avoided because of the large manual effort it would have required.
+
+We believe both \supersketch{} and \superfix{} are widely useful as proof-maintenance utilities for large Isabelle/HOL developments. We discuss our experiences with them, and how they might be extended or adapted for other ITP workflows. The rest of the paper is structured as follows. 
+\Cref{sec:problem} overviews \CXLcache{} and our \(\SWMR\) proof goals. 
+\Cref{sec:challenges} explains the scalability difficulties we faced. 
+\Cref{sec:supersketch} details \supersketch{}. 
+\Cref{sec:superfix} presents \superfix{}. 
+\Cref{sec:related} discusses related and future work, then we conclude.
+
+\section{Background: CXL and the \(\SWMR\) Property}
+\label{sec:problem}
+
+In this section, we briefly introduce cache coherence and the CXL interconnect, then define the Single-Writer-Multiple-Reader (\(\SWMR\)) property that we aimed to prove via an inductive invariant.
+
+\subsection{Cache coherence and \CXLcache{}}
+
+Modern multi-core systems maintain a coherent view of memory by synchronising cachelines across multiple caches. A typical protocol like MESI ensures that when one core updates a cacheline, other cores see an up-to-date value. Compute Express Link (CXL)~\cite{cxl31} is an emerging standard that generalises coherence beyond CPUs to accelerators, GPUs, and other devices, supporting heterogeneous systems connected via an interconnect. \CXLcache{} is the cache-coherence sub-protocol of CXL, resembling a MESI-like protocol with a directory-based architecture, though with nuanced concurrency behaviors. 
+
+Our overarching goal is to show that \CXLcache{} meets \(\SWMR\). While we cannot model the full specification exhaustively, we cover enough concurrency to capture critical corner cases. We currently model two caching devices and a ``Host'' device, each with a single memory location. Despite the simplified cardinalities, the concurrency scenarios remain non-trivial: any device might upgrade a Shared line to Modified while another device is concurrently evicting or downgrading a line, leading to complex message interleavings.
+
+\subsection{An operational model of \CXLcache{}}
+
+We formalise \CXLcache{} with an operational-style transition system. Each system state is a record containing the devices’ cache states (e.g.\ Modified, Shared, Invalid), message channels representing in-flight coherence messages, and some auxiliary data structures needed for correct ordering. We define \(\rulecount{}\) transition rules, each with a guard and a state-update function, capturing an atomic coherence step.
+
+\smallskip
+\noindent
+\textbf{Formal statement of \(\SWMR\).} The Single-Writer-Multiple-Reader property asserts that at most one device can hold ``write permission'' (Modified) for a cacheline at a time, and no device with a write permission can coexist with readers holding Shared. Formally:
+\[
+  \SWMR(T) \ \coloneqq \  \bigl(\forall i \neq j.\  T.\devcachei{i} = \Modified \ \implies \ T.\devcachei{j} \notin \{\Shared,\Modified\}\bigr).
+\]
+Our main theorem states that for any path of transitions from an \(\Initial{T}\) state,
+\[
+  \Initial{T} \ \wedge \ (T \ \makestep{}{}^*\ T') \quad \implies\quad \SWMR(T').
+\]
+However, \(\SWMR\) is not inductive. We thus strengthen \(\SWMR\) by conjoining additional properties \(\phi_1,\phi_2,\dots\) to form \(P = \SWMR \wedge \bigwedge_{k}\phi_k\). These extra formulas restrict concurrency in ways needed to preserve \(\SWMR\) after every rule. We finalize our proof by showing:
+\[
+  \Initial{T} \implies P(T), \quad
+  P(T) \land T \makestep{}{} T' \implies P(T'), \quad
+  P(T) \implies \SWMR(T).
+\]
+The main difficulty lies in engineering \(P\) so that it is inductive but not overly restrictive. This process typically involves \emph{many} iterations of “strengthen \(\SWMR\), check partial proofs, discover new corner case, repeat.” Each time we add or modify a conjunct, we must re-prove an entire row (or column) of the proof-obligation matrix.
+
+\section{The Scalability Challenges}
+\label{sec:challenges}
+
+Our formal development spans \(\filecount{}\) Isabelle theory files with over 310k lines of code, culminating in almost 800 conjuncts in \(P\) and \(\rulecount{}\) rules. This yields about 54,000 subgoals (each conjunct must be shown preserved by each rule). We faced two severe scalability bottlenecks:
+
+\smallskip
+\noindent
+\textbf{(1) Iteratively growing the invariant \(P\).} 
+Each attempt to strengthen \(P\) introduced new conjuncts. For each new conjunct \(\phi_{n+1}\), we had to:
+\begin{enumerate}[label=(\alph*)]
+\item Insert a new fact \(\textit{fact}_{n+1}\) in the lemma preamble (representing \(\phi_{n+1}(T)\)).
+\item Insert a new proof goal \(\phi_{n+1}(f_{R_i}(T))\).
+\item Call \sledgehammer{} or other tactics to discharge it.
+\end{enumerate}
+When done manually, this is highly repetitive. Worse, each iteration might add 10 or more new conjuncts. Doing so across all 68 rule files was daunting.
+
+\smallskip
+\noindent
+\textbf{(2) Evolving definitions and removing conjuncts.}
+At times we discovered that an existing conjunct \(\phi_i\) was redundant or that a particular transition had been overly restricted. Removing or changing a conjunct breaks proofs that reference it, requiring laborious patching. Similarly, refining the transition guards or message structures invalidates many lines. Each fix might be local, but identifying which lines to fix requires re-checking the entire proof sequentially; an error in an earlier file can cascade into subsequent ones.
+
+We experimented with partial scripts and bulk search-and-replace, but Isabelle/jEdit would often struggle with large loads, sometimes crashing under the strain of 60+ massive files. Even with large RAM machines, the user still had to invoke \sledgehammer{} for each subgoal or subcase, draining time. 
+
+\section{The \supersketch{} Tool}
+\label{sec:supersketch}
+
+To tackle these issues, we developed \supersketch{}, extending an earlier prototype \sketch{}~\cite{sketch} to handle multiple subgoals with user-specified heuristics. Here we describe its design and usage, highlighting how it drastically cut down the manual overhead.
+
+\subsection{Main features of \supersketch{}}
+
+\supersketch{} automates the process of proving multiple subgoals by orchestrating:
+\begin{itemize}
+\item \textbf{Initial decomposition}: Apply a method (e.g.\ \texttt{intro conjI}) to split the main goal into subgoals.
+\item \textbf{Simple tactics first}: Try cheap methods like \texttt{insert\ assms}, \texttt{simp}, \texttt{auto}. If they succeed, we finalize that subgoal.
+\item \textbf{Call \sledgehammer{}}: If the subgoal remains, attempt a single \sledgehammer{} call. If it succeeds, we adopt the proof snippet.
+\item \textbf{Case-splitting and reduce}: If \sledgehammer{} fails, apply a user-provided “splitting” tactic, for instance \texttt{cases\ "\devcachei{0}"} to subdivide the subgoal, then try cheap methods or \sledgehammer{} on each sub-subgoal. 
+\item \textbf{Insert \texttt{sorry}}: If all else fails, \supersketch{} marks the subgoal with a \texttt{sorry} placeholder, annotated with a comment so the user can see it easily.
+\end{itemize}
+All these steps are combined in one command. The result is an Isar proof script that solves as many subgoals as possible automatically, while highlighting genuinely tricky goals for manual handling.
+
+\subsection{Workflow of \supersketch{}}
+
+\supersketch{} is invoked through a command like:
+\begin{isabelle}
+\isacommand{lemma} $R_i$\_coherent\isacharcolon \\
+\hspace*{1em}\isakeyword{assumes} "$P\ T \land \guard{R_i}{T}$" \\
+\hspace*{1em}\isakeyword{shows} "$P\ (f_{R_i}(T))$" \\
+\isacommand{proof}\ - \\
+\textpreamble{(* ... preamble that extracts $\phi_1,\dots,\phi_n$ from $P T$ ... *)}\\
+\isacommand{show} ?\isamath{thesis} \\
+\supersketchthree{} (intro conjI) (insert assms) (cases "$\devcachei{0}$") (auto)
+\end{isabelle}
+
+\noindent When processed, \supersketch{} generates a block of sub-proof text for each conjunct, applying the user-supplied methods in sequence. If \sledgehammer{} is needed, it runs concurrently for each subgoal or sub-subgoal, then inlines the found proof (or a \texttt{sorry} if it fails). The user can accept or edit the output, typically in seconds or minutes. This is repeated for all rule files or for a batch of rules. 
+
+In our experience, \supersketch{} can solve about 90--95\% of subgoals automatically if provided with the right heuristics. Generating the script for all 68 rules (some with hundreds of subgoals) took on the order of a few hours of solver CPU time, run largely unattended. This is far more efficient than manually calling \sledgehammer{} 50,000 times.
+
+\subsection{Limitations of \supersketch{} and mitigations}
+
+Despite major time savings, \supersketch{} can still produce invalid proof text in rare cases. For instance, \sledgehammer{} might produce a solution that Isabelle cannot reconstruct (sometimes leading to non-termination). In an interactive session, a user would simply pick a different suggested proof. But \supersketch{} always picks the first result, so if that one is invalid, the generated script will break. 
+
+A partial workaround is to keep invariants broken into well-labeled facts, rather than a giant conjunction, which tends to reduce \sledgehammer{}’s chance of generating complex, non-reconstructible proofs. Still, if \supersketch{} is run for thousands of goals, a small percentage can be “bad proofs.” In the next section, we describe how \superfix{} can patch these automatically by emulating the user’s local fix approach.
+
+\section{\superfix{}: Automatically Repairing Broken Proofs}
+\label{sec:superfix}
+
+Even after generating a proof with \supersketch{}, evolving the definitions or removing/adding conjuncts can break lines scattered across dozens of files. A typical user fix would:
+\begin{itemize}
+\item Open file N in Isabelle/jEdit,
+\item Scroll to the first error or loop,
+\item Inspect the goal or method mismatch,
+\item Possibly replace the method call with a fresh \sledgehammer{} invocation,
+\item If that fails, fall back to a \texttt{sorry}.
+\end{itemize}
+They would repeat this for each broken point. This manual approach is slow and unavoidably sequential because each fix might unlock further errors. We found that if 1--2\% of thousands of lines needed local fixes, the total overhead could still be several days.
+
+\subsection{High-level idea}
+
+\superfix{} automates the above “local fix” procedure at the Isabelle/ML level. It processes the proof script line by line as a sequence of top-level transitions, applying each transition to the current proof state with a short timeout. If the transition fails due to a “goal mismatch” or an “illegal method,” \superfix{} calls \sledgehammer{} (or simpler methods) to try to fix it. If everything fails, it inserts a \texttt{sorry} so we can continue. Non-terminating lines are replaced as well, ensuring the script never gets “stuck” on an infinite loop. Because we can store partial results (the script with some \texttt{sorry}s) we can re-run \superfix{} again to fill in or fix those placeholders.
+
+Conceptually, \superfix{} does for entire theorem files what \supersketch{} does for individual lemmas. The difference is that \superfix{} is better at *repairing* lines that used to be valid but are now invalid, whereas \supersketch{} is better at *bulk-generating* brand new proofs.
+
+\subsection{Applications: dropping simplifying restrictions}
+
+In our \CXLcache{} model, we initially imposed a few restrictions (e.g.\ artificially disallowing certain concurrency) to reduce the complexity of the final proof. After completing the 54,000-obligation proof for this restricted model, we wanted to remove those restrictions. However, this typically broke a scattering of lines where we had assumed certain concurrency could not occur. Manually fixing them was daunting.
+
+Using \superfix{}, we automatically patched each broken spot in a few passes, sometimes producing new subproofs with calls to \sledgehammer{}, other times just inserting \texttt{sorry} placeholders where deeper manual insight was needed. This let us efficiently re-prove the stronger model with minimal user overhead. Table~\ref{tab:exampleFix} shows a small excerpt of the final iteration in which we removed a particular concurrency restriction and had 10 new failures across 5 rule files—each fix took less than a minute automatically.
+
+\begin{table}[t]
+\centering
+\caption{Example usage statistics of \superfix{}. After removing an artificial concurrency restriction, 10 lines in 5 files broke. \superfix{} fixed 9 automatically, leaving 1 for manual review.}
+\vspace{1em}
+\begin{tabular}{lc}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Broken lines after concurrency removal & 10 \\
+Fixed automatically by \superfix{}     & 9  \\
+Left with \texttt{sorry} placeholders & 1  \\
+Time to run \superfix{} (approx.)     & $< 1$ minute \\
+\bottomrule
+\end{tabular}
+\label{tab:exampleFix}
+\end{table}
+
+\section{Related Work and Future Directions}
+\label{sec:related}
+
+\noindent
+\textbf{Related automation tools.} 
+Strong integration with external provers has long been a key advantage in Isabelle/HOL~\cite{sledgehammersmt}. \sledgehammer{} proved essential to our approach. In other theorem provers (e.g.\ Coq, Lean, Agda), analogous combinations with SMT or resolution provers are less mature but still possible. Our \supersketch{} approach can in principle be adapted to any environment where subgoals can be automatically discharged by a solver or tactic. 
+
+Specialized multi-step tactics like \texttt{tryhard}~\cite{tryhard} in Isabelle or controlled automation in HOL4~\cite{ControlledAutomation} also aim to reduce user overhead. Our scenario differs in the sheer scale of subgoals, requiring concurrency, robust fallback splits, and integrated sub-proof generation. Eisbach~\cite{Eisbach} offers a powerful language for building custom proof methods in Isabelle, which can reduce script size; combining Eisbach with \supersketch{} might further streamline large proofs.
+
+Proof repair has also been explored in Coq, notably the “Pumpkin Patch” approach~\cite{coqpumpkin}. Our \superfix{} differs in that it is purely external at the Isabelle/ML layer, interacting with top-level transitions, rather than modifying internal proof terms. This design suits Isabelle’s LCF approach but might be adapted to other systems. Eunsuk Kang and Mark Aagaard’s “Controlled Automation Tactics” for HOL~\cite{KangAagaard2007} address usability in a more prescriptive style, whereas \superfix{} focuses on post-hoc script repair.
+
+\smallskip
+\noindent
+\textbf{Exporting or generalising.} 
+One may wonder if off-the-shelf model checkers or IC3-based tools~\cite{IC3} could do the heavy lifting for our 2-device, 1-location model. In principle, yes—but we aim ultimately to scale to more devices and more addresses, and to prove deeper memory-model properties. We therefore prefer an ITP approach that supports modular expansions and is easily integrated with other theorems about concurrency or memory consistency. Tools like Murphi~\cite{Murphi} or Ivy~\cite{IVy} can check smaller protocol instances but do not provide the same high-assurance environment as Isabelle/HOL. In the future, we may combine them for quicker bug-hunting before final theorem proving.
+
+\smallskip
+\noindent
+\textbf{Future work.}
+We see several ways to further improve \(\supersketch\) and \(\superfix\). One is auto-deriving splitting tactics from the structure of goals, so we do not have to specify them manually. Another is better management of concurrency (e.g.\ using a global scheduler) to systematically avoid or fix \sledgehammer{} “bad proofs.” We also hope to integrate \(\superfix\) with more advanced hint-based proof repair, potentially inspired by Pumpkin Patch~\cite{coqpumpkin}.
+
+Regarding the \CXLcache{} model, we plan to refine it to more devices and addresses, aiming at verifying not just coherence but also consistency-litmus-test scenarios. We can exploit the existing partial proofs, with \(\supersketch\) and \(\superfix\) automating a large fraction of re-proving. Ultimately, we envision a single “push-button” approach to re-check or fix the entire proof after updates, though this requires deeper integration with Isabelle’s internal scheduling. We also plan to improve third-party infrastructure (e.g.\ DeepIsaHOL) so that others can reproduce or extend our approach in general-purpose large proofs.
+
+\section{Conclusion}
+
+Our experience in proving the \(\SWMR\) property for a formal model of \CXLcache{} highlights the heavy proof-engineering overhead in large-scale mechanised proofs. Off-the-shelf automation was not enough to handle 50k+ subgoals that shifted each time we revised the invariant or the model. We addressed these challenges by building \supersketch{}, which automatically discharges most subgoals in a single command, and \superfix{}, which programmatically repairs broken proofs when upstream changes occur. Together, they significantly reduced the manual tedium, allowing us to finalize a proof of coherence for a model with nearly 800 conjuncts.
+
+We hope that our account of these methods—and their success in a genuinely large case study—can help other proof engineers build more scalable verification pipelines, and that it motivates further work on integrated proof-maintenance tooling for ITPs.
+
+\bibliographystyle{IEEEtran}
+\bibliography{super}
+
+\end{document}

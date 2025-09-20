@@ -1,0 +1,172 @@
+val it =
+   [(Action
+      {text =
+       "apply (metis CSTATE_toggle HSTATE_toggle add_self_mod_2 bits_mod_by_1 bits_one_mod_two_eq_one i352 i519 i882 le_numeral_extra(4) mod_add_left_eq mod_add_self2 mod_less_eq_dividend nextGOPending_toggle nextHTDDataPending_toggle one_add_one one_plus_numeral_commute)",
+       transition =
+       Transition
+        {markers = [], name = "apply", pos = {line=1247, offset=214560, end_offset=214565}, timing =
+         0.000, trans = [Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT (<context>, ERROR "Undefined fact: \"bits_mod_by_1\" <markup>"),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text = "done", transition =
+       Transition
+        {markers = [], name = "done", pos = {line=1247, offset=214824, end_offset=214828}, timing =
+         0.000, trans = [Transaction (fn, NONE), Transaction (fn, NONE), Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT (<context>, ERROR "Failed to finish proof:\n<markup>"),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text =
+       "show goal96: \"HSTATE MB (toggle T) ∧ CSTATE IIA (toggle T) 1 ⟶ CSTATE Modified (toggle T) 0 ∨ CSTATE MIA (toggle T) 0 ∨ (CSTATE IMAD (toggle T) 0 ∨ CSTATE SMAD (toggle T) 0) ∧ nextHTDDataPending (toggle T) 0 ∧ nextGOPending (toggle T) 0 ∨ (CSTATE IMA (toggle T) 0 ∨ CSTATE SMA (toggle T) 0) ∧ nextGOPending (toggle T) 0 ∨ (CSTATE IMD (toggle T) 0 ∨ CSTATE SMD (toggle T) 0) ∧ nextHTDDataPending (toggle T) 0\"",
+       transition =
+       Transition
+        {markers = [], name = "show", pos = {line=1248, offset=214831, end_offset=214835}, timing =
+         0.000, trans = [Transaction (fn, NONE), Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT (<context>, ERROR "Illegal application of proof command in \"prove\" mode"),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text =
+       "apply (metis CSTATE_toggle HSTATE_toggle add_self_mod_2 bits_mod_by_1 bits_one_mod_two_eq_one i352 i420 i519 le_numeral_extra(4) mod_add_left_eq mod_add_self2 mod_less_eq_dividend nextGOPending_toggle nextHTDDataPending_toggle one_add_one one_plus_numeral_commute)",
+       transition =
+       Transition
+        {markers = [], name = "apply", pos = {line=1382, offset=266205, end_offset=266210}, timing =
+         0.000, trans = [Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT (<context>, ERROR "Undefined fact: \"bits_mod_by_1\" <markup>"),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text = "done", transition =
+       Transition
+        {markers = [], name = "done", pos = {line=1382, offset=266469, end_offset=266473}, timing =
+         0.000, trans = [Transaction (fn, NONE), Transaction (fn, NONE), Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT (<context>, ERROR "Failed to finish proof:\n<markup>"),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text =
+       "show goal162: \"CSTATE IIA (toggle T) 1 ∧ HSTATE ModifiedM (toggle T) ⟶ CSTATE Modified (toggle T) 0 ∨ CSTATE MIA (toggle T) 0 ∨ (CSTATE IMAD (toggle T) 0 ∨ CSTATE SMAD (toggle T) 0) ∧ nextHTDDataPending (toggle T) 0 ∧ nextGOPending (toggle T) 0 ∨ (CSTATE IMA (toggle T) 0 ∨ CSTATE SMA (toggle T) 0) ∧ nextGOPending (toggle T) 0 ∨ (CSTATE IMD (toggle T) 0 ∨ CSTATE SMD (toggle T) 0) ∧ nextHTDDataPending (toggle T) 0\"",
+       transition =
+       Transition
+        {markers = [], name = "show", pos = {line=1383, offset=266476, end_offset=266480}, timing =
+         0.000, trans = [Transaction (fn, NONE), Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT (<context>, ERROR "Illegal application of proof command in \"prove\" mode"),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text =
+       "show goal213: \"CSTATE SIA (toggle T) 0 ∧ nextGOPendingIs GO_WritePullDrop (toggle T) 0 ⟶ HSTATE InvalidM (toggle T) ∨ HSTATE SharedM (toggle T) ∨ HSTATE SB (toggle T) ∨ HSTATE IB (toggle T) ∨ HSTATE ModifiedM (toggle T)\"",
+       transition =
+       Transition
+        {markers = [], name = "show", pos = {line=1486, offset=307824, end_offset=307828}, timing =
+         0.000, trans = [Transaction (fn, NONE), Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT
+         (<context>,
+          EXCEPTIONS
+            [ERROR "Failed to refine any pending goal",
+             ERROR "Local statement fails to refine any pending goal\n<markup>"]),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text =
+       "apply  (insert CSTATE_toggle HSTATE_toggle nextReqIs_toggle nextHTDDataPending_toggle nextGOPending_toggle nextDTHDataFrom_toggle htddatas_toggle dthdatas_toggle snps_toggle reqs_toggle snpresps_toggle reqresps_toggle nextLoad_toggle nextStore_toggle nextSnpRespIs_toggle nextSnoopIs_toggle nextSnoopPending_toggle CXL_SPG_used_toggle GTS_toggle nextGOPendingIs_toggle htddatas1_toggle htddatas2_toggle dthdatas1_toggle dthdatas2_toggle snps1_toggle snps2_toggle reqs1_toggle reqs2_toggle snpresps1_toggle snpresps2_toggle reqresps1_toggle reqresps2_toggle)",
+       transition =
+       Transition
+        {markers = [], name = "apply", pos = {line=1487, offset=308049, end_offset=308054}, timing =
+         0.000, trans = [Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT (<context>, ERROR "Illegal application of proof command in \"state\" mode"),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text =
+       "apply (smt (verit) add_cancel_left_left i327 i328 less_eqE one_mod_two_eq_one zero_less_one_class.zero_le_one)",
+       transition =
+       Transition
+        {markers = [], name = "apply", pos = {line=1487, offset=308610, end_offset=308615}, timing =
+         0.000, trans = [Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT (<context>, ERROR "Illegal application of proof command in \"state\" mode"),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text = "done", transition =
+       Transition
+        {markers = [], name = "done", pos = {line=1487, offset=308721, end_offset=308725}, timing =
+         0.000, trans = [Transaction (fn, NONE), Transaction (fn, NONE), Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT (<context>, ERROR "Illegal application of proof command in \"state\" mode"),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text =
+       "show goal214: \"CSTATE SIA (toggle T) 1 ∧ nextGOPendingIs GO_WritePullDrop (toggle T) 1 ⟶ HSTATE InvalidM (toggle T) ∨ HSTATE SharedM (toggle T) ∨ HSTATE SB (toggle T) ∨ HSTATE IB (toggle T) ∨ HSTATE ModifiedM (toggle T)\"",
+       transition =
+       Transition
+        {markers = [], name = "show", pos = {line=1488, offset=308728, end_offset=308732}, timing =
+         0.000, trans = [Transaction (fn, NONE), Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT
+         (<context>,
+          EXCEPTIONS
+            [ERROR "Failed to refine any pending goal",
+             ERROR "Local statement fails to refine any pending goal\n<markup>"]),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text =
+       "apply  (insert CSTATE_toggle HSTATE_toggle nextReqIs_toggle nextHTDDataPending_toggle nextGOPending_toggle nextDTHDataFrom_toggle htddatas_toggle dthdatas_toggle snps_toggle reqs_toggle snpresps_toggle reqresps_toggle nextLoad_toggle nextStore_toggle nextSnpRespIs_toggle nextSnoopIs_toggle nextSnoopPending_toggle CXL_SPG_used_toggle GTS_toggle nextGOPendingIs_toggle htddatas1_toggle htddatas2_toggle dthdatas1_toggle dthdatas2_toggle snps1_toggle snps2_toggle reqs1_toggle reqs2_toggle snpresps1_toggle snpresps2_toggle reqresps1_toggle reqresps2_toggle)",
+       transition =
+       Transition
+        {markers = [], name = "apply", pos = {line=1489, offset=308953, end_offset=308958}, timing =
+         0.000, trans = [Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT (<context>, ERROR "Illegal application of proof command in \"state\" mode"),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text = "apply (smt (verit) add_self_mod_2 i327 i328 le_numeral_extra(4))", transition =
+       Transition
+        {markers = [], name = "apply", pos = {line=1489, offset=309514, end_offset=309519}, timing =
+         0.000, trans = [Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT (<context>, ERROR "Illegal application of proof command in \"state\" mode"),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text = "done", transition =
+       Transition
+        {markers = [], name = "done", pos = {line=1489, offset=309579, end_offset=309583}, timing =
+         0.000, trans = [Transaction (fn, NONE), Transaction (fn, NONE), Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT (<context>, ERROR "Illegal application of proof command in \"state\" mode"),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text = "qed", transition =
+       Transition
+        {markers = [], name = "qed", pos = {line=2699, offset=782562, end_offset=782565}, timing =
+         0.000, trans = [Transaction (fn, NONE), Transaction (fn, NONE), Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT (<context>, ERROR "Failed to finish proof:\n<markup>"),
+       "At command \"<markup>\" <markup>")),
+    (Action
+      {text = "qed", transition =
+       Transition
+        {markers = [], name = "qed", pos = {line=2700, offset=782566, end_offset=782569}, timing =
+         0.000, trans = [Transaction (fn, NONE), Transaction (fn, NONE), Transaction (fn, NONE)]}},
+     <Isar in proof mode>,
+     SOME
+      (CONTEXT (<context>, ERROR "Failed to finish proof:\n<markup>"),
+       "At command \"<markup>\" <markup>"))]:
+   (Actions.T * Toplevel.state * (exn * string) option) list

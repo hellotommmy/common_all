@@ -1,0 +1,11 @@
+line 320:
+    H_C_state_msg_oppo ModifiedM IIA (λT i. ¬ nextReqIs RdShared T i) T ∧
+This says that if the host tracks some owner device with M state, then if one device is IIA state, 
+then the other can't have a RdShared pending. This works with two devices because the other device must be in M 
+or MIA state (or some other near-Modified state), and can't be sending a RdShared request.
+
+modify suggestion: This is a circumvented way of saying "the owner can't send a RdShared itself", so a candidate new 
+property: if device i is in IIA state, and host in ModifiedM state, and device j is itself in 
+MIA/Modified/IMD/IMA/IMAD+HTDDATA+GO/SMD/SMA/SMAD+HTDDATA+GO state. then j can't be sending a RdShared message.
+
+cartouche 风格注释示例：    C_msg_P_same IIA (nextGOPendingIs GO_WritePull) nextEvict T ∧ ―‹True and premise might be true›

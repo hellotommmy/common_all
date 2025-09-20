@@ -1,0 +1,32 @@
+theory Scratch imports Main Super2023 begin
+sledgehammer_params[max_proofs = 4, preplay_timeout = 1]
+
+lemma
+  fixes x :: nat
+  assumes "foo x"
+  and " bar x"
+  and "baz x"
+  and "qux x"
+  and "(x-1)^2 \<ge>0"
+  shows "(foo x \<or>  (x < x * x + 1)) \<and>(baz x \<or> (2 * x \<le> 2 * x\<^sup>2 + 1))  \<and>( (2 *x \<le> x^2 + 1))  \<and> (bar x \<or> (x < x + 1))"
+proof -
+  show ?thesis
+  proof (intro conjI)
+    show goal1: "bad"
+      sorry
+
+     show goal2: "bad"
+      sorry
+    show goal3: "bad"
+      sorry
+
+    show goal4: "bad"
+      sorry
+  qed
+
+
+
+
+
+
+end

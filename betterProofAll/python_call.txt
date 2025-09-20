@@ -1,0 +1,6 @@
+MSYS_NO_PATHCONV=1 python3 fixers6.py C:/Users/Chengsong/Documents/GitHub/betterProof C:/Users/Chengsong/Documents/GitHub/betterProof/output -1 /cygdrive/c/Users/Chengsong/Documents/GitHub/betterProof/output/ /Users/Chengsong/Documents/GitHub/betterProof/output C:/Users/Chengsong/Documents/GitHub/betterProof/output/
+
+
+
+
+MSYS_NO_PATHCONV=1 python3 fixers6.py C:/Users/Chengsong/Documents/GitHub/fixerPlayground C:/Users/Chengsong/Documents/GitHub/fixerPlayground/output -1 /cygdrive/c/Users/Chengsong/Documents/GitHub/fixerPlayground/output/ /Users/Chengsong/Documents/GitHub/fixerPlayground/output C:/Users/Chengsong/Documents/GitHub/fixerPlayground/output/
