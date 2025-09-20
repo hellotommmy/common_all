@@ -62,9 +62,9 @@
 - [x] T016 [P] Modify remaining simple patterns (Lines 581-590) in betterProofAll/Common/CoherenceProperties.thy
 
 ### Medium Pattern Modifications (Lines 591-650) - Medium Parallelization
-- [ ] T017 [P] Modify cross-device mutual exclusion patterns (Lines 591-610) in betterProofAll/Common/CoherenceProperties.thy
-- [ ] T018 [P] Modify channel coordination patterns (Lines 611-630) in betterProofAll/Common/CoherenceProperties.thy
-- [ ] T019 [P] Modify remaining medium patterns (Lines 631-650) in betterProofAll/Common/CoherenceProperties.thy
+- [x] T017 [P] Modify cross-device mutual exclusion patterns (Lines 591-610) in betterProofAll/Common/CoherenceProperties.thy
+- [x] T018 [P] Modify channel coordination patterns (Lines 611-630) in betterProofAll/Common/CoherenceProperties.thy
+- [x] T019 [P] Modify remaining medium patterns (Lines 631-650) in betterProofAll/Common/CoherenceProperties.thy
 
 ### Complex Pattern Modifications (Lines 651-800) - Low Parallelization
 - [ ] T020 Modify multi-device state coordination (Lines 651-680) in betterProofAll/Common/CoherenceProperties.thy
