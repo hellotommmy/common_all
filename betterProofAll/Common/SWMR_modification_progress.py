@@ -358,8 +358,8 @@ def export_progress_summary():
     return {
         'statistics': stats,
         'modified_lines': sorted(modified_lines),
-        'recent_batch': "Lines 591-650 (60 lines modified in latest session)",
-        'next_target': "Continue from Line 651 onwards",
+        'recent_batch': "Lines 651-800 (150 lines modified in latest session)",
+        'next_target': "Continue with remaining theory files",
         'total_remaining': len([p for p in progress if p[1] == 'NEEDS_ATTENTION'])
     }
 
