@@ -38,11 +38,11 @@
 - **User Messages**: `betterProofAll/Common/my_messages.md`
 
 ## Phase 3.1: Setup
-- [ ] T001 Verify Isabelle/HOL environment and syntax validation tools
-- [ ] T002 Initialize progress tracking system and validate current state (44.0% complete)
-- [ ] T003 [P] Configure git repository and ensure proper file tracking
-- [ ] T004 [P] Validate existing modification patterns and quantifier conventions
-- [ ] T005 Create backup of current CoherenceProperties.thy before modifications
+- [x] T001 Verify Isabelle/HOL environment and syntax validation tools
+- [x] T002 Initialize progress tracking system and validate current state (44.0% complete)
+- [x] T003 [P] Configure git repository and ensure proper file tracking
+- [x] T004 [P] Validate existing modification patterns and quantifier conventions
+- [x] T005 Create backup of current CoherenceProperties.thy before modifications
 
 ## Phase 3.2: Tests First (TDD) ⚠️ MUST COMPLETE BEFORE 3.3
 **CRITICAL: These tests MUST be written and MUST FAIL before ANY implementation**
@@ -57,9 +57,9 @@
 
 ## Phase 3.3: Core Implementation (ONLY after tests are failing)
 ### Simple Pattern Modifications (Lines 561-590) - High Parallelization
-- [ ] T014 [P] Modify device-specific state constraints (Lines 561-570) in betterProofAll/Common/CoherenceProperties.thy
-- [ ] T015 [P] Modify host state constraints (Lines 571-580) in betterProofAll/Common/CoherenceProperties.thy
-- [ ] T016 [P] Modify remaining simple patterns (Lines 581-590) in betterProofAll/Common/CoherenceProperties.thy
+- [x] T014 [P] Modify device-specific state constraints (Lines 561-570) in betterProofAll/Common/CoherenceProperties.thy
+- [x] T015 [P] Modify host state constraints (Lines 571-580) in betterProofAll/Common/CoherenceProperties.thy
+- [x] T016 [P] Modify remaining simple patterns (Lines 581-590) in betterProofAll/Common/CoherenceProperties.thy
 
 ### Medium Pattern Modifications (Lines 591-650) - Medium Parallelization
 - [ ] T017 [P] Modify cross-device mutual exclusion patterns (Lines 591-610) in betterProofAll/Common/CoherenceProperties.thy
