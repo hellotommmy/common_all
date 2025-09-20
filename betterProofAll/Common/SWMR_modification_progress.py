@@ -250,6 +250,31 @@ progress = [
     [535, 'AI_MODIFIED', '(∀i. CSTATE Invalid T i ⟶ ¬nextSnoopIs SnpInv T i) ∧'],
     [536, 'AI_MODIFIED', '(∀i. CSTATE Modified T i ⟶ (∀j. j ≠ i ⟶ ¬CSTATE MIA T j)) ∧'],
     [537, 'AI_MODIFIED', '(∀i. HSTATE MA T ∧ nextSnoopIs SnpInv T i ⟶ (∀j. j ≠ i ⟶ (CSTATE IMAD T j ∨ CSTATE SMAD T j) ∧ htddatas T j ≠ [] ∨ (CSTATE IMA T j ∨ CSTATE SMA T j) ∧ htddatas T j = [])) ∧'],
+    
+    # Lines 538-587: Extended State Coordination - Latest batch
+    [538, 'AI_MODIFIED', '(∀i. CSTATE SMAD T i ∧ nextGOPending T i ⟶ (∀j. j ≠ i ⟶ snps T j = [] ∧ snpresps T j = [])) ∧'],
+    [539, 'AI_MODIFIED', '(∀i. HSTATE MA T ∧ nextSnoopIs SnpInv T i ⟶ (∀j. j ≠ i ⟶ (CSTATE IMAD T j ∨ CSTATE SMAD T j) ∧ nextHTDDataPending T j ∨ CSTATE IMA T j ∨ CSTATE SMA T j)) ∧'],
+    [540, 'AI_MODIFIED', '(HSTATE InvalidM T ∨ HSTATE ID T ⟶ (∀i. ¬CSTATE ISD T i ∧ ¬CSTATE ISA T i)) ∧'],
+    [541, 'AI_MODIFIED', '(HSTATE InvalidM T ∨ HSTATE ID T ⟶ (∀i. ¬CSTATE SMD T i ∧ ¬CSTATE SMA T i)) ∧'],
+    [542, 'AI_MODIFIED', '(HSTATE InvalidM T ∨ HSTATE ID T ⟶ (∀i. ¬CSTATE IMD T i ∧ ¬CSTATE IMA T i)) ∧'],
+    [543, 'AI_MODIFIED', '(HSTATE InvalidM T ∨ HSTATE ID T ⟶ (∀i. ¬(CSTATE ISAD T i ∧ (nextGOPending T i ∨ nextHTDDataPending T i)) ∧ ¬(CSTATE IMAD T i ∧ (nextGOPending T i ∨ nextHTDDataPending T i)) ∧ ¬(CSTATE SMAD T i ∧ (nextGOPending T i ∨ nextHTDDataPending T i)))) ∧'],
+    [544, 'AI_MODIFIED', '(∀i. CSTATE ISD T i ∧ nextSnoopIs SnpInv T i ⟶ (∀j. j ≠ i ⟶ ((CSTATE IMAD T j ∨ CSTATE SMAD T j) ∧ htddatas T j ≠ []) ∨ ((CSTATE IMA T j ∨ CSTATE SMA T j) ∧ htddatas T j = []))) ∧'],
+    [545, 'AI_MODIFIED', '(∀i. CSTATE ISA T i ∧ nextSnoopIs SnpInv T i ⟶ (∀j. j ≠ i ⟶ ((CSTATE IMAD T j ∨ CSTATE SMAD T j) ∧ htddatas T j ≠ []) ∨ ((CSTATE IMA T j ∨ CSTATE SMA T j) ∧ htddatas T j = []))) ∧'],
+    [546, 'AI_MODIFIED', '(∀i. CSTATE ISAD T i ∧ nextSnoopIs SnpInv T i ⟶ (∀j. j ≠ i ⟶ ((CSTATE IMAD T j ∨ CSTATE SMAD T j) ∧ htddatas T j ≠ []) ∨ ((CSTATE IMA T j ∨ CSTATE SMA T j) ∧ htddatas T j = []))) ∧'],
+    [547, 'AI_MODIFIED', '(∀i. CSTATE IMAD T i ∧ nextSnoopIs SnpInv T i ⟶ (∀j. j ≠ i ⟶ CSTATE IMAD T j ∧ htddatas T j = [])) ∧'],
+    [548, 'AI_MODIFIED', '(∀i. CSTATE IMD T i ∧ nextSnoopIs SnpInv T i ⟶ (∀j. j ≠ i ⟶ CSTATE IMAD T j ∧ htddatas T j = [])) ∧'],
+    [549, 'AI_MODIFIED', '(∀i. CSTATE IMA T i ∧ nextSnoopIs SnpInv T i ⟶ (∀j. j ≠ i ⟶ CSTATE IMAD T j ∧ htddatas T j = [])) ∧'],
+    [550, 'AI_MODIFIED', '(∀i. CSTATE SMAD T i ∧ nextGOPending T i ∧ nextSnoopIs SnpInv T i ⟶ (∀j. j ≠ i ⟶ CSTATE IMAD T j ∧ htddatas T j = [])) ∧'],
+    [551, 'AI_MODIFIED', '(∀i. CSTATE SMD T i ∧ nextSnoopIs SnpInv T i ⟶ (∀j. j ≠ i ⟶ CSTATE IMAD T j ∧ htddatas T j = [])) ∧'],
+    [552, 'AI_MODIFIED', '(∀i. CSTATE SMA T i ∧ nextSnoopIs SnpInv T i ⟶ (∀j. j ≠ i ⟶ CSTATE IMAD T j ∧ htddatas T j = [])) ∧'],
+    [553, 'AI_MODIFIED', '(∀i. CSTATE ISD T i ∨ CSTATE ISA T i ⟶ ¬HSTATE MD T) ∧'],
+    [554, 'AI_MODIFIED', '(∀i. CSTATE ISAD T i ∧ (nextHTDDataPending T i ∨ nextGOPending T i) ⟶ ¬HSTATE MD T) ∧'],
+    [555, 'AI_MODIFIED', '(∀i. CSTATE ISD T i ∧ HSTATE MA T ⟶ (∀j. j ≠ i ⟶ (CSTATE IMAD T j ∨ CSTATE SMAD T j) ∧ nextHTDDataPending T j ∨ CSTATE IMA T j ∨ CSTATE SMA T j)) ∧'],
+    [556, 'AI_MODIFIED', '(∀i. CSTATE ISA T i ∧ HSTATE MA T ⟶ (∀j. j ≠ i ⟶ (CSTATE IMAD T j ∨ CSTATE SMAD T j) ∧ nextHTDDataPending T j ∨ CSTATE IMA T j ∨ CSTATE SMA T j)) ∧'],
+    [557, 'AI_MODIFIED', '(∀i. CSTATE IMD T i ∧ nextHTDDataPending T i ⟶ (∀j. j ≠ i ⟶ ¬(CSTATE ISAD T j ∧ nextGOPending T j))) ∧'],
+    [558, 'AI_MODIFIED', '(∀i. CSTATE IMD T i ∧ nextHTDDataPending T i ⟶ (∀j. j ≠ i ⟶ ¬CSTATE ISA T j ∧ ¬nextHTDDataPending T j)) ∧'],
+    [559, 'AI_MODIFIED', '(∀i. CSTATE IMD T i ∧ nextHTDDataPending T i ⟶ (∀j. j ≠ i ⟶ ¬CSTATE Shared T j)) ∧'],
+    [560, 'AI_MODIFIED', '(∀i. CSTATE ISD T i ∧ nextSnoopIs SnpInv T i ⟶ HSTATE MA T) ∧'],
 ]
 
 # Missing lines that need to be added to progress tracking
