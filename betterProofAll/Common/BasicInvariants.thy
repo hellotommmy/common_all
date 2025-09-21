@@ -259,8 +259,8 @@ lemma [simp]: \<open>Owner (CLEntry.block_state (devcache1 (T [a sHost= b]))) =
 
 
 
-definition "allDevicesInvalid T = ((CSTATE Invalid T 0 \<or> CSTATE ISAD T 0 \<or> CSTATE IMAD T 0 ) \<and> (CSTATE Invalid T 1) \<and>
-  (block_state (hostcache T) = InvalidM) )"
+definition "allDevicesInvalid T = ((\<forall>i. CSTATE Invalid T i \<or> CSTATE ISAD T i \<or> CSTATE IMAD T i) \<and>
+  (block_state (hostcache T) = InvalidM) )" \<comment>\<open>Original: ((CSTATE Invalid T 0 \<or> CSTATE ISAD T 0 \<or> CSTATE IMAD T 0 ) \<and> (CSTATE Invalid T 1) \<and> (block_state (hostcache T) = InvalidM) ) - all devices are Invalid/ISAD/IMAD\<close>
 
 
 

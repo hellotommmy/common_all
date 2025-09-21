@@ -7,8 +7,7 @@ definition storeForwarding :: "Type1State \<Rightarrow> nat \<Rightarrow> Type1S
 
 \<close>
 
-definition saneSIACGO :: "Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]: "saneSIACGO T i = (if i = 0 then \<not> HSTATE SAD T \<and> \<not> HSTATE MD T \<and> \<not> HSTATE MA T \<and> (CSTATE IIA T 1 \<longrightarrow> \<not> HSTATE SharedM T) else
-\<not> HSTATE SAD T \<and> \<not> HSTATE MD T \<and> \<not> HSTATE MA T \<and> (CSTATE IIA T 0 \<longrightarrow> \<not> HSTATE SharedM T))"
+definition saneSIACGO :: "Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]: "saneSIACGO T i = (\<not> HSTATE SAD T \<and> \<not> HSTATE MD T \<and> \<not> HSTATE MA T \<and> (\<forall>j. j \<noteq> i \<longrightarrow> (CSTATE IIA T j \<longrightarrow> \<not> HSTATE SharedM T)))" \<comment>\<open>Original: (if i = 0 then \<not> HSTATE SAD T \<and> \<not> HSTATE MD T \<and> \<not> HSTATE MA T \<and> (CSTATE IIA T 1 \<longrightarrow> \<not> HSTATE SharedM T) else \<not> HSTATE SAD T \<and> \<not> HSTATE MD T \<and> \<not> HSTATE MA T \<and> (CSTATE IIA T 0 \<longrightarrow> \<not> HSTATE SharedM T)) - for device i, if other device j is IIA, then host is not SharedM\<close>
 
 
 definition InvalidLoad' :: "Type1State \<Rightarrow> nat \<Rightarrow> Type1State list" where [simp]: "InvalidLoad' T i = (if (CSTATE Invalid T i \<and> nextLoad T i) then [clearBuffer (sendReq RdShared ISAD i T)] else [])"
