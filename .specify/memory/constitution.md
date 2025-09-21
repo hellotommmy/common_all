@@ -1,8 +1,8 @@
 <!--
 Sync Impact Report:
-- Version change: 1.0.0 → 1.1.0
+- Version change: 1.1.0 → 1.2.0
 - Modified principles: II. Systematic Documentation (strengthened DETAILED_MODIFICATIONS.md requirements)
-- Added sections: None
+- Added sections: VI. English-Only Output (new principle to prevent encoding issues)
 - Removed sections: None
 - Templates requiring updates: ✅ constitution.md updated
 - Follow-up TODOs: None
@@ -30,6 +30,9 @@ Multiple conjuncts CAN be modified in parallel, but each modification MUST under
 
 ### V. Version Control Integration
 Every modification session MUST be committed and pushed to the common_all repository. Git tracking MUST be properly configured to include all Common directory files. Regular commits preserve work and enable rollback if needed.
+
+### VI. English-Only Output (NON-NEGOTIABLE)
+All AI-generated content MUST be in English to prevent encoding issues and ensure compatibility across different systems. This includes all documentation, comments, commit messages, and user communications. Non-English content MUST be rejected and regenerated in English. This principle prevents the corruption and garbled text issues that occur with mixed-language content.
 
 ## Multi-Device Modification Standards
 
@@ -66,4 +69,4 @@ Every modification session MUST be committed and pushed to the common_all reposi
 
 This constitution supersedes all other practices for multi-device theory modification. Amendments require documentation, user approval, and migration plan. All modifications must verify compliance with these principles. Complexity must be justified through semantic analysis.
 
-**Version**: 1.1.0 | **Ratified**: 2025-01-20 | **Last Amended**: 2025-01-20
+**Version**: 1.2.0 | **Ratified**: 2025-01-20 | **Last Amended**: 2025-01-20
