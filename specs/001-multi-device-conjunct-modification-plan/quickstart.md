@@ -1,214 +1,164 @@
-# Quickstart: Multi-Device Conjunct Modification
+# Quickstart: Comprehensive Conjunct Mapping Documentation
 
 ## Overview
-This guide provides step-by-step instructions for systematically modifying conjuncts in Isabelle/HOL theory files to support arbitrary number of devices instead of hardcoded 2-device model.
+This quickstart guide demonstrates how to execute comprehensive conjunct mapping analysis to establish line-by-line correspondence between original 2-device conjuncts and current multi-device conjuncts.
 
 ## Prerequisites
-- Isabelle/HOL development environment
-- Git repository with betterProofAll/Common/ files
-- Python 3.x for progress tracking
-- Understanding of CXL cache coherence protocol
+- Python 3.11+
+- Access to betterProofAll/Common/ directory
+- OldCohProp.thy (original 2-device theory file)
+- CoherenceProperties.thy (current multi-device theory file)
 
-## Current Status
-- **Progress**: 44.0% complete (340/772 lines modified)
-- **Remaining**: 432 conjuncts (lines 561-1056)
-- **Files**: CoherenceProperties.thy (primary), BasicInvariants.thy, Fixer.thy, BuggyRules.thy
+## Quick Start Steps
 
-## Step-by-Step Process
-
-### Phase 1: Simple Patterns (Lines 561-590)
-**Estimated Time**: 2-3 hours  
-**Parallelization**: High (10-15 conjuncts per batch)
-
-#### Batch 1.1: Device-Specific State Constraints (Lines 561-570)
+### 1. Prepare Environment
 ```bash
-# 1. Open CoherenceProperties.thy at line 561
-# 2. Identify pattern: CSTATE X T 0/1 → property
-# 3. Convert to: ∀i. CSTATE X T i → property
-# 4. Preserve original in cartouche comment
-# 5. Update progress tracking
+cd C:\Users\Chengsong\Documents\GitHub\nit_template
+python -m venv mapping_analysis_env
+mapping_analysis_env\Scripts\activate  # Windows
+pip install -r requirements.txt  # If requirements file exists
 ```
 
-**Example**:
-```isabelle
--- Original
-(CSTATE ISA T 0 ∧ nextSnoopIs SnpInv T 0 → HSTATE MA T) ∧
-(CSTATE ISA T 1 ∧ nextSnoopIs SnpInv T 1 → HSTATE MA T) ∧
-
--- Modified
-(∀i. CSTATE ISA T i ∧ nextSnoopIs SnpInv T i → HSTATE MA T) ∧
--- Original: (CSTATE ISA T 0 ∧ nextSnoopIs SnpInv T 0 → HSTATE MA T) ∧ (CSTATE ISA T 1 ∧ nextSnoopIs SnpInv T 1 → HSTATE MA T) - when any device is ISA with SnpInv, host must be MA
-```
-
-#### Batch 1.2: Host State Constraints (Lines 571-590)
-```bash
-# 1. Identify pattern: HSTATE X → ¬CSTATE Y T 0/1
-# 2. Convert to: HSTATE X → (∀i. ¬CSTATE Y T i)
-# 3. Preserve original in cartouche comment
-# 4. Update progress tracking
-```
-
-### Phase 2: Medium Patterns (Lines 591-650)
-**Estimated Time**: 4-5 hours  
-**Parallelization**: Medium (5-10 conjuncts per batch)
-
-#### Batch 2.1: Cross-Device Mutual Exclusion (Lines 591-620)
-```bash
-# 1. Identify pattern: CSTATE X T 0 → ¬CSTATE Y T 1
-# 2. Convert to: ∀i. CSTATE X T i → (∀j. j≠i → ¬CSTATE Y T j)
-# 3. Preserve original in cartouche comment
-# 4. Update progress tracking
-```
-
-**Example**:
-```isabelle
--- Original
-(CSTATE IMD T 0 ∧ nextHTDDataPending T 0 → ¬CSTATE SMAD T 1) ∧
-(CSTATE IMD T 1 ∧ nextHTDDataPending T 1 → ¬CSTATE SMAD T 0) ∧
-
--- Modified
-(∀i. CSTATE IMD T i ∧ nextHTDDataPending T i → (∀j. j≠i → ¬CSTATE SMAD T j)) ∧
--- Original: (CSTATE IMD T 0 ∧ nextHTDDataPending T 0 → ¬CSTATE SMAD T 1) ∧ (CSTATE IMD T 1 ∧ nextHTDDataPending T 1 → ¬CSTATE SMAD T 0) - when device i is IMD with HTDData pending, other devices j cannot be SMAD
-```
-
-#### Batch 2.2: Channel Coordination (Lines 621-650)
-```bash
-# 1. Identify pattern: channel1 T = [] → channel2 T = []
-# 2. Convert to: ∀i. channel T i = [] → (∀j. j≠i → other_channel T j = [])
-# 3. Preserve original in cartouche comment
-# 4. Update progress tracking
-```
-
-### Phase 3: Complex Patterns (Lines 651-800)
-**Estimated Time**: 8-10 hours  
-**Parallelization**: Low (individual analysis required)
-
-#### Batch 3.1: Multi-Device State Coordination (Lines 651-700)
-```bash
-# 1. Identify complex cross-device dependencies
-# 2. Apply appropriate quantifier patterns
-# 3. Preserve original in cartouche comment
-# 4. Update progress tracking
-# 5. Request user review for complex cases
-```
-
-**Example**:
-```isabelle
--- Original
-(CSTATE ISAD T 0 ∧ nextHTDDataPending T 0 ∧ HSTATE MA T → (CSTATE IMAD T 1 ∨ CSTATE SMAD T 1) ∧ nextHTDDataPending T 1 ∨ CSTATE IMA T 1 ∨ CSTATE SMA T 1) ∧
-(CSTATE ISAD T 1 ∧ nextHTDDataPending T 1 ∧ HSTATE MA T → (CSTATE IMAD T 0 ∨ CSTATE SMAD T 0) ∧ nextHTDDataPending T 0 ∨ CSTATE IMA T 0 ∨ CSTATE SMA T 0) ∧
-
--- Modified
-(∀i. CSTATE ISAD T i ∧ nextHTDDataPending T i ∧ HSTATE MA T → (∀j. j≠i → (CSTATE IMAD T j ∨ CSTATE SMAD T j) ∧ nextHTDDataPending T j ∨ CSTATE IMA T j ∨ CSTATE SMA T j)) ∧
--- Original: (CSTATE ISAD T 0 ∧ nextHTDDataPending T 0 ∧ HSTATE MA T → (CSTATE IMAD T 1 ∨ CSTATE SMAD T 1) ∧ nextHTDDataPending T 1 ∨ CSTATE IMA T 1 ∨ CSTATE SMA T 1) ∧ (CSTATE ISAD T 1 ∧ nextHTDDataPending T 1 ∧ HSTATE MA T → (CSTATE IMAD T 0 ∨ CSTATE SMAD T 0) ∧ nextHTDDataPending T 0 ∨ CSTATE IMA T 0 ∨ CSTATE SMA T 0) - when device i is ISAD with HTDData and host is MA, other devices j must be in Modified-family states
-```
-
-#### Batch 3.2: Existential Device Requirements (Lines 701-800)
-```bash
-# 1. Identify existential patterns
-# 2. Apply: ∀i. condition(i) → (∃j. j≠i ∧ property(j))
-# 3. Preserve original in cartouche comment
-# 4. Update progress tracking
-# 5. Request user review for complex cases
-```
-
-### Phase 4: Critical Patterns (Lines 801-873)
-**Estimated Time**: 6-8 hours  
-**Parallelization**: Very Low (individual verification required)
-
-#### Batch 4.1: Core Coherence Properties (Lines 801-850)
-```bash
-# 1. Identify fundamental protocol properties
-# 2. Apply precise quantifier patterns
-# 3. Preserve original in cartouche comment
-# 4. Update progress tracking
-# 5. Require expert validation
-```
-
-#### Batch 4.2: Final Verification (Lines 851-873)
-```bash
-# 1. Verify all modifications
-# 2. Check semantic consistency
-# 3. Validate Isabelle syntax
-# 4. Update final progress tracking
-# 5. Commit and push changes
-```
-
-## Progress Tracking
-
-### Update SWMR_modification_progress.py
+### 2. Execute Sequential Mapping Analysis
 ```python
-# Add new conjuncts to progress tracking
-[561, 'AI_MODIFIED', 'modified_content'],
-[562, 'AI_MODIFIED', 'modified_content'],
-# ... continue for all modified conjuncts
+# Run the comprehensive mapping analysis
+python specs/001-multi-device-conjunct-modification-plan/comprehensive_mapping_analyzer.py
+
+# Expected output:
+# - Loading 796 original conjuncts from OldCohProp.thy (lines 200-995)
+# - Loading 486 current conjuncts from CoherenceProperties.thy (lines 286-771)
+# - Executing sequential two-pointer mapping algorithm
+# - Detecting N:1 consolidation patterns
+# - Generating comprehensive mapping documentation
 ```
 
-### Update PROGRESS_REPORT.md
-```markdown
-## Overall Progress
-```
-[████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░] 44.0%
-```
+### 3. Verify Results
+```python
+# Check mapping coverage
+python -c "
+import json
+with open('mapping_results.json', 'r') as f:
+    results = json.load(f)
+print(f'Coverage: {results[\"mapping_summary\"][\"original_mapping_coverage\"]}%')
+print(f'Total mappings: {results[\"mapping_summary\"][\"total_mappings\"]}')
+print(f'Consolidation ratio: {results[\"mapping_summary\"][\"consolidation_ratio\"]}')
+"
 
-**~340/772 lines modified (44.0% complete)**
-```
-
-### Update DETAILED_MODIFICATIONS.md
-```markdown
-## Line 561: Device-Specific State Constraint
-**Original**: (CSTATE ISA T 0 ∧ nextSnoopIs SnpInv T 0 → HSTATE MA T) ∧ (CSTATE ISA T 1 ∧ nextSnoopIs SnpInv T 1 → HSTATE MA T)
-**Original Meaning**: When device 0 or 1 is ISA with SnpInv, host must be MA
-**Modified**: (∀i. CSTATE ISA T i ∧ nextSnoopIs SnpInv T i → HSTATE MA T)
-**Modified Meaning**: When any device i is ISA with SnpInv, host must be MA
-**Semantic Analysis**: Preserves exact same semantics - universal quantifier generalizes from 2 devices to arbitrary number
+# Expected output:
+# Coverage: 100.0%
+# Total mappings: 486
+# Consolidation ratio: 1.64
 ```
 
-### Update my_messages.md
-```markdown
-## 消息49 - 完成Lines 561-590的修改
-已完成Lines 561-590的30个简单约束条件的多设备转换，包括设备特定状态约束和主机状态约束。已更新所有进度追踪文件，当前进度44.0%（340/772行）。
+### 4. Review Documentation Updates
+```bash
+# Check updated progress tracking
+python betterProofAll/Common/SWMR_modification_progress.py
+
+# Review detailed modifications
+head -50 betterProofAll/Common/DETAILED_MODIFICATIONS.md
+
+# Check progress report
+tail -20 betterProofAll/Common/PROGRESS_REPORT.md
 ```
 
-## Quality Assurance
+## Expected Results
 
-### Semantic Verification
-1. **Original Semantics**: Verify modified constraint preserves original meaning
-2. **Quantifier Scope**: Ensure quantifiers are correctly placed
-3. **Cross-Device Logic**: Verify mutual exclusion and dependencies work correctly
+### Mapping Analysis Output
+- **Total Original Conjuncts**: 796 (lines 200-995 in OldCohProp.thy)
+- **Total Current Conjuncts**: 486 (lines 286-771 in CoherenceProperties.thy)
+- **Expected Coverage**: 100% (all original conjuncts mapped)
+- **Expected Consolidation Patterns**:
+  - 2:1 consolidations: ~250-300 instances
+  - 4:1 consolidations: ~5-10 instances
+  - 6:1 consolidations: ~1-3 instances
+  - 1:1 transformations: ~200-250 instances
 
-### Syntax Validation
-1. **Isabelle Syntax**: Check for syntax errors
-2. **Type Consistency**: Verify all types are correct
-3. **Quantifier Scope**: Ensure proper scoping
+### Documentation Updates
+- **SWMR_modification_progress.py**: Enhanced with mapping relationship fields
+- **DETAILED_MODIFICATIONS.md**: Added consolidation explanations
+- **PROGRESS_REPORT.md**: Updated with mapping analysis summary
+- **mapping_results.json**: Comprehensive mapping documentation
 
-### Progress Validation
-1. **Line Numbers**: Verify all line numbers are correct
-2. **Content Match**: Ensure modified content matches file
-3. **Status Updates**: Verify progress tracking is updated
+### Quality Metrics
+- **Average Confidence Score**: >0.8
+- **High Confidence Mappings**: >80%
+- **Semantic Equivalence**: 100% preserved or enhanced
+- **Documentation Consistency**: Full alignment with existing progress tracking
+
+## Validation Steps
+
+### 1. Coverage Validation
+```python
+# Ensure all 796 original conjuncts are mapped
+python -c "
+import json
+with open('mapping_results.json', 'r') as f:
+    results = json.load(f)
+mapped_originals = set()
+for mapping in results['mappings']:
+    mapped_originals.update(mapping['original_lines'])
+print(f'Mapped original conjuncts: {len(mapped_originals)}/796')
+assert len(mapped_originals) == 796, 'Not all original conjuncts mapped!'
+print('✅ Coverage validation passed')
+"
+```
+
+### 2. Consolidation Validation
+```python
+# Verify consolidation patterns
+python -c "
+import json
+with open('mapping_results.json', 'r') as f:
+    results = json.load(f)
+patterns = results['consolidation_patterns']
+total_consolidations = sum(patterns.values()) - patterns.get('1_to_1', 0)
+print(f'Total consolidations detected: {total_consolidations}')
+print(f'Consolidation breakdown: {patterns}')
+"
+```
+
+### 3. Documentation Consistency
+```bash
+# Verify documentation updates
+git status
+git diff betterProofAll/Common/SWMR_modification_progress.py
+git diff betterProofAll/Common/DETAILED_MODIFICATIONS.md
+git diff betterProofAll/Common/PROGRESS_REPORT.md
+```
 
 ## Troubleshooting
 
 ### Common Issues
-1. **Syntax Errors**: Check quantifier placement and parentheses
-2. **Semantic Errors**: Verify original meaning is preserved
-3. **Progress Mismatch**: Ensure tracking files are synchronized
+1. **File Not Found**: Ensure OldCohProp.thy and CoherenceProperties.thy are in correct locations
+2. **Low Coverage**: Check for parsing errors in conjunct extraction
+3. **Low Confidence**: Review similarity calculation algorithm parameters
+4. **Documentation Errors**: Verify file permissions and backup existing files
 
-### Error Recovery
-1. **Rollback**: Use git to revert failed modifications
-2. **Incremental Fix**: Fix one conjunct at a time
-3. **User Review**: Request help for complex cases
+### Debug Commands
+```python
+# Debug conjunct extraction
+python -c "
+from comprehensive_mapping_analyzer import ConjunctExtractor
+extractor = ConjunctExtractor('OldCohProp.thy', 'CoherenceProperties.thy', 200, 995, 286, 771)
+original = extractor.extract_conjuncts_from_file('betterProofAll/Common/OldCohProp.thy', 200, 995, True)
+print(f'Original conjuncts extracted: {len(original)}')
+"
 
-## Success Criteria
-- All 432 remaining conjuncts modified
-- 100% semantic accuracy maintained
-- All progress tracking files updated
-- No Isabelle syntax errors
-- All changes committed and pushed
+# Debug mapping algorithm
+python -c "
+from comprehensive_mapping_analyzer import SequentialConjunctMapper
+mapper = SequentialConjunctMapper('OldCohProp.thy', 'CoherenceProperties.thy', 200, 995, 286, 771)
+# Add debug prints in run_sequential_mapping method
+"
+```
 
-## Next Steps
-After completing this quickstart:
-1. Continue with remaining theory files (BasicInvariants.thy, Fixer.thy, BuggyRules.thy)
-2. Verify overall system consistency
-3. Run comprehensive tests
-4. Update final documentation
+## Success Criteria Verification
+- [ ] All 796 original conjuncts have mapping entries
+- [ ] Average confidence score >0.8
+- [ ] Documentation updates completed successfully
+- [ ] No unmapped sections reported
+- [ ] Consolidation patterns documented with examples
+- [ ] Semantic equivalence preserved in all transformations
+
+This quickstart demonstrates the complete conjunct mapping analysis workflow, ensuring comprehensive documentation of the transformation from 2-device to multi-device theory files.

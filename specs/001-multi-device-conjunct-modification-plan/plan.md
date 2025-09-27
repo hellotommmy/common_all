@@ -1,100 +1,61 @@
+# Implementation Plan: Comprehensive Conjunct Mapping Documentation
 
-# Implementation Plan: [FEATURE]
-
-**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
-**Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
+**Branch**: `001-multi-device-conjunct-modification-plan` | **Date**: 2025-01-20 | **Spec**: [spec.md](./spec.md)
+**Input**: Feature specification from `/specs/001-multi-device-conjunct-modification-plan/spec.md`
 
 ## Execution Flow (/plan command scope)
 ```
-1. Load feature spec from Input path
-   → If not found: ERROR "No feature spec at {path}"
-2. Fill Technical Context (scan for NEEDS CLARIFICATION)
-   → Detect Project Type from context (web=frontend+backend, mobile=app+api)
-   → Set Structure Decision based on project type
-3. Fill the Constitution Check section based on the content of the constitution document.
-4. Evaluate Constitution Check section below
-   → If violations exist: Document in Complexity Tracking
-   → If no justification possible: ERROR "Simplify approach first"
-   → Update Progress Tracking: Initial Constitution Check
-5. Execute Phase 0 → research.md
-   → If NEEDS CLARIFICATION remain: ERROR "Resolve unknowns"
-6. Execute Phase 1 → contracts, data-model.md, quickstart.md, agent-specific template file (e.g., `CLAUDE.md` for Claude Code, `.github/copilot-instructions.md` for GitHub Copilot, `GEMINI.md` for Gemini CLI, `QWEN.md` for Qwen Code or `AGENTS.md` for opencode).
-7. Re-evaluate Constitution Check section
-   → If new violations: Refactor design, return to Phase 1
-   → Update Progress Tracking: Post-Design Constitution Check
-8. Plan Phase 2 → Describe task generation approach (DO NOT create tasks.md)
-9. STOP - Ready for /tasks command
+1. Load feature spec from Input path ✅
+2. Fill Technical Context (scan for NEEDS CLARIFICATION) ✅
+3. Fill the Constitution Check section ✅
+4. Evaluate Constitution Check section ✅
+5. Execute Phase 0 → research.md ✅
+6. Execute Phase 1 → contracts, data-model.md, quickstart.md ✅
+7. Re-evaluate Constitution Check section ✅
+8. Plan Phase 2 → Describe task generation approach ✅
+9. STOP - Ready for /tasks command ✅
 ```
 
-**IMPORTANT**: The /plan command STOPS at step 7. Phases 2-4 are executed by other commands:
-- Phase 2: /tasks command creates tasks.md
-- Phase 3-4: Implementation execution (manual or via tools)
-
 ## Summary
-**Primary Requirement**: Create a comprehensive plan for systematically modifying 432 remaining conjuncts in Isabelle/HOL theory files to support arbitrary number of devices instead of hardcoded 2-device model.
-
-**Technical Approach**: 
-- **Conjunct Classification**: Categorize remaining conjuncts by complexity (Simple, Medium, Complex, Critical)
-- **Modification Order**: Establish optimal sequence based on complexity and dependencies
-- **Task Division**: Break down into 46 manageable, parallelizable tasks across 6 categories
-- **Pattern Application**: Use established quantifier patterns (Universal, MutualExclusion, Existential, Global)
-- **Quality Assurance**: Maintain 100% semantic accuracy with comprehensive progress tracking
-
-**Key Deliverables**:
-- Research analysis of 432 remaining conjuncts with complexity classification
-- Data model for conjunct entities, modification batches, and progress tracking
-- Quickstart guide with step-by-step modification instructions
-- API contracts for conjunct modification operations
-- Task generation strategy for 46 ordered, parallelizable tasks
+Create comprehensive conjunct mapping documentation to establish line-by-line correspondence between original 2-device conjuncts (796 total in OldCohProp.thy lines 200-995) and current multi-device conjuncts (486 total in CoherenceProperties.thy lines 286-771). This includes implementing sequential two-pointer algorithm for mapping analysis, identifying N:1 consolidation patterns, documenting transformation types, and ensuring no original conjuncts are missed or duplicated during multi-device conversion.
 
 ## Technical Context
-**Language/Version**: Isabelle/HOL (formal verification language)  
-**Primary Dependencies**: Isabelle/HOL theorem prover, CXL cache coherence protocol semantics  
-**Storage**: Git repository (betterProofAll/Common/ theory files)  
-**Testing**: Isabelle/HOL syntax validation, semantic correctness verification  
-**Target Platform**: Isabelle/HOL development environment  
-**Project Type**: single (formal verification project)  
-**Performance Goals**: 100% semantic accuracy, systematic modification of 432 remaining conjuncts  
-**Constraints**: Must preserve original cache coherence semantics, maintain conjunct order, 100% accuracy  
-**Scale/Scope**: 432 conjuncts across 4 theory files (CoherenceProperties.thy primary, BasicInvariants.thy, Fixer.thy, BuggyRules.thy)
+**Language/Version**: Isabelle/HOL 2023, Python 3.11  
+**Primary Dependencies**: Isabelle/HOL theorem prover, Python standard library (json, re, os, difflib)  
+**Storage**: File-based (.thy theory files, .py progress tracking, .md documentation)  
+**Testing**: Isabelle syntax validation, semantic correctness verification  
+**Target Platform**: Windows 10/11 with WSL, Isabelle/HOL environment  
+**Project Type**: Formal verification project with documentation and analysis tools  
+**Performance Goals**: Process 796 original conjuncts and 486 current conjuncts with >95% mapping accuracy  
+**Constraints**: Must preserve semantic equivalence, maintain Isabelle syntax correctness, complete documentation  
+**Scale/Scope**: 796 original conjuncts, 486 current conjuncts, comprehensive mapping analysis with consolidation detection
 
 ## Constitution Check
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-### I. Semantic Preservation (NON-NEGOTIABLE) ✅
-- All modifications preserve original cache coherence semantics
-- Original definitions preserved in cartouche comments
-- Deep semantic analysis for each constraint
+**Principle I - Semantic Preservation**: ✅ PASS
+- Mapping analysis preserves semantic understanding of conjunct transformations
+- Original definitions maintained in cartouche comments for historical tracking
 
-### II. Systematic Documentation ✅
-- DETAILED_MODIFICATIONS.md records all changes
-- SWMR_modification_progress.py tracks conjunct order
-- PROGRESS_REPORT.md provides human-readable summaries
-- my_messages.md logs user interactions
+**Principle II - Systematic Documentation**: ✅ PASS
+- Comprehensive mapping documentation in DETAILED_MODIFICATIONS.md
+- Progress tracking in SWMR_modification_progress.py and PROGRESS_REPORT.md
+- All user interactions logged in my_messages.md
 
-### III. Quantifier Pattern Consistency ✅
-- Universal constraints: `∀i. condition(i) → property(i)`
-- Existential constraints: `∀i. condition(i) → (∃j. j≠i ∧ property(j))`
-- Mutual exclusion: `∀i. condition(i) → (∀j. j≠i → ¬property(j))`
-- Global existence: `(∃i. property(i)) → global_condition`
+**Principle VII - Conjunct Mapping Analysis**: ✅ PASS
+- Sequential two-pointer algorithm implementation planned
+- N:1 consolidation pattern identification included
+- Verification of all 796 original conjuncts accounted for
+- Mapping relationships documented in progress tracking files
 
-### IV. Parallel Processing with Quality Assurance ✅
-- Multiple conjuncts can be modified in parallel
-- Each modification undergoes deep semantic analysis
-- Quality over speed - 100% semantic accuracy mandatory
-
-### V. Version Control Integration ✅
-- Every modification session committed and pushed
-- Git tracking properly configured
-- Regular commits preserve work
-
-**Status**: PASS - All constitutional requirements met
+**English-Only Output**: ✅ PASS
+- All documentation and analysis results in English
 
 ## Project Structure
 
 ### Documentation (this feature)
 ```
-specs/[###-feature]/
+specs/001-multi-device-conjunct-modification-plan/
 ├── plan.md              # This file (/plan command output)
 ├── research.md          # Phase 0 output (/plan command)
 ├── data-model.md        # Phase 1 output (/plan command)
@@ -105,123 +66,120 @@ specs/[###-feature]/
 
 ### Source Code (repository root)
 ```
-# Option 1: Single project (DEFAULT)
-src/
-├── models/
-├── services/
-├── cli/
-└── lib/
+# Formal verification project structure
+betterProofAll/Common/
+├── CoherenceProperties.thy     # Current multi-device theory file
+├── OldCohProp.thy             # Original 2-device theory file
+├── SWMR_modification_progress.py  # Progress tracking script
+├── DETAILED_MODIFICATIONS.md     # Detailed change documentation
+├── PROGRESS_REPORT.md            # Human-readable progress summary
+└── my_messages.md               # User interaction log
 
-tests/
-├── contract/
-├── integration/
-└── unit/
-
-# Option 2: Web application (when "frontend" + "backend" detected)
-backend/
-├── src/
-│   ├── models/
-│   ├── services/
-│   └── api/
-└── tests/
-
-frontend/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   └── services/
-└── tests/
-
-# Option 3: Mobile + API (when "iOS/Android" detected)
-api/
-└── [same as backend above]
-
-ios/ or android/
-└── [platform-specific structure]
+specs/
+├── 001-multi-device-conjunct-modification-plan/  # Current planning
+├── 003-line-mapping-analysis-plan/              # Previous mapping attempt
+├── 004-corrected-line-mapping-plan/             # Corrected mapping approach
+├── 005-conjunct-mapping-documentation-plan/     # Enhanced mapping analysis
+└── 006-sequential-conjunct-mapping-plan/        # Two-pointer algorithm implementation
 ```
 
-**Structure Decision**: [DEFAULT to Option 1 unless Technical Context indicates web/mobile app]
+**Structure Decision**: Formal verification project with specialized documentation and analysis tools
 
 ## Phase 0: Outline & Research
-1. **Extract unknowns from Technical Context** above:
-   - For each NEEDS CLARIFICATION → research task
-   - For each dependency → best practices task
-   - For each integration → patterns task
 
-2. **Generate and dispatch research agents**:
-   ```
-   For each unknown in Technical Context:
-     Task: "Research {unknown} for {feature context}"
-   For each technology choice:
-     Task: "Find best practices for {tech} in {domain}"
-   ```
+### Research Tasks Completed:
+1. **Sequential Two-Pointer Algorithm Analysis**: ✅
+   - Decision: Implement sequential line-by-line comparison starting from definition beginnings
+   - Rationale: User specifically requested "双指针法" (two-pointer algorithm) for systematic mapping
+   - Alternatives considered: Semantic similarity matching, pattern-based grouping
 
-3. **Consolidate findings** in `research.md` using format:
-   - Decision: [what was chosen]
-   - Rationale: [why chosen]
-   - Alternatives considered: [what else evaluated]
+2. **Consolidation Pattern Analysis**: ✅
+   - Decision: Focus on N:1 consolidation patterns where multiple 2-device conjuncts merge into single multi-device conjunct
+   - Rationale: Previous analysis showed 796 original → 486 current conjuncts indicating significant consolidation
+   - Alternatives considered: 1:1 mapping assumption, manual pattern matching
 
-**Output**: research.md with all NEEDS CLARIFICATION resolved
+3. **Mapping Documentation Strategy**: ✅
+   - Decision: Integrate mapping results into existing progress tracking files
+   - Rationale: Maintain consistency with established documentation workflow
+   - Alternatives considered: Separate mapping documentation, database storage
+
+**Output**: research.md with comprehensive analysis approach
 
 ## Phase 1: Design & Contracts
-*Prerequisites: research.md complete*
 
-1. **Extract entities from feature spec** → `data-model.md`:
-   - Entity name, fields, relationships
-   - Validation rules from requirements
-   - State transitions if applicable
+### Data Model Design:
+1. **ConjunctMapping Entity**: Line-by-line mapping between original and current conjuncts
+2. **ConsolidationPattern Entity**: N:1 transformation documentation
+3. **TransformationType Entity**: Classification of semantic transformations
+4. **MappingAnalysis Entity**: Overall analysis results and statistics
 
-2. **Generate API contracts** from functional requirements:
-   - For each user action → endpoint
-   - Use standard REST/GraphQL patterns
-   - Output OpenAPI/GraphQL schema to `/contracts/`
+### API Contracts:
+1. **Sequential Mapping Interface**: Two-pointer algorithm implementation
+2. **Consolidation Detection Interface**: N:1 pattern identification
+3. **Documentation Integration Interface**: Progress tracking file updates
+4. **Validation Interface**: Semantic correctness verification
 
-3. **Generate contract tests** from contracts:
-   - One test file per endpoint
-   - Assert request/response schemas
-   - Tests must fail (no implementation yet)
+### Contract Tests:
+- Sequential mapping algorithm correctness
+- Consolidation pattern detection accuracy
+- Documentation integration completeness
+- Validation rule enforcement
 
-4. **Extract test scenarios** from user stories:
-   - Each story → integration test scenario
-   - Quickstart test = story validation steps
-
-5. **Update agent file incrementally** (O(1) operation):
-   - Run `.specify/scripts/bash/update-agent-context.sh cursor` for your AI assistant
-   - If exists: Add only NEW tech from current plan
-   - Preserve manual additions between markers
-   - Update recent changes (keep last 3)
-   - Keep under 150 lines for token efficiency
-   - Output to repository root
-
-**Output**: data-model.md, /contracts/*, failing tests, quickstart.md, agent-specific file
+**Output**: data-model.md, /contracts/*, failing tests, quickstart.md
 
 ## Phase 2: Task Planning Approach
 *This section describes what the /tasks command will do - DO NOT execute during /plan*
 
 **Task Generation Strategy**:
-- Load `.specify/templates/tasks-template.md` as base
-- Generate tasks from Phase 1 design docs (research.md, data-model.md, quickstart.md, contracts/)
-- Each complexity level → modification batch task [P]
-- Each pattern type → specific modification task [P]
-- Each batch → parallel execution task [P]
-- Progress tracking → documentation update task
-- Quality assurance → validation task
+Based on the research findings and design artifacts, the /tasks command will generate tasks for:
+
+1. **Data Extraction Tasks**: Load and parse conjuncts from both theory files
+   - Extract 796 original conjuncts from OldCohProp.thy (lines 200-995)
+   - Extract 486 current conjuncts from CoherenceProperties.thy (lines 286-771)
+   - Implement robust conjunct classification and content extraction
+
+2. **Sequential Mapping Implementation Tasks**: Two-pointer algorithm development
+   - Implement sequential traversal with similarity scoring
+   - Handle 1:1, N:1, and misalignment scenarios
+   - Develop look-ahead mechanism for consolidation detection
+   - Create confidence scoring system
+
+3. **Consolidation Analysis Tasks**: N:1 pattern detection and documentation
+   - Identify 2:1, 4:1, and 6:1 consolidation patterns
+   - Classify transformation types (hardcoded_to_quantified, etc.)
+   - Generate consolidation explanations and examples
+
+4. **Documentation Integration Tasks**: Update existing progress tracking
+   - Enhance SWMR_modification_progress.py with mapping fields
+   - Update DETAILED_MODIFICATIONS.md with consolidation explanations
+   - Add mapping analysis summary to PROGRESS_REPORT.md
+   - Create comprehensive mapping results documentation
+
+5. **Validation and Quality Assurance Tasks**: Ensure 100% accuracy
+   - Validate all 796 original conjuncts are mapped
+   - Verify semantic equivalence preservation
+   - Check documentation consistency
+   - Calculate and report quality metrics
 
 **Ordering Strategy**:
-- Complexity order: Simple → Medium → Complex → Critical
-- Dependency order: Independent conjuncts before dependent ones
-- Batch order: Sequential batches, parallel conjuncts within batches
-- Mark [P] for parallel execution (independent conjuncts/batches)
+1. **Preparation Phase**: File loading and conjunct extraction [P]
+2. **Core Algorithm Phase**: Sequential mapping implementation
+3. **Analysis Phase**: Consolidation pattern detection and classification [P]
+4. **Integration Phase**: Documentation updates and synchronization
+5. **Validation Phase**: Quality assurance and verification
 
-**Task Categories**:
-1. **Simple Pattern Tasks** (Lines 561-590): 6 tasks, high parallelization
-2. **Medium Pattern Tasks** (Lines 591-650): 8 tasks, medium parallelization  
-3. **Complex Pattern Tasks** (Lines 651-800): 15 tasks, low parallelization
-4. **Critical Pattern Tasks** (Lines 801-873): 10 tasks, very low parallelization
-5. **Progress Tracking Tasks**: 4 tasks, sequential
-6. **Quality Assurance Tasks**: 3 tasks, sequential
+**Parallelization Opportunities**: 
+- Conjunct extraction from both files can run in parallel [P]
+- Consolidation pattern analysis can run parallel to basic mapping [P]
+- Documentation updates can be parallelized by file type [P]
 
-**Estimated Output**: 46 numbered, ordered tasks in tasks.md
+**Estimated Output**: 18-22 numbered, ordered tasks with clear dependencies and parallel execution markers
+
+**Key Success Metrics for Task Generation**:
+- All 796 original conjuncts accounted for in task scope
+- Constitutional compliance verification included
+- User requirements from my_messages.md incorporated
+- Integration with existing workflow maintained
 
 **IMPORTANT**: This phase is executed by the /tasks command, NOT by /plan
 
@@ -230,16 +188,10 @@ ios/ or android/
 
 **Phase 3**: Task execution (/tasks command creates tasks.md)  
 **Phase 4**: Implementation (execute tasks.md following constitutional principles)  
-**Phase 5**: Validation (run tests, execute quickstart.md, performance validation)
+**Phase 5**: Validation (verify all 796 original conjuncts accounted for, semantic correctness maintained)
 
 ## Complexity Tracking
-*Fill ONLY if Constitution Check has violations that must be justified*
-
-| Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
-| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
-
+*No constitutional violations identified - all requirements align with established principles*
 
 ## Progress Tracking
 *This checklist is updated during execution flow*
@@ -247,7 +199,7 @@ ios/ or android/
 **Phase Status**:
 - [x] Phase 0: Research complete (/plan command)
 - [x] Phase 1: Design complete (/plan command)
-- [ ] Phase 2: Task planning complete (/plan command - describe approach only)
+- [x] Phase 2: Task planning complete (/plan command - describe approach only)
 - [ ] Phase 3: Tasks generated (/tasks command)
 - [ ] Phase 4: Implementation complete
 - [ ] Phase 5: Validation passed
@@ -256,7 +208,7 @@ ios/ or android/
 - [x] Initial Constitution Check: PASS
 - [x] Post-Design Constitution Check: PASS
 - [x] All NEEDS CLARIFICATION resolved
-- [x] Complexity deviations documented
+- [x] Complexity deviations documented (none required)
 
 ---
-*Based on Constitution v2.1.1 - See `/memory/constitution.md`*
+*Based on Constitution v1.3.0 - See `.specify/memory/constitution.md`*
