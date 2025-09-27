@@ -9,13 +9,20 @@ import json
 import traceback
 from typing import Dict, List, Optional, Tuple
 from datetime import datetime
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, is_dataclass
+
+class DataclassJSONEncoder(json.JSONEncoder):
+    """Custom JSON encoder for dataclass objects"""
+    def default(self, obj):
+        if is_dataclass(obj):
+            return asdict(obj)
+        return super().default(obj)
 
 # Add src to path for imports
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
-from extractors.conjunct_extractor import ConjunctExtractor
-from algorithms.sequential_mapper import SequentialMapper
+from extractors.conjunct_extractor import ConjunctExtractor, ConjunctEntry
+from algorithms.sequential_mapper import SequentialMappingInterface
 from algorithms.similarity_calculator import SimilarityCalculator
 from analyzers.consolidation_detector import ConsolidationDetector
 from analyzers.transformation_classifier import TransformationClassifier
@@ -64,9 +71,16 @@ class ComprehensiveMappingAnalyzer:
         self.analysis_id = f"mapping_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
         
         # Initialize components
-        self.conjunct_extractor = ConjunctExtractor()
+        self.conjunct_extractor = ConjunctExtractor(
+            original_file=config.original_file_path,
+            current_file=config.current_file_path,
+            original_start_line=config.original_line_range[0],
+            original_end_line=config.original_line_range[1],
+            current_start_line=config.current_line_range[0],
+            current_end_line=config.current_line_range[1]
+        )
         self.similarity_calculator = SimilarityCalculator()
-        self.sequential_mapper = SequentialMapper(self.similarity_calculator)
+        self.sequential_mapper = SequentialMappingInterface()
         self.consolidation_detector = ConsolidationDetector()
         self.transformation_classifier = TransformationClassifier()
         
@@ -178,50 +192,76 @@ class ComprehensiveMappingAnalyzer:
                 error_message=error_message
             )
     
-    def _extract_original_conjuncts(self) -> Dict[int, str]:
+    def _extract_original_conjuncts(self) -> List[ConjunctEntry]:
         """Extract original conjuncts from the source file"""
         return self.conjunct_extractor.load_conjuncts(
             self.config.original_file_path,
             self.config.original_line_range[0],
-            self.config.original_line_range[1]
+            self.config.original_line_range[1],
+            is_original=True
         )
     
-    def _extract_current_conjuncts(self) -> Dict[int, str]:
+    def _extract_current_conjuncts(self) -> List[ConjunctEntry]:
         """Extract current conjuncts from the target file"""
         return self.conjunct_extractor.load_conjuncts(
             self.config.current_file_path,
             self.config.current_line_range[0],
-            self.config.current_line_range[1]
+            self.config.current_line_range[1],
+            is_original=False
         )
     
-    def _perform_sequential_mapping(self, original_conjuncts: Dict[int, str], current_conjuncts: Dict[int, str]) -> List[Dict]:
+    def _perform_sequential_mapping(self, original_conjuncts: List[ConjunctEntry], current_conjuncts: List[ConjunctEntry]) -> List[Dict]:
         """Perform sequential two-pointer mapping analysis"""
-        return self.sequential_mapper.run_sequential_mapping(original_conjuncts, current_conjuncts)
+        # Load conjuncts into the sequential mapper
+        self.sequential_mapper.original_conjuncts = original_conjuncts
+        self.sequential_mapper.current_conjuncts = current_conjuncts
+        
+        # Run the sequential mapping
+        result = self.sequential_mapper.run_sequential_mapping()
+        return result.get('mappings', [])
     
-    def _enhance_mappings_with_analysis(self, mappings: List[Dict], original_conjuncts: Dict[int, str], current_conjuncts: Dict[int, str]) -> List[Dict]:
+    def _enhance_mappings_with_analysis(self, mappings: List[Dict], original_conjuncts: List[ConjunctEntry], current_conjuncts: List[ConjunctEntry]) -> List[Dict]:
         """Enhance mappings with consolidation and transformation analysis"""
         enhanced_mappings = []
         
+        # Run consolidation analysis once for all mappings
+        consolidation_patterns = self.consolidation_detector.detect_consolidation_patterns(
+            original_conjuncts, current_conjuncts
+        )
+        
         for mapping in mappings:
-            # Add consolidation analysis
-            consolidation_pattern = self.consolidation_detector.detect_consolidation_pattern(
-                mapping, original_conjuncts, current_conjuncts
-            )
+            # Get specific conjuncts for this mapping
+            mapping_original_conjuncts = []
+            for line_num in mapping.get('original_lines', []):
+                for conj in original_conjuncts:
+                    if conj.line_number == line_num:
+                        mapping_original_conjuncts.append(conj)
+                        break
             
-            # Add transformation classification
-            transformation_type = self.transformation_classifier.classify_transformation(
-                mapping, original_conjuncts, current_conjuncts
-            )
+            # Get current conjunct for this mapping
+            current_line = mapping.get('current_line')
+            mapping_current_conjunct = None
+            for conj in current_conjuncts:
+                if conj.line_number == current_line:
+                    mapping_current_conjunct = conj
+                    break
+            
+            # Add transformation classification if we have the conjuncts
+            transformation_analysis = None
+            if mapping_current_conjunct:
+                transformation_analysis = self.transformation_classifier.classify_transformation(
+                    mapping_original_conjuncts, mapping_current_conjunct
+                )
             
             # Create enhanced mapping
             enhanced_mapping = {
                 **mapping,
-                'consolidation_pattern': consolidation_pattern,
-                'transformation_type': transformation_type,
+                'consolidation_patterns': consolidation_patterns,
+                'transformation_analysis': transformation_analysis,
                 'analysis_metadata': {
-                    'original_count': len(mapping['original_lines']),
-                    'consolidation_ratio': f"{len(mapping['original_lines'])}:1",
-                    'complexity_score': self._calculate_complexity_score(mapping, original_conjuncts, current_conjuncts)
+                    'original_count': len(mapping.get('original_lines', [])),
+                    'consolidation_ratio': f"{len(mapping.get('original_lines', []))}:1",
+                    'complexity_score': 0.5  # Simplified for now
                 }
             }
             
@@ -245,12 +285,16 @@ class ComprehensiveMappingAnalyzer:
         # Weighted average
         return (consolidation_complexity * 0.4 + text_complexity * 0.3 + quantifier_complexity * 0.3)
     
-    def _perform_validation(self, mappings: List[Dict], original_conjuncts: Dict[int, str], current_conjuncts: Dict[int, str]) -> Dict[str, any]:
+    def _perform_validation(self, mappings: List[Dict], original_conjuncts: List[ConjunctEntry], current_conjuncts: List[ConjunctEntry]) -> Dict[str, any]:
         """Perform comprehensive validation"""
+        # Convert conjunct lists to dictionaries for validator
+        original_conjuncts_dict = {conj.line_number: conj.content for conj in original_conjuncts}
+        current_conjuncts_dict = {conj.line_number: conj.content for conj in current_conjuncts}
+        
         mapping_results = {
             'mappings': mappings,
-            'original_conjuncts': original_conjuncts,
-            'current_conjuncts': current_conjuncts
+            'original_conjuncts': original_conjuncts_dict,
+            'current_conjuncts': current_conjuncts_dict
         }
         
         # Run all validations
@@ -310,7 +354,7 @@ class ComprehensiveMappingAnalyzer:
         
         mapping_data_path = os.path.join(self.config.output_directory, f"{self.analysis_id}_mapping_data.json")
         with open(mapping_data_path, 'w', encoding='utf-8') as f:
-            json.dump(mapping_data, f, indent=2, ensure_ascii=False)
+            json.dump(mapping_data, f, indent=2, ensure_ascii=False, cls=DataclassJSONEncoder)
         
         # Save validation report
         if validation_results.get('validation_report'):

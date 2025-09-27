@@ -1,0 +1,2630 @@
+Sledgehammering... 
+Sledgehammering... 
+Sledgehammering... 
+Sledgehammering... 
+Sledgehammering... 
+Sledgehammering... 
+Sledgehammering... 
+Sledgehammering... 
+No proof found 
+No proof found 
+No proof found 
+Sledgehammering... 
+No proof found 
+No proof found 
+No proof found 
+No proof found 
+No proof found 
+Sledgehammering... 
+Sledgehammering... 
+Sledgehammering... 
+Sledgehammering... 
+Sledgehammering... 
+Sledgehammering... 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (simp add: CSTATE_different1 C_msg_P_oppo_def MESI_State.distinct(219,47)
+    SharedSnpInv'_CSTATE_invariant5) (15 ms) 
+cvc5: Try this:
+  apply (simp add: CSTATE_different1 C_msg_P_oppo_def MESI_State.distinct(11,183)
+    SharedSnpInv'_CSTATE_invariant5) (31 ms) 
+cvc5: Try this:
+  apply (simp add: CSTATE_different1 C_msg_P_oppo_def MESI_State.distinct(15,187)
+    SharedSnpInv'_CSTATE_invariant5) (31 ms) 
+cvc5: Try this: apply simp (93 ms) 
+cvc5: Try this: apply (simp add: CSTATE_different1 C_msg_P_oppo_def MESI_State.distinct(215,43)) (15 ms) 
+cvc5: Try this: apply (simp add: C_msg_P_oppo_def MESI_State.distinct(207,35) SharedSnpInv'_CSTATE_invariant5) (15 ms) 
+cvc5: Try this: apply (simp add: C_msg_P_oppo_def MESI_State.distinct(139,5) SharedSnpInv'_CSTATE_invariant5) (31 ms) 
+cvc5: Try this:
+  using C_msg_P_oppo_def i3 minus_op_invariant1 nextHTDDataPending_general_rule_12_0 apply presburger (0.0 ms) 
+vampire found a proof... 
+vampire found a proof... 
+spass found a proof... 
+spass: Try this:
+  apply (simp add: CSTATE_disj1 CSTATE_starting_transaction_otherside_invariant1 C_msg_P_oppo_def
+    MESI_State.distinct(199) SharedSnpInv'_CSTATE_invariant5 i3 nextHTDDataPending_general_rule_7_0) (0.0 ms) 
+zipperposition found a proof... 
+spass found a proof... 
+spass found a proof... 
+spass found a proof... 
+spass found a proof... 
+spass found a proof... 
+spass: Try this: apply simp (312 ms) 
+spass: Try this: apply simp (265 ms) 
+spass: Try this: apply simp (281 ms) 
+zipperposition found a proof... 
+zipperposition found a proof... 
+spass: Try this: apply simp (156 ms) 
+zipperposition found a proof... 
+spass: Duplicate proof 
+zipperposition found a proof... 
+zipperposition found a proof... 
+vampire: Try this:
+  apply (metis (mono_tags, lifting) CSTATE_different1 C_msg_P_oppo_def MESI_State.distinct(3,97)
+    minus_op_invariant1) (15 ms) 
+vampire: Try this:
+  apply (simp add: CSTATE_inequality_invariant C_msg_P_oppo_def MESI_State.distinct(139,5)
+    SharedSnpInv'_CSTATE_invariant5) (15 ms) 
+zipperposition: Try this: apply (simp add: C_msg_P_oppo_def MESI_State.distinct(199,27)) (0.0 ms) 
+Done 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+zipperposition: Duplicate proof 
+Done 
+Sledgehammering... 
+zipperposition: Duplicate proof 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+zipperposition: Try this: apply simp (390 ms) 
+Done 
+Sledgehammering... 
+zipperposition: Duplicate proof 
+Done 
+Sledgehammering... 
+zipperposition: Duplicate proof 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+cvc5: Try this:
+  using H_msg_P_same_def i4 minus_op_invariant1 nextDTHDataPending_general_rule_8_0 remove_instr_HSTATE
+    apply presburger (0.0 ms) 
+cvc5: Try this:
+  apply (simp add: CSTATE_different1 H_msg_P_same_def InvalidX_HSTATE1 MESI_State.distinct(15)
+    SharedSnpInv'_CSTATE_invariant5 i4 nextDTHDataPending_general_rule_4_0) (31 ms) 
+cvc5: Try this:
+  apply (simp add: CSTATE_starting_transaction_otherside_invariant1 HSTATE_X_Evict_invariant1 H_msg_P_same_def
+    MESI_State.distinct(11) SharedSnpInv'_CSTATE_invariant5 i4 nextDTHDataPending_general_rule_4_0) (31 ms) 
+spass found a proof... 
+spass: Try this:
+  apply (simp add: CSTATE_inequality_invariant CSTATE_otherside_rule_19 HSTATE_general_rule_7_0 H_msg_P_same_def
+    MESI_State.distinct(5) SharedSnpInv'_CSTATE_invariant5 i4 nextDTHDataPending_general_rule_6_0) (62 ms) 
+spass found a proof... 
+spass found a proof... 
+No proof found 
+Sledgehammering... 
+spass: Try this: apply (simp add: i4 nextDTHDataPending_general_rule_4_0) (31 ms) 
+e found a proof... 
+Done 
+Sledgehammering... 
+spass: Try this:
+  using CSTATE_remove_op H_msg_P_same_def i4 nextDTHDataPending_remove_op remove_instr_HSTATE apply presburger (0.0 ms) 
+Done 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+No proof found 
+5685.088s elapsed time, 93.359s cpu time, 2.719s GC time 
+No proof found 
+No proof found 
+No proof found 
+5685.089s elapsed time, 93.359s cpu time, 2.719s GC time 
+5685.089s elapsed time, 93.359s cpu time, 2.719s GC time 
+5684.775s elapsed time, 92.484s cpu time, 2.719s GC time 
+No proof found 
+5685.002s elapsed time, 93.281s cpu time, 2.719s GC time 
+Sledgehammering... 
+Sledgehammering... 
+Sledgehammering... 
+Sledgehammering... 
+Sledgehammering... 
+No proof found 
+5734.997s elapsed time, 109.781s cpu time, 5.156s GC time 
+Sledgehammering... 
+e: Try this: apply simp (203 ms) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  using H_msg_P_same_def i5 minus_op_invariant1 nextDTHDataPending_general_rule_8_0 remove_instr_HSTATE
+    apply presburger (31 ms) 
+Done 
+5745.922s elapsed time, 137.172s cpu time, 15.109s GC time 
+Sledgehammering... 
+cvc5: Try this:
+  apply (simp add: H_msg_P_same_def InvalidX_HSTATE1 MESI_State.distinct(15) SharedSnpInv'_CSTATE_invariant5 i5
+    nextDTHDataPending_general_rule_4_0) (31 ms) 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+spass found a proof... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+spass: Try this:
+  apply (simp add: CSTATE_starting_transaction_otherside_invariant1 HSTATE_X_Evict_invariant1 H_msg_P_same_def
+    MESI_State.distinct(15) SharedSnpInv'_CSTATE_invariant5 i5 nextDTHDataPending_general_rule_4_0) (15 ms) 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+cvc5: Try this: apply simp (31 ms) 
+Done 
+5776.375s elapsed time, 152.234s cpu time, 15.359s GC time 
+Sledgehammering... 
+zipperposition found a proof... 
+cvc5: Try this: apply simp (187 ms) 
+No proof found 
+Sledgehammering... 
+cvc5: Try this: apply fastforce (171 ms) 
+zipperposition: Try this: apply (simp add: MESI_State.distinct(209,37)) (31 ms) 
+vampire found a proof... 
+cvc5: Try this: using CSTATE_assign_rule_6 C_msg_P_oppo_def MESI_State.distinct(139,5) apply auto[1] (62 ms) 
+cvc5: Try this: using CSTATE_assign_rule_6 MESI_State.distinct(97) apply auto[1] (15 ms) 
+zipperposition found a proof... 
+spass found a proof... 
+spass: Try this: apply (simp add: CSTATE_xyad_htdd_invariant3 C_msg_P_oppo_def MESI_State.distinct(17,189)) (15 ms) 
+spass found a proof... 
+zipperposition found a proof... 
+spass found a proof... 
+spass: Try this: apply (simp add: CSTATE_xyad_htdd_invariant3 C_msg_P_oppo_def MESI_State.distinct(209,37)) (0.0 ms) 
+zipperposition found a proof... 
+spass found a proof... 
+vampire: Try this: apply (simp add: MESI_State.distinct(13,185) SharedSnpInv'_CSTATE_invariant5) (46 ms) 
+spass: Try this:
+  apply (simp add: C_msg_P_oppo_def MESI_State.distinct(19) xyad_go_invariant_CSTATE_sameside zero_le) (0.0 ms) 
+zipperposition found a proof... 
+spass: Try this:
+  using CSTATE_assign_rule_6 CSTATE_different1 C_msg_P_oppo_def MESI_State.distinct(139,5) apply auto[1] (62 ms) 
+Done 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+zipperposition: Duplicate proof 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+zipperposition: Duplicate proof 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+zipperposition: Try this: apply simp (312 ms) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+cvc5: Try this: apply simp (218 ms) 
+cvc5: Try this: apply fastforce (125 ms) 
+cvc5: Try this: apply simp (140 ms) 
+zipperposition found a proof... 
+cvc5: Try this:
+  apply (metis (mono_tags, lifting) CSTATE_assign_rule_6 CSTATE_inequality_invariant CSTATE_otherside_rule_5_0
+    HSTATE_rule_6 H_msg_P_same_def MESI_State.distinct(5) i4 nextDTHDataPending_other_rule_5_0) (78 ms) 
+zipperposition: Try this:
+  apply (metis (no_types, lifting) CSTATE_assign_rule_6 CSTATE_inequality_invariant CSTATE_otherside_rule_5_0
+    C_msg_P_oppo_def MESI_State.distinct(3) i3) (78 ms) 
+Done 
+Sledgehammering... 
+spass found a proof... 
+cvc5 found a proof... 
+spass: Try this:
+  apply (simp add: CSTATE_inequality_invariant CSTATE_otherside_rule_19 HSTATE_rule_14 H_msg_P_same_def
+    MESI_State.distinct(13) SharedSnpInv'_CSTATE_invariant5 i4 nextDTHDataPending_general_rule_6_0) (46 ms) 
+zipperposition: Try this: apply simp (31 ms) 
+spass found a proof... 
+spass found a proof... 
+spass: Try this: apply (simp add: HSTATE_general_rule_3_0 H_msg_P_same_def nextDTHDataPending_other_rule_4_0) (31 ms) 
+spass found a proof... 
+spass: Try this: apply simp (109 ms) 
+Done 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+spass found a proof... 
+Done 
+Sledgehammering... 
+spass: Duplicate proof 
+cvc5 found a proof... 
+spass: Try this: apply (simp add: zero_le) (15 ms) 
+cvc5 found a proof... 
+spass found a proof... 
+cvc5: Try this: using CSTATE_assign_rule_6 CSTATE_otherside_rule_5_0 MESI_State.distinct(3) apply fastforce (171 ms) 
+Done 
+Sledgehammering... 
+zipperposition found a proof... 
+spass: Try this: apply (simp add: MESI_State.distinct(181,9)) (15 ms) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+Done 
+Sledgehammering... 
+cvc5: Try this: apply (simp add: MESI_State.distinct(17) i5 nextDTHDataPending_other_rule_4_0) (31 ms) 
+Done 
+Sledgehammering... 
+cvc5: Try this: apply simp (156 ms) 
+cvc5: Try this: apply simp (156 ms) 
+cvc5: Try this:
+  apply (metis (mono_tags, lifting) CSTATE_assign_rule_6 CSTATE_inequality_invariant CSTATE_otherside_rule_5_0
+    HSTATE_rule_6 H_msg_P_same_def MESI_State.distinct(5) i5 nextDTHDataPending_other_rule_5_0) (31 ms) 
+zipperposition: Try this:
+  using CSTATE_assign_rule_6 CSTATE_otherside_rule_5_0 H_msg_P_same_def MESI_State.distinct(3) i3 apply force (93 ms) 
+Done 
+Sledgehammering... 
+spass found a proof... 
+spass found a proof... 
+cvc5 found a proof... 
+spass: Try this: apply simp (93 ms) 
+spass: Try this:
+  apply (simp add: CSTATE_xyad_htdd_invariant3 HSTATE_general_rule_3_0 H_msg_P_same_def MESI_State.distinct(17) i5
+    nextDTHDataPending_other_rule_4_0) (15 ms) 
+spass found a proof... 
+spass found a proof... 
+Done 
+188.863s elapsed time, 195.500s cpu time, 16.453s GC time 
+Sledgehammering... 
+spass: Try this: apply (simp add: CSTATE_different1 CSTATE_xyad_htdd_invariant1 CSTATE_xyad_htdd_invariant3) (203 ms) 
+e found a proof... 
+spass found a proof... 
+spass: Duplicate proof 
+spass found a proof... 
+e found a proof... 
+Done 
+194.543s elapsed time, 204.766s cpu time, 16.547s GC time 
+Sledgehammering... 
+spass: Try this: apply simp (343 ms) 
+e found a proof... 
+spass: Try this: apply simp (93 ms) 
+e: Try this: apply (simp add: H_msg_P_same_def MESI_State.distinct(17) nextDTHDataPending_other_rule_4_0) (31 ms) 
+Done 
+199.267s elapsed time, 213.078s cpu time, 16.594s GC time 
+Sledgehammering... 
+cvc5: Try this: using CSTATE_assign_rule_6 CSTATE_otherside_rule_5_0 apply fastforce (125 ms) 
+zipperposition found a proof... 
+Done 
+153.421s elapsed time, 201.859s cpu time, 14.234s GC time 
+Sledgehammering... 
+e: Duplicate proof 
+Done 
+204.174s elapsed time, 219.625s cpu time, 16.672s GC time 
+Sledgehammering... 
+Done 
+144.087s elapsed time, 177.109s cpu time, 4.281s GC time 
+Sledgehammering... 
+e: Duplicate proof 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+zipperposition: Try this:
+  using CSTATE_assign_rule_6 CSTATE_otherside_rule_5_0 C_msg_P_oppo_def H_msg_P_same_def MESI_State.distinct(3) i3
+    apply fastforce (93 ms) 
+Done 
+217.860s elapsed time, 235.922s cpu time, 16.953s GC time 
+Sledgehammering... 
+cvc5: Try this:
+  apply (simp add: CSTATE_xyad_htdd_invariant3 HSTATE_rule_3 H_msg_P_same_def MESI_State.distinct(9) i5
+    nextDTHDataPending_other_rule_4_0) (15 ms) 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+spass found a proof... 
+No proof found 
+Sledgehammering... 
+spass: Try this: apply simp (109 ms) 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+e found a proof... 
+No proof found 
+Sledgehammering... 
+cvc5: Try this: apply simp (0.0 ms) 
+spass found a proof... 
+vampire found a proof... 
+e: Try this:
+  apply (simp add: CSTATE_xyad_htdd_invariant1 CSTATE_xyad_htdd_invariant3 H_msg_P_same_def MESI_State.distinct(9)
+    hstate_invariants(17,20,24) i5 nextDTHDataPending_other_rule_4_0) (15 ms) 
+Done 
+159.620s elapsed time, 206.266s cpu time, 5.344s GC time 
+Sledgehammering... 
+spass: Try this: apply simp (125 ms) 
+zipperposition found a proof... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+zipperposition: Duplicate proof 
+Done 
+Sledgehammering... 
+spass found a proof... 
+vampire: Duplicate proof 
+No proof found 
+Sledgehammering... 
+spass: Try this: using CSTATE_assign_rule_2 apply force (171 ms) 
+Done 
+Sledgehammering... 
+zipperposition found a proof... 
+cvc5: Try this:
+  apply (metis (no_types, lifting) C_msg_P_oppo_def i3 minus_op_invariant1 nextHTDDataPending_general_rule_12_0) (281 ms) 
+No proof found 
+Sledgehammering... 
+vampire found a proof... 
+No proof found 
+Sledgehammering... 
+spass found a proof... 
+No proof found 
+Sledgehammering... 
+spass: Try this: apply simp (156 ms) 
+cvc5 found a proof... 
+zipperposition: Try this: using CSTATE_assign_rule_2 apply auto[1] (93 ms) 
+Done 
+Sledgehammering... 
+vampire: Try this:
+  apply (metis (mono_tags, lifting) C_msg_P_oppo_def i3 minus_op_invariant1 nextHTDDataPending_remove_op) (265 ms) 
+Done 
+Sledgehammering... 
+spass found a proof... 
+cvc5 found a proof... 
+Done 
+Sledgehammering... 
+spass: Try this: apply simp (62 ms) 
+cvc5: Try this:
+  apply (metis (no_types, lifting) C_msg_P_oppo_def i3 minus_op_invariant1 nextHTDDataPending_general_rule_12_0) (156 ms) 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+vampire found a proof... 
+cvc5: Try this:
+  apply (metis H_msg_P_same_def i4 minus_op_invariant1 nextDTHDataPending_general_rule_8_0 remove_instr_HSTATE) (796 ms) 
+No proof found 
+Sledgehammering... 
+spass found a proof... 
+vampire found a proof... 
+zipperposition found a proof... 
+spass found a proof... 
+vampire: Try this:
+  apply (metis (no_types, lifting) C_msg_P_oppo_def i3 minus_op_invariant1 nextHTDDataPending_remove_op) (125 ms) 
+Done 
+Sledgehammering... 
+spass: Try this: apply simp (281 ms) 
+cvc5 found a proof... 
+vampire: Duplicate proof 
+Done 
+Sledgehammering... 
+spass: Try this:
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_otherside_rule_7 CSTATE_remove_op HSTATE_rule_2
+    H_msg_P_same_def MESI_State.distinct(3) i4 nextDTHDataPending_general_rule_1_0 xyad_go_invariant_CSTATE_sameside
+    zero_le) (406 ms) 
+Done 
+Sledgehammering... 
+zipperposition: Try this:
+  apply (simp add: CSTATE_inequality_invariant CSTATE_otherside_rule_7_0 HSTATE_general_rule_7_0 H_msg_P_same_def
+    MESI_State.distinct(15) SharedSnpInv'_CSTATE_invariant5 i5 nextDTHDataPending_general_rule_6_0) (31 ms) 
+Done 
+146.000s elapsed time, 204.531s cpu time, 3.641s GC time 
+Sledgehammering... 
+cvc5 found a proof... 
+No proof found 
+148.100s elapsed time, 206.609s cpu time, 3.828s GC time 
+Sledgehammering... 
+No proof found 
+139.470s elapsed time, 193.312s cpu time, 3.703s GC time 
+Sledgehammering... 
+Done 
+146.050s elapsed time, 204.875s cpu time, 3.953s GC time 
+Sledgehammering... 
+cvc5: Try this:
+  apply (metis H_msg_P_same_def i4 minus_op_invariant1 nextDTHDataPending_general_rule_8_0 remove_instr_HSTATE) (1.6 s) 
+No proof found 
+146.743s elapsed time, 210.406s cpu time, 4.266s GC time 
+Sledgehammering... 
+cvc5: Try this:
+  apply (metis H_msg_P_same_def i5 minus_op_invariant1 nextDTHDataPending_general_rule_8_0 remove_instr_HSTATE) (1.2 s) 
+spass found a proof... 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+vampire found a proof... 
+No proof found 
+Sledgehammering... 
+spass: Try this:
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_otherside_rule_7 CSTATE_remove_op HSTATE_rule_2
+    H_msg_P_same_def MESI_State.distinct(3) i5 nextDTHDataPending_general_rule_1_0 xyad_go_invariant_CSTATE_sameside
+    zero_le) (265 ms) 
+Done 
+169.046s elapsed time, 242.391s cpu time, 4.516s GC time 
+Sledgehammering... 
+cvc5: Try this:
+  apply (metis H_msg_P_same_def i5 minus_op_invariant1 nextDTHDataPending_general_rule_8_0 remove_instr_HSTATE) (968 ms) 
+vampire: Duplicate proof 
+Done 
+161.027s elapsed time, 236.875s cpu time, 4.375s GC time 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+Done 
+142.201s elapsed time, 226.844s cpu time, 4.000s GC time 
+Sledgehammering... 
+spass found a proof... 
+spass found a proof... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply simp (390 ms) 
+No proof found 
+Sledgehammering... 
+spass: Try this:
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_remove_op C_msg_P_oppo_def MESI_State.distinct(139,5)
+    xyad_go_invariant_CSTATE_sameside zero_le) (312 ms) 
+Done 
+Sledgehammering... 
+spass: Try this:
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_remove_op C_msg_P_oppo_def MESI_State.distinct(139,5)
+    xyad_go_invariant_CSTATE_sameside zero_le) (468 ms) 
+Done 
+Sledgehammering... 
+cvc5: Try this: apply simp (312 ms) 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (simp add: C_msg_P_oppo_def MESI_State.distinct(203,31) SharedSnpInv'_CSTATE_invariant5
+    SharedSnpInv'_MAD_CSTATE_invariant5) (31 ms) 
+spass found a proof... 
+No proof found 
+Sledgehammering... 
+spass: Duplicate proof 
+Done 
+Sledgehammering... 
+spass found a proof... 
+spass found a proof... 
+spass found a proof... 
+spass: Try this: apply (simp add: MESI_State.distinct(43) nat_to_id.simps(1)) (46 ms) 
+Done 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+spass found a proof... 
+spass: Try this: apply simp (156 ms) 
+Done 
+Sledgehammering... 
+spass: Try this:
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_otherside_rule_7 CSTATE_remove_op HSTATE_rule_2
+    H_msg_P_same_def MESI_State.distinct(5) i4 nextDTHDataPending_general_rule_1_0 xyad_go_invariant_CSTATE_sameside
+    zero_le) (250 ms) 
+Done 
+Sledgehammering... 
+spass: Try this:
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_otherside_rule_7 CSTATE_remove_op HSTATE_rule_2
+    H_msg_P_same_def MESI_State.distinct(5) i4 nextDTHDataPending_general_rule_1_0 xyad_go_invariant_CSTATE_sameside
+    zero_le) (343 ms) 
+Done 
+Sledgehammering... 
+No proof found 
+146.735s elapsed time, 205.781s cpu time, 3.562s GC time 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+No proof found 
+140.968s elapsed time, 194.891s cpu time, 3.359s GC time 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+No proof found 
+139.046s elapsed time, 187.766s cpu time, 3.062s GC time 
+Sledgehammering... 
+spass found a proof... 
+spass found a proof... 
+No proof found 
+Sledgehammering... 
+spass: Try this:
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_otherside_rule_7 CSTATE_remove_op HSTATE_rule_2
+    H_msg_P_same_def MESI_State.distinct(5) i5 nextDTHDataPending_general_rule_1_0 xyad_go_invariant_CSTATE_sameside
+    zero_le) (437 ms) 
+Done 
+168.343s elapsed time, 237.156s cpu time, 4.047s GC time 
+Sledgehammering... 
+spass: Try this:
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_otherside_rule_7 CSTATE_remove_op HSTATE_rule_2
+    H_msg_P_same_def MESI_State.distinct(5) i5 nextDTHDataPending_general_rule_1_0 xyad_go_invariant_CSTATE_sameside
+    zero_le) (406 ms) 
+Done 
+168.956s elapsed time, 237.984s cpu time, 4.141s GC time 
+Sledgehammering... 
+No proof found 
+143.564s elapsed time, 193.312s cpu time, 3.438s GC time 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+No proof found 
+147.989s elapsed time, 196.484s cpu time, 3.766s GC time 
+Sledgehammering... 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (simp add: MESI_State.distinct(203,31) SharedSnpInv'_CSTATE_invariant5) (46 ms) 
+zipperposition found a proof... 
+cvc5: Try this:
+  apply (simp add: C_msg_P_oppo_def MESI_State.distinct(139,5) SharedSnpInv'_CSTATE_invariant5
+    SharedSnpInv'_MAD_CSTATE_invariant5) (31 ms) 
+No proof found 
+146.938s elapsed time, 185.203s cpu time, 3.344s GC time 
+Sledgehammering... 
+zipperposition: Duplicate proof 
+vampire found a proof... 
+zipperposition found a proof... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+vampire: Try this: apply simp (296 ms) 
+Done 
+Sledgehammering... 
+cvc5: Try this: apply simp (171 ms) 
+zipperposition found a proof... 
+cvc5: Try this: apply simp (359 ms) 
+No proof found 
+Sledgehammering... 
+zipperposition: Try this:
+  apply (simp add: CSTATE_disj1 C_msg_P_oppo_def MESI_State.distinct(139,5) SharedSnpInv'_CSTATE_invariant5
+    SharedSnpInv'_MAD_CSTATE_invariant5) (62 ms) 
+Done 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+zipperposition: Try this:
+  apply (metis (no_types, lifting) ext CSTATE_assign_rule_4 CSTATE_disj1 CSTATE_remove_op C_msg_P_oppo_def
+    MESI_State.distinct(139,5) SharedSnpInv'_MAD_CSTATE_invariant5) (781 ms) 
+Done 
+Sledgehammering... 
+spass found a proof... 
+spass found a proof... 
+spass: Duplicate proof 
+Done 
+Sledgehammering... 
+spass found a proof... 
+spass: Try this: apply auto[1] (62 ms) 
+Done 
+Sledgehammering... 
+spass: Try this: apply simp (218 ms) 
+No proof found 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (0.0 ms) 
+cvc5: Try this:
+  apply (metis HOST_State.distinct(9) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8)) (0.0 ms) 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+spass found a proof... 
+cvc5 found a proof... 
+spass: Try this:
+  apply (simp add: HSTATE_rule_14 H_msg_P_same_def MESI_State.distinct(31) SharedSnpInv'_CSTATE_invariant5 i5
+    nextDTHDataPending_general_rule_6_0) (0.0 ms) 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+cvc5: Try this:
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (78 ms) 
+Done 
+Sledgehammering... 
+Done 
+145.831s elapsed time, 188.922s cpu time, 21.203s GC time 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+cvc5: Try this:
+  using HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (15 ms) 
+cvc5: Try this:
+  using HOST_State.distinct(7) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (0.0 ms) 
+No proof found 
+158.585s elapsed time, 195.172s cpu time, 21.406s GC time 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+No proof found 
+172.022s elapsed time, 214.172s cpu time, 22.078s GC time 
+Sledgehammering... 
+Done 
+141.705s elapsed time, 165.891s cpu time, 21.109s GC time 
+Sledgehammering... 
+No proof found 
+147.671s elapsed time, 173.203s cpu time, 21.219s GC time 
+Sledgehammering... 
+cvc5: Try this:
+  using HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (31 ms) 
+No proof found 
+151.909s elapsed time, 180.797s cpu time, 21.672s GC time 
+Sledgehammering... 
+Done 
+138.925s elapsed time, 164.359s cpu time, 21.000s GC time 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  using CSTATE_general_rule_3_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_6_0 apply presburger (0.0 ms) 
+Done 
+143.257s elapsed time, 167.000s cpu time, 21.016s GC time 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+No proof found 
+No proof found 
+Sledgehammering... 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  using CSTATE_general_rule_3_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_6_0 apply presburger (0.0 ms) 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  using CSTATE_general_rule_3_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_6_0 apply presburger (0.0 ms) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (simp add: nextHTDDataPending_general_rule_6_0) (15 ms) 
+cvc5: Try this:
+  using CSTATE_general_rule_3_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_6_0 apply presburger (15 ms) 
+cvc5 found a proof... 
+cvc5: Try this:
+  using CSTATE_general_rule_3_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_6_0 apply presburger (0.0 ms) 
+cvc5: Try this:
+  using CSTATE_general_rule_3_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_6_0 apply presburger (0.0 ms) 
+Done 
+Sledgehammering... 
+cvc5: Try this:
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (0.0 ms) 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+Done 
+Sledgehammering... 
+vampire found a proof... 
+cvc5 found a proof... 
+Done 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+cvc5: Try this:
+  using HOST_State.distinct(195) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (31 ms) 
+vampire: Try this:
+  apply (metis HOST_State.distinct(79) HSTATE_equals_sHost HSTATE_invariant_reqresp H_msg_P_same_def
+    hstate_invariants(13)) (0.0 ms) 
+cvc5: Try this:
+  apply (simp add: CSTATE_general_rule_8_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_13_0 one_mod_two_eq_one
+    plus_nat.add_0) (0.0 ms) 
+cvc5 found a proof... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (metis HOST_State.distinct(197) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8)) (0.0 ms) 
+Done 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+vampire found a proof... 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+vampire found a proof... 
+vampire: Try this:
+  apply (metis HOST_State.distinct(195) HSTATE_equals_sHost HSTATE_invariant_reqresp H_msg_P_same_def
+    hstate_invariants(13)) (15 ms) 
+cvc5: Try this:
+  using HOST_State.distinct(111) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (0.0 ms) 
+cvc5: Try this:
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (15 ms) 
+vampire: Try this:
+  apply (simp add: HOST_State.distinct(197) HSTATE_equals_sHost HSTATE_invariant_reqresp H_msg_P_same_def
+    hstate_invariants(13)) (0.0 ms) 
+cvc5: Try this:
+  apply (metis HOST_State.distinct(195) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8)) (0.0 ms) 
+cvc5: Try this:
+  using HOST_State.distinct(173) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (0.0 ms) 
+cvc5: Try this:
+  using HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (0.0 ms) 
+vampire found a proof... 
+vampire found a proof... 
+Done 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+vampire found a proof... 
+cvc5 found a proof... 
+vampire: Try this:
+  using HOST_State.distinct(111) HSTATE_equals_sHost HSTATE_invariant_reqresp H_msg_P_same_def hstate_invariants(13)
+    apply presburger (0.0 ms) 
+vampire: Try this:
+  using HOST_State.distinct(79) HSTATE_equals_sHost HSTATE_invariant_reqresp H_msg_P_same_def hstate_invariants(13)
+    apply presburger (15 ms) 
+vampire found a proof... 
+cvc5 found a proof... 
+Done 
+Sledgehammering... 
+vampire found a proof... 
+vampire: Try this:
+  apply (simp add: HOST_State.distinct(195) HSTATE_equals_sHost HSTATE_invariant_reqresp H_msg_P_same_def
+    hstate_invariants(13)) (0.0 ms) 
+cvc5 found a proof... 
+vampire: Try this:
+  using HOST_State.distinct(173) HSTATE_equals_sHost HSTATE_invariant_reqresp H_msg_P_same_def hstate_invariants(13)
+    apply presburger (0.0 ms) 
+cvc5: Try this: apply simp (62 ms) 
+vampire: Try this:
+  using HOST_State.distinct(77) HSTATE_equals_sHost HSTATE_invariant_reqresp H_msg_P_same_def hstate_invariants(13)
+    apply presburger (0.0 ms) 
+Done 
+Sledgehammering... 
+cvc5: Try this:
+  using HOST_State.distinct(167) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (0.0 ms) 
+Done 
+Sledgehammering... 
+vampire found a proof... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+Done 
+Sledgehammering... 
+cvc5: Try this: apply (simp add: hstate_invariants(13,8)) (0.0 ms) 
+vampire: Try this:
+  apply (simp add: HOST_State.distinct(141) HSTATE_X_rd_invariant1 HSTATE_invariant3 H_msg_P_same_def) (0.0 ms) 
+cvc5 found a proof... 
+Done 
+Sledgehammering... 
+vampire found a proof... 
+Done 
+140.793s elapsed time, 111.438s cpu time, 3.703s GC time 
+Sledgehammering... 
+cvc5 found a proof... 
+vampire found a proof... 
+vampire: Try this:
+  apply (simp add: HOST_State.distinct(167) HSTATE_equals_sHost HSTATE_invariant_reqresp H_msg_P_same_def
+    hstate_invariants(13)) (0.0 ms) 
+cvc5: Try this:
+  using HOST_State.distinct(109) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (0.0 ms) 
+cvc5: Try this:
+  apply (simp add: HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8)) (0.0 ms) 
+cvc5: Try this:
+  apply (simp add: HOST_State.distinct(167) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8)) (0.0 ms) 
+vampire: Try this: apply simp (15 ms) 
+cvc5: Try this:
+  apply (simp add: HOST_State.distinct(145) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8)) (0.0 ms) 
+vampire found a proof... 
+Done 
+Sledgehammering... 
+vampire found a proof... 
+Done 
+138.219s elapsed time, 105.906s cpu time, 3.719s GC time 
+vampire found a proof... 
+Sledgehammering... 
+Done 
+136.393s elapsed time, 105.938s cpu time, 9.453s GC time 
+Sledgehammering... 
+vampire: Try this:
+  using HOST_State.distinct(77) HSTATE_equals_sHost HSTATE_invariant_reqresp H_msg_P_same_def hstate_invariants(13)
+    apply presburger (62 ms) 
+vampire: Try this:
+  using HOST_State.distinct(167) HSTATE_equals_sHost HSTATE_invariant_reqresp H_msg_P_same_def hstate_invariants(13)
+    apply presburger (31 ms) 
+vampire: Try this:
+  using HOST_State.distinct(145) HSTATE_equals_sHost HSTATE_invariant_reqresp H_msg_P_same_def hstate_invariants(13)
+    apply presburger (0.0 ms) 
+Done 
+138.777s elapsed time, 108.719s cpu time, 9.469s GC time 
+Sledgehammering... 
+Done 
+142.332s elapsed time, 110.797s cpu time, 9.594s GC time 
+Sledgehammering... 
+Done 
+140.291s elapsed time, 105.219s cpu time, 9.234s GC time 
+Sledgehammering... 
+Done 
+138.357s elapsed time, 102.109s cpu time, 9.234s GC time 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+No proof found 
+135.804s elapsed time, 98.141s cpu time, 9.422s GC time 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5: Try this: apply simp (140 ms) 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5: Try this: apply (simp add: MESI_State.distinct(139,5) one_mod_two_eq_one plus_nat.add_0) (62 ms) 
+cvc5 found a proof... 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+cvc5: Try this: apply (simp add: HSTATE_X_rd_invariant1 HSTATE_invariant4 H_msg_P_same_def) (15 ms) 
+No proof found 
+Sledgehammering... 
+cvc5: Try this: apply (simp add: one_mod_two_eq_one plus_nat.add_0) (0.0 ms) 
+Done 
+Sledgehammering... 
+vampire found a proof... 
+cvc5 found a proof... 
+vampire: Try this: apply simp (15 ms) 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5: Try this:
+  using HOST_State.distinct(9) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (46 ms) 
+cvc5 found a proof... 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger (0.0 ms) 
+cvc5: Try this:
+  using HOST_State.distinct(171) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger (0.0 ms) 
+No proof found 
+Sledgehammering... 
+cvc5: Try this:
+  apply (metis HOST_State.distinct(111) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16)) (0.0 ms) 
+cvc5 found a proof... 
+cvc5: Try this:
+  using HOST_State.distinct(9) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger (15 ms) 
+cvc5: Try this: apply (simp add: H_msg_P_same_def) (15 ms) 
+verit found a proof... 
+Done 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+vampire found a proof... 
+cvc5 found a proof... 
+cvc5: Try this:
+  using HOST_State.distinct(177) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger (0.0 ms) 
+verit: Duplicate proof 
+vampire: Try this: apply (simp add: HSTATE_invariant3) (62 ms) 
+Done 
+Sledgehammering... 
+cvc5: Try this:
+  using HOST_State.distinct(7) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (15 ms) 
+cvc5 found a proof... 
+Done 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+Done 
+140.922s elapsed time, 104.375s cpu time, 15.766s GC time 
+Sledgehammering... 
+cvc5: Try this:
+  using HOST_State.distinct(143) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger (15 ms) 
+Done 
+Sledgehammering... 
+cvc5: Try this:
+  using HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger (0.0 ms) 
+cvc5 found a proof... 
+cvc5: Try this:
+  using HOST_State.distinct(109) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger (0.0 ms) 
+cvc5: Try this:
+  using HOST_State.distinct(7) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger (0.0 ms) 
+verit found a proof... 
+Done 
+139.946s elapsed time, 97.953s cpu time, 9.531s GC time 
+Sledgehammering... 
+No proof found 
+144.889s elapsed time, 106.812s cpu time, 15.594s GC time 
+Sledgehammering... 
+verit: Duplicate proof 
+cvc5: Try this:
+  using HOST_State.distinct(149) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger (0.0 ms) 
+Done 
+136.184s elapsed time, 98.156s cpu time, 9.594s GC time 
+Sledgehammering... 
+Done 
+142.625s elapsed time, 102.234s cpu time, 9.719s GC time 
+Sledgehammering... 
+Done 
+137.480s elapsed time, 98.656s cpu time, 9.594s GC time 
+Sledgehammering... 
+Done 
+139.711s elapsed time, 101.844s cpu time, 9.594s GC time 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+Done 
+135.417s elapsed time, 101.344s cpu time, 9.734s GC time 
+Sledgehammering... 
+cvc5: Try this: apply (simp add: i3 nextHTDDataPending_general_rule_9_0 one_mod_two_eq_one plus_nat.add_0) (15 ms) 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+cvc5: Try this: apply simp (31 ms) 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (simp add: one_mod_two_eq_one) (140 ms) 
+cvc5 found a proof... 
+cvc5 found a proof... 
+Done 
+Sledgehammering... 
+cvc5: Try this:
+  apply (simp add: CSTATE_HostSide_rule_7_1 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_9_0 one_mod_two_eq_one
+    plus_nat.add_0) (0.0 ms) 
+cvc5 found a proof... 
+cvc5: Try this: apply (simp add: plus_nat.add_0) (31 ms) 
+No proof found 
+Sledgehammering... 
+cvc5: Try this: apply simp (46 ms) 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (simp add: CSTATE_general_rule_6_0 H_msg_P_same_def i5 nextDTHDataPending_general_rule_7_0 one_mod_two_eq_one
+    plus_nat.add_0) (0.0 ms) 
+Done 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+cvc5: Try this:
+  using CSTATE_HostSide_rule_1_0 CSTATE_different1 CSTATE_different2 CSTATE_otherside_rule_1 C_msg_P_oppo_def
+    MESI_State.distinct(139) nat_to_id.simps(1) one_mod_two_eq_one plus_nat.add_0 apply fastforce (31 ms) 
+cvc5 found a proof... 
+cvc5: Try this:
+  using CSTATE_HostSide_rule_1_0 CSTATE_otherside_rule_1 C_msg_P_oppo_def i3 nat_to_id.simps(1)
+    nextHTDDataPending_general_rule_1_0 apply presburger (0.0 ms) 
+cvc5 found a proof... 
+Done 
+Sledgehammering... 
+vampire found a proof... 
+cvc5: Try this:
+  using HOST_State.distinct(179) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger (0.0 ms) 
+cvc5 found a proof... 
+vampire found a proof... 
+Done 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+cvc5: Try this: apply (simp add: nextDTHDataPending_general_rule_7_0 one_mod_two_eq_one plus_nat.add_0) (0.0 ms) 
+cvc5 found a proof... 
+vampire found a proof... 
+cvc5: Try this:
+  using HOST_State.distinct(9) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger (0.0 ms) 
+cvc5 found a proof... 
+vampire: Try this: using MESI_State.distinct(5) discardDataHost_def nat_to_id.simps(1) apply fastforce (15 ms) 
+Done 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+vampire: Try this: using discardDataHost_def nat_to_id.simps(1) apply fastforce (15 ms) 
+vampire: Try this:
+  using HOST_State.distinct(179) HSTATE_equals_sHost HSTATE_invariant_msnpresp H_msg_P_same_def
+    apply presburger (0.0 ms) 
+vampire found a proof... 
+cvc5: Try this:
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger (0.0 ms) 
+cvc5: Try this:
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger (31 ms) 
+vampire: Try this:
+  using HOST_State.distinct(9) HSTATE_equals_sHost HSTATE_invariant_msnpresp H_msg_P_same_def apply presburger (0.0 ms) 
+Done 
+Sledgehammering... 
+cvc5: Try this:
+  using HOST_State.distinct(141) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger (0.0 ms) 
+vampire found a proof... 
+vampire found a proof... 
+cvc5 found a proof... 
+cvc5: Try this:
+  using HOST_State.distinct(111) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger (0.0 ms) 
+vampire: Try this:
+  using HOST_State.distinct(79) HSTATE_equals_sHost HSTATE_invariant_msnpresp H_msg_P_same_def apply presburger (0.0 ms) 
+vampire found a proof... 
+vampire: Try this:
+  apply (metis HOST_State.distinct(79) HSTATE_equals_sHost HSTATE_invariant_msnpresp H_msg_P_same_def) (0.0 ms) 
+Done 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+vampire found a proof... 
+cvc5 found a proof... 
+vampire: Try this:
+  using HOST_State.distinct(141) HSTATE_equals_sHost HSTATE_invariant_msnpresp H_msg_P_same_def
+    apply presburger (0.0 ms) 
+cvc5: Try this:
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger (15 ms) 
+cvc5 found a proof... 
+Done 
+Sledgehammering... 
+verit found a proof... 
+cvc5 found a proof... 
+verit: Try this:
+  apply (metis HOST_State.distinct(141) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15)) (0.0 ms) 
+cvc5: Try this:
+  using HOST_State.distinct(151) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger (0.0 ms) 
+vampire: Duplicate proof 
+Done 
+Sledgehammering... 
+cvc5: Try this:
+  using HOST_State.distinct(141) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger (0.0 ms) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  using HOST_State.distinct(7) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger (15 ms) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+vampire found a proof... 
+vampire found a proof... 
+Done 
+138.365s elapsed time, 94.031s cpu time, 3.531s GC time 
+Sledgehammering... 
+cvc5 found a proof... 
+spass found a proof... 
+cvc5: Try this:
+  using HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger (15 ms) 
+spass: Duplicate proof 
+vampire found a proof... 
+vampire: Try this:
+  using HOST_State.distinct(151) HSTATE_equals_sHost HSTATE_invariant_msnpresp H_msg_P_same_def
+    apply presburger (0.0 ms) 
+cvc5: Try this:
+  using HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger (15 ms) 
+zipperposition found a proof... 
+vampire: Try this:
+  using HOST_State.distinct(141) HSTATE_equals_sHost HSTATE_invariant_msnpresp H_msg_P_same_def apply presburger (15 ms) 
+verit found a proof... 
+vampire: Try this:
+  apply (simp add: HOST_State.distinct(7) HSTATE_equals_sHost HSTATE_invariant_msnpresp H_msg_P_same_def) (15 ms) 
+vampire found a proof... 
+verit: Duplicate proof 
+vampire found a proof... 
+cvc5: Try this:
+  apply (simp add: HOST_State.distinct(109) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16)) (0.0 ms) 
+vampire: Try this:
+  using HOST_State.distinct(77) HSTATE_equals_sHost HSTATE_invariant_msnpresp H_msg_P_same_def apply presburger (0.0 ms) 
+zipperposition: Duplicate proof 
+Done 
+Sledgehammering... 
+vampire: Try this:
+  using HOST_State.distinct(77) HSTATE_equals_sHost HSTATE_invariant_msnpresp H_msg_P_same_def apply presburger (31 ms) 
+cvc5 found a proof... 
+Done 
+138.427s elapsed time, 98.500s cpu time, 3.609s GC time 
+Sledgehammering... 
+Done 
+140.666s elapsed time, 100.938s cpu time, 3.609s GC time 
+Sledgehammering... 
+vampire found a proof... 
+Done 
+135.789s elapsed time, 95.344s cpu time, 3.406s GC time 
+Sledgehammering... 
+vampire: Duplicate proof 
+cvc5: Try this:
+  using HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger (0.0 ms) 
+Done 
+138.742s elapsed time, 98.125s cpu time, 3.953s GC time 
+Done 
+140.603s elapsed time, 98.312s cpu time, 3.953s GC time 
+Sledgehammering... 
+Sledgehammering... 
+cvc5 found a proof... 
+Done 
+142.525s elapsed time, 98.547s cpu time, 4.172s GC time 
+Sledgehammering... 
+No proof found 
+cvc5 found a proof... 
+spass found a proof... 
+cvc5 found a proof... 
+spass: Duplicate proof 
+zipperposition found a proof... 
+cvc5: Try this:
+  using HOST_State.distinct(9) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger (0.0 ms) 
+cvc5: Try this:
+  apply (simp add: CSTATE_HostSide_rule_1_0 CSTATE_otherside_rule_1 C_msg_P_oppo_def i3 nat_to_id.simps(1)) (0.0 ms) 
+cvc5: Try this:
+  apply (simp add: HOST_State.distinct(7) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16)) (0.0 ms) 
+zipperposition: Duplicate proof 
+Sledgehammering... 
+Done 
+148.023s elapsed time, 98.812s cpu time, 3.656s GC time 
+Sledgehammering... 
+vampire found a proof... 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+No proof found 
+Sledgehammering... 
+No proof found 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5 found a proof... 
+cvc5: Try this:
+  using CSTATE_general_rule_3_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_6_0 apply presburger (15 ms) 
+spass found a proof... 
+spass found a proof... 
+spass: Duplicate proof 
+vampire: Try this:
+  using CSTATE_HostSide_rule_1_0 CSTATE_different1 C_msg_P_oppo_def MESI_State.distinct(139,5) discardDataHost_def
+    nat_to_id.simps(1) apply fastforce (46 ms) 
+spass: Try this: apply (simp add: HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16)) (0.0 ms) 
+cvc5: Try this:
+  using HOST_State.distinct(197) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (0.0 ms) 
+zipperposition found a proof... 
+zipperposition found a proof... 
+cvc5: Try this:
+  using HOST_State.distinct(169) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger (0.0 ms) 
+Done 
+Sledgehammering... 
+vampire found a proof... 
+cvc5 found a proof... 
+zipperposition: Duplicate proof 
+Done 
+Sledgehammering... 
+zipperposition: Try this:
+  using HOST_State.distinct(7) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger (0.0 ms) 
+Done 
+72.204s elapsed time, 51.375s cpu time, 1.734s GC time 
+Sledgehammering... 
+vampire found a proof... 
+vampire: Try this:
+  using HOST_State.distinct(197) HSTATE_equals_sHost HSTATE_invariant_reqresp H_msg_P_same_def hstate_invariants(13)
+    apply presburger (15 ms) 
+cvc5 found a proof... 
+cvc5: Try this:
+  using HOST_State.distinct(9) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger (31 ms) 
+cvc5: Try this: using one_mod_two_eq_one plus_nat.add_0 apply fastforce (46 ms) 
+vampire: Try this:
+  apply (metis HOST_State.distinct(169) HSTATE_equals_sHost HSTATE_invariant_reqresp H_msg_P_same_def
+    hstate_invariants(13)) (0.0 ms) 
+spass found a proof... 
+Done 
+Sledgehammering... 
+cvc5: Try this: apply (metis HOST_State.distinct(7) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15)) (31 ms) 
+vampire found a proof... 
+spass: Try this: using CSTATE_assign_rule_2 apply fastforce (62 ms) 
+Done 
+vampire: Try this:
+  using HOST_State.distinct(9) HSTATE_equals_sHost HSTATE_invariant_msnpresp H_msg_P_same_def apply presburger (15 ms) 
+vampire found a proof... 
+Done 
+70.745s elapsed time, 53.891s cpu time, 1.938s GC time 
+Done 
+vampire: Try this:
+  apply (simp add: HOST_State.distinct(7) HSTATE_equals_sHost HSTATE_invariant_msnpresp H_msg_P_same_def) (0.0 ms) 
+Done 
+cvc5 found a proof... 
+cvc5: Duplicate proof 
+cvc5 found a proof... 
+Done 
+No proof found 
+cvc5: Duplicate proof 
+Done 
+91.367s elapsed time, 56.266s cpu time, 1.953s GC time 
+No proof found 
+96.919s elapsed time, 54.703s cpu time, 1.953s GC time 
+6855.632s elapsed time, 1275.016s cpu time, 73.000s GC time 
+
+  apply(insert assms)
+  apply (unfold thms_to_unfold actions_to_unfold)
+  apply (simp (no_asm) only: Ball_set_if_singleton Ball_set_singleton Ball_set_nil Let_def)
+  apply (simp (no_asm) only: zero0_simp if_True if_False)?
+
+
+
+
+
+
+
+
+
+
+
+
+
+proof (intro conjI)
+  show goal_1: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ SWMR ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal1_1: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ SWMR ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal1_2: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     if "testing_P T"
+     using that 
+  apply (simp add: CSTATE_different1 C_msg_P_oppo_def MESI_State.distinct(11,183) SharedSnpInv'_CSTATE_invariant5) done
+   show goal1_3: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     if "testing_P T"
+     using that 
+  apply (simp add: CSTATE_starting_transaction_otherside_invariant1 HSTATE_X_Evict_invariant1 H_msg_P_same_def
+    MESI_State.distinct(11) SharedSnpInv'_CSTATE_invariant5 i4 nextDTHDataPending_general_rule_4_0) done
+   show goal1_4: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_2: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ SWMR (T [ -=i 0]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal2_1: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ SWMR (T [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal2_2: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     if "testing_P T"
+     using that  using C_msg_P_oppo_def i3 minus_op_invariant1 nextHTDDataPending_general_rule_12_0 apply presburger done
+   show goal2_3: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     if "testing_P T"
+     using that 
+  using H_msg_P_same_def i4 minus_op_invariant1 nextDTHDataPending_general_rule_8_0 remove_instr_HSTATE
+    apply presburger done
+   show goal2_4: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     if "testing_P T"
+     using that 
+  using H_msg_P_same_def i5 minus_op_invariant1 nextDTHDataPending_general_rule_8_0 remove_instr_HSTATE
+    apply presburger done
+qed
+  show goal_3: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ SWMR ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal3_1: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ SWMR ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal3_2: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     if "testing_P T"
+     using that 
+  apply (simp add: CSTATE_different1 C_msg_P_oppo_def MESI_State.distinct(15,187) SharedSnpInv'_CSTATE_invariant5) done
+   show goal3_3: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     if "testing_P T"
+     using that 
+  apply (simp add: CSTATE_different1 H_msg_P_same_def InvalidX_HSTATE1 MESI_State.distinct(15)
+    SharedSnpInv'_CSTATE_invariant5 i4 nextDTHDataPending_general_rule_4_0) done
+   show goal3_4: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     if "testing_P T"
+     using that 
+  apply (simp add: H_msg_P_same_def InvalidX_HSTATE1 MESI_State.distinct(15) SharedSnpInv'_CSTATE_invariant5 i5
+    nextDTHDataPending_general_rule_4_0) done
+qed
+  show goal_4: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ SWMR ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal4_1: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ SWMR ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal4_2: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     if "testing_P T"
+     using that  apply (simp add: C_msg_P_oppo_def MESI_State.distinct(207,35) SharedSnpInv'_CSTATE_invariant5) done
+   show goal4_3: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal4_4: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_5: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal5_1: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal5_2: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     if "testing_P T"
+     using that 
+  apply (simp add: CSTATE_different1 C_msg_P_oppo_def MESI_State.distinct(219,47) SharedSnpInv'_CSTATE_invariant5) done
+   show goal5_3: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal5_4: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_6: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal6_1: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal6_2: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     if "testing_P T"
+     using that  apply (simp add: CSTATE_different1 C_msg_P_oppo_def MESI_State.distinct(215,43)) done
+   show goal6_3: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal6_4: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_7: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal7_1: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal7_2: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal7_3: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal7_4: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_8: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal8_1: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal8_2: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     if "testing_P T"
+     using that  apply (simp add: C_msg_P_oppo_def MESI_State.distinct(139,5) SharedSnpInv'_CSTATE_invariant5) done
+   show goal8_3: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     if "testing_P T"
+     using that 
+  apply (simp add: CSTATE_inequality_invariant CSTATE_otherside_rule_19 HSTATE_general_rule_7_0 H_msg_P_same_def
+    MESI_State.distinct(5) SharedSnpInv'_CSTATE_invariant5 i4 nextDTHDataPending_general_rule_6_0) done
+   show goal8_4: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_9: "CXL_SPG_used T 0 ∧ CSTATE ISD T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= ISDI]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= ISDI]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= ISDI]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= ISDI])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal9_1: "CXL_SPG_used T 0 ∧ CSTATE ISD T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= ISDI])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal9_2: "CXL_SPG_used T 0 ∧ CSTATE ISD T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= ISDI])"
+     if "testing_P T"
+     using that  apply fastforce done
+   show goal9_3: "CXL_SPG_used T 0 ∧ CSTATE ISD T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= ISDI])"
+     if "testing_P T"
+     using that 
+  apply (simp add: CSTATE_inequality_invariant CSTATE_otherside_rule_19 HSTATE_rule_14 H_msg_P_same_def
+    MESI_State.distinct(13) SharedSnpInv'_CSTATE_invariant5 i4 nextDTHDataPending_general_rule_6_0) done
+   show goal9_4: "CXL_SPG_used T 0 ∧ CSTATE ISD T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= ISDI])"
+     if "testing_P T"
+     using that  apply simp done
+qed
+  show goal_10: "CSTATE ISD T 0 ∧ nextHTDDataPending T 0 ⟶ SWMR ( T [ 0 s= Shared] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Shared] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Shared] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Shared] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal10_1: "CSTATE ISD T 0 ∧ nextHTDDataPending T 0 ⟶ SWMR ( T [ 0 s= Shared] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal10_2: "CSTATE ISD T 0 ∧ nextHTDDataPending T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Shared] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that  using CSTATE_assign_rule_6 MESI_State.distinct(97) apply auto[1] done
+   show goal10_3: "CSTATE ISD T 0 ∧ nextHTDDataPending T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Shared] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that  using CSTATE_assign_rule_6 CSTATE_otherside_rule_5_0 MESI_State.distinct(3) apply fastforce done
+   show goal10_4: "CSTATE ISD T 0 ∧ nextHTDDataPending T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Shared] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that  using CSTATE_assign_rule_6 CSTATE_otherside_rule_5_0 apply fastforce done
+qed
+  show goal_11: "CSTATE ISDI T 0 ∧ nextHTDDataPending T 0 ⟶ SWMR ( T [ 0 s= Invalid] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Invalid] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Invalid] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Invalid] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal11_1: "CSTATE ISDI T 0 ∧ nextHTDDataPending T 0 ⟶ SWMR ( T [ 0 s= Invalid] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal11_2: "CSTATE ISDI T 0 ∧ nextHTDDataPending T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Invalid] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that  using CSTATE_assign_rule_6 C_msg_P_oppo_def MESI_State.distinct(139,5) apply auto[1] done
+   show goal11_3: "CSTATE ISDI T 0 ∧ nextHTDDataPending T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Invalid] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that 
+  apply (metis (mono_tags, lifting) CSTATE_assign_rule_6 CSTATE_inequality_invariant CSTATE_otherside_rule_5_0
+    HSTATE_rule_6 H_msg_P_same_def MESI_State.distinct(5) i4 nextDTHDataPending_other_rule_5_0) done
+   show goal11_4: "CSTATE ISDI T 0 ∧ nextHTDDataPending T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Invalid] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that 
+  apply (metis (mono_tags, lifting) CSTATE_assign_rule_6 CSTATE_inequality_invariant CSTATE_otherside_rule_5_0
+    HSTATE_rule_6 H_msg_P_same_def MESI_State.distinct(5) i5 nextDTHDataPending_other_rule_5_0) done
+qed
+  show goal_12: "CSTATE IMAD T 0 ∧ nextHTDDataPending T 0 ⟶ SWMR ( T [ 0 s= IMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= IMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= IMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= IMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal12_1: "CSTATE IMAD T 0 ∧ nextHTDDataPending T 0 ⟶ SWMR ( T [ 0 s= IMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal12_2: "CSTATE IMAD T 0 ∧ nextHTDDataPending T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= IMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal12_3: "CSTATE IMAD T 0 ∧ nextHTDDataPending T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= IMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal12_4: "CSTATE IMAD T 0 ∧ nextHTDDataPending T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= IMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that  apply (simp add: MESI_State.distinct(17) i5 nextDTHDataPending_other_rule_4_0) done
+qed
+  show goal_13: "CSTATE SMAD T 0 ∧ nextHTDDataPending T 0 ⟶ SWMR ( T [ 0 s= SMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= SMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= SMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= SMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal13_1: "CSTATE SMAD T 0 ∧ nextHTDDataPending T 0 ⟶ SWMR ( T [ 0 s= SMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal13_2: "CSTATE SMAD T 0 ∧ nextHTDDataPending T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= SMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal13_3: "CSTATE SMAD T 0 ∧ nextHTDDataPending T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= SMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal13_4: "CSTATE SMAD T 0 ∧ nextHTDDataPending T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= SMA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that  apply simp done
+qed
+  show goal_14: "CSTATE IMAD T 0 ∧ nextGOPending T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= IMD] [ 0 -=reqresp ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= IMD] [ 0 -=reqresp ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= IMD] [ 0 -=reqresp ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= IMD] [ 0 -=reqresp ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal14_1: "CSTATE IMAD T 0 ∧ nextGOPending T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= IMD] [ 0 -=reqresp ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal14_2: "CSTATE IMAD T 0 ∧ nextGOPending T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= IMD] [ 0 -=reqresp ])"
+     if "testing_P T"
+     using that 
+  apply (simp add: C_msg_P_oppo_def MESI_State.distinct(19) xyad_go_invariant_CSTATE_sameside zero_le) done
+   show goal14_3: "CSTATE IMAD T 0 ∧ nextGOPending T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= IMD] [ 0 -=reqresp ])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal14_4: "CSTATE IMAD T 0 ∧ nextGOPending T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= IMD] [ 0 -=reqresp ])"
+     if "testing_P T"
+     using that  apply simp done
+qed
+  show goal_15: "CSTATE ISAD T 0 ∧ nextGOPending T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= ISD] [ 0 -=reqresp ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= ISD] [ 0 -=reqresp ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= ISD] [ 0 -=reqresp ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= ISD] [ 0 -=reqresp ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal15_1: "CSTATE ISAD T 0 ∧ nextGOPending T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= ISD] [ 0 -=reqresp ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal15_2: "CSTATE ISAD T 0 ∧ nextGOPending T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= ISD] [ 0 -=reqresp ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal15_3: "CSTATE ISAD T 0 ∧ nextGOPending T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= ISD] [ 0 -=reqresp ])"
+     if "testing_P T"
+     using that  apply (simp add: zero_le) done
+   show goal15_4: "CSTATE ISAD T 0 ∧ nextGOPending T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= ISD] [ 0 -=reqresp ])"
+     if "testing_P T"
+     using that  apply simp done
+qed
+  show goal_16: "CSTATE ISAD T 0 ∧ nextHTDDataPending T 0 ⟶ SWMR ( T [ 0 s= ISA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= ISA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= ISA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= ISA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal16_1: "CSTATE ISAD T 0 ∧ nextHTDDataPending T 0 ⟶ SWMR ( T [ 0 s= ISA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal16_2: "CSTATE ISAD T 0 ∧ nextHTDDataPending T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= ISA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that  apply fastforce done
+   show goal16_3: "CSTATE ISAD T 0 ∧ nextHTDDataPending T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= ISA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal16_4: "CSTATE ISAD T 0 ∧ nextHTDDataPending T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= ISA] [ 0 :=dd getHTDDataOrMakeup T 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that 
+  apply (simp add: CSTATE_xyad_htdd_invariant3 HSTATE_rule_3 H_msg_P_same_def MESI_State.distinct(9) i5
+    nextDTHDataPending_other_rule_4_0) done
+qed
+  show goal_17: "CSTATE SMAD T 0 ∧ nextGOPending T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= SMD] [ 0 -=reqresp ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= SMD] [ 0 -=reqresp ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= SMD] [ 0 -=reqresp ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= SMD] [ 0 -=reqresp ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal17_1: "CSTATE SMAD T 0 ∧ nextGOPending T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= SMD] [ 0 -=reqresp ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal17_2: "CSTATE SMAD T 0 ∧ nextGOPending T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= SMD] [ 0 -=reqresp ])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal17_3: "CSTATE SMAD T 0 ∧ nextGOPending T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= SMD] [ 0 -=reqresp ])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal17_4: "CSTATE SMAD T 0 ∧ nextGOPending T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= SMD] [ 0 -=reqresp ])"
+     if "testing_P T"
+     using that  apply simp done
+qed
+  show goal_18: "CSTATE SMA T 0 ∧ nextGOPending T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal18_1: "CSTATE SMA T 0 ∧ nextGOPending T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal18_2: "CSTATE SMA T 0 ∧ nextGOPending T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal18_3: "CSTATE SMA T 0 ∧ nextGOPending T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal18_4: "CSTATE SMA T 0 ∧ nextGOPending T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_19: "CXL_SPG_used T 0 ∧ CSTATE SMAD T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IMAD]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IMAD]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IMAD]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IMAD])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal19_1: "CXL_SPG_used T 0 ∧ CSTATE SMAD T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IMAD])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal19_2: "CXL_SPG_used T 0 ∧ CSTATE SMAD T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IMAD])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal19_3: "CXL_SPG_used T 0 ∧ CSTATE SMAD T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IMAD])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal19_4: "CXL_SPG_used T 0 ∧ CSTATE SMAD T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IMAD])"
+     if "testing_P T"
+     using that 
+  apply (simp add: CSTATE_inequality_invariant CSTATE_otherside_rule_7_0 HSTATE_general_rule_7_0 H_msg_P_same_def
+    MESI_State.distinct(15) SharedSnpInv'_CSTATE_invariant5 i5 nextDTHDataPending_general_rule_6_0) done
+qed
+  show goal_20: "CSTATE SMD T 0 ∧ nextHTDDataPending T 0 ⟶ SWMR ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal20_1: "CSTATE SMD T 0 ∧ nextHTDDataPending T 0 ⟶ SWMR ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal20_2: "CSTATE SMD T 0 ∧ nextHTDDataPending T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal20_3: "CSTATE SMD T 0 ∧ nextHTDDataPending T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal20_4: "CSTATE SMD T 0 ∧ nextHTDDataPending T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_21: "CSTATE IMA T 0 ∧ nextGOPending T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal21_1: "CSTATE IMA T 0 ∧ nextGOPending T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal21_2: "CSTATE IMA T 0 ∧ nextGOPending T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal21_3: "CSTATE IMA T 0 ∧ nextGOPending T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal21_4: "CSTATE IMA T 0 ∧ nextGOPending T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Modified] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_22: "CSTATE ISA T 0 ∧ nextGOPending T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Shared] [ 0 -=reqresp ] [ -=i 0]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Shared] [ 0 -=reqresp ] [ -=i 0]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Shared] [ 0 -=reqresp ] [ -=i 0]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Shared] [ 0 -=reqresp ] [ -=i 0])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal22_1: "CSTATE ISA T 0 ∧ nextGOPending T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Shared] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal22_2: "CSTATE ISA T 0 ∧ nextGOPending T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Shared] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that  using CSTATE_assign_rule_2 apply force done
+   show goal22_3: "CSTATE ISA T 0 ∧ nextGOPending T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Shared] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that 
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_otherside_rule_7 CSTATE_remove_op HSTATE_rule_2
+    H_msg_P_same_def MESI_State.distinct(3) i4 nextDTHDataPending_general_rule_1_0 xyad_go_invariant_CSTATE_sameside
+    zero_le) done
+   show goal22_4: "CSTATE ISA T 0 ∧ nextGOPending T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Shared] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that 
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_otherside_rule_7 CSTATE_remove_op HSTATE_rule_2
+    H_msg_P_same_def MESI_State.distinct(3) i5 nextDTHDataPending_general_rule_1_0 xyad_go_invariant_CSTATE_sameside
+    zero_le) done
+qed
+  show goal_23: "CSTATE Modified T 0 ∧ nextStore T 0 ⟶ SWMR (T [ -=i 0]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal23_1: "CSTATE Modified T 0 ∧ nextStore T 0 ⟶ SWMR (T [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal23_2: "CSTATE Modified T 0 ∧ nextStore T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     if "testing_P T"
+     using that 
+  apply (metis (no_types, lifting) C_msg_P_oppo_def i3 minus_op_invariant1 nextHTDDataPending_general_rule_12_0) done
+   show goal23_3: "CSTATE Modified T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     if "testing_P T"
+     using that 
+  apply (metis H_msg_P_same_def i4 minus_op_invariant1 nextDTHDataPending_general_rule_8_0 remove_instr_HSTATE) done
+   show goal23_4: "CSTATE Modified T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     if "testing_P T"
+     using that 
+  apply (metis H_msg_P_same_def i5 minus_op_invariant1 nextDTHDataPending_general_rule_8_0
+    remove_instr_HSTATE) (1.2 s) done
+qed
+  show goal_24: "CSTATE Modified T 0 ∧ nextLoad T 0 ⟶ SWMR (T [ -=i 0]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal24_1: "CSTATE Modified T 0 ∧ nextLoad T 0 ⟶ SWMR (T [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal24_2: "CSTATE Modified T 0 ∧ nextLoad T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     if "testing_P T"
+     using that 
+  apply (metis (no_types, lifting) C_msg_P_oppo_def i3 minus_op_invariant1 nextHTDDataPending_general_rule_12_0) done
+   show goal24_3: "CSTATE Modified T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     if "testing_P T"
+     using that 
+  apply (metis H_msg_P_same_def i4 minus_op_invariant1 nextDTHDataPending_general_rule_8_0
+    remove_instr_HSTATE) (1.6 s) done
+   show goal24_4: "CSTATE Modified T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     if "testing_P T"
+     using that 
+  apply (metis H_msg_P_same_def i5 minus_op_invariant1 nextDTHDataPending_general_rule_8_0 remove_instr_HSTATE) done
+qed
+  show goal_25: "CSTATE SIA T 0 ∧ nextGOPendingIs GO_WritePull T 0 ⟶ SWMR (consumeGOSendData 0 Invalid T) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (consumeGOSendData 0 Invalid T) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (consumeGOSendData 0 Invalid T) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (consumeGOSendData 0 Invalid T)"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal25_1: "CSTATE SIA T 0 ∧ nextGOPendingIs GO_WritePull T 0 ⟶ SWMR (consumeGOSendData 0 Invalid T)"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal25_2: "CSTATE SIA T 0 ∧ nextGOPendingIs GO_WritePull T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (consumeGOSendData 0 Invalid T)"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal25_3: "CSTATE SIA T 0 ∧ nextGOPendingIs GO_WritePull T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (consumeGOSendData 0 Invalid T)"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal25_4: "CSTATE SIA T 0 ∧ nextGOPendingIs GO_WritePull T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (consumeGOSendData 0 Invalid T)"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_26: "CSTATE SIA T 0 ∧ nextGOPendingIs GO_WritePullDrop T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal26_1: "CSTATE SIA T 0 ∧ nextGOPendingIs GO_WritePullDrop T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal26_2: "CSTATE SIA T 0 ∧ nextGOPendingIs GO_WritePullDrop T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that 
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_remove_op C_msg_P_oppo_def MESI_State.distinct(139,5)
+    xyad_go_invariant_CSTATE_sameside zero_le) done
+   show goal26_3: "CSTATE SIA T 0 ∧ nextGOPendingIs GO_WritePullDrop T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that 
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_otherside_rule_7 CSTATE_remove_op HSTATE_rule_2
+    H_msg_P_same_def MESI_State.distinct(5) i4 nextDTHDataPending_general_rule_1_0 xyad_go_invariant_CSTATE_sameside
+    zero_le) done
+   show goal26_4: "CSTATE SIA T 0 ∧ nextGOPendingIs GO_WritePullDrop T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that 
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_otherside_rule_7 CSTATE_remove_op HSTATE_rule_2
+    H_msg_P_same_def MESI_State.distinct(5) i5 nextDTHDataPending_general_rule_1_0 xyad_go_invariant_CSTATE_sameside
+    zero_le) done
+qed
+  show goal_27: "CSTATE IIA T 0 ∧ nextGOPendingIs GO_WritePullDrop T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal27_1: "CSTATE IIA T 0 ∧ nextGOPendingIs GO_WritePullDrop T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal27_2: "CSTATE IIA T 0 ∧ nextGOPendingIs GO_WritePullDrop T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that 
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_remove_op C_msg_P_oppo_def MESI_State.distinct(139,5)
+    xyad_go_invariant_CSTATE_sameside zero_le) done
+   show goal27_3: "CSTATE IIA T 0 ∧ nextGOPendingIs GO_WritePullDrop T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that 
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_otherside_rule_7 CSTATE_remove_op HSTATE_rule_2
+    H_msg_P_same_def MESI_State.distinct(5) i4 nextDTHDataPending_general_rule_1_0 xyad_go_invariant_CSTATE_sameside
+    zero_le) done
+   show goal27_4: "CSTATE IIA T 0 ∧ nextGOPendingIs GO_WritePullDrop T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that 
+  apply (metis (lifting) ext CSTATE_inequality_invariant CSTATE_otherside_rule_7 CSTATE_remove_op HSTATE_rule_2
+    H_msg_P_same_def MESI_State.distinct(5) i5 nextDTHDataPending_general_rule_1_0 xyad_go_invariant_CSTATE_sameside
+    zero_le) done
+qed
+  show goal_28: "CSTATE IIA T 0 ∧ nextGOPendingIs GO_WritePull T 0 ⟶ SWMR (consumeGOSendData 0 Invalid T) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (consumeGOSendData 0 Invalid T) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (consumeGOSendData 0 Invalid T) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (consumeGOSendData 0 Invalid T)"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal28_1: "CSTATE IIA T 0 ∧ nextGOPendingIs GO_WritePull T 0 ⟶ SWMR (consumeGOSendData 0 Invalid T)"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal28_2: "CSTATE IIA T 0 ∧ nextGOPendingIs GO_WritePull T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (consumeGOSendData 0 Invalid T)"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal28_3: "CSTATE IIA T 0 ∧ nextGOPendingIs GO_WritePull T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (consumeGOSendData 0 Invalid T)"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal28_4: "CSTATE IIA T 0 ∧ nextGOPendingIs GO_WritePull T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (consumeGOSendData 0 Invalid T)"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_29: "CSTATE IMD T 0 ∧ nextHTDDataPending T 0 ⟶ SWMR ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal29_1: "CSTATE IMD T 0 ∧ nextHTDDataPending T 0 ⟶ SWMR ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal29_2: "CSTATE IMD T 0 ∧ nextHTDDataPending T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal29_3: "CSTATE IMD T 0 ∧ nextHTDDataPending T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal29_4: "CSTATE IMD T 0 ∧ nextHTDDataPending T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 s= Modified] [ 0 :=dd getHTDDataOrMakeup T 0] [ -=i 0] [ 0 -=devd ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_30: "CXL_SPG_used T 0 ∧ CSTATE MIA T 0 ∧ nextSnoopIs SnpData T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal30_1: "CXL_SPG_used T 0 ∧ CSTATE MIA T 0 ∧ nextSnoopIs SnpData T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal30_2: "CXL_SPG_used T 0 ∧ CSTATE MIA T 0 ∧ nextSnoopIs SnpData T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal30_3: "CXL_SPG_used T 0 ∧ CSTATE MIA T 0 ∧ nextSnoopIs SnpData T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal30_4: "CXL_SPG_used T 0 ∧ CSTATE MIA T 0 ∧ nextSnoopIs SnpData T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_31: "CXL_SPG_used T 0 ∧ CSTATE MIA T 0 ∧ nextSnoopIs SnpData T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= SIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= SIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= SIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= SIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal31_1: "CXL_SPG_used T 0 ∧ CSTATE MIA T 0 ∧ nextSnoopIs SnpData T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= SIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal31_2: "CXL_SPG_used T 0 ∧ CSTATE MIA T 0 ∧ nextSnoopIs SnpData T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= SIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal31_3: "CXL_SPG_used T 0 ∧ CSTATE MIA T 0 ∧ nextSnoopIs SnpData T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= SIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal31_4: "CXL_SPG_used T 0 ∧ CSTATE MIA T 0 ∧ nextSnoopIs SnpData T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= SIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_32: "CXL_SPG_used T 0 ∧ CSTATE MIA T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal32_1: "CXL_SPG_used T 0 ∧ CSTATE MIA T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal32_2: "CXL_SPG_used T 0 ∧ CSTATE MIA T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that 
+  apply (simp add: C_msg_P_oppo_def MESI_State.distinct(203,31) SharedSnpInv'_CSTATE_invariant5
+    SharedSnpInv'_MAD_CSTATE_invariant5) done
+   show goal32_3: "CXL_SPG_used T 0 ∧ CSTATE MIA T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal32_4: "CXL_SPG_used T 0 ∧ CSTATE MIA T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= IIA] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_33: "CSTATE MIA T 0 ∧ nextGOPendingIs GO_WritePull T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ nat_to_id 0 +=d2hd D2HData (nextGOID T 0) (read_dev_value 0 T) (clock T)] [ -=i 0]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ nat_to_id 0 +=d2hd D2HData (nextGOID T 0) (read_dev_value 0 T) (clock T)] [ -=i 0]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ nat_to_id 0 +=d2hd D2HData (nextGOID T 0) (read_dev_value 0 T) (clock T)] [ -=i 0]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ nat_to_id 0 +=d2hd D2HData (nextGOID T 0) (read_dev_value 0 T) (clock T)] [ -=i 0])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal33_1: "CSTATE MIA T 0 ∧ nextGOPendingIs GO_WritePull T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ nat_to_id 0 +=d2hd D2HData (nextGOID T 0) (read_dev_value 0 T) (clock T)] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal33_2: "CSTATE MIA T 0 ∧ nextGOPendingIs GO_WritePull T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ nat_to_id 0 +=d2hd D2HData (nextGOID T 0) (read_dev_value 0 T) (clock T)] [ -=i 0])"
+     if "testing_P T"
+     using that 
+  apply (metis (no_types, lifting) ext CSTATE_assign_rule_4 CSTATE_disj1 CSTATE_remove_op C_msg_P_oppo_def
+    MESI_State.distinct(139,5) SharedSnpInv'_MAD_CSTATE_invariant5) done
+   show goal33_3: "CSTATE MIA T 0 ∧ nextGOPendingIs GO_WritePull T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ nat_to_id 0 +=d2hd D2HData (nextGOID T 0) (read_dev_value 0 T) (clock T)] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal33_4: "CSTATE MIA T 0 ∧ nextGOPendingIs GO_WritePull T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ nat_to_id 0 +=d2hd D2HData (nextGOID T 0) (read_dev_value 0 T) (clock T)] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_34: "CXL_SPG_used T 0 ∧ CSTATE SIA T 0 ∧ nextSnoopIs SnpInv T 0 ∧ ¬ nextReqIs DirtyEvict T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IIA]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IIA]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IIA]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IIA])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal34_1: "CXL_SPG_used T 0 ∧ CSTATE SIA T 0 ∧ nextSnoopIs SnpInv T 0 ∧ ¬ nextReqIs DirtyEvict T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IIA])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal34_2: "CXL_SPG_used T 0 ∧ CSTATE SIA T 0 ∧ nextSnoopIs SnpInv T 0 ∧ ¬ nextReqIs DirtyEvict T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IIA])"
+     if "testing_P T"
+     using that  apply (simp add: MESI_State.distinct(203,31) SharedSnpInv'_CSTATE_invariant5) done
+   show goal34_3: "CXL_SPG_used T 0 ∧ CSTATE SIA T 0 ∧ nextSnoopIs SnpInv T 0 ∧ ¬ nextReqIs DirtyEvict T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IIA])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal34_4: "CXL_SPG_used T 0 ∧ CSTATE SIA T 0 ∧ nextSnoopIs SnpInv T 0 ∧ ¬ nextReqIs DirtyEvict T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= IIA])"
+     if "testing_P T"
+     using that 
+  apply (simp add: HSTATE_rule_14 H_msg_P_same_def MESI_State.distinct(31) SharedSnpInv'_CSTATE_invariant5 i5
+    nextDTHDataPending_general_rule_6_0) done
+qed
+  show goal_35: "CXL_SPG_used T 0 ∧ CSTATE Modified T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal35_1: "CXL_SPG_used T 0 ∧ CSTATE Modified T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal35_2: "CXL_SPG_used T 0 ∧ CSTATE Modified T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that 
+  apply (simp add: C_msg_P_oppo_def MESI_State.distinct(139,5) SharedSnpInv'_CSTATE_invariant5
+    SharedSnpInv'_MAD_CSTATE_invariant5) done
+   show goal35_3: "CXL_SPG_used T 0 ∧ CSTATE Modified T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal35_4: "CXL_SPG_used T 0 ∧ CSTATE Modified T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_36: "CXL_SPG_used T 0 ∧ CSTATE Modified T 0 ∧ nextSnoopIs SnpData T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Shared] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Shared] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Shared] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Shared] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal36_1: "CXL_SPG_used T 0 ∧ CSTATE Modified T 0 ∧ nextSnoopIs SnpData T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Shared] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal36_2: "CXL_SPG_used T 0 ∧ CSTATE Modified T 0 ∧ nextSnoopIs SnpData T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Shared] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal36_3: "CXL_SPG_used T 0 ∧ CSTATE Modified T 0 ∧ nextSnoopIs SnpData T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Shared] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal36_4: "CXL_SPG_used T 0 ∧ CSTATE Modified T 0 ∧ nextSnoopIs SnpData T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspSFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Shared] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_37: "CXL_SPG_used T 0 ∧ CSTATE Modified T 0 ∧ nextSnoopIs SnpData T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal37_1: "CXL_SPG_used T 0 ∧ CSTATE Modified T 0 ∧ nextSnoopIs SnpData T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal37_2: "CXL_SPG_used T 0 ∧ CSTATE Modified T 0 ∧ nextSnoopIs SnpData T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal37_3: "CXL_SPG_used T 0 ∧ CSTATE Modified T 0 ∧ nextSnoopIs SnpData T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal37_4: "CXL_SPG_used T 0 ∧ CSTATE Modified T 0 ∧ nextSnoopIs SnpData T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIFwdM nextSnoopID T 0] [0 -=snp ] [ 0 s= Invalid] [ nat_to_id 0 +=d2hd D2HData (nextSnoopID T 0) (read_dev_value 0 T) (clock T)])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_38: "HSTATE InvalidM T ∧ nextReqIs RdShared T 0 ∧ GTS T ((0 + 1) mod 2) ⟶ SWMR ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal38_1: "HSTATE InvalidM T ∧ nextReqIs RdShared T 0 ∧ GTS T ((0 + 1) mod 2) ⟶ SWMR ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal38_2: "HSTATE InvalidM T ∧ nextReqIs RdShared T 0 ∧ GTS T ((0 + 1) mod 2) ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal38_3: "HSTATE InvalidM T ∧ nextReqIs RdShared T 0 ∧ GTS T ((0 + 1) mod 2) ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+   show goal38_4: "HSTATE InvalidM T ∧ nextReqIs RdShared T 0 ∧ GTS T ((0 + 1) mod 2) ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+qed
+  show goal_39: "HSTATE InvalidM T ∧ nextReqIs RdOwn T 0 ∧ GTS T ((0 + 1) mod 2) ⟶ SWMR ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal39_1: "HSTATE InvalidM T ∧ nextReqIs RdOwn T 0 ∧ GTS T ((0 + 1) mod 2) ⟶ SWMR ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal39_2: "HSTATE InvalidM T ∧ nextReqIs RdOwn T 0 ∧ GTS T ((0 + 1) mod 2) ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal39_3: "HSTATE InvalidM T ∧ nextReqIs RdOwn T 0 ∧ GTS T ((0 + 1) mod 2) ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that  apply (metis HOST_State.distinct(9) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8)) done
+   show goal39_4: "HSTATE InvalidM T ∧ nextReqIs RdOwn T 0 ∧ GTS T ((0 + 1) mod 2) ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(7) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+qed
+  show goal_40: "HSTATE SharedM T ∧ nextReqIs RdShared T 0 ∧ GTS T ((0 + 1) mod 2) ⟶ SWMR ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal40_1: "HSTATE SharedM T ∧ nextReqIs RdShared T 0 ∧ GTS T ((0 + 1) mod 2) ⟶ SWMR ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal40_2: "HSTATE SharedM T ∧ nextReqIs RdShared T 0 ∧ GTS T ((0 + 1) mod 2) ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal40_3: "HSTATE SharedM T ∧ nextReqIs RdShared T 0 ∧ GTS T ((0 + 1) mod 2) ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+   show goal40_4: "HSTATE SharedM T ∧ nextReqIs RdShared T 0 ∧ GTS T ((0 + 1) mod 2) ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= SharedM] [ 0 +=reqresp GO Shared nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+qed
+  show goal_41: "HSTATE SharedM T ∧ nextReqIs CleanEvict T 0 ∧ ¬ lastSharer T ∧ GTS T ((0 + 1) mod 2) ∧ ¬ CSTATE IIA T ((0 + 1) mod 2) ⟶ SWMR ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO_WritePullDrop Invalid nextReqID T 0] [ 0 -=req ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO_WritePullDrop Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO_WritePullDrop Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO_WritePullDrop Invalid nextReqID T 0] [ 0 -=req ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal41_1: "HSTATE SharedM T ∧ nextReqIs CleanEvict T 0 ∧ ¬ lastSharer T ∧ GTS T ((0 + 1) mod 2) ∧ ¬ CSTATE IIA T ((0 + 1) mod 2) ⟶ SWMR ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO_WritePullDrop Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal41_2: "HSTATE SharedM T ∧ nextReqIs CleanEvict T 0 ∧ ¬ lastSharer T ∧ GTS T ((0 + 1) mod 2) ∧ ¬ CSTATE IIA T ((0 + 1) mod 2) ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO_WritePullDrop Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using CSTATE_general_rule_3_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_6_0 apply presburger done
+   show goal41_3: "HSTATE SharedM T ∧ nextReqIs CleanEvict T 0 ∧ ¬ lastSharer T ∧ GTS T ((0 + 1) mod 2) ∧ ¬ CSTATE IIA T ((0 + 1) mod 2) ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO_WritePullDrop Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+   show goal41_4: "HSTATE SharedM T ∧ nextReqIs CleanEvict T 0 ∧ ¬ lastSharer T ∧ GTS T ((0 + 1) mod 2) ∧ ¬ CSTATE IIA T ((0 + 1) mod 2) ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO_WritePullDrop Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+qed
+  show goal_42: "HSTATE SharedM T ∧ nextReqIs CleanEvict T 0 ∧ ¬ lastSharer T ∧ GTS T ((0 + 1) mod 2) ∧ ¬ CSTATE IIA T ((0 + 1) mod 2) ⟶ SWMR ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal42_1: "HSTATE SharedM T ∧ nextReqIs CleanEvict T 0 ∧ ¬ lastSharer T ∧ GTS T ((0 + 1) mod 2) ∧ ¬ CSTATE IIA T ((0 + 1) mod 2) ⟶ SWMR ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal42_2: "HSTATE SharedM T ∧ nextReqIs CleanEvict T 0 ∧ ¬ lastSharer T ∧ GTS T ((0 + 1) mod 2) ∧ ¬ CSTATE IIA T ((0 + 1) mod 2) ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using CSTATE_general_rule_3_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_6_0 apply presburger done
+   show goal42_3: "HSTATE SharedM T ∧ nextReqIs CleanEvict T 0 ∧ ¬ lastSharer T ∧ GTS T ((0 + 1) mod 2) ∧ ¬ CSTATE IIA T ((0 + 1) mod 2) ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(195) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+   show goal42_4: "HSTATE SharedM T ∧ nextReqIs CleanEvict T 0 ∧ ¬ lastSharer T ∧ GTS T ((0 + 1) mod 2) ∧ ¬ CSTATE IIA T ((0 + 1) mod 2) ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(167) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+qed
+  show goal_43: "HSTATE SharedM T ∧ nextReqIs CleanEvict T 0 ∧ lastSharer T ∧ GTS T ((0 + 1) mod 2) ⟶ SWMR ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal43_1: "HSTATE SharedM T ∧ nextReqIs CleanEvict T 0 ∧ lastSharer T ∧ GTS T ((0 + 1) mod 2) ⟶ SWMR ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal43_2: "HSTATE SharedM T ∧ nextReqIs CleanEvict T 0 ∧ lastSharer T ∧ GTS T ((0 + 1) mod 2) ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using CSTATE_general_rule_3_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_6_0 apply presburger done
+   show goal43_3: "HSTATE SharedM T ∧ nextReqIs CleanEvict T 0 ∧ lastSharer T ∧ GTS T ((0 + 1) mod 2) ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  apply (metis HOST_State.distinct(197) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8)) done
+   show goal43_4: "HSTATE SharedM T ∧ nextReqIs CleanEvict T 0 ∧ lastSharer T ∧ GTS T ((0 + 1) mod 2) ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that  apply (simp add: hstate_invariants(13,8)) done
+qed
+  show goal_44: "HSTATE SharedM T ∧ nextReqIs CleanEvictNoData T 0 ∧ ¬ lastSharer T ∧ GTS T ((0 + 1) mod 2) ∧ ¬ CSTATE IIA T 1 ⟶ SWMR ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal44_1: "HSTATE SharedM T ∧ nextReqIs CleanEvictNoData T 0 ∧ ¬ lastSharer T ∧ GTS T ((0 + 1) mod 2) ∧ ¬ CSTATE IIA T 1 ⟶ SWMR ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal44_2: "HSTATE SharedM T ∧ nextReqIs CleanEvictNoData T 0 ∧ ¬ lastSharer T ∧ GTS T ((0 + 1) mod 2) ∧ ¬ CSTATE IIA T 1 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that  apply (simp add: nextHTDDataPending_general_rule_6_0) done
+   show goal44_3: "HSTATE SharedM T ∧ nextReqIs CleanEvictNoData T 0 ∧ ¬ lastSharer T ∧ GTS T ((0 + 1) mod 2) ∧ ¬ CSTATE IIA T 1 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+   show goal44_4: "HSTATE SharedM T ∧ nextReqIs CleanEvictNoData T 0 ∧ ¬ lastSharer T ∧ GTS T ((0 + 1) mod 2) ∧ ¬ CSTATE IIA T 1 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  apply (simp add: HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8)) done
+qed
+  show goal_45: "HSTATE SharedM T ∧ nextReqIs CleanEvictNoData T 0 ∧ lastSharer T ∧ GTS T ((0 + 1) mod 2) ⟶ SWMR ( T [ 5 sHost= InvalidM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= InvalidM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= InvalidM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= InvalidM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal45_1: "HSTATE SharedM T ∧ nextReqIs CleanEvictNoData T 0 ∧ lastSharer T ∧ GTS T ((0 + 1) mod 2) ⟶ SWMR ( T [ 5 sHost= InvalidM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal45_2: "HSTATE SharedM T ∧ nextReqIs CleanEvictNoData T 0 ∧ lastSharer T ∧ GTS T ((0 + 1) mod 2) ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= InvalidM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using CSTATE_general_rule_3_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_6_0 apply presburger done
+   show goal45_3: "HSTATE SharedM T ∧ nextReqIs CleanEvictNoData T 0 ∧ lastSharer T ∧ GTS T ((0 + 1) mod 2) ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= InvalidM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(111) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+   show goal45_4: "HSTATE SharedM T ∧ nextReqIs CleanEvictNoData T 0 ∧ lastSharer T ∧ GTS T ((0 + 1) mod 2) ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= InvalidM] [ 0 +=reqresp GO Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(109) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+qed
+  show goal_46: "HSTATE SharedM T ∧ nextReqIs DirtyEvict T 0 ∧ GTS T ((0 + 1) mod 2) ∧ CSTATE IIA T 0 ⟶ SWMR ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal46_1: "HSTATE SharedM T ∧ nextReqIs DirtyEvict T 0 ∧ GTS T ((0 + 1) mod 2) ∧ CSTATE IIA T 0 ⟶ SWMR ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal46_2: "HSTATE SharedM T ∧ nextReqIs DirtyEvict T 0 ∧ GTS T ((0 + 1) mod 2) ∧ CSTATE IIA T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using CSTATE_general_rule_3_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_6_0 apply presburger done
+   show goal46_3: "HSTATE SharedM T ∧ nextReqIs DirtyEvict T 0 ∧ GTS T ((0 + 1) mod 2) ∧ CSTATE IIA T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  apply (metis HOST_State.distinct(195) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8)) done
+   show goal46_4: "HSTATE SharedM T ∧ nextReqIs DirtyEvict T 0 ∧ GTS T ((0 + 1) mod 2) ∧ CSTATE IIA T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  apply (simp add: HOST_State.distinct(167) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8)) done
+qed
+  show goal_47: "HSTATE ModifiedM T ∧ nextReqIs DirtyEvict T 0 ∧ GTS T ((0 + 1) mod 2) ∧ CSTATE MIA T 0 ⟶ SWMR ( T [ 5 sHost= ID] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= ID] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= ID] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= ID] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal47_1: "HSTATE ModifiedM T ∧ nextReqIs DirtyEvict T 0 ∧ GTS T ((0 + 1) mod 2) ∧ CSTATE MIA T 0 ⟶ SWMR ( T [ 5 sHost= ID] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal47_2: "HSTATE ModifiedM T ∧ nextReqIs DirtyEvict T 0 ∧ GTS T ((0 + 1) mod 2) ∧ CSTATE MIA T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= ID] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using CSTATE_general_rule_3_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_6_0 apply presburger done
+   show goal47_3: "HSTATE ModifiedM T ∧ nextReqIs DirtyEvict T 0 ∧ GTS T ((0 + 1) mod 2) ∧ CSTATE MIA T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= ID] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(173) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+   show goal47_4: "HSTATE ModifiedM T ∧ nextReqIs DirtyEvict T 0 ∧ GTS T ((0 + 1) mod 2) ∧ CSTATE MIA T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= ID] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  apply (simp add: HOST_State.distinct(145) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8)) done
+qed
+  show goal_48: "HSTATE ModifiedM T ∧ nextReqIs RdShared T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=snp SnpData nextReqID T 0] [ 5 sHost= SAD] [ 0 -=req ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=snp SnpData nextReqID T 0] [ 5 sHost= SAD] [ 0 -=req ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=snp SnpData nextReqID T 0] [ 5 sHost= SAD] [ 0 -=req ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=snp SnpData nextReqID T 0] [ 5 sHost= SAD] [ 0 -=req ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal48_1: "HSTATE ModifiedM T ∧ nextReqIs RdShared T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=snp SnpData nextReqID T 0] [ 5 sHost= SAD] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal48_2: "HSTATE ModifiedM T ∧ nextReqIs RdShared T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=snp SnpData nextReqID T 0] [ 5 sHost= SAD] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  apply (simp add: CSTATE_general_rule_8_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_13_0 one_mod_two_eq_one
+    plus_nat.add_0) done
+   show goal48_3: "HSTATE ModifiedM T ∧ nextReqIs RdShared T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=snp SnpData nextReqID T 0] [ 5 sHost= SAD] [ 0 -=req ])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal48_4: "HSTATE ModifiedM T ∧ nextReqIs RdShared T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=snp SnpData nextReqID T 0] [ 5 sHost= SAD] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_49: "HSTATE ModifiedM T ∧ nextReqIs RdOwn T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 5 sHost= MAD] [ 0 -=req ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 5 sHost= MAD] [ 0 -=req ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 5 sHost= MAD] [ 0 -=req ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 5 sHost= MAD] [ 0 -=req ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal49_1: "HSTATE ModifiedM T ∧ nextReqIs RdOwn T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 5 sHost= MAD] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal49_2: "HSTATE ModifiedM T ∧ nextReqIs RdOwn T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 5 sHost= MAD] [ 0 -=req ])"
+     if "testing_P T"
+     using that  apply simp done
+   show goal49_3: "HSTATE ModifiedM T ∧ nextReqIs RdOwn T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 5 sHost= MAD] [ 0 -=req ])"
+     if "testing_P T"
+     using that  apply (simp add: HSTATE_X_rd_invariant1 HSTATE_invariant4 H_msg_P_same_def) done
+   show goal49_4: "HSTATE ModifiedM T ∧ nextReqIs RdOwn T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 5 sHost= MAD] [ 0 -=req ])"
+     if "testing_P T"
+     using that  apply (simp add: H_msg_P_same_def) done
+qed
+  show goal_50: "HSTATE SharedM T ∧ nextReqIs RdOwn T 0 ∧ CSTATE Shared T ((0 + 1) mod 2) ⟶ SWMR (sendHostData 0 MA T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 0 -=req ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (sendHostData 0 MA T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (sendHostData 0 MA T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (sendHostData 0 MA T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 0 -=req ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal50_1: "HSTATE SharedM T ∧ nextReqIs RdOwn T 0 ∧ CSTATE Shared T ((0 + 1) mod 2) ⟶ SWMR (sendHostData 0 MA T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal50_2: "HSTATE SharedM T ∧ nextReqIs RdOwn T 0 ∧ CSTATE Shared T ((0 + 1) mod 2) ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (sendHostData 0 MA T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal50_3: "HSTATE SharedM T ∧ nextReqIs RdOwn T 0 ∧ CSTATE Shared T ((0 + 1) mod 2) ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (sendHostData 0 MA T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal50_4: "HSTATE SharedM T ∧ nextReqIs RdOwn T 0 ∧ CSTATE Shared T ((0 + 1) mod 2) ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (sendHostData 0 MA T [ (0 + 1) mod 2 +=snp SnpInv nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+  show goal_51: "HSTATE SharedM T ∧ nextReqIs RdOwn T 0 ∧ CSTATE Invalid T ((0 + 1) mod 2) ⟶ SWMR ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal51_1: "HSTATE SharedM T ∧ nextReqIs RdOwn T 0 ∧ CSTATE Invalid T ((0 + 1) mod 2) ⟶ SWMR ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal51_2: "HSTATE SharedM T ∧ nextReqIs RdOwn T 0 ∧ CSTATE Invalid T ((0 + 1) mod 2) ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that  apply (simp add: MESI_State.distinct(139,5) one_mod_two_eq_one plus_nat.add_0) done
+   show goal51_3: "HSTATE SharedM T ∧ nextReqIs RdOwn T 0 ∧ CSTATE Invalid T ((0 + 1) mod 2) ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(9) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+   show goal51_4: "HSTATE SharedM T ∧ nextReqIs RdOwn T 0 ∧ CSTATE Invalid T ((0 + 1) mod 2) ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=hostdata nextReqID T 0] [ 5 sHost= ModifiedM] [ 0 +=reqresp GO Modified nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(7) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+qed
+  show goal_52: "HSTATE SD T ∧ nextDTHDataFrom 0 T ⟶ SWMR ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal52_1: "HSTATE SD T ∧ nextDTHDataFrom 0 T ⟶ SWMR ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal52_2: "HSTATE SD T ∧ nextDTHDataFrom 0 T ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal52_3: "HSTATE SD T ∧ nextDTHDataFrom 0 T ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger done
+   show goal52_4: "HSTATE SD T ∧ nextDTHDataFrom 0 T ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger done
+qed
+  show goal_53: "HSTATE SAD T ∧ nextDTHDataFrom 0 T ⟶ SWMR ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SA] [ nat_to_id 0 -=d2hdHead ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SA] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SA] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SA] [ nat_to_id 0 -=d2hdHead ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal53_1: "HSTATE SAD T ∧ nextDTHDataFrom 0 T ⟶ SWMR ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SA] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal53_2: "HSTATE SAD T ∧ nextDTHDataFrom 0 T ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SA] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal53_3: "HSTATE SAD T ∧ nextDTHDataFrom 0 T ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SA] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(171) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger done
+   show goal53_4: "HSTATE SAD T ∧ nextDTHDataFrom 0 T ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= SA] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(143) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger done
+qed
+  show goal_54: "HSTATE MD T ∧ nextDTHDataFrom 0 T ⟶ SWMR ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal54_1: "HSTATE MD T ∧ nextDTHDataFrom 0 T ⟶ SWMR ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal54_2: "HSTATE MD T ∧ nextDTHDataFrom 0 T ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal54_3: "HSTATE MD T ∧ nextDTHDataFrom 0 T ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(9) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger done
+   show goal54_4: "HSTATE MD T ∧ nextDTHDataFrom 0 T ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(7) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger done
+qed
+  show goal_55: "HSTATE ID T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ∧ (CSTATE IIA T ((0 + 1) mod 2) ∨ CSTATE Invalid T ((0 + 1) mod 2) ∨ CSTATE SIA T ((0 + 1) mod 2)) ⟶ SWMR ( T [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal55_1: "HSTATE ID T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ∧ (CSTATE IIA T ((0 + 1) mod 2) ∨ CSTATE Invalid T ((0 + 1) mod 2) ∨ CSTATE SIA T ((0 + 1) mod 2)) ⟶ SWMR ( T [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal55_2: "HSTATE ID T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ∧ (CSTATE IIA T ((0 + 1) mod 2) ∨ CSTATE Invalid T ((0 + 1) mod 2) ∨ CSTATE SIA T ((0 + 1) mod 2)) ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that  apply (simp add: one_mod_two_eq_one plus_nat.add_0) done
+   show goal55_3: "HSTATE ID T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ∧ (CSTATE IIA T ((0 + 1) mod 2) ∨ CSTATE Invalid T ((0 + 1) mod 2) ∨ CSTATE SIA T ((0 + 1) mod 2)) ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that  apply (metis HOST_State.distinct(111) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16)) done
+   show goal55_4: "HSTATE ID T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ∧ (CSTATE IIA T ((0 + 1) mod 2) ∨ CSTATE Invalid T ((0 + 1) mod 2) ∨ CSTATE SIA T ((0 + 1) mod 2)) ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(109) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger done
+qed
+  show goal_56: "HSTATE MAD T ∧ nextDTHDataFrom 0 T ⟶ SWMR ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= MA] [ nat_to_id 0 -=d2hdHead ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= MA] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= MA] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= MA] [ nat_to_id 0 -=d2hdHead ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal56_1: "HSTATE MAD T ∧ nextDTHDataFrom 0 T ⟶ SWMR ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= MA] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal56_2: "HSTATE MAD T ∧ nextDTHDataFrom 0 T ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= MA] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal56_3: "HSTATE MAD T ∧ nextDTHDataFrom 0 T ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= MA] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(177) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger done
+   show goal56_4: "HSTATE MAD T ∧ nextDTHDataFrom 0 T ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ nat_to_id ((0 + 1) mod 2) +=h2dd DTH_HTD (getDTHDataOrMakeup (dthdatas1 T))] [ =hv getSpecificValD2H (getDTHDataOrMakeup (dthdatas1 T))] [ 5 sHost= MA] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(149) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger done
+qed
+  show goal_57: "HSTATE SAD T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] ) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] ) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] ) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] )"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal57_1: "HSTATE SAD T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal57_2: "HSTATE SAD T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that  apply (simp add: i3 nextHTDDataPending_general_rule_9_0 one_mod_two_eq_one plus_nat.add_0) done
+   show goal57_3: "HSTATE SAD T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that 
+  apply (simp add: CSTATE_general_rule_6_0 H_msg_P_same_def i5 nextDTHDataPending_general_rule_7_0 one_mod_two_eq_one
+    plus_nat.add_0) done
+   show goal57_4: "HSTATE SAD T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(141) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger done
+qed
+  show goal_58: "HSTATE SAD T ∧ nextSnpRespIs RspSFwdM T 0 ∧ GTS T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] ) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] ) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] ) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] )"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal58_1: "HSTATE SAD T ∧ nextSnpRespIs RspSFwdM T 0 ∧ GTS T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal58_2: "HSTATE SAD T ∧ nextSnpRespIs RspSFwdM T 0 ∧ GTS T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that  apply simp done
+   show goal58_3: "HSTATE SAD T ∧ nextSnpRespIs RspSFwdM T 0 ∧ GTS T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that  apply (simp add: nextDTHDataPending_general_rule_7_0 one_mod_two_eq_one plus_nat.add_0) done
+   show goal58_4: "HSTATE SAD T ∧ nextSnpRespIs RspSFwdM T 0 ∧ GTS T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SD] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(141) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger done
+qed
+  show goal_59: "HSTATE MAD T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= MD] [ 0 -=snpresp ] ) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= MD] [ 0 -=snpresp ] ) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= MD] [ 0 -=snpresp ] ) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= MD] [ 0 -=snpresp ] )"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal59_1: "HSTATE MAD T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= MD] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal59_2: "HSTATE MAD T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= MD] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that  apply (simp add: one_mod_two_eq_one) done
+   show goal59_3: "HSTATE MAD T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= MD] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(179) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger done
+   show goal59_4: "HSTATE MAD T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= MD] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(151) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger done
+qed
+  show goal_60: "HSTATE MA T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] ) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] ) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] ) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] )"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal60_1: "HSTATE MA T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal60_2: "HSTATE MA T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that 
+  apply (simp add: CSTATE_HostSide_rule_7_1 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_9_0 one_mod_two_eq_one
+    plus_nat.add_0) done
+   show goal60_3: "HSTATE MA T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(9) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger done
+   show goal60_4: "HSTATE MA T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(7) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger done
+qed
+  show goal_61: "HSTATE SA T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] ) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] ) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] ) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] )"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal61_1: "HSTATE SA T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal61_2: "HSTATE SA T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that  apply (simp add: plus_nat.add_0) done
+   show goal61_3: "HSTATE SA T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger done
+   show goal61_4: "HSTATE SA T ∧ nextSnpRespIs RspIFwdM T 0 ∧ GTS T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger done
+qed
+  show goal_62: "HSTATE SA T ∧ nextSnpRespIs RspSFwdM T 0 ∧ GTS T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] ) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] ) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] ) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] )"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal62_1: "HSTATE SA T ∧ nextSnpRespIs RspSFwdM T 0 ∧ GTS T 0 ⟶ SWMR ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal62_2: "HSTATE SA T ∧ nextSnpRespIs RspSFwdM T 0 ∧ GTS T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that  apply simp done
+   show goal62_3: "HSTATE SA T ∧ nextSnpRespIs RspSFwdM T 0 ∧ GTS T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger done
+   show goal62_4: "HSTATE SA T ∧ nextSnpRespIs RspSFwdM T 0 ∧ GTS T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Shared nextSnoopRespID T 0] [ 5 sHost= SharedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger done
+qed
+  show goal_63: "HSTATE IB T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ∧ CSTATE Invalid T ((0 + 1) mod 2) ⟶ SWMR ( T [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal63_1: "HSTATE IB T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ∧ CSTATE Invalid T ((0 + 1) mod 2) ⟶ SWMR ( T [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal63_2: "HSTATE IB T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ∧ CSTATE Invalid T ((0 + 1) mod 2) ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  using CSTATE_HostSide_rule_1_0 CSTATE_different1 CSTATE_different2 CSTATE_otherside_rule_1 C_msg_P_oppo_def
+    MESI_State.distinct(139) nat_to_id.simps(1) one_mod_two_eq_one plus_nat.add_0 apply fastforce done
+   show goal63_3: "HSTATE IB T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ∧ CSTATE Invalid T ((0 + 1) mod 2) ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(111) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger done
+   show goal63_4: "HSTATE IB T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ∧ CSTATE Invalid T ((0 + 1) mod 2) ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= InvalidM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  apply (simp add: HOST_State.distinct(109) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16)) done
+qed
+  show goal_64: "HSTATE SB T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ⟶ SWMR ( T [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal64_1: "HSTATE SB T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ⟶ SWMR ( T [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal64_2: "HSTATE SB T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  using CSTATE_HostSide_rule_1_0 CSTATE_otherside_rule_1 C_msg_P_oppo_def i3 nat_to_id.simps(1)
+    nextHTDDataPending_general_rule_1_0 apply presburger done
+   show goal64_3: "HSTATE SB T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(79) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger done
+   show goal64_4: "HSTATE SB T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= SharedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(77) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger done
+qed
+  show goal_65: "HSTATE MB T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ⟶ SWMR ( T [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal65_1: "HSTATE MB T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ⟶ SWMR ( T [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal65_2: "HSTATE MB T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  apply (simp add: CSTATE_HostSide_rule_1_0 CSTATE_otherside_rule_1 C_msg_P_oppo_def i3 nat_to_id.simps(1)) done
+   show goal65_3: "HSTATE MB T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(9) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16) apply presburger done
+   show goal65_4: "HSTATE MB T ∧ nextDTHDataFrom 0 T ∧ CSTATE Invalid T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= ModifiedM] [ nat_to_id 0 -=d2hdHead ])"
+     if "testing_P T"
+     using that 
+  apply (simp add: HOST_State.distinct(7) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(16)) done
+qed
+  show goal_66: "HSTATE InvalidM T ∧ nextReqIs DirtyEvict T 0 ∧ GTS T ((0 + 1) mod 2) ∧ CSTATE IIA T 0 ⟶ SWMR ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal66_1: "HSTATE InvalidM T ∧ nextReqIs DirtyEvict T 0 ∧ GTS T ((0 + 1) mod 2) ∧ CSTATE IIA T 0 ⟶ SWMR ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal66_2: "HSTATE InvalidM T ∧ nextReqIs DirtyEvict T 0 ∧ GTS T ((0 + 1) mod 2) ∧ CSTATE IIA T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using CSTATE_general_rule_3_0 C_msg_P_oppo_def i3 nextHTDDataPending_general_rule_6_0 apply presburger done
+   show goal66_3: "HSTATE InvalidM T ∧ nextReqIs DirtyEvict T 0 ∧ GTS T ((0 + 1) mod 2) ∧ CSTATE IIA T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(197) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+   show goal66_4: "HSTATE InvalidM T ∧ nextReqIs DirtyEvict T 0 ∧ GTS T ((0 + 1) mod 2) ∧ CSTATE IIA T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 5 sHost= IB] [ 0 +=reqresp GO_WritePull Invalid nextReqID T 0] [ 0 -=req ])"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(169) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(13,8) apply presburger done
+qed
+  show goal_67: "HSTATE MA T ∧ nextSnpRespIs RspIHitSE T 0 ∧ GTS T 0 ∧ htddatas1 T = [] ⟶ SWMR ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] ) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] ) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] ) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] )"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal67_1: "HSTATE MA T ∧ nextSnpRespIs RspIHitSE T 0 ∧ GTS T 0 ∧ htddatas1 T = [] ⟶ SWMR ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal67_2: "HSTATE MA T ∧ nextSnpRespIs RspIHitSE T 0 ∧ GTS T 0 ∧ htddatas1 T = [] ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that  using one_mod_two_eq_one plus_nat.add_0 apply fastforce done
+   show goal67_3: "HSTATE MA T ∧ nextSnpRespIs RspIHitSE T 0 ∧ GTS T 0 ∧ htddatas1 T = [] ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that 
+  using HOST_State.distinct(9) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15) apply presburger done
+   show goal67_4: "HSTATE MA T ∧ nextSnpRespIs RspIHitSE T 0 ∧ GTS T 0 ∧ htddatas1 T = [] ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ (0 + 1) mod 2 +=reqresp GO Modified nextSnoopRespID T 0] [ 5 sHost= ModifiedM] [ 0 -=snpresp ] )"
+     if "testing_P T"
+     using that  apply (metis HOST_State.distinct(7) HSTATE_equals_sHost H_msg_P_same_def hstate_invariants(15)) done
+qed
+  show goal_68: "CSTATE SIAC T 0 ∧ nextGOPendingIs GO T 0 ∧ nextGOPendingState Invalid T 0 ∧ GTS T ((0 + 1) mod 2) ∧ saneSIACGO T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0])"
+    if "testing_P T"
+    using that
+proof (intro impconjI)
+   show goal68_1: "CSTATE SIAC T 0 ∧ nextGOPendingIs GO T 0 ∧ nextGOPendingState Invalid T 0 ∧ GTS T ((0 + 1) mod 2) ∧ saneSIACGO T 0 ⟶ SWMR ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal68_2: "CSTATE SIAC T 0 ∧ nextGOPendingIs GO T 0 ∧ nextGOPendingState Invalid T 0 ∧ GTS T ((0 + 1) mod 2) ∧ saneSIACGO T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that  using CSTATE_assign_rule_2 apply fastforce done
+   show goal68_3: "CSTATE SIAC T 0 ∧ nextGOPendingIs GO T 0 ∧ nextGOPendingState Invalid T 0 ∧ GTS T ((0 + 1) mod 2) ∧ saneSIACGO T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+   show goal68_4: "CSTATE SIAC T 0 ∧ nextGOPendingIs GO T 0 ∧ nextGOPendingState Invalid T 0 ∧ GTS T ((0 + 1) mod 2) ∧ saneSIACGO T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T⦇buffer1 := Some (nextGO T 0)⦈ [ 0 s= Invalid] [ 0 -=reqresp ] [ -=i 0])"
+     if "testing_P T"
+     using that sorry (*failed to find sledgehammer proof*)
+qed
+qed

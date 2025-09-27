@@ -543,3 +543,810 @@ print_progress_bar()
 
 if __name__ == "__main__":
     print_progress_bar()
+
+
+def get_mapping_relationships():
+    """Get all mapping relationships between original and current conjuncts"""
+    return [
+        {
+            'original_lines': [200],
+            'current_line': 286,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [201],
+            'current_line': 287,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [202],
+            'current_line': 288,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [203],
+            'current_line': 289,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [204],
+            'current_line': 290,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [205],
+            'current_line': 291,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [206],
+            'current_line': 292,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [207],
+            'current_line': 293,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [208],
+            'current_line': 294,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [209],
+            'current_line': 295,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [210],
+            'current_line': 296,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [211],
+            'current_line': 297,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [212],
+            'current_line': 298,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [213],
+            'current_line': 299,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [214],
+            'current_line': 300,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [215],
+            'current_line': 301,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [216],
+            'current_line': 302,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'no_change',
+            'confidence_score': 1.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 306,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 307,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 308,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 309,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 310,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 311,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 312,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 316,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 318,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 319,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 321,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 322,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 323,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 324,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 325,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 326,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 330,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 331,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 332,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 341,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 349,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 411,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 412,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 414,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 416,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 426,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 433,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 435,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 436,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 437,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 442,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 500,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [217],
+            'current_line': 566,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'single_conjunct_transformation',
+            'confidence_score': 0.707
+        },
+        {
+            'original_lines': [],
+            'current_line': 567,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 568,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 569,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 578,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [218],
+            'current_line': 579,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'single_conjunct_transformation',
+            'confidence_score': 0.708
+        },
+        {
+            'original_lines': [],
+            'current_line': 588,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 589,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 590,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [219],
+            'current_line': 624,
+            'consolidation_type': '1_to_1',
+            'transformation_type': 'single_conjunct_transformation',
+            'confidence_score': 0.790
+        },
+        {
+            'original_lines': [],
+            'current_line': 625,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 626,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 627,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 628,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 629,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 645,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 646,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 647,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 648,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 649,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 671,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 672,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 673,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 674,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 675,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 676,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 677,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 678,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 679,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 680,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 699,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 700,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 701,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 702,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 703,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 704,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 705,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 706,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 707,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 708,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 709,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 729,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 730,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 731,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 732,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 733,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 734,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 735,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 736,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 737,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 738,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 739,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 756,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 757,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 758,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 759,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 760,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 761,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 762,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+        {
+            'original_lines': [],
+            'current_line': 763,
+            'consolidation_type': 'no_match',
+            'transformation_type': 'unknown',
+            'confidence_score': 0.000
+        },
+    ]
+
+def get_consolidation_summary():
+    """Get summary of consolidation patterns"""
+    relationships = get_mapping_relationships()
+    consolidation_counts = {}
+    for rel in relationships:
+        cons_type = rel['consolidation_type']
+        consolidation_counts[cons_type] = consolidation_counts.get(cons_type, 0) + 1
+    return consolidation_counts
+
+def get_mapping_coverage():
+    """Calculate mapping coverage statistics"""
+    relationships = get_mapping_relationships()
+    total_original_lines = set()
+    for rel in relationships:
+        total_original_lines.update(rel['original_lines'])
+    
+    return {
+        'total_mappings': len(relationships),
+        'original_lines_mapped': len(total_original_lines),
+        'expected_original_lines': 796,
+        'coverage_percentage': (len(total_original_lines) / 796) * 100.0
+    }
+
+def print_mapping_summary():
+    """Print comprehensive mapping summary"""
+    coverage = get_mapping_coverage()
+    consolidation = get_consolidation_summary()
+    
+    print('=== CONJUNCT MAPPING ANALYSIS SUMMARY ===')
+    print(f'Total mappings: {coverage["total_mappings"]}')
+    print(f'Original lines mapped: {coverage["original_lines_mapped"]}/796')
+    print(f'Coverage: {coverage["coverage_percentage"]:.1f}%')
+    print()
+    print('Consolidation patterns:')
+    for pattern, count in consolidation.items():
+        print(f'  {pattern}: {count}')
+    print('=' * 45)

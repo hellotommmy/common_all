@@ -1,0 +1,11 @@
+{
+  "total_conjuncts": 595,
+  "type_distribution": {
+    "state_constraint": 364,
+    "other": 54,
+    "channel_constraint": 150,
+    "hardcoded_device": 27
+  },
+  "line_range": "200-795",
+  "extraction_timestamp": "2025-01-20"
+}

@@ -1,0 +1,15 @@
+{
+  "analysis_id": "mapping_analysis_20250928_010019",
+  "timestamp": "2025-09-28T01:00:20.227539",
+  "mappings": [
+    {
+      "original_lines": [
+        200
+      ],
+      "current_line": 286,
+      "consolidation_type": "1_to_1",
+      "transformation_type": "no_change",
+      "confidence_score": 1.0,
+      "explanation": "1:1 mapping with 1.000 similarity",
+      "consolidation_patterns": [
+        

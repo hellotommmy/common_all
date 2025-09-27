@@ -83,11 +83,11 @@
 - [x] T027 Command-line interface for mapping analysis execution in specs/001-multi-device-conjunct-modification-plan/run_mapping_analysis.py
 
 ## Phase 3.8: Integration and Execution
-- [ ] T028 Execute comprehensive mapping analysis on actual theory files
-- [ ] T029 Update betterProofAll/Common/SWMR_modification_progress.py with mapping relationships
-- [ ] T030 Update betterProofAll/Common/DETAILED_MODIFICATIONS.md with consolidation explanations
-- [ ] T031 Update betterProofAll/Common/PROGRESS_REPORT.md with mapping analysis summary
-- [ ] T032 Create comprehensive mapping results documentation file
+- [x] T028 Execute comprehensive mapping analysis on actual theory files
+- [x] T029 Update betterProofAll/Common/SWMR_modification_progress.py with mapping relationships
+- [x] T030 Update betterProofAll/Common/DETAILED_MODIFICATIONS.md with consolidation explanations
+- [x] T031 Update betterProofAll/Common/PROGRESS_REPORT.md with mapping analysis summary
+- [x] T032 Create comprehensive mapping results documentation file
 
 ## Phase 3.9: Final Validation and Polish
 - [ ] T033 [P] Validate 100% coverage of 796 original conjuncts (no conjunct left unmapped)
