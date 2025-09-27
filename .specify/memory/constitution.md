@@ -1,11 +1,11 @@
 <!--
 Sync Impact Report:
-- Version change: 1.2.0 → 1.3.0
-- Modified principles: II. Systematic Documentation (added conjunct mapping analysis requirements)
-- Added sections: VII. Conjunct Mapping Analysis (new principle for line-by-line mapping verification)
+- Version change: 1.3.0 → 1.4.0
+- Modified principles: VI. English-Only Output (enhanced with corruption detection and recovery procedures)
+- Added sections: Corruption Recovery Procedures in English-Only Output principle
 - Removed sections: None
 - Templates requiring updates: ✅ constitution.md updated
-- Follow-up TODOs: None
+- Follow-up TODOs: DETAILED_MODIFICATIONS.md requires immediate regeneration in English
 -->
 
 # Multi-Device Theory Modification Constitution
@@ -34,6 +34,16 @@ Every modification session MUST be committed and pushed to the common_all reposi
 ### VI. English-Only Output (NON-NEGOTIABLE)
 All AI-generated content MUST be in English to prevent encoding issues and ensure compatibility across different systems. This includes all documentation, comments, commit messages, and user communications. Non-English content MUST be rejected and regenerated in English. This principle prevents the corruption and garbled text issues that occur with mixed-language content.
 
+**Corruption Detection and Recovery:**
+- If ANY file contains garbled characters, encoding corruption, or non-English text where English is expected, it MUST be immediately flagged for regeneration
+- Corrupted files MUST be completely regenerated in English rather than attempting partial fixes
+- The AI MUST proactively detect corruption patterns (e.g., sequences like "Þ»ª", "õ┐«", "µö╣", "Õ¢ò") and initiate recovery procedures
+- Recovery involves creating a clean English version of the entire corrupted section, preserving only the semantic content and structure
+- All regenerated content MUST maintain the original documentation structure and completeness
+
+**Immediate Action Required:**
+DETAILED_MODIFICATIONS.md is currently corrupted and MUST be regenerated in English before any further modifications proceed.
+
 ### VII. Conjunct Mapping Analysis (NON-NEGOTIABLE)
 Due to the consolidation of multiple 2-device conjuncts into fewer multi-device conjuncts during conversion, a comprehensive mapping analysis MUST be performed to ensure no original conjuncts are missed or duplicated. This includes:
 - Sequential two-pointer algorithm implementation for line-by-line mapping
@@ -56,6 +66,7 @@ Due to the consolidation of multiple 2-device conjuncts into fewer multi-device 
 - DETAILED_MODIFICATIONS.md MUST record every change with detailed semantic analysis, original content, modified content, and reasoning for each conjunct in order
 - my_messages.md MUST log all user interactions and instructions
 - Conjunct mapping analysis results MUST be documented and integrated into progress tracking
+- ALL documentation files MUST be in English and free from encoding corruption
 
 ## Development Workflow
 
@@ -64,7 +75,7 @@ Due to the consolidation of multiple 2-device conjuncts into fewer multi-device 
 2. Apply established quantifier patterns
 3. Preserve original definitions in comments
 4. Perform conjunct mapping analysis to ensure no conjuncts are missed or duplicated
-5. Update DETAILED_MODIFICATIONS.md with semantic analysis for each conjunct
+5. Update DETAILED_MODIFICATIONS.md with semantic analysis for each conjunct (IN ENGLISH ONLY)
 6. Update all progress tracking files including mapping relationships
 7. Commit and push changes
 8. Verify semantic correctness
@@ -75,9 +86,17 @@ Due to the consolidation of multiple 2-device conjuncts into fewer multi-device 
 - Complete documentation updates including DETAILED_MODIFICATIONS.md
 - Conjunct mapping analysis completion with all 796 original conjuncts accounted for
 - Git repository synchronization
+- English-only content verification and corruption detection
+
+### Corruption Recovery Protocol
+1. Detect corrupted files through pattern recognition
+2. Halt all modifications until corruption is resolved
+3. Regenerate corrupted files completely in English
+4. Verify regenerated content maintains semantic accuracy
+5. Resume modifications only after clean English documentation is confirmed
 
 ## Governance
 
 This constitution supersedes all other practices for multi-device theory modification. Amendments require documentation, user approval, and migration plan. All modifications must verify compliance with these principles. Complexity must be justified through semantic analysis.
 
-**Version**: 1.3.0 | **Ratified**: 2025-01-20 | **Last Amended**: 2025-01-20
+**Version**: 1.4.0 | **Ratified**: 2025-01-20 | **Last Amended**: 2025-01-20
