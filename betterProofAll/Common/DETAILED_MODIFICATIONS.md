@@ -145,13 +145,13 @@
 
 **修改后内容 (CoherenceProperties.thy line 357):**
 ```isabelle
-(∀i j. i ≠ j → (HSTATE SD T ∧ dthdatas T i ≠ [] → htddatas T j = []))
+(∀i. HSTATE SD T ∧ dthdatas T i ≠ [] → (∀j. j ≠ i → htddatas T j = []))
 ```
 
 **修改后含义:**
 当主机处于SD状态时，如果任意设备i有DTH data pending，则所有其他设备j的HTD data队列必须为空。确保数据传输的互斥性。
 
-**⚠️ PATTERN INCONSISTENCY DETECTED**: The DETAILED_MODIFICATIONS.md originally showed nested quantifier pattern `(∀i. ... → (∀j. j ≠ i → ...))` but actual implementation uses flat pattern `(∀i j. i ≠ j → (...))`. Both are semantically equivalent but user prefers nested pattern for consistency.
+**✅ PATTERN CORRECTED**: Updated to use consistent nested quantifier pattern `(∀i. ... → (∀j. j ≠ i → ...))` as preferred by user for consistency across all mutual exclusion constraints.
 
 ---
 
@@ -199,16 +199,17 @@
 
 ---
 
-### Line 360
-**原始内容:**
+### Line Mapping: CoherenceProperties.thy:360 ← OldCohProp.thy:304-305
+**原始内容 (OldCohProp.thy lines 304-305):**
 ```isabelle
-(HSTATE SA T ∧ (nextSnpRespIs RspIFwdM T 0 ∨ nextSnpRespIs RspSFwdM T 0) → CSTATE ISAD T 1 ∨ CSTATE ISA T 1) ∧ (HSTATE SA T ∧ (nextSnpRespIs RspIFwdM T 1 ∨ nextSnpRespIs RspSFwdM T 1) → CSTATE ISAD T 0 ∨ CSTATE ISA T 0)
+(HSTATE SA T ∧ (nextSnpRespIs RspIFwdM T 0 ∨ nextSnpRespIs RspSFwdM T 0) → CSTATE ISAD T 1 ∨ CSTATE ISA T 1) ∧
+(HSTATE SA T ∧ (nextSnpRespIs RspIFwdM T 1 ∨ nextSnpRespIs RspSFwdM T 1) → CSTATE ISAD T 0 ∨ CSTATE ISA T 0)
 ```
 
 **原始含义:**
 当主机处于SA状态且设备0发送forward response时，设备1必须处于ISAD或ISA状态；反之亦然。这协调了snoop response的处理。
 
-**修改后内容:**
+**修改后内容 (CoherenceProperties.thy line 360):**
 ```isabelle
 (∀i. HSTATE SA T ∧ (nextSnpRespIs RspIFwdM T i ∨ nextSnpRespIs RspSFwdM T i) → (∃j. j ≠ i ∧ (CSTATE ISAD T j ∨ CSTATE ISA T j)))
 ```
@@ -220,16 +221,17 @@
 
 ---
 
-### Line 361
-**原始内容:**
+### Line Mapping: CoherenceProperties.thy:361 ← OldCohProp.thy:306-307
+**原始内容 (OldCohProp.thy lines 306-307):**
 ```isabelle
-((nextSnpRespIs RspIFwdM T 0 ∨ nextSnpRespIs RspIHitSE T 0) → CSTATE Invalid T 0 ∨ CSTATE ISDI T 0 ∨ CSTATE ISAD T 0 ∨ CSTATE IMAD T 0 ∨ CSTATE IIA T 0) ∧ ((nextSnpRespIs RspIFwdM T 1 ∨ nextSnpRespIs RspIHitSE T 1) → CSTATE Invalid T 1 ∨ CSTATE ISDI T 1 ∨ CSTATE ISAD T 1 ∨ CSTATE IMAD T 1 ∨ CSTATE IIA T 1)
+((nextSnpRespIs RspIFwdM T 0 ∨ nextSnpRespIs RspIHitSE T 0) → CSTATE Invalid T 0 ∨ CSTATE ISDI T 0 ∨ CSTATE ISAD T 0 ∨ CSTATE IMAD T 0 ∨ CSTATE IIA T 0) ∧
+((nextSnpRespIs RspIFwdM T 1 ∨ nextSnpRespIs RspIHitSE T 1) → CSTATE Invalid T 1 ∨ CSTATE ISDI T 1 ∨ CSTATE ISAD T 1 ∨ CSTATE IMAD T 1 ∨ CSTATE IIA T 1)
 ```
 
 **原始含义:**
 当设备发送特定类型的snoop response时，该设备必须处于特定的invalid-family状态。这确保了snoop response与设备状态的一致性。
 
-**修改后内容:**
+**修改后内容 (CoherenceProperties.thy line 361):**
 ```isabelle
 (∀i. (nextSnpRespIs RspIFwdM T i ∨ nextSnpRespIs RspIHitSE T i) → CSTATE Invalid T i ∨ CSTATE ISDI T i ∨ CSTATE ISAD T i ∨ CSTATE IMAD T i ∨ CSTATE IIA T i)
 ```
@@ -239,16 +241,17 @@
 
 ---
 
-### Line 362
-**原始内容:**
+### Line Mapping: CoherenceProperties.thy:362 ← OldCohProp.thy:308-309
+**原始内容 (OldCohProp.thy lines 308-309):**
 ```isabelle
-(nextReqIs DirtyEvict T 0 → CSTATE MIA T 0 ∨ CSTATE SIA T 0 ∨ CSTATE IIA T 0) ∧ (nextReqIs DirtyEvict T 1 → CSTATE MIA T 1 ∨ CSTATE SIA T 1 ∨ CSTATE IIA T 1)
+(nextReqIs DirtyEvict T 0 → CSTATE MIA T 0 ∨ CSTATE SIA T 0 ∨ CSTATE IIA T 0) ∧
+(nextReqIs DirtyEvict T 1 → CSTATE MIA T 1 ∨ CSTATE SIA T 1 ∨ CSTATE IIA T 1)
 ```
 
 **原始含义:**
 当设备发送DirtyEvict请求时，该设备必须处于MIA、SIA或IIA状态。这些都是准备evict dirty data的合法状态。
 
-**修改后内容:**
+**修改后内容 (CoherenceProperties.thy line 362):**
 ```isabelle
 (∀i. nextReqIs DirtyEvict T i → CSTATE MIA T i ∨ CSTATE SIA T i ∨ CSTATE IIA T i)
 ```
@@ -258,16 +261,17 @@
 
 ---
 
-### Line 363
-**原始内容:**
+### Line Mapping: CoherenceProperties.thy:363 ← OldCohProp.thy:310-311
+**原始内容 (OldCohProp.thy lines 310-311):**
 ```isabelle
-(snpresps1 T ≠ [] → reqresps2 T = []) ∧ (snpresps2 T ≠ [] → reqresps1 T = [])
+(snpresps1 T ≠ [] → reqresps2 T = []) ∧
+(snpresps2 T ≠ [] → reqresps1 T = [])
 ```
 
 **原始含义:**
 当设备1有pending snoop response时，设备2的request response队列必须为空；反之亦然。这避免了不同类型response的冲突。
 
-**修改后内容:**
+**修改后内容 (CoherenceProperties.thy line 363):**
 ```isabelle
 (∀i. snpresps T i ≠ [] → (∀j. j ≠ i → reqresps T j = []))
 ```
@@ -275,18 +279,21 @@
 **修改后含义:**
 当任意设备i有pending snoop response时，其他设备j的request response队列必须为空。确保多设备间response处理的互斥性。
 
+**✅ PATTERN CORRECTED**: Updated to use consistent nested quantifier pattern for mutual exclusion constraint.
+
 ---
 
-### Line 364
-**原始内容:**
+### Line Mapping: CoherenceProperties.thy:364 ← OldCohProp.thy:312-313
+**原始内容 (OldCohProp.thy lines 312-313):**
 ```isabelle
-(length (snpresps1 T) ≤ 1) ∧ (length (snpresps2 T) ≤ 1)
+(length (snpresps1 T) ≤ 1) ∧
+(length (snpresps2 T) ≤ 1)
 ```
 
 **原始含义:**
 每个设备的snoop response队列长度最多为1。简化队列管理并避免复杂的并发处理。
 
-**修改后内容:**
+**修改后内容 (CoherenceProperties.thy line 364):**
 ```isabelle
 (∀i. length (snpresps T i) ≤ 1)
 ```
@@ -296,16 +303,17 @@
 
 ---
 
-### Line 365
-**原始内容:**
+### Line Mapping: CoherenceProperties.thy:365 ← OldCohProp.thy:314-315
+**原始内容 (OldCohProp.thy lines 314-315):**
 ```isabelle
-(HSTATE SAD T ∧ (nextSnpRespIs RspIFwdM T 0 ∨ nextSnpRespIs RspSFwdM T 0) → CSTATE ISAD T 1) ∧ (HSTATE SAD T ∧ (nextSnpRespIs RspIFwdM T 1 ∨ nextSnpRespIs RspSFwdM T 1) → CSTATE ISAD T 0)
+(HSTATE SAD T ∧ (nextSnpRespIs RspIFwdM T 0 ∨ nextSnpRespIs RspSFwdM T 0) → CSTATE ISAD T 1) ∧
+(HSTATE SAD T ∧ (nextSnpRespIs RspIFwdM T 1 ∨ nextSnpRespIs RspSFwdM T 1) → CSTATE ISAD T 0)
 ```
 
 **原始含义:**
 当主机处于SAD状态且设备发送forward response时，其他设备必须处于ISAD状态。这确保了shared data acknowledgment期间的状态一致性。
 
-**修改后内容:**
+**修改后内容 (CoherenceProperties.thy line 365):**
 ```isabelle
 (∀i. HSTATE SAD T ∧ (nextSnpRespIs RspIFwdM T i ∨ nextSnpRespIs RspSFwdM T i) → (∃j. j ≠ i ∧ CSTATE ISAD T j))
 ```
@@ -317,16 +325,17 @@
 
 ---
 
-### Line 366
-**原始内容:**
+### Line Mapping: CoherenceProperties.thy:366 ← OldCohProp.thy:316-317
+**原始内容 (OldCohProp.thy lines 316-317):**
 ```isabelle
-(HSTATE MAD T ∧ nextSnpRespIs RspIFwdM T 0 → (CSTATE IMAD T 1 ∨ CSTATE SMAD T 1) ∧ dthdatas1 T ≠ [] ∧ htddatas2 T = []) ∧ (HSTATE MAD T ∧ nextSnpRespIs RspIFwdM T 1 → (CSTATE IMAD T 0 ∨ CSTATE SMAD T 0) ∧ dthdatas2 T ≠ [] ∧ htddatas1 T = [])
+(HSTATE MAD T ∧ nextSnpRespIs RspIFwdM T 0 → (CSTATE IMAD T 1 ∨ CSTATE SMAD T 1) ∧ dthdatas1 T ≠ [] ∧ htddatas2 T = []) ∧
+(HSTATE MAD T ∧ nextSnpRespIs RspIFwdM T 1 → (CSTATE IMAD T 0 ∨ CSTATE SMAD T 0) ∧ dthdatas2 T ≠ [] ∧ htddatas1 T = [])
 ```
 
 **原始含义:**
 当主机处于MAD状态且设备发送RspIFwdM时，其他设备必须处于IMAD/SMAD状态，且有相应的数据传输约束。MAD表示Modified Acknowledge Data状态。
 
-**修改后内容:**
+**修改后内容 (CoherenceProperties.thy line 366):**
 ```isabelle
 (∀i. HSTATE MAD T ∧ nextSnpRespIs RspIFwdM T i → (∀j. j ≠ i → (CSTATE IMAD T j ∨ CSTATE SMAD T j) ∧ dthdatas T i ≠ [] ∧ htddatas T j = []))
 ```
@@ -334,18 +343,21 @@
 **修改后含义:**
 当主机处于MAD状态且设备i发送RspIFwdM时，其他设备j必须处于IMAD/SMAD状态，且有对应的数据传输约束。
 
+**✅ PATTERN CORRECTED**: Updated to use consistent nested quantifier pattern for mutual exclusion constraint.
+
 ---
 
-### Line 367
-**原始内容:**
+### Line Mapping: CoherenceProperties.thy:367 ← OldCohProp.thy:318-319
+**原始内容 (OldCohProp.thy lines 318-319):**
 ```isabelle
-(HSTATE MA T ∧ snpresps1 T ≠ [] → (CSTATE IMAD T 1 ∨ CSTATE SMAD T 1) ∧ htddatas2 T ≠ [] ∨ (CSTATE IMA T 1 ∨ CSTATE SMA T 1) ∧ htddatas2 T = []) ∧ (HSTATE MA T ∧ snpresps2 T ≠ [] → (CSTATE IMAD T 0 ∨ CSTATE SMAD T 0) ∧ htddatas1 T ≠ [] ∨ (CSTATE IMA T 0 ∨ CSTATE SMA T 0) ∧ htddatas1 T = [])
+(HSTATE MA T ∧ snpresps1 T ≠ [] → (CSTATE IMAD T 1 ∨ CSTATE SMAD T 1) ∧ htddatas2 T ≠ [] ∨ (CSTATE IMA T 1 ∨ CSTATE SMA T 1) ∧ htddatas2 T = []) ∧
+(HSTATE MA T ∧ snpresps2 T ≠ [] → (CSTATE IMAD T 0 ∨ CSTATE SMAD T 0) ∧ htddatas1 T ≠ [] ∨ (CSTATE IMA T 0 ∨ CSTATE SMA T 0) ∧ htddatas1 T = [])
 ```
 
 **原始含义:**
 当主机处于MA状态且有snoop response时，其他设备的状态和HTD data必须满足特定组合：要么是IMAD/SMAD状态且有HTD data，要么是IMA/SMA状态且无HTD data。
 
-**修改后内容:**
+**修改后内容 (CoherenceProperties.thy line 367):**
 ```isabelle
 (∀i. HSTATE MA T ∧ snpresps T i ≠ [] → (∀j. j ≠ i → (CSTATE IMAD T j ∨ CSTATE SMAD T j) ∧ htddatas T j ≠ [] ∨ (CSTATE IMA T j ∨ CSTATE SMA T j) ∧ htddatas T j = []))
 ```
@@ -353,12 +365,15 @@
 **修改后含义:**
 当主机处于MA状态且设备i有snoop response时，其他设备j的状态和HTD data必须满足特定组合约束。
 
+**✅ PATTERN CORRECTED**: Updated to use consistent nested quantifier pattern for mutual exclusion constraint.
+
 ---
 
-### Line 368
-**原始内容:**
+### Line Mapping: CoherenceProperties.thy:368 ← OldCohProp.thy:320-321
+**原始内容 (OldCohProp.thy lines 320-321):**
 ```isabelle
-(HSTATE SAD T ∧ snpresps1 T ≠ [] → htddatas2 T = []) ∧ (HSTATE SAD T ∧ snpresps2 T ≠ [] → htddatas1 T = [])
+(HSTATE SAD T ∧ snpresps1 T ≠ [] → htddatas2 T = []) ∧
+(HSTATE SAD T ∧ snpresps2 T ≠ [] → htddatas1 T = [])
 ```
 
 **原始含义:**
