@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-09-28T13:59:06.282645",
+  "overall_success": false,
+  "validation_results": {
+    "T033_coverage": {
+      "valid": false,
+      "error": "'CoverageValidation' object has no attribute 'get'"
+    },
+    "T034_confidence": {
+      "valid": false,
+      "error": "'list' object has no attribute 'get'"
+    },
+    "T035_semantic": {
+      "valid": false,
+      "error": "'list' object has no attribute 'get'"
+    },
+    "T036_documentation": {
+      "valid": false,
+      "error": "'ValidationResult' object has no attribute 'get'"
+    }
+  },
+  "summary": {
+    "passed": 0,
+    "total": 4,
+    "success_rate": 0.0
+  }
+}
