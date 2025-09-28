@@ -379,13 +379,15 @@
 **原始含义:**
 当主机处于SAD状态且有snoop response时，其他设备的HTD data队列必须为空。这确保了shared data acknowledgment期间的数据传输约束。
 
-**修改后内容:**
+**修改后内容 (CoherenceProperties.thy line 368):**
 ```isabelle
 (∀i. HSTATE SAD T ∧ snpresps T i ≠ [] → (∀j. j ≠ i → htddatas T j = []))
 ```
 
 **修改后含义:**
 当主机处于SAD状态且设备i有snoop response时，其他设备j的HTD data队列必须为空。确保多设备间的数据传输协调。
+
+**✅ PATTERN CORRECTED**: Updated to use consistent nested quantifier pattern for mutual exclusion constraint.
 
 ---
 
