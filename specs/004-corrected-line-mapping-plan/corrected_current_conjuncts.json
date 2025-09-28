@@ -1,0 +1,4622 @@
+[
+  {
+    "id": "curr_797",
+    "line_number": 287,
+    "content": "C_msg_P_oppo ISD nextHTDDataPending (\\<lambda>T i. \\<not> CSTATE Modified T i) T \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_798",
+    "line_number": 288,
+    "content": "H_msg_P_same SD nextDTHDataPending (\\<lambda>T i. \\<not> CSTATE Modified T i) T \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_799",
+    "line_number": 289,
+    "content": "H_msg_P_same SAD nextDTHDataPending (\\<lambda>T i. \\<not> CSTATE Modified T i) T \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_800",
+    "line_number": 290,
+    "content": "C_msg_P_oppo ISAD nextGOPending (\\<lambda>T i. \\<not> CSTATE Modified T i) T \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_801",
+    "line_number": 291,
+    "content": "H_msg_P_same SharedM (nextReqIs RdShared) (\\<lambda>T i. \\<not> CSTATE Modified T i) T \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_802",
+    "line_number": 292,
+    "content": "H_msg_P_oppo SharedM (nextReqIs RdShared) (\\<lambda>T i. \\<not> CSTATE Modified T i) T \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_803",
+    "line_number": 293,
+    "content": "H_msg_P_same ModifiedM (nextReqIs RdShared) (\\<lambda>T i. \\<not> CSTATE Modified T i) T \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_804",
+    "line_number": 294,
+    "content": "H_msg_P_oppo ModifiedM (nextReqIs RdShared) (\\<lambda>T i. \\<not> nextDTHDataPending T i) T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_805",
+    "line_number": 295,
+    "content": "H_msg_P_oppo ModifiedM (nextReqIs RdShared) (\\<lambda>T i. \\<not> nextSnpRespIs RspIFwdM T i) T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_806",
+    "line_number": 296,
+    "content": "H_msg_P_same ModifiedM (nextReqIs RdShared) (\\<lambda>T i. \\<not> nextSnpRespIs RspIFwdM T i) T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_807",
+    "line_number": 297,
+    "content": "C_H_state IMAD (nextReqIs RdOwn) Modified SD T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_808",
+    "line_number": 298,
+    "content": "C_H_state IMAD (nextReqIs RdOwn) Modified SAD T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_809",
+    "line_number": 299,
+    "content": "C_H_state IMAD (nextReqIs RdOwn) Modified SA T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_810",
+    "line_number": 300,
+    "content": "C_H_state Invalid nextStore Modified SAD T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_811",
+    "line_number": 301,
+    "content": "C_H_state Invalid nextStore Modified SA T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_812",
+    "line_number": 302,
+    "content": "C_H_state Invalid nextStore Modified SD T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_813",
+    "line_number": 303,
+    "content": "(HSTATE SharedM T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE Modified T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_814",
+    "line_number": 304,
+    "content": "(HSTATE SD T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE Modified T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_815",
+    "line_number": 305,
+    "content": "(HSTATE MD T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE Modified T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_816",
+    "line_number": 306,
+    "content": "C_msg_not RdShared IMAD T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_817",
+    "line_number": 307,
+    "content": "C_msg_not RdShared Invalid T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_818",
+    "line_number": 308,
+    "content": "H_msg_P_same ModifiedM (nextReqIs DirtyEvict) (\\<lambda>T i. CSTATE MIA T i \\<or> CSTATE IIA T i) T \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_819",
+    "line_number": 309,
+    "content": "C_msg_P_host MIA (nextGOPendingIs GO_WritePull) (\\<lambda>T. \\<not> HSTATE ModifiedM T) T \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_820",
+    "line_number": 310,
+    "content": "C_msg_P_same MIA (nextGOPendingIs GO_WritePull) nextEvict T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_821",
+    "line_number": 311,
+    "content": "C_msg_P_host MIA (nextGOPendingIs GO_WritePull) (HSTATE ID) T \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_822",
+    "line_number": 312,
+    "content": "C_state_not MIA RdShared T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_823",
+    "line_number": 313,
+    "content": "C_msg_P_same IIA (nextGOPendingIs GO_WritePullDrop) nextEvict T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_824",
+    "line_number": 314,
+    "content": "C_msg_P_same IIA (nextGOPendingIs GO_WritePullDrop) (\\<lambda>T i. \\<not> nextReqIs RdShared T i) T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_825",
+    "line_number": 315,
+    "content": "C_msg_P_same IIA (nextGOPendingIs GO_WritePullDrop) (\\<lambda>T i. \\<not> nextDTHDataPending T i) T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_826",
+    "line_number": 316,
+    "content": "H_C_state_msg_same ModifiedM Modified (\\<lambda>T i. \\<not> nextReqIs RdShared T i) T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_827",
+    "line_number": 317,
+    "content": "C_msg_P_same IIA (nextGOPendingIs GO_WritePull) nextEvict T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_828",
+    "line_number": 318,
+    "content": "C_msg_P_same IIA (nextGOPendingIs GO_WritePull) (\\<lambda>T i. \\<not> nextReqIs RdShared T i) T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_829",
+    "line_number": 319,
+    "content": "C_msg_P_same IIA (nextGOPendingIs GO_WritePull) (\\<lambda>T i. \\<not> nextDTHDataPending T i) T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_830",
+    "line_number": 320,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE ModifiedM T \\<and> CSTATE IIA T i \\<and> (CSTATE MIA T j \\<or> CSTATE Modified T j \\<or> CSTATE IMD T j \\<or> CSTATE IMA T j \\<or> (CSTATE IMAD T j \\<and> nextHTDDataPending T j \\<and> nextGOPending T j) \\<or> CSTATE SMD T j \\<or> CSTATE SMA T j \\<or> (CSTATE SMAD T j \\<and> nextHTDDataPending T j \\<and> nextGOPending T j)) \\<longrightarrow> \\<not> nextReqIs RdShared T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_831",
+    "line_number": 321,
+    "content": "C_msg_P_host Shared (nextSnoopIs SnpInv) (HSTATE MA) T \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_832",
+    "line_number": 322,
+    "content": "C_msg_state RdShared ISAD T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_833",
+    "line_number": 323,
+    "content": "C_not_C_msg Modified ISAD nextGOPending T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_834",
+    "line_number": 324,
+    "content": "C_msg_P_same Invalid nextStore (\\<lambda>T i. \\<not> nextHTDDataPending T i) T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_835",
+    "line_number": 325,
+    "content": "C_msg_P_same Invalid nextStore (\\<lambda>T i. \\<not> nextSnoopIs SnpInv T i) T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_836",
+    "line_number": 326,
+    "content": "C_msg_P_same ISAD nextGOPending (\\<lambda>T i. \\<not> nextReqIs RdShared T i) T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_837",
+    "line_number": 327,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (snps T j \\<noteq> [] \\<longrightarrow> reqs T i = [] \\<and> snpresps T j = [] \\<and> dthdatas T j = [] \\<and> reqresps T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_838",
+    "line_number": 328,
+    "content": "(\\<forall>i. length (reqs T i) \\<le> 1) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_839",
+    "line_number": 329,
+    "content": "(\\<forall>i. length (snps T i) \\<le> 1) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_840",
+    "line_number": 330,
+    "content": "C_msg_P_same Shared (nextSnoopIs SnpInv) (\\<lambda>T i. \\<not> nextHTDDataPending T i) T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_841",
+    "line_number": 331,
+    "content": "C_msg_P_same IIA (nextGOPendingIs GO_WritePull) (\\<lambda> T i. \\<not>nextSnoopPending T i) T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_842",
+    "line_number": 332,
+    "content": "C_msg_P_oppo Invalid nextStore (\\<lambda>T i. \\<not> nextSnoopPending T i) T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_843",
+    "line_number": 333,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE Invalid T i \\<longrightarrow> snps T j = [] \\<and> snpresps T j = [] \\<and> reqresps T i = [] \\<and> htddatas T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_844",
+    "line_number": 334,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE Shared T i \\<longrightarrow> snps T j = [] \\<and> snpresps T j = [] \\<and> reqresps T i = [] \\<and> htddatas T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_845",
+    "line_number": 335,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE IIA T i \\<longrightarrow> snps T j = [] \\<and> snpresps T j = [] \\<and> htddatas T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_846",
+    "line_number": 336,
+    "content": "(\\<forall>i. CSTATE Invalid T i \\<longrightarrow> reqs T i = []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_847",
+    "line_number": 337,
+    "content": "(\\<forall>i. CSTATE Shared T i \\<longrightarrow> reqs T i = []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_848",
+    "line_number": 338,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE Modified T i \\<longrightarrow> \\<not>CSTATE Modified T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_849",
+    "line_number": 339,
+    "content": "(\\<forall>i. CSTATE ISD T i \\<longrightarrow> \\<not>HSTATE ModifiedM T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_850",
+    "line_number": 340,
+    "content": "(\\<forall>i. CSTATE ISD T i \\<longrightarrow> nextLoad T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_851",
+    "line_number": 341,
+    "content": "(C_msg_P_host ISD (nextSnoopIs SnpInv) (HSTATE MA) T) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_852",
+    "line_number": 342,
+    "content": "(\\<forall>i. length (htddatas T i) \\<le> 1) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_853",
+    "line_number": 343,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE ISD T i \\<longrightarrow> snps T j = [] \\<and> snpresps T j = [] \\<and> reqresps T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_854",
+    "line_number": 344,
+    "content": "(\\<forall>i. CSTATE ISD T i \\<longrightarrow> reqs T i = []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_855",
+    "line_number": 345,
+    "content": "(\\<forall>i. CSTATE IMAD T i \\<and> nextHTDDataPending T i \\<longrightarrow> reqs T i = []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_856",
+    "line_number": 346,
+    "content": "(\\<forall>i. length (reqresps T i) \\<le> 1) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_857",
+    "line_number": 347,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE MIA T i \\<and> (nextGOPendingIs GO_WritePull T i) \\<longrightarrow> snps T i = [] \\<and> snps T j = [] \\<and> snpresps T j = [] \\<and> htddatas T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_858",
+    "line_number": 348,
+    "content": "(\\<forall>i. CSTATE ISAD T i \\<longrightarrow> \\<not> nextReqIs DirtyEvict T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_859",
+    "line_number": 349,
+    "content": "(C_msg_P_same MIA  (nextReqIs DirtyEvict) (nextEvict) T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_860",
+    "line_number": 350,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (reqs T i \\<noteq> [] \\<longrightarrow> reqresps T i = [] \\<and> snpresps T j = [] \\<and> htddatas T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_861",
+    "line_number": 351,
+    "content": "(\\<forall>i. (HSTATE ModifiedM T \\<and> nextReqIs RdOwn T i \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> (CSTATE Modified T j \\<or> CSTATE MIA T j \\<or> (CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextHTDDataPending T j \\<and> nextGOPending T j \\<or> (CSTATE IMA T j \\<or> CSTATE SMA T j) \\<and> nextGOPending T j \\<or> (CSTATE IMD T j \\<or> CSTATE SMD T j) \\<and> nextHTDDataPending T j)))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_862",
+    "line_number": 352,
+    "content": "(\\<forall>i. (HSTATE MB T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> (CSTATE Modified T j \\<or> CSTATE MIA T j \\<or> (CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextHTDDataPending T j \\<and> nextGOPending T j \\<or> (CSTATE IMA T j \\<or> CSTATE SMA T j) \\<and> nextGOPending T j \\<or> (CSTATE IMD T j \\<or> CSTATE SMD T j) \\<and> nextHTDDataPending T j)))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_863",
+    "line_number": 353,
+    "content": "(\\<forall>i. (HSTATE MB T \\<and> CSTATE IIA T i \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> (CSTATE Modified T j \\<or> CSTATE MIA T j \\<or> (CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextHTDDataPending T j \\<and> nextGOPending T j \\<or> (CSTATE IMA T j \\<or> CSTATE SMA T j) \\<and> nextGOPending T j \\<or> (CSTATE IMD T j \\<or> CSTATE SMD T j) \\<and> nextHTDDataPending T j)))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_864",
+    "line_number": 354,
+    "content": "(\\<forall>i. reqs T i \\<noteq> [] \\<longrightarrow> reqresps T i = []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_865",
+    "line_number": 355,
+    "content": "(HSTATE SAD T \\<longrightarrow> (\\<exists>i. CSTATE ISAD T i)) \\<and>",
+    "type": "existential_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_866",
+    "line_number": 356,
+    "content": "(HSTATE ModifiedM T \\<longrightarrow> (\\<forall>i. \\<not>CSTATE Shared T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_867",
+    "line_number": 357,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SD T \\<and> dthdatas T i \\<noteq> [] \\<longrightarrow> htddatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_868",
+    "line_number": 358,
+    "content": "(\\<forall>i. length (dthdatas T i) \\<le> 1) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_869",
+    "line_number": 359,
+    "content": "(\\<forall>i. HSTATE SD T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> (CSTATE ISAD T j \\<or> CSTATE ISD T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_870",
+    "line_number": 360,
+    "content": "(\\<forall>i. HSTATE SA T \\<and> (nextSnpRespIs RspIFwdM T i \\<or> nextSnpRespIs RspSFwdM T i) \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> (CSTATE ISAD T j \\<or> CSTATE ISA T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_871",
+    "line_number": 361,
+    "content": "(\\<forall>i. (nextSnpRespIs RspIFwdM T i \\<or> nextSnpRespIs RspIHitSE T i) \\<longrightarrow> CSTATE Invalid T i \\<or> CSTATE ISDI T i \\<or> CSTATE ISAD T i \\<or> CSTATE IMAD T i \\<or> CSTATE IIA T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_872",
+    "line_number": 362,
+    "content": "(\\<forall>i. nextReqIs DirtyEvict T i \\<longrightarrow> CSTATE MIA T i \\<or> CSTATE SIA T i \\<or> CSTATE IIA T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_873",
+    "line_number": 363,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (snpresps T i \\<noteq> [] \\<longrightarrow> reqresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_874",
+    "line_number": 364,
+    "content": "(\\<forall>i. length (snpresps T i) \\<le> 1) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_875",
+    "line_number": 365,
+    "content": "(\\<forall>i. HSTATE SAD T \\<and> (nextSnpRespIs RspIFwdM T i \\<or> nextSnpRespIs RspSFwdM T i) \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> CSTATE ISAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_876",
+    "line_number": 366,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE MAD T \\<and> nextSnpRespIs RspIFwdM T i \\<longrightarrow> (CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> dthdatas T i \\<noteq> [] \\<and> htddatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_877",
+    "line_number": 367,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE MA T \\<and> snpresps T i \\<noteq> [] \\<longrightarrow> (CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> htddatas T j \\<noteq> [] \\<or> (CSTATE IMA T j \\<or> CSTATE SMA T j) \\<and> htddatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_878",
+    "line_number": 368,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SAD T \\<and> snpresps T i \\<noteq> [] \\<longrightarrow> htddatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_879",
+    "line_number": 369,
+    "content": "(\\<forall>i. HSTATE MD T \\<and> reqs T i \\<noteq> [] \\<longrightarrow> dthdatas T i \\<noteq> []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_880",
+    "line_number": 370,
+    "content": "(\\<forall>i. HSTATE ID T \\<and> dthdatas T i \\<noteq> [] \\<longrightarrow> CSTATE Invalid T i \\<or> CSTATE ISAD T i \\<or> CSTATE IMAD T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_881",
+    "line_number": 371,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE ID T \\<and> dthdatas T i \\<noteq> [] \\<longrightarrow> \\<not>CSTATE MIA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_882",
+    "line_number": 372,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (dthdatas T i \\<noteq> [] \\<and> HSTATE SD T \\<longrightarrow> snpresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_883",
+    "line_number": 373,
+    "content": "(\\<forall>i. CSTATE ISD T i \\<and> nextHTDDataPending T i \\<longrightarrow> nextLoad T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_884",
+    "line_number": 374,
+    "content": "(C_msg_P_same IIA (nextGOPendingIs GO_WritePullDrop) (\\<lambda> T i. \\<not>nextSnoopPending T i) T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_885",
+    "line_number": 375,
+    "content": "(\\<forall>i. CSTATE ISAD T i \\<and> nextGOPending T i \\<longrightarrow> HSTATE SD T \\<or> HSTATE SharedM T \\<or> HSTATE MAD T \\<or> HSTATE SB T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_886",
+    "line_number": 376,
+    "content": "(\\<forall>i. CSTATE ISAD T i \\<longrightarrow> nextLoad T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_887",
+    "line_number": 377,
+    "content": "(\\<forall>i. CSTATE ISAD T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_888",
+    "line_number": 378,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE ISAD T i \\<and> nextGOPending T i \\<longrightarrow> snps T j = [] \\<and> snpresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_889",
+    "line_number": 379,
+    "content": "(\\<forall>i. (CSTATE Invalid T i \\<or> CSTATE ISDI T i) \\<and> HSTATE ModifiedM T \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> (CSTATE Modified T j \\<or> CSTATE MIA T j \\<or> (CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextHTDDataPending T j \\<and> nextGOPending T j \\<or> (CSTATE IMA T j \\<or> CSTATE SMA T j) \\<and> nextGOPending T j \\<or> (CSTATE IMD T j \\<or> CSTATE SMD T j) \\<and> nextHTDDataPending T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_890",
+    "line_number": 380,
+    "content": "(\\<forall>i. (CSTATE Invalid T i \\<or> CSTATE ISDI T i) \\<and> HSTATE MD T \\<longrightarrow> dthdatas T i \\<noteq> []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_891",
+    "line_number": 381,
+    "content": "(HSTATE ModifiedM T \\<longrightarrow> (\\<forall>i. snpresps T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_892",
+    "line_number": 382,
+    "content": "(\\<forall>i. HSTATE SAD T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> CSTATE ISAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_893",
+    "line_number": 383,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SAD T \\<and> nextDTHDataFrom i T \\<longrightarrow> htddatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_894",
+    "line_number": 384,
+    "content": "(\\<forall>i. HSTATE SAD T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> reqs T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_895",
+    "line_number": 385,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SD T \\<and> nextDTHDataFrom i T \\<longrightarrow> reqs T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_896",
+    "line_number": 386,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SharedM T \\<and> nextReqIs RdOwn T i \\<longrightarrow> dthdatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_897",
+    "line_number": 387,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SharedM T \\<and> nextReqIs RdShared T i \\<longrightarrow> dthdatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_898",
+    "line_number": 388,
+    "content": "(\\<forall>i. CSTATE IIA T i \\<and> HSTATE ModifiedM T \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> (CSTATE Modified T j \\<or> CSTATE MIA T j \\<or> (CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextHTDDataPending T j \\<and> nextGOPending T j \\<or> (CSTATE IMA T j \\<or> CSTATE SMA T j) \\<and> nextGOPending T j \\<or> (CSTATE IMD T j \\<or> CSTATE SMD T j) \\<and> nextHTDDataPending T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_899",
+    "line_number": 389,
+    "content": "(\\<forall>i. CSTATE IIA T i \\<and> HSTATE SharedM T \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> (reqs T j = [] \\<or> nextReqIs CleanEvict T j \\<or> nextReqIs CleanEvictNoData T j \\<or> nextReqIs RdOwn T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_900",
+    "line_number": 390,
+    "content": "(\\<forall>i. CSTATE IIA T i \\<and> nextGOPendingIs GO_WritePull T i \\<longrightarrow> HSTATE IB T \\<or> HSTATE SB T \\<or> HSTATE MB T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_901",
+    "line_number": 391,
+    "content": "(\\<forall>i. CSTATE IIA T i \\<and> nextGOPendingIs GO_WritePullDrop T i \\<longrightarrow> HSTATE SharedM T \\<or> HSTATE InvalidM T \\<or> HSTATE ModifiedM T \\<or> HSTATE SB T \\<or> HSTATE ID T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_902",
+    "line_number": 392,
+    "content": "(\\<forall>i. CSTATE IMAD T i \\<and> nextHTDDataPending T i \\<longrightarrow> HSTATE ModifiedM T \\<or> HSTATE MA T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_903",
+    "line_number": 393,
+    "content": "(\\<forall>i. CSTATE IIA T i \\<and> HSTATE SharedM T \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> (CSTATE Shared T j \\<or> CSTATE SIA T j \\<or> CSTATE SMAD T j \\<or> CSTATE ISAD T j \\<and> nextGOPending T j \\<and> nextHTDDataPending T j \\<or> CSTATE ISA T j \\<and> nextGOPending T j \\<or> CSTATE ISD T j \\<and> nextHTDDataPending T j \\<or> CSTATE SIAC T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_904",
+    "line_number": 394,
+    "content": "(HSTATE SharedM T \\<longrightarrow> (\\<forall>i. dthdatas T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_905",
+    "line_number": 395,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE MIA T i \\<longrightarrow> \\<not>CSTATE MIA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_906",
+    "line_number": 396,
+    "content": "(HSTATE ModifiedM T \\<longrightarrow> (\\<forall>i. dthdatas T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_907",
+    "line_number": 397,
+    "content": "(HSTATE MA T \\<longrightarrow> (\\<forall>i. dthdatas T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_908",
+    "line_number": 398,
+    "content": "(\\<forall>i. nextDTHDataFrom i T \\<longrightarrow> \\<not> nextHTDDataPending T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_909",
+    "line_number": 399,
+    "content": "(\\<forall>i. nextDTHDataFrom i T \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> \\<not> nextDTHDataFrom j T)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_910",
+    "line_number": 400,
+    "content": "(HSTATE SA T \\<longrightarrow> (\\<forall>i. dthdatas T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_911",
+    "line_number": 401,
+    "content": "(HSTATE SD T \\<longrightarrow> (\\<exists>i. \\<not> CSTATE IIA T i)) \\<and>",
+    "type": "existential_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_912",
+    "line_number": 402,
+    "content": "(HSTATE SAD T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE IIA T i \\<or> nextSnpRespIs RspIFwdM T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_913",
+    "line_number": 403,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE IIA T i \\<and> nextGOPendingIs GO_WritePull T i \\<longrightarrow> \\<not> nextDTHDataFrom j T)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_914",
+    "line_number": 404,
+    "content": "(\\<not> (\\<forall>i. CSTATE IIA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_915",
+    "line_number": 405,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE MIA T i \\<and> nextGOPendingIs GO_WritePull T i \\<longrightarrow> \\<not> nextDTHDataFrom j T)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_916",
+    "line_number": 406,
+    "content": "(\\<forall>i. snpresps T i \\<noteq> [] \\<longrightarrow> reqresps T i = []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_917",
+    "line_number": 407,
+    "content": "(HSTATE SharedM T \\<longrightarrow> (\\<forall>i. \\<not> nextGOPendingIs GO_WritePull T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_918",
+    "line_number": 408,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SD T \\<and> nextDTHDataFrom i T \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_919",
+    "line_number": 409,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SAD T \\<and> (nextSnpRespIs RspIFwdM T i \\<or> nextSnpRespIs RspSFwdM T i) \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_920",
+    "line_number": 410,
+    "content": "(HSTATE ModifiedM T \\<longrightarrow> (\\<forall>i. \\<not> nextGOPendingIs GO_WritePull T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_921",
+    "line_number": 411,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePull) nextEvict T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_922",
+    "line_number": 412,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePull) (\\<lambda>T i. \\<not> nextReqIs RdShared T i) T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_923",
+    "line_number": 413,
+    "content": "(\\<forall>i. CSTATE SIA T i \\<longrightarrow> htddatas T i = [] \\<and> (\\<exists>j. j \\<noteq> i \\<and> snps T j = [] \\<and> snpresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_924",
+    "line_number": 414,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePull) (\\<lambda> T i. \\<not>nextSnoopPending T i) T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_925",
+    "line_number": 415,
+    "content": "(\\<forall>i. CSTATE SIA T i \\<and> nextGOPendingIs GO_WritePull T i \\<longrightarrow> HSTATE IB T \\<or> HSTATE SB T \\<or> HSTATE MB T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_926",
+    "line_number": 416,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePull) (\\<lambda>T i. \\<not> nextDTHDataPending T i) T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_927",
+    "line_number": 417,
+    "content": "(\\<forall>i. CSTATE SIA T i \\<and> nextGOPendingIs GO_WritePull T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> \\<not> nextDTHDataFrom j T)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_928",
+    "line_number": 418,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePullDrop) nextEvict T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_929",
+    "line_number": 419,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePullDrop) (\\<lambda>T i. \\<not> nextReqIs RdShared T i) T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_930",
+    "line_number": 420,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePullDrop) (\\<lambda> T i. \\<not>nextSnoopPending T i) T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_931",
+    "line_number": 421,
+    "content": "(\\<forall>i. CSTATE SIA T i \\<and> nextGOPendingIs GO_WritePullDrop T i \\<longrightarrow> HSTATE InvalidM T \\<or> HSTATE SharedM T \\<or> HSTATE SB T \\<or> HSTATE IB T \\<or> HSTATE ModifiedM T \\<or> HSTATE ID T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_932",
+    "line_number": 422,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePullDrop) (\\<lambda>T i. \\<not> nextDTHDataPending T i) T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_933",
+    "line_number": 423,
+    "content": "(\\<forall>i. CSTATE SMAD T i \\<and> nextHTDDataPending T i \\<longrightarrow>  HSTATE ModifiedM T \\<or> HSTATE MA T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_934",
+    "line_number": 424,
+    "content": "(\\<forall>i. CSTATE ISAD T i \\<and> nextHTDDataPending T i \\<longrightarrow>  HSTATE SharedM T \\<or> HSTATE SA T \\<or> HSTATE MA T \\<or> HSTATE SB T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_935",
+    "line_number": 425,
+    "content": "(\\<forall>i. CSTATE ISAD T i \\<and> nextHTDDataPending T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> \\<not> (CSTATE IMAD T j \\<and> nextHTDDataPending T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_936",
+    "line_number": 426,
+    "content": "(C_not_C_msg Modified IMAD nextGOPending T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_937",
+    "line_number": 427,
+    "content": "(\\<forall>i. CSTATE IMAD T i \\<and> nextGOPending T i \\<longrightarrow> HSTATE MD T \\<or> HSTATE ModifiedM T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_938",
+    "line_number": 428,
+    "content": "(\\<forall>i. CSTATE IMAD T i \\<longrightarrow> nextStore T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_939",
+    "line_number": 429,
+    "content": "(\\<forall>i. CSTATE IMAD T i \\<and> nextGOPending T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> snps T j = [] \\<and> snpresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_940",
+    "line_number": 430,
+    "content": "(\\<forall>i. snpresps T i \\<noteq> [] \\<longrightarrow> reqresps T i = []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_941",
+    "line_number": 431,
+    "content": "(\\<forall>i. CSTATE SMAD T i \\<and> nextGOPending T i \\<longrightarrow>  HSTATE MD T \\<or> HSTATE ModifiedM T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_942",
+    "line_number": 432,
+    "content": "(\\<forall>i. CSTATE SMAD T i \\<longrightarrow> nextStore T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_943",
+    "line_number": 433,
+    "content": "(C_msg_P_same IMA (nextGOPending) nextStore T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_944",
+    "line_number": 434,
+    "content": "(\\<forall>i. CSTATE IMA T i \\<or> CSTATE SMA T i \\<or> CSTATE ISA T i \\<longrightarrow> \\<not> nextHTDDataPending T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_945",
+    "line_number": 435,
+    "content": "(C_msg_P_oppo IMA (nextGOPending) (\\<lambda> T i. \\<not>nextSnoopPending T i) T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_946",
+    "line_number": 436,
+    "content": "(C_msg_P_oppo SMA (nextGOPending) (\\<lambda> T i. \\<not>nextSnoopPending T i) T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_947",
+    "line_number": 437,
+    "content": "(C_msg_P_oppo ISA (nextGOPending) (\\<lambda> T i. \\<not>nextSnoopPending T i) T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_948",
+    "line_number": 438,
+    "content": "(\\<forall>i. CSTATE IMA T i \\<and> nextGOPending T i \\<longrightarrow>  HSTATE ModifiedM T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_949",
+    "line_number": 439,
+    "content": "(\\<forall>i. CSTATE IMD T i \\<or> CSTATE SMD T i \\<or> ((CSTATE IMAD T i \\<or> CSTATE SMAD T i) \\<and> nextGOPending T i) \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> ((\\<not> CSTATE ISD T j) \\<and> \\<not> CSTATE IMD T j \\<and> \\<not> CSTATE SMD T j \\<and> \\<not>( (CSTATE ISAD T j \\<or> CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextGOPending T j) \\<and> \\<not>CSTATE ISA T j \\<and> \\<not> CSTATE IMA T j \\<and> \\<not> CSTATE SMA T j \\<and> \\<not> (  nextHTDDataPending T j) \\<and>  \\<not> CSTATE Shared T j \\<and> \\<not> CSTATE Modified T j) \\<or> nextSnoopIs SnpInv T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_950",
+    "line_number": 440,
+    "content": "(\\<forall>i. CSTATE IMA T i \\<or> CSTATE SMA T i \\<or> ((CSTATE IMAD T i \\<or> CSTATE SMAD T i) \\<and> nextHTDDataPending T i)  \\<longrightarrow> dthdatas T i = [] \\<and> (\\<forall>j. j \\<noteq> i \\<longrightarrow> dthdatas T j = [] \\<or> HSTATE MB T \\<or> HSTATE ModifiedM T)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_951",
+    "line_number": 441,
+    "content": "(\\<forall>i. CSTATE IMD T i \\<or> CSTATE SMD T i \\<or> ((CSTATE IMAD T i \\<or> CSTATE SMAD T i) \\<and> nextGOPending T i) \\<longrightarrow> dthdatas T i = []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_952",
+    "line_number": 442,
+    "content": "(C_msg_P_same SMA (nextGOPending) nextStore T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_953",
+    "line_number": 443,
+    "content": "(\\<forall>i. (CSTATE SMA T i \\<and> nextGOPending T i \\<or> CSTATE IMD T i \\<and> nextHTDDataPending T i \\<or> CSTATE SMD T i \\<and> nextHTDDataPending T i) \\<longrightarrow>  HSTATE ModifiedM T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_954",
+    "line_number": 444,
+    "content": "(\\<forall>i. CSTATE ISD T i \\<or> CSTATE ISAD T i \\<or> CSTATE ISA T i \\<or> CSTATE ISDI T i \\<longrightarrow> nextLoad T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_955",
+    "line_number": 445,
+    "content": "(\\<forall>i. CSTATE IMD T i \\<or> CSTATE IMAD T i \\<or> CSTATE IMA T i \\<or> CSTATE SMD T i \\<or> CSTATE SMAD T i \\<or> CSTATE SMA T i  \\<longrightarrow> nextStore T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_956",
+    "line_number": 446,
+    "content": "(\\<forall>i. (CSTATE ISAD T i \\<and> nextGOPending T i) \\<or> CSTATE ISA T i \\<or> ( nextHTDDataPending T i) \\<or> CSTATE Shared T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> \\<not> CSTATE Modified T j) \\<and> (dthdatas T i = [] \\<or> nextSnpRespIs RspSFwdM T i \\<or> HSTATE SD T)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_957",
+    "line_number": 447,
+    "content": "(\\<forall>i. CSTATE ISA T i \\<and> nextGOPending T i \\<longrightarrow> HSTATE SharedM T \\<or> HSTATE MAD T \\<or> HSTATE MA T \\<or> HSTATE SB T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_958",
+    "line_number": 448,
+    "content": "(\\<forall>i. CSTATE ISDI T i \\<and> nextHTDDataPending T i \\<longrightarrow> HSTATE ModifiedM T \\<or> HSTATE MAD T  \\<or> HSTATE MA T \\<or> HSTATE MD T\\<or> HSTATE ID T \\<or> HSTATE InvalidM T \\<or> HSTATE SharedM T \\<or> HSTATE SB T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_959",
+    "line_number": 449,
+    "content": "(\\<forall>i. CSTATE ISDI T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> snps T j = [] \\<and> snpresps T j = []) \\<and> reqresps T i = [] \\<and> snps T i = []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_960",
+    "line_number": 450,
+    "content": "(\\<forall>i. CSTATE ISDI T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> \\<not>nextReqIs RdOwn T j) \\<or> \\<not>HSTATE ModifiedM T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_961",
+    "line_number": 451,
+    "content": "(\\<forall>i. CSTATE Invalid T i \\<longrightarrow> reqresps T i = []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_962",
+    "line_number": 452,
+    "content": "(\\<forall>i. CSTATE Shared T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_963",
+    "line_number": 453,
+    "content": "(\\<forall>i. CSTATE Shared T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> (CSTATE IMAD T j \\<or> CSTATE IMA T j \\<or> CSTATE SMAD T j \\<or> CSTATE SMA T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_964",
+    "line_number": 454,
+    "content": "(\\<forall>i. CSTATE SMAD T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> snps T j = [] \\<and> snpresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_965",
+    "line_number": 455,
+    "content": "(\\<forall>i. CSTATE SMAD T i \\<and> reqresps T i = [] \\<and> htddatas T i = [] \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_966",
+    "line_number": 456,
+    "content": "(\\<forall>i. nextReqIs RdOwn T i \\<longrightarrow> CSTATE SMAD T i \\<or> CSTATE IMAD T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_967",
+    "line_number": 457,
+    "content": "(\\<forall>i. CSTATE SMAD T i \\<and> nextSnoopIs SnpInv T i \\<and> CXL_SPG_used T i \\<longrightarrow> nextReqIs RdOwn T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_968",
+    "line_number": 458,
+    "content": "(\\<forall>i. CSTATE ISD T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_969",
+    "line_number": 459,
+    "content": "(\\<forall>i. CSTATE ISD T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> (CSTATE IMAD T j \\<or> CSTATE IMA T j \\<or> CSTATE SMAD T j \\<or> CSTATE SMA T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_970",
+    "line_number": 460,
+    "content": "(HSTATE MD T \\<longrightarrow> (\\<forall>i. snpresps T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_971",
+    "line_number": 461,
+    "content": "(\\<forall>i. HSTATE MD T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> (CSTATE IMAD T j \\<and> nextGOPending T j \\<or> CSTATE IMD T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_972",
+    "line_number": 462,
+    "content": "(\\<forall>i. HSTATE MD T \\<and> nextDTHDataFrom i T \\<longrightarrow>  \\<not> nextReqIs CleanEvict T i \\<and> \\<not> nextReqIs CleanEvictNoData T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_973",
+    "line_number": 463,
+    "content": "(HSTATE MD T \\<longrightarrow> (\\<forall>i. \\<not> nextGOPendingIs GO_WritePull T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_974",
+    "line_number": 464,
+    "content": "(\\<forall>i. HSTATE MAD T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> CSTATE IMAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_975",
+    "line_number": 465,
+    "content": "(\\<forall>i. HSTATE MAD T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> snpresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_976",
+    "line_number": 466,
+    "content": "(\\<forall>i. HSTATE MAD T \\<and> nextDTHDataFrom i T \\<longrightarrow>  \\<not> nextReqIs CleanEvict T i \\<and> \\<not> nextReqIs CleanEvictNoData T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_977",
+    "line_number": 467,
+    "content": "(\\<forall>i. HSTATE MAD T \\<and> nextDTHDataFrom i T \\<longrightarrow> \\<not> CSTATE Modified T i \\<and> (\\<forall>j. j \\<noteq> i \\<longrightarrow> reqs T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_978",
+    "line_number": 468,
+    "content": "(\\<forall>i. HSTATE MAD T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> reqresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_979",
+    "line_number": 469,
+    "content": "(\\<forall>i. (HSTATE SAD T \\<or> HSTATE MAD T \\<or> HSTATE SA T \\<or> HSTATE MA T) \\<and> snpresps T i \\<noteq> [] \\<longrightarrow> htddatas T i = [] \\<or> CSTATE ISDI T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_980",
+    "line_number": 470,
+    "content": "(\\<forall>i. nextSnpRespIs RspSFwdM T i \\<longrightarrow> CSTATE Shared T i \\<or> CSTATE SMAD T i \\<or> CSTATE SIA T i \\<or> CSTATE SIAC T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_981",
+    "line_number": 471,
+    "content": "(\\<forall>i. (CSTATE Invalid T i  \\<or> CSTATE ISDI T i \\<or> nextReqIs RdOwn T i) \\<and> HSTATE MA T \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> ((CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextHTDDataPending T j \\<or> CSTATE IMA T j \\<or> CSTATE SMA T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_982",
+    "line_number": 472,
+    "content": "(\\<forall>i. CSTATE Modified T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> HSTATE MAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_983",
+    "line_number": 473,
+    "content": "(\\<forall>i. CSTATE Modified T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> CSTATE IMAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_984",
+    "line_number": 474,
+    "content": "(\\<forall>i. CSTATE IMD T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> HSTATE MAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_985",
+    "line_number": 475,
+    "content": "(\\<forall>i. CSTATE IMD T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> CSTATE IMAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_986",
+    "line_number": 476,
+    "content": "(\\<forall>i. CSTATE IMAD T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> HSTATE MAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_987",
+    "line_number": 477,
+    "content": "(\\<forall>i. CSTATE IMAD T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> CSTATE IMAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_988",
+    "line_number": 478,
+    "content": "(\\<forall>i. CSTATE IMA T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> HSTATE MAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_989",
+    "line_number": 479,
+    "content": "(\\<forall>i. CSTATE IMA T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> CSTATE IMAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_990",
+    "line_number": 480,
+    "content": "(\\<forall>i. CSTATE MIA T i \\<and> nextSnoopIs SnpData T i \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_991",
+    "line_number": 481,
+    "content": "(\\<forall>i. CSTATE MIA T i \\<and> nextSnoopIs SnpData T i \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> CSTATE ISAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_992",
+    "line_number": 482,
+    "content": "(\\<forall>i. CSTATE Modified T i \\<and> nextSnoopIs SnpData T i \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_993",
+    "line_number": 483,
+    "content": "(\\<forall>i. CSTATE Modified T i \\<and> nextSnoopIs SnpData T i \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> CSTATE ISAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_994",
+    "line_number": 484,
+    "content": "(\\<forall>i. CSTATE Modified T i \\<longrightarrow> reqs T i = []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_995",
+    "line_number": 485,
+    "content": "(\\<forall>i. CSTATE Modified T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> snps T j = [] \\<and> snpresps T j = []) \\<and> reqresps T i = [] \\<and> htddatas T i = []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_996",
+    "line_number": 486,
+    "content": "(\\<forall>i. HSTATE InvalidM T \\<and> nextReqIs RdShared T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> dthdatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_997",
+    "line_number": 487,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE Modified T i \\<and> \\<not> CSTATE Shared T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_998",
+    "line_number": 488,
+    "content": "(\\<forall>i. nextReqIs RdOwn T i \\<longrightarrow> \\<not> CSTATE ISAD T i \\<and> \\<not> CSTATE Invalid T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_999",
+    "line_number": 489,
+    "content": "(\\<forall>i. HSTATE InvalidM T \\<and> nextReqIs RdOwn T i \\<longrightarrow> CSTATE IMAD T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1000",
+    "line_number": 490,
+    "content": "(\\<forall>i. HSTATE InvalidM T \\<and> nextReqIs RdOwn T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> dthdatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1001",
+    "line_number": 491,
+    "content": "(\\<forall>i. CSTATE SIA T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> snps T j = [] \\<and> snpresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1002",
+    "line_number": 492,
+    "content": "(\\<forall>i. CSTATE SIA T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1003",
+    "line_number": 493,
+    "content": "(\\<forall>i. CSTATE SIA T i \\<and> nextSnoopIs SnpInv T i \\<and> CXL_SPG_used T i \\<longrightarrow> (nextReqIs CleanEvict T i \\<or> nextReqIs CleanEvictNoData T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1004",
+    "line_number": 494,
+    "content": "(\\<forall>i. CSTATE SIA T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> (CSTATE IMAD T j \\<or> CSTATE IMA T j \\<or> CSTATE SMAD T j \\<or> CSTATE SMA T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1005",
+    "line_number": 495,
+    "content": "(\\<forall>i. CSTATE SMAD T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> (CSTATE IMAD T j \\<or> CSTATE IMA T j \\<or> CSTATE SMAD T j \\<or> CSTATE SMA T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1006",
+    "line_number": 496,
+    "content": "(HSTATE ID T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE Modified T i \\<and> \\<not> CSTATE Shared T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1007",
+    "line_number": 497,
+    "content": "(\\<forall>i. HSTATE ModifiedM T \\<and> nextReqIs DirtyEvict T i \\<longrightarrow> (\\<not> (\\<forall>j. CSTATE Modified T j)) \\<and> (\\<forall>j. \\<not> CSTATE Shared T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1008",
+    "line_number": 498,
+    "content": "(\\<forall>i. HSTATE ID T \\<and> nextReqIs RdOwn T i \\<longrightarrow> CSTATE IMAD T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1009",
+    "line_number": 499,
+    "content": "(\\<forall>i. CSTATE SMAD T i \\<and> nextGOPending T i \\<longrightarrow> nextHTDDataPending T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1010",
+    "line_number": 500,
+    "content": "(C_msg_P_oppo SMAD nextGOPending (\\<lambda>T i. \\<not> nextSnoopPending T i) T) \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1011",
+    "line_number": 501,
+    "content": "(\\<forall>i. HSTATE SharedM T \\<and> nextReqIs CleanEvictNoData T i \\<longrightarrow> CSTATE SIAC T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1012",
+    "line_number": 502,
+    "content": "(\\<forall>i. nextGOPendingIs GO_WritePull T i \\<and> HSTATE InvalidM T \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> reqresps T j = [] \\<or> nextReqRespStateIs Invalid (reqresps T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1013",
+    "line_number": 503,
+    "content": "(\\<forall>i. HSTATE SharedM T \\<and> (nextReqIs CleanEvictNoData T i \\<or> nextReqIs CleanEvict T i) \\<longrightarrow> nextEvict T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1014",
+    "line_number": 504,
+    "content": "(\\<forall>i. HSTATE SharedM T \\<and> (nextReqIs CleanEvictNoData T i \\<or> nextReqIs CleanEvict T i) \\<longrightarrow> \\<not> CSTATE ISDI T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1015",
+    "line_number": 505,
+    "content": "(\\<forall>i. HSTATE SharedM T \\<and> (nextReqIs CleanEvictNoData T i \\<or> nextReqIs CleanEvict T i) \\<longrightarrow> \\<not> CSTATE MIA T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1016",
+    "line_number": 506,
+    "content": "(\\<forall>i. CSTATE Shared T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> ((CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> htddatas T j \\<noteq> [] \\<or> (CSTATE IMA T j \\<or> CSTATE SMA T j) \\<and> htddatas T j = []))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1017",
+    "line_number": 507,
+    "content": "(\\<forall>i. nextReqIs DirtyEvict T i \\<longrightarrow> nextEvict T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1018",
+    "line_number": 508,
+    "content": "(\\<forall>i. nextReqIs DirtyEvict T i \\<and> HSTATE InvalidM T \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> \\<not> nextDTHDataFrom j T)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1019",
+    "line_number": 509,
+    "content": "(\\<forall>i. nextReqIs DirtyEvict T i \\<and> HSTATE InvalidM T \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> \\<not> CSTATE ISDI T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1020",
+    "line_number": 510,
+    "content": "(\\<forall>i. nextReqIs DirtyEvict T i \\<and> HSTATE InvalidM T \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> reqresps T j = [] \\<or> nextReqRespStateIs Invalid (reqresps T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1021",
+    "line_number": 511,
+    "content": "(\\<forall>i. CSTATE SMD T i \\<and> nextHTDDataPending T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> \\<not>(CSTATE ISA T j \\<or> nextHTDDataPending T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1022",
+    "line_number": 512,
+    "content": "(\\<forall>i. CSTATE SMD T i \\<and> nextHTDDataPending T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> HSTATE MAD T \\<and> (\\<exists>j. j \\<noteq> i \\<and> CSTATE IMAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1023",
+    "line_number": 513,
+    "content": "(\\<forall>i. CSTATE SMD T i \\<and> nextHTDDataPending T i \\<and> nextSnoopIs SnpData T i \\<longrightarrow> HSTATE SAD T \\<and> (\\<exists>j. j \\<noteq> i \\<and> CSTATE ISAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1024",
+    "line_number": 514,
+    "content": "(\\<forall>i. CSTATE SMD T i \\<and> nextHTDDataPending T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> snps T j = [] \\<and> snpresps T j = []) \\<and> reqresps T i = []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1025",
+    "line_number": 515,
+    "content": "(\\<forall>i. CSTATE SMD T i \\<and> nextHTDDataPending T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> \\<not> nextReqIs DirtyEvict T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1026",
+    "line_number": 516,
+    "content": "(\\<forall>i. (nextReqIs CleanEvictNoData T i \\<or> nextReqIs CleanEvict T i) \\<longrightarrow> (CSTATE SIA T i \\<or> CSTATE IIA T i \\<or> CSTATE SIAC T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1027",
+    "line_number": 517,
+    "content": "((\\<exists>i. CSTATE Shared T i) \\<longrightarrow> \\<not> HSTATE MD T) \\<and>",
+    "type": "existential_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1028",
+    "line_number": 518,
+    "content": "(\\<forall>i. CSTATE Shared T i \\<and> HSTATE MA T \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> ((CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextHTDDataPending T j \\<or> CSTATE IMA T j \\<or> CSTATE SMA T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1029",
+    "line_number": 519,
+    "content": "(\\<forall>i. (nextReqIs CleanEvictNoData T i \\<or> nextReqIs CleanEvict T i) \\<longrightarrow> nextEvict T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1030",
+    "line_number": 520,
+    "content": "(\\<forall>i. (nextReqIs CleanEvictNoData T i \\<or> nextReqIs CleanEvict T i) \\<longrightarrow> \\<not> CSTATE ISDI T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1031",
+    "line_number": 521,
+    "content": "(\\<forall>i. (nextReqIs CleanEvictNoData T i \\<or> nextReqIs CleanEvict T i) \\<longrightarrow> \\<not> CSTATE MIA T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1032",
+    "line_number": 522,
+    "content": "(\\<forall>i. CSTATE IIA T i \\<and> HSTATE InvalidM T \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<and> nextReqIs RdShared T j \\<longrightarrow> CSTATE ISAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1033",
+    "line_number": 523,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE IMA T i \\<and> \\<not> CSTATE SMA T i \\<and> \\<not> CSTATE IMD T i \\<and> \\<not> CSTATE SMD T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1034",
+    "line_number": 524,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> (\\<forall>i. \\<not> ((CSTATE IMAD T i \\<or> CSTATE SMAD T i) \\<and> (nextGOPending T i \\<or> nextHTDDataPending T i)))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1035",
+    "line_number": 525,
+    "content": "((\\<exists>i. nextGOPendingIs GO_WritePull T i) \\<longrightarrow> \\<not> HSTATE InvalidM T) \\<and>",
+    "type": "existential_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1036",
+    "line_number": 526,
+    "content": "(\\<forall>i. CSTATE MIA T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> \\<not> CSTATE IMA T j \\<and> \\<not> CSTATE SMA T j \\<and> \\<not> nextHTDDataPending T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1037",
+    "line_number": 527,
+    "content": "(\\<forall>i. nextGOPendingIs GO_WritePull T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1038",
+    "line_number": 528,
+    "content": "(\\<forall>i. (CSTATE IMA T i \\<or> CSTATE SMA T i \\<or> (CSTATE IMAD T i \\<or> CSTATE SMAD T i) \\<and> nextHTDDataPending T i) \\<longrightarrow> (HSTATE MA T \\<or> HSTATE ModifiedM T \\<or> HSTATE MB T \\<or> HSTATE MAD T \\<or> HSTATE SAD T)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1039",
+    "line_number": 529,
+    "content": "(\\<forall>i. CSTATE MIA T i \\<longrightarrow> htddatas T i = [] \\<and> (\\<forall>j. j \\<noteq> i \\<longrightarrow> snps T j = [] \\<and> snpresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1040",
+    "line_number": 530,
+    "content": "(\\<forall>i. CSTATE MIA T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> HSTATE MAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1041",
+    "line_number": 531,
+    "content": "(\\<forall>i. CSTATE MIA T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<exists>j. j \\<noteq> i \\<and> CSTATE IMAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1042",
+    "line_number": 532,
+    "content": "((HSTATE InvalidM T \\<or> HSTATE SharedM T \\<or> HSTATE ModifiedM T) \\<longrightarrow> (\\<forall>i. \\<not> nextGOPendingIs GO_WritePull T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1043",
+    "line_number": 533,
+    "content": "(\\<forall>i. CSTATE SIA T i \\<and> nextGOPendingIs GO_WritePullDrop T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<and> CSTATE IIA T j \\<longrightarrow> HSTATE InvalidM T \\<or> HSTATE IB T)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1044",
+    "line_number": 534,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> (\\<forall>i. dthdatas T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1045",
+    "line_number": 535,
+    "content": "(\\<forall>i. CSTATE Invalid T i \\<longrightarrow> \\<not> nextSnoopIs SnpInv T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1046",
+    "line_number": 536,
+    "content": "(\\<forall>i. CSTATE Modified T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> \\<not> CSTATE MIA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1047",
+    "line_number": 537,
+    "content": "(\\<forall>i. HSTATE MA T \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> (CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> htddatas T j \\<noteq> [] \\<or> (CSTATE IMA T j \\<or> CSTATE SMA T j) \\<and> htddatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1048",
+    "line_number": 538,
+    "content": "(\\<forall>i. CSTATE SMAD T i \\<and> nextGOPending T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> snps T j = [] \\<and> snpresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1049",
+    "line_number": 539,
+    "content": "(\\<forall>i. HSTATE MA T \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> (CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextHTDDataPending T j \\<or> CSTATE IMA T j \\<or> CSTATE SMA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1050",
+    "line_number": 540,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE ISD T i \\<and> \\<not> CSTATE ISA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1051",
+    "line_number": 541,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE SMD T i \\<and> \\<not> CSTATE SMA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1052",
+    "line_number": 542,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE IMD T i \\<and> \\<not> CSTATE IMA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1053",
+    "line_number": 543,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> (\\<forall>i. \\<not> (CSTATE ISAD T i \\<and> (nextGOPending T i \\<or> nextHTDDataPending T i)) \\<and> \\<not> (CSTATE IMAD T i \\<and> (nextGOPending T i \\<or> nextHTDDataPending T i)) \\<and> \\<not> (CSTATE SMAD T i \\<and> (nextGOPending T i \\<or> nextHTDDataPending T i)))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1054",
+    "line_number": 544,
+    "content": "(\\<forall>i. CSTATE ISD T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> ((CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> htddatas T j \\<noteq> []) \\<or> ((CSTATE IMA T j \\<or> CSTATE SMA T j) \\<and> htddatas T j = []))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1055",
+    "line_number": 545,
+    "content": "(\\<forall>i. CSTATE ISA T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> ((CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> htddatas T j \\<noteq> []) \\<or> ((CSTATE IMA T j \\<or> CSTATE SMA T j) \\<and> htddatas T j = []))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1056",
+    "line_number": 546,
+    "content": "(\\<forall>i. CSTATE ISAD T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> ((CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> htddatas T j \\<noteq> []) \\<or> ((CSTATE IMA T j \\<or> CSTATE SMA T j) \\<and> htddatas T j = []))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1057",
+    "line_number": 547,
+    "content": "(\\<forall>i. CSTATE IMAD T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> CSTATE IMAD T j \\<and> htddatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1058",
+    "line_number": 548,
+    "content": "(\\<forall>i. CSTATE IMD T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> CSTATE IMAD T j \\<and> htddatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1059",
+    "line_number": 549,
+    "content": "(\\<forall>i. CSTATE IMA T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> CSTATE IMAD T j \\<and> htddatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1060",
+    "line_number": 550,
+    "content": "(\\<forall>i. CSTATE SMAD T i \\<and> nextGOPending T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> CSTATE IMAD T j \\<and> htddatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1061",
+    "line_number": 551,
+    "content": "(\\<forall>i. CSTATE SMD T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> CSTATE IMAD T j \\<and> htddatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1062",
+    "line_number": 552,
+    "content": "(\\<forall>i. CSTATE SMA T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> CSTATE IMAD T j \\<and> htddatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1063",
+    "line_number": 553,
+    "content": "(\\<forall>i. CSTATE ISD T i \\<or> CSTATE ISA T i \\<longrightarrow> \\<not> HSTATE MD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1064",
+    "line_number": 554,
+    "content": "(\\<forall>i. CSTATE ISAD T i \\<and> (nextHTDDataPending T i \\<or> nextGOPending T i) \\<longrightarrow> \\<not> HSTATE MD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1065",
+    "line_number": 555,
+    "content": "(\\<forall>i. CSTATE ISD T i \\<and> HSTATE MA T \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> (CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextHTDDataPending T j \\<or> CSTATE IMA T j \\<or> CSTATE SMA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1066",
+    "line_number": 556,
+    "content": "(\\<forall>i. CSTATE ISA T i \\<and> HSTATE MA T \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> (CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextHTDDataPending T j \\<or> CSTATE IMA T j \\<or> CSTATE SMA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1067",
+    "line_number": 557,
+    "content": "(\\<forall>i. CSTATE IMD T i \\<and> nextHTDDataPending T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> \\<not> (CSTATE ISAD T j \\<and> nextGOPending T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1068",
+    "line_number": 558,
+    "content": "(\\<forall>i. CSTATE IMD T i \\<and> nextHTDDataPending T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> \\<not> CSTATE ISA T j \\<and> \\<not> nextHTDDataPending T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1069",
+    "line_number": 559,
+    "content": "(\\<forall>i. CSTATE IMD T i \\<and> nextHTDDataPending T i \\<longrightarrow> (\\<forall>j. j \\<noteq> i \\<longrightarrow> \\<not> CSTATE Shared T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1070",
+    "line_number": 560,
+    "content": "(\\<forall>i. CSTATE ISD T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1071",
+    "line_number": 561,
+    "content": "(\\<forall>i. CSTATE ISA T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1072",
+    "line_number": 562,
+    "content": "(\\<forall>i. CSTATE ISAD T i \\<and> nextGOPending T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1073",
+    "line_number": 563,
+    "content": "(\\<forall>i. CSTATE ISAD T i \\<and> nextHTDDataPending T i \\<and> nextSnoopIs SnpInv T i \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1074",
+    "line_number": 564,
+    "content": "(HSTATE SharedM T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE IMA T i \\<and> \\<not> CSTATE SMA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1075",
+    "line_number": 565,
+    "content": "(HSTATE SharedM T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE IMD T i \\<and> \\<not> CSTATE SMD T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1076",
+    "line_number": 566,
+    "content": "(HSTATE SharedM T \\<longrightarrow> \\<not> (CSTATE IMAD T 0 \\<and> (nextGOPending T 0 \\<or> nextHTDDataPending T 0))) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1077",
+    "line_number": 567,
+    "content": "(HSTATE SharedM T \\<longrightarrow> \\<not> (CSTATE IMAD T 1 \\<and> (nextGOPending T 1 \\<or> nextHTDDataPending T 1))) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1078",
+    "line_number": 568,
+    "content": "(HSTATE SharedM T \\<longrightarrow> \\<not> (CSTATE SMAD T 0 \\<and> (nextGOPending T 0 \\<or> nextHTDDataPending T 0))) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1079",
+    "line_number": 569,
+    "content": "(HSTATE SharedM T \\<longrightarrow> \\<not> (CSTATE SMAD T 1 \\<and> (nextGOPending T 1 \\<or> nextHTDDataPending T 1))) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1080",
+    "line_number": 570,
+    "content": "(HSTATE SharedM T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE MIA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1081",
+    "line_number": 571,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE MIA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1082",
+    "line_number": 572,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE ISD T i \\<and> \\<not> CSTATE IMD T i \\<and> \\<not> CSTATE SMD T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1083",
+    "line_number": 573,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> (\\<forall>i. \\<not> (CSTATE ISAD T i \\<and> nextGOPending T i))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1084",
+    "line_number": 574,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> (\\<forall>i. \\<not> (CSTATE IMAD T i \\<and> nextGOPending T i))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1085",
+    "line_number": 575,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> (\\<forall>i. \\<not> (CSTATE SMAD T i \\<and> nextGOPending T i))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1086",
+    "line_number": 576,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE ISA T i \\<and> \\<not> CSTATE IMA T i \\<and> \\<not> CSTATE SMA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1087",
+    "line_number": 577,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> (\\<forall>i. \\<not> nextHTDDataPending T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1088",
+    "line_number": 578,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> CSTATE Shared T 0) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1089",
+    "line_number": 579,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> CSTATE Shared T 1) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1090",
+    "line_number": 580,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE Modified T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1091",
+    "line_number": 581,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE IMD T i \\<and> nextHTDDataPending T i \\<longrightarrow> snpresps T j = [] \\<and> reqresps T i = [] \\<and> snps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1092",
+    "line_number": 582,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE IMAD T i \\<and> nextHTDDataPending T i \\<and> nextGOPending T i \\<longrightarrow> snpresps T j = [] \\<and> snps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1093",
+    "line_number": 583,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE IMD T i \\<and> nextSnoopIs SnpData T i \\<longrightarrow> CSTATE ISAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1094",
+    "line_number": 584,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE IMA T i \\<and> nextSnoopIs SnpData T i \\<longrightarrow> CSTATE ISAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1095",
+    "line_number": 585,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE IMAD T i \\<and> nextSnoopIs SnpData T i \\<longrightarrow> CSTATE ISAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1096",
+    "line_number": 586,
+    "content": "(\\<forall>i. CSTATE IMD T i \\<and> nextSnoopIs SnpData T i \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1097",
+    "line_number": 587,
+    "content": "(\\<forall>i. CSTATE IMA T i \\<and> nextSnoopIs SnpData T i \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1098",
+    "line_number": 588,
+    "content": "(CSTATE IMA T 1 \\<and> nextSnoopIs SnpData T 1 \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1099",
+    "line_number": 589,
+    "content": "(CSTATE IMAD T 0 \\<and> nextSnoopIs SnpData T 0 \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1100",
+    "line_number": 590,
+    "content": "(CSTATE IMAD T 1 \\<and> nextSnoopIs SnpData T 1 \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1101",
+    "line_number": 591,
+    "content": "(HSTATE IB T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE Modified T i \\<and> \\<not> CSTATE Shared T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1102",
+    "line_number": 592,
+    "content": "(\\<forall>i. HSTATE IB T \\<and> nextReqIs RdOwn T i \\<longrightarrow> CSTATE IMAD T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1103",
+    "line_number": 593,
+    "content": "(HSTATE SB T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE Modified T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1104",
+    "line_number": 594,
+    "content": "(HSTATE SB T \\<longrightarrow> (\\<forall>i. length (dthdatas T i) \\<le> 1)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1105",
+    "line_number": 595,
+    "content": "(HSTATE IB T \\<longrightarrow> (\\<forall>i. length (dthdatas T i) \\<le> 1)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1106",
+    "line_number": 596,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SB T \\<and> nextDTHDataFrom i T \\<longrightarrow> \\<not> CSTATE IIA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1107",
+    "line_number": 597,
+    "content": "(HSTATE MB T \\<longrightarrow> (\\<forall>i. length (dthdatas T i) \\<le> 1)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1108",
+    "line_number": 598,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SB T \\<and> nextDTHDataFrom i T \\<longrightarrow> dthdatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1109",
+    "line_number": 599,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE IB T \\<and> nextDTHDataFrom i T \\<longrightarrow> dthdatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1110",
+    "line_number": 600,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE MB T \\<and> nextDTHDataFrom i T \\<longrightarrow> dthdatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1111",
+    "line_number": 601,
+    "content": "(HSTATE SB T \\<longrightarrow> (\\<forall>i. snps T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1112",
+    "line_number": 602,
+    "content": "(HSTATE IB T \\<longrightarrow> (\\<forall>i. snps T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1113",
+    "line_number": 603,
+    "content": "(HSTATE MB T \\<longrightarrow> (\\<forall>i. snps T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1114",
+    "line_number": 604,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SB T \\<and> nextDTHDataFrom i T \\<longrightarrow> reqresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1115",
+    "line_number": 605,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE MB T \\<and> nextDTHDataFrom i T \\<longrightarrow> reqresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1116",
+    "line_number": 606,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE IB T \\<and> nextDTHDataFrom i T \\<longrightarrow> reqresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1117",
+    "line_number": 607,
+    "content": "(HSTATE SB T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE IMD T i \\<and> \\<not> CSTATE SMD T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1118",
+    "line_number": 608,
+    "content": "(HSTATE IB T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE IMD T i \\<and> \\<not> CSTATE SMD T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1119",
+    "line_number": 609,
+    "content": "(\\<forall>i. HSTATE SharedM T \\<and> lastSharer T \\<and> nextReqIs CleanEvictNoData T i \\<longrightarrow> (\\<forall>j. \\<not> CSTATE Shared T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1120",
+    "line_number": 610,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SharedM T \\<and> lastSharer T \\<and> nextReqIs CleanEvictNoData T i \\<longrightarrow> \\<not> (CSTATE ISAD T j \\<and> nextGOPending T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1121",
+    "line_number": 611,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE ISAD T i \\<and> nextHTDDataPending T i \\<longrightarrow> snpresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1122",
+    "line_number": 612,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SAD T \\<and> nextDTHDataFrom i T \\<longrightarrow> snpresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1123",
+    "line_number": 613,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE ISAD T i \\<and> nextHTDDataPending T i \\<and> HSTATE MA T \\<longrightarrow> (CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextHTDDataPending T j \\<or> CSTATE IMA T j \\<or> CSTATE SMA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1124",
+    "line_number": 614,
+    "content": "(HSTATE ModifiedM T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE SIA T i \\<or> nextGOPendingIs GO_WritePullDrop T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1125",
+    "line_number": 615,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE MA T \\<and> snpresps T i \\<noteq> [] \\<longrightarrow> \\<not> CSTATE SIA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1126",
+    "line_number": 616,
+    "content": "(HSTATE MD T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE SIA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1127",
+    "line_number": 617,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE MIA T i \\<longrightarrow> \\<not> (CSTATE IMAD T j \\<and> nextGOPending T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1128",
+    "line_number": 618,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE MIA T i \\<longrightarrow> \\<not> (CSTATE SMAD T j \\<and> nextGOPending T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1129",
+    "line_number": 619,
+    "content": "(\\<forall>i. HSTATE ModifiedM T \\<and> nextReqIs RdOwn T i \\<longrightarrow> CSTATE IMAD T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1130",
+    "line_number": 620,
+    "content": "(HSTATE ModifiedM T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE ISA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1131",
+    "line_number": 621,
+    "content": "(HSTATE MD T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE ISA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1132",
+    "line_number": 622,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE MA T \\<and> snpresps T i \\<noteq> [] \\<longrightarrow> \\<not> CSTATE ISA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1133",
+    "line_number": 623,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE MIA T i \\<and> HSTATE ModifiedM T \\<longrightarrow> \\<not> CSTATE SMA T j \\<and> \\<not> CSTATE SMD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1134",
+    "line_number": 624,
+    "content": "(CSTATE MIA T 0 \\<and> HSTATE ModifiedM T \\<longrightarrow> \\<not> CSTATE IMA T 1 \\<and> \\<not> CSTATE IMD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1135",
+    "line_number": 625,
+    "content": "(CSTATE MIA T 1 \\<and> HSTATE ModifiedM T \\<longrightarrow> \\<not> CSTATE IMA T 0 \\<and> \\<not> CSTATE IMD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1136",
+    "line_number": 626,
+    "content": "(CSTATE MIA T 0 \\<and> HSTATE ModifiedM T \\<longrightarrow> \\<not> (CSTATE IMAD T 1 \\<and> (nextGOPending T 1 \\<or> nextHTDDataPending T 1))) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1137",
+    "line_number": 627,
+    "content": "(CSTATE MIA T 1 \\<and> HSTATE ModifiedM T \\<longrightarrow> \\<not> (CSTATE IMAD T 0 \\<and> (nextGOPending T 0 \\<or> nextHTDDataPending T 0))) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1138",
+    "line_number": 628,
+    "content": "(CSTATE MIA T 0 \\<and> HSTATE ModifiedM T \\<longrightarrow> \\<not> CSTATE SMAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1139",
+    "line_number": 629,
+    "content": "(CSTATE MIA T 1 \\<and> HSTATE ModifiedM T \\<longrightarrow> \\<not> CSTATE SMAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1140",
+    "line_number": 630,
+    "content": "(\\<forall>i. CSTATE IMD T i \\<longrightarrow> reqresps T i = []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1141",
+    "line_number": 631,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE IB T \\<and> nextDTHDataFrom i T \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1142",
+    "line_number": 632,
+    "content": "(HSTATE IB T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE ISA T i \\<and> \\<not> CSTATE ISD T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1143",
+    "line_number": 633,
+    "content": "(HSTATE IB T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE SMA T i \\<and> \\<not> CSTATE SMD T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1144",
+    "line_number": 634,
+    "content": "(HSTATE IB T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE IMA T i \\<and> \\<not> CSTATE IMD T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1145",
+    "line_number": 635,
+    "content": "(HSTATE IB T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE MIA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1146",
+    "line_number": 636,
+    "content": "(HSTATE IB T \\<longrightarrow> (\\<forall>i. \\<not> nextHTDDataPending T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1147",
+    "line_number": 637,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE ID T \\<and> nextDTHDataFrom i T \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1148",
+    "line_number": 638,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE ID T \\<and> nextDTHDataFrom i T \\<longrightarrow> reqresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1149",
+    "line_number": 639,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE ID T \\<and> nextDTHDataFrom i T \\<longrightarrow> \\<not> nextHTDDataPending T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1150",
+    "line_number": 640,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE ModifiedM T \\<and> nextReqIs RdShared T i \\<longrightarrow> \\<not> CSTATE ISDI T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1151",
+    "line_number": 641,
+    "content": "(HSTATE SD T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE MIA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1152",
+    "line_number": 642,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SAD T \\<and> snpresps T i \\<noteq> [] \\<longrightarrow> \\<not> CSTATE MIA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1153",
+    "line_number": 643,
+    "content": "(HSTATE MD T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE MIA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1154",
+    "line_number": 644,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (snpresps T i \\<noteq> [] \\<and> HSTATE MAD T \\<longrightarrow> \\<not> CSTATE MIA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1155",
+    "line_number": 645,
+    "content": "(snpresps2 T \\<noteq> [] \\<and> HSTATE MAD T \\<longrightarrow> \\<not> CSTATE MIA T 0 \\<and> \\<not> CSTATE MIA T 1) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1156",
+    "line_number": 646,
+    "content": "(CSTATE IMD T 0 \\<and> HSTATE MD T \\<longrightarrow> snpresps1 T = [] \\<and> snps1 T = [] \\<and> reqresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1157",
+    "line_number": 647,
+    "content": "(CSTATE IMD T 1 \\<and> HSTATE MD T \\<longrightarrow> snpresps2 T = [] \\<and> snps2 T = [] \\<and> reqresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1158",
+    "line_number": 648,
+    "content": "(nextDTHDataFrom 0 T \\<and> HSTATE MD T \\<and> nextReqIs RdOwn T 0 \\<longrightarrow> CSTATE IMAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1159",
+    "line_number": 649,
+    "content": "(nextDTHDataFrom 1 T \\<and> HSTATE MD T \\<and> nextReqIs RdOwn T 1 \\<longrightarrow> CSTATE IMAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1160",
+    "line_number": 650,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SAD T \\<and> nextSnpRespIs RspSFwdM T i \\<longrightarrow> \\<not> CSTATE Modified T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1161",
+    "line_number": 651,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE IMA T i \\<and> nextGOPending T i \\<longrightarrow> \\<not> CSTATE Modified T j \\<and> \\<not> CSTATE Shared T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1162",
+    "line_number": 652,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE MB T \\<and> nextDTHDataFrom i T \\<longrightarrow> dthdatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1163",
+    "line_number": 653,
+    "content": "(HSTATE SA T \\<longrightarrow> (\\<forall>i. \\<not> nextGOPendingIs GO_WritePull T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1164",
+    "line_number": 654,
+    "content": "(HSTATE SharedM T \\<longrightarrow> (\\<forall>i. \\<not> nextGOPendingIs GO_WritePull T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1165",
+    "line_number": 655,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE IIA T i \\<and> HSTATE SA T \\<longrightarrow> CSTATE ISAD T j \\<and> nextHTDDataPending T j \\<or> CSTATE ISA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1166",
+    "line_number": 656,
+    "content": "(\\<forall>i. HSTATE MA T \\<and> snpresps T i \\<noteq> [] \\<longrightarrow> htddatas T i = [] \\<or> CSTATE ISDI T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1167",
+    "line_number": 657,
+    "content": "(HSTATE MB T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE ISD T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1168",
+    "line_number": 658,
+    "content": "(\\<forall>i. HSTATE MB T \\<and> nextDTHDataFrom i T \\<longrightarrow> CSTATE Invalid T i \\<or> CSTATE ISAD T i \\<or> CSTATE IMAD T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1169",
+    "line_number": 659,
+    "content": "(HSTATE MB T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE Shared T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1170",
+    "line_number": 660,
+    "content": "(HSTATE MB T \\<longrightarrow> (\\<forall>i. snpresps T i = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1171",
+    "line_number": 661,
+    "content": "(\\<forall>i. HSTATE MB T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<forall>j. \\<not> nextGOPendingIs GO_WritePull T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1172",
+    "line_number": 662,
+    "content": "(HSTATE MB T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE SIA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1173",
+    "line_number": 663,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE MB T \\<and> nextDTHDataFrom i T \\<longrightarrow> \\<not> nextReqIs RdOwn T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1174",
+    "line_number": 664,
+    "content": "(HSTATE MB T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE ISA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1175",
+    "line_number": 665,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE SIA T i \\<and> nextGOPendingIs GO_WritePull T i \\<and> HSTATE SB T \\<longrightarrow> \\<not> CSTATE IIA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1176",
+    "line_number": 666,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE IB T \\<and> nextDTHDataFrom i T \\<longrightarrow> \\<not> nextReqIs DirtyEvict T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1177",
+    "line_number": 667,
+    "content": "(\\<forall>i. HSTATE SB T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<forall>j. \\<not> nextGOPendingIs GO_WritePull T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1178",
+    "line_number": 668,
+    "content": "(\\<forall>i. HSTATE SB T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<forall>j. \\<not> CSTATE MIA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1179",
+    "line_number": 669,
+    "content": "(\\<forall>i. HSTATE ID T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<forall>j. \\<not> nextGOPendingIs GO_WritePull T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1180",
+    "line_number": 670,
+    "content": "(\\<forall>i. CSTATE Modified T i \\<longrightarrow> \\<not> nextReqIs RdOwn T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1181",
+    "line_number": 671,
+    "content": "(CSTATE IMA T 0 \\<and> nextGOPending T 0 \\<longrightarrow> \\<not> CSTATE ISD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1182",
+    "line_number": 672,
+    "content": "(CSTATE IMA T 1 \\<and> nextGOPending T 1 \\<longrightarrow> \\<not> CSTATE ISD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1183",
+    "line_number": 673,
+    "content": "(CSTATE IMA T 0 \\<and> nextGOPending T 0 \\<longrightarrow> \\<not> (CSTATE ISAD T 1 \\<and> nextGOPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1184",
+    "line_number": 674,
+    "content": "(CSTATE IMA T 1 \\<and> nextGOPending T 1 \\<longrightarrow> \\<not> (CSTATE ISAD T 0 \\<and> nextGOPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1185",
+    "line_number": 675,
+    "content": "(CSTATE IMA T 0 \\<and> nextGOPending T 0 \\<longrightarrow> \\<not> (CSTATE IMA T 1 \\<and> nextGOPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1186",
+    "line_number": 676,
+    "content": "(CSTATE IMA T 1 \\<and> nextGOPending T 1 \\<longrightarrow> \\<not> (CSTATE IMA T 0 \\<and> nextGOPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1187",
+    "line_number": 677,
+    "content": "(CSTATE IMA T 0 \\<and> nextGOPending T 0 \\<longrightarrow> \\<not> (CSTATE ISA T 1 \\<and> nextGOPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1188",
+    "line_number": 678,
+    "content": "(CSTATE IMA T 1 \\<and> nextGOPending T 1 \\<longrightarrow> \\<not> (CSTATE ISA T 0 \\<and> nextGOPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1189",
+    "line_number": 679,
+    "content": "((CSTATE ISAD T 0 \\<and> nextGOPending T 0) \\<or> CSTATE ISA T 0 \\<or> ( nextHTDDataPending T 0) \\<or> CSTATE Shared T 0 \\<longrightarrow> \\<not> (CSTATE IMA T 1 \\<and> nextGOPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1190",
+    "line_number": 680,
+    "content": "((CSTATE ISAD T 1 \\<and> nextGOPending T 1) \\<or> CSTATE ISA T 1 \\<or> ( nextHTDDataPending T 1) \\<or> CSTATE Shared T 1 \\<longrightarrow> \\<not> (CSTATE IMA T 0 \\<and> nextGOPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1191",
+    "line_number": 681,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE MAD T \\<and> nextDTHDataFrom i T \\<longrightarrow> snps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1192",
+    "line_number": 682,
+    "content": "(\\<forall>i. HSTATE MAD T \\<and> nextDTHDataFrom i T \\<longrightarrow> \\<not> CSTATE MIA T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1193",
+    "line_number": 683,
+    "content": "(\\<forall>i. HSTATE MAD T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<forall>j. \\<not> CSTATE SIA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1194",
+    "line_number": 684,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE Modified T i \\<longrightarrow> \\<not> CSTATE IMA T j \\<and> \\<not> CSTATE SMA T j \\<and> (htddatas T j = [] \\<or> CSTATE ISDI T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1195",
+    "line_number": 685,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE Modified T i \\<longrightarrow> \\<not> CSTATE SMAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1196",
+    "line_number": 686,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE Modified T i \\<longrightarrow> snpresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1197",
+    "line_number": 687,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE SMA T i \\<and> nextGOPending T i \\<longrightarrow> \\<not> (CSTATE ISAD T j \\<and> nextGOPending T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1198",
+    "line_number": 688,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE SMA T i \\<and> nextGOPending T i \\<longrightarrow> \\<not> CSTATE ISA T j \\<and> \\<not> CSTATE Shared T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1199",
+    "line_number": 689,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE SMA T i \\<and> nextGOPending T i \\<longrightarrow> htddatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1200",
+    "line_number": 690,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE SMA T i \\<and> nextGOPending T i \\<longrightarrow> \\<not> CSTATE IMA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1201",
+    "line_number": 691,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE Invalid T i \\<longrightarrow> snps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1202",
+    "line_number": 692,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SD T \\<and> nextDTHDataFrom i T \\<longrightarrow> CSTATE ISD T j \\<or> CSTATE ISAD T j \\<and> nextGOPending T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1203",
+    "line_number": 693,
+    "content": "(HSTATE SAD T \\<longrightarrow> (\\<forall>i. \\<not> nextGOPendingIs GO_WritePull T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1204",
+    "line_number": 694,
+    "content": "(\\<forall>i. HSTATE SAD T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<forall>j. \\<not> CSTATE MIA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1205",
+    "line_number": 695,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE SMAD T i \\<and> nextGOPending T i \\<and> nextHTDDataPending T i \\<and> nextSnoopIs SnpData T i \\<longrightarrow> HSTATE SAD T \\<and> CSTATE ISAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1206",
+    "line_number": 696,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE SMAD T i \\<and> nextGOPending T i \\<and> nextHTDDataPending T i \\<longrightarrow> \\<not> nextReqIs DirtyEvict T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1207",
+    "line_number": 697,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE SMAD T i \\<and> nextGOPending T i \\<and> nextHTDDataPending T i \\<longrightarrow> snps T j = [] \\<and> snpresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1208",
+    "line_number": 698,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE SIA T i \\<and> nextGOPendingIs GO_WritePull T i \\<and> HSTATE IB T \\<longrightarrow> \\<not> nextReqIs DirtyEvict T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1209",
+    "line_number": 699,
+    "content": "(CSTATE SIA T 0 \\<and> nextGOPendingIs GO_WritePull T 0 \\<and> HSTATE SB T \\<longrightarrow> \\<not> CSTATE MIA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1210",
+    "line_number": 700,
+    "content": "(CSTATE SIA T 1 \\<and> nextGOPendingIs GO_WritePull T 1 \\<and> HSTATE SB T \\<longrightarrow> \\<not> CSTATE MIA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1211",
+    "line_number": 701,
+    "content": "(HSTATE InvalidM T \\<and> nextReqIs DirtyEvict T 0 \\<longrightarrow> CSTATE IIA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1212",
+    "line_number": 702,
+    "content": "(HSTATE InvalidM T \\<and> nextReqIs DirtyEvict T 1 \\<longrightarrow> CSTATE IIA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1213",
+    "line_number": 703,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> (\\<not> CSTATE SIA T 0 \\<or> nextGOPendingIs GO_WritePullDrop T 0) \\<and> (\\<not> CSTATE SIA T 1 \\<or> nextGOPendingIs GO_WritePullDrop T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1214",
+    "line_number": 704,
+    "content": "(HSTATE MA T  \\<and> nextSnpRespIs RspIFwdM T 0 \\<longrightarrow> ((CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1 \\<or> CSTATE IMA T 1 \\<or> CSTATE SMA T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1215",
+    "line_number": 705,
+    "content": "(HSTATE MA T  \\<and> nextSnpRespIs RspIFwdM T 1 \\<longrightarrow> ((CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0 \\<or> CSTATE IMA T 0 \\<or> CSTATE SMA T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1216",
+    "line_number": 706,
+    "content": "(length (dthdatas1 T) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1217",
+    "line_number": 707,
+    "content": "(length (dthdatas2 T) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1218",
+    "line_number": 708,
+    "content": "(HSTATE IB T \\<and> CSTATE IIA T 0 \\<and> nextGOPendingIs GO_WritePull T 0 \\<longrightarrow> \\<not> nextReqIs DirtyEvict T 1) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1219",
+    "line_number": 709,
+    "content": "(HSTATE IB T \\<and> CSTATE IIA T 1 \\<and> nextGOPendingIs GO_WritePull T 1 \\<longrightarrow> \\<not> nextReqIs DirtyEvict T 0) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1220",
+    "line_number": 710,
+    "content": "(\\<forall>i. HSTATE MAD T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<forall>j. \\<not> CSTATE Shared T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1221",
+    "line_number": 711,
+    "content": "(\\<forall>i. HSTATE MA T \\<and> snpresps T i \\<noteq> [] \\<longrightarrow> (\\<forall>j. \\<not> CSTATE Shared T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1222",
+    "line_number": 712,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE IMAD T i \\<and> nextGOPending T i \\<and> HSTATE MD T \\<longrightarrow> snpresps T i = [] \\<and> snps T i = [] \\<and> reqresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1223",
+    "line_number": 713,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE IMA T i \\<and> nextGOPending T i \\<longrightarrow> \\<not> CSTATE IMA T j \\<and> \\<not> CSTATE SMA T j \\<and> (htddatas T j = [] \\<or> CSTATE ISDI T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1224",
+    "line_number": 714,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE SMA T i \\<and> nextGOPending T i \\<longrightarrow> \\<not> CSTATE IMA T j \\<and> \\<not> CSTATE SMA T j \\<and> (htddatas T j = [] \\<or> CSTATE ISDI T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1225",
+    "line_number": 715,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE Modified T i \\<longrightarrow> dthdatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1226",
+    "line_number": 716,
+    "content": "(\\<forall>i. nextSnpRespIs RspIHitSE T i \\<longrightarrow> \\<not> CSTATE IMA T i \\<and> \\<not> CSTATE SMA T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1227",
+    "line_number": 717,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE IMD T i \\<and> nextHTDDataPending T i \\<longrightarrow> \\<not> CSTATE SMAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1228",
+    "line_number": 718,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE SMD T i \\<and> nextHTDDataPending T i \\<longrightarrow> \\<not> CSTATE SMAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1229",
+    "line_number": 719,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE IMA T i \\<and> nextGOPending T i \\<longrightarrow> \\<not> CSTATE SMAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1230",
+    "line_number": 720,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE SMA T i \\<and> nextGOPending T i \\<longrightarrow> \\<not> CSTATE SMAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1231",
+    "line_number": 721,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE IMAD T i \\<and> nextGOPending T i \\<longrightarrow> \\<not> CSTATE SMAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1232",
+    "line_number": 722,
+    "content": "(\\<forall>i. HSTATE MD T \\<and> nextDTHDataFrom i T \\<longrightarrow> \\<not> CSTATE SMAD T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1233",
+    "line_number": 723,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE SMAD T i \\<and> nextGOPending T i \\<longrightarrow> \\<not> CSTATE SMAD T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1234",
+    "line_number": 724,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE SMAD T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1235",
+    "line_number": 725,
+    "content": "(HSTATE IB T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE SMAD T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1236",
+    "line_number": 726,
+    "content": "(HSTATE ID T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE SMAD T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1237",
+    "line_number": 727,
+    "content": "(\\<forall>i. HSTATE MA T \\<and> nextSnpRespIs RspIHitSE T i \\<longrightarrow> \\<not> nextReqIs DirtyEvict T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1238",
+    "line_number": 728,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE Modified T i \\<longrightarrow> htddatas T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1239",
+    "line_number": 729,
+    "content": "(HSTATE ModifiedM T \\<longrightarrow> snps1 T = [] \\<and> snps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1240",
+    "line_number": 730,
+    "content": "(CSTATE SMAD T 0 \\<and> nextHTDDataPending T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1 \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1241",
+    "line_number": 731,
+    "content": "(CSTATE SMAD T 1 \\<and> nextHTDDataPending T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0 \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1242",
+    "line_number": 732,
+    "content": "(CSTATE SMAD T 1 \\<and> HSTATE MA T \\<and> nextSnpRespIs RspIFwdM T 0 \\<longrightarrow> \\<not> nextReqIs DirtyEvict T 0) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1243",
+    "line_number": 733,
+    "content": "(CSTATE SMAD T 0 \\<and> HSTATE MA T \\<and> nextSnpRespIs RspIFwdM T 1 \\<longrightarrow> \\<not> nextReqIs DirtyEvict T 1) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1244",
+    "line_number": 734,
+    "content": "(CSTATE SIAC T 0 \\<and> HSTATE SA T \\<longrightarrow> \\<not> CSTATE Modified T 1) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1245",
+    "line_number": 735,
+    "content": "(CSTATE SIAC T 1 \\<and> HSTATE SA T \\<longrightarrow> \\<not> CSTATE Modified T 0) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1246",
+    "line_number": 736,
+    "content": "(CSTATE SIAC T 0 \\<longrightarrow> \\<not> nextHTDDataPending T 0) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1247",
+    "line_number": 737,
+    "content": "(CSTATE SIAC T 1 \\<longrightarrow> \\<not> nextHTDDataPending T 1) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1248",
+    "line_number": 738,
+    "content": "((CSTATE SIAC T 0 \\<and> nextGOPending T 0 \\<and> nextGOPendingState Invalid T 0)",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1249",
+    "line_number": 739,
+    "content": "((CSTATE SIAC T 1 \\<and> nextGOPending T 1 \\<and> nextGOPendingState Invalid T 1)",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1250",
+    "line_number": 740,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> ((CSTATE SIAC T i \\<and> nextGOPending T i \\<and> nextGOPendingState Invalid T i) \\<and> HSTATE ModifiedM T \\<longrightarrow> CSTATE Modified T j \\<or> CSTATE MIA T j \\<or> (CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextHTDDataPending T j \\<and> nextGOPending T j \\<or> (CSTATE IMA T j \\<or> CSTATE SMA T j) \\<and> nextGOPending T j \\<or> (CSTATE IMD T j \\<or> CSTATE SMD T j) \\<and> nextHTDDataPending T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1251",
+    "line_number": 741,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> ((CSTATE SIAC T i \\<and> nextGOPending T i \\<and> nextGOPendingState Invalid T i) \\<and> HSTATE ModifiedM T \\<longrightarrow> CSTATE Modified T j \\<or> CSTATE MIA T j \\<or> (CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextHTDDataPending T j \\<and> nextGOPending T j \\<or> (CSTATE IMA T j \\<or> CSTATE SMA T j) \\<and> nextGOPending T j \\<or> (CSTATE IMD T j \\<or> CSTATE SMD T j) \\<and> nextHTDDataPending T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1252",
+    "line_number": 742,
+    "content": "(\\<forall>i. (CSTATE SIAC T i \\<and> nextGOPending T i \\<and> nextGOPendingState Invalid T i) \\<and> HSTATE MD T \\<longrightarrow> dthdatas T i \\<noteq> []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1253",
+    "line_number": 743,
+    "content": "(\\<forall>i. (CSTATE SIAC T i \\<and> nextGOPending T i \\<and> nextGOPendingState Invalid T i) \\<and> HSTATE MD T \\<longrightarrow> dthdatas T i \\<noteq> []) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1254",
+    "line_number": 744,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> ((CSTATE SIAC T i \\<and> nextGOPending T i \\<and> nextGOPendingState Invalid T i) \\<and> HSTATE MA T \\<longrightarrow>(CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextHTDDataPending T j \\<or> CSTATE IMA T j \\<or> CSTATE SMA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1255",
+    "line_number": 745,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> ((CSTATE SIAC T i \\<and> nextGOPending T i \\<and> nextGOPendingState Invalid T i) \\<and> HSTATE MA T \\<longrightarrow>(CSTATE IMAD T j \\<or> CSTATE SMAD T j) \\<and> nextHTDDataPending T j \\<or> CSTATE IMA T j \\<or> CSTATE SMA T j)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1256",
+    "line_number": 746,
+    "content": "(\\<forall>i. (CSTATE SIAC T i \\<and> nextGOPending T i \\<and> nextGOPendingState Invalid T i)",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1257",
+    "line_number": 747,
+    "content": "(\\<forall>i. (CSTATE SIAC T i \\<and> nextGOPending T i \\<and> nextGOPendingState Invalid T i)",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1258",
+    "line_number": 748,
+    "content": "(\\<forall>i. (CSTATE SIAC T i \\<and> nextGOPending T i \\<and> nextGOPendingState Invalid T i)",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1259",
+    "line_number": 749,
+    "content": "(\\<forall>i. (CSTATE SIAC T i \\<and> nextGOPending T i \\<and> nextGOPendingState Invalid T i)",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1260",
+    "line_number": 750,
+    "content": "(\\<forall>i. HSTATE MA T \\<and> nextSnpRespIs RspIFwdM T i \\<longrightarrow> \\<not> nextHTDDataPending T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1261",
+    "line_number": 751,
+    "content": "(HSTATE SB T \\<longrightarrow> (\\<forall>i. \\<not> CSTATE MIA T i)) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1262",
+    "line_number": 752,
+    "content": "(\\<forall>i. nextReqIs CleanEvictNoData T i \\<longrightarrow> CSTATE SIAC T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1263",
+    "line_number": 753,
+    "content": "(\\<forall>i. nextSnpRespIs RspIHitSE T i \\<longrightarrow> \\<not> nextDTHDataFrom i T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1264",
+    "line_number": 754,
+    "content": "(\\<forall>i. nextSnpRespIs RspIFwdM T i \\<longrightarrow> \\<not> nextReqIs CleanEvictNoData T i) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1265",
+    "line_number": 755,
+    "content": "(\\<forall>i. CSTATE SMA T i \\<and> nextSnoopIs SnpData T i \\<and> nextGOPending T i \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1266",
+    "line_number": 756,
+    "content": "((CSTATE SIA T 0 \\<and> nextGOPendingIs GO_WritePullDrop T 0) \\<and> HSTATE ModifiedM T \\<longrightarrow> CSTATE Modified T 1 \\<or> CSTATE MIA T 1 \\<or> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1 \\<and> nextGOPending T 1 \\<or>(CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and> nextGOPending T 1 \\<or> (CSTATE IMD T 1 \\<or> CSTATE SMD T 1) \\<and> nextHTDDataPending T 1) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1267",
+    "line_number": 757,
+    "content": "((CSTATE SIA T 1 \\<and> nextGOPendingIs GO_WritePullDrop T 1) \\<and> HSTATE ModifiedM T \\<longrightarrow> CSTATE Modified T 0 \\<or> CSTATE MIA T 0 \\<or> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0 \\<and> nextGOPending T 0 \\<or>(CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and> nextGOPending T 0 \\<or> (CSTATE IMD T 0 \\<or> CSTATE SMD T 0) \\<and> nextHTDDataPending T 0) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1268",
+    "line_number": 758,
+    "content": "((CSTATE SIAC T 0 \\<and> nextGOPendingIs GO T 0 \\<and> nextGOPendingState Invalid T 0 \\<and> \\<not> CSTATE IIA T 1 \\<and> GTS T 1) \\<and> HSTATE ModifiedM T \\<longrightarrow> CSTATE Modified T 1 \\<or> CSTATE MIA T 1 \\<or> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1 \\<and> nextGOPending T 1 \\<or>(CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and> nextGOPending T 1 \\<or> (CSTATE IMD T 1 \\<or> CSTATE SMD T 1) \\<and> nextHTDDataPending T 1) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1269",
+    "line_number": 759,
+    "content": "((CSTATE SIAC T 1 \\<and> nextGOPendingIs GO T 1 \\<and> nextGOPendingState Invalid T 1 \\<and> \\<not> CSTATE IIA T 0 \\<and> GTS T 0) \\<and> HSTATE ModifiedM T \\<longrightarrow> CSTATE Modified T 0 \\<or> CSTATE MIA T 0 \\<or> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0 \\<and> nextGOPending T 0 \\<or>(CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and> nextGOPending T 0 \\<or> (CSTATE IMD T 0 \\<or> CSTATE SMD T 0) \\<and> nextHTDDataPending T 0) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1270",
+    "line_number": 760,
+    "content": "((CSTATE SIAC T 0 \\<and> nextGOPendingIs GO T 0 \\<and> nextGOPendingState Invalid T 0 \\<and> \\<not> CSTATE IIA T 1 \\<and> GTS T 1) \\<and> HSTATE MD T \\<longrightarrow> dthdatas1 T \\<noteq> []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1271",
+    "line_number": 761,
+    "content": "((CSTATE SIAC T 1 \\<and> nextGOPendingIs GO T 1 \\<and> nextGOPendingState Invalid T 1 \\<and> \\<not> CSTATE IIA T 0 \\<and> GTS T 0) \\<and> HSTATE MD T \\<longrightarrow> dthdatas2 T \\<noteq> []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1272",
+    "line_number": 762,
+    "content": "((CSTATE SIAC T 0 \\<and> nextGOPendingIs GO T 0 \\<and> nextGOPendingState Invalid T 0 \\<and> \\<not> CSTATE IIA T 1 \\<and> GTS T 1) \\<and> HSTATE MA T \\<longrightarrow> ((CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1 \\<or> CSTATE IMA T 1 \\<or> CSTATE SMA T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1273",
+    "line_number": 763,
+    "content": "((CSTATE SIAC T 1 \\<and> nextGOPendingIs GO T 1 \\<and> nextGOPendingState Invalid T 1 \\<and> \\<not> CSTATE IIA T 0 \\<and> GTS T 0) \\<and> HSTATE MA T \\<longrightarrow> ((CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0 \\<or> CSTATE IMA T 0 \\<or> CSTATE SMA T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1274",
+    "line_number": 764,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SD T \\<and> nextDTHDataFrom i T \\<longrightarrow> snps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1275",
+    "line_number": 765,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE SD T \\<and> nextDTHDataFrom i T \\<longrightarrow> reqresps T j = [])) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1276",
+    "line_number": 766,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE ID T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<not> CSTATE SIA T j \\<or> nextGOPendingIs GO_WritePullDrop T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1277",
+    "line_number": 767,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (HSTATE ID T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<not> CSTATE SIA T j \\<or> nextGOPendingIs GO_WritePullDrop T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1278",
+    "line_number": 768,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE MIA T i \\<and> nextGOPendingIs GO_WritePull T i \\<and> HSTATE ID T \\<longrightarrow> (\\<not> CSTATE SIA T j \\<or> nextGOPendingIs GO_WritePullDrop T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1279",
+    "line_number": 769,
+    "content": "(\\<forall>i j. i \\<noteq> j \\<longrightarrow> (CSTATE MIA T i \\<and> nextGOPendingIs GO_WritePull T i \\<and> HSTATE ID T \\<longrightarrow> (\\<not> CSTATE SIA T j \\<or> nextGOPendingIs GO_WritePullDrop T j))) \\<and>",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1280",
+    "line_number": 770,
+    "content": "(\\<forall>i. HSTATE SAD T \\<and> nextDTHDataFrom i T \\<longrightarrow> (\\<forall>j. \\<not> CSTATE MIA T j))",
+    "type": "universal_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1281",
+    "line_number": 771,
+    "content": ")\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1282",
+    "line_number": 775,
+    "content": "\\<comment>\\<open>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1283",
+    "line_number": 776,
+    "content": "(redundant up till recently) property:",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1284",
+    "line_number": 777,
+    "content": "\\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1285",
+    "line_number": 778,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs RdOwn T 0 \\<longrightarrow> CSTATE SMAD T 0 \\<or> CSTATE IMAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1286",
+    "line_number": 779,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs RdOwn T 1 \\<longrightarrow> CSTATE SMAD T 1 \\<or> CSTATE IMAD T 1)",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1287",
+    "line_number": 781,
+    "content": "incorrectly added invariants:",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1288",
+    "line_number": 782,
+    "content": "(reqs1 T \\<noteq> [] \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = []  \\<and> reqresps1 T = [] \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1289",
+    "line_number": 783,
+    "content": "(reqs2 T \\<noteq> [] \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = []  \\<and> reqresps2 T = [] \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1290",
+    "line_number": 784,
+    "content": "might be the case that req1 T \\<noteq> [] and reqresps1 T \\<noteq> []",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1291",
+    "line_number": 786,
+    "content": "C_msg_P_oppo IIA (nextGOPendingIs GO_WritePull) (\\<lambda>T i. \\<not>nextReqPending T i) T : similarly, GO_WritePull+Req might be both pending",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1292",
+    "line_number": 788,
+    "content": "C_msg_P_same Invalid (nextStore) (\\<lambda>T i. \\<not>nextReqPending T i) T \\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1293",
+    "line_number": 791,
+    "content": "old invariant:",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1294",
+    "line_number": 792,
+    "content": "singleton_or_empty (reqs1 T @ snps2 T @ snpresps2 T @...)",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1295",
+    "line_number": 793,
+    "content": "lemma singleton_or_empty_fact1: shows \"singleton_or_empty (ls1 @ ls2 @ ls3 @ ls4) \\<Longrightarrow> singleton_or_empty ls1 \\<and> singleton_or_empty ls2 \\<and> singleton_or_empty ls3 \\<and> singleton_or_empty ls4\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1296",
+    "line_number": 794,
+    "content": "by (metis (no_types, lifting) Nil_is_append_conv append.right_neutral append_self_conv2 list.sel(3) singleton_or_empty.elims(2) singleton_or_empty.simps(1) tl_append2)",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1297",
+    "line_number": 797,
+    "content": "old channel invariant",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1298",
+    "line_number": 798,
+    "content": "(reqs1 T \\<noteq> [] \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = [] \\<and> dthdatas2 T = [] \\<and> reqresps1 T = [] \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1299",
+    "line_number": 799,
+    "content": "(reqs2 T \\<noteq> [] \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = [] \\<and> dthdatas1 T = [] \\<and> reqresps2 T = [] \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1300",
+    "line_number": 800,
+    "content": "(snps2 T \\<noteq> [] \\<longrightarrow> reqs1 T = [] \\<and> snpresps2 T = [] \\<and> dthdatas2 T = [] \\<and> reqresps1 T = [] \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1301",
+    "line_number": 801,
+    "content": "(snps1 T \\<noteq> [] \\<longrightarrow> reqs2 T = [] \\<and> snpresps1 T = [] \\<and> dthdatas1 T = [] \\<and> reqresps2 T = [] \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1302",
+    "line_number": 802,
+    "content": "(snpresps2 T \\<noteq> [] \\<longrightarrow> snps2 T = [] \\<and> reqs1 T = [] \\<and> reqresps1 T = [] \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1303",
+    "line_number": 803,
+    "content": "(snpresps1 T \\<noteq> [] \\<longrightarrow> snps1 T = [] \\<and> reqs2 T = [] \\<and> reqresps2 T = [] \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1304",
+    "line_number": 804,
+    "content": "(dthdatas2 T \\<noteq> [] \\<longrightarrow> snps2 T = [] \\<and> reqs1 T = [] \\<and> reqresps1 T = [] \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1305",
+    "line_number": 805,
+    "content": "(dthdatas1 T \\<noteq> [] \\<longrightarrow> snps1 T = [] \\<and> reqs2 T = [] \\<and> reqresps2 T = [] \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1306",
+    "line_number": 806,
+    "content": "(reqresps1 T \\<noteq> [] \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = [] \\<and> reqs1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1307",
+    "line_number": 807,
+    "content": "(reqresps2 T \\<noteq> [] \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = [] \\<and> reqs2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1308",
+    "line_number": 808,
+    "content": "(htddatas1 T \\<noteq> [] \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = [] \\<and> reqs1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1309",
+    "line_number": 809,
+    "content": "(htddatas2 T \\<noteq> [] \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = [] \\<and> reqs2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1310",
+    "line_number": 810,
+    "content": "(length (reqs1 T ) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1311",
+    "line_number": 811,
+    "content": "(length (snps2 T ) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1312",
+    "line_number": 812,
+    "content": "(length (snpresps2 T ) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1313",
+    "line_number": 813,
+    "content": "(length (reqresps1 T ) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1314",
+    "line_number": 814,
+    "content": "(length (htddatas1 T ) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1315",
+    "line_number": 815,
+    "content": "(length (reqs2 T ) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1316",
+    "line_number": 816,
+    "content": "(length (snps1 T ) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1317",
+    "line_number": 817,
+    "content": "(length (snpresps1 T ) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1318",
+    "line_number": 818,
+    "content": "(length (reqresps2 T ) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1319",
+    "line_number": 819,
+    "content": "(length (htddatas2 T ) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1320",
+    "line_number": 822,
+    "content": "lemma SWMR_singleton_or_empty_reqs1: shows \"SWMR_state_machine T \\<Longrightarrow> singleton_or_empty (reqs1 T)\"",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1321",
+    "line_number": 823,
+    "content": "using SWMR_state_machine_def singleton_or_empty_fact1 by blast",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1322",
+    "line_number": 825,
+    "content": "lemma SWMR_singleton_or_empty_reqs2: shows \"SWMR_state_machine T \\<Longrightarrow> singleton_or_empty (reqs2 T)\"",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1323",
+    "line_number": 826,
+    "content": "using SWMR_state_machine_def singleton_or_empty_fact1 by blast",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1324",
+    "line_number": 828,
+    "content": "lemma SWMR_singleton_or_empty_snps1: shows \"SWMR_state_machine T \\<Longrightarrow> singleton_or_empty (snps1 T)\"",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1325",
+    "line_number": 829,
+    "content": "using SWMR_state_machine_def singleton_or_empty_fact1 by blast",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1326",
+    "line_number": 831,
+    "content": "lemma SWMR_singleton_or_empty_snps2: shows \"SWMR_state_machine T \\<Longrightarrow> singleton_or_empty (snps2 T)\"",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1327",
+    "line_number": 832,
+    "content": "using SWMR_state_machine_def singleton_or_empty_fact1 by blast",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1328",
+    "line_number": 834,
+    "content": "lemma SWMR_singleton_or_empty_snpresps1: shows \"SWMR_state_machine T \\<Longrightarrow> singleton_or_empty (snpresps1 T)\"",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1329",
+    "line_number": 835,
+    "content": "using SWMR_state_machine_def singleton_or_empty_fact1 by blast",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1330",
+    "line_number": 837,
+    "content": "lemma SWMR_singleton_or_empty_snpresps2: shows \"SWMR_state_machine T \\<Longrightarrow> singleton_or_empty (snpresps2 T)\"",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1331",
+    "line_number": 838,
+    "content": "using SWMR_state_machine_def singleton_or_empty_fact1 by blast",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1332",
+    "line_number": 840,
+    "content": "lemma SWMR_singleton_or_empty_reqresps1: shows \"SWMR_state_machine T \\<Longrightarrow> singleton_or_empty (reqresps1 T)\"",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1333",
+    "line_number": 844,
+    "content": "lemma SWMR_singleton_or_empty_reqresps2: shows \"SWMR_state_machine T \\<Longrightarrow> singleton_or_empty (reqresps2 T)\"",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1334",
+    "line_number": 847,
+    "content": "lemma SWMR_consume_empty_reqs1: shows \"SWMR_state_machine T \\<Longrightarrow> (reqs1 (T [ 0 -=req ])) = []\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1335",
+    "line_number": 848,
+    "content": "apply(subgoal_tac \"singleton_or_empty (reqs1 T)\")",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1336",
+    "line_number": 849,
+    "content": "subgoal",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1337",
+    "line_number": 850,
+    "content": "using SWMR_singleton_or_empty_reqs1 by blast",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1338",
+    "line_number": 852,
+    "content": "lemma SWMR_one_singleton1: shows \"\\<lbrakk>SWMR_state_machine T; nextSnoopIs X T 0 \\<rbrakk> \\<Longrightarrow> singleton_list (snps1 T)\"",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1339",
+    "line_number": 853,
+    "content": "by (metis SWMR_singleton_or_empty_snps1 list.distinct(1) list.sel(3) singleton_list.elims(3) singleton_or_empty.elims(2))",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1340",
+    "line_number": 857,
+    "content": "\\<close>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1341",
+    "line_number": 866,
+    "content": "\\<comment>\\<open>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1342",
+    "line_number": 867,
+    "content": "M: owner",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1343",
+    "line_number": 868,
+    "content": "IMAD+ GO-M : owner",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1344",
+    "line_number": 869,
+    "content": "\\<close>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1345",
+    "line_number": 871,
+    "content": "definition GOwner :: \"Type1State \\<Rightarrow> nat \\<Rightarrow> bool\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1346",
+    "line_number": 872,
+    "content": "where [simp]: \"GOwner T i = (if i = 0 then (Owner (CLEntry.block_state (devcache1 T)) \\<or> Lexists_nonEmpty (reqresps1 T) (\\<lambda>m. Owner (getGrantedState m))  )",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1347",
+    "line_number": 873,
+    "content": "else (Owner (CLEntry.block_state (devcache2 T)) \\<or> Lexists_nonEmpty (reqresps2 T) (\\<lambda>m. Owner (getGrantedState m))  )) \"",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1348",
+    "line_number": 875,
+    "content": "definition GReaderOnly :: \"Type1State \\<Rightarrow> nat \\<Rightarrow> bool\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1349",
+    "line_number": 876,
+    "content": "where [simp]: \"GReaderOnly T i = (if i = 0 then (ReaderOnly (CLEntry.block_state (devcache1 T)) \\<or> Lexists_nonEmpty (reqresps1 T) (\\<lambda>m. ReaderOnly (getGrantedState m))  )",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1350",
+    "line_number": 877,
+    "content": "else (ReaderOnly (CLEntry.block_state (devcache2 T)) \\<or> Lexists_nonEmpty (reqresps2 T) (\\<lambda>m. ReaderOnly (getGrantedState m))  )) \"",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1351",
+    "line_number": 880,
+    "content": "definition GReader :: \"Type1State \\<Rightarrow> nat \\<Rightarrow> bool\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1352",
+    "line_number": 881,
+    "content": "where [simp]: \"GReader T i = (if i = 0 then (Reader (CLEntry.block_state (devcache1 T)) \\<or> Lexists_nonEmpty (reqresps1 T) (\\<lambda>m. Reader (getGrantedState m))  )",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1353",
+    "line_number": 882,
+    "content": "else (Reader (CLEntry.block_state (devcache2 T)) \\<or> Lexists_nonEmpty (reqresps2 T) (\\<lambda>m. Reader (getGrantedState m))  )) \"",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1354",
+    "line_number": 884,
+    "content": "definition  GSWMR :: \"Type1State \\<Rightarrow> bool\" where [simp]:",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1355",
+    "line_number": 885,
+    "content": "\"GSWMR T = (( GOwner T 0  \\<longrightarrow> \\<not> (GReader T 1)  ) \\<and> (GOwner T 1 \\<longrightarrow> \\<not> (GReader T 0)) )\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1356",
+    "line_number": 889,
+    "content": "definition InvalidFamily :: \"MESI_State \\<Rightarrow> bool\" where [simp]:",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1357",
+    "line_number": 890,
+    "content": "\"InvalidFamily mesi = (case mesi of Invalid \\<Rightarrow> True | ISAD \\<Rightarrow> True | IMAD \\<Rightarrow> True | _ \\<Rightarrow> False)\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1358",
+    "line_number": 893,
+    "content": "definition allInvalid :: \"Type1State \\<Rightarrow> bool\" where [simp]: \"allInvalid T =   (HSTATE InvalidM T \\<longrightarrow> (InvalidFamily (CLEntry.block_state (devcache1 T))  \\<and>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1359",
+    "line_number": 894,
+    "content": "InvalidFamily (CLEntry.block_state (devcache2 T)  ))",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1360",
+    "line_number": 895,
+    "content": ")\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1361",
+    "line_number": 898,
+    "content": "definition allShared :: \"Type1State \\<Rightarrow> bool\" where [simp]: \"allShared T =  ( (HSTATE SharedM T",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1362",
+    "line_number": 899,
+    "content": "\\<longrightarrow> (((GReader T 0) \\<or> (GReader T 1)) \\<and> \\<not>(GOwner T 0 \\<or> GOwner T 1) )",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1363",
+    "line_number": 900,
+    "content": "))\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1364",
+    "line_number": 903,
+    "content": "definition oneModified :: \"Type1State \\<Rightarrow> bool\" where [simp]: \"oneModified T =  ( (HSTATE ModifiedM T \\<longrightarrow> ( ((GOwner T 0) \\<and> \\<not>(GOwner T 1)) \\<or>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1365",
+    "line_number": 904,
+    "content": "((GOwner T 1) \\<and> \\<not>(GOwner T 0)) )  )",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1366",
+    "line_number": 905,
+    "content": ")\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1367",
+    "line_number": 907,
+    "content": "definition host_device_states_agree :: \"Type1State \\<Rightarrow> bool\" where [simp]: \"host_device_states_agree T = (allInvalid T \\<and> allShared T \\<and> oneModified T )\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1368",
+    "line_number": 920,
+    "content": "definition devStable :: \"Type1State \\<Rightarrow> nat \\<Rightarrow> bool\" where [simp]: \"devStable T i = (let ( reqs) =",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1369",
+    "line_number": 921,
+    "content": "(if i = 0 then (reqs1 T) else (reqs2 T)) in (reqs = [] \\<and> (CSTATE Invalid T i \\<or> CSTATE Shared T i \\<or> CSTATE Modified T i \\<or> CSTATE Exclusive T i ) ))\"",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1370",
+    "line_number": 923,
+    "content": "definition devJustStarted :: \"Type1State \\<Rightarrow> nat \\<Rightarrow> bool\" where [simp]: \"devJustStarted T i = (let ( reqs) =",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1371",
+    "line_number": 924,
+    "content": "(if i = 0 then (reqs1 T) else (reqs2 T)) in",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1372",
+    "line_number": 925,
+    "content": "((reqs \\<noteq> [] \\<and> \\<not>(CSTATE Invalid T i \\<or> CSTATE Shared T i \\<or> CSTATE Modified T i \\<or> CSTATE Exclusive T i ) ) \\<or> (devStable T i)) )\"",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1373",
+    "line_number": 930,
+    "content": "definition requestorAlmostGotOwnership :: \"Type1State \\<Rightarrow> nat \\<Rightarrow> bool\" where [simp]:",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1374",
+    "line_number": 931,
+    "content": "\"requestorAlmostGotOwnership T i = ( CSTATE IMAD T i \\<and> nextGOPendingState Modified T i \\<and> nextHTDDataPending T i",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1375",
+    "line_number": 932,
+    "content": "\\<or> CSTATE IMA T i \\<and> nextGOPendingState Modified T i \\<and> (\\<not> nextHTDDataPending T 0) \\<or>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1376",
+    "line_number": 933,
+    "content": "CSTATE IMD T i \\<and> (\\<not> nextGOPending T i\\<comment>\\<open>Not sure what predicate to put here,",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1377",
+    "line_number": 934,
+    "content": "having a non-Modified GO would still be quite strange state\\<close>) \\<and> nextHTDDataPending T i)\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1378",
+    "line_number": 938,
+    "content": "definition ownerAlreadyInvalidated :: \"Type1State \\<Rightarrow> nat \\<Rightarrow> bool\" where [simp]:",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1379",
+    "line_number": 939,
+    "content": "\"ownerAlreadyInvalidated T i = ( CSTATE Invalid T i \\<and> \\<not>nextSnpRespPending T i \\<and> \\<not> nextSnoopPending T i \\<or>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1380",
+    "line_number": 940,
+    "content": "CSTATE IIA T i \\<and> nextGOPendingIs GO_WritePull T i \\<and> \\<not>nextSnpRespPending T i \\<and> \\<not> nextSnoopPending T i)\"",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1381",
+    "line_number": 942,
+    "content": "\\<comment>\\<open>old def of Xmeans:",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1382",
+    "line_number": 943,
+    "content": "(HSTATE ModifiedM T \\<or> (HSTATE SharedM T) \\<or> (HSTATE InvalidM T) ) \\<longrightarrow>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1383",
+    "line_number": 944,
+    "content": "( devJustStarted T 0 \\<or> almostCompletion T 0) \\<and> ( devJustStarted T 1 \\<or> almostCompletion T 1)",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1384",
+    "line_number": 945,
+    "content": "Not precise enough and too restrictive\\<close>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1385",
+    "line_number": 946,
+    "content": "definition X_means_devStableOrBeginningOrEnding :: \"Type1State  \\<Rightarrow> bool\" where [simp]: \"X_means_devStableOrBeginningOrEnding T  = (",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1386",
+    "line_number": 947,
+    "content": "(HSTATE ModifiedM T \\<longrightarrow> (requestorAlmostGotOwnership T 0 \\<and> ownerAlreadyInvalidated T 1) \\<or> (requestorAlmostGotOwnership T 1 \\<and> ownerAlreadyInvalidated T 0)  )",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1387",
+    "line_number": 948,
+    "content": ")\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1388",
+    "line_number": 955,
+    "content": "definition aboutToGetShared :: \"Type1State \\<Rightarrow> nat \\<Rightarrow> bool\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1389",
+    "line_number": 956,
+    "content": "where [simp]: \"aboutToGetShared T i = (if i = 0 then (CSTATE ISA T 0 \\<and> (reqresps1 T) = [] \\<or>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1390",
+    "line_number": 957,
+    "content": "(CSTATE ISAD T 0) \\<and> Lexists_nonEmpty (reqresps1 T) (\\<lambda>m. Shared = (getGrantedState m))  )",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1391",
+    "line_number": 958,
+    "content": "else (CSTATE ISA T 1 \\<and> (reqresps2 T) = [] \\<or>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1392",
+    "line_number": 959,
+    "content": "(CSTATE ISAD T 1) \\<and> Lexists_nonEmpty (reqresps2 T) (\\<lambda>m. Shared = (getGrantedState m))  ) ) \"",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1393",
+    "line_number": 961,
+    "content": "definition GONotInflight :: \"nat \\<Rightarrow> Type1State \\<Rightarrow> bool\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1394",
+    "line_number": 962,
+    "content": "where [simp]: \"GONotInflight i T = (if i = 0 then reqresps1 T = [] else reqresps2 T = [])\"",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1395",
+    "line_number": 964,
+    "content": "definition dthdataInflight :: \"Type1State  \\<Rightarrow> nat \\<Rightarrow> bool\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1396",
+    "line_number": 965,
+    "content": "where [simp]: \"dthdataInflight T i = (if i = 0 then dthdatas1 T \\<noteq> [] else dthdatas2 T \\<noteq> [])\"",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1397",
+    "line_number": 967,
+    "content": "definition dthdataNotInflight :: \"Type1State  \\<Rightarrow> nat \\<Rightarrow> bool\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1398",
+    "line_number": 968,
+    "content": "where [simp]: \"dthdataNotInflight T i = (if i = 0 then dthdatas1 T = [] else dthdatas2 T = [])\"",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1399",
+    "line_number": 971,
+    "content": "\\<comment>\\<open>For instance SD indicates that: the device has responded, with its",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1400",
+    "line_number": 972,
+    "content": "SnpResp received by Host, (our transitions will always have the Data and SnpResp sent, and therefore)",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1401",
+    "line_number": 973,
+    "content": "Data still inside D2HData channel (not processed), and the other device is requestor, therefore whould have its state in ISAD (before it got",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1402",
+    "line_number": 974,
+    "content": "GO) or ISA (after it got GO)",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1403",
+    "line_number": 975,
+    "content": "The Host-device state correspondance can be more refined, for example MD cannot have IMA, but GOwner allows that\\<close>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1404",
+    "line_number": 976,
+    "content": "definition  XD_means_devSnoopRespConsumedFirst :: \"Type1State  \\<Rightarrow> bool\" where [simp]: \"XD_means_devSnoopRespConsumedFirst T  = (",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1405",
+    "line_number": 977,
+    "content": "((HSTATE MD T) \\<longrightarrow> (nextDTHDataFrom 0 T ) \\<and> (GOwner T 1) \\<or> (nextDTHDataFrom 1 T ) \\<and> (GOwner T 0) ) \\<and>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1406",
+    "line_number": 978,
+    "content": "((HSTATE SD T) \\<longrightarrow> (nextDTHDataFrom 0 T) \\<and> (aboutToGetShared T 1) \\<or> (nextDTHDataFrom 1 T ) \\<and> (aboutToGetShared T 0) ) \\<and>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1407",
+    "line_number": 979,
+    "content": "((HSTATE ID T) \\<longrightarrow> (((nextDTHDataFrom 0 T \\<and> GONotInflight 0 T) \\<or>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1408",
+    "line_number": 980,
+    "content": "(nextGOPendingIs GO_WritePull T 0 \\<or> nextGOPendingIs GO_WritePullDrop T 0) \\<and> dthdataNotInflight T 0) \\<or>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1409",
+    "line_number": 981,
+    "content": "(nextDTHDataFrom 1 T \\<and> GONotInflight 1 T) \\<or>",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1410",
+    "line_number": 982,
+    "content": "(nextGOPendingIs GO_WritePull T 1 \\<or> nextGOPendingIs GO_WritePullDrop T 1) \\<and> dthdataNotInflight T 1) )",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1411",
+    "line_number": 983,
+    "content": ")\"",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1412",
+    "line_number": 996,
+    "content": "definition snprespInflight :: \"SnpRespType \\<Rightarrow> Type1State \\<Rightarrow> nat \\<Rightarrow> bool\" where [simp]: \"snprespInflight snpresptype T (i::nat) = (let snpresps = (if i = (0::nat) then (snpresps1 T) else (snpresps2 T)) in",
+    "type": "hardcoded_device",
+    "original": false
+  },
+  {
+    "id": "curr_1413",
+    "line_number": 997,
+    "content": "(Lexists_nonEmpty snpresps (\\<lambda>m. snpresptype = (getSpecificTypeSnpResp m))))\"",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1414",
+    "line_number": 1000,
+    "content": "\\<comment>\\<open>exists number i (the requestor), such that it either is about to get the Data or has already got the Data. But only data is forwarded to it,",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1415",
+    "line_number": 1001,
+    "content": "go message is not yet ready\\<close>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1416",
+    "line_number": 1002,
+    "content": "definition onlyDataHasBeenForwardedRdS :: \"Type1State \\<Rightarrow> nat \\<Rightarrow> bool\" where [simp]:",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1417",
+    "line_number": 1003,
+    "content": "\"onlyDataHasBeenForwardedRdS T i = (if i = 0 then (htddatas1 T  \\<noteq> [] \\<and> CSTATE ISAD T 0  \\<or> htddatas1 T = [] \\<and> CSTATE ISA T 0 )",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1418",
+    "line_number": 1004,
+    "content": "else (htddatas2 T  \\<noteq> [] \\<and> CSTATE ISAD T 1  \\<or> htddatas2 T = [] \\<and> CSTATE ISA T 1 ))\"",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1419",
+    "line_number": 1008,
+    "content": "definition onlyDataHasBeenForwardedRdOwn :: \"Type1State \\<Rightarrow> nat \\<Rightarrow> bool\" where [simp]:",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1420",
+    "line_number": 1009,
+    "content": "\"onlyDataHasBeenForwardedRdOwn T i = (if i = 0 then (htddatas1 T  \\<noteq> [] \\<and> (CSTATE IMAD T 0 \\<or>  CSTATE SMAD T 0)  \\<or>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1421",
+    "line_number": 1010,
+    "content": "htddatas1 T = [] \\<and> (CSTATE IMA T 0 \\<or>  CSTATE SMA T 0) ) else",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1422",
+    "line_number": 1011,
+    "content": "(htddatas2 T  \\<noteq> [] \\<and> (CSTATE IMAD T 1  \\<or> CSTATE SMAD T 1)  \\<or>",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1423",
+    "line_number": 1012,
+    "content": "htddatas2 T = []  \\<and> (CSTATE IMA T 1 \\<or> CSTATE SMA T 1) ) )\"",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1424",
+    "line_number": 1015,
+    "content": "\\<comment>\\<open>3.2.4.2.6 RdCurr",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1425",
+    "line_number": 1016,
+    "content": "These are full cacheline read requests from the device for lines to get the most current data,",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1426",
+    "line_number": 1017,
+    "content": "but not change the existing state in any cache, including in the Host. The Host does not need to track the cacheline in the device that",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1427",
+    "line_number": 1018,
+    "content": "issued the RdCurr. RdCurr gets a data but no GO.",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1428",
+    "line_number": 1019,
+    "content": "The device receives the line in the Invalid state which means it gets one use of the line and cannot cache it\\<close>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1429",
+    "line_number": 1020,
+    "content": "definition onlyDataHasBeenForwardedRdCurr :: \"Type1State \\<Rightarrow> nat \\<Rightarrow> bool\" where [simp]:",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1430",
+    "line_number": 1021,
+    "content": "\"onlyDataHasBeenForwardedRdCurr T i = (if i = 0 then    (htddatas1 T  \\<noteq> []   \\<and> CSTATE Invalid T 0 ) else",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1431",
+    "line_number": 1022,
+    "content": "(htddatas2 T \\<noteq> [] \\<and> CSTATE Invalid T 1 ))\"",
+    "type": "channel_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1432",
+    "line_number": 1026,
+    "content": "definition snpRespNotProcessedData :: \"Type1State \\<Rightarrow> nat \\<Rightarrow> bool\" where [simp]:",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1433",
+    "line_number": 1027,
+    "content": "\"snpRespNotProcessedData T i = ( snprespInflight RspIHitI T i \\<and> CSTATE Invalid T i \\<or>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1434",
+    "line_number": 1028,
+    "content": "snprespInflight RspSFwdM T i \\<and> CSTATE Shared T i \\<or> snprespInflight RspSHitSE T i \\<and> CSTATE Shared T i \\<or>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1435",
+    "line_number": 1029,
+    "content": "snprespInflight RspIFwdM T i \\<and> CSTATE Invalid T i  )\"",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1436",
+    "line_number": 1031,
+    "content": "definition snpRespNotProcessedInv :: \"Type1State \\<Rightarrow> nat \\<Rightarrow> bool\" where [simp]:",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1437",
+    "line_number": 1032,
+    "content": "\"snpRespNotProcessedInv T i = ( snprespInflight RspIHitI T i \\<and> CSTATE Invalid T i \\<or>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1438",
+    "line_number": 1033,
+    "content": "snprespInflight RspIHitSE T i \\<and> CSTATE Invalid T i \\<or>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1439",
+    "line_number": 1034,
+    "content": "snprespInflight RspIFwdM T i \\<and> CSTATE Invalid T i  )\"",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1440",
+    "line_number": 1037,
+    "content": "definition snpRespNotProcessedCurr :: \"Type1State \\<Rightarrow> nat \\<Rightarrow> bool\" where [simp]:",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1441",
+    "line_number": 1038,
+    "content": "\"snpRespNotProcessedCurr T i = ( snprespInflight RspIHitI T i \\<and> CSTATE Invalid T i \\<or>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1442",
+    "line_number": 1039,
+    "content": "snprespInflight RspVHitV T i \\<and> \\<not>(CSTATE Invalid T i) \\<or>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1443",
+    "line_number": 1040,
+    "content": "snprespInflight RspIFwdM T i \\<and> CSTATE Invalid T i \\<or>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1444",
+    "line_number": 1041,
+    "content": "snprespInflight RspSFwdM T i \\<and> CSTATE Shared T i \\<or> snprespInflight RspSHitSE T i \\<and> CSTATE Shared T i \\<or>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1445",
+    "line_number": 1042,
+    "content": "snprespInflight RspVFwdV T i \\<and> \\<not>(CSTATE Invalid T i)  )\"",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1446",
+    "line_number": 1044,
+    "content": "\\<comment>\\<open>Host in MA state, meaning dthdata has been forwarded as htddata, and that might have been received by requestor device.",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1447",
+    "line_number": 1045,
+    "content": "there exists a requestor i, such that i has its data forwarded to it by the host, and the GO response not in-flight (therefore",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1448",
+    "line_number": 1046,
+    "content": "we know that the SnpResp not processed)",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1449",
+    "line_number": 1047,
+    "content": "These  predicates need to be augmented with multiple blocks (say, \\<exists>bid msg. msg \\<in> htddatas \\<and> block_id msg = bid) \\<close>",
+    "type": "existential_quantifier",
+    "original": false
+  },
+  {
+    "id": "curr_1450",
+    "line_number": 1048,
+    "content": "definition XA_means_devDataConsumedFirst :: \"Type1State \\<Rightarrow> bool\" where [simp]:",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1451",
+    "line_number": 1049,
+    "content": "\"XA_means_devDataConsumedFirst T  = (",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1452",
+    "line_number": 1050,
+    "content": "((HSTATE MA T) \\<longrightarrow> ( onlyDataHasBeenForwardedRdOwn T 0 \\<and>   (snpRespNotProcessedInv T 1 \\<or> nextSnoopPending T 1) \\<or>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1453",
+    "line_number": 1051,
+    "content": "onlyDataHasBeenForwardedRdOwn T 1 \\<and>   (snpRespNotProcessedInv T 0 \\<or> nextSnoopPending T 0)  ))",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1454",
+    "line_number": 1052,
+    "content": "\\<and>",
+    "type": "other",
+    "original": false
+  },
+  {
+    "id": "curr_1455",
+    "line_number": 1053,
+    "content": "((HSTATE SA T) \\<longrightarrow> onlyDataHasBeenForwardedRdS T 0 \\<and> (snpRespNotProcessedData T 1 \\<or> nextSnoopPending T 1) \\<or>",
+    "type": "state_constraint",
+    "original": false
+  },
+  {
+    "id": "curr_1456",
+    "line_number": 1054,
+    "content": "onlyDataHasBeenForwardedRdS T 1 \\<and> (snpRespNotProcessedData T 0 \\<or> nextSnoopPending T 0)  )",
+    "type": "other",
+    "original": false
+  }
+]

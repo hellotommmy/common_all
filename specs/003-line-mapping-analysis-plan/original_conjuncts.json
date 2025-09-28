@@ -1,0 +1,4167 @@
+[
+  {
+    "id": "orig_001",
+    "line_number": 201,
+    "content": "C_msg_P_oppo ISD nextHTDDataPending (\\<lambda>T i. \\<not> CSTATE Modified T i) T \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_002",
+    "line_number": 202,
+    "content": "H_msg_P_same SD nextDTHDataPending (\\<lambda>T i. \\<not> CSTATE Modified T i) T \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_003",
+    "line_number": 203,
+    "content": "H_msg_P_same SAD nextDTHDataPending (\\<lambda>T i. \\<not> CSTATE Modified T i) T \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_004",
+    "line_number": 204,
+    "content": "C_msg_P_oppo ISAD nextGOPending (\\<lambda>T i. \\<not> CSTATE Modified T i) T \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_005",
+    "line_number": 205,
+    "content": "H_msg_P_same SharedM (nextReqIs RdShared) (\\<lambda>T i. \\<not> CSTATE Modified T i) T \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_006",
+    "line_number": 206,
+    "content": "H_msg_P_oppo SharedM (nextReqIs RdShared) (\\<lambda>T i. \\<not> CSTATE Modified T i) T \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_007",
+    "line_number": 207,
+    "content": "H_msg_P_same ModifiedM (nextReqIs RdShared) (\\<lambda>T i. \\<not> CSTATE Modified T i) T \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_008",
+    "line_number": 208,
+    "content": "H_msg_P_oppo ModifiedM (nextReqIs RdShared) (\\<lambda>T i. \\<not> nextDTHDataPending T i) T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_009",
+    "line_number": 209,
+    "content": "H_msg_P_oppo ModifiedM (nextReqIs RdShared) (\\<lambda>T i. \\<not> nextSnpRespIs RspIFwdM T i) T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_010",
+    "line_number": 210,
+    "content": "H_msg_P_same ModifiedM (nextReqIs RdShared) (\\<lambda>T i. \\<not> nextSnpRespIs RspIFwdM T i) T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_011",
+    "line_number": 211,
+    "content": "C_H_state IMAD (nextReqIs RdOwn) Modified SD T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_012",
+    "line_number": 212,
+    "content": "C_H_state IMAD (nextReqIs RdOwn) Modified SAD T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_013",
+    "line_number": 213,
+    "content": "C_H_state IMAD (nextReqIs RdOwn) Modified SA T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_014",
+    "line_number": 214,
+    "content": "C_H_state Invalid nextStore Modified SAD T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_015",
+    "line_number": 215,
+    "content": "C_H_state Invalid nextStore Modified SA T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_016",
+    "line_number": 216,
+    "content": "C_H_state Invalid nextStore Modified SD T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_017",
+    "line_number": 217,
+    "content": "(HSTATE SharedM T \\<longrightarrow> \\<not> CSTATE Modified T 0 \\<and> \\<not> CSTATE Modified T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_018",
+    "line_number": 218,
+    "content": "(HSTATE SD T \\<longrightarrow> \\<not> CSTATE Modified T 0 \\<and> \\<not> CSTATE Modified T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_019",
+    "line_number": 219,
+    "content": "(HSTATE MD T \\<longrightarrow> \\<not> CSTATE Modified T 0 \\<and> \\<not> CSTATE Modified T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_020",
+    "line_number": 220,
+    "content": "C_msg_not RdShared IMAD T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_021",
+    "line_number": 221,
+    "content": "C_msg_not RdShared Invalid T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_022",
+    "line_number": 222,
+    "content": "H_msg_P_same ModifiedM (nextReqIs DirtyEvict) (\\<lambda>T i. CSTATE MIA T i \\<or> CSTATE IIA T i) T \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_023",
+    "line_number": 223,
+    "content": "C_msg_P_host MIA (nextGOPendingIs GO_WritePull) (\\<lambda>T. \\<not> HSTATE ModifiedM T) T \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_024",
+    "line_number": 224,
+    "content": "C_msg_P_same MIA (nextGOPendingIs GO_WritePull) nextEvict T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_025",
+    "line_number": 225,
+    "content": "C_msg_P_host MIA (nextGOPendingIs GO_WritePull) (HSTATE ID) T \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_026",
+    "line_number": 226,
+    "content": "C_state_not MIA RdShared T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_027",
+    "line_number": 227,
+    "content": "C_msg_P_same IIA (nextGOPendingIs GO_WritePullDrop) nextEvict T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_028",
+    "line_number": 228,
+    "content": "C_msg_P_same IIA (nextGOPendingIs GO_WritePullDrop) (\\<lambda>T i. \\<not> nextReqIs RdShared T i) T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_029",
+    "line_number": 229,
+    "content": "C_msg_P_same IIA (nextGOPendingIs GO_WritePullDrop) (\\<lambda>T i. \\<not> nextDTHDataPending T i) T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_030",
+    "line_number": 230,
+    "content": "H_C_state_msg_same ModifiedM Modified (\\<lambda>T i. \\<not> nextReqIs RdShared T i) T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_031",
+    "line_number": 231,
+    "content": "C_msg_P_same IIA (nextGOPendingIs GO_WritePull) nextEvict T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_032",
+    "line_number": 232,
+    "content": "C_msg_P_same IIA (nextGOPendingIs GO_WritePull) (\\<lambda>T i. \\<not> nextReqIs RdShared T i) T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_033",
+    "line_number": 233,
+    "content": "C_msg_P_same IIA (nextGOPendingIs GO_WritePull) (\\<lambda>T i. \\<not> nextDTHDataPending T i) T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_034",
+    "line_number": 234,
+    "content": "H_C_state_msg_oppo ModifiedM IIA (\\<lambda>T i. \\<not> nextReqIs RdShared T i) T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_035",
+    "line_number": 235,
+    "content": "C_msg_P_host Shared (nextSnoopIs SnpInv) (HSTATE MA) T \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_036",
+    "line_number": 236,
+    "content": "C_msg_state RdShared ISAD T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_037",
+    "line_number": 237,
+    "content": "C_not_C_msg Modified ISAD nextGOPending T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_038",
+    "line_number": 238,
+    "content": "C_msg_P_same Invalid nextStore (\\<lambda>T i. \\<not> nextHTDDataPending T i) T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_039",
+    "line_number": 239,
+    "content": "C_msg_P_same Invalid nextStore (\\<lambda>T i. \\<not> nextSnoopIs SnpInv T i) T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_040",
+    "line_number": 240,
+    "content": "C_msg_P_same ISAD nextGOPending (\\<lambda>T i. \\<not> nextReqIs RdShared T i) T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_041",
+    "line_number": 241,
+    "content": "(snps2 T \\<noteq> [] \\<longrightarrow> reqs1 T = [] \\<and> snpresps2 T = [] \\<and> dthdatas2 T = [] \\<and> reqresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_042",
+    "line_number": 242,
+    "content": "(snps1 T \\<noteq> [] \\<longrightarrow> reqs2 T = [] \\<and> snpresps1 T = [] \\<and> dthdatas1 T = [] \\<and> reqresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_043",
+    "line_number": 243,
+    "content": "(length (reqs1 T) \\<le> 1 \\<and> (length (reqs2 T) \\<le> 1)) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_044",
+    "line_number": 244,
+    "content": "(length (snps2 T) \\<le> 1   \\<and> length (snps1 T) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_045",
+    "line_number": 245,
+    "content": "C_msg_P_same Shared (nextSnoopIs SnpInv) (\\<lambda>T i. \\<not> nextHTDDataPending T i) T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_046",
+    "line_number": 246,
+    "content": "C_msg_P_same IIA (nextGOPendingIs GO_WritePull) (\\<lambda> T i. \\<not>nextSnoopPending T i) T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_047",
+    "line_number": 247,
+    "content": "C_msg_P_oppo Invalid nextStore (\\<lambda>T i. \\<not> nextSnoopPending T i) T \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_048",
+    "line_number": 248,
+    "content": "(CSTATE Invalid T 0 \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = [] \\<and> reqresps1 T = [] \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_049",
+    "line_number": 249,
+    "content": "(CSTATE Invalid T 1 \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = [] \\<and> reqresps2 T = [] \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_050",
+    "line_number": 250,
+    "content": "(CSTATE Shared T 0 \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = [] \\<and> reqresps1 T = [] \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_051",
+    "line_number": 251,
+    "content": "(CSTATE Shared T 1 \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = [] \\<and> reqresps2 T = [] \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_052",
+    "line_number": 252,
+    "content": "(CSTATE IIA T 0 \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = [] \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_053",
+    "line_number": 253,
+    "content": "(CSTATE IIA T 1 \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = [] \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_054",
+    "line_number": 254,
+    "content": "(CSTATE Invalid T 0 \\<longrightarrow> reqs1 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_055",
+    "line_number": 255,
+    "content": "(CSTATE Invalid T 1 \\<longrightarrow> reqs2 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_056",
+    "line_number": 256,
+    "content": "(CSTATE Shared T 0 \\<longrightarrow> reqs1 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_057",
+    "line_number": 257,
+    "content": "(CSTATE Shared T 1 \\<longrightarrow> reqs2 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_058",
+    "line_number": 258,
+    "content": "(CSTATE Modified T 0 \\<longrightarrow> \\<not>CSTATE Modified T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_059",
+    "line_number": 259,
+    "content": "(CSTATE Modified T 1 \\<longrightarrow> \\<not>CSTATE Modified T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_060",
+    "line_number": 260,
+    "content": "(CSTATE ISD T 0 \\<longrightarrow> \\<not>HSTATE ModifiedM T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_061",
+    "line_number": 261,
+    "content": "(CSTATE ISD T 1 \\<longrightarrow> \\<not>HSTATE ModifiedM T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_062",
+    "line_number": 262,
+    "content": "(CSTATE ISD T 0 \\<longrightarrow> nextLoad T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_063",
+    "line_number": 263,
+    "content": "(CSTATE ISD T 1 \\<longrightarrow> nextLoad T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_064",
+    "line_number": 264,
+    "content": "(C_msg_P_host ISD (nextSnoopIs SnpInv) (HSTATE MA) T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_065",
+    "line_number": 265,
+    "content": "(length (htddatas1 T) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_066",
+    "line_number": 266,
+    "content": "(length (htddatas2 T) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_067",
+    "line_number": 267,
+    "content": "(CSTATE ISD T 0 \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = [] \\<and> reqresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_068",
+    "line_number": 268,
+    "content": "(CSTATE ISD T 1 \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = [] \\<and> reqresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_069",
+    "line_number": 269,
+    "content": "(CSTATE ISD T 0 \\<longrightarrow> reqs1 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_070",
+    "line_number": 270,
+    "content": "(CSTATE ISD T 1 \\<longrightarrow> reqs2 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_071",
+    "line_number": 271,
+    "content": "(CSTATE IMAD T 0 \\<and> nextHTDDataPending T 0 \\<longrightarrow> reqs1 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_072",
+    "line_number": 272,
+    "content": "(CSTATE IMAD T 1 \\<and> nextHTDDataPending T 1 \\<longrightarrow> reqs2 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_073",
+    "line_number": 273,
+    "content": "(length (reqresps1 T) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_074",
+    "line_number": 274,
+    "content": "(length (reqresps2 T) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_075",
+    "line_number": 275,
+    "content": "(CSTATE MIA T 0 \\<and> (nextGOPendingIs GO_WritePull T 0)  \\<longrightarrow> snps1 T = [] ) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_076",
+    "line_number": 276,
+    "content": "(CSTATE MIA T 1 \\<and> (nextGOPendingIs GO_WritePull T 1)  \\<longrightarrow> snps2 T = [] ) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_077",
+    "line_number": 277,
+    "content": "(CSTATE MIA T 0 \\<and> (nextGOPendingIs GO_WritePull T 0) \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = [] \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_078",
+    "line_number": 278,
+    "content": "(CSTATE MIA T 1 \\<and> (nextGOPendingIs GO_WritePull T 1) \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = [] \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_079",
+    "line_number": 279,
+    "content": "(CSTATE ISAD T 0 \\<longrightarrow> \\<not> nextReqIs DirtyEvict T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_080",
+    "line_number": 280,
+    "content": "(CSTATE ISAD T 1 \\<longrightarrow> \\<not> nextReqIs DirtyEvict T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_081",
+    "line_number": 281,
+    "content": "(C_msg_P_same MIA  (nextReqIs DirtyEvict) (nextEvict) T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_082",
+    "line_number": 282,
+    "content": "(reqs1 T \\<noteq> [] \\<longrightarrow> reqresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_083",
+    "line_number": 283,
+    "content": "(reqs2 T \\<noteq> [] \\<longrightarrow> reqresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_084",
+    "line_number": 284,
+    "content": "(reqs1 T \\<noteq> [] \\<longrightarrow> snpresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_085",
+    "line_number": 285,
+    "content": "(reqs2 T \\<noteq> [] \\<longrightarrow> snpresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_086",
+    "line_number": 286,
+    "content": "(reqs1 T \\<noteq> [] \\<longrightarrow> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_087",
+    "line_number": 287,
+    "content": "(reqs2 T \\<noteq> [] \\<longrightarrow> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_088",
+    "line_number": 288,
+    "content": "(HSTATE ModifiedM T  \\<and> nextReqIs RdOwn T 0 \\<longrightarrow> (CSTATE Modified T 1 \\<or> CSTATE MIA T 1 \\<or> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1 \\<and> nextGOPending T 1 \\<or> (CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and> nextGOPending T 1 \\<or> (CSTATE IMD T 1 \\<or> CSTATE SMD T 1) \\<and> nextHTDDataPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_089",
+    "line_number": 289,
+    "content": "(HSTATE ModifiedM T  \\<and> nextReqIs RdOwn T 1 \\<longrightarrow> (CSTATE Modified T 0 \\<or> CSTATE MIA T 0 \\<or> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0 \\<and> nextGOPending T 0 \\<or> (CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and> nextGOPending T 0 \\<or> (CSTATE IMD T 0 \\<or> CSTATE SMD T 0) \\<and> nextHTDDataPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_090",
+    "line_number": 290,
+    "content": "(HSTATE MB T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> (CSTATE Modified T 1 \\<or> CSTATE MIA T 1 \\<or> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1 \\<and> nextGOPending T 1 \\<or> (CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and> nextGOPending T 1 \\<or> (CSTATE IMD T 1 \\<or> CSTATE SMD T 1) \\<and> nextHTDDataPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_091",
+    "line_number": 291,
+    "content": "(HSTATE MB T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> (CSTATE Modified T 0 \\<or> CSTATE MIA T 0 \\<or> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0 \\<and> nextGOPending T 0 \\<or> (CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and> nextGOPending T 0 \\<or> (CSTATE IMD T 0 \\<or> CSTATE SMD T 0) \\<and> nextHTDDataPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_092",
+    "line_number": 292,
+    "content": "(HSTATE MB T \\<and> CSTATE IIA T 0 \\<longrightarrow> (CSTATE Modified T 1 \\<or> CSTATE MIA T 1 \\<or> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1 \\<and> nextGOPending T 1 \\<or> (CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and> nextGOPending T 1 \\<or> (CSTATE IMD T 1 \\<or> CSTATE SMD T 1) \\<and> nextHTDDataPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_093",
+    "line_number": 293,
+    "content": "(HSTATE MB T \\<and> CSTATE IIA T 1 \\<longrightarrow> (CSTATE Modified T 0 \\<or> CSTATE MIA T 0 \\<or> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0 \\<and> nextGOPending T 0 \\<or> (CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and> nextGOPending T 0 \\<or> (CSTATE IMD T 0 \\<or> CSTATE SMD T 0) \\<and> nextHTDDataPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_094",
+    "line_number": 294,
+    "content": "(reqs1 T \\<noteq> [] \\<longrightarrow> reqresps1 T = [] ) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_095",
+    "line_number": 295,
+    "content": "(reqs2 T \\<noteq> [] \\<longrightarrow> reqresps2 T = [] ) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_096",
+    "line_number": 296,
+    "content": "(HSTATE SAD T \\<longrightarrow> (CSTATE ISAD T 0 \\<or> CSTATE ISAD T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_097",
+    "line_number": 297,
+    "content": "(HSTATE ModifiedM T \\<longrightarrow> \\<not>CSTATE Shared T 0 \\<and> \\<not>CSTATE Shared T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_098",
+    "line_number": 298,
+    "content": "(HSTATE SD T \\<and> dthdatas1 T \\<noteq> [] \\<longrightarrow> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_099",
+    "line_number": 299,
+    "content": "(HSTATE SD T \\<and> dthdatas2 T \\<noteq> [] \\<longrightarrow> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_100",
+    "line_number": 300,
+    "content": "(length (dthdatas1 T ) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_101",
+    "line_number": 301,
+    "content": "(length (dthdatas2 T ) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_102",
+    "line_number": 302,
+    "content": "(HSTATE SD T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> (CSTATE ISAD T 1 \\<or> CSTATE ISD T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_103",
+    "line_number": 303,
+    "content": "(HSTATE SD T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> (CSTATE ISAD T 0 \\<or> CSTATE ISD T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_104",
+    "line_number": 304,
+    "content": "(HSTATE SA T \\<and> (nextSnpRespIs RspIFwdM T 0 \\<or> nextSnpRespIs RspSFwdM T 0) \\<longrightarrow> CSTATE ISAD T 1 \\<or> CSTATE ISA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_105",
+    "line_number": 305,
+    "content": "(HSTATE SA T \\<and> (nextSnpRespIs RspIFwdM T 1 \\<or> nextSnpRespIs RspSFwdM T 1) \\<longrightarrow> CSTATE ISAD T 0 \\<or> CSTATE ISA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_106",
+    "line_number": 306,
+    "content": "((nextSnpRespIs RspIFwdM T 0 \\<or> nextSnpRespIs RspIHitSE T 0) \\<longrightarrow> CSTATE Invalid T 0 \\<or> CSTATE ISDI T 0 \\<or> CSTATE ISAD T 0 \\<or> CSTATE IMAD T 0 \\<or> CSTATE IIA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_107",
+    "line_number": 307,
+    "content": "((nextSnpRespIs RspIFwdM T 1 \\<or> nextSnpRespIs RspIHitSE T 1) \\<longrightarrow> CSTATE Invalid T 1 \\<or> CSTATE ISDI T 1 \\<or> CSTATE ISAD T 1 \\<or> CSTATE IMAD T 1 \\<or> CSTATE IIA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_108",
+    "line_number": 308,
+    "content": "(nextReqIs DirtyEvict T 0 \\<longrightarrow> CSTATE MIA T 0 \\<or>  CSTATE SIA T 0 \\<or> CSTATE IIA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_109",
+    "line_number": 309,
+    "content": "(nextReqIs DirtyEvict T 1 \\<longrightarrow> CSTATE MIA T 1 \\<or>  CSTATE SIA T 1 \\<or> CSTATE IIA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_110",
+    "line_number": 310,
+    "content": "(snpresps1 T \\<noteq> [] \\<longrightarrow> reqresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_111",
+    "line_number": 311,
+    "content": "(snpresps2 T \\<noteq> [] \\<longrightarrow> reqresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_112",
+    "line_number": 312,
+    "content": "(length (snpresps1 T) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_113",
+    "line_number": 313,
+    "content": "(length (snpresps2 T) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_114",
+    "line_number": 314,
+    "content": "(HSTATE SAD T \\<and> (nextSnpRespIs RspIFwdM T 0 \\<or> nextSnpRespIs RspSFwdM T 0) \\<longrightarrow> CSTATE ISAD T 1 ) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_115",
+    "line_number": 315,
+    "content": "(HSTATE SAD T \\<and> (nextSnpRespIs RspIFwdM T 1 \\<or> nextSnpRespIs RspSFwdM T 1) \\<longrightarrow> CSTATE ISAD T 0 ) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_116",
+    "line_number": 316,
+    "content": "(HSTATE MAD T \\<and> nextSnpRespIs RspIFwdM T 0 \\<longrightarrow> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> dthdatas1 T \\<noteq> [] \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_117",
+    "line_number": 317,
+    "content": "(HSTATE MAD T \\<and> nextSnpRespIs RspIFwdM T 1 \\<longrightarrow> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> dthdatas2 T \\<noteq> [] \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_118",
+    "line_number": 318,
+    "content": "(HSTATE MA T \\<and> snpresps1 T \\<noteq> [] \\<longrightarrow> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> htddatas2 T \\<noteq> [] \\<or> (CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_119",
+    "line_number": 319,
+    "content": "(HSTATE MA T \\<and> snpresps2 T \\<noteq> [] \\<longrightarrow> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> htddatas1 T \\<noteq> [] \\<or> (CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_120",
+    "line_number": 320,
+    "content": "(HSTATE SAD T \\<and> snpresps1 T \\<noteq> [] \\<longrightarrow> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_121",
+    "line_number": 321,
+    "content": "(HSTATE SAD T \\<and> snpresps2 T \\<noteq> [] \\<longrightarrow> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_122",
+    "line_number": 322,
+    "content": "(HSTATE MD T \\<and> reqs1 T \\<noteq> [] \\<longrightarrow> dthdatas1 T \\<noteq> []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_123",
+    "line_number": 323,
+    "content": "(HSTATE MD T \\<and> reqs2 T \\<noteq> [] \\<longrightarrow> dthdatas2 T \\<noteq> []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_124",
+    "line_number": 324,
+    "content": "(HSTATE ID T \\<and> dthdatas1 T \\<noteq> [] \\<longrightarrow> CSTATE Invalid T 0 \\<or> CSTATE ISAD T 0 \\<or> CSTATE IMAD T 0) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_125",
+    "line_number": 325,
+    "content": "(HSTATE ID T \\<and> dthdatas2 T \\<noteq> [] \\<longrightarrow> CSTATE Invalid T 1 \\<or> CSTATE ISAD T 1 \\<or> CSTATE IMAD T 1) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_126",
+    "line_number": 326,
+    "content": "(HSTATE ID T \\<and> dthdatas1 T \\<noteq> [] \\<longrightarrow> \\<not>CSTATE MIA T 1) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_127",
+    "line_number": 327,
+    "content": "(HSTATE ID T \\<and> dthdatas2 T \\<noteq> [] \\<longrightarrow> \\<not>CSTATE MIA T 0) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_128",
+    "line_number": 328,
+    "content": "(dthdatas1 T \\<noteq> [] \\<and> HSTATE SD T \\<longrightarrow> snpresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_129",
+    "line_number": 329,
+    "content": "(dthdatas2 T \\<noteq> [] \\<and> HSTATE SD T \\<longrightarrow> snpresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_130",
+    "line_number": 330,
+    "content": "(CSTATE ISD T 0 \\<and> nextHTDDataPending T 0 \\<longrightarrow> nextLoad T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_131",
+    "line_number": 331,
+    "content": "(CSTATE ISD T 1 \\<and> nextHTDDataPending T 1 \\<longrightarrow> nextLoad T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_132",
+    "line_number": 332,
+    "content": "(C_msg_P_same IIA (nextGOPendingIs GO_WritePullDrop) (\\<lambda> T i. \\<not>nextSnoopPending T i) T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_133",
+    "line_number": 333,
+    "content": "(CSTATE ISAD T 0 \\<and> nextGOPending T 0 \\<longrightarrow> HSTATE SD T \\<or> HSTATE SharedM T \\<or> HSTATE MAD T \\<or> HSTATE SB T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_134",
+    "line_number": 334,
+    "content": "(CSTATE ISAD T 1 \\<and> nextGOPending T 1 \\<longrightarrow> HSTATE SD T \\<or> HSTATE SharedM T \\<or> HSTATE MAD T \\<or> HSTATE SB T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_135",
+    "line_number": 335,
+    "content": "(CSTATE ISAD T 0 \\<longrightarrow> nextLoad T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_136",
+    "line_number": 336,
+    "content": "(CSTATE ISAD T 1 \\<longrightarrow> nextLoad T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_137",
+    "line_number": 337,
+    "content": "(CSTATE ISAD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_138",
+    "line_number": 338,
+    "content": "(CSTATE ISAD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_139",
+    "line_number": 339,
+    "content": "(CSTATE ISAD T 0 \\<and> nextGOPending T 0 \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = [] ) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_140",
+    "line_number": 340,
+    "content": "(CSTATE ISAD T 1 \\<and> nextGOPending T 1 \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = [] ) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_141",
+    "line_number": 341,
+    "content": "((CSTATE Invalid T 0 \\<or> CSTATE ISDI T 0) \\<and> HSTATE ModifiedM T \\<longrightarrow> CSTATE Modified T 1 \\<or> CSTATE MIA T 1 \\<or> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1 \\<and> nextGOPending T 1 \\<or> (CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and> nextGOPending T 1 \\<or> (CSTATE IMD T 1 \\<or> CSTATE SMD T 1) \\<and> nextHTDDataPending T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_142",
+    "line_number": 342,
+    "content": "((CSTATE Invalid T 1 \\<or> CSTATE ISDI T 1) \\<and> HSTATE ModifiedM T \\<longrightarrow> CSTATE Modified T 0 \\<or> CSTATE MIA T 0 \\<or> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0 \\<and> nextGOPending T 0 \\<or> (CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and> nextGOPending T 0 \\<or> (CSTATE IMD T 0 \\<or> CSTATE SMD T 0) \\<and> nextHTDDataPending T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_143",
+    "line_number": 343,
+    "content": "((CSTATE Invalid T 0 \\<or> CSTATE ISDI T 0) \\<and> HSTATE MD T \\<longrightarrow> dthdatas1 T \\<noteq> []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_144",
+    "line_number": 344,
+    "content": "((CSTATE Invalid T 1 \\<or> CSTATE ISDI T 1) \\<and> HSTATE MD T \\<longrightarrow> dthdatas2 T \\<noteq> []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_145",
+    "line_number": 345,
+    "content": "(HSTATE ModifiedM T \\<longrightarrow> snpresps2 T = [] \\<and> snpresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_146",
+    "line_number": 346,
+    "content": "(HSTATE SAD T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> CSTATE ISAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_147",
+    "line_number": 347,
+    "content": "(HSTATE SAD T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> CSTATE ISAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_148",
+    "line_number": 348,
+    "content": "(HSTATE SAD T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_149",
+    "line_number": 349,
+    "content": "(HSTATE SAD T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_150",
+    "line_number": 350,
+    "content": "(HSTATE SAD T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> reqs2 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_151",
+    "line_number": 351,
+    "content": "(HSTATE SAD T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> reqs1 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_152",
+    "line_number": 352,
+    "content": "(HSTATE SD T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> reqs2 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_153",
+    "line_number": 353,
+    "content": "(HSTATE SD T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> reqs1 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_154",
+    "line_number": 354,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs RdOwn T 0 \\<longrightarrow> dthdatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_155",
+    "line_number": 355,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs RdOwn T 1 \\<longrightarrow> dthdatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_156",
+    "line_number": 356,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs RdShared T 0 \\<longrightarrow> dthdatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_157",
+    "line_number": 357,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs RdShared T 1 \\<longrightarrow> dthdatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_158",
+    "line_number": 358,
+    "content": "(CSTATE IIA T 0 \\<and> HSTATE ModifiedM T \\<longrightarrow> CSTATE Modified T 1 \\<or> CSTATE MIA T 1 \\<or> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1 \\<and> nextGOPending T 1 \\<or> (CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and> nextGOPending T 1 \\<or> (CSTATE IMD T 1 \\<or> CSTATE SMD T 1) \\<and> nextHTDDataPending T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_159",
+    "line_number": 359,
+    "content": "(CSTATE IIA T 1 \\<and> HSTATE ModifiedM T \\<longrightarrow> CSTATE Modified T 0 \\<or> CSTATE MIA T 0 \\<or> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0 \\<and> nextGOPending T 0 \\<or> (CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and> nextGOPending T 0 \\<or> (CSTATE IMD T 0 \\<or> CSTATE SMD T 0) \\<and> nextHTDDataPending T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_160",
+    "line_number": 360,
+    "content": "(CSTATE IIA T 0 \\<and> HSTATE SharedM T \\<longrightarrow> reqs2 T = [] \\<or> nextReqIs CleanEvict T 1 \\<or> nextReqIs CleanEvictNoData T 1 \\<or> nextReqIs RdOwn T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_161",
+    "line_number": 361,
+    "content": "(CSTATE IIA T 1 \\<and> HSTATE SharedM T \\<longrightarrow> reqs1 T = [] \\<or> nextReqIs CleanEvict T 0 \\<or> nextReqIs CleanEvictNoData T 0 \\<or> nextReqIs RdOwn T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_162",
+    "line_number": 362,
+    "content": "(CSTATE IIA T 0 \\<and> nextGOPendingIs GO_WritePull T 0 \\<longrightarrow> HSTATE IB T \\<or> HSTATE SB T \\<or> HSTATE MB T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_163",
+    "line_number": 363,
+    "content": "(CSTATE IIA T 1 \\<and> nextGOPendingIs GO_WritePull T 1 \\<longrightarrow> HSTATE IB T \\<or> HSTATE SB T \\<or> HSTATE MB T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_164",
+    "line_number": 364,
+    "content": "(CSTATE IIA T 0 \\<and> nextGOPendingIs GO_WritePullDrop T 0 \\<longrightarrow> HSTATE SharedM T \\<or> HSTATE InvalidM T \\<or> HSTATE ModifiedM T \\<or> HSTATE SB T \\<or> HSTATE ID T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_165",
+    "line_number": 365,
+    "content": "(CSTATE IIA T 1 \\<and> nextGOPendingIs GO_WritePullDrop T 1 \\<longrightarrow> HSTATE SharedM T \\<or> HSTATE InvalidM T \\<or> HSTATE ModifiedM T \\<or> HSTATE SB T \\<or> HSTATE ID T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_166",
+    "line_number": 366,
+    "content": "(CSTATE IMAD T 0 \\<and> nextHTDDataPending T 0 \\<longrightarrow>  HSTATE ModifiedM T \\<or> HSTATE MA T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_167",
+    "line_number": 367,
+    "content": "(CSTATE IMAD T 1 \\<and> nextHTDDataPending T 1 \\<longrightarrow>  HSTATE ModifiedM T \\<or> HSTATE MA T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_168",
+    "line_number": 368,
+    "content": "(CSTATE IIA T 0 \\<and> HSTATE SharedM T \\<longrightarrow> CSTATE Shared T 1 \\<or> CSTATE SIA T 1 \\<or> CSTATE SMAD T 1 \\<or> CSTATE ISAD T 1 \\<and> nextGOPending T 1 \\<and> nextHTDDataPending T 1 \\<or> CSTATE ISA T 1 \\<and> nextGOPending T 1 \\<or> CSTATE ISD T 1 \\<and> nextHTDDataPending T 1 \\<or> CSTATE SIAC T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_169",
+    "line_number": 369,
+    "content": "(CSTATE IIA T 1 \\<and> HSTATE SharedM T \\<longrightarrow> CSTATE Shared T 0 \\<or> CSTATE SIA T 0 \\<or> CSTATE SMAD T 0 \\<or> CSTATE ISAD T 0 \\<and> nextGOPending T 0 \\<and> nextHTDDataPending T 0 \\<or> CSTATE ISA T 0 \\<and> nextGOPending T 0 \\<or> CSTATE ISD T 0 \\<and> nextHTDDataPending T 0 \\<or> CSTATE SIAC T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_170",
+    "line_number": 370,
+    "content": "(HSTATE SharedM T \\<longrightarrow> dthdatas1 T = [] \\<and> dthdatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_171",
+    "line_number": 371,
+    "content": "(CSTATE MIA T 1 \\<longrightarrow> \\<not>CSTATE MIA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_172",
+    "line_number": 372,
+    "content": "(CSTATE MIA T 0 \\<longrightarrow> \\<not>CSTATE MIA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_173",
+    "line_number": 373,
+    "content": "(HSTATE ModifiedM T \\<longrightarrow> dthdatas2 T = [] \\<and> dthdatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_174",
+    "line_number": 374,
+    "content": "(HSTATE MA T \\<longrightarrow> dthdatas2 T = [] \\<and> dthdatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_175",
+    "line_number": 375,
+    "content": "(nextDTHDataFrom  0 T \\<longrightarrow> \\<not> nextHTDDataPending T 0) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_176",
+    "line_number": 376,
+    "content": "(nextDTHDataFrom  1 T \\<longrightarrow> \\<not> nextHTDDataPending T 1) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_177",
+    "line_number": 377,
+    "content": "(nextDTHDataFrom 0 T \\<longrightarrow> \\<not> nextDTHDataFrom 1 T) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_178",
+    "line_number": 378,
+    "content": "(nextDTHDataFrom 1 T \\<longrightarrow> \\<not> nextDTHDataFrom 0 T) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_179",
+    "line_number": 379,
+    "content": "(HSTATE SA T \\<longrightarrow> dthdatas2 T = [] \\<and> dthdatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_180",
+    "line_number": 380,
+    "content": "(HSTATE SD T \\<longrightarrow> \\<not> CSTATE IIA T 0 \\<or> \\<not> CSTATE IIA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_181",
+    "line_number": 381,
+    "content": "(HSTATE SAD T \\<longrightarrow> (\\<not> CSTATE IIA T 0 \\<or> nextSnpRespIs RspIFwdM T 0) \\<and> (\\<not> CSTATE IIA T 1 \\<or> nextSnpRespIs RspIFwdM T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_182",
+    "line_number": 382,
+    "content": "(CSTATE IIA T 0 \\<and> nextGOPendingIs GO_WritePull T 0 \\<longrightarrow> \\<not> nextDTHDataFrom 1 T) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_183",
+    "line_number": 383,
+    "content": "(CSTATE IIA T 1 \\<and> nextGOPendingIs GO_WritePull T 1 \\<longrightarrow> \\<not> nextDTHDataFrom 0 T) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_184",
+    "line_number": 384,
+    "content": "(CSTATE IIA T 0 \\<longrightarrow> \\<not> CSTATE IIA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_185",
+    "line_number": 385,
+    "content": "(CSTATE IIA T 1 \\<longrightarrow> \\<not> CSTATE IIA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_186",
+    "line_number": 386,
+    "content": "(CSTATE MIA T 0 \\<and> nextGOPendingIs GO_WritePull T 0 \\<longrightarrow> \\<not> nextDTHDataFrom 1 T) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_187",
+    "line_number": 387,
+    "content": "(CSTATE MIA T 1 \\<and> nextGOPendingIs GO_WritePull T 1 \\<longrightarrow> \\<not> nextDTHDataFrom 0 T) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_188",
+    "line_number": 388,
+    "content": "(snpresps1 T \\<noteq> [] \\<longrightarrow> reqresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_189",
+    "line_number": 389,
+    "content": "(snpresps2 T \\<noteq> [] \\<longrightarrow> reqresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_190",
+    "line_number": 390,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs RdShared T 1 \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_191",
+    "line_number": 391,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs RdShared T 0 \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_192",
+    "line_number": 392,
+    "content": "(HSTATE SD T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_193",
+    "line_number": 393,
+    "content": "(HSTATE SD T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_194",
+    "line_number": 394,
+    "content": "(HSTATE SAD T \\<and> (nextSnpRespIs RspIFwdM T 0 \\<or> nextSnpRespIs RspSFwdM T 0) \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_195",
+    "line_number": 395,
+    "content": "(HSTATE SAD T \\<and> (nextSnpRespIs RspIFwdM T 1 \\<or> nextSnpRespIs RspSFwdM T 1) \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_196",
+    "line_number": 396,
+    "content": "(HSTATE ModifiedM T \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T 0 \\<and> \\<not> nextGOPendingIs GO_WritePull T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_197",
+    "line_number": 397,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePull) nextEvict T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_198",
+    "line_number": 398,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePull) (\\<lambda>T i. \\<not> nextReqIs RdShared T i) T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_199",
+    "line_number": 399,
+    "content": "(CSTATE SIA T 0 \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = [] \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_200",
+    "line_number": 400,
+    "content": "(CSTATE SIA T 1 \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = [] \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_201",
+    "line_number": 401,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePull) (\\<lambda> T i. \\<not>nextSnoopPending T i) T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_202",
+    "line_number": 402,
+    "content": "(CSTATE SIA T 0 \\<and> nextGOPendingIs GO_WritePull T 0 \\<longrightarrow> HSTATE IB T \\<or> HSTATE SB T \\<or> HSTATE MB T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_203",
+    "line_number": 403,
+    "content": "(CSTATE SIA T 1 \\<and> nextGOPendingIs GO_WritePull T 1 \\<longrightarrow> HSTATE IB T \\<or> HSTATE SB T \\<or> HSTATE MB T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_204",
+    "line_number": 404,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePull) (\\<lambda>T i. \\<not> nextDTHDataPending T i) T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_205",
+    "line_number": 405,
+    "content": "(CSTATE SIA T 0 \\<and> nextGOPendingIs GO_WritePull T 0 \\<longrightarrow> \\<not> nextDTHDataFrom 1 T) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_206",
+    "line_number": 406,
+    "content": "(CSTATE SIA T 1 \\<and> nextGOPendingIs GO_WritePull T 1 \\<longrightarrow> \\<not> nextDTHDataFrom 0 T) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_207",
+    "line_number": 407,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePullDrop) nextEvict T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_208",
+    "line_number": 408,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePullDrop) (\\<lambda>T i. \\<not> nextReqIs RdShared T i) T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_209",
+    "line_number": 409,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePullDrop) (\\<lambda> T i. \\<not>nextSnoopPending T i) T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_210",
+    "line_number": 410,
+    "content": "(CSTATE SIA T 0 \\<and> nextGOPendingIs GO_WritePullDrop T 0 \\<longrightarrow> HSTATE InvalidM T \\<or> HSTATE SharedM T \\<or> HSTATE SB T \\<or> HSTATE IB T \\<or> HSTATE ModifiedM T \\<or> HSTATE ID T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_211",
+    "line_number": 411,
+    "content": "(CSTATE SIA T 1 \\<and> nextGOPendingIs GO_WritePullDrop T 1 \\<longrightarrow> HSTATE InvalidM T \\<or> HSTATE SharedM T \\<or> HSTATE SB T \\<or> HSTATE IB T \\<or> HSTATE ModifiedM T \\<or> HSTATE ID T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_212",
+    "line_number": 412,
+    "content": "(C_msg_P_same SIA (nextGOPendingIs GO_WritePullDrop) (\\<lambda>T i. \\<not> nextDTHDataPending T i) T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_213",
+    "line_number": 413,
+    "content": "(CSTATE SMAD T 0 \\<and> nextHTDDataPending T 0 \\<longrightarrow>  HSTATE ModifiedM T \\<or> HSTATE MA T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_214",
+    "line_number": 414,
+    "content": "(CSTATE ISAD T 0 \\<and> nextHTDDataPending T 0 \\<longrightarrow>  HSTATE SharedM T \\<or> HSTATE SA T \\<or> HSTATE MA T \\<or> HSTATE SB T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_215",
+    "line_number": 415,
+    "content": "(CSTATE ISAD T 1 \\<and> nextHTDDataPending T 1 \\<longrightarrow>  HSTATE SharedM T \\<or> HSTATE SA T \\<or> HSTATE MA T \\<or> HSTATE SB T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_216",
+    "line_number": 416,
+    "content": "(CSTATE ISAD T 0 \\<and> nextHTDDataPending T 0 \\<longrightarrow> \\<not> (CSTATE IMAD T 1 \\<and> nextHTDDataPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_217",
+    "line_number": 417,
+    "content": "(CSTATE ISAD T 1 \\<and> nextHTDDataPending T 1 \\<longrightarrow> \\<not> (CSTATE IMAD T 0 \\<and> nextHTDDataPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_218",
+    "line_number": 418,
+    "content": "(C_not_C_msg Modified IMAD nextGOPending T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_219",
+    "line_number": 419,
+    "content": "(CSTATE IMAD T 0 \\<and> nextGOPending T 0 \\<longrightarrow> HSTATE MD T \\<or> HSTATE ModifiedM T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_220",
+    "line_number": 420,
+    "content": "(CSTATE IMAD T 0 \\<longrightarrow> nextStore T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_221",
+    "line_number": 421,
+    "content": "(CSTATE IMAD T 1 \\<longrightarrow> nextStore T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_222",
+    "line_number": 422,
+    "content": "(CSTATE IMAD T 0 \\<and> nextGOPending T 0 \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = [] ) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_223",
+    "line_number": 423,
+    "content": "(CSTATE IMAD T 1 \\<and> nextGOPending T 1 \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = [] ) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_224",
+    "line_number": 424,
+    "content": "(snpresps1 T \\<noteq> [] \\<longrightarrow> reqresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_225",
+    "line_number": 425,
+    "content": "(snpresps2 T \\<noteq> [] \\<longrightarrow> reqresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_226",
+    "line_number": 426,
+    "content": "(CSTATE SMAD T 1 \\<and> nextHTDDataPending T 1 \\<longrightarrow>  HSTATE ModifiedM T \\<or> HSTATE MA T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_227",
+    "line_number": 427,
+    "content": "(CSTATE IMAD T 1 \\<and> nextGOPending T 1 \\<longrightarrow>  HSTATE MD T \\<or> HSTATE ModifiedM T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_228",
+    "line_number": 428,
+    "content": "(CSTATE SMAD T 0 \\<and> nextGOPending T 0 \\<longrightarrow>  HSTATE MD T \\<or> HSTATE ModifiedM T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_229",
+    "line_number": 429,
+    "content": "(CSTATE SMAD T 1 \\<and> nextGOPending T 1 \\<longrightarrow>  HSTATE MD T \\<or> HSTATE ModifiedM T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_230",
+    "line_number": 430,
+    "content": "(CSTATE SMAD T 0 \\<longrightarrow> nextStore T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_231",
+    "line_number": 431,
+    "content": "(CSTATE SMAD T 1 \\<longrightarrow> nextStore T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_232",
+    "line_number": 432,
+    "content": "(C_msg_P_same IMA (nextGOPending) nextStore T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_233",
+    "line_number": 433,
+    "content": "(CSTATE IMA T 0 \\<or> CSTATE SMA T 0 \\<or> CSTATE ISA T 0 \\<longrightarrow> \\<not> nextHTDDataPending T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_234",
+    "line_number": 434,
+    "content": "(CSTATE IMA T 1 \\<or> CSTATE SMA T 1 \\<or> CSTATE ISA T 1 \\<longrightarrow> \\<not> nextHTDDataPending T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_235",
+    "line_number": 435,
+    "content": "(C_msg_P_oppo IMA (nextGOPending) (\\<lambda> T i. \\<not>nextSnoopPending T i) T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_236",
+    "line_number": 436,
+    "content": "(C_msg_P_oppo SMA (nextGOPending) (\\<lambda> T i. \\<not>nextSnoopPending T i) T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_237",
+    "line_number": 437,
+    "content": "(C_msg_P_oppo ISA (nextGOPending) (\\<lambda> T i. \\<not>nextSnoopPending T i) T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_238",
+    "line_number": 438,
+    "content": "(CSTATE IMA T 0 \\<and> nextGOPending T 0 \\<longrightarrow>  HSTATE ModifiedM T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_239",
+    "line_number": 439,
+    "content": "(CSTATE IMA T 1 \\<and> nextGOPending T 1 \\<longrightarrow>  HSTATE ModifiedM T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_240",
+    "line_number": 440,
+    "content": "(CSTATE IMD T 0 \\<or> CSTATE SMD T 0 \\<or> ((CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextGOPending T 0) \\<longrightarrow> ((\\<not> CSTATE ISD T 1) \\<and> \\<not> CSTATE IMD T 1 \\<and> \\<not> CSTATE SMD T 1 \\<and> \\<not>( (CSTATE ISAD T 1 \\<or> CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextGOPending T 1) \\<and> \\<not>CSTATE ISA T 1 \\<and> \\<not> CSTATE IMA T 1 \\<and> \\<not> CSTATE SMA T 1 \\<and> \\<not> (  nextHTDDataPending T 1) \\<and>  \\<not> CSTATE Shared T 1 \\<and> \\<not> CSTATE Modified T 1) \\<or> nextSnoopIs SnpInv T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_241",
+    "line_number": 441,
+    "content": "(CSTATE IMD T 1 \\<or> CSTATE SMD T 1 \\<or> ((CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextGOPending T 1) \\<longrightarrow> ((\\<not> CSTATE ISD T 0) \\<and> \\<not> CSTATE IMD T 0 \\<and> \\<not> CSTATE SMD T 0 \\<and> \\<not>( (CSTATE ISAD T 0 \\<or> CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextGOPending T 0) \\<and> \\<not>CSTATE ISA T 0 \\<and> \\<not> CSTATE IMA T 0 \\<and> \\<not> CSTATE SMA T 0 \\<and> \\<not> (  nextHTDDataPending T 0) \\<and>  \\<not> CSTATE Shared T 0 \\<and> \\<not> CSTATE Modified T 0) \\<or> nextSnoopIs SnpInv T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_242",
+    "line_number": 442,
+    "content": "(CSTATE IMA T 0 \\<or> CSTATE SMA T 0 \\<or> ((CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0)  \\<longrightarrow> dthdatas1 T = [] \\<and> (dthdatas2 T = [] \\<or> HSTATE MB T \\<or> HSTATE ModifiedM T)) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_243",
+    "line_number": 443,
+    "content": "(CSTATE IMA T 1 \\<or> CSTATE SMA T 1 \\<or> ((CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1)  \\<longrightarrow> dthdatas2 T = [] \\<and> (dthdatas1 T = [] \\<or> HSTATE MB T \\<or> HSTATE ModifiedM T)) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_244",
+    "line_number": 444,
+    "content": "(CSTATE IMD T 0 \\<or> CSTATE SMD T 0 \\<or> ((CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextGOPending T 0) \\<longrightarrow> dthdatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_245",
+    "line_number": 445,
+    "content": "(CSTATE IMD T 1 \\<or> CSTATE SMD T 1 \\<or> ((CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextGOPending T 1) \\<longrightarrow> dthdatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_246",
+    "line_number": 446,
+    "content": "(C_msg_P_same SMA (nextGOPending) nextStore T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_247",
+    "line_number": 447,
+    "content": "((CSTATE SMA T 0 \\<and> nextGOPending T 0 \\<or> CSTATE IMD T 0 \\<and> nextHTDDataPending T 0 \\<or> CSTATE SMD T 0 \\<and> nextHTDDataPending T 0) \\<longrightarrow>  HSTATE ModifiedM T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_248",
+    "line_number": 448,
+    "content": "((CSTATE SMA T 1 \\<and> nextGOPending T 1 \\<or> CSTATE IMD T 1 \\<and> nextHTDDataPending T 1 \\<or> CSTATE SMD T 1 \\<and> nextHTDDataPending T 1) \\<longrightarrow>  HSTATE ModifiedM T \\<or> HSTATE MAD T \\<or> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_249",
+    "line_number": 449,
+    "content": "(CSTATE ISD T 0 \\<or> CSTATE ISAD T 0 \\<or> CSTATE ISA T 0 \\<or> CSTATE ISDI T 0 \\<longrightarrow> nextLoad T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_250",
+    "line_number": 450,
+    "content": "(CSTATE ISD T 1 \\<or> CSTATE ISAD T 1 \\<or> CSTATE ISA T 1 \\<or> CSTATE ISDI T 1 \\<longrightarrow> nextLoad T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_251",
+    "line_number": 451,
+    "content": "(CSTATE IMD T 0 \\<or> CSTATE IMAD T 0 \\<or> CSTATE IMA T 0 \\<or> CSTATE SMD T 0 \\<or> CSTATE SMAD T 0 \\<or> CSTATE SMA T 0  \\<longrightarrow> nextStore T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_252",
+    "line_number": 452,
+    "content": "(CSTATE IMD T 1 \\<or> CSTATE IMAD T 1 \\<or> CSTATE IMA T 1 \\<or> CSTATE SMD T 1 \\<or> CSTATE SMAD T 1 \\<or> CSTATE SMA T 1  \\<longrightarrow> nextStore T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_253",
+    "line_number": 453,
+    "content": "((CSTATE ISAD T 0 \\<and> nextGOPending T 0) \\<or> CSTATE ISA T 0 \\<or> ( nextHTDDataPending T 0) \\<or> CSTATE Shared T 0 \\<longrightarrow> \\<not> CSTATE Modified T 1 \\<and> (dthdatas1 T = [] \\<or> nextSnpRespIs RspSFwdM T 0 \\<or> HSTATE SD T)) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_254",
+    "line_number": 454,
+    "content": "((CSTATE ISAD T 1 \\<and> nextGOPending T 1) \\<or> CSTATE ISA T 1 \\<or> ( nextHTDDataPending T 1) \\<or> CSTATE Shared T 1 \\<longrightarrow> \\<not> CSTATE Modified T 0 \\<and> (dthdatas2 T = [] \\<or> nextSnpRespIs RspSFwdM T 1 \\<or> HSTATE SD T)) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_255",
+    "line_number": 455,
+    "content": "(CSTATE ISA T 0 \\<and> nextGOPending T 0 \\<longrightarrow> HSTATE SharedM T \\<or> HSTATE MAD T \\<or> HSTATE MA T \\<or> HSTATE SB T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_256",
+    "line_number": 456,
+    "content": "(CSTATE ISA T 1 \\<and> nextGOPending T 1 \\<longrightarrow> HSTATE SharedM T \\<or> HSTATE MAD T \\<or> HSTATE MA T \\<or> HSTATE SB T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_257",
+    "line_number": 457,
+    "content": "(CSTATE ISDI T 0 \\<and> nextHTDDataPending T 0 \\<longrightarrow> HSTATE ModifiedM T \\<or> HSTATE MAD T  \\<or> HSTATE MA T \\<or> HSTATE MD T\\<or> HSTATE ID T \\<or> HSTATE InvalidM T \\<or> HSTATE SharedM T \\<or> HSTATE SB T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_258",
+    "line_number": 458,
+    "content": "(CSTATE ISDI T 1 \\<and> nextHTDDataPending T 1 \\<longrightarrow> HSTATE ModifiedM T \\<or> HSTATE MAD T  \\<or> HSTATE MA T \\<or> HSTATE MD T\\<or> HSTATE ID T \\<or> HSTATE InvalidM T \\<or> HSTATE SharedM T \\<or> HSTATE SB T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_259",
+    "line_number": 459,
+    "content": "(CSTATE ISDI T 0 \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = [] \\<and> reqresps1 T = [] \\<and> snps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_260",
+    "line_number": 460,
+    "content": "(CSTATE ISDI T 1 \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = [] \\<and> reqresps2 T = [] \\<and> snps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_261",
+    "line_number": 461,
+    "content": "(CSTATE ISDI T 0 \\<longrightarrow> \\<not>nextReqIs RdOwn T 1 \\<or> \\<not>HSTATE ModifiedM T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_262",
+    "line_number": 462,
+    "content": "(CSTATE ISDI T 1 \\<longrightarrow> \\<not>nextReqIs RdOwn T 0 \\<or> \\<not>HSTATE ModifiedM T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_263",
+    "line_number": 463,
+    "content": "(CSTATE Invalid T 0 \\<longrightarrow> reqresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_264",
+    "line_number": 464,
+    "content": "(CSTATE Invalid T 1 \\<longrightarrow> reqresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_265",
+    "line_number": 465,
+    "content": "(CSTATE Shared T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_266",
+    "line_number": 466,
+    "content": "(CSTATE Shared T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_267",
+    "line_number": 467,
+    "content": "(CSTATE Shared T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1 \\<or> CSTATE IMA T 1 \\<or> CSTATE SMAD T 1 \\<or> CSTATE SMA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_268",
+    "line_number": 468,
+    "content": "(CSTATE Shared T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0 \\<or> CSTATE IMA T 0 \\<or> CSTATE SMAD T 0 \\<or> CSTATE SMA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_269",
+    "line_number": 469,
+    "content": "(CSTATE SMAD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_270",
+    "line_number": 470,
+    "content": "(CSTATE SMAD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_271",
+    "line_number": 471,
+    "content": "(CSTATE SMAD T 0 \\<and> reqresps1 T = [] \\<and> htddatas1 T = [] \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_272",
+    "line_number": 472,
+    "content": "(CSTATE SMAD T 1 \\<and> reqresps2 T = [] \\<and> htddatas2 T = [] \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_273",
+    "line_number": 473,
+    "content": "(nextReqIs RdOwn T 0 \\<longrightarrow> CSTATE SMAD T 0 \\<or> CSTATE IMAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_274",
+    "line_number": 474,
+    "content": "(nextReqIs RdOwn T 1 \\<longrightarrow> CSTATE SMAD T 1 \\<or> CSTATE IMAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_275",
+    "line_number": 475,
+    "content": "(CSTATE SMAD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<and> CXL_SPG_used T 0 \\<longrightarrow> nextReqIs RdOwn T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_276",
+    "line_number": 476,
+    "content": "(CSTATE SMAD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<and> CXL_SPG_used T 1 \\<longrightarrow> nextReqIs RdOwn T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_277",
+    "line_number": 477,
+    "content": "(CSTATE ISD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_278",
+    "line_number": 478,
+    "content": "(CSTATE ISD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_279",
+    "line_number": 479,
+    "content": "(CSTATE ISD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1 \\<or> CSTATE IMA T 1 \\<or> CSTATE SMAD T 1 \\<or> CSTATE SMA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_280",
+    "line_number": 480,
+    "content": "(CSTATE ISD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0 \\<or> CSTATE IMA T 0 \\<or> CSTATE SMAD T 0 \\<or> CSTATE SMA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_281",
+    "line_number": 481,
+    "content": "(HSTATE MD T \\<longrightarrow> snpresps1 T = [] \\<and> snpresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_282",
+    "line_number": 482,
+    "content": "(HSTATE MD T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> CSTATE IMAD T 1 \\<and> nextGOPending T 1 \\<or> CSTATE IMD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_283",
+    "line_number": 483,
+    "content": "(HSTATE MD T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> CSTATE IMAD T 0 \\<and> nextGOPending T 0 \\<or> CSTATE IMD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_284",
+    "line_number": 484,
+    "content": "(HSTATE MD T \\<and> nextDTHDataFrom 0 T \\<longrightarrow>  \\<not> nextReqIs CleanEvict T 0 \\<and> \\<not> nextReqIs CleanEvictNoData T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_285",
+    "line_number": 485,
+    "content": "(HSTATE MD T \\<and> nextDTHDataFrom 1 T \\<longrightarrow>  \\<not> nextReqIs CleanEvict T 1 \\<and> \\<not> nextReqIs CleanEvictNoData T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_286",
+    "line_number": 486,
+    "content": "(HSTATE MD T \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T 0 \\<and> \\<not> nextGOPendingIs GO_WritePull T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_287",
+    "line_number": 487,
+    "content": "(HSTATE MAD T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> CSTATE IMAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_288",
+    "line_number": 488,
+    "content": "(HSTATE MAD T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> CSTATE IMAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_289",
+    "line_number": 489,
+    "content": "(HSTATE MAD T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> snpresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_290",
+    "line_number": 490,
+    "content": "(HSTATE MAD T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> snpresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_291",
+    "line_number": 491,
+    "content": "(HSTATE MAD T \\<and> nextDTHDataFrom 0 T \\<longrightarrow>  \\<not> nextReqIs CleanEvict T 0 \\<and> \\<not> nextReqIs CleanEvictNoData T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_292",
+    "line_number": 492,
+    "content": "(HSTATE MAD T \\<and> nextDTHDataFrom 1 T \\<longrightarrow>  \\<not> nextReqIs CleanEvict T 1 \\<and> \\<not> nextReqIs CleanEvictNoData T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_293",
+    "line_number": 493,
+    "content": "(HSTATE MAD T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> \\<not> CSTATE Modified T 0 \\<and> reqs2 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_294",
+    "line_number": 494,
+    "content": "(HSTATE MAD T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> \\<not> CSTATE Modified T 1 \\<and> reqs1 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_295",
+    "line_number": 495,
+    "content": "(HSTATE MAD T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> reqresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_296",
+    "line_number": 496,
+    "content": "(HSTATE MAD T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> reqresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_297",
+    "line_number": 497,
+    "content": "((HSTATE SAD T \\<or> HSTATE MAD T \\<or> HSTATE SA T \\<or> HSTATE MA T) \\<and> snpresps1 T \\<noteq> [] \\<longrightarrow> htddatas1 T = [] \\<or> CSTATE ISDI T 0) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_298",
+    "line_number": 498,
+    "content": "((HSTATE SAD T \\<or> HSTATE MAD T \\<or> HSTATE SA T \\<or> HSTATE MA T) \\<and> snpresps2 T \\<noteq> [] \\<longrightarrow> htddatas2 T = [] \\<or> CSTATE ISDI T 1) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_299",
+    "line_number": 499,
+    "content": "(nextSnpRespIs RspSFwdM T 0 \\<longrightarrow> CSTATE Shared T 0 \\<or> CSTATE SMAD T 0 \\<or> CSTATE SIA T 0 \\<or> CSTATE SIAC T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_300",
+    "line_number": 500,
+    "content": "(nextSnpRespIs RspSFwdM T 1 \\<longrightarrow> CSTATE Shared T 1 \\<or> CSTATE SMAD T 1 \\<or> CSTATE SIA T 1 \\<or> CSTATE SIAC T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_301",
+    "line_number": 501,
+    "content": "((CSTATE Invalid T 0  \\<or> CSTATE ISDI T 0 \\<or> nextReqIs RdOwn T 0) \\<and> HSTATE MA T \\<longrightarrow> ((CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1 \\<or> CSTATE IMA T 1 \\<or> CSTATE SMA T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_302",
+    "line_number": 502,
+    "content": "((CSTATE Invalid T 1  \\<or> CSTATE ISDI T 1 \\<or> nextReqIs RdOwn T 1) \\<and> HSTATE MA T \\<longrightarrow> ((CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0 \\<or> CSTATE IMA T 0 \\<or> CSTATE SMA T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_303",
+    "line_number": 503,
+    "content": "(CSTATE Modified T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> HSTATE MAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_304",
+    "line_number": 504,
+    "content": "(CSTATE Modified T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> HSTATE MAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_305",
+    "line_number": 505,
+    "content": "(CSTATE Modified T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1 ) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_306",
+    "line_number": 506,
+    "content": "(CSTATE Modified T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0 ) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_307",
+    "line_number": 507,
+    "content": "(CSTATE IMD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> HSTATE MAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_308",
+    "line_number": 508,
+    "content": "(CSTATE IMD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> HSTATE MAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_309",
+    "line_number": 509,
+    "content": "(CSTATE IMD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1 ) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_310",
+    "line_number": 510,
+    "content": "(CSTATE IMD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0 ) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_311",
+    "line_number": 511,
+    "content": "(CSTATE IMAD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> HSTATE MAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_312",
+    "line_number": 512,
+    "content": "(CSTATE IMAD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> HSTATE MAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_313",
+    "line_number": 513,
+    "content": "(CSTATE IMAD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1 ) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_314",
+    "line_number": 514,
+    "content": "(CSTATE IMAD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0 ) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_315",
+    "line_number": 515,
+    "content": "(CSTATE IMA T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> HSTATE MAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_316",
+    "line_number": 516,
+    "content": "(CSTATE IMA T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> HSTATE MAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_317",
+    "line_number": 517,
+    "content": "(CSTATE IMA T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1 ) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_318",
+    "line_number": 518,
+    "content": "(CSTATE IMA T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0 ) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_319",
+    "line_number": 519,
+    "content": "(CSTATE MIA T 0 \\<and> nextSnoopIs SnpData T 0 \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_320",
+    "line_number": 520,
+    "content": "(CSTATE MIA T 1 \\<and> nextSnoopIs SnpData T 1 \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_321",
+    "line_number": 521,
+    "content": "(CSTATE MIA T 0 \\<and> nextSnoopIs SnpData T 0 \\<longrightarrow> CSTATE ISAD T 1 ) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_322",
+    "line_number": 522,
+    "content": "(CSTATE MIA T 1 \\<and> nextSnoopIs SnpData T 1 \\<longrightarrow> CSTATE ISAD T 0 ) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_323",
+    "line_number": 523,
+    "content": "(CSTATE Modified T 0 \\<and> nextSnoopIs SnpData T 0 \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_324",
+    "line_number": 524,
+    "content": "(CSTATE Modified T 1 \\<and> nextSnoopIs SnpData T 1 \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_325",
+    "line_number": 525,
+    "content": "(CSTATE Modified T 0 \\<and> nextSnoopIs SnpData T 0 \\<longrightarrow> CSTATE ISAD T 1 ) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_326",
+    "line_number": 526,
+    "content": "(CSTATE Modified T 1 \\<and> nextSnoopIs SnpData T 1 \\<longrightarrow> CSTATE ISAD T 0 ) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_327",
+    "line_number": 527,
+    "content": "(CSTATE Modified T 0 \\<longrightarrow> reqs1 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_328",
+    "line_number": 528,
+    "content": "(CSTATE Modified T 1 \\<longrightarrow> reqs2 T = []) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_329",
+    "line_number": 529,
+    "content": "(CSTATE Modified T 0 \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = [] \\<and> reqresps1 T = [] \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_330",
+    "line_number": 530,
+    "content": "(CSTATE Modified T 1 \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = [] \\<and> reqresps2 T = [] \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_331",
+    "line_number": 531,
+    "content": "(HSTATE InvalidM T \\<and> nextReqIs RdShared T 0 \\<longrightarrow> dthdatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_332",
+    "line_number": 532,
+    "content": "(HSTATE InvalidM T \\<and> nextReqIs RdShared T 1 \\<longrightarrow> dthdatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_333",
+    "line_number": 533,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> CSTATE Modified T 0 \\<and> \\<not> CSTATE Modified T 1 \\<and> \\<not> CSTATE Shared T 0 \\<and> \\<not> CSTATE Shared T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_334",
+    "line_number": 534,
+    "content": "(nextReqIs RdOwn T 0 \\<longrightarrow> \\<not> CSTATE ISAD T 0 \\<and> \\<not> CSTATE Invalid T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_335",
+    "line_number": 535,
+    "content": "(nextReqIs RdOwn T 1 \\<longrightarrow> \\<not> CSTATE ISAD T 1 \\<and> \\<not> CSTATE Invalid T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_336",
+    "line_number": 536,
+    "content": "(HSTATE InvalidM T \\<and> nextReqIs RdOwn T 0 \\<longrightarrow> CSTATE IMAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_337",
+    "line_number": 537,
+    "content": "(HSTATE InvalidM T \\<and> nextReqIs RdOwn T 1 \\<longrightarrow> CSTATE IMAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_338",
+    "line_number": 538,
+    "content": "(HSTATE InvalidM T \\<and> nextReqIs RdOwn T 0 \\<longrightarrow> dthdatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_339",
+    "line_number": 539,
+    "content": "(HSTATE InvalidM T \\<and> nextReqIs RdOwn T 1 \\<longrightarrow> dthdatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_340",
+    "line_number": 540,
+    "content": "(CSTATE SIA T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_341",
+    "line_number": 541,
+    "content": "(CSTATE SIA T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_342",
+    "line_number": 542,
+    "content": "(CSTATE SIA T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_343",
+    "line_number": 543,
+    "content": "(CSTATE SIA T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_344",
+    "line_number": 544,
+    "content": "(CSTATE SIA T 0 \\<and> nextSnoopIs SnpInv T 0 \\<and> CXL_SPG_used T 0 \\<longrightarrow> (nextReqIs CleanEvict T 0 \\<or> nextReqIs CleanEvictNoData T 0 )) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_345",
+    "line_number": 545,
+    "content": "(CSTATE SIA T 1 \\<and> nextSnoopIs SnpInv T 1 \\<and> CXL_SPG_used T 1 \\<longrightarrow> (nextReqIs CleanEvict T 1 \\<or> nextReqIs CleanEvictNoData T 1 )) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_346",
+    "line_number": 546,
+    "content": "(CSTATE SIA T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1 \\<or> CSTATE IMA T 1 \\<or> CSTATE SMAD T 1 \\<or> CSTATE SMA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_347",
+    "line_number": 547,
+    "content": "(CSTATE SIA T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0 \\<or> CSTATE IMA T 0 \\<or> CSTATE SMAD T 0 \\<or> CSTATE SMA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_348",
+    "line_number": 548,
+    "content": "(CSTATE SMAD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1 \\<or> CSTATE IMA T 1 \\<or> CSTATE SMAD T 1 \\<or> CSTATE SMA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_349",
+    "line_number": 549,
+    "content": "(CSTATE SMAD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0 \\<or> CSTATE IMA T 0 \\<or> CSTATE SMAD T 0 \\<or> CSTATE SMA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_350",
+    "line_number": 550,
+    "content": "(HSTATE ID T \\<longrightarrow> \\<not> CSTATE Modified T 0 \\<and> \\<not> CSTATE Modified T 1 \\<and> \\<not> CSTATE Shared T 0 \\<and> \\<not> CSTATE Shared T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_351",
+    "line_number": 551,
+    "content": "(HSTATE ModifiedM T \\<and> nextReqIs DirtyEvict T 0 \\<longrightarrow> (\\<not> CSTATE Modified T 0 \\<or> \\<not> CSTATE Modified T 1) \\<and> \\<not> CSTATE Shared T 0 \\<and> \\<not> CSTATE Shared T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_352",
+    "line_number": 552,
+    "content": "(HSTATE ModifiedM T \\<and> nextReqIs DirtyEvict T 1 \\<longrightarrow> (\\<not> CSTATE Modified T 0 \\<or> \\<not> CSTATE Modified T 1) \\<and> \\<not> CSTATE Shared T 0 \\<and> \\<not> CSTATE Shared T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_353",
+    "line_number": 553,
+    "content": "(HSTATE ID T \\<and> nextReqIs RdOwn T 0 \\<longrightarrow> CSTATE IMAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_354",
+    "line_number": 554,
+    "content": "(HSTATE ID T \\<and> nextReqIs RdOwn T 1 \\<longrightarrow> CSTATE IMAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_355",
+    "line_number": 555,
+    "content": "(CSTATE SMAD T 0 \\<and> nextGOPending T 0\\<longrightarrow> nextHTDDataPending T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_356",
+    "line_number": 556,
+    "content": "(CSTATE SMAD T 1 \\<and> nextGOPending T 1\\<longrightarrow> nextHTDDataPending T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_357",
+    "line_number": 557,
+    "content": "(C_msg_P_oppo SMAD nextGOPending (\\<lambda>T i. \\<not> nextSnoopPending T i) T) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_358",
+    "line_number": 558,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs CleanEvictNoData T 0 \\<longrightarrow> CSTATE SIAC T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_359",
+    "line_number": 559,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs CleanEvictNoData T 1 \\<longrightarrow> CSTATE SIAC T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_360",
+    "line_number": 560,
+    "content": "(nextGOPendingIs GO_WritePull T 0 \\<and> HSTATE InvalidM T \\<longrightarrow> reqresps2 T = [] \\<or> nextReqRespStateIs Invalid (reqresps2 T)) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_361",
+    "line_number": 561,
+    "content": "(nextGOPendingIs GO_WritePull T 1 \\<and> HSTATE InvalidM T \\<longrightarrow> reqresps1 T = [] \\<or> nextReqRespStateIs Invalid (reqresps1 T)) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_362",
+    "line_number": 562,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs CleanEvictNoData T 0 \\<longrightarrow> nextEvict T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_363",
+    "line_number": 563,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs CleanEvictNoData T 1 \\<longrightarrow> nextEvict T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_364",
+    "line_number": 564,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs CleanEvict T 0 \\<longrightarrow> nextEvict T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_365",
+    "line_number": 565,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs CleanEvict T 1 \\<longrightarrow> nextEvict T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_366",
+    "line_number": 566,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs CleanEvictNoData T 0 \\<longrightarrow> \\<not> CSTATE ISDI T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_367",
+    "line_number": 567,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs CleanEvictNoData T 1 \\<longrightarrow> \\<not> CSTATE ISDI T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_368",
+    "line_number": 568,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs CleanEvict T 0 \\<longrightarrow> \\<not> CSTATE ISDI T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_369",
+    "line_number": 569,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs CleanEvict T 1 \\<longrightarrow> \\<not> CSTATE ISDI T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_370",
+    "line_number": 570,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs CleanEvictNoData T 0 \\<longrightarrow> \\<not> CSTATE MIA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_371",
+    "line_number": 571,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs CleanEvictNoData T 1 \\<longrightarrow> \\<not> CSTATE MIA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_372",
+    "line_number": 572,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs CleanEvict T 0 \\<longrightarrow> \\<not> CSTATE MIA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_373",
+    "line_number": 573,
+    "content": "(HSTATE SharedM T \\<and> nextReqIs CleanEvict T 1 \\<longrightarrow> \\<not> CSTATE MIA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_374",
+    "line_number": 574,
+    "content": "(CSTATE Shared T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> ((CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> htddatas2 T \\<noteq> [] \\<or> (CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and> htddatas2 T = [])) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_375",
+    "line_number": 575,
+    "content": "(CSTATE Shared T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> ((CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> htddatas1 T \\<noteq> [] \\<or> (CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and> htddatas1 T = [])) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_376",
+    "line_number": 576,
+    "content": "(nextReqIs DirtyEvict T 0 \\<longrightarrow> nextEvict T 0) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_377",
+    "line_number": 577,
+    "content": "(nextReqIs DirtyEvict T 1 \\<longrightarrow> nextEvict T 1) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_378",
+    "line_number": 578,
+    "content": "(nextReqIs DirtyEvict T 0 \\<and> HSTATE InvalidM T \\<longrightarrow> \\<not> nextDTHDataFrom 1 T) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_379",
+    "line_number": 579,
+    "content": "(nextReqIs DirtyEvict T 1 \\<and> HSTATE InvalidM T \\<longrightarrow> \\<not> nextDTHDataFrom 0 T) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_380",
+    "line_number": 580,
+    "content": "(nextReqIs DirtyEvict T 0 \\<and> HSTATE InvalidM T \\<longrightarrow> \\<not> CSTATE ISDI T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_381",
+    "line_number": 581,
+    "content": "(nextReqIs DirtyEvict T 1 \\<and> HSTATE InvalidM T \\<longrightarrow> \\<not> CSTATE ISDI T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_382",
+    "line_number": 582,
+    "content": "(nextReqIs DirtyEvict T 0 \\<and> HSTATE InvalidM T \\<longrightarrow> (reqresps2 T = [] \\<or> nextReqRespStateIs Invalid (reqresps2 T))) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_383",
+    "line_number": 583,
+    "content": "(nextReqIs DirtyEvict T 1 \\<and> HSTATE InvalidM T \\<longrightarrow> (reqresps1 T = [] \\<or> nextReqRespStateIs Invalid (reqresps1 T))) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_384",
+    "line_number": 584,
+    "content": "(CSTATE SMD T 0 \\<and> nextHTDDataPending T 0 \\<longrightarrow> \\<not>(CSTATE ISA T 1 \\<or> nextHTDDataPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_385",
+    "line_number": 585,
+    "content": "(CSTATE SMD T 1 \\<and> nextHTDDataPending T 1 \\<longrightarrow> \\<not>(CSTATE ISA T 0 \\<or> nextHTDDataPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_386",
+    "line_number": 586,
+    "content": "(CSTATE SMD T 0 \\<and> nextHTDDataPending T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> HSTATE MAD T \\<and> CSTATE IMAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_387",
+    "line_number": 587,
+    "content": "(CSTATE SMD T 1 \\<and> nextHTDDataPending T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> HSTATE MAD T \\<and> CSTATE IMAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_388",
+    "line_number": 588,
+    "content": "(CSTATE SMD T 0 \\<and> nextHTDDataPending T 0 \\<and> nextSnoopIs SnpData T 0 \\<longrightarrow> HSTATE SAD T \\<and> CSTATE ISAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_389",
+    "line_number": 589,
+    "content": "(CSTATE SMD T 1 \\<and> nextHTDDataPending T 1 \\<and> nextSnoopIs SnpData T 1 \\<longrightarrow> HSTATE SAD T \\<and> CSTATE ISAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_390",
+    "line_number": 590,
+    "content": "(CSTATE SMD T 0 \\<and> nextHTDDataPending T 0 \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = [] \\<and> reqresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_391",
+    "line_number": 591,
+    "content": "(CSTATE SMD T 1 \\<and> nextHTDDataPending T 1 \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = [] \\<and> reqresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_392",
+    "line_number": 592,
+    "content": "(CSTATE SMD T 0 \\<and> nextHTDDataPending T 0 \\<longrightarrow> \\<not> nextReqIs DirtyEvict T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_393",
+    "line_number": 593,
+    "content": "(CSTATE SMD T 1 \\<and> nextHTDDataPending T 1 \\<longrightarrow> \\<not> nextReqIs DirtyEvict T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_394",
+    "line_number": 594,
+    "content": "((nextReqIs CleanEvictNoData T 0 \\<or> nextReqIs CleanEvict T 0) \\<longrightarrow> (CSTATE SIA T 0 \\<or> CSTATE IIA T 0 \\<or> CSTATE SIAC T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_395",
+    "line_number": 595,
+    "content": "((nextReqIs CleanEvictNoData T 1 \\<or> nextReqIs CleanEvict T 1) \\<longrightarrow> (CSTATE SIA T 1 \\<or> CSTATE IIA T 1 \\<or> CSTATE SIAC T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_396",
+    "line_number": 596,
+    "content": "((CSTATE Shared T 0 \\<or> CSTATE Shared T 1) \\<longrightarrow> \\<not> HSTATE MD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_397",
+    "line_number": 597,
+    "content": "(CSTATE Shared T 0 \\<and> HSTATE MA T \\<longrightarrow> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1 \\<or> CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_398",
+    "line_number": 598,
+    "content": "(CSTATE Shared T 1 \\<and> HSTATE MA T \\<longrightarrow> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0 \\<or> CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_399",
+    "line_number": 599,
+    "content": "((nextReqIs CleanEvictNoData T 0 \\<or> nextReqIs CleanEvict T 0) \\<longrightarrow> nextEvict T 0) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_400",
+    "line_number": 600,
+    "content": "((nextReqIs CleanEvictNoData T 1 \\<or> nextReqIs CleanEvict T 1) \\<longrightarrow> nextEvict T 1) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_401",
+    "line_number": 601,
+    "content": "((nextReqIs CleanEvictNoData T 0 \\<or> nextReqIs CleanEvict T 0) \\<longrightarrow> \\<not> CSTATE ISDI T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_402",
+    "line_number": 602,
+    "content": "((nextReqIs CleanEvictNoData T 1 \\<or> nextReqIs CleanEvict T 1) \\<longrightarrow> \\<not> CSTATE ISDI T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_403",
+    "line_number": 603,
+    "content": "((nextReqIs CleanEvictNoData T 0 \\<or> nextReqIs CleanEvict T 0) \\<longrightarrow> \\<not> CSTATE MIA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_404",
+    "line_number": 604,
+    "content": "((nextReqIs CleanEvictNoData T 1 \\<or> nextReqIs CleanEvict T 1) \\<longrightarrow> \\<not> CSTATE MIA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_405",
+    "line_number": 605,
+    "content": "(CSTATE IIA T 1 \\<and> HSTATE InvalidM T \\<and> nextReqIs RdShared T 0 \\<longrightarrow> CSTATE ISAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_406",
+    "line_number": 606,
+    "content": "(CSTATE IIA T 0 \\<and> HSTATE InvalidM T \\<and> nextReqIs RdShared T 1 \\<longrightarrow> CSTATE ISAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_407",
+    "line_number": 607,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> CSTATE IMA T 0 \\<and> \\<not> CSTATE SMA T 0 \\<and> \\<not> CSTATE IMD T 0 \\<and> \\<not> CSTATE SMD T 0 \\<and>  \\<not> CSTATE IMA T 1 \\<and> \\<not> CSTATE SMA T 1 \\<and> \\<not> CSTATE IMD T 1 \\<and> \\<not> CSTATE SMD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_408",
+    "line_number": 608,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> ((CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> (nextGOPending T 0 \\<or> nextHTDDataPending T 0)) \\<and> \\<not> ((CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> (nextGOPending T 1 \\<or> nextHTDDataPending T 1))) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_409",
+    "line_number": 609,
+    "content": "(nextGOPendingIs GO_WritePull T 0 \\<or> nextGOPendingIs GO_WritePull T 1 \\<longrightarrow> \\<not> HSTATE InvalidM T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_410",
+    "line_number": 610,
+    "content": "(CSTATE MIA T 0 \\<longrightarrow> \\<not> CSTATE IMA T 1 \\<and> \\<not> CSTATE SMA T 1 \\<and> \\<not> nextHTDDataPending T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_411",
+    "line_number": 611,
+    "content": "(CSTATE MIA T 1 \\<longrightarrow> \\<not> CSTATE IMA T 0 \\<and> \\<not> CSTATE SMA T 0 \\<and> \\<not> nextHTDDataPending T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_412",
+    "line_number": 612,
+    "content": "(nextGOPendingIs GO_WritePull T 0 \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T 1) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_413",
+    "line_number": 613,
+    "content": "(nextGOPendingIs GO_WritePull T 1 \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T 0) \\<and>",
+    "type": "other",
+    "original": true
+  },
+  {
+    "id": "orig_414",
+    "line_number": 614,
+    "content": "((CSTATE IMA T 0 \\<or> CSTATE SMA T 0 \\<or> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0) \\<longrightarrow> (HSTATE MA T \\<or> HSTATE ModifiedM T \\<or> HSTATE MB T \\<or> HSTATE MAD T \\<or> HSTATE SAD T)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_415",
+    "line_number": 615,
+    "content": "((CSTATE IMA T 1 \\<or> CSTATE SMA T 1 \\<or> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1) \\<longrightarrow> (HSTATE MA T \\<or> HSTATE ModifiedM T \\<or> HSTATE MB T \\<or> HSTATE MAD T \\<or> HSTATE SAD T)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_416",
+    "line_number": 616,
+    "content": "(CSTATE MIA T 0 \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = [] \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_417",
+    "line_number": 617,
+    "content": "(CSTATE MIA T 1 \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = [] \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_418",
+    "line_number": 618,
+    "content": "(CSTATE MIA T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> HSTATE MAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_419",
+    "line_number": 619,
+    "content": "(CSTATE MIA T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> HSTATE MAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_420",
+    "line_number": 620,
+    "content": "(CSTATE MIA T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_421",
+    "line_number": 621,
+    "content": "(CSTATE MIA T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_422",
+    "line_number": 622,
+    "content": "((HSTATE InvalidM T \\<or> HSTATE SharedM T \\<or> HSTATE ModifiedM T) \\<longrightarrow> (\\<not> nextGOPendingIs GO_WritePull T 0) \\<and> (\\<not> nextGOPendingIs GO_WritePull T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_423",
+    "line_number": 623,
+    "content": "(CSTATE SIA T 0 \\<and> nextGOPendingIs GO_WritePullDrop T 0 \\<and> CSTATE IIA T 1 \\<longrightarrow> HSTATE InvalidM T \\<or> HSTATE IB T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_424",
+    "line_number": 624,
+    "content": "(CSTATE SIA T 1 \\<and> nextGOPendingIs GO_WritePullDrop T 1 \\<and> CSTATE IIA T 0 \\<longrightarrow> HSTATE InvalidM T \\<or> HSTATE IB T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_425",
+    "line_number": 625,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> dthdatas1 T = [] \\<and> dthdatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_426",
+    "line_number": 626,
+    "content": "(CSTATE Invalid T 0 \\<longrightarrow> \\<not> nextSnoopIs SnpInv T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_427",
+    "line_number": 627,
+    "content": "(CSTATE Invalid T 1 \\<longrightarrow> \\<not> nextSnoopIs SnpInv T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_428",
+    "line_number": 628,
+    "content": "(CSTATE Modified T 0 \\<longrightarrow> \\<not> CSTATE MIA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_429",
+    "line_number": 629,
+    "content": "(CSTATE Modified T 1 \\<longrightarrow> \\<not> CSTATE MIA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_430",
+    "line_number": 630,
+    "content": "(HSTATE MA T \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> htddatas2 T \\<noteq> [] \\<or> (CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_431",
+    "line_number": 631,
+    "content": "(HSTATE MA T \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> htddatas1 T \\<noteq> [] \\<or> (CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_432",
+    "line_number": 632,
+    "content": "(CSTATE SMAD T 0 \\<and> nextGOPending T 0 \\<longrightarrow> snps2 T = [] \\<and> snpresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_433",
+    "line_number": 633,
+    "content": "(CSTATE SMAD T 1 \\<and> nextGOPending T 1 \\<longrightarrow> snps1 T = [] \\<and> snpresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_434",
+    "line_number": 634,
+    "content": "(HSTATE MA T \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1 \\<or> CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_435",
+    "line_number": 635,
+    "content": "(HSTATE MA T \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0 \\<or> CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_436",
+    "line_number": 636,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> \\<not> CSTATE ISD T 0 \\<and> \\<not> CSTATE ISA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_437",
+    "line_number": 637,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> \\<not> CSTATE ISD T 1 \\<and> \\<not> CSTATE ISA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_438",
+    "line_number": 638,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> \\<not> CSTATE SMD T 0 \\<and> \\<not> CSTATE SMA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_439",
+    "line_number": 639,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> \\<not> CSTATE SMD T 1 \\<and> \\<not> CSTATE SMA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_440",
+    "line_number": 640,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> \\<not> CSTATE IMD T 0 \\<and> \\<not> CSTATE IMA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_441",
+    "line_number": 641,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> \\<not> CSTATE IMD T 1 \\<and> \\<not> CSTATE IMA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_442",
+    "line_number": 642,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> \\<not> (CSTATE ISAD T 0 \\<and> (nextGOPending T 0 \\<or> nextHTDDataPending T 0))) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_443",
+    "line_number": 643,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> \\<not> (CSTATE IMAD T 0 \\<and> (nextGOPending T 0 \\<or> nextHTDDataPending T 0))) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_444",
+    "line_number": 644,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> \\<not> (CSTATE SMAD T 0 \\<and> (nextGOPending T 0 \\<or> nextHTDDataPending T 0))) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_445",
+    "line_number": 645,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> \\<not> (CSTATE ISAD T 1 \\<and> (nextGOPending T 1 \\<or> nextHTDDataPending T 1))) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_446",
+    "line_number": 646,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> \\<not> (CSTATE IMAD T 1 \\<and> (nextGOPending T 1 \\<or> nextHTDDataPending T 1))) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_447",
+    "line_number": 647,
+    "content": "(HSTATE InvalidM T \\<or> HSTATE ID T \\<longrightarrow> \\<not> (CSTATE SMAD T 1 \\<and> (nextGOPending T 1 \\<or> nextHTDDataPending T 1))) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_448",
+    "line_number": 648,
+    "content": "(CSTATE ISD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> ((CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> htddatas2 T \\<noteq> []) \\<or> ((CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and> htddatas2 T = [])) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_449",
+    "line_number": 649,
+    "content": "(CSTATE ISD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> ((CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> htddatas1 T \\<noteq> []) \\<or> ((CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and> htddatas1 T = [])) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_450",
+    "line_number": 650,
+    "content": "(CSTATE ISA T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> ((CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> htddatas2 T \\<noteq> []) \\<or> ((CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and> htddatas2 T = [])) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_451",
+    "line_number": 651,
+    "content": "(CSTATE ISA T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> ((CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> htddatas1 T \\<noteq> []) \\<or> ((CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and> htddatas1 T = [])) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_452",
+    "line_number": 652,
+    "content": "(CSTATE ISAD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> ((CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> htddatas2 T \\<noteq> []) \\<or> ((CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and> htddatas2 T = [])) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_453",
+    "line_number": 653,
+    "content": "(CSTATE ISAD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> ((CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> htddatas1 T \\<noteq> []) \\<or> ((CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and> htddatas1 T = [])) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_454",
+    "line_number": 654,
+    "content": "(CSTATE IMAD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1 \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_455",
+    "line_number": 655,
+    "content": "(CSTATE IMAD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0 \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_456",
+    "line_number": 656,
+    "content": "(CSTATE IMD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1 \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_457",
+    "line_number": 657,
+    "content": "(CSTATE IMD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0 \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_458",
+    "line_number": 658,
+    "content": "(CSTATE IMA T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1 \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_459",
+    "line_number": 659,
+    "content": "(CSTATE IMA T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0 \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_460",
+    "line_number": 660,
+    "content": "(CSTATE SMAD T 0 \\<and> nextGOPending T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1 \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_461",
+    "line_number": 661,
+    "content": "(CSTATE SMAD T 1 \\<and> nextGOPending T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0 \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_462",
+    "line_number": 662,
+    "content": "(CSTATE SMD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1 \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_463",
+    "line_number": 663,
+    "content": "(CSTATE SMD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0 \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_464",
+    "line_number": 664,
+    "content": "(CSTATE SMA T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> CSTATE IMAD T 1 \\<and> htddatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_465",
+    "line_number": 665,
+    "content": "(CSTATE SMA T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> CSTATE IMAD T 0 \\<and> htddatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_466",
+    "line_number": 666,
+    "content": "(CSTATE ISD T 0 \\<or> CSTATE ISA T 0 \\<longrightarrow> \\<not> HSTATE MD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_467",
+    "line_number": 667,
+    "content": "(CSTATE ISD T 1 \\<or> CSTATE ISA T 1 \\<longrightarrow> \\<not> HSTATE MD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_468",
+    "line_number": 668,
+    "content": "(CSTATE ISAD T 0 \\<and> (nextHTDDataPending T 0 \\<or> nextGOPending T 0) \\<longrightarrow> \\<not> HSTATE MD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_469",
+    "line_number": 669,
+    "content": "(CSTATE ISAD T 1 \\<and> (nextHTDDataPending T 1 \\<or> nextGOPending T 1) \\<longrightarrow> \\<not> HSTATE MD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_470",
+    "line_number": 670,
+    "content": "(CSTATE ISD T 0 \\<and> HSTATE MA T \\<longrightarrow> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1 \\<or> CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_471",
+    "line_number": 671,
+    "content": "(CSTATE ISD T 1 \\<and> HSTATE MA T \\<longrightarrow> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0 \\<or> CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_472",
+    "line_number": 672,
+    "content": "(CSTATE ISA T 0 \\<and> HSTATE MA T \\<longrightarrow> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1 \\<or> CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_473",
+    "line_number": 673,
+    "content": "(CSTATE ISA T 1 \\<and> HSTATE MA T \\<longrightarrow> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0 \\<or> CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_474",
+    "line_number": 674,
+    "content": "(CSTATE IMD T 0 \\<and> nextHTDDataPending T 0 \\<longrightarrow> \\<not> (CSTATE ISAD T 1 \\<and> nextGOPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_475",
+    "line_number": 675,
+    "content": "(CSTATE IMD T 1 \\<and> nextHTDDataPending T 1 \\<longrightarrow> \\<not> (CSTATE ISAD T 0 \\<and> nextGOPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_476",
+    "line_number": 676,
+    "content": "(CSTATE IMD T 0 \\<and> nextHTDDataPending T 0 \\<longrightarrow> \\<not> CSTATE ISA T 1 \\<and> \\<not> nextHTDDataPending T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_477",
+    "line_number": 677,
+    "content": "(CSTATE IMD T 1 \\<and> nextHTDDataPending T 1 \\<longrightarrow> \\<not> CSTATE ISA T 0 \\<and> \\<not> nextHTDDataPending T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_478",
+    "line_number": 678,
+    "content": "(CSTATE IMD T 0 \\<and> nextHTDDataPending T 0 \\<longrightarrow> \\<not> CSTATE Shared T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_479",
+    "line_number": 679,
+    "content": "(CSTATE IMD T 1 \\<and> nextHTDDataPending T 1 \\<longrightarrow> \\<not> CSTATE Shared T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_480",
+    "line_number": 680,
+    "content": "(CSTATE ISD T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_481",
+    "line_number": 681,
+    "content": "(CSTATE ISD T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_482",
+    "line_number": 682,
+    "content": "(CSTATE ISA T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_483",
+    "line_number": 683,
+    "content": "(CSTATE ISA T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_484",
+    "line_number": 684,
+    "content": "(CSTATE ISAD T 0 \\<and> nextGOPending T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_485",
+    "line_number": 685,
+    "content": "(CSTATE ISAD T 1 \\<and> nextGOPending T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_486",
+    "line_number": 686,
+    "content": "(CSTATE ISAD T 0 \\<and> nextHTDDataPending T 0 \\<and> nextSnoopIs SnpInv T 0 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_487",
+    "line_number": 687,
+    "content": "(CSTATE ISAD T 1 \\<and> nextHTDDataPending T 1 \\<and> nextSnoopIs SnpInv T 1 \\<longrightarrow> HSTATE MA T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_488",
+    "line_number": 688,
+    "content": "(HSTATE SharedM T \\<longrightarrow> \\<not> CSTATE IMA T 0 \\<and> \\<not> CSTATE SMA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_489",
+    "line_number": 689,
+    "content": "(HSTATE SharedM T \\<longrightarrow> \\<not> CSTATE IMA T 1 \\<and> \\<not> CSTATE SMA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_490",
+    "line_number": 690,
+    "content": "(HSTATE SharedM T \\<longrightarrow> \\<not> CSTATE IMD T 0 \\<and> \\<not> CSTATE SMD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_491",
+    "line_number": 691,
+    "content": "(HSTATE SharedM T \\<longrightarrow> \\<not> CSTATE IMD T 1 \\<and> \\<not> CSTATE SMD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_492",
+    "line_number": 692,
+    "content": "(HSTATE SharedM T \\<longrightarrow> \\<not> (CSTATE IMAD T 0 \\<and> (nextGOPending T 0 \\<or> nextHTDDataPending T 0))) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_493",
+    "line_number": 693,
+    "content": "(HSTATE SharedM T \\<longrightarrow> \\<not> (CSTATE IMAD T 1 \\<and> (nextGOPending T 1 \\<or> nextHTDDataPending T 1))) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_494",
+    "line_number": 694,
+    "content": "(HSTATE SharedM T \\<longrightarrow> \\<not> (CSTATE SMAD T 0 \\<and> (nextGOPending T 0 \\<or> nextHTDDataPending T 0))) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_495",
+    "line_number": 695,
+    "content": "(HSTATE SharedM T \\<longrightarrow> \\<not> (CSTATE SMAD T 1 \\<and> (nextGOPending T 1 \\<or> nextHTDDataPending T 1))) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_496",
+    "line_number": 696,
+    "content": "(HSTATE SharedM T \\<longrightarrow> \\<not> CSTATE MIA T 0 \\<and> \\<not> CSTATE MIA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_497",
+    "line_number": 697,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> CSTATE MIA T 0 \\<and> \\<not> CSTATE MIA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_498",
+    "line_number": 698,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> CSTATE ISD T 0 \\<and> \\<not> CSTATE IMD T 0 \\<and> \\<not> CSTATE SMD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_499",
+    "line_number": 699,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> CSTATE ISD T 1 \\<and> \\<not> CSTATE IMD T 1 \\<and> \\<not> CSTATE SMD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_500",
+    "line_number": 700,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> (CSTATE ISAD T 0 \\<and> nextGOPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_501",
+    "line_number": 701,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> (CSTATE ISAD T 1 \\<and> nextGOPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_502",
+    "line_number": 702,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> (CSTATE IMAD T 0 \\<and> nextGOPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_503",
+    "line_number": 703,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> (CSTATE IMAD T 1 \\<and> nextGOPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_504",
+    "line_number": 704,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> (CSTATE SMAD T 0 \\<and> nextGOPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_505",
+    "line_number": 705,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> (CSTATE SMAD T 1 \\<and> nextGOPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_506",
+    "line_number": 706,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> CSTATE ISA T 0 \\<and> \\<not> CSTATE IMA T 0 \\<and> \\<not> CSTATE SMA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_507",
+    "line_number": 707,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> CSTATE ISA T 1 \\<and> \\<not> CSTATE IMA T 1 \\<and> \\<not> CSTATE SMA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_508",
+    "line_number": 708,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> nextHTDDataPending T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_509",
+    "line_number": 709,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> nextHTDDataPending T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_510",
+    "line_number": 710,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> CSTATE Shared T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_511",
+    "line_number": 711,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> CSTATE Shared T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_512",
+    "line_number": 712,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> CSTATE Modified T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_513",
+    "line_number": 713,
+    "content": "(HSTATE InvalidM T \\<longrightarrow> \\<not> CSTATE Modified T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_514",
+    "line_number": 714,
+    "content": "(CSTATE IMD T 0 \\<and> nextHTDDataPending T 0 \\<longrightarrow> snpresps2 T = [] \\<and> reqresps1 T = [] \\<and> snps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_515",
+    "line_number": 715,
+    "content": "(CSTATE IMD T 1 \\<and> nextHTDDataPending T 1 \\<longrightarrow> snpresps1 T = [] \\<and> reqresps2 T = [] \\<and> snps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_516",
+    "line_number": 716,
+    "content": "(CSTATE IMAD T 0 \\<and> nextHTDDataPending T 0 \\<and> nextGOPending T 0 \\<longrightarrow> snpresps2 T = [] \\<and> snps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_517",
+    "line_number": 717,
+    "content": "(CSTATE IMAD T 1 \\<and> nextHTDDataPending T 1 \\<and> nextGOPending T 1 \\<longrightarrow> snpresps1 T = [] \\<and> snps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_518",
+    "line_number": 718,
+    "content": "(CSTATE IMD T 0 \\<and> nextSnoopIs SnpData T 0 \\<longrightarrow> CSTATE ISAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_519",
+    "line_number": 719,
+    "content": "(CSTATE IMD T 1 \\<and> nextSnoopIs SnpData T 1 \\<longrightarrow> CSTATE ISAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_520",
+    "line_number": 720,
+    "content": "(CSTATE IMA T 0 \\<and> nextSnoopIs SnpData T 0 \\<longrightarrow> CSTATE ISAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_521",
+    "line_number": 721,
+    "content": "(CSTATE IMA T 1 \\<and> nextSnoopIs SnpData T 1 \\<longrightarrow> CSTATE ISAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_522",
+    "line_number": 722,
+    "content": "(CSTATE IMAD T 0 \\<and> nextSnoopIs SnpData T 0 \\<longrightarrow> CSTATE ISAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_523",
+    "line_number": 723,
+    "content": "(CSTATE IMAD T 1 \\<and> nextSnoopIs SnpData T 1 \\<longrightarrow> CSTATE ISAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_524",
+    "line_number": 724,
+    "content": "(CSTATE IMD T 0 \\<and> nextSnoopIs SnpData T 0 \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_525",
+    "line_number": 725,
+    "content": "(CSTATE IMD T 1 \\<and> nextSnoopIs SnpData T 1 \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_526",
+    "line_number": 726,
+    "content": "(CSTATE IMA T 0 \\<and> nextSnoopIs SnpData T 0 \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_527",
+    "line_number": 727,
+    "content": "(CSTATE IMA T 1 \\<and> nextSnoopIs SnpData T 1 \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_528",
+    "line_number": 728,
+    "content": "(CSTATE IMAD T 0 \\<and> nextSnoopIs SnpData T 0 \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_529",
+    "line_number": 729,
+    "content": "(CSTATE IMAD T 1 \\<and> nextSnoopIs SnpData T 1 \\<longrightarrow> HSTATE SAD T) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_530",
+    "line_number": 730,
+    "content": "(HSTATE IB T \\<longrightarrow> \\<not> CSTATE Modified T 0 \\<and> \\<not> CSTATE Modified T 1 \\<and> \\<not> CSTATE Shared T 0 \\<and> \\<not> CSTATE Shared T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_531",
+    "line_number": 731,
+    "content": "(HSTATE IB T \\<and> nextReqIs RdOwn T 0 \\<longrightarrow> CSTATE IMAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_532",
+    "line_number": 732,
+    "content": "(HSTATE IB T \\<and> nextReqIs RdOwn T 1 \\<longrightarrow> CSTATE IMAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_533",
+    "line_number": 733,
+    "content": "(HSTATE SB T \\<longrightarrow> \\<not> CSTATE Modified T 0 \\<and> \\<not> CSTATE Modified T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_534",
+    "line_number": 734,
+    "content": "(HSTATE SB T \\<longrightarrow> length (dthdatas1 T) \\<le> 1 \\<and> length (dthdatas2 T) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_535",
+    "line_number": 735,
+    "content": "(HSTATE IB T \\<longrightarrow> length (dthdatas1 T) \\<le> 1 \\<and> length (dthdatas2 T) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_536",
+    "line_number": 736,
+    "content": "(HSTATE SB T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> \\<not> CSTATE IIA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_537",
+    "line_number": 737,
+    "content": "(HSTATE SB T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> \\<not> CSTATE IIA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_538",
+    "line_number": 738,
+    "content": "(HSTATE MB T \\<longrightarrow> length (dthdatas1 T) \\<le> 1 \\<and> length (dthdatas2 T) \\<le> 1) \\<and>",
+    "type": "hardcoded_device",
+    "original": true
+  },
+  {
+    "id": "orig_539",
+    "line_number": 739,
+    "content": "(HSTATE SB T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> dthdatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_540",
+    "line_number": 740,
+    "content": "(HSTATE SB T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> dthdatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_541",
+    "line_number": 741,
+    "content": "(HSTATE IB T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> dthdatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_542",
+    "line_number": 742,
+    "content": "(HSTATE IB T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> dthdatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_543",
+    "line_number": 743,
+    "content": "(HSTATE MB T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> dthdatas2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_544",
+    "line_number": 744,
+    "content": "(HSTATE MB T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> dthdatas1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_545",
+    "line_number": 745,
+    "content": "(HSTATE SB T \\<longrightarrow> snps2 T = [] \\<and> snps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_546",
+    "line_number": 746,
+    "content": "(HSTATE IB T \\<longrightarrow> snps2 T = [] \\<and> snps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_547",
+    "line_number": 747,
+    "content": "(HSTATE MB T \\<longrightarrow> snps2 T = [] \\<and> snps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_548",
+    "line_number": 748,
+    "content": "(HSTATE SB T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> reqresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_549",
+    "line_number": 749,
+    "content": "(HSTATE SB T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> reqresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_550",
+    "line_number": 750,
+    "content": "(HSTATE MB T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> reqresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_551",
+    "line_number": 751,
+    "content": "(HSTATE MB T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> reqresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_552",
+    "line_number": 752,
+    "content": "(HSTATE IB T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> reqresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_553",
+    "line_number": 753,
+    "content": "(HSTATE IB T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> reqresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_554",
+    "line_number": 754,
+    "content": "(HSTATE SB T \\<longrightarrow> \\<not> CSTATE IMD T 0 \\<and> \\<not> CSTATE SMD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_555",
+    "line_number": 755,
+    "content": "(HSTATE SB T \\<longrightarrow> \\<not> CSTATE IMD T 1 \\<and> \\<not> CSTATE SMD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_556",
+    "line_number": 756,
+    "content": "(HSTATE IB T \\<longrightarrow> \\<not> CSTATE IMD T 0 \\<and> \\<not> CSTATE SMD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_557",
+    "line_number": 757,
+    "content": "(HSTATE IB T \\<longrightarrow> \\<not> CSTATE IMD T 1 \\<and> \\<not> CSTATE SMD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_558",
+    "line_number": 758,
+    "content": "(HSTATE SharedM T \\<and> lastSharer T \\<and> nextReqIs CleanEvictNoData T 0 \\<longrightarrow> \\<not> CSTATE Shared T 0 \\<and> \\<not> CSTATE Shared T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_559",
+    "line_number": 759,
+    "content": "(HSTATE SharedM T \\<and> lastSharer T \\<and> nextReqIs CleanEvictNoData T 1 \\<longrightarrow> \\<not> CSTATE Shared T 0 \\<and> \\<not> CSTATE Shared T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_560",
+    "line_number": 760,
+    "content": "(HSTATE SharedM T \\<and> lastSharer T \\<and> nextReqIs CleanEvictNoData T 0 \\<longrightarrow> \\<not> (CSTATE ISAD T 1 \\<and> nextGOPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_561",
+    "line_number": 761,
+    "content": "(HSTATE SharedM T \\<and> lastSharer T \\<and> nextReqIs CleanEvictNoData T 1 \\<longrightarrow> \\<not> (CSTATE ISAD T 0 \\<and> nextGOPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_562",
+    "line_number": 762,
+    "content": "(CSTATE ISAD T 0 \\<and> nextHTDDataPending T 0 \\<longrightarrow> snpresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_563",
+    "line_number": 763,
+    "content": "(CSTATE ISAD T 1 \\<and> nextHTDDataPending T 1 \\<longrightarrow> snpresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_564",
+    "line_number": 764,
+    "content": "(HSTATE SAD T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> snpresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_565",
+    "line_number": 765,
+    "content": "(HSTATE SAD T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> snpresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_566",
+    "line_number": 766,
+    "content": "(CSTATE ISAD T 0 \\<and> nextHTDDataPending T 0 \\<and> HSTATE MA T \\<longrightarrow> (CSTATE IMAD T 1 \\<or> CSTATE SMAD T 1) \\<and> nextHTDDataPending T 1 \\<or> CSTATE IMA T 1 \\<or> CSTATE SMA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_567",
+    "line_number": 767,
+    "content": "(CSTATE ISAD T 1 \\<and> nextHTDDataPending T 1 \\<and> HSTATE MA T \\<longrightarrow> (CSTATE IMAD T 0 \\<or> CSTATE SMAD T 0) \\<and> nextHTDDataPending T 0 \\<or> CSTATE IMA T 0 \\<or> CSTATE SMA T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_568",
+    "line_number": 768,
+    "content": "(HSTATE ModifiedM T \\<longrightarrow> (\\<not> CSTATE SIA T 0 \\<or> nextGOPendingIs GO_WritePullDrop T 0) \\<and> (\\<not> CSTATE SIA T 1 \\<or> nextGOPendingIs GO_WritePullDrop T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_569",
+    "line_number": 769,
+    "content": "(HSTATE MA T \\<and> snpresps1 T \\<noteq> [] \\<longrightarrow> \\<not> CSTATE SIA T 0 \\<and> \\<not> CSTATE SIA T 1) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_570",
+    "line_number": 770,
+    "content": "(HSTATE MA T \\<and> snpresps2 T \\<noteq> [] \\<longrightarrow> \\<not> CSTATE SIA T 0 \\<and> \\<not> CSTATE SIA T 1) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_571",
+    "line_number": 771,
+    "content": "(HSTATE MD T \\<longrightarrow> \\<not> CSTATE SIA T 0 \\<and> \\<not> CSTATE SIA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_572",
+    "line_number": 772,
+    "content": "(CSTATE MIA T 0 \\<longrightarrow> \\<not> (CSTATE IMAD T 1 \\<and> nextGOPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_573",
+    "line_number": 773,
+    "content": "(CSTATE MIA T 1 \\<longrightarrow> \\<not> (CSTATE IMAD T 0 \\<and> nextGOPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_574",
+    "line_number": 774,
+    "content": "(CSTATE MIA T 0 \\<longrightarrow> \\<not> (CSTATE SMAD T 1 \\<and> nextGOPending T 1)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_575",
+    "line_number": 775,
+    "content": "(CSTATE MIA T 1 \\<longrightarrow> \\<not> (CSTATE SMAD T 0 \\<and> nextGOPending T 0)) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_576",
+    "line_number": 776,
+    "content": "(HSTATE ModifiedM T \\<and> nextReqIs RdOwn T 0 \\<longrightarrow> CSTATE IMAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_577",
+    "line_number": 777,
+    "content": "(HSTATE ModifiedM T \\<and> nextReqIs RdOwn T 1 \\<longrightarrow> CSTATE IMAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_578",
+    "line_number": 778,
+    "content": "(HSTATE ModifiedM T \\<longrightarrow> \\<not> CSTATE ISA T 0 \\<and> \\<not> CSTATE ISA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_579",
+    "line_number": 779,
+    "content": "(HSTATE MD T \\<longrightarrow> \\<not> CSTATE ISA T 0 \\<and> \\<not> CSTATE ISA T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_580",
+    "line_number": 780,
+    "content": "(HSTATE MA T \\<and> snpresps1 T \\<noteq> [] \\<longrightarrow> \\<not> CSTATE ISA T 0 \\<and> \\<not> CSTATE ISA T 1) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_581",
+    "line_number": 781,
+    "content": "(HSTATE MA T \\<and> snpresps2 T \\<noteq> [] \\<longrightarrow> \\<not> CSTATE ISA T 0 \\<and> \\<not> CSTATE ISA T 1) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_582",
+    "line_number": 782,
+    "content": "(CSTATE MIA T 0 \\<and> HSTATE ModifiedM T \\<longrightarrow> \\<not> CSTATE SMA T 1 \\<and> \\<not> CSTATE SMD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_583",
+    "line_number": 783,
+    "content": "(CSTATE MIA T 1 \\<and> HSTATE ModifiedM T \\<longrightarrow> \\<not> CSTATE SMA T 0 \\<and> \\<not> CSTATE SMD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_584",
+    "line_number": 784,
+    "content": "(CSTATE MIA T 0 \\<and> HSTATE ModifiedM T \\<longrightarrow> \\<not> CSTATE IMA T 1 \\<and> \\<not> CSTATE IMD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_585",
+    "line_number": 785,
+    "content": "(CSTATE MIA T 1 \\<and> HSTATE ModifiedM T \\<longrightarrow> \\<not> CSTATE IMA T 0 \\<and> \\<not> CSTATE IMD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_586",
+    "line_number": 786,
+    "content": "(CSTATE MIA T 0 \\<and> HSTATE ModifiedM T \\<longrightarrow> \\<not> (CSTATE IMAD T 1 \\<and> (nextGOPending T 1 \\<or> nextHTDDataPending T 1))) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_587",
+    "line_number": 787,
+    "content": "(CSTATE MIA T 1 \\<and> HSTATE ModifiedM T \\<longrightarrow> \\<not> (CSTATE IMAD T 0 \\<and> (nextGOPending T 0 \\<or> nextHTDDataPending T 0))) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_588",
+    "line_number": 788,
+    "content": "(CSTATE MIA T 0 \\<and> HSTATE ModifiedM T \\<longrightarrow> \\<not> CSTATE SMAD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_589",
+    "line_number": 789,
+    "content": "(CSTATE MIA T 1 \\<and> HSTATE ModifiedM T \\<longrightarrow> \\<not> CSTATE SMAD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_590",
+    "line_number": 790,
+    "content": "(CSTATE IMD T 1 \\<longrightarrow> reqresps2 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_591",
+    "line_number": 791,
+    "content": "(CSTATE IMD T 0 \\<longrightarrow> reqresps1 T = []) \\<and>",
+    "type": "channel_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_592",
+    "line_number": 792,
+    "content": "(HSTATE IB T \\<and> nextDTHDataFrom 0 T \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_593",
+    "line_number": 793,
+    "content": "(HSTATE IB T \\<and> nextDTHDataFrom 1 T \\<longrightarrow> \\<not> nextGOPendingIs GO_WritePull T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_594",
+    "line_number": 794,
+    "content": "(HSTATE IB T \\<longrightarrow> \\<not> CSTATE ISA T 0 \\<and> \\<not> CSTATE ISD T 0) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  },
+  {
+    "id": "orig_595",
+    "line_number": 795,
+    "content": "(HSTATE IB T \\<longrightarrow> \\<not> CSTATE ISA T 1 \\<and> \\<not> CSTATE ISD T 1) \\<and>",
+    "type": "state_constraint",
+    "original": true
+  }
+]

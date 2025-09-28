@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "original_conjuncts": 0,
+    "current_conjuncts": 0,
+    "consolidation_ratio": 0
+  },
+  "consolidation_patterns": {
+    "simple_universal": [],
+    "mutual_exclusion": [],
+    "length_constraint": [],
+    "channel_constraint": [],
+    "complex_consolidation": []
+  },
+  "mapping_analysis": {},
+  "gaps": [],
+  "recommendations": []
+}

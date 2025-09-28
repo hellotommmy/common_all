@@ -786,12 +786,11 @@ definition nextSnpRespPending :: "Type1State \<Rightarrow> nat \<Rightarrow> boo
 
 definition DirM :: "Type1State \<Rightarrow> bool"
   where [simp]:
-  "DirM T = ( ((CSTATE Modified T 0 ) \<and> (CSTATE Invalid T 1)) \<or> ((CSTATE Modified T 1) \<and> (CSTATE Invalid T 0)) )"
+  "DirM T = ( \<exists>i. (CSTATE Modified T i) \<and> (\<forall>j. j \<noteq> i \<longrightarrow> CSTATE Invalid T j) )" \<comment>\<open>Original: ( ((CSTATE Modified T 0 ) \<and> (CSTATE Invalid T 1)) \<or> ((CSTATE Modified T 1) \<and> (CSTATE Invalid T 0)) ) - exactly one device is Modified and all others are Invalid\<close>
 
 definition DirI :: "Type1State \<Rightarrow> bool"
   where [simp]:
-  "DirI T =  ( (  ((CSTATE Invalid T 0 ) \<or> (CSTATE IMAD T 0) \<or> (CSTATE ISAD T 0)  ) \<and> (CSTATE Invalid T 1)) \<or> 
-                  ((CSTATE Invalid T 0) \<and> (CSTATE Invalid T 1 \<or> CSTATE IMAD T 1 \<or> CSTATE ISAD T 1))    )"
+  "DirI T =  ( \<exists>i. ((CSTATE Invalid T i) \<or> (CSTATE IMAD T i) \<or> (CSTATE ISAD T i)) \<and> (\<forall>j. j \<noteq> i \<longrightarrow> CSTATE Invalid T j) )" \<comment>\<open>Original: ( (  ((CSTATE Invalid T 0 ) \<or> (CSTATE IMAD T 0) \<or> (CSTATE ISAD T 0)  ) \<and> (CSTATE Invalid T 1)) \<or> ((CSTATE Invalid T 0) \<and> (CSTATE Invalid T 1 \<or> CSTATE IMAD T 1 \<or> CSTATE ISAD T 1))    ) - exactly one device is Invalid/IMAD/ISAD and all others are Invalid\<close>
 
 definition HSTATE :: "HOST_State \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
   "HSTATE st T =  (block_state (hostcache T) = st)"

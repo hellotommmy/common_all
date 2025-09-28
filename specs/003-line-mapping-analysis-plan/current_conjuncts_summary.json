@@ -1,0 +1,13 @@
+{
+  "total_conjuncts": 661,
+  "type_distribution": {
+    "state_constraint": 87,
+    "other": 128,
+    "universal_quantifier": 363,
+    "existential_quantifier": 5,
+    "channel_constraint": 37,
+    "hardcoded_device": 41
+  },
+  "definition_range": "SWMR_state_machine definition",
+  "extraction_timestamp": "2025-01-20"
+}

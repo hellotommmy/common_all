@@ -1,0 +1,15 @@
+{
+  "original_conjuncts": {
+    "count": 796,
+    "line_range": "200-995",
+    "expected_count": 796,
+    "count_correct": true
+  },
+  "current_conjuncts": {
+    "count": 660,
+    "line_range": "SWMR_state_machine definition",
+    "expected_count": "Unknown (to be determined)"
+  },
+  "extraction_timestamp": "2025-01-20",
+  "method": "Line-by-line extraction (corrected)"
+}
