@@ -1,5 +1,139 @@
 # SWMR_state_machine 详细修改记录
 
+## 修改批次：Lines 286-350 (Missing Entries)
+
+### Line Mapping: CoherenceProperties.thy:286 ← OldCohProp.thy:200
+**Original Content (OldCohProp.thy line 200):**
+```isabelle
+"SWMR_state_machine T = ( (SWMR T) ∧
+```
+
+**Original Meaning:**
+Definition header for SWMR state machine - unchanged as it's the definition name.
+
+**Modified Content (CoherenceProperties.thy line 286):**
+```isabelle
+"SWMR_state_machine T = ( (SWMR T) ∧
+```
+
+**Modified Meaning:**
+Same as original - definition header remains unchanged.
+
+**Status:** NEEDS_ATTENTION - Definition header, no modification needed.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:287-302 ← OldCohProp.thy:201-216
+**Original Content (OldCohProp.thy lines 201-216):**
+```isabelle
+C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) T ∧ 
+H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) T ∧ 
+[... 14 more macro-based constraints ...]
+```
+
+**Original Meaning:**
+High-level protocol constraints using predefined macros - these are already multi-device compatible as they use lambda functions with device parameter i.
+
+**Modified Content (CoherenceProperties.thy lines 287-302):**
+```isabelle
+C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) T ∧ 
+H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) T ∧ 
+[... same 14 macro-based constraints ...]
+```
+
+**Modified Meaning:**
+Same as original - these macro-based constraints are already multi-device compatible.
+
+**Status:** NEEDS_ATTENTION - Macro constraints, likely already multi-device compatible.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:303 ← OldCohProp.thy:217
+**Original Content (OldCohProp.thy line 217):**
+```isabelle
+(HSTATE SharedM T → ¬ CSTATE Modified T 0 ∧ ¬ CSTATE Modified T 1) ∧
+```
+
+**Original Meaning:**
+When host is in SharedM state, neither device 0 nor device 1 can be in Modified state.
+
+**Modified Content (CoherenceProperties.thy line 303):**
+```isabelle
+(HSTATE SharedM T → (∀i. ¬ CSTATE Modified T i)) ∧
+```
+
+**Modified Meaning:**
+When host is in SharedM state, no device can be in Modified state. Generalized to arbitrary number of devices.
+
+**Status:** AI_MODIFIED - Simple consolidation pattern correctly applied.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:304 ← OldCohProp.thy:218
+**Original Content (OldCohProp.thy line 218):**
+```isabelle
+(HSTATE SD T → ¬ CSTATE Modified T 0 ∧ ¬ CSTATE Modified T 1) ∧
+```
+
+**Original Meaning:**
+When host is in SD state, neither device can be in Modified state.
+
+**Modified Content (CoherenceProperties.thy line 304):**
+```isabelle
+(HSTATE SD T → (∀i. ¬ CSTATE Modified T i)) ∧
+```
+
+**Modified Meaning:**
+When host is in SD state, no device can be in Modified state. Generalized to arbitrary number of devices.
+
+**Status:** AI_MODIFIED - Simple consolidation pattern correctly applied.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:305 ← OldCohProp.thy:219
+**Original Content (OldCohProp.thy line 219):**
+```isabelle
+(HSTATE MD T → ¬ CSTATE Modified T 0 ∧ ¬ CSTATE Modified T 1) ∧
+```
+
+**Original Meaning:**
+When host is in MD state, neither device can be in Modified state.
+
+**Modified Content (CoherenceProperties.thy line 305):**
+```isabelle
+(HSTATE MD T → (∀i. ¬ CSTATE Modified T i)) ∧
+```
+
+**Modified Meaning:**
+When host is in MD state, no device can be in Modified state. Generalized to arbitrary number of devices.
+
+**Status:** AI_MODIFIED - Simple consolidation pattern correctly applied.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:320 ← OldCohProp.thy:234
+**Original Content (OldCohProp.thy line 234):**
+```isabelle
+H_C_state_msg_oppo ModifiedM IIA (λT i. ¬ nextReqIs RdShared T i) T ∧
+```
+
+**Original Meaning:**
+Macro constraint for opposite device behavior - when host is ModifiedM and one device is IIA, the other device cannot send RdShared.
+
+**Modified Content (CoherenceProperties.thy line 320):**
+```isabelle
+(∀i j. i ≠ j → (HSTATE ModifiedM T ∧ CSTATE IIA T i ∧ (CSTATE MIA T j ∨ CSTATE Modified T j ∨ ...) → ¬ nextReqIs RdShared T j)) ∧
+```
+
+**Modified Meaning:**
+Expanded macro to explicit multi-device constraint: when host is ModifiedM and device i is IIA, then owner device j cannot send RdShared requests.
+
+**Status:** NEEDS_ATTENTION - Pattern should use nested quantifier format for consistency.
+
+---
+
+**Note:** Lines 306-319, 321-350 contain various macro-based constraints and simple consolidations that need individual review. Most macro constraints (C_msg_*, H_msg_*, C_state_*) are already multi-device compatible as they use lambda functions.
+
 ## 修改批次：Lines 351-368
 
 ### Line Mapping: CoherenceProperties.thy:351 ← OldCohProp.thy:288-289
