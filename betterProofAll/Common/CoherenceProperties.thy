@@ -224,7 +224,7 @@ definition C_H_state :: "MESI_State \<Rightarrow> (Type1State \<Rightarrow> nat 
   "C_H_state mesi1 P1 mesi2 hst T = ((CSTATE mesi1 T 0 \<and> P1 T 0 \<and> HSTATE hst T \<longrightarrow> \<not>CSTATE  mesi2 T 1) \<and> ((CSTATE mesi1 T 1 \<and> P1 T 1 \<and> HSTATE hst T \<longrightarrow> \<not>CSTATE  mesi2 T 0)))"
 human checked*)
 definition C_H_state :: "MESI_State \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> MESI_State \<Rightarrow> HOST_State \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
-  "C_H_state mesi1 P1 mesi2 hst T = (\<forall>i j. i \<noteq> j \<longrightarrow> (CSTATE mesi1 T i \<and> P1 T i \<and> HSTATE hst T \<longrightarrow> \<not>CSTATE mesi2 T j))"
+  "C_H_state mesi1 P1 mesi2 hst T = (\<forall>i. CSTATE mesi1 T i \<and> P1 T i \<and> HSTATE hst T \<longrightarrow> (\<forall>j. j \<noteq> i \<longrightarrow> \<not>CSTATE mesi2 T j))"
 
 (*original
 definition C_msg_not :: "ReqType \<Rightarrow> MESI_State \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:

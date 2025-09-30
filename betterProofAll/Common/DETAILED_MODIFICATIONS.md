@@ -286,6 +286,29 @@ Generalized to arbitrary number of devices using nested quantifier pattern. When
 
 ---
 
+### Line Mapping: CoherenceProperties.thy:222-227 (C_H_state definition)
+**Original Content:**
+```isabelle
+definition C_H_state :: "MESI_State ⇒ (Type1State ⇒ nat ⇒ bool) ⇒ MESI_State ⇒ HOST_State ⇒ Type1State ⇒ bool" where [simp]:
+  "C_H_state mesi1 P1 mesi2 hst T = ((CSTATE mesi1 T 0 ∧ P1 T 0 ∧ HSTATE hst T ⟶ ¬CSTATE mesi2 T 1) ∧ ((CSTATE mesi1 T 1 ∧ P1 T 1 ∧ HSTATE hst T ⟶ ¬CSTATE mesi2 T 0)))"
+```
+
+**Original Meaning:**
+Macro for cache-host-state exclusion - when device i is in mesi1 state with property P1 and host is in hst state, then the opposite device cannot be in mesi2 state. Hardcoded for devices 0↔1.
+
+**Modified Content:**
+```isabelle
+definition C_H_state :: "MESI_State ⇒ (Type1State ⇒ nat ⇒ bool) ⇒ MESI_State ⇒ HOST_State ⇒ Type1State ⇒ bool" where [simp]:
+  "C_H_state mesi1 P1 mesi2 hst T = (∀i. CSTATE mesi1 T i ∧ P1 T i ∧ HSTATE hst T ⟶ (∀j. j ≠ i ⟶ ¬CSTATE mesi2 T j))"
+```
+
+**Modified Meaning:**
+Generalized using nested quantifier pattern. When device i is in mesi1 state with property P1 and host is in hst state, then for any other device j, it cannot be in mesi2 state.
+
+**Status:** AI_MODIFIED - PATTERN CORRECTED to nested quantifier format (∀i. ... → (∀j. j ≠ i → ...)).
+
+---
+
 ### Line Mapping: CoherenceProperties.thy:259-264 (H_C_state_msg_oppo definition)
 **Original Content:**
 ```isabelle
