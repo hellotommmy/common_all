@@ -179,7 +179,7 @@ definition C_not_C_msg :: "
 *)
 definition C_not_C_msg :: "
 (MESI_State) \<Rightarrow> MESI_State \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
-  "C_not_C_msg mesi1 mesi2 P T = (\<forall>i j. i \<noteq> j \<longrightarrow> (CSTATE mesi1 T i \<longrightarrow> \<not>(CSTATE mesi2 T j \<and> P T j)))"
+  "C_not_C_msg mesi1 mesi2 P T = (\<forall>i. CSTATE mesi1 T i \<longrightarrow> (\<forall>j. j \<noteq> i \<longrightarrow> \<not>(CSTATE mesi2 T j \<and> P T j)))"
 
 
 (* original definition
@@ -198,7 +198,7 @@ HOST_State \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rig
 *)
 definition H_msg_P_oppo ::  "
 HOST_State \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
-  "H_msg_P_oppo XAD next_msg P T = (\<forall>i j. i \<noteq> j \<longrightarrow> (HSTATE XAD T \<and> next_msg T i \<longrightarrow> P T j))"
+  "H_msg_P_oppo XAD next_msg P T = (\<forall>i. HSTATE XAD T \<and> next_msg T i \<longrightarrow> (\<forall>j. j \<noteq> i \<longrightarrow> P T j))"
 
 
 (*original
@@ -261,7 +261,7 @@ definition H_C_state_msg_oppo :: "HOST_State \<Rightarrow> MESI_State \<Rightarr
   "H_C_state_msg_oppo hstate cstate P T = ((HSTATE hstate T \<and> CSTATE cstate T 0 \<longrightarrow> P T 1) \<and> (HSTATE hstate T \<and> CSTATE cstate T 1 \<longrightarrow> P T 0))"
 *)
 definition H_C_state_msg_oppo :: "HOST_State \<Rightarrow> MESI_State \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
-  "H_C_state_msg_oppo hstate cstate P T = (\<forall>i j. i \<noteq> j \<longrightarrow> (HSTATE hstate T \<and> CSTATE cstate T i \<longrightarrow> P T j))"
+  "H_C_state_msg_oppo hstate cstate P T = (\<forall>i. HSTATE hstate T \<and> CSTATE cstate T i \<longrightarrow> (\<forall>j. j \<noteq> i \<longrightarrow> P T j))"
 
 (*original
 definition C_m_h_C :: "MESI_State \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> (HOST_State) \<Rightarrow> MESI_State \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
@@ -276,7 +276,7 @@ definition C_m_h_m :: "MESI_State \<Rightarrow> (Type1State \<Rightarrow> nat \<
   "C_m_h_m mesi P hmesi P2 T = ((CSTATE mesi T 0 \<and> P T 0 \<and> HSTATE hmesi T \<longrightarrow> P2 T 1) \<and> (CSTATE mesi T 1 \<and> P T 1 \<and> HSTATE hmesi T \<longrightarrow> P2  T 0))"
 *)
 definition C_m_h_m :: "MESI_State \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> (HOST_State) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
-  "C_m_h_m mesi P hmesi P2 T = (\<forall>i j. i \<noteq> j \<longrightarrow> (CSTATE mesi T i \<and> P T i \<and> HSTATE hmesi T \<longrightarrow> P2 T j))"
+  "C_m_h_m mesi P hmesi P2 T = (\<forall>i. CSTATE mesi T i \<and> P T i \<and> HSTATE hmesi T \<longrightarrow> (\<forall>j. j \<noteq> i \<longrightarrow> P2 T j))"
 
 fun singleton_or_empty :: "'a list \<Rightarrow> bool" where
   "singleton_or_empty []   = True"

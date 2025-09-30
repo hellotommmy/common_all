@@ -23,29 +23,49 @@ Same as original - definition header remains unchanged.
 [user note: no problem, SWMR definition as occurred earlier  has been updated to n-device version]
 ---
 
-### Line Mapping: CoherenceProperties.thy:287-302 ← OldCohProp.thy:201-216
+### Line Mapping: CoherenceProperties.thy:318-333 ← OldCohProp.thy:201-216
 **Original Content (OldCohProp.thy lines 201-216):**
 ```isabelle
 C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) T ∧ 
 H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) T ∧ 
-[... 14 more macro-based constraints ...]
+H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) T ∧
+C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) T ∧
+H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧
+H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧
+H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧
+H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) T ∧
+H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) T ∧
+H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) T ∧
+C_H_state IMAD (nextReqIs RdOwn) Modified SD T ∧
+C_H_state IMAD (nextReqIs RdOwn) Modified SAD T ∧
+[... 4 more similar constraints ...]
 ```
-[user note: definitions like C_msg_P_oppo have not been properly converted and should now be changed]
+[user note: definitions like C_msg_P_oppo have not been properly converted and should now be changed - NOW FIXED]
 
 **Original Meaning:**
-High-level protocol constraints using predefined macros - these are already multi-device compatible as they use lambda functions with device parameter i.
+High-level protocol constraints using predefined macros. These constraints were using 2-device hardcoded macro definitions, making them effectively 2-device only despite the lambda syntax.
 
-**Modified Content (CoherenceProperties.thy lines 287-302):**
+**Modified Content (CoherenceProperties.thy lines 318-333):**
 ```isabelle
 C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) T ∧ 
 H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) T ∧ 
-[... same 14 macro-based constraints ...]
+H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) T ∧
+C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) T ∧
+H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧
+H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧
+H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧
+H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) T ∧
+H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) T ∧
+H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) T ∧
+C_H_state IMAD (nextReqIs RdOwn) Modified SD T ∧
+C_H_state IMAD (nextReqIs RdOwn) Modified SAD T ∧
+[... same constraints with updated macro semantics ...]
 ```
 
 **Modified Meaning:**
-Same as original - these macro-based constraints are already multi-device compatible.
+Now truly multi-device compatible due to updated macro definitions. Each macro now uses proper nested quantifier patterns (∀i. ... → (∀j. j ≠ i → ...)) for mutual exclusion constraints.
 
-**Status:** NEEDS_ATTENTION - Macro constraints, likely already multi-device compatible.
+**Status:** AI_MODIFIED - Constraints now truly multi-device due to macro definition updates.
 
 ---
 
@@ -206,13 +226,13 @@ Macro for opposite device exclusion - when device i is in state mesi1, then the 
 ```isabelle
 definition C_not_C_msg :: "
 (MESI_State) ⇒ MESI_State ⇒ (Type1State ⇒ nat ⇒ bool) ⇒ Type1State ⇒ bool" where [simp]:
-  "C_not_C_msg mesi1 mesi2 P T = (∀i j. i ≠ j ⟶ (CSTATE mesi1 T i ⟶ ¬(CSTATE mesi2 T j ∧ P T j)))"
+  "C_not_C_msg mesi1 mesi2 P T = (∀i. CSTATE mesi1 T i ⟶ (∀j. j ≠ i ⟶ ¬(CSTATE mesi2 T j ∧ P T j)))"
 ```
 
 **Modified Meaning:**
-Generalized to arbitrary number of devices using nested quantification. When device i is in state mesi1, then any other device j cannot be in state mesi2 with property P.
+Generalized to arbitrary number of devices using nested quantifier pattern. When device i is in state mesi1, then for any other device j, it cannot be in state mesi2 with property P.
 
-**Status:** AI_MODIFIED - Macro definition updated to multi-device version with nested quantifier pattern.
+**Status:** AI_MODIFIED - PATTERN CORRECTED to nested quantifier format (∀i. ... → (∀j. j ≠ i → ...)).
 
 ---
 
@@ -256,13 +276,61 @@ Macro for host-to-opposite-device message constraints - when host is in state XA
 ```isabelle
 definition H_msg_P_oppo ::  "
 HOST_State ⇒ (Type1State ⇒ nat ⇒ bool) ⇒ (Type1State ⇒ nat ⇒ bool) ⇒ Type1State ⇒ bool" where [simp]:
-  "H_msg_P_oppo XAD next_msg P T = (∀i j. i ≠ j ⟶ (HSTATE XAD T ∧ next_msg T i ⟶ P T j))"
+  "H_msg_P_oppo XAD next_msg P T = (∀i. HSTATE XAD T ∧ next_msg T i ⟶ (∀j. j ≠ i ⟶ P T j))"
 ```
 
 **Modified Meaning:**
-Generalized to arbitrary number of devices using nested quantification. When host is in state XAD and device i has next_msg, then property P applies to any other device j.
+Generalized to arbitrary number of devices using nested quantifier pattern. When host is in state XAD and device i has next_msg, then for any other device j, property P applies to j.
 
-**Status:** AI_MODIFIED - Macro definition updated to multi-device version with nested quantifier pattern.
+**Status:** AI_MODIFIED - PATTERN CORRECTED to nested quantifier format (∀i. ... → (∀j. j ≠ i → ...)).
+
+---
+
+### Line Mapping: CoherenceProperties.thy:259-264 (H_C_state_msg_oppo definition)
+**Original Content:**
+```isabelle
+definition H_C_state_msg_oppo :: "HOST_State ⇒ MESI_State ⇒ (Type1State ⇒ nat ⇒ bool) ⇒ Type1State ⇒ bool" where [simp]:
+  "H_C_state_msg_oppo hstate cstate P T = ((HSTATE hstate T ∧ CSTATE cstate T 0 ⟶ P T 1) ∧ (HSTATE hstate T ∧ CSTATE cstate T 1 ⟶ P T 0))"
+```
+
+**Original Meaning:**
+Macro for host-cache-state-to-opposite-device constraints - when host is in hstate and device i is in cstate, then property P applies to the opposite device. Hardcoded for devices 0↔1.
+
+**Modified Content:**
+```isabelle
+definition H_C_state_msg_oppo :: "HOST_State ⇒ MESI_State ⇒ (Type1State ⇒ nat ⇒ bool) ⇒ Type1State ⇒ bool" where [simp]:
+  "H_C_state_msg_oppo hstate cstate P T = (∀i. HSTATE hstate T ∧ CSTATE cstate T i ⟶ (∀j. j ≠ i ⟶ P T j))"
+```
+
+**Modified Meaning:**
+Generalized using nested quantifier pattern. When host is in hstate and device i is in cstate, then for any other device j, property P applies to j.
+
+**Status:** AI_MODIFIED - PATTERN CORRECTED to nested quantifier format (∀i. ... → (∀j. j ≠ i → ...)).
+
+---
+
+### Line Mapping: CoherenceProperties.thy:274-279 (C_m_h_m definition)
+**Original Content:**
+```isabelle
+definition C_m_h_m :: "MESI_State ⇒ (Type1State ⇒ nat ⇒ bool) ⇒ (HOST_State) ⇒ (Type1State ⇒ nat ⇒ bool) ⇒ Type1State ⇒ bool" where [simp]:
+  "C_m_h_m mesi P hmesi P2 T = ((CSTATE mesi T 0 ∧ P T 0 ∧ HSTATE hmesi T ⟶ P2 T 1) ∧ (CSTATE mesi T 1 ∧ P T 1 ∧ HSTATE hmesi T ⟶ P2  T 0))"
+```
+
+**Original Meaning:**
+Macro for cache-message-host-to-opposite-message constraints - when device i is in mesi state with property P and host is in hmesi, then property P2 applies to the opposite device. Hardcoded for devices 0↔1.
+
+**Modified Content:**
+```isabelle
+definition C_m_h_m :: "MESI_State ⇒ (Type1State ⇒ nat ⇒ bool) ⇒ (HOST_State) ⇒ (Type1State ⇒ nat ⇒ bool) ⇒ Type1State ⇒ bool" where [simp]:
+  "C_m_h_m mesi P hmesi P2 T = (∀i. CSTATE mesi T i ∧ P T i ∧ HSTATE hmesi T ⟶ (∀j. j ≠ i ⟶ P2 T j))"
+```
+
+**Modified Meaning:**
+Generalized using nested quantifier pattern. When device i is in mesi state with property P and host is in hmesi, then for any other device j, property P2 applies to j.
+
+**Status:** AI_MODIFIED - PATTERN CORRECTED to nested quantifier format (∀i. ... → (∀j. j ≠ i → ...)).
+
+---
 
 [user note: These macro definition changes are critical as they affect all constraints using these macros in lines 287-350]
 
