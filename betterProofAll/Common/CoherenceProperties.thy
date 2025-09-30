@@ -141,33 +141,64 @@ definition SWMR :: "Type1State \<Rightarrow> bool" where [simp]:
   "SWMR T = (\<forall>i j. i \<noteq> j \<longrightarrow> 
     (CLEntry.block_state (devcaches T i) = Modified \<longrightarrow> CLEntry.block_state (devcaches T j) \<noteq> Shared))"
 
-
+(* original definition
 definition C_msg_P_oppo :: "
 (MESI_State) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
   "C_msg_P_oppo mesi next_msg P T = ((CSTATE mesi T 0 \<and> next_msg T 0 \<longrightarrow> P T 1 ) \<and> (CSTATE mesi T 1 \<and> next_msg T 1 \<longrightarrow> P T 0))"
+*)
+definition C_msg_P_oppo :: "
+(MESI_State) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> (Type1State \<Rightarrow> nat \Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
+  "C_msg_P_oppo mesi next_msg P T = (\<forall>i. (CSTATE mesi T i \<and> next_msg T i) \<longrightarrow> (\forall j. j \<noteq> i \<longrightarrow> P T j))"
+  
 
+
+(* original definition
 definition C_msg_P_same :: "
 (MESI_State) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
   "C_msg_P_same mesi next_msg P T = ((CSTATE mesi T 0 \<and> next_msg T 0 \<longrightarrow> P T 0 ) \<and> (CSTATE mesi T 1 \<and> next_msg T 1 \<longrightarrow> P T 1))"
+*)
+definition C_msg_P_same :: "
+(MESI_State) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
+  "C_msg_P_same mesi next_msg P T = (\<forall>i. CSTATE mesi T i \<and> next_msg T i \<longrightarrow> P T i)"
 
 
+(* original definition
 definition C_msg_P_host :: "
 (MESI_State) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> (Type1State \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
   "C_msg_P_host mesi next_msg P T = ((CSTATE mesi T 0 \<and> next_msg T 0 \<longrightarrow> P T ) \<and> (CSTATE mesi T 1 \<and> next_msg T 1 \<longrightarrow> P T ))"
+*)
+definition C_msg_P_host :: "
+(MESI_State) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> (Type1State \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
+  "C_msg_P_host mesi next_msg P T = (\<forall>i. CSTATE mesi T i \<and> next_msg T i \<longrightarrow> P T)"
 
 
+(* original definition
 definition C_not_C_msg :: "
 (MESI_State) \<Rightarrow> MESI_State \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
   "C_not_C_msg mesi1 mesi2 P T = ((CSTATE mesi1 T 0 \<longrightarrow> \<not>(CSTATE mesi2 T 1 \<and> P T 1) ) \<and> (CSTATE mesi1 T 1 \<longrightarrow> \<not>(CSTATE mesi2 T 0 \<and> P T 0)))"
+*)
+definition C_not_C_msg :: "
+(MESI_State) \<Rightarrow> MESI_State \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
+  "C_not_C_msg mesi1 mesi2 P T = (\<forall>i j. i \<noteq> j \<longrightarrow> (CSTATE mesi1 T i \<longrightarrow> \<not>(CSTATE mesi2 T j \<and> P T j)))"
 
 
+(* original definition
 definition H_msg_P_same ::  "
 HOST_State \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
   "H_msg_P_same XAD next_msg P T = ((HSTATE XAD T  \<and> next_msg T 0 \<longrightarrow> P T 0) \<and> (HSTATE XAD T \<and> next_msg T 1 \<longrightarrow> P T 1))"
+*)
+definition H_msg_P_same ::  "
+HOST_State \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
+  "H_msg_P_same XAD next_msg P T = (\<forall>i. HSTATE XAD T \<and> next_msg T i \<longrightarrow> P T i)"
 
+(* original definition
 definition H_msg_P_oppo ::  "
 HOST_State \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
   "H_msg_P_oppo XAD next_msg P T = ((HSTATE XAD T  \<and> next_msg T 0 \<longrightarrow> P T 1) \<and> (HSTATE XAD T \<and> next_msg T 1 \<longrightarrow> P T 0))"
+*)
+definition H_msg_P_oppo ::  "
+HOST_State \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
+  "H_msg_P_oppo XAD next_msg P T = (\<forall>i j. i \<noteq> j \<longrightarrow> (HSTATE XAD T \<and> next_msg T i \<longrightarrow> P T j))"
 
 
 (*original
