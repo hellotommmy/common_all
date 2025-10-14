@@ -1,8 +1,8 @@
 # SWMR_state_machine 详细修改记录
 
-## 修改批次：Lines 286-350 (Missing Entries)
+## 修改批次：Lines 316-350 (Missing Entries)
 
-### Line Mapping: CoherenceProperties.thy:286 ← OldCohProp.thy:200
+### Line Mapping: CoherenceProperties.thy:316 ← OldCohProp.thy:200
 **Original Content (OldCohProp.thy line 200):**
 ```isabelle
 "SWMR_state_machine T = ( (SWMR T) ∧
@@ -11,7 +11,7 @@
 **Original Meaning:**
 Definition header for SWMR state machine - unchanged as it's the definition name.
 
-**Modified Content (CoherenceProperties.thy line 286):**
+**Modified Content (CoherenceProperties.thy line 316):**
 ```isabelle
 "SWMR_state_machine T = ( (SWMR T) ∧
 ```
@@ -21,6 +21,7 @@ Same as original - definition header remains unchanged.
 
 **Status:** NEEDS_ATTENTION - Definition header, no modification needed.
 [user note: no problem, SWMR definition as occurred earlier  has been updated to n-device version]
+这里写了User note，所以SWMR_modification_progress.py那里也要改成CONFIRMED状态而不是NEEDS_ATTENTION
 ---
 
 ### Line Mapping: CoherenceProperties.thy:318-333 ← OldCohProp.thy:201-216
