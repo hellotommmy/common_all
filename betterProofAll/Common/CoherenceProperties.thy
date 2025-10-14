@@ -311,8 +311,8 @@ definition nextGOPendingState :: "MESI_State \<Rightarrow> Type1State \<Rightarr
 \<and> 
 simpset
 
-    H_msg_P_same SAD nextDTHDataPending  (\<lambda> T i. \<not>(CSTATE Modified T i)) T \<and> 
-    H_msg_P_same SD nextDTHDataPending (\<lambda> T i. \<not>(CSTATE Modified T i)) T \<close>
+    
+    \<close>
 definition SWMR_state_machine :: "Type1State \<Rightarrow> bool" where [simp]:
   "SWMR_state_machine T = ( (SWMR T) \<and>
     C_msg_P_oppo ISD nextHTDDataPending (\<lambda>T i. \<not> CSTATE Modified T i) T \<and> 
