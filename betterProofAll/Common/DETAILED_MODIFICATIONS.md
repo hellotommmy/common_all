@@ -468,6 +468,33 @@ Same as original - these constraints already use macro definitions with lambda f
 
 ---
 
+### Line Mapping: CoherenceProperties.thy:355-357 ← OldCohProp.thy:238-240
+**Original Content (OldCohProp.thy lines 238-240):**
+```isabelle
+C_msg_P_same Invalid nextStore (λT i. ¬ nextHTDDataPending T i) T ∧
+C_msg_P_same Invalid nextStore (λT i. ¬ nextSnoopIs SnpInv T i) T ∧
+C_msg_P_same ISAD nextGOPending (λT i. ¬ nextReqIs RdShared T i) T ∧
+```
+
+**Original Meaning:**
+- Line 355: Invalid devices with nextStore cannot have HTDData pending
+- Line 356: Invalid devices with nextStore cannot have SnpInv snoop
+- Line 357: ISAD devices with GOPending cannot request RdShared
+
+**Modified Content (CoherenceProperties.thy lines 355-357):**
+```isabelle
+C_msg_P_same Invalid nextStore (λT i. ¬ nextHTDDataPending T i) T ∧
+C_msg_P_same Invalid nextStore (λT i. ¬ nextSnoopIs SnpInv T i) T ∧
+C_msg_P_same ISAD nextGOPending (λT i. ¬ nextReqIs RdShared T i) T ∧
+```
+
+**Modified Meaning:**
+Same as original - these constraints already use C_msg_P_same macro with lambda functions, now multi-device compatible through updated macro definitions.
+
+**Status:** ✅ USER VERIFIED - Lines 355-357 all correct.
+
+---
+
 **Note:** Lines 306-319, 321-350 contain various macro-based constraints and simple consolidations that need individual review. Most macro constraints (C_msg_*, H_msg_*, C_state_*) are already multi-device compatible as they use lambda functions.
 
 **IMPORTANT UPDATE:** The macro definitions themselves (C_msg_P_same, C_msg_P_host, C_not_C_msg, H_msg_P_same, H_msg_P_oppo) were still using 2-device hardcoded patterns and have now been updated to multi-device versions. This affects all constraints that use these macros.
