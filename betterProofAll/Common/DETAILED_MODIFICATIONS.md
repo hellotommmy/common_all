@@ -646,6 +646,48 @@ This constraint could be simplified based on a more fundamental MESI principle -
 
 ---
 
+### Line Mapping: CoherenceProperties.thy:364-366 ← OldCohProp.thy:248-250
+**Original Content (OldCohProp.thy lines 248-250):**
+```isabelle
+(CSTATE Invalid T 0 → snps2 T = [] ∧ snpresps2 T = [] ∧ reqresps1 T = [] ∧ htddatas1 T = []) ∧
+(CSTATE Invalid T 1 → snps1 T = [] ∧ snpresps1 T = [] ∧ reqresps2 T = [] ∧ htddatas2 T = []) ∧
+(CSTATE Shared T 0 → snps2 T = [] ∧ snpresps2 T = [] ∧ reqresps1 T = [] ∧ htddatas1 T = []) ∧
+(CSTATE Shared T 1 → snps1 T = [] ∧ snpresps1 T = [] ∧ reqresps2 T = [] ∧ htddatas2 T = []) ∧
+(CSTATE IIA T 0 → snps2 T = [] ∧ snpresps2 T = [] ∧ htddatas1 T = []) ∧
+(CSTATE IIA T 1 → snps1 T = [] ∧ snpresps1 T = [] ∧ htddatas2 T = [])
+```
+
+**Original 2-Device Semantics:**
+When device 0 is in state X (Invalid/Shared/IIA), then device 1's channels (snps, snpresps) and device 0's channels (reqresps, htddatas) are empty. Symmetric for device 1.
+
+**Initial AI Modification (INCORRECT):**
+```isabelle
+(∀i j. i ≠ j → (CSTATE Invalid T i → snps T j = [] ∧ snpresps T j = [] ∧ reqresps T i = [] ∧ htddatas T i = []))
+```
+❌ **Semantic Error:** This incorrectly generalizes to "if any device i is in state X, then every other device j has empty channels". This is too weak for multi-device scenarios with >2 devices.
+
+**Corrected Multi-Device Semantics (USER SPECIFIED):**
+```isabelle
+Line 364: (∀j. (∀i. i ≠ j → CSTATE Invalid T i) → (snps T j = [] ∧ snpresps T j = [] ∧ (∀i. i ≠ j → reqresps T i = [] ∧ htddatas T i = [])))
+Line 365: (∀j. (∀i. i ≠ j → CSTATE Shared T i) → (snps T j = [] ∧ snpresps T j = [] ∧ (∀i. i ≠ j → reqresps T i = [] ∧ htddatas T i = [])))
+Line 366: (∀j. (∀i. i ≠ j → CSTATE IIA T i) → (snps T j = [] ∧ snpresps T j = [] ∧ (∀i. i ≠ j → htddatas T i = [])))
+```
+
+**Correct Semantics:**
+✅ **If there exists a device j such that ALL other devices (except j) are in state X (Invalid/Shared/IIA), then device j's channels (snps, snpresps) and all other devices' channels (reqresps, htddatas) are empty.**
+
+**Why This is Correct:**
+- **2-device case**: "Device 0 is X" means "all devices except 1 are X", so device 1's channels are empty ✓
+- **Multi-device case**: Only when ALL other devices are in a quiescent state (Invalid/Shared/IIA) does the single active device j have empty channels
+- This captures the protocol invariant: **when the system is in a globally quiescent state with only one potentially active device, inter-device communication channels are clean**
+
+**Key Insight:**
+The original 2-device constraint implicitly relied on the fact that "one device in state X" means "the other device is the only non-X device". In multi-device settings, we need to explicitly quantify over "all devices except j".
+
+**Status:** ✅ USER VERIFIED - SEMANTICS CORRECTED. Critical fix for multi-device correctness.
+
+---
+
 **Note:** Lines 306-319, 321-350 contain various macro-based constraints and simple consolidations that need individual review. Most macro constraints (C_msg_*, H_msg_*, C_state_*) are already multi-device compatible as they use lambda functions.
 
 **IMPORTANT UPDATE:** The macro definitions themselves (C_msg_P_same, C_msg_P_host, C_not_C_msg, H_msg_P_same, H_msg_P_oppo) were still using 2-device hardcoded patterns and have now been updated to multi-device versions. This affects all constraints that use these macros.

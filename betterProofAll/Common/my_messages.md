@@ -297,3 +297,6 @@ i choose option 4
 
 ## 消息95 - Lines 362-363验证完成
 362同样正确。363也有可选择的简化空间，即Invalid不应该有snoop.
+
+## 消息96 - Lines 364-366语义修正
+364-366须做修改：应当是，若存在j使得，除了j外所有device均处于Shared状态，那么j的snps等channel是空的。
