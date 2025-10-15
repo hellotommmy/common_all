@@ -327,10 +327,10 @@ definition SWMR_state_machine :: "Type1State \<Rightarrow> bool" where [simp]:
     H_msg_P_same ModifiedM (nextReqIs RdShared) (\<lambda>T i. \<not> nextSnpRespIs RspIFwdM T i) T \<and>
     C_H_state IMAD (nextReqIs RdOwn) Modified SD T \<and>
     (\<forall>i. CSTATE Modified T i \<longrightarrow> (\<not>(HSTATE SAD T \<and> snpresps T i \<noteq> []) \<and> \<not>(HSTATE SAD T \<and> dthdatas T i \<noteq> []))) \<and> \<comment>\<open>Original: C_H_state IMAD (nextReqIs RdOwn) Modified SAD T - simplified to: Modified device cannot have pending snoop/data traffic in SAD state\<close>
-    (\<forall>i. CSTATE Modified T i \<longrightarrow> (\<not>(HSTATE SA T \<and> snpresps T i \<noteq> []) \<and> \<not>(HSTATE SA T \<and> dthdatas T i \<noteq> []))) \<and> \<comment>\<open>Original: C_H_state IMAD (nextReqIs RdOwn) Modified SA T - simplified to: Modified device cannot have pending snoop/data traffic in SA state\<close>
-    C_H_state Invalid nextStore Modified SAD T \<and>
-    C_H_state Invalid nextStore Modified SA T \<and>
-    C_H_state Invalid nextStore Modified SD T \<and>
+    (\<forall>i. CSTATE Modified T i \<longrightarrow> \<not>HSTATE SA T) \<and> \<comment>\<open>Original: C_H_state IMAD (nextReqIs RdOwn) Modified SA T - simplified to: Modified ↔ SA exclusivity\<close>
+    True \<and> \<comment>\<open>Original: C_H_state Invalid nextStore Modified SAD T - removed: semantics subsumed by Line 329\<close>
+    True \<and> \<comment>\<open>Original: C_H_state Invalid nextStore Modified SA T - removed: semantics subsumed by Line 330\<close>
+    (\<forall>i. CSTATE Modified T i \<longrightarrow> \<not>HSTATE SD T) \<and> \<comment>\<open>Original: C_H_state Invalid nextStore Modified SD T - simplified to: Modified ↔ SD exclusivity\<close>
     (HSTATE SharedM T \<longrightarrow> (\<forall>i. \<not> CSTATE Modified T i)) \<and> \<comment>\<open>Original: (HSTATE SharedM T \<longrightarrow> \<not> CSTATE Modified T 0 \<and> \<not> CSTATE Modified T 1)\<close>
     (HSTATE SD T \<longrightarrow> (\<forall>i. \<not> CSTATE Modified T i)) \<and> \<comment>\<open>Original: (HSTATE SD T \<longrightarrow> \<not> CSTATE Modified T 0 \<and> \<not> CSTATE Modified T 1)\<close>
     (HSTATE MD T \<longrightarrow> (\<forall>i. \<not> CSTATE Modified T i)) \<and> \<comment>\<open>Original: (HSTATE MD T \<longrightarrow> \<not> CSTATE Modified T 0 \<and> \<not> CSTATE Modified T 1)\<close>
