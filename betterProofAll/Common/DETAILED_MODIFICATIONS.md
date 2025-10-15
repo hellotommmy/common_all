@@ -91,8 +91,8 @@ C_H_state Invalid nextStore Modified SD T ∧
 **Modified Content (CoherenceProperties.thy lines 328-333):**
 ```isabelle
 C_H_state IMAD (nextReqIs RdOwn) Modified SD T ∧
-C_H_state IMAD (nextReqIs RdOwn) Modified SAD T ∧
-C_H_state IMAD (nextReqIs RdOwn) Modified SA T ∧
+(∀i. CSTATE Modified T i → (¬(HSTATE SAD T ∧ snpresps T i ≠ []) ∧ ¬(HSTATE SAD T ∧ dthdatas T i ≠ []))) ∧
+(∀i. CSTATE Modified T i → (¬(HSTATE SA T ∧ snpresps T i ≠ []) ∧ ¬(HSTATE SA T ∧ dthdatas T i ≠ []))) ∧
 C_H_state Invalid nextStore Modified SAD T ∧
 C_H_state Invalid nextStore Modified SA T ∧
 C_H_state Invalid nextStore Modified SD T ∧
@@ -105,11 +105,11 @@ C_H_state Invalid nextStore Modified SD T ∧
 
 **User Notes:**
 
-**Line 328 (SD):** ✅ Semantically correct
+**Line 328 (SD):** ✅ Semantically correct - Kept as is
 
-**Line 329 (SAD):** ⚠️ **PROBLEM IDENTIFIED** - Multi-device semantics incorrect!
+**Line 329 (SAD):** ✅ **FIXED with Option 4** - Replaced with simplified constraint
 
-**Issue:** In multi-device environment, Host's SAD state may be caused by **any device's request**, not necessarily device i's RdOwn request.
+**Issue:** In multi-device environment, Host's SAD state potentially cannot indicate the downgrade of the Modified device. In 2-device version, SAD indicates the host already received the Rd* request from the other side, which means this side must not be owner.
 
 **Counterexample:**
 - Device 1: IMAD + RdOwn pending
@@ -143,14 +143,25 @@ C_H_state Invalid nextStore Modified SD T ∧
 True ∧  \<comment>\<open>Original: C_H_state IMAD (nextReqIs RdOwn) Modified SAD T
          Removed: Multi-device semantics unclear, needs refinement\<close>
 ```
+**Option 4 - Simplified Modified exclusion (USER SELECTED):**
+```isabelle
+(∀i. CSTATE Modified T i → 
+     (¬(HSTATE SAD T ∧ snpresps T i ≠ []) ∧ 
+      ¬(HSTATE SAD T ∧ dthdatas T i ≠ [])))
+```
+*Semantics:* When a device i is in Modified state, the host cannot have:
+- SAD state with non-empty snoop responses from device i, OR
+- SAD state with non-empty DTH data from device i
 
-**Recommendation:** Use Option 1 or Option 3 depending on constraint importance in proof.
+*Rationale:* In 2-device version, SAD indicates the host already received a Rd* request from the other device, meaning the Modified device must be in the process of downgrading. In multi-device version, we simplify this to directly constrain that Modified device cannot have pending snoop/data traffic while host is in SAD state.
 
-**Line 330 (SA):** ⚠️ Similar issue as Line 329, needs review
+**Implementation:** User selected Option 4. Both Line 329 (SAD) and Line 330 (SA) have been replaced with the simplified constraint.
 
-**Lines 331-333 (Invalid + nextStore cases):** ✅ Likely semantically correct (Invalid is a safe initial state)
+**Line 330 (SA):** ✅ **FIXED with Option 4** - Applied same simplification as Line 329
 
-**Status:** ⚠️ NEEDS_SEMANTIC_REVIEW - Lines 329-330 have incorrect multi-device semantics. See detailed analysis in `Line329_Analysis.md`.
+**Lines 331-333 (Invalid + nextStore cases):** ✅ Semantically correct - Invalid is a safe initial state, kept as is
+
+**Status:** ✅ FIXED - Lines 329-330 replaced with semantically correct multi-device constraints. Original problematic constraints replaced with: "Modified device cannot have pending snoop/data traffic while host is in SAD/SA state"
 
 ---
 

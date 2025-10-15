@@ -326,8 +326,8 @@ definition SWMR_state_machine :: "Type1State \<Rightarrow> bool" where [simp]:
     H_msg_P_oppo ModifiedM (nextReqIs RdShared) (\<lambda>T i. \<not> nextSnpRespIs RspIFwdM T i) T \<and>
     H_msg_P_same ModifiedM (nextReqIs RdShared) (\<lambda>T i. \<not> nextSnpRespIs RspIFwdM T i) T \<and>
     C_H_state IMAD (nextReqIs RdOwn) Modified SD T \<and>
-    C_H_state IMAD (nextReqIs RdOwn) Modified SAD T \<and>
-    C_H_state IMAD (nextReqIs RdOwn) Modified SA T \<and>
+    (\<forall>i. CSTATE Modified T i \<longrightarrow> (\<not>(HSTATE SAD T \<and> snpresps T i \<noteq> []) \<and> \<not>(HSTATE SAD T \<and> dthdatas T i \<noteq> []))) \<and> \<comment>\<open>Original: C_H_state IMAD (nextReqIs RdOwn) Modified SAD T - simplified to: Modified device cannot have pending snoop/data traffic in SAD state\<close>
+    (\<forall>i. CSTATE Modified T i \<longrightarrow> (\<not>(HSTATE SA T \<and> snpresps T i \<noteq> []) \<and> \<not>(HSTATE SA T \<and> dthdatas T i \<noteq> []))) \<and> \<comment>\<open>Original: C_H_state IMAD (nextReqIs RdOwn) Modified SA T - simplified to: Modified device cannot have pending snoop/data traffic in SA state\<close>
     C_H_state Invalid nextStore Modified SAD T \<and>
     C_H_state Invalid nextStore Modified SA T \<and>
     C_H_state Invalid nextStore Modified SD T \<and>
