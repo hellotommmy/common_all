@@ -179,7 +179,7 @@ True ∧  \<comment>\<open>Original: C_H_state IMAD (nextReqIs RdOwn) Modified S
 
 ---
 
-### Line Mapping: CoherenceProperties.thy:303 ← OldCohProp.thy:217
+### Line Mapping: CoherenceProperties.thy:334 ← OldCohProp.thy:217
 **Original Content (OldCohProp.thy line 217):**
 ```isabelle
 (HSTATE SharedM T → ¬ CSTATE Modified T 0 ∧ ¬ CSTATE Modified T 1) ∧
@@ -188,7 +188,7 @@ True ∧  \<comment>\<open>Original: C_H_state IMAD (nextReqIs RdOwn) Modified S
 **Original Meaning:**
 When host is in SharedM state, neither device 0 nor device 1 can be in Modified state.
 
-**Modified Content (CoherenceProperties.thy line 303):**
+**Modified Content (CoherenceProperties.thy line 334):**
 ```isabelle
 (HSTATE SharedM T → (∀i. ¬ CSTATE Modified T i)) ∧
 ```
@@ -196,11 +196,11 @@ When host is in SharedM state, neither device 0 nor device 1 can be in Modified 
 **Modified Meaning:**
 When host is in SharedM state, no device can be in Modified state. Generalized to arbitrary number of devices.
 
-**Status:** AI_MODIFIED - Simple consolidation pattern correctly applied.
+**Status:** ✅ USER VERIFIED - Simple consolidation pattern correctly applied.
 
 ---
 
-### Line Mapping: CoherenceProperties.thy:304 ← OldCohProp.thy:218
+### Line Mapping: CoherenceProperties.thy:335 ← OldCohProp.thy:218
 **Original Content (OldCohProp.thy line 218):**
 ```isabelle
 (HSTATE SD T → ¬ CSTATE Modified T 0 ∧ ¬ CSTATE Modified T 1) ∧
@@ -209,7 +209,7 @@ When host is in SharedM state, no device can be in Modified state. Generalized t
 **Original Meaning:**
 When host is in SD state, neither device can be in Modified state.
 
-**Modified Content (CoherenceProperties.thy line 304):**
+**Modified Content (CoherenceProperties.thy line 335):**
 ```isabelle
 (HSTATE SD T → (∀i. ¬ CSTATE Modified T i)) ∧
 ```
@@ -217,11 +217,11 @@ When host is in SD state, neither device can be in Modified state.
 **Modified Meaning:**
 When host is in SD state, no device can be in Modified state. Generalized to arbitrary number of devices.
 
-**Status:** AI_MODIFIED - Simple consolidation pattern correctly applied.
+**Status:** ✅ USER VERIFIED - Simple consolidation pattern correctly applied.
 
 ---
 
-### Line Mapping: CoherenceProperties.thy:305 ← OldCohProp.thy:219
+### Line Mapping: CoherenceProperties.thy:336 ← OldCohProp.thy:219
 **Original Content (OldCohProp.thy line 219):**
 ```isabelle
 (HSTATE MD T → ¬ CSTATE Modified T 0 ∧ ¬ CSTATE Modified T 1) ∧
@@ -230,7 +230,7 @@ When host is in SD state, no device can be in Modified state. Generalized to arb
 **Original Meaning:**
 When host is in MD state, neither device can be in Modified state.
 
-**Modified Content (CoherenceProperties.thy line 305):**
+**Modified Content (CoherenceProperties.thy line 336):**
 ```isabelle
 (HSTATE MD T → (∀i. ¬ CSTATE Modified T i)) ∧
 ```
@@ -238,28 +238,40 @@ When host is in MD state, neither device can be in Modified state.
 **Modified Meaning:**
 When host is in MD state, no device can be in Modified state. Generalized to arbitrary number of devices.
 
-**Status:** AI_MODIFIED - Simple consolidation pattern correctly applied.
+**Status:** ✅ USER VERIFIED - Simple consolidation pattern correctly applied.
 
 ---
 
-### Line Mapping: CoherenceProperties.thy:320 ← OldCohProp.thy:234
-**Original Content (OldCohProp.thy line 234):**
+### Line Mapping: CoherenceProperties.thy:337-343 ← OldCohProp.thy:220-226
+**Original Content (OldCohProp.thy lines 220-226):**
 ```isabelle
-H_C_state_msg_oppo ModifiedM IIA (λT i. ¬ nextReqIs RdShared T i) T ∧
+C_msg_not RdShared IMAD T ∧
+C_msg_not RdShared Invalid T ∧
+H_msg_P_same ModifiedM (nextReqIs DirtyEvict) (λT i. CSTATE MIA T i ∨ CSTATE IIA T i) T ∧
+C_msg_P_host MIA (nextGOPendingIs GO_WritePull) (λT. ¬ HSTATE ModifiedM T) T ∧
+C_msg_P_same MIA (nextGOPendingIs GO_WritePull) nextEvict T ∧
+C_msg_P_host MIA (nextGOPendingIs GO_WritePull) (HSTATE ID) T ∧
+C_state_not MIA RdShared T ∧
 ```
 
 **Original Meaning:**
-Macro constraint for opposite device behavior - when host is ModifiedM and one device is IIA, the other device cannot send RdShared.
+Various macro-based constraints using C_msg_not, H_msg_P_same, C_msg_P_host, C_msg_P_same, and C_state_not macros. These are already using lambda functions for device-parametric properties.
 
-**Modified Content (CoherenceProperties.thy line 320):**
+**Modified Content (CoherenceProperties.thy lines 337-343):**
 ```isabelle
-(∀i j. i ≠ j → (HSTATE ModifiedM T ∧ CSTATE IIA T i ∧ (CSTATE MIA T j ∨ CSTATE Modified T j ∨ ...) → ¬ nextReqIs RdShared T j)) ∧
+C_msg_not RdShared IMAD T ∧
+C_msg_not RdShared Invalid T ∧
+H_msg_P_same ModifiedM (nextReqIs DirtyEvict) (λT i. CSTATE MIA T i ∨ CSTATE IIA T i) T ∧
+C_msg_P_host MIA (nextGOPendingIs GO_WritePull) (λT. ¬ HSTATE ModifiedM T) T ∧
+C_msg_P_same MIA (nextGOPendingIs GO_WritePull) nextEvict T ∧
+C_msg_P_host MIA (nextGOPendingIs GO_WritePull) (HSTATE ID) T ∧
+C_state_not MIA RdShared T ∧
 ```
 
 **Modified Meaning:**
-Expanded macro to explicit multi-device constraint: when host is ModifiedM and device i is IIA, then owner device j cannot send RdShared requests.
+Same as original - these constraints already use lambda functions. Now truly multi-device compatible due to updated macro definitions (see Lines 155-279).
 
-**Status:** NEEDS_ATTENTION - Pattern should use nested quantifier format for consistency.
+**Status:** ✅ USER VERIFIED - Macro-based constraints, no direct modification needed. Multi-device compatibility achieved through macro definition updates.
 
 ---
 
