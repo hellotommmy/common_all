@@ -844,28 +844,61 @@ Each device has at most one HTD (Host-to-Device) data message pending. Simple un
 (CSTATE ISD T 1 → snps1 T = [] ∧ snpresps1 T = [] ∧ reqresps2 T = [])
 ```
 
-**Original Meaning:**
+**Original 2-Device Meaning:**
 When device 0 is in ISD state, device 1's snps/snpresps are empty and device 0's reqresps are empty. Symmetric for device 1.
 
-**Initial AI Modification (flat pattern):**
+**⚠️ CRITICAL SEMANTIC ISSUE - No Sound Multi-Device Generalization Available**
+
+**Initial AI Modification (INCORRECT):**
 ```isabelle
 (∀i j. i ≠ j → (CSTATE ISD T i → snps T j = [] ∧ snpresps T j = [] ∧ reqresps T i = []))
 ```
+❌ **Semantic Error:** Claims all other devices' snps/snpresps are empty when device i is in ISD.
 
-**Corrected Multi-Device Content (nested pattern):**
+**Why This Cannot Generalize to >2 Devices:**
+
+In a 2-device system:
+- When device 0 is ISD, device 1's snps/snpresps being empty makes sense (only two devices total)
+- Symmetrically for device 1
+
+In a multi-device system (e.g., 3+ devices):
+- When device i is ISD, devices j and k (where j≠i, k≠i, j≠k) can **independently snoop each other**
+- Device j can have `snps T j ≠ []` to snoop device k
+- Device k can have `snpresps T k ≠ []` in response to device j's snoop
+- **These inter-device snoops (j ↔ k) are completely independent of device i's ISD state**
+
+**Example Counterexample (3 devices):**
+- Device 0: ISD state
+- Device 1: Modified state (has dirty data)
+- Device 2: Sending snoop to device 1 → `snps T 1 ≠ []`
+- This is a **valid state**, but violates the proposed constraint `(CSTATE ISD T 0 → snps T 1 = [])`
+
+**Current Implementation (Weakened Constraint):**
 ```isabelle
-(∀i. CSTATE ISD T i → (reqresps T i = [] ∧ (∀j. j ≠ i → snps T j = [] ∧ snpresps T j = [])))
+(∀i. CSTATE ISD T i → reqresps T i = [])
 ```
 
-**Modified Meaning:**
-When device i is in ISD state:
-- Device i's reqresps are empty
-- All other devices j (where j ≠ i) have empty snps and snpresps
+**What Was Kept:**
+- ✅ `reqresps T i = []` - Sound: Device i in ISD has no request responses (directly about device i)
 
-**Why Nested Pattern:**
-For consistency with the preferred quantifier style. The nested pattern `(∀i. ... → (∀j. j ≠ i → ...))` is preferred over the flat pattern `(∀i j. i ≠ j → ...)` for constraints involving multiple devices.
+**What Was Removed:**
+- ❌ `snps T j = [] ∧ snpresps T j = []` for all j≠i - Unsound for >2 devices
 
-**Status:** ✅ USER VERIFIED - PATTERN CORRECTED to nested quantifier format.
+**Why This Is Unsatisfying:**
+
+1. **Loss of Information:** The original 2-device constraint captured important protocol invariants about the relationship between ISD state and inter-device communication
+2. **Weakened Constraint:** We only keep the `reqresps` part, losing constraints on `snps` and `snpresps`
+3. **No Better Alternative:** There is no straightforward way to generalize "the other device's channels are empty" to multi-device scenarios without additional context about the specific protocol state
+
+**Possible Future Improvements:**
+
+If more specific constraints are needed, they might take forms like:
+- `(∀i j. CSTATE ISD T i ∧ j ≠ i → (snps T j ≠ [] → ¬snpTargets j i))` - "snoops from j don't target device i"
+- Require understanding of snoop targeting, which may not be explicit in current model
+
+**User Decision:** Accept the weakened constraint for now. Document this as a known limitation of the multi-device conversion.
+
+**Status:** ⚠️ USER VERIFIED - SEMANTICS WEAKENED due to fundamental multi-device generalization issue. No sound alternative available without additional model expressiveness.
 
 ---
 

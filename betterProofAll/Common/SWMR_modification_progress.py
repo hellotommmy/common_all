@@ -71,7 +71,7 @@ progress = [
     [371, 'CONFIRMED', 254, '(\<forall>i. CSTATE ISD T i \<longrightarrow> nextLoad T i) - Simple universal quantification'],
     [372, 'CONFIRMED', 255, '(C_msg_P_host ISD (nextSnoopIs SnpInv) (HSTATE MA) T) - Macro-based, multi-device compatible'],
     [373, 'CONFIRMED', 256, '(\<forall>i. length (htddatas T i) \<le> 1) - Simple universal quantification'],
-    [374, 'CONFIRMED', 257, '(\<forall>i. CSTATE ISD T i \<longrightarrow> (reqresps T i = [] \<and> (\<forall>j. j \<noteq> i \<longrightarrow> ...))) - Pattern corrected to nested format'],
+    [374, 'CONFIRMED', 257, '(\<forall>i. CSTATE ISD T i \<longrightarrow> reqresps T i = []) - ⚠️ WEAKENED: removed snps/snpresps constraints (unsound for >2 devices)'],
     [375, 'NEEDS_ATTENTION', 258, '(\<forall>i. CSTATE ISD T i \<longrightarrow> reqs T i = []) \<and> \<comment>\<open>Original: (C...'],
     [376, 'NEEDS_ATTENTION', 259, '(\<forall>i. CSTATE IMAD T i \<and> nextHTDDataPending T i \<longrightarrow> reqs T i = []) \<and...'],
     [377, 'NEEDS_ATTENTION', 260, '(\<forall>i. length (reqresps T i) \<le> 1) \<and> \<comment>\<open>Original: (length (reqresps1 ...'],
