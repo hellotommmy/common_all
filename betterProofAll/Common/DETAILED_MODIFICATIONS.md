@@ -399,6 +399,35 @@ These constraints have similar potential simplifications as Lines 345-346 (direc
 
 ---
 
+### Line Mapping: CoherenceProperties.thy:351 ← OldCohProp.thy:234
+**Original Content (OldCohProp.thy line 234):**
+```isabelle
+H_C_state_msg_oppo ModifiedM IIA (λT i. ¬ nextReqIs RdShared T i) T ∧
+```
+
+**Original Meaning:**
+Macro constraint using H_C_state_msg_oppo: When host is ModifiedM and device i is IIA, then opposite device(s) j cannot send RdShared request. This is expanded to check that owner devices (in various owner states) don't send RdShared.
+
+**Modified Content (CoherenceProperties.thy line 351) - BEFORE PATTERN CORRECTION:**
+```isabelle
+(∀i j. i ≠ j → (HSTATE ModifiedM T ∧ CSTATE IIA T i ∧ (CSTATE MIA T j ∨ CSTATE Modified T j ∨ ...) → ¬ nextReqIs RdShared T j))
+```
+
+**Modified Content (CoherenceProperties.thy line 351) - AFTER PATTERN CORRECTION:**
+```isabelle
+(∀i. HSTATE ModifiedM T ∧ CSTATE IIA T i → (∀j. j ≠ i → (CSTATE MIA T j ∨ CSTATE Modified T j ∨ CSTATE IMD T j ∨ CSTATE IMA T j ∨ (CSTATE IMAD T j ∧ nextHTDDataPending T j ∧ nextGOPending T j) ∨ CSTATE SMD T j ∨ CSTATE SMA T j ∨ (CSTATE SMAD T j ∧ nextHTDDataPending T j ∧ nextGOPending T j)) → ¬ nextReqIs RdShared T j))
+```
+
+**Modified Meaning:**
+When host is ModifiedM and device i is IIA, then for any other device j that is in an owner state (Modified, MIA, IMD, IMA, IMAD+pending, SMD, SMA, SMAD+pending), device j cannot send RdShared request.
+
+**Pattern Correction:**
+✅ Changed from flat pattern `(∀i j. i ≠ j → ...)` to nested pattern `(∀i. ... → (∀j. j ≠ i → ...))` for consistency with user's preferred quantifier style.
+
+**Status:** ✅ USER VERIFIED - Pattern corrected to nested quantifier format.
+
+---
+
 **Note:** Lines 306-319, 321-350 contain various macro-based constraints and simple consolidations that need individual review. Most macro constraints (C_msg_*, H_msg_*, C_state_*) are already multi-device compatible as they use lambda functions.
 
 **IMPORTANT UPDATE:** The macro definitions themselves (C_msg_P_same, C_msg_P_host, C_not_C_msg, H_msg_P_same, H_msg_P_oppo) were still using 2-device hardcoded patterns and have now been updated to multi-device versions. This affects all constraints that use these macros.
