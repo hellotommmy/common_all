@@ -441,6 +441,33 @@ This constraint could be further simplified to express a more fundamental MESI p
 
 ---
 
+### Line Mapping: CoherenceProperties.thy:352-354 ← OldCohProp.thy:235-237
+**Original Content (OldCohProp.thy lines 235-237):**
+```isabelle
+C_msg_P_host Shared (nextSnoopIs SnpInv) (HSTATE MA) T ∧
+C_msg_state RdShared ISAD T ∧
+C_not_C_msg Modified ISAD nextGOPending T ∧
+```
+
+**Original Meaning:**
+- Line 352: When a device is Shared and has SnpInv, host must be MA
+- Line 353: Devices in ISAD state must have RdShared request (using C_msg_state macro)
+- Line 354: When one device is Modified, other devices in ISAD cannot have GOPending (using C_not_C_msg macro)
+
+**Modified Content (CoherenceProperties.thy lines 352-354):**
+```isabelle
+C_msg_P_host Shared (nextSnoopIs SnpInv) (HSTATE MA) T ∧
+C_msg_state RdShared ISAD T ∧
+C_not_C_msg Modified ISAD nextGOPending T ∧
+```
+
+**Modified Meaning:**
+Same as original - these constraints already use macro definitions with lambda functions (C_msg_P_host, C_msg_state, C_not_C_msg), now multi-device compatible through updated macro definitions.
+
+**Status:** ✅ USER VERIFIED - Lines 352-354 all correct.
+
+---
+
 **Note:** Lines 306-319, 321-350 contain various macro-based constraints and simple consolidations that need individual review. Most macro constraints (C_msg_*, H_msg_*, C_state_*) are already multi-device compatible as they use lambda functions.
 
 **IMPORTANT UPDATE:** The macro definitions themselves (C_msg_P_same, C_msg_P_host, C_not_C_msg, H_msg_P_same, H_msg_P_oppo) were still using 2-device hardcoded patterns and have now been updated to multi-device versions. This affects all constraints that use these macros.
