@@ -25,7 +25,10 @@ Same as original - definition header remains unchanged.
 ---
 
 ### Line Mapping: CoherenceProperties.thy:318-333 ← OldCohProp.thy:201-216
-**Original Content (OldCohProp.thy lines 201-216):**
+
+#### **Subsection: Lines 318-327 (Macro-based constraints) - SEMANTICS VERIFIED**
+
+**Original Content (OldCohProp.thy lines 201-210):**
 ```isabelle
 C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) T ∧ 
 H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) T ∧ 
@@ -37,44 +40,117 @@ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T �
 H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) T ∧
 H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) T ∧
 H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) T ∧
+```
+
+**Modified Content (CoherenceProperties.thy lines 318-327):**
+```isabelle
+C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) T ∧ 
+H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) T ∧ 
+H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) T ∧
+C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) T ∧
+H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧
+H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧
+H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧
+H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) T ∧
+H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) T ∧
+H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) T ∧
+```
+
+**User Notes on Semantics:**
+- Line 318: ✅ Semantically correct. Can be simplified to "ISD ↔ Modified exclusivity"
+- Line 319: ✅ Semantically correct. Can be simplified to "SD ↔ Modified exclusivity"
+- Line 320: ✅ Semantically correct. Already in canonical form
+- Line 321: ✅ Semantically correct. Already in canonical form
+- Line 322-323: ✅ Semantically correct. Can be simplified to "SharedM ↔ Modified exclusivity"
+- Line 324: ✅ Semantically correct. Can be simplified (drop ModifiedM condition)
+- Line 325: ✅ Semantically correct. Can be simplified to "ModifiedM ↔ DTHData exclusivity"
+- Line 326-327: ✅ Semantically correct. Can be simplified to "RspIFwdM ↔ ModifiedM exclusivity"
+
+**Status:** ✅ SEMANTICALLY VERIFIED - All constraints now truly multi-device due to updated macro definitions using nested quantifier patterns.
+
+---
+
+#### **Subsection: Lines 328-333 (C_H_state constraints) - NEEDS ATTENTION**
+
+**Original Content (OldCohProp.thy lines 211-216):**
+```isabelle
 C_H_state IMAD (nextReqIs RdOwn) Modified SD T ∧
 C_H_state IMAD (nextReqIs RdOwn) Modified SAD T ∧
-[... 4 more similar constraints ...]
+C_H_state IMAD (nextReqIs RdOwn) Modified SA T ∧
+C_H_state Invalid nextStore Modified SAD T ∧
+C_H_state Invalid nextStore Modified SA T ∧
+C_H_state Invalid nextStore Modified SD T ∧
 ```
-[user note: definitions like C_msg_P_oppo have not been properly converted and should now be changed - NOW FIXED]
 
-**Original Meaning:**
-High-level protocol constraints using predefined macros. These constraints were using 2-device hardcoded macro definitions, making them effectively 2-device only despite the lambda syntax.
-
-**Modified Content (CoherenceProperties.thy lines 318-333):**
+**2-device C_H_state expansion example (Line 212/329):**
 ```isabelle
-C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) T ∧ \<comment>\<open>User note: ok, semantics correct, however can be made simpler by stating only ISD <---> Modified cannot coexist (exclusivity) <close>
-H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) T ∧ \<comment>\<open>User note: ok, semantics correct, but can be made simpler by stating only SD <--> Modified exclusivity. (SD indicates dirty device already been downgraded and therefore cannot be Modified) \<close>
-H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) T ∧ \<comment>\<open>User note: ok, semantics correct, already in canonical and concise form \<close>
-C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) T ∧ \<comment>\<open>User note: ok, semantics correct, already in canonical and concise form \<close>
-H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧ \<comment>\<open>User note: ok, semantics correct, 
-but can be simplified to SharedM <---> Modified state exclusivity \<close>
-H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧ \<comment>\<open>User note: ok, semantics correct, 
-but can be simplified to SharedM <---> Modified state exclusivity \<close>
-H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧ \<comment>\<open>User note: checked, semantics correct, however can be simplified to Modified device cannot have a RdShared request (drop the ModifiedM bit)  \<close>
-H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) T ∧ \<comment>\<open>User note: checked, semantics correct, however can be simplified to ModifiedM <---> DTHData exclusivity \<close>
-H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) T ∧ \<comment>\<open>User note: checked, semantics correct, however can be simplified to RspIFwdM <---> ModifiedM exclusivity \<close>
-H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) T ∧ \<comment>\<open>User note: checked, semantics correct, however can be simplified to RspIFwdM <---> ModifiedM exclusivity \<close>
-C_H_state IMAD (nextReqIs RdOwn) Modified SD T ∧ \<comment>\<open> checked, semantics correct \<close>
-C_H_state IMAD (nextReqIs RdOwn) Modified SAD T ∧ \<comment>\<open> User note: this is no longer true: issue: suppose device 1 sends RdOwn, device 2 sends RdS, device 2's request got processed first, causing host to become SAD, and sending snoop to device 3 which is still in Modified state. This is allowed.
-Therefore, this rule should either be discarded (with the conjunct being turned into "true" as a placeholder) or be modified.
-candidate conjunct 1: if i in IMAD+RdOwn, and all other states except for j in Invalid, host SAD, then j cannot be in Modified state.
-candidate conjunct 2: if host in SAD with snpresps from j pending, then j cannot be in Modified state.
-However there doesn't seem to be a canonical multi-device version of this conjunct which is obviously better.
-<\close>
-[... same constraints with updated macro semantics ...]
+(CSTATE IMAD T 0 ∧ nextReqIs RdOwn T 0 ∧ HSTATE SAD T → ¬CSTATE Modified T 1) ∧
+(CSTATE IMAD T 1 ∧ nextReqIs RdOwn T 1 ∧ HSTATE SAD T → ¬CSTATE Modified T 0)
 ```
 
-**Modified Meaning:**
-Now multi-device compatible due to updated macro definitions. Each macro now uses proper nested quantifier patterns (∀i. ... → (∀j. j ≠ i → ...)) for mutual exclusion constraints.
-[User note: semantics may have been slightly different from their two-device version]
+**Modified Content (CoherenceProperties.thy lines 328-333):**
+```isabelle
+C_H_state IMAD (nextReqIs RdOwn) Modified SD T ∧
+C_H_state IMAD (nextReqIs RdOwn) Modified SAD T ∧
+C_H_state IMAD (nextReqIs RdOwn) Modified SA T ∧
+C_H_state Invalid nextStore Modified SAD T ∧
+C_H_state Invalid nextStore Modified SA T ∧
+C_H_state Invalid nextStore Modified SD T ∧
+```
 
-**Status:** AI_MODIFIED - Constraints now truly multi-device due to macro definition updates.
+**Multi-device C_H_state expansion (current):**
+```isabelle
+∀i. CSTATE mesi1 T i ∧ P1 T i ∧ HSTATE hst T → (∀j. j ≠ i → ¬CSTATE mesi2 T j)
+```
+
+**User Notes:**
+
+**Line 328 (SD):** ✅ Semantically correct
+
+**Line 329 (SAD):** ⚠️ **PROBLEM IDENTIFIED** - Multi-device semantics incorrect!
+
+**Issue:** In multi-device environment, Host's SAD state may be caused by **any device's request**, not necessarily device i's RdOwn request.
+
+**Counterexample:**
+- Device 1: IMAD + RdOwn pending
+- Device 2: Sends RdShared (processed first)
+- Device 3: Currently Modified
+- Host enters SAD due to Device 2's request, sends Snoop to Device 3
+- Current state: Device1(IMAD+RdOwn), Host(SAD), Device3(Modified) - **Violates current constraint but is valid!**
+
+**Root Cause:** 2-device constraint implicitly assumes only 2 devices. Simple quantifier generalization (∀i replaces 0/1) is **semantically insufficient** for multi-device scenarios.
+
+**Proposed Fix Options:**
+
+**Option 1 - Weaker constraint (RECOMMENDED):**
+```isabelle
+(∀i j. i ≠ j → 
+   (CSTATE IMAD T i ∧ nextReqIs RdOwn T i ∧ CSTATE Modified T j → 
+    ¬(HSTATE SAD T ∧ nextSnpRespIs RspIFwdM T i)))
+```
+*Semantics:* If device i has IMAD+RdOwn and device j is Modified, then SAD cannot coexist with i having pending RspIFwdM.
+
+**Option 2 - Snoop-based constraint:**
+```isabelle
+(∀i j. i ≠ j → 
+   (CSTATE IMAD T i ∧ nextReqIs RdOwn T i ∧ HSTATE SAD T ∧ 
+    nextSnpRespIs RspIFwdM T j → ¬CSTATE Modified T j))
+```
+*Semantics:* If SAD is active with snoop to j while i has IMAD+RdOwn, then j cannot be Modified.
+
+**Option 3 - Placeholder (if not critical):**
+```isabelle
+True ∧  \<comment>\<open>Original: C_H_state IMAD (nextReqIs RdOwn) Modified SAD T
+         Removed: Multi-device semantics unclear, needs refinement\<close>
+```
+
+**Recommendation:** Use Option 1 or Option 3 depending on constraint importance in proof.
+
+**Line 330 (SA):** ⚠️ Similar issue as Line 329, needs review
+
+**Lines 331-333 (Invalid + nextStore cases):** ✅ Likely semantically correct (Invalid is a safe initial state)
+
+**Status:** ⚠️ NEEDS_SEMANTIC_REVIEW - Lines 329-330 have incorrect multi-device semantics. See detailed analysis in `Line329_Analysis.md`.
 
 ---
 
