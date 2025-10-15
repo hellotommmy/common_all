@@ -762,6 +762,113 @@ For consistency with the preferred quantifier style throughout the codebase. Bot
 
 ---
 
+### Line Mapping: CoherenceProperties.thy:370 ← OldCohProp.thy:260-261
+**Original Content (OldCohProp.thy lines 260-261):**
+```isabelle
+(CSTATE ISD T 0 → ¬HSTATE ModifiedM T) ∧
+(CSTATE ISD T 1 → ¬HSTATE ModifiedM T)
+```
+
+**Modified Content (CoherenceProperties.thy line 370):**
+```isabelle
+(∀i. CSTATE ISD T i → ¬HSTATE ModifiedM T)
+```
+
+**Meaning:**
+Any device in ISD (Invalid-Shared-Dirty) state implies the host is not in ModifiedM state. Simple universal quantification.
+
+**Status:** ✅ USER VERIFIED - Correct.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:371 ← OldCohProp.thy:262-263
+**Original Content (OldCohProp.thy lines 262-263):**
+```isabelle
+(CSTATE ISD T 0 → nextLoad T 0) ∧
+(CSTATE ISD T 1 → nextLoad T 1)
+```
+
+**Modified Content (CoherenceProperties.thy line 371):**
+```isabelle
+(∀i. CSTATE ISD T i → nextLoad T i)
+```
+
+**Meaning:**
+Any device in ISD state has a pending load operation. Simple universal quantification.
+
+**Status:** ✅ USER VERIFIED - Correct.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:372 ← OldCohProp.thy:264
+**Original Content (OldCohProp.thy line 264):**
+```isabelle
+(C_msg_P_host ISD (nextSnoopIs SnpInv) (HSTATE MA) T) ∧
+```
+
+**Modified Content (CoherenceProperties.thy line 372):**
+```isabelle
+(C_msg_P_host ISD (nextSnoopIs SnpInv) (HSTATE MA) T) ∧
+```
+
+**Meaning:**
+Uses C_msg_P_host macro: when a device is in ISD state with SnpInv snoop pending and host is in MA state, certain constraints apply. Already multi-device compatible through updated macro definition.
+
+**Status:** ✅ USER VERIFIED - Correct.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:373 ← OldCohProp.thy:265-266
+**Original Content (OldCohProp.thy lines 265-266):**
+```isabelle
+(length (htddatas1 T) ≤ 1) ∧
+(length (htddatas2 T) ≤ 1)
+```
+
+**Modified Content (CoherenceProperties.thy line 373):**
+```isabelle
+(∀i. length (htddatas T i) ≤ 1)
+```
+
+**Meaning:**
+Each device has at most one HTD (Host-to-Device) data message pending. Simple universal quantification.
+
+**Status:** ✅ USER VERIFIED - Correct.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:374 ← OldCohProp.thy:267-268
+**Original Content (OldCohProp.thy lines 267-268):**
+```isabelle
+(CSTATE ISD T 0 → snps2 T = [] ∧ snpresps2 T = [] ∧ reqresps1 T = []) ∧
+(CSTATE ISD T 1 → snps1 T = [] ∧ snpresps1 T = [] ∧ reqresps2 T = [])
+```
+
+**Original Meaning:**
+When device 0 is in ISD state, device 1's snps/snpresps are empty and device 0's reqresps are empty. Symmetric for device 1.
+
+**Initial AI Modification (flat pattern):**
+```isabelle
+(∀i j. i ≠ j → (CSTATE ISD T i → snps T j = [] ∧ snpresps T j = [] ∧ reqresps T i = []))
+```
+
+**Corrected Multi-Device Content (nested pattern):**
+```isabelle
+(∀i. CSTATE ISD T i → (reqresps T i = [] ∧ (∀j. j ≠ i → snps T j = [] ∧ snpresps T j = [])))
+```
+
+**Modified Meaning:**
+When device i is in ISD state:
+- Device i's reqresps are empty
+- All other devices j (where j ≠ i) have empty snps and snpresps
+
+**Why Nested Pattern:**
+For consistency with the preferred quantifier style. The nested pattern `(∀i. ... → (∀j. j ≠ i → ...))` is preferred over the flat pattern `(∀i j. i ≠ j → ...)` for constraints involving multiple devices.
+
+**Status:** ✅ USER VERIFIED - PATTERN CORRECTED to nested quantifier format.
+
+---
+
 **Note:** Lines 306-319, 321-350 contain various macro-based constraints and simple consolidations that need individual review. Most macro constraints (C_msg_*, H_msg_*, C_state_*) are already multi-device compatible as they use lambda functions.
 
 **IMPORTANT UPDATE:** The macro definitions themselves (C_msg_P_same, C_msg_P_host, C_not_C_msg, H_msg_P_same, H_msg_P_oppo) were still using 2-device hardcoded patterns and have now been updated to multi-device versions. This affects all constraints that use these macros.
