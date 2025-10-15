@@ -525,6 +525,70 @@ When device j has pending snoops, then for all other devices i: device i's reqs 
 
 ---
 
+### Line Mapping: CoherenceProperties.thy:359-360 ← OldCohProp.thy:243-244
+**Original Content (OldCohProp.thy lines 243-244):**
+```isabelle
+(length (reqs1 T) ≤ 1 ∧ (length (reqs2 T) ≤ 1)) ∧
+(length (snps2 T) ≤ 1 ∧ length (snps1 T) ≤ 1) ∧
+```
+
+**Original Meaning:**
+- Line 359: Each device's request queue length must be at most 1
+- Line 360: Each device's snoop queue length must be at most 1
+
+**Modified Content (CoherenceProperties.thy lines 359-360):**
+```isabelle
+(∀i. length (reqs T i) ≤ 1) ∧
+(∀i. length (snps T i) ≤ 1) ∧
+```
+
+**Modified Meaning:**
+Simple consolidation pattern - for any device i, its request queue and snoop queue lengths are bounded by 1. Generalized to arbitrary number of devices.
+
+**Status:** ✅ USER VERIFIED - Simple consolidation correctly applied.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:361 ← OldCohProp.thy:245
+**Original Content (OldCohProp.thy line 245):**
+```isabelle
+C_msg_P_same Shared (nextSnoopIs SnpInv) (λT i. ¬ nextHTDDataPending T i) T ∧
+```
+
+**Original Meaning:**
+When a device is in Shared state AND has SnpInv snoop, then that same device cannot have HTDData pending.
+
+**Modified Content (CoherenceProperties.thy line 361):**
+```isabelle
+C_msg_P_same Shared (nextSnoopIs SnpInv) (λT i. ¬ nextHTDDataPending T i) T ∧
+```
+
+**Modified Meaning:**
+Same as original - uses C_msg_P_same macro with lambda functions, now multi-device compatible.
+
+**User Note on Constraint Elegance:**
+⭐ **This constraint is exceptionally well-designed with three interlocking conditions:**
+
+1. **CSTATE Shared** - Device is in Shared state
+2. **nextSnoopIs SnpInv** - Device is receiving a SnpInv (snoop invalidate)
+3. **¬ nextHTDDataPending** - Device cannot have HTDData (Host-to-Device data) pending
+
+**Why this is elegant:**
+- **Condition 1** ensures the device currently has a shared copy
+- **Condition 2** indicates someone else is requesting exclusive access (triggering invalidation)
+- **Condition 3** ensures clean state transition: if being invalidated, the device shouldn't be waiting for incoming data from host (which would be pointless as it's about to invalidate)
+
+The three conditions are **mutually reinforcing and none can be omitted**:
+- Without (1): Would apply to all states, too broad
+- Without (2): Would forbid HTDData whenever Shared, too restrictive
+- Without (3): Would lose the key invariant about data transfer during invalidation
+
+This captures a fundamental MESI protocol property: **invalidation and data reception are incompatible operations**.
+
+**Status:** ✅ USER VERIFIED - Perfectly correct. Exemplary constraint design with three essential interlocking conditions.
+
+---
+
 **Note:** Lines 306-319, 321-350 contain various macro-based constraints and simple consolidations that need individual review. Most macro constraints (C_msg_*, H_msg_*, C_state_*) are already multi-device compatible as they use lambda functions.
 
 **IMPORTANT UPDATE:** The macro definitions themselves (C_msg_P_same, C_msg_P_host, C_not_C_msg, H_msg_P_same, H_msg_P_oppo) were still using 2-device hardcoded patterns and have now been updated to multi-device versions. This affects all constraints that use these macros.
