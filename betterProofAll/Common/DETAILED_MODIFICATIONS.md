@@ -688,6 +688,80 @@ The original 2-device constraint implicitly relied on the fact that "one device 
 
 ---
 
+### Line Mapping: CoherenceProperties.thy:367 ← OldCohProp.thy:254-255
+**Original Content (OldCohProp.thy lines 254-255):**
+```isabelle
+(CSTATE Invalid T 0 → reqs1 T = []) ∧
+(CSTATE Invalid T 1 → reqs2 T = [])
+```
+
+**Original Meaning:**
+Device 0 in Invalid state has no requests; device 1 in Invalid state has no requests.
+
+**Modified Content (CoherenceProperties.thy line 367):**
+```isabelle
+(∀i. CSTATE Invalid T i → reqs T i = [])
+```
+
+**Modified Meaning:**
+Any device in Invalid state has no requests. Simple universal quantification - straightforward multi-device generalization.
+
+**Status:** ✅ USER VERIFIED - Correct.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:368 ← OldCohProp.thy:256-257
+**Original Content (OldCohProp.thy lines 256-257):**
+```isabelle
+(CSTATE Shared T 0 → reqs1 T = []) ∧
+(CSTATE Shared T 1 → reqs2 T = [])
+```
+
+**Original Meaning:**
+Device 0 in Shared state has no requests; device 1 in Shared state has no requests.
+
+**Modified Content (CoherenceProperties.thy line 368):**
+```isabelle
+(∀i. CSTATE Shared T i → reqs T i = [])
+```
+
+**Modified Meaning:**
+Any device in Shared state has no requests. Simple universal quantification - straightforward multi-device generalization.
+
+**Status:** ✅ USER VERIFIED - Correct.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:369 ← OldCohProp.thy:258-259
+**Original Content (OldCohProp.thy lines 258-259):**
+```isabelle
+(CSTATE Modified T 0 → ¬CSTATE Modified T 1) ∧
+(CSTATE Modified T 1 → ¬CSTATE Modified T 0)
+```
+
+**Original Meaning:**
+Modified state mutual exclusion: at most one device can be in Modified state.
+
+**Initial AI Modification (flat pattern):**
+```isabelle
+(∀i j. i ≠ j → (CSTATE Modified T i → ¬CSTATE Modified T j))
+```
+
+**Corrected Multi-Device Content (nested pattern):**
+```isabelle
+(∀i. CSTATE Modified T i → (∀j. j ≠ i → ¬CSTATE Modified T j))
+```
+
+**Modified Meaning:**
+Modified state mutual exclusion using nested quantifier pattern: if device i is in Modified state, then all other devices j (where j ≠ i) are not in Modified state.
+
+**Why Nested Pattern:**
+For consistency with the preferred quantifier style throughout the codebase. Both patterns are logically equivalent, but the nested pattern `(∀i. ... → (∀j. j ≠ i → ...))` is preferred over the flat pattern `(∀i j. i ≠ j → ...)` for mutual exclusion constraints.
+
+**Status:** ✅ USER VERIFIED - PATTERN CORRECTED to nested quantifier format.
+
+---
+
 **Note:** Lines 306-319, 321-350 contain various macro-based constraints and simple consolidations that need individual review. Most macro constraints (C_msg_*, H_msg_*, C_state_*) are already multi-device compatible as they use lambda functions.
 
 **IMPORTANT UPDATE:** The macro definitions themselves (C_msg_P_same, C_msg_P_host, C_not_C_msg, H_msg_P_same, H_msg_P_oppo) were still using 2-device hardcoded patterns and have now been updated to multi-device versions. This affects all constraints that use these macros.
