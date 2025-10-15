@@ -368,6 +368,37 @@ The ModifiedM host state condition could potentially be removed to express a sim
 
 ---
 
+### Line Mapping: CoherenceProperties.thy:348-350 ← OldCohProp.thy:231-233
+**Original Content (OldCohProp.thy lines 231-233):**
+```isabelle
+C_msg_P_same IIA (nextGOPendingIs GO_WritePull) nextEvict T ∧ \<comment>\<open>True and premise might be true\<close>
+C_msg_P_same IIA (nextGOPendingIs GO_WritePull) (λT i. ¬ nextReqIs RdShared T i) T ∧
+C_msg_P_same IIA (nextGOPendingIs GO_WritePull) (λT i. ¬ nextDTHDataPending T i) T ∧
+```
+
+**Original Meaning:**
+Similar to Lines 344-346, but with GO_WritePull instead of GO_WritePullDrop:
+- Line 348: IIA with GO_WritePull implies nextEvict
+- Line 349: IIA with GO_WritePull excludes RdShared on same device
+- Line 350: IIA with GO_WritePull excludes DTHDataPending on same device
+
+**Modified Content (CoherenceProperties.thy lines 348-350):**
+```isabelle
+C_msg_P_same IIA (nextGOPendingIs GO_WritePull) nextEvict T ∧ \<comment>\<open>True and premise might be true\<close>
+C_msg_P_same IIA (nextGOPendingIs GO_WritePull) (λT i. ¬ nextReqIs RdShared T i) T ∧
+C_msg_P_same IIA (nextGOPendingIs GO_WritePull) (λT i. ¬ nextDTHDataPending T i) T ∧
+```
+
+**Modified Meaning:**
+Same as original - constraints already use C_msg_P_same macro with lambda functions, now multi-device compatible.
+
+**User Note:**
+These constraints have similar potential simplifications as Lines 345-346 (direct IIA exclusions without GO conditions), but the simplifications are non-critical and not implemented.
+
+**Status:** ✅ USER VERIFIED - Lines 348-350 all correct as-is.
+
+---
+
 **Note:** Lines 306-319, 321-350 contain various macro-based constraints and simple consolidations that need individual review. Most macro constraints (C_msg_*, H_msg_*, C_state_*) are already multi-device compatible as they use lambda functions.
 
 **IMPORTANT UPDATE:** The macro definitions themselves (C_msg_P_same, C_msg_P_host, C_not_C_msg, H_msg_P_same, H_msg_P_oppo) were still using 2-device hardcoded patterns and have now been updated to multi-device versions. This affects all constraints that use these macros.
