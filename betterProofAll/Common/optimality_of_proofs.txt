@@ -1,0 +1,14 @@
+C_H_state IMAD (nextReqIs RdOwn) Modified SD T \<and>
+where we have
+definition C_H_state :: "MESI_State \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> MESI_State \<Rightarrow> HOST_State \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
+  "C_H_state mesi1 P1 mesi2 hst T = (\<forall>i. CSTATE mesi1 T i \<and> P1 T i \<and> HSTATE hst T \<longrightarrow> (\<forall>j. j \<noteq> i \<longrightarrow> \<not>CSTATE mesi2 T j))"
+
+
+conjuncts like this are not in the most concise form.
+It states that when a device i is in IMAD state, sending out a RdOwn request which is still pending; shall not coexist with the situation where a different device j 
+is still in Modified state with the host tracking
+the global state as SD. The first half of this conjunct is in fact not necessary: the state SD is used to indicate the host having already received acknowledgement from the owner, and therefore the device
+cannot still be in Modified state. the "IMAD+RdOwn" part can be removed.
+
+We might not be able to shrink the invariant in terms of the number of conjuncts (as have been indicated by our process of growing it), but we might be able to make it "thinner".
+

@@ -48,23 +48,31 @@ High-level protocol constraints using predefined macros. These constraints were 
 
 **Modified Content (CoherenceProperties.thy lines 318-333):**
 ```isabelle
-C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) T ∧ 
-H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) T ∧ 
-H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) T ∧
-C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) T ∧
-H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧
-H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧
-H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧
-H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) T ∧
-H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) T ∧
-H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) T ∧
-C_H_state IMAD (nextReqIs RdOwn) Modified SD T ∧
-C_H_state IMAD (nextReqIs RdOwn) Modified SAD T ∧
+C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) T ∧ \<comment>\<open>User note: ok, semantics correct, however can be made simpler by stating only ISD <---> Modified cannot coexist (exclusivity) <close>
+H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) T ∧ \<comment>\<open>User note: ok, semantics correct, but can be made simpler by stating only SD <--> Modified exclusivity. (SD indicates dirty device already been downgraded and therefore cannot be Modified) \<close>
+H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) T ∧ \<comment>\<open>User note: ok, semantics correct, already in canonical and concise form \<close>
+C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) T ∧ \<comment>\<open>User note: ok, semantics correct, already in canonical and concise form \<close>
+H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧ \<comment>\<open>User note: ok, semantics correct, 
+but can be simplified to SharedM <---> Modified state exclusivity \<close>
+H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧ \<comment>\<open>User note: ok, semantics correct, 
+but can be simplified to SharedM <---> Modified state exclusivity \<close>
+H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) T ∧ \<comment>\<open>User note: checked, semantics correct, however can be simplified to Modified device cannot have a RdShared request (drop the ModifiedM bit)  \<close>
+H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) T ∧ \<comment>\<open>User note: checked, semantics correct, however can be simplified to ModifiedM <---> DTHData exclusivity \<close>
+H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) T ∧ \<comment>\<open>User note: checked, semantics correct, however can be simplified to RspIFwdM <---> ModifiedM exclusivity \<close>
+H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) T ∧ \<comment>\<open>User note: checked, semantics correct, however can be simplified to RspIFwdM <---> ModifiedM exclusivity \<close>
+C_H_state IMAD (nextReqIs RdOwn) Modified SD T ∧ \<comment>\<open> checked, semantics correct \<close>
+C_H_state IMAD (nextReqIs RdOwn) Modified SAD T ∧ \<comment>\<open> User note: this is no longer true: issue: suppose device 1 sends RdOwn, device 2 sends RdS, device 2's request got processed first, causing host to become SAD, and sending snoop to device 3 which is still in Modified state. This is allowed.
+Therefore, this rule should either be discarded (with the conjunct being turned into "true" as a placeholder) or be modified.
+candidate conjunct 1: if i in IMAD+RdOwn, and all other states except for j in Invalid, host SAD, then j cannot be in Modified state.
+candidate conjunct 2: if host in SAD with snpresps from j pending, then j cannot be in Modified state.
+However there doesn't seem to be a canonical multi-device version of this conjunct which is obviously better.
+<\close>
 [... same constraints with updated macro semantics ...]
 ```
 
 **Modified Meaning:**
-Now truly multi-device compatible due to updated macro definitions. Each macro now uses proper nested quantifier patterns (∀i. ... → (∀j. j ≠ i → ...)) for mutual exclusion constraints.
+Now multi-device compatible due to updated macro definitions. Each macro now uses proper nested quantifier patterns (∀i. ... → (∀j. j ≠ i → ...)) for mutual exclusion constraints.
+[User note: semantics may have been slightly different from their two-device version]
 
 **Status:** AI_MODIFIED - Constraints now truly multi-device due to macro definition updates.
 
