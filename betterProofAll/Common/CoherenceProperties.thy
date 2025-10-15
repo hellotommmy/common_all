@@ -355,7 +355,7 @@ definition SWMR_state_machine :: "Type1State \<Rightarrow> bool" where [simp]:
     C_msg_P_same Invalid nextStore (\<lambda>T i. \<not> nextHTDDataPending T i) T \<and>
     C_msg_P_same Invalid nextStore (\<lambda>T i. \<not> nextSnoopIs SnpInv T i) T \<and>
     C_msg_P_same ISAD nextGOPending (\<lambda>T i. \<not> nextReqIs RdShared T i) T \<and>
-    (\<forall>i j. i \<noteq> j \<longrightarrow> (snps T j \<noteq> [] \<longrightarrow> reqs T i = [] \<and> snpresps T j = [] \<and> dthdatas T j = [] \<and> reqresps T i = [])) \<and> \<comment>\<open>Original: (snps2 T \<noteq> [] \<longrightarrow> reqs1 T = [] \<and> snpresps2 T = [] \<and> dthdatas2 T = [] \<and> reqresps1 T = []) \<and> (snps1 T \<noteq> [] \<longrightarrow> reqs2 T = [] \<and> snpresps1 T = [] \<and> dthdatas1 T = [] \<and> reqresps2 T = [])\<close>
+    (\<forall>j. snps T j \<noteq> [] \<longrightarrow> (\<forall>i. i \<noteq> j \<longrightarrow> reqs T i = [] \<and> snpresps T j = [] \<and> dthdatas T j = [] \<and> reqresps T i = [])) \<and> \<comment>\<open>Original: (snps2 T \<noteq> [] \<longrightarrow> reqs1 T = [] \<and> snpresps2 T = [] \<and> dthdatas2 T = [] \<and> reqresps1 T = []) \<and> (snps1 T \<noteq> [] \<longrightarrow> reqs2 T = [] \<and> snpresps1 T = [] \<and> dthdatas1 T = [] \<and> reqresps2 T = []) - PATTERN CORRECTED to nested quantifier format\<close>
     (\<forall>i. length (reqs T i) \<le> 1) \<and> \<comment>\<open>Original: (length (reqs1 T) \<le> 1 \<and> (length (reqs2 T) \<le> 1))\<close>
     (\<forall>i. length (snps T i) \<le> 1) \<and> \<comment>\<open>Original: (length (snps2 T) \<le> 1 \<and> length (snps1 T) \<le> 1)\<close>
     C_msg_P_same Shared (nextSnoopIs SnpInv) (\<lambda>T i. \<not> nextHTDDataPending T i) T \<and>

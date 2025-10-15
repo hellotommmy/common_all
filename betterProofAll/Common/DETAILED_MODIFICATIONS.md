@@ -495,6 +495,36 @@ Same as original - these constraints already use C_msg_P_same macro with lambda 
 
 ---
 
+### Line Mapping: CoherenceProperties.thy:358 ← OldCohProp.thy:241
+**Original Content (OldCohProp.thy line 241):**
+```isabelle
+(snps2 T ≠ [] → reqs1 T = [] ∧ snpresps2 T = [] ∧ dthdatas2 T = [] ∧ reqresps1 T = []) ∧
+(snps1 T ≠ [] → reqs2 T = [] ∧ snpresps1 T = [] ∧ dthdatas1 T = [] ∧ reqresps2 T = [])
+```
+
+**Original Meaning:**
+When device 1 has pending snoops, device 0's reqs and reqresps must be empty, and device 1's snpresps and dthdatas must be empty. Symmetric constraint for device 0 having pending snoops.
+
+**Modified Content (CoherenceProperties.thy line 358) - BEFORE PATTERN CORRECTION:**
+```isabelle
+(∀i j. i ≠ j → (snps T j ≠ [] → reqs T i = [] ∧ snpresps T j = [] ∧ dthdatas T j = [] ∧ reqresps T i = []))
+```
+
+**Modified Content (CoherenceProperties.thy line 358) - AFTER PATTERN CORRECTION:**
+```isabelle
+(∀j. snps T j ≠ [] → (∀i. i ≠ j → reqs T i = [] ∧ snpresps T j = [] ∧ dthdatas T j = [] ∧ reqresps T i = []))
+```
+
+**Modified Meaning:**
+When device j has pending snoops, then for all other devices i: device i's reqs and reqresps must be empty, and device j's snpresps and dthdatas must be empty. This ensures proper queue coordination during snoop processing.
+
+**Pattern Correction:**
+✅ Changed from flat pattern `(∀i j. i ≠ j → ...)` to nested pattern `(∀j. ... → (∀i. i ≠ j → ...))` for consistency with user's preferred quantifier style.
+
+**Status:** ✅ USER VERIFIED - Pattern corrected to nested quantifier format.
+
+---
+
 **Note:** Lines 306-319, 321-350 contain various macro-based constraints and simple consolidations that need individual review. Most macro constraints (C_msg_*, H_msg_*, C_state_*) are already multi-device compatible as they use lambda functions.
 
 **IMPORTANT UPDATE:** The macro definitions themselves (C_msg_P_same, C_msg_P_host, C_not_C_msg, H_msg_P_same, H_msg_P_oppo) were still using 2-device hardcoded patterns and have now been updated to multi-device versions. This affects all constraints that use these macros.

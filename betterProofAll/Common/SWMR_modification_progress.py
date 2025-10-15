@@ -55,7 +55,7 @@ progress = [
     [355, 'CONFIRMED', 238, 'C_msg_P_same Invalid nextStore (\<lambda>T i. \<not> nextHTDDataPending T i) T \<and>'],
     [356, 'CONFIRMED', 239, 'C_msg_P_same Invalid nextStore (\<lambda>T i. \<not> nextSnoopIs SnpInv T i) T \<and>'],
     [357, 'CONFIRMED', 240, 'C_msg_P_same ISAD nextGOPending (\<lambda>T i. \<not> nextReqIs RdShared T i) T \<and>'],
-    [358, 'NEEDS_ATTENTION', 241, '(\<forall>i j. i \<noteq> j \<longrightarrow> (snps T j \<noteq> [] \<longrightarrow> reqs T i = ...'],
+    [358, 'CONFIRMED', 241, '(\<forall>j. snps T j \<noteq> [] \<longrightarrow> (\<forall>i. i \<noteq> j \<longrightarrow> ...)) - Pattern corrected'],
     [359, 'NEEDS_ATTENTION', 242, '(\<forall>i. length (reqs T i) \<le> 1) \<and> \<comment>\<open>Original: (length (reqs1 T) \<le>...'],
     [360, 'NEEDS_ATTENTION', 243, '(\<forall>i. length (snps T i) \<le> 1) \<and> \<comment>\<open>Original: (length (snps2 T) \<le>...'],
     [361, 'NEEDS_ATTENTION', 244, 'C_msg_P_same Shared (nextSnoopIs SnpInv) (\<lambda>T i. \<not> nextHTDDataPending T i) T \<and>'],
