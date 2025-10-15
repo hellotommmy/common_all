@@ -589,6 +589,63 @@ This captures a fundamental MESI protocol property: **invalidation and data rece
 
 ---
 
+### Line Mapping: CoherenceProperties.thy:362 ← OldCohProp.thy:246
+**Original Content (OldCohProp.thy line 246):**
+```isabelle
+C_msg_P_same IIA (nextGOPendingIs GO_WritePull) (λ T i. ¬nextSnoopPending T i) T ∧
+```
+
+**Original Meaning:**
+When a device is in IIA state with GO_WritePull pending, that same device cannot have snoop pending.
+
+**Modified Content (CoherenceProperties.thy line 362):**
+```isabelle
+C_msg_P_same IIA (nextGOPendingIs GO_WritePull) (λ T i. ¬nextSnoopPending T i) T ∧
+```
+
+**Modified Meaning:**
+Same as original - uses C_msg_P_same macro with lambda functions, now multi-device compatible through updated macro definitions.
+
+**Status:** ✅ USER VERIFIED - Correct.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:363 ← OldCohProp.thy:247
+**Original Content (OldCohProp.thy line 247):**
+```isabelle
+C_msg_P_oppo Invalid nextStore (λT i. ¬ nextSnoopPending T i) T ∧
+```
+
+**Original Meaning:**
+Uses C_msg_P_oppo macro: When one device is Invalid with nextStore, other devices cannot have snoop pending.
+
+**Modified Content (CoherenceProperties.thy line 363):**
+```isabelle
+C_msg_P_oppo Invalid nextStore (λT i. ¬ nextSnoopPending T i) T ∧
+```
+
+**Modified Meaning:**
+Same as original - uses C_msg_P_oppo macro with lambda functions, now multi-device compatible (expands to nested quantifier pattern through updated macro definition).
+
+**User Note on Potential Simplification (NOT IMPLEMENTED):**
+This constraint could be simplified based on a more fundamental MESI principle - **Invalid state should not have snoops**:
+```isabelle
+(∀i. CSTATE Invalid T i → ¬nextSnoopPending T i)
+```
+
+*Rationale:* 
+- A device in Invalid state has no valid cache data
+- Snoops are sent to maintain coherence when data exists in caches
+- Therefore, Invalid devices should never receive snoops (they have nothing to coherence-check)
+- The current constraint's conditions (opposite device Invalid + nextStore, this device no snoop) are more complex than needed
+- The simplified version directly expresses the fundamental principle: **Invalid ↔ No Snoops**
+
+*Decision:* Keep original form - not a critical issue. The additional conditions (nextStore, opposite device) may reflect implementation-specific sequencing or provide useful context for proofs.
+
+**Status:** ✅ USER VERIFIED - Correct as-is. Optional simplification noted.
+
+---
+
 **Note:** Lines 306-319, 321-350 contain various macro-based constraints and simple consolidations that need individual review. Most macro constraints (C_msg_*, H_msg_*, C_state_*) are already multi-device compatible as they use lambda functions.
 
 **IMPORTANT UPDATE:** The macro definitions themselves (C_msg_P_same, C_msg_P_host, C_not_C_msg, H_msg_P_same, H_msg_P_oppo) were still using 2-device hardcoded patterns and have now been updated to multi-device versions. This affects all constraints that use these macros.
