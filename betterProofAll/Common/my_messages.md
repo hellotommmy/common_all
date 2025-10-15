@@ -279,3 +279,6 @@ i choose option 4
 
 ## 消息89 - Line 351模式修正
 351行应该为嵌套模式，还是原来的扁平模式。修改。
+
+## 消息90 - Line 351潜在简化注记
+再加一个351行注记：应该可以简化为所有类Modified state for device j 与device j含有RdShared request互斥（也就是前提关于ModifiedM和IIA的部分不关键。）

@@ -424,7 +424,20 @@ When host is ModifiedM and device i is IIA, then for any other device j that is 
 **Pattern Correction:**
 ✅ Changed from flat pattern `(∀i j. i ≠ j → ...)` to nested pattern `(∀i. ... → (∀j. j ≠ i → ...))` for consistency with user's preferred quantifier style.
 
-**Status:** ✅ USER VERIFIED - Pattern corrected to nested quantifier format.
+**User Note on Potential Simplification (NOT IMPLEMENTED):**
+This constraint could be further simplified to express a more fundamental MESI property - **Modified-like states ↔ RdShared request exclusivity**:
+```isabelle
+(∀j. (CSTATE MIA T j ∨ CSTATE Modified T j ∨ CSTATE IMD T j ∨ CSTATE IMA T j ∨ 
+      (CSTATE IMAD T j ∧ nextHTDDataPending T j ∧ nextGOPending T j) ∨ 
+      CSTATE SMD T j ∨ CSTATE SMA T j ∨ 
+      (CSTATE SMAD T j ∧ nextHTDDataPending T j ∧ nextGOPending T j)) 
+     → ¬ nextReqIs RdShared T j)
+```
+*Rationale:* The ModifiedM and IIA conditions in the premise are not critical to the core semantic constraint. A device in any Modified-like owner state (Modified, MIA, IMD, IMA, IMAD+pending, SMD, SMA, SMAD+pending) should not simultaneously request RdShared, as these states represent exclusive ownership or transitions involving exclusive ownership, which is incompatible with requesting shared access.
+
+*Decision:* Keep original form with ModifiedM and IIA conditions - not a critical issue. The additional conditions may provide useful context correlation for proofs.
+
+**Status:** ✅ USER VERIFIED - Pattern corrected to nested quantifier format. Non-critical simplification opportunity noted.
 
 ---
 
