@@ -308,6 +308,66 @@ Line 345 could be further simplified to directly express **IIA ↔ RdShared same
 
 ---
 
+### Line Mapping: CoherenceProperties.thy:346 ← OldCohProp.thy:229
+**Original Content (OldCohProp.thy line 229):**
+```isabelle
+C_msg_P_same IIA (nextGOPendingIs GO_WritePullDrop) (λT i. ¬ nextDTHDataPending T i) T ∧ \<comment>\<open>True bc premise false\<close>
+```
+
+**Original Meaning:**
+When device is IIA with GO_WritePullDrop pending, it cannot have DTHData pending. (Constraint vacuously true as premise should be false)
+
+**Modified Content (CoherenceProperties.thy line 346):**
+```isabelle
+C_msg_P_same IIA (nextGOPendingIs GO_WritePullDrop) (λT i. ¬ nextDTHDataPending T i) T ∧ \<comment>\<open>True bc premise false\<close>
+```
+
+**Modified Meaning:**
+Same as original - constraint already uses C_msg_P_same macro with lambda functions, now multi-device compatible.
+
+**User Note on Potential Simplification (NOT IMPLEMENTED):**
+Similar to Line 345, this could be simplified to **IIA ↔ DTHDataPending same-device exclusivity**:
+```isabelle
+(∀i. CSTATE IIA T i → ¬nextDTHDataPending T i)
+```
+*Rationale:* A device in IIA state (Invalid with pending acknowledgment) is invalidating its cache, so it shouldn't have outgoing DTH data pending. The underlying semantic constraint is independently valid, though current form is vacuously true.
+
+*Decision:* Keep original form - not a critical issue.
+
+**Status:** ✅ USER VERIFIED - Correct as-is. Non-critical simplification opportunity noted.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:347 ← OldCohProp.thy:230
+**Original Content (OldCohProp.thy line 230):**
+```isabelle
+H_C_state_msg_same ModifiedM Modified (λT i. ¬ nextReqIs RdShared T i) T ∧
+```
+
+**Original Meaning:**
+Macro constraint: When host is in ModifiedM state and device is in Modified state, that same device cannot send RdShared request.
+
+**Modified Content (CoherenceProperties.thy line 347):**
+```isabelle
+H_C_state_msg_same ModifiedM Modified (λT i. ¬ nextReqIs RdShared T i) T ∧
+```
+
+**Modified Meaning:**
+Same as original - constraint already uses H_C_state_msg_same macro with lambda functions, now multi-device compatible through updated macro definition.
+
+**User Note on Potential Simplification (NOT IMPLEMENTED):**
+The ModifiedM host state condition could potentially be removed to express a simpler constraint:
+```isabelle
+(∀i. CSTATE Modified T i → ¬nextReqIs RdShared T i)
+```
+*Rationale:* A device already in Modified state (exclusive ownership with modifications) should not request RdShared (which would only grant Shared access). This is a fundamental MESI property that doesn't strictly require the host's ModifiedM tracking state.
+
+*Decision:* Keep original form with ModifiedM condition - not a critical issue. The additional host state condition may provide useful correlation for proofs.
+
+**Status:** ✅ USER VERIFIED - Correct as-is. Non-critical simplification opportunity noted.
+
+---
+
 **Note:** Lines 306-319, 321-350 contain various macro-based constraints and simple consolidations that need individual review. Most macro constraints (C_msg_*, H_msg_*, C_state_*) are already multi-device compatible as they use lambda functions.
 
 **IMPORTANT UPDATE:** The macro definitions themselves (C_msg_P_same, C_msg_P_host, C_not_C_msg, H_msg_P_same, H_msg_P_oppo) were still using 2-device hardcoded patterns and have now been updated to multi-device versions. This affects all constraints that use these macros.
