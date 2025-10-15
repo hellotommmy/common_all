@@ -275,6 +275,39 @@ Same as original - these constraints already use lambda functions. Now truly mul
 
 ---
 
+### Line Mapping: CoherenceProperties.thy:344-345 ← OldCohProp.thy:227-228
+**Original Content (OldCohProp.thy lines 227-228):**
+```isabelle
+C_msg_P_same IIA (nextGOPendingIs GO_WritePullDrop) nextEvict T ∧ \<comment>\<open>True because premise false (no GO-WPD should be sent to DE)\<close>
+C_msg_P_same IIA (nextGOPendingIs GO_WritePullDrop) (λT i. ¬ nextReqIs RdShared T i) T ∧ \<comment>\<open>True bc premise false\<close>
+```
+
+**Original Meaning:**
+- Line 344: When device is IIA with GO_WritePullDrop pending, it must have nextEvict. (Constraint vacuously true as premise should be false)
+- Line 345: When device is IIA with GO_WritePullDrop pending, it cannot send RdShared. (Constraint vacuously true as premise should be false)
+
+**Modified Content (CoherenceProperties.thy lines 344-345):**
+```isabelle
+C_msg_P_same IIA (nextGOPendingIs GO_WritePullDrop) nextEvict T ∧ \<comment>\<open>True because premise false (no GO-WPD should be sent to DE)\<close>
+C_msg_P_same IIA (nextGOPendingIs GO_WritePullDrop) (λT i. ¬ nextReqIs RdShared T i) T ∧ \<comment>\<open>True bc premise false\<close>
+```
+
+**Modified Meaning:**
+Same as original - these constraints are already using C_msg_P_same macro with lambda functions, now multi-device compatible.
+
+**User Note on Potential Simplification (NOT IMPLEMENTED):**
+Line 345 could be further simplified to directly express **IIA ↔ RdShared same-device exclusivity** without the GO_WritePullDrop condition:
+```isabelle
+(∀i. CSTATE IIA T i → ¬nextReqIs RdShared T i)
+```
+*Rationale:* A device in IIA (Invalid with pending acknowledgment) state is already in the process of invalidating, so it semantically cannot simultaneously request RdShared (which would bring it to Shared state). The current constraint is vacuously true due to the GO_WritePullDrop premise being false, but the underlying semantic constraint (IIA excludes RdShared on same device) is independently valid.
+
+*Decision:* Keep original form for now as it's already correct and explicitly documents the vacuous truth via comments. The simplified form could be considered in future refactoring.
+
+**Status:** ✅ USER VERIFIED - Correct as-is. Potential simplification noted for future consideration.
+
+---
+
 **Note:** Lines 306-319, 321-350 contain various macro-based constraints and simple consolidations that need individual review. Most macro constraints (C_msg_*, H_msg_*, C_state_*) are already multi-device compatible as they use lambda functions.
 
 **IMPORTANT UPDATE:** The macro definitions themselves (C_msg_P_same, C_msg_P_host, C_not_C_msg, H_msg_P_same, H_msg_P_oppo) were still using 2-device hardcoded patterns and have now been updated to multi-device versions. This affects all constraints that use these macros.

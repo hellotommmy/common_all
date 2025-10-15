@@ -267,3 +267,6 @@ i choose option 4
 
 ## 消息85 - 修正Line Mapping错误
 一直到341我都二次检查完成了没问题。 @DETAILED_MODIFICATIONS.md 203行哪个line mapping 似乎有误，应当对应335. 修正过来，一直修正到 341至少。
+
+## 消息86 - 记录Line 345潜在简化
+检查到了345行。都确认无误。但345行可以又一个简化，即直接IIA和RdShared同侧互斥，而不需要其他。这个简化暂时不加，而仅仅在DETAILED_MODIFICATIONS中说明。把这些说明插入DETAILED_MODIFICATIONS从256行后面开始
