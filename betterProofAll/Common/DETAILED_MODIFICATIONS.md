@@ -902,6 +902,212 @@ If more specific constraints are needed, they might take forms like:
 
 ---
 
+### Line Mapping: CoherenceProperties.thy:375 ← OldCohProp.thy:269-270
+**Original Content (OldCohProp.thy lines 269-270):**
+```isabelle
+(CSTATE ISD T 0 → reqs1 T = []) ∧
+(CSTATE ISD T 1 → reqs2 T = [])
+```
+
+**Modified Content (CoherenceProperties.thy line 375):**
+```isabelle
+(∀i. CSTATE ISD T i → reqs T i = [])
+```
+
+**Meaning:**
+Any device in ISD state has no pending requests. Simple universal quantification.
+
+**Status:** ✅ USER VERIFIED - Correct.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:376 ← OldCohProp.thy:271-272
+**Original Content (OldCohProp.thy lines 271-272):**
+```isabelle
+(CSTATE IMAD T 0 ∧ nextHTDDataPending T 0 → reqs1 T = []) ∧
+(CSTATE IMAD T 1 ∧ nextHTDDataPending T 1 → reqs2 T = [])
+```
+
+**Modified Content (CoherenceProperties.thy line 376):**
+```isabelle
+(∀i. CSTATE IMAD T i ∧ nextHTDDataPending T i → reqs T i = [])
+```
+
+**Meaning:**
+Any device in IMAD state with HTDData pending has no pending requests. Simple universal quantification.
+
+**Status:** ✅ USER VERIFIED - Correct.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:377 ← OldCohProp.thy:273-274
+**Original Content (OldCohProp.thy lines 273-274):**
+```isabelle
+(length (reqresps1 T) ≤ 1) ∧
+(length (reqresps2 T) ≤ 1)
+```
+
+**Modified Content (CoherenceProperties.thy line 377):**
+```isabelle
+(∀i. length (reqresps T i) ≤ 1)
+```
+
+**Meaning:**
+Each device has at most one request response pending. Simple universal quantification.
+
+**Status:** ✅ USER VERIFIED - Correct.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:378 ← OldCohProp.thy:275-278
+**Original Content (OldCohProp.thy lines 275-278):**
+```isabelle
+(CSTATE MIA T 0 ∧ (nextGOPendingIs GO_WritePull T 0) → snps1 T = []) ∧
+(CSTATE MIA T 1 ∧ (nextGOPendingIs GO_WritePull T 1) → snps2 T = []) ∧
+(CSTATE MIA T 0 ∧ (nextGOPendingIs GO_WritePull T 0) → snps2 T = [] ∧ snpresps2 T = [] ∧ htddatas1 T = []) ∧
+(CSTATE MIA T 1 ∧ (nextGOPendingIs GO_WritePull T 1) → snps1 T = [] ∧ snpresps1 T = [] ∧ htddatas2 T = [])
+```
+
+**Original Meaning:**
+When device 0 is in MIA state with GO_WritePull pending, both devices' snps are empty, device 1's snpresps are empty, and device 0's htddatas are empty. Symmetric for device 1.
+
+**Initial AI Modification (flat pattern):**
+```isabelle
+(∀i j. i ≠ j → (CSTATE MIA T i ∧ (nextGOPendingIs GO_WritePull T i) → snps T i = [] ∧ snps T j = [] ∧ snpresps T j = [] ∧ htddatas T i = []))
+```
+
+**Corrected Multi-Device Content (nested pattern):**
+```isabelle
+(∀i. CSTATE MIA T i ∧ (nextGOPendingIs GO_WritePull T i) → (snps T i = [] ∧ htddatas T i = [] ∧ (∀j. j ≠ i → snps T j = [] ∧ snpresps T j = [])))
+```
+
+**Modified Meaning:**
+When device i is in MIA state with GO_WritePull pending:
+- Device i's snps and htddatas are empty
+- All other devices j (where j ≠ i) have empty snps and snpresps
+
+**Why Nested Pattern:**
+For consistency with the preferred quantifier style throughout the codebase.
+
+**Status:** ✅ USER VERIFIED - PATTERN CORRECTED to nested quantifier format.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:379 ← OldCohProp.thy:279-280
+**Original Content (OldCohProp.thy lines 279-280):**
+```isabelle
+(CSTATE ISAD T 0 → ¬ nextReqIs DirtyEvict T 0) ∧
+(CSTATE ISAD T 1 → ¬ nextReqIs DirtyEvict T 1)
+```
+
+**Modified Content (CoherenceProperties.thy line 379):**
+```isabelle
+(∀i. CSTATE ISAD T i → ¬ nextReqIs DirtyEvict T i)
+```
+
+**Meaning:**
+Any device in ISAD state cannot have a DirtyEvict request pending. Simple universal quantification.
+
+**Status:** ✅ USER VERIFIED - Correct.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:380 ← OldCohProp.thy:281
+**Original Content (OldCohProp.thy line 281):**
+```isabelle
+(C_msg_P_same MIA (nextReqIs DirtyEvict) (nextEvict) T) ∧
+```
+
+**Modified Content (CoherenceProperties.thy line 380):**
+```isabelle
+(C_msg_P_same MIA (nextReqIs DirtyEvict) (nextEvict) T) ∧
+```
+
+**Meaning:**
+Uses C_msg_P_same macro: constraints on MIA state with DirtyEvict request and evict pending. Already multi-device compatible through updated macro definition.
+
+**Status:** ✅ USER VERIFIED - Correct.
+
+---
+
+### Line Mapping: CoherenceProperties.thy:381 ← OldCohProp.thy:282-283
+**Original Content (OldCohProp.thy lines 282-283):**
+```isabelle
+(reqs1 T ≠ [] → reqresps1 T = []) ∧
+(reqs2 T ≠ [] → reqresps2 T = [])
+```
+
+**Original 2-Device Meaning:**
+When device 0 has pending requests, device 0's reqresps are empty. Symmetric for device 1.
+
+**⚠️ CRITICAL SEMANTIC ISSUE - Transaction Identifier Missing**
+
+**Current AI Modification (SEMANTICALLY INCORRECT for >2 devices):**
+```isabelle
+(∀i j. i ≠ j → (reqs T i ≠ [] → reqresps T i = [] ∧ snpresps T j = [] ∧ htddatas T i = []))
+```
+
+**Why This Is Wrong:**
+
+The original constraint tries to capture: "when device i has an outstanding request, certain related channels must be empty". But in multi-device scenarios, the question is: **empty for WHICH transaction?**
+
+**The Fundamental Problem:**
+
+Consider a coherence transaction initiated by device i's RdOwn request:
+1. Device i sends `RdOwn` request → `reqs T i ≠ []`
+2. Host processes request, sends `SnpInv` to all sharers/owners → these SnpInvs have the **same transaction ID** as the RdOwn
+3. Sharers/owners respond with `SnpResp` → these have the **same transaction ID**
+4. Owner sends `DTHData` to device i → **same transaction ID**
+5. Host sends `HTDData` to device i → **same transaction ID**
+6. Device i sends `ReqResp` → **same transaction ID**
+
+**In a multi-device system:**
+- Device i might have transaction T1 in progress
+- Device j might have transaction T2 in progress
+- Device k might have transaction T3 in progress
+- **These transactions are independent and can overlap in time**
+
+The constraint `(reqs T i ≠ [] → snpresps T j = [])` is **too strong**: it claims device j cannot have ANY snpresps when device i has ANY request, regardless of whether they're related transactions.
+
+**What We Actually Need:**
+
+```isabelle
+(∀tid i. hasReqWithTxId tid i T → 
+    (¬hasReqRespWithTxId tid i T ∧ 
+     (∀j. j ≠ i → ¬hasSnpRespWithTxId tid j T) ∧
+     ¬hasHTDDataWithTxId tid i T))
+```
+
+*Semantics:* For a specific transaction tid initiated by device i, certain transaction-specific channels must be empty at certain stages.
+
+**🔑 KEY REALIZATION: Need Transaction Identifier Infrastructure**
+
+This is not an isolated problem - it affects many constraints:
+- Line 374 (ISD state and channel emptiness)
+- Line 378 (MIA state and channel coordination)
+- Line 381 (request and response coordination)
+- Many others...
+
+**Status:** ⚠️ CRITICAL ISSUE IDENTIFIED - Cannot soundly generalize without transaction identifiers. Current constraint is **semantically incorrect** for multi-device scenarios.
+
+---
+
+## 🚨 CRITICAL SYSTEM-LEVEL FINDING
+
+**User Recognition:** The recurring semantic issues with inter-device channel constraints reveal a **fundamental gap in the model's expressiveness**.
+
+**Root Cause:** The current model lacks **transaction identifiers** to track which messages belong to the same coherence transaction across multiple devices.
+
+**Impact:** Many 2-device constraints that implicitly rely on "the only other transaction" cannot be soundly generalized to multi-device scenarios where multiple independent transactions can be in flight simultaneously.
+
+**Proposed Solution:** Introduce transaction identifier infrastructure.
+
+**Implementation Location Discussion:**
+
+See following section for detailed analysis of where to implement transaction identifiers.
+
+---
+
 **Note:** Lines 306-319, 321-350 contain various macro-based constraints and simple consolidations that need individual review. Most macro constraints (C_msg_*, H_msg_*, C_state_*) are already multi-device compatible as they use lambda functions.
 
 **IMPORTANT UPDATE:** The macro definitions themselves (C_msg_P_same, C_msg_P_host, C_not_C_msg, H_msg_P_same, H_msg_P_oppo) were still using 2-device hardcoded patterns and have now been updated to multi-device versions. This affects all constraints that use these macros.

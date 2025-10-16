@@ -309,3 +309,6 @@ i choose option 4
 
 ## 消息99 - Line 374语义问题识别
 374语义有错误。当多余两个device后，可以有别处的device snoop 其他的device。故不成立。这里也没有一个一劳永逸的修改方法。目前建议采用去掉后面snps snpresps那一部分。清楚地记录目前这个不甚满意的处理
+
+## 消息100 - Lines 375-381验证与Transaction ID需求识别
+一直到380 都对。381又有之前的类似的semantics error。这里终于使得我意识到有必要引入transaction identifier了。考虑coherence transaction: i sends request of Rdown, host processes it, sends all sharers (or the sole owner) a snpinv, these snpinv(s) will have the same transaction id as the RdOwn, as well as the later snpresps/reqresps/dthdatas j (sharers/prev owners)/htddatas i .  在哪里实现这个比较方便？

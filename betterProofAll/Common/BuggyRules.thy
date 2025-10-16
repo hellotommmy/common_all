@@ -1,18 +1,24 @@
 theory BuggyRules imports CoherenceProperties begin
 
-\<comment>\<open>Implementing store forwarding entails modelling a non-blocking (per loc) protocol would requires modelling "pending instr PC" and "current PC",
+\<comment>\<open>Implementing store forwarding entails modelling a non-blocking (per loc) protocol
+requires modelling "pending instr PC" and "current PC",
 which we implement later.
 definition storeForwarding :: "Type1State \<Rightarrow> nat \<Rightarrow> Type1State" where [simp]:
   "storeForwarding T i = (let regNum = (getRegNum T i ) in let v = getin (if i = 0 then T \<lparr> r11 := 0 \<rparr> else T \<lparr>r11 := 1 \<rparr>))"
 
 \<close>
 
-definition saneSIACGO :: "Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]: "saneSIACGO T i = (\<not> HSTATE SAD T \<and> \<not> HSTATE MD T \<and> \<not> HSTATE MA T \<and> (\<forall>j. j \<noteq> i \<longrightarrow> (CSTATE IIA T j \<longrightarrow> \<not> HSTATE SharedM T)))" \<comment>\<open>Original: (if i = 0 then \<not> HSTATE SAD T \<and> \<not> HSTATE MD T \<and> \<not> HSTATE MA T \<and> (CSTATE IIA T 1 \<longrightarrow> \<not> HSTATE SharedM T) else \<not> HSTATE SAD T \<and> \<not> HSTATE MD T \<and> \<not> HSTATE MA T \<and> (CSTATE IIA T 0 \<longrightarrow> \<not> HSTATE SharedM T)) - for device i, if other device j is IIA, then host is not SharedM\<close>
+definition saneSIACGO :: "Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]: 
+  "saneSIACGO T i = (\<not> HSTATE SAD T \<and> \<not> HSTATE MD T \<and> \<not> HSTATE MA T \<and> 
+    (\<forall>j. j \<noteq> i \<longrightarrow> (CSTATE IIA T j \<longrightarrow> \<not> HSTATE SharedM T)))" 
+      \<comment>\<open>Original: (if i = 0 then \<not> HSTATE SAD T \<and> \<not> HSTATE MD T \<and> \<not> HSTATE MA T \<and> (CSTATE IIA T 1 \<longrightarrow> \<not> HSTATE SharedM T) else \<not> HSTATE SAD T \<and> \<not> HSTATE MD T \<and> \<not> HSTATE MA T \<and> (CSTATE IIA T 0 \<longrightarrow> \<not> HSTATE SharedM T)) - for device i, if other device j is IIA, then host is not SharedM\<close>
 
 
-definition InvalidLoad' :: "Type1State \<Rightarrow> nat \<Rightarrow> Type1State list" where [simp]: "InvalidLoad' T i = (if (CSTATE Invalid T i \<and> nextLoad T i) then [clearBuffer (sendReq RdShared ISAD i T)] else [])"
+definition InvalidLoad' :: "Type1State \<Rightarrow> nat \<Rightarrow> Type1State list" where [simp]: 
+  "InvalidLoad' T i = (if (CSTATE Invalid T i \<and> nextLoad T i) then [clearBuffer (sendReq RdShared ISAD i T)] else [])"
 
-definition InvalidStore' :: "Type1State \<Rightarrow> nat \<Rightarrow> Type1State list" where [simp]: "InvalidStore' T i = (if (CSTATE Invalid T i \<and> nextStore T i) then [clearBuffer (sendReq RdOwn IMAD i T)] else [])"
+definition InvalidStore' :: "Type1State \<Rightarrow> nat \<Rightarrow> Type1State list" where [simp]: "InvalidStore' T i = 
+  (if (CSTATE Invalid T i \<and> nextStore T i) then [clearBuffer (sendReq RdOwn IMAD i T)] else [])"
 definition SharedStore' :: "Type1State \<Rightarrow> nat \<Rightarrow> Type1State list" where [simp]: "SharedStore' T i = (if (CSTATE Shared T i \<and> nextStore T i) then [clearBuffer (sendReq RdOwn SMAD i T)] else [])"
 definition SharedEvict' :: "Type1State \<Rightarrow> nat \<Rightarrow> Type1State list" where [simp]: "SharedEvict' T i = (if (CSTATE Shared T i \<and> nextEvict T i) then [clearBuffer (sendReq CleanEvictNoData SIAC i T)] else [])"
 definition SharedEvictData' :: "Type1State \<Rightarrow> nat \<Rightarrow> Type1State list" where [simp]: "SharedEvictData' T i = (if (CSTATE Shared T i \<and> nextEvict T i) then [clearBuffer (sendReq CleanEvict SIA i T)] else [])"
