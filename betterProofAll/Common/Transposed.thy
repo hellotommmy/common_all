@@ -83,7 +83,7 @@ datatype DeviceID = Dev1 | Dev2
 
 
 (*TODO: Change all Utid to Tid?*)
-datatype TransactionID = Utid nat
+type_synonym TransactionID =  int
 
 
 
@@ -164,7 +164,7 @@ record  Type1State =
   reqresps          :: "nat \<Rightarrow> Message list"
   htddatas          :: "nat \<Rightarrow> Message list"
   programs          :: "nat \<Rightarrow> Instruction list"
-  counter           :: nat
+  counter           :: int
   clock             :: nat
   buffers            :: "nat \<Rightarrow> Message option"
 
@@ -296,7 +296,7 @@ definition addToIssuedEvents :: "Type1State \<Rightarrow> DeviceID \<Rightarrow>
 (* TODO: TransactionID needs to be given rather than arbitrary number, return T originally if i not equal to 0 or 1? *) 
 definition prepend_d2hreq :: "Type1State \<Rightarrow> nat \<Rightarrow> ReqType \<Rightarrow> Type1State"
   ("_ [ _ +=rdreq _]" [100, 0] 101)
-  where [simp]:  "T [i +=rdreq rdtype] = ( let sentMsg = D2HReq (Utid (counter T)) rdtype (clock T) in 
+  where [simp]:  "T [i +=rdreq rdtype] = ( let sentMsg = D2HReq (counter T) rdtype (clock T) in 
                                   T [i +=d2hreq sentMsg]++c 
                                  )"
 
@@ -319,10 +319,10 @@ definition config_differ_htdreq' :: "Type1State \<Rightarrow> DeviceID \<Rightar
 
 
 fun getHTDDataOrMakeup :: "Type1State \<Rightarrow> nat \<Rightarrow> Message" where
-  "getHTDDataOrMakeup T i = ( case ((htddatas T) i) of [] \<Rightarrow> H2DData (Utid 9999) ERROR_VAL   999999 | mhead # tail \<Rightarrow> mhead )"
+  "getHTDDataOrMakeup T i = ( case ((htddatas T) i) of [] \<Rightarrow> H2DData (-1) ERROR_VAL   999999 | mhead # tail \<Rightarrow> mhead )"
 
 fun getSnoopOrMakeup :: "Message list \<Rightarrow> Message" where
-    "getSnoopOrMakeup [] = H2DReq (Utid 9999) SnpMadeup  99999999"
+    "getSnoopOrMakeup [] = H2DReq (-1) SnpMadeup  99999999"
   | "getSnoopOrMakeup (snp # snplist) = snp"
 
 (*recordsnoop: given a snoop message and a device id, record it into the snoopsReceived buffer inside the type 1 device
@@ -406,7 +406,7 @@ where
 
 definition send_snoop :: "Type1State \<Rightarrow> nat \<Rightarrow> SnoopType \<Rightarrow> TransactionID \<Rightarrow> Type1State"
   ("_ [ _ +=snp _ _] "  [100, 0] 101)
-  where [simp]: "T [i +=snp snptype tid] = ( T [ i +=h2dreq H2DReq tid snptype  ( clock T ) ])"
+  where [simp]: "T [i +=snp snptype txid] = ( T [ i +=h2dreq H2DReq txid snptype  ( clock T ) ])"
 
 
 
@@ -506,21 +506,21 @@ definition getSnoopType :: "Message \<Rightarrow> SnoopType" where [simp]:
 
 definition getTid :: "Message \<Rightarrow> TransactionID" where [simp]:
   "getTid msg = (case msg of H2DReq tid snptype  t \<Rightarrow> tid
-                              |   H2DResp tid reqresptype  mesi t \<Rightarrow> tid
-                              |   D2HResp tid reqresptype  t  \<Rightarrow> tid
-                              |   D2HReq  tid reqtype  t \<Rightarrow> tid
-                              |   D2HData tid v  t \<Rightarrow> tid
-                              |   H2DData tid v  t \<Rightarrow> tid
+                              |   H2DResp txid reqresptype  mesi t \<Rightarrow> txid
+                              |   D2HResp txid reqresptype  t  \<Rightarrow> txid
+                              |   D2HReq  txid reqtype  t \<Rightarrow> txid
+                              |   D2HData txid v  t \<Rightarrow> txid
+                              |   H2DData txid v  t \<Rightarrow> txid
 
 )"
 
 definition getTime :: "Message \<Rightarrow> nat" where [simp]:
-  "getTime msg = (case msg of H2DReq tid snptype   t \<Rightarrow> t
-                              |   H2DResp tid reqresptype   mesi t \<Rightarrow> t
-                              |   D2HResp tid reqresptype   t  \<Rightarrow> t
-                              |   D2HReq  tid reqtype   t \<Rightarrow> t
-                              |   D2HData tid v   t \<Rightarrow> t
-                              |   H2DData tid v   t \<Rightarrow> t
+  "getTime msg = (case msg of H2DReq txid snptype   t \<Rightarrow> t
+                              |   H2DResp txid reqresptype   mesi t \<Rightarrow> t
+                              |   D2HResp txid reqresptype   t  \<Rightarrow> t
+                              |   D2HReq  txid reqtype   t \<Rightarrow> t
+                              |   D2HData txid v   t \<Rightarrow> t
+                              |   H2DData txid v   t \<Rightarrow> t
 
 )"
 
@@ -528,32 +528,32 @@ definition getTime :: "Message \<Rightarrow> nat" where [simp]:
 fun startsSnp :: "Message list \<Rightarrow> SnoopType \<Rightarrow> bool"
   where [simp]:
     "startsSnp [] snp = False"
-  | "startsSnp (req # tail) snp1 = (getSnoopType req = snp1)"
+  | "startsSnp (req # tail) snp = (getSnoopType req = snp)"
 
 (*TODO: After adding reorderings this function needs to accpet a single Snoop, or Snoop list plus a location *)
 fun getSnpID :: "Message list \<Rightarrow> TransactionID"
   where [simp]:
-    "getSnpID []  = Utid 0"
+    "getSnpID []  = (-1)"
   | "getSnpID (req # tail)  = getTid req"
 
 
 fun getGOID :: "Message list \<Rightarrow> TransactionID"
   where [simp]:
-    "getGOID []  = Utid 0"
+    "getGOID []  = (-1)"
   | "getGOID (req # tail)  = getTid req"
 
 
 
 fun getSnpRespID :: "Message list \<Rightarrow> TransactionID"
   where [simp]:
-    "getSnpRespID []  = Utid 0"
+    "getSnpRespID []  = (-1)"
   | "getSnpRespID (req # tail)  = getTid req"
 
 (*TODO: the first clause should in theory never be executed, better implementaion would return TransactionID option. May
 need an assertion *)
 fun getReqID :: "Message list \<Rightarrow> TransactionID "
   where [simp]:
-    "getReqID [] = Utid 0"
+    "getReqID [] = (-1)"
   | "getReqID (req # tail) = getTid req"
 
 
@@ -591,14 +591,14 @@ definition nextSnoopID :: "Type1State \<Rightarrow> nat \<Rightarrow> Transactio
 should not be called when snoop channel is empty*)
 definition nextSnoop :: "Type1State \<Rightarrow> nat \<Rightarrow> Message"
   where [simp]:
-  "nextSnoop T devNum  = (case ((snps T) devNum) of [] \<Rightarrow> H2DReq (Utid 99999) SnpMadeup  999 
+  "nextSnoop T devNum  = (case ((snps T) devNum) of [] \<Rightarrow> H2DReq (-1) SnpMadeup  999 
                                                     | (snoop # tail) \<Rightarrow> snoop)"
 
 (*get reqresp (h2dresp) message from head of the snoops channel messages, if channel empty, make up one
 should not be called when snoop channel is empty*)
 definition nextGO :: "Type1State \<Rightarrow> nat \<Rightarrow> Message"
   where [simp]:
-  "nextGO T devNum  = ( case ((reqresps T) devNum ) of [] \<Rightarrow> H2DResp (Utid 99999) ReqRespMadeup   Invalid 999
+  "nextGO T devNum  = ( case ((reqresps T) devNum ) of [] \<Rightarrow> H2DResp (-1) ReqRespMadeup   Invalid 999
                                                     | (snoop # tail) \<Rightarrow> snoop )"
 
 
@@ -621,86 +621,10 @@ definition nextReqID :: "Type1State \<Rightarrow> nat \<Rightarrow> TransactionI
 
 definition HOST_DEVNUM:: "nat" where [simp]: "HOST_DEVNUM = 2"
 
-(*for Device (Cache Controller) table of actions (row index)*)
-definition INVALID_ROW :: "nat" where "INVALID_ROW = 1"
-definition ISD_ROW :: "nat" where "ISD_ROW = 2"
-definition ISDI_ROW :: "nat" where "ISDI_ROW = 3"
-definition IMAD_ROW :: "nat" where "IMAD_ROW = 4"
-definition IMA_ROW :: "nat" where "IMA_ROW = 5"
-definition IMAS_ROW :: "nat" where "IMAS_ROW = 6"
-definition IMASI_ROW :: "nat" where "IMASI_ROW = 7"
-definition IMAI_ROW :: "nat" where "IMAI_ROW = 8"
-definition SHARED_ROW :: "nat" where "SHARED_ROW = 9"
-definition SMAD_ROW :: "nat" where "SMAD_ROW = 10"
-definition SMA_ROW :: "nat" where "SMA_ROW = 11"
-definition M_ROW :: "nat" where "M_ROW = 12"
-definition MIA_ROW :: "nat" where "MIA_ROW = 13"
-definition SIA_ROW :: "nat" where "SIA_ROW = 14"
-definition IIA_ROW :: "nat" where "IIA_ROW = 15"
-definition ISAD_ROW :: "nat" where "ISAD_ROW = 16"
-definition ISA_ROW :: "nat" where "ISA_ROW = 17"
-definition IMD_ROW :: "nat" where "IMD_ROW = 18"
-definition MIAD_ROW :: "nat" where "MIAD_ROW = 19"
-definition MID_ROW :: "nat" where "MID_ROW = 20"
-definition SMAS_ROW :: "nat" where "SMAS_ROW = 21"
-
-definition GHOST_REQ :: "nat" where "GHOST_REQ = 30"
 
 (*OFFSET for device number denoting host, for example,
 an offset = 3 means there are 3 devices(device 0, 1, 2), and then the host (device 3)*)
 definition OFFSET :: "nat" where "OFFSET = 5"
-
-(*Device table of actions (column index)*)
-definition LOAD_COL :: "nat" where "LOAD_COL = 1"
-definition STORE_COL :: "nat" where "STORE_COL = 2"
-definition EVICT_COL :: "nat" where "EVICT_COL = 3"
-definition SNPD_COL :: "nat" where "SNPD_COL = 4"
-definition SNPINV_COL :: "nat" where "SNPINV_COL = 5"
-definition GOI_COL :: "nat" where "GOI_COL = 6"
-definition DATA_COL :: "nat" where "DATA_COL = 7"
-definition GO_COL :: "nat" where "GO_COL = 8"
-definition GOWRITEPULL_COL :: "nat" where "GOWRITEPULL_COL = 9"
-definition GOWRITEPULLDROP_COL :: "nat" where "GOWRITEPULLDROP_COL = 10"
-
-
-(*for Host (Dir) table of actions (column index)*)
-definition MEM_RDS_COL :: "nat" where "MEM_RDS_COL = 1"
-definition MEM_RDO_COL :: "nat" where "MEM_RDO_COL = 2"
-definition CLEANEVICT_NOLAST_COL   :: "nat" where "CLEANEVICT_NOLAST_COL  = 3 "(*TODO: cleanEvict from penultimate sharer gets system into E*)
-definition CLEANEVICT_LAST_COL   :: "nat" where "CLEANEVICT_LAST_COL  = 4 "
-definition DIRTYEVICT_COL   :: "nat" where "DIRTYEVICT_COL  = 5 "
-definition MEM_DATA_COL   :: "nat" where "MEM_DATA_COL  = 6 "
-definition RSPIHITSE_COL :: "nat" where "RSPIHITSE_COL = 7"
-definition RSPIFWDM_COL :: "nat" where "RSPIFWDM_COL = 8"
-definition RSPSFWDM_COL :: "nat" where "RSPSFWDM_COL = 9"
-definition RSPIHITSELAST_COL :: "nat" where "RSPIHITSELAST_COL = 10"
-definition "RSPIHITI_COL = 11"
-definition "CLEANEVICTNODATA_COL = 12"
-definition "CLEANEVICTNODATA_NOLAST_COL = 13"
-
-(*for Host (Dir) table of actions (row index)*)
-definition MEM_I_ROW   :: "nat" where "MEM_I_ROW  = 1 "
-definition MEM_S_ROW   :: "nat" where "MEM_S_ROW  = 2 "
-definition MEM_E_ROW :: "nat" where "MEM_E_ROW = 3"
-definition MEM_M_ROW :: "nat" where "MEM_M_ROW = 4"
-definition MEM_SD_ROW :: "nat" where "MEM_SD_ROW = 5"
-definition MEM_SAD_ROW :: "nat" where "MEM_SAD_ROW = 6"
-definition MEM_MAD_ROW :: "nat" where "MEM_MAD_ROW = 7"
-definition MEM_MA_ROW :: "nat" where "MEM_MA_ROW = 8"
-definition MEM_ID_ROW :: "nat" where "MEM_ID_ROW = 9"
-definition MEM_MD_ROW :: "nat" where "MEM_MD_ROW = 10"
-definition MEM_SA_ROW :: "nat" where "MEM_SA_ROW = 11"
-(*
-definition getSpecificType :: "Message \<Rightarrow> 'a" where
-  "getSpecificType msg = (case msg of H2DReq tid snptype dvid t \<Rightarrow> snptype
-                              |   H2DResp tid reqresptype dvid mesi t \<Rightarrow> reqresptype
-                              |   D2HResp tid reqresptype dvid t  \<Rightarrow> reqresptype
-                              |   D2HReq  tid reqtype dvid t \<Rightarrow> reqtype
-                              |   D2HData tid v dvid t \<Rightarrow> v
-                              |   H2DData tid v dvid t \<Rightarrow> v
-
-)"
-*)
 
 
 
@@ -956,7 +880,7 @@ If the guard_transition function works correctly it should never
 have allowed do to call getDTHDataOrMakeup with an empty list
 TODO: making up a dthdata message bit is very suspicious*)
 fun getDTHDataOrMakeup :: "Message list \<Rightarrow> Message" where [simp]:
-    "getDTHDataOrMakeup [] = D2HData (Utid 0)  (-42)   9999999 "
+    "getDTHDataOrMakeup [] = (D2HData (-1)  (-42)   9999999) "
   | "getDTHDataOrMakeup (d # dlist) = d"
 
 
@@ -1031,7 +955,7 @@ definition consumeSnpResp :: " nat \<Rightarrow>Type1State \<Rightarrow> Type1St
 
 (*TODO: returning random req if no message in issueEvents list to issue, should be fixed to a more *)
 fun getEventToIssueOrMakeup :: "Message list \<Rightarrow> Message" where [simp]:
-    "getEventToIssueOrMakeup [] = D2HReq (Utid 0) RdAny    99999999 "
+    "getEventToIssueOrMakeup [] = D2HReq (-1) RdAny 99999999"
   | "getEventToIssueOrMakeup (d # dlist) = d"
 
 (*Issuing event without a memory instruction temporarily disabled
@@ -1049,26 +973,27 @@ definition sendHostData :: "nat \<Rightarrow> HOST_State   \<Rightarrow> Type1St
                                         T[ devNum +=hostdata tid][5 sHost= mesi])"
 
 
-(* send Data to requestor, set host state to MA, send SnpInv to sharers (in current version is the other device)
-TODO: with >2 device, might be 1 or more sharers
-Old version was: (let otherNum = (reqNum + 1) mod 2 in 
-    (if CSTATE Invalid T otherNum then sendHostDataGO tid reqNum mesi reqt T
-                                  else T[ otherNum +=snp SnpInv (nextReqID T reqNum) ][5 s= mesi][ reqNum -=req ] ))
-Old comment was: If other is sharer invalidate it, 
-if other is invalid, M ownership can be immediately granted, just send GO and Data.
-However, invalidSharers is only called if a Host in S state got a RdOwn request, meaning the other device must be in
-shared, not invalid state. Therefore the assumption that the other device can be in invalid state is untrue
-TODO: invalidateSharers now also sends Data to requestor, should separate
-the task of invalidating sharers and giving Data to requestor
-Be careful here: the devNum argument passed to invalidateSharers have already been 
-subtracted of the offset, so it represents the real device number (say 0 or 1 instead of 5 or 6)*)
-definition invalidateSharers :: "TransactionID \<Rightarrow> nat   \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
-  "invalidateSharers tid reqNum   T = (let otherNum = (reqNum + 1) mod 2 in 
-    (let T' =  sendHostData  reqNum MA T
-      in T'[ otherNum +=snp SnpInv (nextReqID T reqNum) ][ reqNum -=req ] ))"
-(*current version: send host data to requestor, updating host state with MA, consume the request. TODO: Add recording action 
-putting the request
-Host received and consumed into a queue*)
+(*Helper function: send SnpInv to all devices in a list*)
+fun sendSnpInvToAll :: "Type1State \<Rightarrow> TransactionID \<Rightarrow> nat list \<Rightarrow> Type1State" where
+  "sendSnpInvToAll T tid [] = T"
+| "sendSnpInvToAll T tid (j # js) = sendSnpInvToAll (T[j +=snp SnpInv tid]) tid js"
+
+(*Multi-device version: send snoop to ALL sharers in sharersList
+For RdOwn request from device reqNum with sharers in sharersList:
+1. Send host data to requestor
+2. Update host state to MA (waiting for snoop responses)
+3. Send SnpInv to ALL devices in sharersList
+4. Consume the request
+
+IMPORTANT: sharersList should contain all devices in Shared/SMAD state (excluding reqNum)
+This is checked in the guard of the calling rule (e.g., HostSharedRdOwn')
+*)
+definition invalidateSharers :: "TransactionID \<Rightarrow> nat \<Rightarrow> nat list \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
+  "invalidateSharers tid reqNum sharersList T = (
+    let T' = sendHostData reqNum MA T in
+    let T'' = sendSnpInvToAll T' tid sharersList in
+    T''[reqNum -=req]
+  )"
 
 
 definition noInvalidateSharers :: "TransactionID \<Rightarrow> nat   \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
@@ -1089,15 +1014,15 @@ definition sendEvictResp :: "ReqRespType \<Rightarrow> nat => HOST_State \<Right
   "sendEvictResp respt requestorNum state_into tid T = 
   ( T[5 sHost= state_into][ requestorNum +=reqresp respt Invalid tid][requestorNum  -=req ])"
 
-(*last Sharer. Once # of devices goes above 2 this needs to change (TODO)*)
+(*last Sharer: exists exactly one device in Shared state, all others are Invalid*)
 definition lastSharer :: "Type1State \<Rightarrow> bool" where [simp]:
-  "lastSharer T = ((\<forall>i. CSTATE Invalid T i) \<or> (\<exists>j. \<forall>i. j \<noteq> i \<longrightarrow> CSTATE Invalid T j))"
+  "lastSharer T = (\<exists>j. CSTATE Shared T j \<and> (\<forall>i. i \<noteq> j \<longrightarrow> CSTATE Invalid T i))"
 
 
 definition ISSUE_EVENT_ROW ::"nat" where "ISSUE_EVENT_ROW = 100"
 
 definition getTop :: "Message list \<Rightarrow> Message"
-  where [simp]: "getTop ls = (if ls = [] then H2DReq (Utid 9999) SnpMadeup  42 else hd ls)"
+  where [simp]: "getTop ls = (if ls = [] then H2DReq (-1) SnpMadeup 42 else hd ls)"
   
 (*currently assumes only takes snoop from list head
 TODO: Next iteration make CXL_SPG take an additional snoop message as input,

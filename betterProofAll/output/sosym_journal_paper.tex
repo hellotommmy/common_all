@@ -1,0 +1,1438 @@
+
+
+\documentclass[10pt,conference]{IEEEtran}
+
+\newcommand\CXLcache{\texttt{CXL.cache}}
+
+\newcommand{\StateSymbol}{\Sigma}
+
+\usepackage{flushend}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{isabelle}
+\usepackage{isabellesym}
+\usepackage{mathtools}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage[customcolors]{hf-tikz}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{booktabs}
+
+\usepackage{etoolbox}
+\usepackage{xcolor}
+\usepackage{soul}
+\definecolor{colorADDEDfg}{HTML}{238b45}
+\definecolor{colorADDEDbg}{HTML}{cef0d8}
+\definecolor{colorDELETEDfg}{HTML}{969696}
+\definecolor{colorsketch}{HTML}{2541db}
+\definecolor{colorsledge}{HTML}{c95faf}
+\definecolor{colorsledgebg}{HTML}{f7e1f2}
+\definecolor{colorpreamble}{HTML}{006400}
+\definecolor{colorpreamblebg}{HTML}{90EE90}
+\definecolor{colorproof}{HTML}{800080}
+\definecolor{darkspringgreen}{rgb}{0.09, 0.45, 0.27}
+
+\definecolor{lightblue}{RGB}{230, 240, 255}
+\definecolor{lightred}{RGB}{255, 230, 230}
+
+% correct bad hyphenation here
+\usepackage{framed}
+\definecolor{shadecolor}{HTML}{EEEEEE}
+\newcommand\rulename[1]{\textsc{#1}}
+\usepackage{ifthen}
+
+\newcommand{\makestep}[2]{%
+  \xrightarrow[%
+    {\mathclap{\scriptscriptstyle
+      \ifstrempty{#2}{}{#2}
+    }}%
+  ]{%
+    {\mathclap{\scriptscriptstyle
+      \ifstrempty{#1}{}{#1}
+    }}%
+  }%
+}
+
+
+
+\makeatletter
+\def\iddots{\mathinner{\mkern1mu\raise\p@
+\vbox{\kern7\p@\hbox{.}}\mkern2mu
+\raise4\p@\hbox{.}\mkern2mu\raise7\p@\hbox{.}\mkern1mu}}
+\makeatother
+
+\newcommand\textsledge[1]{\textcolor{colorsledge}{\sethlcolor{colorsledgebg}\hl{#1}}}
+\newcommand\textpreamble[1]{\textcolor{colorpreamble}
+{\sethlcolor{colorpreamblebg}\hl{#1}}}
+\newcommand\SWMRP{\texttt{SWMR}^+}
+\newcommand\SWMR{\texttt{SWMR}}
+
+\newcommand\textproof[1]{\textcolor{colorproof}{#1}}
+\usepackage[most]{tcolorbox}
+
+\newcommand\Sketch{\texttt{Sketch}}
+\newcommand\conjunctcount{796}
+\newcommand\rulecount{68}
+\newcommand\strengthenedrulecount{13}
+\newcommand\conjunctrulecount{54,128}
+\newcommand\filecount{74}
+\newcommand\const[1]{\textsf{#1}}
+
+\newcommand\field[1]{\textsf{#1}}
+\newcommand\Initial[1]{\texttt{InitialState}(#1)}
+\newcommand\DTHReqI{\field{D2HReq1}}
+\newcommand\DTHReqII{\field{D2HReq2}}
+\newcommand\DTHRspI{\field{D2HRsp1}}
+\newcommand\DTHRspII{\field{D2HRsp2}}
+\newcommand\DTHDataI{\field{D2HData1}}
+\newcommand\DTHDataII{\field{D2HData2}}
+\newcommand\HTDReqI{\field{H2DReq1}}
+\newcommand\HTDReqII{\field{H2DReq2}}
+\newcommand\HTDRspI{\field{H2DRsp1}}
+\newcommand\HTDRspII{\field{H2DRsp2}}
+\newcommand\HTDDataI{\field{H2DData1}}
+\newcommand\HTDDataII{\field{H2DData2}}
+\newcommand\devcacheI{\field{DCache1}}
+\newcommand\devcacheII{\field{DCache2}}
+\newcommand\hcache{\field{HCache}}
+\newcommand\DBufferI{\field{DBuffer1}}
+\newcommand\DBufferII{\field{DBuffer2}}
+\newcommand\DProgI{\field{DProg1}}
+\newcommand\DProgII{\field{DProg2}}
+\newcommand\devcachei[1]{\field{Cachelines(Dev)}_{#1}}
+\newcommand\dprogi[1]{\field{AuxStates.DeviceProgram}_{#1}}
+\newcommand\dthreqi[1]{\field{Channels.D2HReq}_{#1}}
+\newcommand\State{\field{State}}
+\newcommand\val{\field{Val}}
+\newcommand\dthdatai[1]{\field{D2HData}_{#1}}
+\newcommand\htddatai[1]{\field{H2DData}_{#1}}
+\newcommand\DTHReq{\var{D2HReq}}
+\newcommand\Modified{\STATE{M}}
+%\newcommand\Exclusive{\text{Exclusive}}
+\newcommand\Exclusive{\STATE{E}}
+%\newcommand\Shared{\text{Shared}}
+\newcommand\Shared{\STATE{S}}
+%\newcommand\Invalid{\text{Invalid}}
+\newcommand\STATE[1]{\textsf{#1}}
+\newcommand\Invalid{\STATE{I}}
+\newcommand\head{\field{head}}
+\newcommand\Load{\texttt{Load}}
+\newcommand\Store{\texttt{Store}}
+\newcommand\RdOwn{\const{RdOwn}}
+\newcommand\auto{\texttt{auto}}
+\newcommand\simp{\texttt{simp}}
+
+\newcommand\infrule[3]{
+\begin{shaded*}
+\noindent\raggedright
+$\begin{array}{@{}l@{~}l@{}}
+\multicolumn{2}{@{}l@{}}{\rulename{#1}} \\
+\textbf{guards:}
+#2
+\textbf{actions:}
+#3
+\end{array}$
+\end{shaded*}
+}
+% Transient states
+\newcommand\supersketchthree{\texttt{super\_sketch3}}
+
+% Changing Isabelle format
+
+\definecolor{IsaBlue}{cmyk}{1.0,0.33,0,.4}
+\definecolor{IsaGreen}{cmyk}{1.0,0,1.0,.2}
+\definecolor{IsaRed}{cmyk}{0,0.69,0.69,0}
+\definecolor{IsaDarkRed}{cmyk}{0,1.0,1.0,0.15}
+\definecolor{IsaLightBlue}{cmyk}{100.0,0.0,0.0,0.0} % {61.0,28.0,0.0,0.0}
+
+\newcommand{\isalogo}{\includegraphics[width=9pt]{isabelle_transparent.png}}
+\newcommand{\isalink}[1]{\href{#1}{\isalogo}}
+
+\newcommand{\isakwmaj}[1]{\textcolor{IsaBlue}{\textbf{\texttt{#1}}}}
+\newcommand{\isakwmin}[1]{\textcolor{IsaGreen}{\textbf{\texttt{#1}}}}
+\newcommand{\isakwprf}[1]{\textcolor{IsaLightBlue}{\textbf{\texttt{#1}}}}
+\newcommand{\isacmt}[1]{\textcolor{IsaDarkRed}{\texttt{#1}}}
+\newcommand{\isamthd}[1]{\textcolor{IsaDarkRed}{\textbf{\texttt{#1}}}}
+
+\isabellestylett
+
+\renewcommand{\isastyle}{\isastyleminor}
+
+\newcommand{\isakw}[1]{{\bfseries\ttfamily\def\isachardot{.}\def\isacharunderscore{\isacharunderscorekeyword}%
+\def\isacharbraceleft{\{}\def\isacharbraceright{\}}#1}}
+
+\renewcommand{\isacommand}[1]{\textcolor{IsaBlue}{\isakw{#1}}}
+\renewcommand{\isakeyword}[1]{\textcolor{IsaGreen}{\isakw{#1}}}
+% \renewcommand{\isacommand}[1]{\isakwmaj{#1}}
+% \renewcommand{\isakeyword}[1]{\isakwmin{#1}} 
+% \renewcommand{\isakwprf}[1]{\isakwprf{#1}}
+
+\renewcommand\familydefault{\sfdefault}
+\renewcommand{\isastyletext}{\normalsize\normalfont}
+
+\begin{document}
+
+\title{Sketching and Fixing Large Proofs With Automation}
+
+
+
+\author{
+\IEEEauthorblockN{Chengsong Tan\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, Alastair F. Donaldson\IEEEauthorrefmark{1}, and John Wickerson\IEEEauthorrefmark{1}, Jonathan Juli\'an Huerta y Munive\IEEEauthorrefmark{3}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}Imperial College London, UK. Email: \{c.tan, alastair.donaldson, j.wickerson\}@imperial.ac.uk}
+\IEEEauthorblockA{\IEEEauthorrefmark{2}Kaihong, China. Email: tanchengsong@kaihong.com}
+\IEEEauthorblockA{\IEEEauthorrefmark{3}Czech Technical University, Czech Republic. Email: huertjon@cvut.cz}
+}
+
+
+
+\newcommand{\CT}[1]{\textcolor{darkspringgreen}{[CT: #1]}}
+\newcommand{\AD}[1]{\textcolor{red}{[AD: #1]}}
+\newcommand{\JW}[1]{\textcolor{blue}{[JW: #1]}}
+\newcommand{\JM}[1]{\textcolor{orange}{JM: #1}}
+
+% \renewcommand{\CT}[1]{}
+% \renewcommand{\AD}[1]{}
+% \renewcommand{\JW}[1]{}
+% \renewcommand{\JM}[1]{}
+
+\newcommand\sketch{\texttt{sketch}}
+\newcommand\supersketchone{\texttt{super\_sketch1}}
+\newcommand\doublesketch{\isacommand{double\_sketch}}
+\newcommand\metasketch{\isacommand{meta\_sketch}}
+\newcommand\trysketch{\isacommand{try\_sketch}}
+
+\newcommand{\supersketch}{\isacommand{super\_sketch}}
+\newcommand{\superfix}{\isacommand{super\_fix}}
+\newcommand{\sledgehammer}{\isacommand{sledgehammer}}
+\newcommand{\precond}{\texttt{precond}}
+\newcommand{\frameterm}{fixer }
+\newcommand{\FRAMETERM}{FIXER}
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\begin{abstract}
+\CT{I wonder what we should do on the journal extension. Should content already present in the FormaliSE paper be presented again in this paper, but paraphrased? Or the previous results should be phrased in a consolidated manner? Let's say we have 10 portions of old content, plus 5 portions of new materail. Then we shrink the previous 10 portions into 7, and add that 5 new portions, rather than doing a 10+5? I suspect we should do the latter.}
+\JM{The discussion online says that this depends on the scientific area. In computer science, I found this guideline from an online library: %\url{https://onlinelibrary.wiley.com/doi/full/10.1002/stvr.1623\#:~:text=In\%20a\%20previous%20editorial\%2C\%20I,how\%20to\%20do\%20the\%20extension.} 
+Since our conference paper was peer-reviewed, I think we should summarise the previous paper whenever that summary serves to showcase the contributions of this one.}
+We report on our experience developing a suite of proof-automation tools inspired by our development of a large-size mechanised proof while working on verifying a cache coherence protocol.
+Our tool greatly reduces human labor in the tedious part of proof development. They target all proofs which involve the iterative refinement of an invariant  that must be preserved by a set of transition rules. Since the invariant is itself composed of multiple conjuncts, the proof boils down to verifying individual subgoals showing that each conjunct is preserved by each individual rule.
+We present \supersketch{} and \superfix{}, which, by calling heuristics and provers to concurrently,  automatically generate, prove, and fix these subgoals.
+To further improve the versatility of our tools, we introduce \doublesketch{}, a recursive version of \supersketch{} which allows richer and more varied proof heuristics to be passed in to solve subgoals.
+\CT{Jonathan, feel free to add features you added to superfix here.}
+\end{abstract}
+
+\begin{IEEEkeywords}
+Proof engineering, proof automation, mechanised proof, Isabelle, cache coherence, CXL, SWMR.
+\end{IEEEkeywords}
+
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+\label{sec:intro}
+
+% \AD{I am worried that "Automatically Generating and Fixing Large Mechanised Proofs" in the title is an over-sell. Without further context, I would imagine that such a paper would be about either (a) clever algorithmic techniques or heuristics to automatically search for proofs in an intricate manner, or (b) clever algorithms or heuristics to find and correct subtle bugs in proofs (like the proof repair work that Talia Ringer does). In contrast, I see this work as being useful engineering that takes away much of the tedium of maintaining proofs, but essentially being limited to automating routine tasks that the user normally has to undertake manually. I wonder if we could think of an alternative second part of the title.}
+
+TALKING POINTS:
+\begin{itemize}
+\item Formal verification is becoming more widespread, and it is both challenging and valuable to verify real-world software and hardware systems.
+\item Proving even simple properties about real-world verification targets such as operating systems, compilers and low-level hardware designs almost always result in demanding proof-engineering work and sizeable mechanised proofs~\cite{cxlcacheformal,sel4,compcert,cakeml} (with code-bases spanning hundreds of thousands of lines of code, often taking many person-years, or even person-decades).
+\item However, these person-years and person-decades are not necessarily always the results of intellectual engagement. Rather, it is often the case that proof engineers spend a non-negligible, often overwhelming portion of their time on mundane proof work that can potentially be outsourced to automation. 
+\item This work studies this problem in the real-world setting of proving correct a cache coherence protocol of a popular industry standard. We have an ever-growing proof due to the challenges in refining a inductive invariant. 
+\item With increased size, there is an increasing need for automatically iterating through the proof engineering process, e.g. (1) sketching the proof structure that exposes the most challenging and crucial parts in the proof or (2) fixing broken proof scripts that fail due to superficial changes in the formalisation.
+\item we have previously introduced prototypes that address (1) and (2) in the forms of \supersketch{} and \superfix{} respectively~\cite{burdenProof} \CT{I wonder in what way should we talk about this contribution: }
+\item We futher explore a MODULAR extension to these tool that unifies their development into a SINGLE theoretical framework for proof automation
+\item the contributions are:
+\end{itemize}
+
+\medskip\noindent\textbf{Contribution 1: Description and implementation of the unifying theoretical framework}
+\begin{itemize}
+\item Explanation here for draft readers, in detail in the section after the introduction
+\item A workflow to prove $\varphi$ is as follows: a proof engineer asserts the proof obligation $\varphi$, which the ITP internally represents as a prover state $\sigma_\varphi\in S$. Then, the proof engineer postulates a string $s\in\Sigma^*$ that the prover turns into a sequence of states $\sigma_1, \dots, \sigma_m$. To achieve this, the prover turns some sub-strings $s_i$ of $s$ into functions $\lceil s_i\rceil: S\to S$ such that $\sigma_{k+1}=\lceil s_i\rceil(\sigma_k)$. The engineer succeeds if the statement $\varphi$ is accepted as a fact by the prover in state $\sigma_m$. Otherwise, the engineer has to modify the string $s$ until the last version $s'$ is successfully mapped by the prover into a sequence of states $\sigma_1, \dots, \sigma_n$ where $\varphi$ is an accepted fact in $\sigma_m$.
+\item Observe that \supersketch{} corresponds to the first postulation part, while \superfix{} corresponds to the refinement of the string $s$ to $s'$.
+\item To model the postulation process, we define a fixer (or step-prover) (\JM{feel free to rename it}) $f: S\to \Sigma^*$ as a function that takes a prover state $\sigma$ and returns a string $f(\sigma)$. The ITP is in charge of turning the string into the function $\lceil f(\sigma)\rceil: S\to S$.
+\item Thus, for proof automation, one needs to provide a fixer function $F$ such that $\lceil -\rceil \circ F$ maps a state $\sigma$ where $\varphi$ does not hold, to a state $\lceil F(\sigma)\rceil$ where $\varphi$ holds. Crucially, the function $F$ can also be seen as a sequence of fixer functions $f_1,\dots,f_l$ such that $F = f_l\circ\cdots\circ\lceil -\rceil \circ f_1$.
+\item Considering this, one can view the algorithms of \supersketch{} and \superfix{} as using fixer functions to achieve their objectives: On one hand, \supersketch{} uses a fixer function to provide the sketch, and then it calls fixer functions to replace \texttt{sorry}'s with non-\texttt{sorry} proofs. On the other, \superfix{} traverses a file sequentially modifying the string $s$ with errors and writing \texttt{sorry}'s as placeholders, and then it calls fixer functions to replace \texttt{sorry}'s with non-\texttt{sorry} proofs.
+\item based on these ideas, we can make their algorithms modular so that one can try different fixer functions for different situations
+\end{itemize}
+
+\medskip\noindent\textbf{Contribution 2: Extension to both tools enabling them to use different proof automation tools }
+This corresponds to Section 2. We extend the tools as follows:
+\begin{itemize}
+    \item we use \texttt{sorry}'s as fixer functions
+    \item we use automation tools as fixer functions (e.g. \texttt{try} and \texttt{try0})
+    \item we use LLMs as fixer functions (see next contribution/section)
+    \item we notice that \supersketch{} is a fixer function itself and use it recursively on itself
+\end{itemize}
+
+\medskip\noindent\textbf{Contribution 3: Tooling for instantiating the modular extension to using LLMs.}
+should this be a section on itself or part of  the next one?. Describe the hosting of LLMs as a server that Isabelle can query, 
+
+\medskip\noindent\textbf{Contribution 4: A small-scale evaluation of the extensions.}
+This should be the last Section to present a contribution. 
+Methodology: three kinds of files to test the fixers ability to automate sketching and fixing
+
+
+\section{Unifying, modular framework for \supersketch{} and \superfix{}}
+\label{sec:frame}
+
+Here we introduce the notion of \emph{\frameterm functions}, i.e. those that map theorem-proving software states $\sigma\in S$ to strings $s\in\Sigma^*$. We discuss their relevance in proof automation, in particular, in the implementation of our \supersketch{} and \superfix{} tools. The discussion is general to fit most provers, but we exemplify it using the Isabelle proof assistant.
+
+The interaction between an interactive theorem prover (ITP) and its user to prove a mathematical statement $\varphi$ can be abstracted as follows. The user writes an initial string $s_\varphi\in\Sigma^*$ in the prover's Integrated Development Environment (PIDE) to initiate the proof of $\varphi$. If the ITP's parser accepts $s_\varphi$, the ITP produces a state $\sigma_\varphi\in S$ where the ITP's internal representation of $\varphi$ becomes the next proof obligation. The user then needs to write an additional string $s\in\Sigma^*$ that the ITP turns into a sequence of prover states $\sigma_1, \dots, \sigma_m$. The user should write $s$ so that, internally, the ITP can decompose $s$ into a sequence of substrings $s_1,\dots s_m$ that turn each $s_i$ into a function $\lceil s_i\rceil: S\to S$ such that $\sigma_{i+1}=\lceil s_{i+1}\rceil(\sigma_i)$ and $s_0 = s_\varphi$. The statement $\varphi$ is considered proved if no errors are generated in the trace from $\sigma_\varphi$ to $\sigma_m$, and if the ITP's internal representation of $\varphi$ is no longer a proof obligation at $\sigma_m$. The user's work frequently consists of a series of string refinements that lead to the accepted string $s$ using feedback from the ITP via the PIDE. Figure~\ref{fig:isaproof} makes these abstractions concrete with an example of an Isabelle proof where the comments mark the occurrence of the proof string $s$, some substrings $s_k$ of $s$, and their corresponding states $\sigma_k$.
+
+In the case of Isabelle, the substrings $s_k$ in a proof correspond to either a command followed by a term, e.g. \isa{\isacommand{have}\ {\isachardoublequoteopen}P{\isachardoublequoteclose}}, or a command followed by a proof method, e.g. \isa{\isamthd{apply} simp}. A minimal proof then corresponds to a sequence of two substrings, one postulating the proof obligation $\varphi$, and another with the proof method that leads to $\varphi$ being accepted. Users can force the acceptance of a postulated statement by using the special \isa{\isacommand{sorry}} command.
+
+\begin{figure}
+\begin{isabellebody}
+\isacommand{lemma}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isacharparenleft}{\kern0pt}{\isasymSum}i{\isasymle}{\isacharparenleft}{\kern0pt}n{\isacharcolon}{\kern0pt}{\isacharcolon}{\kern0pt}nat{\isacharparenright}{\kern0pt}{\isachardot}{\kern0pt}\ {\isadigit{2}}{\isacharasterisk}{\kern0pt}i{\isacharminus}{\kern0pt}{\isadigit{1}}{\isacharparenright}{\kern0pt}\ {\isacharequal}{\kern0pt}\ n\isactrlsup {\isadigit{2}}{\isachardoublequoteclose}\ \isanewline
+\isacmt{(*start state $\sigma_\varphi$ after initial string $s_0$*)}\isanewline
+\isacmt{(*all lines below form the user-string $s$*)}\isanewline
+\isacommand{proof}\isamarkupfalse%
+{\isacharparenleft}{\kern0pt}induct\ n{\isacharparenright}{\kern0pt}\isanewline
+\ \ \isakwprf{case}\isamarkupfalse%
+\ {\isacharparenleft}{\kern0pt}Suc\ n{\isacharparenright}{\kern0pt}\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ IH{\isacharcolon}{\kern0pt}{\isachardoublequoteopen}{\isacharparenleft}{\kern0pt}{\isasymSum}i\ {\isasymle}\ n{\isachardot}{\kern0pt}\ {\isadigit{2}}{\isacharasterisk}{\kern0pt}i{\isacharminus}{\kern0pt}{\isadigit{1}}{\isacharparenright}{\kern0pt}\ {\isacharequal}{\kern0pt}\ n\isactrlsup {\isadigit{2}}{\isachardoublequoteclose}\ \isacommand{{\isachardot}{\kern0pt}}\isamarkupfalse%
+\isanewline
+\ \ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isacharparenleft}{\kern0pt}Suc\ n{\isacharparenright}{\kern0pt}\isactrlsup {\isadigit{2}}\ {\isacharequal}{\kern0pt}\ {\isacharparenleft}{\kern0pt}n\ {\isacharplus}{\kern0pt}\ {\isadigit{1}}{\isacharparenright}{\kern0pt}\isactrlsup {\isadigit{2}}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{also}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isachardot}{\kern0pt}{\isachardot}{\kern0pt}{\isachardot}{\kern0pt}\ {\isacharequal}{\kern0pt}\ n\isactrlsup {\isadigit{2}}\ {\isacharplus}{\kern0pt}\ {\isadigit{2}}\ {\isacharasterisk}{\kern0pt}\ n\ {\isacharplus}{\kern0pt}\ {\isadigit{1}}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}{\kern0pt}metis\ some{\isacharunderscore}proof{\isacharunderscore}methods{\isacharparenright}{\kern0pt}\isanewline
+\ \ \isacommand{also}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isachardot}{\kern0pt}{\isachardot}{\kern0pt}{\isachardot}{\kern0pt}\ {\isacharequal}{\kern0pt}\isanewline
+\ \ {\isacharparenleft}{\kern0pt}{\isasymSum}i\ {\isasymle}\ n{\isachardot}{\kern0pt}\ {\isadigit{2}}{\isacharasterisk}{\kern0pt}i{\isacharminus}{\kern0pt}{\isadigit{1}}{\isacharparenright}{\kern0pt}\ {\isacharplus}{\kern0pt}\ {\isadigit{2}}\ {\isacharasterisk}{\kern0pt}\ n\ {\isacharplus}{\kern0pt}\ {\isadigit{1}}{\isachardoublequoteclose}\isanewline
+\isacmt{(* ITP turns substring $s_k$ into state $\sigma_{k}$*)}
+\isanewline
+\ \ \ \ \isacommand{using}\isamarkupfalse%
+\ IH\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{finally}\isamarkupfalse%
+\ \isakwprf{show}\isamarkupfalse%
+\ {\isacharquery}{\kern0pt}case\isanewline
+\ \ \ \ \isacommand{by}\isamarkupfalse%
+\ simp\ \isanewline
+\isacommand{qed}\ simp 
+\isanewline \isacmt{(*final substring $s_m$ turned into $\sigma_{m}$*)}\isamarkupfalse%
+\end{isabellebody}
+\caption{Example of an Isabelle proof marking our abstraction's key elements with comments (parentheses with asterisks).}
+\label{fig:isaproof}
+\end{figure}
+
+To implement our \supersketch{} and \superfix{} tools, we observe that proof automation requires developing functions that map ITP states to strings. Hence, we define a \emph{\frameterm} (or step-prover) \JM{feel free to suggest other names for them} as a function $f$ that satisfies the type $f: S\to \Sigma^*$. The ITP is in charge of turning the provided string into the function $\lceil f(\sigma)\rceil: S\to S$. Thus, for proof automation, one needs to provide a \frameterm function $f$ such that $\lceil -\rceil \circ f$ maps a state $\sigma$ where $\varphi$ does not hold, to a state $\lceil f(\sigma)\rceil$ where $\varphi$ holds. Crucially, the function $f$ can also be seen as a sequence of \frameterm functions $f_1,\dots,f_l$ such that $f =f_l\circ\cdots\circ\lceil -\rceil \circ f_1$.
+
+Based on these intuitions, we describe our new algorithms for \supersketch{} and \superfix{}.
+
+\paragraph{\textbf{\texttt{super\_sketch}}} The \supersketch{} tool produces a string $s$ representing a proof of a postulated statement $\varphi$. In most cases, it uses \isa{\isacommand{sorry}}'s as placeholders of proof methods that the user should supply, but it can sometimes provide proofs of $\varphi$ without \isa{\isacommand{sorry}}'s. Figure~\ref{fig:trysketchEx} shows an example of a proof produced by the \trysketch{} version of \supersketch{}. The user supplied the proof method to use, i.e. \texttt{simp}, as an argument to the \texttt{SORRYS} keyword. Then, the tool produced two placeholder \isa{\isacommand{sorry}}'s. The first one is replaced by the successful proof \isa{\isacommand{by} simp}, while the second \isa{\isacommand{sorry}} remains there (since using simp was not enough to complete that proof step).
+
+\begin{figure}
+\begin{isabellebody}
+\isacommand{lemma}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isacharparenleft}{\kern0pt}{\isasymSum}i{\isasymle}{\isacharparenleft}{\kern0pt}n{\isacharcolon}{\kern0pt}{\isacharcolon}{\kern0pt}nat{\isacharparenright}{\kern0pt}{\isachardot}{\kern0pt}\ {\isadigit{2}}{\isacharasterisk}{\kern0pt}i{\isacharminus}{\kern0pt}{\isadigit{1}}{\isacharparenright}{\kern0pt}\ {\isacharequal}{\kern0pt}\ n\isactrlsup {\isadigit{2}}{\isachardoublequoteclose}\ \isanewline
+\isacommand{try{\isacharunderscore}{\kern0pt}sketch}\isamarkupfalse%
+\ SORRYS{\isacharbrackleft}{\kern0pt}simp{\kern0pt}{\isacharbrackright}{\kern0pt}\ {\isacharparenleft}{\kern0pt}induct\ n{\isacharparenright}{\kern0pt}\isanewline
+\isacommand{proof}\isamarkupfalse%
+{\isacharparenleft}{\kern0pt}induct\ n{\isacharparenright}{\kern0pt}\isanewline
+\ \ \isakwprf{show}\isamarkupfalse%
+\ goal{\isadigit{0}}{\isacharcolon}{\kern0pt}{\isachardoublequoteopen}{\isacharparenleft}{\kern0pt}{\isasymSum}i{\isacharcolon}{\kern0pt}{\isacharcolon}{\kern0pt}nat{\isasymle}{\isadigit{0}}{\isachardot}{\kern0pt}\ {\isadigit{2}}{\kern0pt}{\isacharasterisk}{\kern0pt}i{\isacharminus}{\kern0pt}{\isadigit{1}}{\isacharparenright}{\kern0pt}{\isacharequal}{\kern0pt}{\isadigit{0}}\isactrlsup {\isadigit{2}}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\isacommand{next}\isamarkupfalse%
+\isanewline
+\ \ \isakwprf{show}\isamarkupfalse%
+\ goal{\isadigit{1}}{\isacharcolon}{\kern0pt}{\isachardoublequoteopen}{\isacharparenleft}{\kern0pt}{\isasymSum}i{\isasymle}Suc\ n{\isachardot}{\kern0pt}\ {\isadigit{2}}{\isacharasterisk}{\kern0pt}i{\isacharminus}{\kern0pt}{\isadigit{1}}{\isacharparenright}{\kern0pt}{\isacharequal}{\kern0pt}{\isacharparenleft}{\kern0pt}Suc\ n{\isacharparenright}{\kern0pt}\isactrlsup {\isadigit{2}}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isakeyword{if}\ {\isachardoublequoteopen}{\isacharparenleft}{\kern0pt}{\isasymSum}i{\isasymle}n{\isachardot}{\kern0pt}\ {\isadigit{2}}{\isacharasterisk}{\kern0pt}i{\isacharminus}{\kern0pt}\ {\isadigit{1}}{\isacharparenright}{\kern0pt}\ {\isacharequal}{\kern0pt}\ n\isactrlsup {\isadigit{2}}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isakeyword{for}\ n\ {\isacharcolon}{\kern0pt}{\isacharcolon}{\kern0pt}\ {\isachardoublequoteopen}nat{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isacommand{using}\isamarkupfalse%
+\ that\isanewline
+\ \ \ \ \isacommand{sorry}\isanewline
+\isacommand{qed}
+\end{isabellebody}
+\caption{Example of proof produced by \trysketch{}.}
+\label{fig:trysketchEx}
+\end{figure}
+
+To achieve this, the \supersketch{} tool 
+\begin{enumerate}
+    \item retrieves the ITP's internal representation of $\varphi$,
+    \item decomposes $\varphi$ according to a user-supplied proof method (``induct n'' in Figure~\ref{fig:trysketchEx}),
+    \item turns the decomposed term into a string with intermediately postulated obligations $\varphi_i$ where \isa{\isacommand{sorry}}'s represent their corresponding proofs,
+    \item applies a user-supplied \frameterm function $f$ to replace as many \isa{\isacommand{sorry}}'s as possible with the strings produced by $f$,
+    \item and returns/writes the resulting string $s$ immediately after the postulation $s_\varphi$.
+\end{enumerate}
+
+Notably, this process is itself a \frameterm function that takes the postulating state $\sigma_\varphi$ and returns the ``proof'' $s$. Therefore, our implementation of the \trysketch{} version of \supersketch{} reflects these ideas. In particular, Figure~\ref{fig:sketch-listing} shows the main function implementing \trysketch{}. It receives as inputs a \frameterm function, a printing format, an optionally supplied (proof) method, and the ITP state $\sigma_\varphi$. In line 5, it uses the "sketch" \frameterm function receiving the same (initial) inputs but using as \frameterm function, the map that turns everything into a \isacommand{sorry}. Such action returns a candidate string \texttt{sorryed\_str}. The second part of the algorithm creates the ITP states from this string, and replaces every \isacommand{sorry} via the function \texttt{Fixer.repair\_sorrys} in line 12. This is the part of the algorithm that calls the user-supplied \frameterm function. The result is the final string with \isacommand{sorry}'s wherever the chosen \frameterm function failed to provide an alternative.
+
+\begin{figure}
+\begin{isabellebody}
+\isanewline
+1 \isacommand{fun}\ try{\isacharunderscore}sketch\ fixer\ format\ opt{\isacharunderscore}m\ $\sigma$\ {\isacharequal}\isanewline
+2\ \isakeyword{let}\isanewline
+3\ \ \isacommand{val}\ {\isacharunderscore}\ {\isacharequal}\ Output{\isachardot}tracing\isanewline 
+4\ \ \ \ {\isachardoublequoteopen}Producing\ goals\ to\ try{\isachardot}{\isachardot}{\isachardot}{\isachardoublequoteclose}\isanewline
+5\ \ \isacommand{val}\ sorryed{\isacharunderscore}str\ {\isacharequal}\ Fixer{\isachardot}fix{\isacharunderscore}with{\isacharunderscore}sketch\isanewline
+6\ \ \ \ format\ 0\ {\isacharparenleft}\isacommand{fn}\ {\isacharunderscore}\ {\isacharequal}> {\isachardoublequoteopen}sorry{\isachardoublequoteclose}{\isacharparenright}\ opt{\isacharunderscore}m\ $\sigma${\isacharsemicolon}\isanewline
+7\ \ \isacommand{val}\ result\ {\isacharequal}\isanewline
+8\ \ \ \ \isakeyword{let}\isanewline
+9\ \ \ \ \ \ \isacommand{val}\ as\ {\isacharequal}\ Actions{\isachardot}make\isanewline
+10\ \ \ \ \ {\isacharparenleft}Toplevel{\isachardot}theory{\isacharunderscore}of\ $\sigma${\isacharparenright}\ sorryed{\isacharunderscore}str{\isacharsemicolon}\isanewline
+11\ \ \ \ \ \isacommand{val}\ fixed\ {\isacharequal}\ Actions{\isachardot}apply{\isacharunderscore}all\ as\ $\sigma$\isanewline
+12 \ \ \ \ \ \ |>\ Fixer{\isachardot}repair{\isacharunderscore}sorrys\ fixer\ $\sigma$\isanewline
+13 \ \ \ \ \ \ |>\ map\ {\isacharparenleft}\isacommand{fn}\ {\isacharparenleft}act{\isacharcomma}\ {\isacharunderscore}{\isacharcomma}\ {\isacharunderscore}{\isacharparenright}\ {\isacharequal}>\isanewline 
+14 \ \ \ \ \ \ \ \ Actions{\isachardot}text{\isacharunderscore}of\ act{\isacharparenright}\isanewline
+15 \ \ \ \ \ \ |>\ Library{\isachardot}space{\isacharunderscore}implode\ {\isachardoublequoteopen}{\isachardoublequoteclose}\isanewline
+16 \ \ \isakeyword{in}\ fixed\ \isakeyword{end}\isanewline
+17 \isakeyword{in}\ result\ \isakeyword{end}{\isacharsemicolon}\isanewline
+\end{isabellebody}
+\caption{Implementation of \trysketch{}'s main algorithm}
+\label{fig:sketch-listing}
+\end{figure}
+
+\paragraph{\textbf{\texttt{super\_fix}}} The purpose of this tool is to fix the often trivial errors that occur when refining or amending definitions in a large formalisation project. Writing mathematical specifications is difficult and error-prone. Similar to testing in software engineering, ITP users frequently have to iterate on their definitions to cover all possible corner cases. These iterations require adapting all downstream proofs that depend on the modified definitions. Fortunately, proofs are often modular and maintainable, making it trivial to adapt them after such changes. However, despite these characteristics, when developments become large, checking the dependencies can quickly turn into a manually intensive task. Examples of amendments include adding a new conjunct to a postulation or rerunning proof-finding tools where previously found proofs are no longer valid. The \superfix{} tool tries to automate this process by executing two processes: 
+\begin{enumerate}
+    \item It sequentially traverses the list of all ITP states $\sigma$ from a \texttt{.thy} file. If any of those states throws an error, the algorithm attempts to fix it depending on the type of error. In particular, if the error is a looping proof method or an incorrect application of a proof method, the corresponding fix is writing a \isacommand{sorry}.
+    \item Just like \supersketch{}, it detects all \isacommand{sorry}'s in the output of part 1 and applies the user-selected \frameterm functions on all those places. Notably, this means that part 2 of \superfix{}'s algorithm (not shown) is the same as line 12 of Figure~\ref{fig:sketch-listing}. This observation evidences the relevance of \frameterm functions for modularly proof implementing automation tools like \supersketch{} and \superfix{}.
+\end{enumerate}
+
+Figure~\ref{fig:superfixEx} shows the same file before and after the execution of the \superfix{} tool. In particular, an example of the command that generated the fixed file appears at the top. Every proof method underlined with an error line in the PIDE on the left side appears replaced with a correct method application on the right side. The only unsolved example occurs in line 13, where the user-supplied \frameterm function could not find a proof for the corresponding \isacommand{sorry}.
+
+\begin{figure}
+\begin{isabellebody}\isanewline
+1 \isacommand{super{\isacharunderscore}{\kern0pt}fix}\isamarkupfalse%
+\ HAMMER{\isacharbrackleft}{\kern0pt}simp{\kern0pt}{\isacharbrackright}{\kern0pt}\ {\isachardoublequoteopen}{\kern0pt}path/to/file{\isachardoublequoteclose}{\kern0pt}\isanewline
+\end{isabellebody}
+\includegraphics[width=0.99\linewidth]{superfixExample.png}
+\caption{Example of a file fixed with \superfix{}. We show (1) at the top, the template command used to call the tool, (2) on the left, the file with errors, and (3) on the right, the fixed file.}
+\label{fig:superfixEx}
+\end{figure}
+
+
+\section{Extensions to \supersketch{} and \superfix{}}
+\label{sec:extensions}
+
+Having presented the general framework underlying the algorithms of proof automation tools like \supersketch{} and \superfix{}, we proceed to list the implemented extensions relative to previous prototype versions of the tools. In particular, we describe the extensions in two dimensions: (1) enabling the usage of \frameterm functions other than \sledgehammer{}, (2) and recursively using \supersketch{} as a \frameterm function itself. 
+
+First, the recognition of \frameterm functions enables us to provide novel and similar interfaces for both tools. The general commands to call them are:
+\begin{isabellebody}
+\isanewline
+\isacommand{try{\isacharunderscore}sketch}\ \FRAMETERM{\isacharbrackleft}opt{\isacharunderscore}methods{\isacharbrackright}\ opt{\isacharunderscore}method
+\isanewline
+\isanewline
+\isacommand{super{\isacharunderscore}fix}\ \FRAMETERM{\isacharbrackleft}opt{\isacharunderscore}methods{\isacharbrackright}\ {\isachardoublequoteopen}/file/path{\isachardoublequoteclose}
+\isanewline
+\end{isabellebody}
+\noindent where \FRAMETERM\ can be any of SORRYS, TRY0, TRY, HAMMER, and LLM. The SORRYS option selects the \frameterm function mapping any state $\sigma$ to the string \isacommand{sorry}. The TRY0 and TRY options employ the homonym Isabelle tools. The \isacommand{try0} tool calls a list of frequently used proof methods on a given proof obligation, e.g. simp, auto, blast, metis, algebra, fast, force, and others. The \isacommand{try} command collects formally registered Isabelle tools and calls them on the obligation. In particular, \sledgehammer{}, \isacommand{try0} and other counterexample generators are formally registered as Isabelle tools. The HAMMER option calls \sledgehammer{} as the \frameterm function, retrieving one of the outputs that users would manually click, and returning it instead. Finally, the LLM option is a prototype feature where users can host an LLM locally on a server and use it as a \frameterm function. That is, our implementation retrieves data from the postulating state $\sigma_\varphi$ and sends a corresponding string to the LLM, which replies with the candidate proof string $s$. We explore this extension in more detail in the following section.
+
+Given that e.g. \isacommand{try} and \sledgehammer{} use \isacommand{try0} by default, the waiting time difference between these \frameterm options is a relevant reason for choosing one over the other. For quick estimations over large formalisations, it is often convenient to use less long-lasting tools like \isacommand{try0}. Moreover, many proofs are simple enough that employing a user-defined method suffices for most proof obligations. For this reason, we include an optional list of comma-separated methods (\texttt{opt\_methods}) that the tools sequentially attempt before using the specified \frameterm function. This greatly reduces the waiting times since, during the execution of the tools, most simple goals are solved without calling the resource-intensive \frameterm functions. This also leads to simple proofs often being completed using the SORRYS option with an appropriate list of methods. Finally, users wishing to provide end-to-end results with these proof-automation tools can select the most time-consuming yet effective \frameterm functions.
+
+In large developments, an obligation $\varphi$ that can be split into several obligations $\varphi_1,\dots,\varphi_l$, could also satisfy that each of those smaller obligations may be split into even simpler obligations $\psi^i_1,\dots,\psi^i_m$, with $i\in\{1,\dots,l\}$. Therefore, we also explore the option of using the sketching \frameterm function recursively. The corresponding result is the \doublesketch{} version of \supersketch{}.
+
+% \JM{Chengsong, can you fill in the details here? Is it only doing 2 recursions, or can we do it several times? Any optimisations that you added? can we unify it with \trysketch{} into a single \supersketch{}?}
+\CT{doublesketch amd metasketch will be described in detail in the section just after "super fix" is detailedly described. (See section \ref{sec:doublesketch}). Jonathan, do you mean a brief description here or a detailed one?}
+\subsection{}
+\subsection{An overview of our model}\label{sec:modeloverview}
+\newcommand{\SystemState}{\texttt{SystemState}}
+
+
+Our model, an operational-style transition system, represents the states and transitions of a \CXLcache{} implementation. A set of system states and rules govern the state transitions.
+Intuitively, when multiple cache copies have read or write access, these accesses cannot coexist. Otherwise, stale data may be read.
+% JH revise
+% Our model is an operational-style transition system representing the states and transitions of a system implementing \CXLcache{}. We define a set of system states and rules governing transitions between these states.
+% Intuitively, when multiple cache copies exist in the same system, some may have read or write accesses, and often these access rights cannot coexist or otherwise stale data may be read.
+
+\smallskip\noindent
+\textbf{System state representation and transition rules.}
+We define the system state as a record of type $\SystemState$, which abstracts relevant components of a \CXLcache{}-enabled cluster of devices: their cachelines, message channels representing the interconnect, and other auxiliary
+structures that are necessary for CXL-specific restrictions. The details of the datatype can be found in our Isabelle formalisation~\cite{FormaliSERepo}. 
+% \AD{Chengsong, I suggest changing this to a citation - it's common to have BibTex entries for repositories. Also, can you rename the repository to something more meaningful than the ASPLOS paper ID?} (in a \href{https://github.com/ChengsongTan/ImprovedProofs}{GitHub repository}).
+
+% To keep the proof tracktable we made a few simplifying assumptions, which we elaborate here upfront. 
+% \begin{itemize}
+%     \item We model one cacheline as a single memory location containing an integer value.
+%     \item We model two Devices and one Host.
+%     \item Each device is modelled as having one single cacheline.
+% \end{itemize}
+% \noindent
+
+
+\newcommand{\ReqChannels}{\texttt{ReqChannels}}
+\newcommand{\RespChannels}{\texttt{RespChannels}}
+\newcommand{\DataChannels}{\texttt{DataChannels}}
+\newcommand{\Cachelines}{\texttt{Cachelines}}
+% \newcommand{\Buffers}{\texttt{Buffers}}
+\newcommand\Aux{\texttt{AuxStates}}
+% \newcommand{\Counter}{\field{AuxStates.Counter}}
+\newcommand\guard[2]{\texttt{guard}_{#1}\;#2}
+\newcommand{\Transitions}{\texttt{Transitions}}
+\newcommand\dn{\stackrel{\mathit{def}}{=}}
+\newcommand\Channels{\texttt{Channels}}
+
+
+
+Transition rules model the system's possible behaviours and correspond to the protocol atomic actions.
+%
+We have 68 transition rules, covering all necessary actions to start or complete a coherence transaction.
+%
+Each transition rule $R_i$ ($1\leq i \leq 68)$ comprises: 
+% \AD{This is good because it is genereal}
+\begin{itemize}
+    \item A guard $\guard{R_i}{}$ specifying the conditions under which the rule $R_i$ can be applied.
+    \item A state-updating function $f_{R_i}$ defining how each system state changes when the rule fires.
+\end{itemize}
+\noindent A system state $\StateSymbol{}$ transitions to a state $\StateSymbol{}'$ (denoted $\StateSymbol{} \makestep{}{} \StateSymbol{}'$) if there exists a transition rule $R$ in the set ${R_1, \ldots, R_{68}}$ such that the guard $\guard{R}$ holds on $\StateSymbol{}$, and $\StateSymbol{}'$ is the result of applying the state-update function $f_R$ to $\StateSymbol{}$. Formally:
+\begin{center}
+  \begin{tabular}{lcl}
+$\StateSymbol{} \makestep{}{} \StateSymbol{}'$ & $\iff$ & $\exists R \in \{R_1, \ldots, R_{68}\}.$ \\
+& & $\quad \guard{R}{\StateSymbol{}} \land f_R(\StateSymbol{}) = \StateSymbol{}'$
+  \end{tabular}
+\end{center}
+
+% \AD{I would get rid of this example} \textbf{Example transition rule}
+% One rule, for instance, describes how a device in the \textbf{Shared} (\textbf{$\Shared$}) state upgrades to the \textbf{Modified} (\textbf{$\Modified$}) due to a store instruction:
+% \begin{itemize}
+%     \item \textbf{Guard $\guard{R_i}(\StateSymbol{})$:} The device's cacheline is in the Shared state, and there is a store instruction pending.
+%     \item \textbf{State update $f_{R_i}(\StateSymbol{})$:} The device sends a request (e.g. $\RdOwn$ for read ownership) to its request channel and transitions to a transient state (e.g. $\SMAD$), indicating it is upgrading to the Modified state, and is awaiting \textbf{a}cknowledgement and \textbf{d}ata.
+% \end{itemize}
+% We omit the detailed definitions of other transition rules for brevity. Interested readers can refer to our Isabelle formalisation available at \CT{TODO}.
+
+\section{Hosting LLMs for Isabelle proof automation}
+\label{sec:llms}
+
+\smallskip\noindent\textbf{The $\SWMR$ property.}
+% \AD{I would keep this, but say intuitively what "Cachelines(Dev)" means, and remark that S and M refer to shared and modified states, and say in some words why it would be terrible to violate this property}
+The Single-Writer-Muiltiple-Reader ($\SWMR$) property is an important coherence guarantee stating that
+if one device has write permission on a cacheline, no other device simultaneously has read or write permission on that cacheline.
+Formally:
+% \begin{center}
+% \begin{tabular}{l@{\hskip -0.1ex}c@{\hskip -0.1ex}l}
+% $\SWMR\; \StateSymbol{}$ & $\dn$ &
+%   $(i \neq j \land \StateSymbol{}.\textsf{Cachelines}(\textsf{Dev}_i) = \Modified$\\
+%                       &             & $\quad \implies \StateSymbol{}.\textsf{Cachelines}(\textsf{Dev}_j) \notin \{\Shared,\Modified\})$
+% \end{tabular}
+% \end{center}
+
+\[
+\begin{array}{c}
+\SWMR\; \StateSymbol\; \dn \hspace{36ex}\\[1ex]
+(i \neq j \land \StateSymbol.\textsf{Cachelines}(\textsf{Dev}_i) = \Modified \\[1ex]
+\quad \implies \quad \StateSymbol.\textsf{Cachelines}(\textsf{Dev}_j) \notin \{\Shared,\Modified\})\hspace{-8ex}\\[1ex]
+\end{array}
+\]
+\noindent
+Here $\textsf{Cachelines}(\textsf{Dev}_i)$ refers to the $i$th device cacheline. A normal \CXLcache{} device can cache copies of the cachelines from a special device called ``Host''.
+
+\smallskip\noindent
+\textbf{Proof goal.}
+Our goal is to show that starting from any valid initial state, the $\SWMR$ property holds after any sequence of transitions:
+\begin{center}
+    % \begin{tabular}{lclcl}
+    $\texttt{InitialState} \; \StateSymbol{} \land (\StateSymbol{} \makestep{}{}^* \StateSymbol{}') \implies \SWMR\; \StateSymbol{}'$.
+    % \end{tabular}
+\end{center}
+\noindent  Here, $\makestep{}{}^*$ denotes the reflexive transitive closure of the transition relation $\makestep{}{}$. 
+% While it's straightforward to show that the initial state satisfies $\SWMR$, 
+We need to find an inductive invariant $P$ satisfying the following conditions:
+\begin{center}
+    \begin{tabular}{lcl}
+        $\texttt{InitialState} \; \StateSymbol{}\vphantom{P \; \StateSymbol{} \land \StateSymbol{} \makestep{}{} \StateSymbol{}'}$ & $\implies$ & $P \; \StateSymbol{}$\\
+        $P \; \StateSymbol{} \land (\StateSymbol{} \makestep{}{} \StateSymbol{}')$ & $ \implies$ & $P \; \StateSymbol{}'$ \\
+        $P \; \StateSymbol{}\vphantom{P \; \StateSymbol{} \land \StateSymbol{} \makestep{}{} \StateSymbol{}'}$ & $\implies $ & $\SWMR\; \StateSymbol{}$
+    \end{tabular}
+\end{center}
+\noindent
+Showing that $\texttt{InitialState} \;\StateSymbol{} \implies \SWMR \; \StateSymbol{}$ holds is relatively easy, but unfortunately we cannot take $\SWMR$ as $P$ because it is not inductive. 
+In other words, there are transitions where $\SWMR$ holds before the transition but not after.
+Consider a transition from $\StateSymbol{}$ to $\StateSymbol{}'$ where a device upgrades its cacheline to the $\Modified$ state while another device already holds the cacheline in the $\Modified$ state:
+
+
+
+\medskip
+\begin{tabular}{cccc}
+         & $\StateSymbol{}.\textsf{Cachelines}(\textsf{Dev}_0)$  & $=$    & $\Modified$ \\
+$\wedge$ & $\StateSymbol{}.\textsf{Cachelines}(\textsf{Dev}_1)$  & $\neq$ & $\Modified$ \\
+$\wedge$ & $\StateSymbol{}'.\textsf{Cachelines}(\textsf{Dev}_0)$ & $=$    & $\Modified$ \\
+$\wedge$ & $\StateSymbol{}'.\textsf{Cachelines}(\textsf{Dev}_1)$ & $=$    & $\Modified$
+\end{tabular}
+
+\medskip
+Here, assuming two devices, $\StateSymbol{}$ satisifies $\SWMR$, but after the transition to $\StateSymbol{}'$, both device $0$ and $1$ have their cachelines in the $\Modified$ state, violating $\SWMR$. 
+
+We strengthen $\SWMR$ by conjoining it with additional properties to form $P = \SWMR \land \phi_1 \land \phi_2 \land \ldots $. These additional properties capture the conditions to ensure that $\SWMR$  is preserved across all transitions.
+% such that it is strong enough to rule out all bad states but not overly restrictive to prohibit good states. 
+% This procedure turned out to be much more demanding than we first expected.
+
+
+% We are faced with the following type of problem:
+% Given a predicate $P$ on state $\StateSymbol{}$ consisting of a conjunction of formulas $P_1, P_2, \ldots, P_n$ and a set of transition rules 
+% $\{R_1 = \{\texttt{precond}_{R1},\rightarrow_{R1}\}, \ldots, R_m = \{\texttt{precond}_{Rm},\rightarrow_{Rm}\}\}$ where
+% each rule $R_i$ has a guard predicate $\texttt{precond}_{Ri}$, also taking a $\StateSymbol{}$ argument, and a transition relation $\rightarrow_{Ri}$ on $\StateSymbol{}$.
+% We want to show the following lemma for all $i,j$ pairs:
+% \begin{equation*}
+%     P\; \StateSymbol{}  \land \precond_{Ri}\; \StateSymbol{} \land \StateSymbol{} \rightarrow_{Ri} \StateSymbol{}' \implies P_j \StateSymbol{}'
+% \end{equation*}\label{eq:lemma}
+
+% The lemmas form an $m\times n$ matrix--each cell representing a lemma presented in the formula \ref{eq:lemma}.
+
+% \AD{Line spacing goes wrong in the following. Any way to fix it?} \JW{The problem was that the formulas with superscripts were making the lines have extra height. I wrapped the formulas in `smash' so LaTeX thinks they have zero height. This makes the problem go away.}
+
+\medskip
+\noindent
+\textbf{The continuously evolving invariant.}
+We start by setting $P$ to $\SWMR$ and identify specific scenarios where the invariance property
+% \JM{Not sure about the term "inductiveness formula", invariance property?}
+\smash{$P \; \StateSymbol{} \land \StateSymbol{} \makestep{}{} \StateSymbol{}' \implies P \; \StateSymbol{}'$} is violated, using the shorthand notation \smash{$\makestep{\tau}{}$} for transitions leading to such scenarios. We then formulate additional properties $\phi_i$ to prevent these violations.
+\begin{center}
+$\StateSymbol{} \makestep{\tau}{} \StateSymbol{}' \;\, \land \;\,\phi_i \; \StateSymbol{}  \land \SWMR\; \StateSymbol{} \implies \SWMR \;\StateSymbol{}'$
+\end{center}
+\noindent
+But this introduces more proof obligations if $\phi_i$ is itself not inductive, requiring us to come up with $\phi_{i+1}$ to ensure that $\phi_i$ holds in all scenarios:
+\begin{center}
+$\StateSymbol{} \makestep{}{} \StateSymbol{}' \;\, \land \;\,\phi_{i+1} \; \StateSymbol{} \implies \phi_i \;\StateSymbol{}'$
+\end{center}
+\noindent
+This process continues, with each new $\phi_i$ strengthening $P$ until a fixed point is reached where $P$ is inductive.
+
+\smallskip\noindent
+\textbf{The obligation matrix.}
+We can view the task from the perspective of augmenting an $m \times n$ matrix, where $m$ is the number of transition rules, and $n$ is the number of conjuncts in $P$. Each cell $(i,j)$ in the matrix corresponds to the obligation of proving that $\phi_j$ is preserved by transition $R_i$. We illustrate this in \Cref{fig:matrix}.
+% \AD{In the following is it intentional that some dots are diagonal and others are vertical?}\CT{Yes it was. The dots are just to represent the omitted cells. Does this version with all diagonal dots look better?}\JM{If you prefer, we could combine $\ddots$ and $\iddots$---defined in the preamble}\CT{Thanks! Can you put it in what you had in mind with ddots iddots here, so we can see its effect?}\JM{Done, but I noticed the caption is outdated.}
+\begin{figure}
+\[
+\begin{pmatrix}
+\ddots & & \iddots \\
+& \left(
+    \begin{aligned}
+    & P\; \StateSymbol{} \land {} \\
+    & \guard{R_i}{\StateSymbol{}} \land {} \\
+    & \StateSymbol{} \rightarrow_{R_i} \StateSymbol{}' \\
+    & \implies {} \\
+    & \phi_j\; \StateSymbol{}'
+    \end{aligned}
+    \right)_{(i,j)} & \\
+\iddots & & \ddots
+\end{pmatrix}_{m \times n}
+\]
+\caption{Proof obligation matrix for the inductiveness of $P$. Each single cell represents a certain conjunct being preserved by a rule.}
+\label{fig:matrix}
+\end{figure}
+Each row and column have a special meaning:
+\begin{itemize}
+    \item Rows correspond to individual transition rules.
+    \item Columns correspond to individual conjuncts in $P$.
+\end{itemize}
+% The number of rules are relatively fixed (only changing a few times during our proof)
+We started with a $68 \times 2$ matrix (68 rules and 2 conjuncts), and gradually expanded it by adding more conjuncts
+(so that $m$ remains fixed but $n$ increases as more conjuncts are added). Whenever a cell in the matrix is unprovable, we need to
+\begin{itemize}
+    \item Add a new conjunct to $P$.
+    \item Write the proof to the lemma corresponding to the previously unprovable cell, which is made possible with the new conjunct.
+    \item Write proofs for the additional proof obligations due to the new conjunct being added.
+\end{itemize}
+% a new column is appended to the matrix. Whenever we have an unprovable cell, we need to add new conjuncts for it, modify existing conjuncts, or modify the transition system. We are done as soon as we come up with a (productive) transition system $\makestep{}{}$, an invariant $P$ such that all the cells in the corresponding obligation matrix are provable.
+This process repeats until all matrix cells are provable. 
+
+% For  the atomic propositions (for instance $\StateSymbol{}.\devcachei{j} \notin \{\Shared,\Modified\}$) in $\SWMR$ change values.
+% For instance, we need to include a formula $\phi$ expressing in one way or another the following restriction on good states (even if it is not part of what $\SWMR$ requires):
+% for any state that satisfy the guard of transition $R$ such that a cacheline becomes a writer ($\Modified$) after executing $R$, then it must ensure that $\SWMR$ holds for the after state. This can be formalised as follows:
+% \begin{center}
+% $\forall R. (\exists i. f_R(\StateSymbol{}).\devcachei{i}.\State = \Modified) \implies   \guard{R}{\StateSymbol{}} \implies \SWMR \; \StateSymbol{}'$
+% \end{center}
+
+\section{The Scalability Challenges}
+\label{sec:challenges}
+We now discuss the scalability challenges we faced during the construction of the formal proof of the $\SWMR$ property for our \CXLcache{} model using Isabelle/HOL. The primary challenge stemmed from the continuously evolving inductive invariant $P$, which grew significantly in size as we iteratively strengthened it to achieve inductiveness. This growth led to a substantial increase in proof obligations and computational overhead, pushing the capabilities of Isabelle, and the hardware that ran it, to their limits.
+
+\smallskip
+\noindent
+\textbf{Structure of the proofs.}
+Our proof obligations' are organised as in the obligation matrix of~\Cref{fig:matrix}, which has $m$ rows (transition rules) and $n$ columns (conjuncts of $P$), as discussed in \Cref{sec:modeloverview}. To manage these obligations effectively, we structured our Isabelle proof files in a ``row-major order'': each file corresponds to a specific transition rule $R_i$ and contains the rule-related lemmas. This organisation allows us to supply additional facts about specific rules locally to improve the performance of proof automation tools like \sledgehammer{}.
+
+For each transition rule $R_i$, we aim to prove a lemma that asserts the preservation of the inductive invariant $P$ by that rule. \Cref{fig:rulelemma} illustrates the typical structure of a lemma and its proof. 
+\begin{figure}
+\begin{isabelle}
+\isacommand{lemma} $R_i$\_coherent\isacharcolon\\
+\hspace*{1em}\isakeyword{assumes} "$P\;\StateSymbol{} \land \guard{R_i}{\StateSymbol{}}$" \\
+\hspace*{1em}\isakeyword{shows} "$P\;(f_{R_i}(\StateSymbol{}))$" \\
+\isacommand{proof}\ - \\
+\textpreamble{\protect\isacommand{have} $\textit{fact}_0$\isacharcolon $\guard{R_i}{\StateSymbol{}}$ \protect\isacommand{by}\;assumption}\\
+\textpreamble{\protect\isacommand{have} $\textit{fact}_1$\isacharcolon $\phi_1\;\StateSymbol{}$ \protect\isacommand{by}\;assumption}\\
+\textpreamble{\protect\isacommand{have}  $\textit{fact}_2$\isacharcolon $\phi_2\;\StateSymbol{}$ \protect\isacommand{by}\;assumption}\\
+$\ldots$\\
+\textpreamble{\protect\isacommand{have}  $\textit{fact}_n$\isacharcolon $\phi_n\;\StateSymbol{}$ \protect\isacommand{by}\;assumption}\\
+\textcolor{blue}{\protect\isacommand{have}  $\textit{fact}_{n+1}$\isacharcolon $\phi_{n+1}\;\StateSymbol{}$ \protect\isacommand{by}\;assumption}\\
+\textcolor{black}{\isacommand{show}\ ?\isamath{thesis}} \\
+\textcolor{black}{\hspace*{1em}\isacommand{proof}\ (intro\ conjI)} \\
+\textcolor{black}{\hspace*{2em}\isacommand{show}\ $\mathit{goal_1}$: "$\phi_1(f_{R_i} \StateSymbol{})$"} Sledgehammer proof 1 using facts from $\{\textit{fact}_0,\ldots ,\textit{fact}_n\}$ \\
+\textcolor{black}{\hspace*{1em}\isacommand{next}} \\
+\textcolor{black}{\hspace*{2em}\isacommand{show}\ $\mathit{goal_2}$: "$\phi_2(f_{R_i} \StateSymbol{})$"} Sledgehammer proof 2 using facts from $\{\textit{fact}_0,\ldots ,\textit{fact}_n\}$ \\
+\textcolor{black}{\hspace*{1em}\isacommand{next}} \\
+\hspace*{2em}$\ldots$\\
+\textcolor{black}{\hspace*{1em}\isacommand{next}} \\
+\textcolor{black}{\hspace*{2em}\isacommand{show}\ $\mathit{goal_n}$: "$\phi_n(f_{R_i} \StateSymbol{})$"}  Sledgehammer proof n using facts from $\{\textit{fact}_0,\ldots ,\textit{fact}_n\}$ \\
+\textcolor{blue}{\hspace*{1em}\protect\isacommand{next}} \\
+\textcolor{blue}{\hspace*{2em}\protect\isacommand{show}\ $\mathit{goal_{n+1}}$: "$\phi_{n+1}(f_{R_i} \StateSymbol{})$"}  \textcolor{blue}{Sledgehammer proof n using facts from $\{\textit{fact}_0,\ldots ,\textit{fact}_{n+1}\}$} \\
+\textcolor{black}{\hspace*{1em}\isacommand{qed}} \\
+\isacommand{qed}
+\end{isabelle}
+\caption{A rule lemma for $R_i$. Our mechanised proof mainly consists of these rule lemmas. The additions when a new conjunct $\phi_{n+1}$ is introduced are highlighted in \textcolor{blue}{blue}.}\label{fig:rulelemma}
+\end{figure}
+\noindent Each time we add a new conjunct $\phi_{n+1}$ to the inductive invariant $P$, we need to:
+\begin{enumerate}
+    \item \textbf{Add a new fact:} Introduce a new assumption $\textit{fact}_{n+1}\colon \phi_{n+1}\ \StateSymbol{}$.
+    \item \textbf{Add a new goal} Prove that $\phi_{n+1}$ is preserved by the transition, i.e., show that $\phi_{n+1}(f_{R_i}(\StateSymbol{}))$ holds.
+\end{enumerate}
+\noindent These additions are highlighted in \textcolor{blue}{blue} in~\Cref{fig:rulelemma}. We found that the ``preamble'' section of the proof (highlighted with \textcolor{colorpreamble}{green}) is essential for making our proof scale, even though it might seem redundant or not strictly necessary at first glance. This section is crucial because automated tools like \sledgehammer{}, \auto{}, and \simp{} work significantly better when provided with smaller, focused facts rather than large, complex formulas as a monolithic term like the entire invariant $P\ \StateSymbol{}$. Each goal in this proof often depends on only several facts from  $\textit{fact}_0$ to $\textit{fact}_n$. Referencing the whole invariant $P\ \StateSymbol{}$ is unnecessary and inefficient. Without the ``preamble'' section that breaks down the invariant $P$ into manageable, digestible individual facts, automated tools like \sledgehammer{} would begin to struggle---our experience is that, with more than 100 conjuncts, \sledgehammer{} would either fail to find a proof, or find proofs that, when adopted, would lead to non-termination during proof checking.
+
+To amend our proof, it was preferable to add the blue parts (of~\Cref{fig:rulelemma}) rather than to regenerate the entire proof of $R_i$\_\texttt{coherent}.
+% Before we implemented \supersketch{}, as we introduce in \ref{sec:supersketch}, it is not sensible to regenerate the entirity of the proof in \ref{fig:rulelemma} again, since an incremental update is more efficient than 
+Verifying whether a proof exists for each newly added goal remained a manual and time-consuming process. The steps involved were:
+\begin{itemize}
+    \item Manually copy the new conjunct as a new fact, and add a new proof goal about the new conjunct (the blue bits in \cref{fig:rulelemma}).
+    \item Manually invoke \sledgehammer{} at the position of the new goal.
+    \item Wait for \sledgehammer{}'s proof suggestions, which could take up to several minutes per goal.
+    \item Manually adopt one of the suggested proofs into our proof script.
+    \item If \sledgehammer{} fails, manually inspect the goal to devise heuristics such as case analysis, simplification, or introduce intermediate lemmas.
+    \item Repeat the steps for all new goals on all rule files.
+\end{itemize}
+\noindent This process was labour-intensive, as we had to repeatedly copy-and-paste, wait for \sledgehammer{} to finish proving each goal, click to adopt the proofs, and manage numerous files.
+% It was convenient to add new goals and facts via scripting in the 60+ rule files, but less so to find out whether a proof exists for each newly added goal. We have to iterate through the 60+ files manually, invoke \sledgehammer{} at the position where the new goal is inserted, and adopt one of the suggestions if \sledgehammer{} returns any positive answers. When \sledgehammer{} does not work, we manually inspect the goal and see if we can guide the tool with some heuristics, such as a case analyis, a simplification on the goal, or providing an intermediate subgoal explicitly. Only when we do not have a way of proving a goal with such manual inspection do we amend the inductive invariant or the transition system. 
+% As soon as we go beyond 100 conjuncts, the overhead of adding each conjunct is starting to take an unacceptable amount of time, even if we batch conjuncts and add many instead of just one of them in each iteration.
+% The main bottlenecks other than manually invoking \sledgehammer{} and adopting its proof  are proof checking time and deleted conjuncts.  
+As the number of conjuncts increased beyond 100, this manual overhead became untenable.
+% Even when batching multiple conjuncts to reduce the number of iterations, the human time consumption remained substantial.
+% \begin{itemize}
+%     \item Opening each rule file in Isabelle/jedit.
+%     \item Navigating to the position of the lemma.
+%     \item Waiting for Isabelle to process the file up to that point, which takes several minutes per file.
+%     \item Manually addressing any errors or broken proofs that arose due to the changes.
+% \end{itemize}
+% \noindent
+
+\smallskip
+\noindent\textbf{Limitations of our initial solutions.} 
+As well as using state-of-the-art hardware, we attempted several strategies to save human time and remove redundancy.
+
+We used Python scripts with regular expressions to automate the insertion of new facts and goals. However, this did not eliminate the manual effort required to adopt sledgehammer proofs in each file.
+
+We experimented with different proof script structures to improve processing times. For example, we tried consolidating multiple ``have...by...'' commands with identical proofs (the ``by'' part) into a single chained command:
+    \begin{isabelle}
+    \textpreamble{\protect\isacommand{have} $\textit{fact}_0$\isacharcolon $\guard{R_i}{\StateSymbol{}}$ }\\
+    \textpreamble{\protect\isacommand{and} $\textit{fact}_1$\isacharcolon $\phi_1\;\StateSymbol{}$ }\\
+    \textpreamble{\protect\isacommand{and}  $\textit{fact}_2$\isacharcolon $\phi_2\;\StateSymbol{}$ }\\
+    $\ldots$\\
+    \textpreamble{\protect\isacommand{and}  $\textit{fact}_n$\isacharcolon $\phi_n\;\StateSymbol{}$ \protect\isacommand{by}\;assumption+}
+    \end{isabelle}    
+    where the $+$ operator indicates that a proof method is applied one or more times.
+However the ``\texttt{by assumption+}'' line at the end of the chain took the prover process of Isabelle an exceedingly long time to interpret, as Isabelle seems to handle the ``+'' operator super-linearly in this situation.
+
+% However, this approach led to non-termination issues when dealing with a large number of facts, as automated tools struggled with the size of the combined assumptions.
+
+
+Despite these efforts, we still hit a scalability wall. 
+% \AD{This is reading really well - nice work!}
+
+A significant factor contributing to this was the limitations of Isabelle/jEdit, the mandatory interactive interface of Isabelle. Isabelle/jEdit struggled to handle multiple large theory files simultaneously due to their size and complexity. Attempting to import all 60+ rule files at once caused crashes. This instability prevented us from processing the files concurrently, which would have allowed us to adopt \sledgehammer{} proofs more efficiently. The sequential nature of our workflow significantly increased the human time required for proof development, as we could not leverage parallelism to expedite the process.
+
+Moreover, processing a single goal within a file could be time-consuming, especially if the goal required additional proof strategies such as case analysis, intermediate lemmas, or simplification with \simp{}. It could take several minutes or more to find a proof for one goal.
+%During this time, the user was occupied, waiting for \sledgehammer{} to attempt to find a proof, often with little to do but monitor the progress. 
+
+Another significant factor contributing to the scalability wall was the necessity to delete conjuncts or make changes to the transition system.
+This was necessary e.g.\ on receiving comments from industry experts working on the CXL specification, who sometimes clarified how our interpretation of the specification text differed from their intent. When removing a conjunct $\phi_i$ from the invariant $P$, the impact was not confined to the single column corresponding to $\phi_i$ in our obligation matrix. Since $\phi_i$ could be referenced in proofs across various lemmas, all cells in the matrix that relied on $\textit{fact}_i$ needed to be re-examined and updated.
+
+The combination of these factors made the manual approach to proof maintenance impractical as the project scaled,
+% The evolution of the invariant was inherently global and non-modular. The human intervention required to fix the proofs was inherently sequential and could not be parallelized due to the limitations of the software and hardware, 
+leaving little opportunity to focus on higher-level aspects of the proof.
+
+
+
+
+\section{The \supersketch{} Tool}\label{sec:supersketch}
+To address the scalability challenges outlined in \Cref{sec:challenges}, 
+we developed \supersketch{}, a tool designed to automate the generation of proofs with minimal human intervention. We built \supersketch{} upon Haftman's \sketch{}~\cite{sketch}, which automatically generates an Isar~\cite{Isar} skeleton for a single lemma in Isabelle/HOL. However, \supersketch{} extends this functionality significantly to handle more complex proof strategies and integrate automated proof search tools such as \sledgehammer{}.
+We now present details of \supersketch{}, and explain how it helped to eliminate bottlenecks and allow our proofs to scale.
+% \AD{Depending on how John's comment in the intro is resolved, we should perhaps recap again that super sketch is briefly introduced in our technical report describing our CXL modelling efforts, and our contribution here is to present the tool in detail for the theorem proving community.}
+
+
+\subsection{Main features of \supersketch{}}
+% \AD{I don't see the point in talking about supersketch 3---why not just call the tool supersketch and implicitly describe the latest version? Noone is going to care that it's the 3rd version. To me, this is a distraction.}
+The tool automates the proof generation process by applying various user-specified proof methods and heuristics to each goal.
+It not only generates the proof skeleton but also attempts to solve each subgoal using a combination of proof tactics, automated provers, and \sledgehammer{}. 
+% This version incorporates the capabilities of the earlier versions while addressing their limitations.
+
+
+
+The \supersketch{} tool allows users to:
+\begin{enumerate}
+    \item \textbf{Specify initial proof methods}: Apply an initial proof method (e.g. \texttt{intro~conjI}) to decompose the main goal into subgoals.
+    \item \textbf{Apply additional methods to subgoals}: For all subgoals, specify methods to simplify or manipulate them. This can include tactics like \texttt{insert~assms}, \texttt{cases} and \simp{}.
+    \item \textbf{Specify methods to split and reduce complex goals}: Break down complex subgoals into smaller, more manageable sub-subgoals using tactics like \texttt{cases} and further simplify them using methods like \auto{}.
+    \item \textbf{Invoke multiple instances of \sledgehammer{}}: Automatically invoke \sledgehammer{} to attempt to automatically prove multiple (sub-)subgoal concurrently.
+    \item \textbf{Quickly identify unprovable goals}: If a goal cannot be proven automatically, \supersketch{} inserts a \texttt{sorry} placeholder together with a comment indicating the failed proof attempt, highlighting that manual intervention is required.
+\end{enumerate}
+
+\subsection{Workflow of \supersketch{}}
+% \AD{This looks good, however for my taste getting into 2(a)(ii) territory is a little extreme and wastes a lot of whitespace! You could replace 1(a) and (b) with two paragraphs, "First, parse the user-supplied methods..." and then "Second, apply the initial". Similarly you could probably reduce the need for so much itemisation in the others. A matter of taste, of course.}
+A summary for \supersketch{}'s workflow is:
+
+
+\begin{enumerate}
+    \item \textbf{Initial goal processing}
+    % \begin{enumerate}[label=\alph*)]
+        First, parse the user-supplied methods. There can be up to four methods, which we denote as \texttt{meth1} (the \emph{initial proof} method), \texttt{meth2} (the \emph{preprocessing} method), \texttt{meth\_split} (the \emph{splitting} method) and \texttt{meth\_reduce} (the \emph{reduction} method).  Each method can itself be a composite method, built from multiple child methods using method combinators (such as Isabelle's sequencing operator "\texttt{,}").
+        
+        Second, apply \texttt{meth1} (e.g. \texttt{intro~conjI}) to decompose the main goal into subgoals.
+    % \end{enumerate}
+
+    \item \textbf{Concurrent proof text generation from each subgoal}
+    % \begin{enumerate}[label=\alph*)]
+        For each subgoal, do the following:
+        
+        % \begin{enumerate}[label=\roman*)]
+             First, apply the specified preprocessing method \texttt{meth2} to the subgoal (e.g. \texttt{simp, insert~assms}). If this succeeds, return ``\isacommand{apply} \texttt{meth2} \isacommand{done}'' as the proof text (meaning that the method \texttt{meth2} solves the goal in Isabelle), otherwise proceed to call \sledgehammer{}.
+             
+             Second, invoke \sledgehammer{}. {If it succeeds}, return the proof text. {If it fails}, apply the user-specified method \texttt{meth\_split} to the subgoal (e.g., \texttt{cases}) to produce sub-subgoals. Proceed to process each of these sub-subgoals in the next step.
+        % \end{enumerate}
+    % \end{enumerate}
+
+    \item \textbf{Sub-Subgoal Processing (for failed subgoals)}
+    % \begin{enumerate}[label=\alph*)]
+        First, for all sub-subgoals resulting from splitting, apply any specified reduction method \texttt{method\_reduce}. If all sub-subgoals have been solved, return the text corresponding to all the methods applied so far.
+        
+        Second, for each remaining sub-subgoal: try to prove the sub-subgoal using \sledgehammer{}. {If successful}, return \sledgehammer{}'s proof text. If not, return text indicating a failure to find a proof.
+        
+        Finally, combine all sub-subgoals' returned proofs if they all succeeded. If any of the \sledgehammer{} calls failed, use placeholder text to indicate failed proof. Return the combined (or failed) text.
+    % \end{enumerate}
+
+    \item \textbf{Finalisation}
+    % \begin{enumerate}[label=\alph*)]
+         Assemble the proofs of all subgoals (including those with \texttt{sorry}) into the Isar skeleton to form the complete proof of the main goal. 
+         Then output the generated proof script for adoption.
+    % \end{enumerate}
+\end{enumerate}
+\noindent
+Sometimes methods that are complementary to and more lightweight than \sledgehammer{} can already solve or simplify particular subgoals.
+For proofs containing many subgoals, it is beneficial to apply these methods before invoking \sledgehammer{}. This motivates the inclusion of \texttt{meth2} (the \emph{preprocessing} method) in our design.
+
+The \emph{splitting} and \emph{reduction} methods, \texttt{meth\_split} and \texttt{meth\_reduce}, are used to tackle harder but still solvable subgoals. If sub-subgoals remain after applying them, \sledgehammer{} is invoked on all these sub-subgoals, which can be more computationally intensive than the initial invocation of \sledgehammer{}.
+We have found that the harder yet provable goals usually constitute a small but significant percentage of all subgoals in our use case. Given that processing these sub-subgoals would take at least as much time when done manually, incorporating this heavyweight step is justified. 
+% \CT{Optional todo: compare the number of failed to find subgoals v.s. computation time between two versions}
+
+\subsection{Example usages of \supersketch{}}
+After inserting the \supersketch{} command and it finished running, the proof text in markup format is displayed on the Isabelle/jEdit output panel,  which the user can click to adopt.
+\Cref{fig:before_after} 
+illustrates the process of invoking and adopting the proof text from \supersketch{}, showing the command required to invoke \supersketch{} (top) and the result (bottom).
+
+% \AD{Chengsong, could you try some magic Latex prettification and put these in boxes or give them nice background colours or something?}
+
+\begin{figure}
+\begin{tcolorbox}[colback=lightblue!20, colframe=blue!50!black, title={}, sharp corners]
+\noindent\textbf{Before:} 
+\begin{isabelle}
+\isacommand{lemma} $R_i$\_coherent\isacharcolon\\
+\hspace*{1em}\isakeyword{assumes} "$P\;\StateSymbol{} \land \guard{R_i}{\StateSymbol{}}$" \\
+\hspace*{1em}\isakeyword{shows} "$P\;(f_{R_i}(\StateSymbol{}))$" \\
+\isacommand{proof}\ - \\
+\textpreamble{\protect\isacommand{have} $\textit{fact}_0 \ldots$}\\
+$\ldots$\\
+\textcolor{black}{\isacommand{show}\ ?\isamath{thesis}} \\
+\textcolor{black}{\isacommand{super\_sketch3} (intro\ conjI) (insert assms) (cases "$\textsf{Cachelines}(\textsf{Dev}_0)$") (\auto{})}\\
+\isacommand{qed}
+\end{isabelle}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightred!20, colframe=blue!50!black, title={}, sharp corners]
+\noindent\textbf{After:}
+\begin{isabelle}
+\isacommand{lemma} $R_i$\_coherent\isacharcolon\\
+\hspace*{1em}\isakeyword{assumes} "$P\;\StateSymbol{} \land \guard{R_i}{\StateSymbol{}}$" \\
+\hspace*{1em}\isakeyword{shows} "$P\;(f_{R_i}(\StateSymbol{}))$" \\
+\isacommand{proof}\ - \\
+\textpreamble{\protect\isacommand{have} $\textit{fact}_0 \ldots$}\\
+$\ldots$\\
+\protect\isacommand{show}\ ?\isamath{thesis} \\
+\textsledge{\protect\hspace*{0.55em} \protect\isacommand{proof}\ (intro\ conjI)} \\
+\textsledge{\protect\hspace*{1.35em} \protect\isacommand{show}\ $\mathit{goal_1}$: "$\phi_1(f_{R_i} \StateSymbol{})$"} \textproof{\protect\isacommand{apply}(insert assms) Sledgehammer proof 1 using facts from $\{\textit{fact}_0,\ldots ,\textit{fact}_n\}$} \\
+\protect\hspace*{2em}\textcolor{colorsledge}{$\ldots$}\\
+\textsledge{\protect\hspace*{2em}\protect\isacommand{next}} \\
+\textsledge{\protect\hspace*{2em}\protect\isacommand{show}\ $\mathit{goal_h}$: "$\phi_h(f_{R_i} \StateSymbol{})$"} \textproof{\protect\isacommand{apply}(insert assms) 
+ \protect\isacommand{apply} (cases "$\textsf{Cachelines}(\textsf{Dev}_0)$") \protect\isacommand{apply} (\auto{}) Sledgehammer proofs for sub-subgoals of $h$ using facts from $\{\textit{fact}_0,\ldots ,\textit{fact}_n\}$ \protect\isacommand{done}} \\
+\textsledge{\protect\hspace*{2em}\protect\isacommand{next}} \\
+\protect\hspace*{2em}\textcolor{colorsledge}{$\ldots$}\\
+\textsledge{\protect\hspace*{2em}\protect\isacommand{show}\ $\mathit{goal_k}$: "$\phi_k(f_{R_i} \StateSymbol{})$"} \textproof{\protect\isacommand{sorry}(*failed to find proof in multi-steps*)} \\
+\textsledge{\protect\hspace*{2em}\protect\isacommand{next}} \\
+\protect\hspace*{2em}\textcolor{colorsledge}{$\ldots$}\\
+\textsledge{\protect\hspace*{2em}\protect\isacommand{show}\ $\mathit{goal_n}$: "$\phi_n(f_{R_i} \StateSymbol{})$"}  \textproof{Sledgehammer proof n using facts from $\{\textit{fact}_0,\ldots ,\textit{fact}_n\}$} \\
+\hspace*{1em}\textsledge{\protect\isacommand{qed}}\\
+\isacommand{qed}
+\end{isabelle}
+\end{tcolorbox}
+\caption{Proof script before and after invocation of \supersketch{} and adopting \supersketch{}'s generated text}\label{fig:before_after}
+\end{figure}
+
+The text blocks highlighted in \textcolor{colorsledge}{pink} and \textproof{purple} are newly-generated by \supersketch{}. In this example, $goal_h$ required the processing of sub-subgoals.
+
+
+
+With \supersketch{} we were able to generate the vast majority of the proofs for our rule lemmas in under half an hour each, covering over  700 conjuncts. This translates to about one day to iterate through the entire obligation matrix. Towards the end of the development we found that each time we generated the 50,000+ proofs,
+the number of subgoals for which \supersketch{} failed to find a proof (such that human intervention was required) was less than 100.
+
+\smallskip
+\noindent
+\textbf{Additional applications of \supersketch{}}
+Beyond generating proofs for rule lemmas, \supersketch{} can also facilitate the addition of new conjuncts by defining conjunct lemmas. These lemmas state the proof of an entire column of the obligation matrix, allowing us to generate their proofs in a single step. For instance, if we want to test whether the new proof obligations introduced by adding the formula $\phi_{n+1}$ to $P$ can be proven, we can invoke \supersketch{} with the same set of arguments as in the previous example. This yields:
+\begin{isabelle}
+\isacommand{lemma} $\phi_{n+1}$\_coherent\isacharcolon\\
+\hspace*{1em}\isakeyword{assumes} "$P\;\StateSymbol{} \land \phi_{n+1}$" \\
+\hspace*{1em}\isakeyword{shows} "$\bigwedge_{i=1}^m\phi_{n+1}\;(f_{R_i}(\StateSymbol{}))$" \\
+\isacommand{proof}\ - \\
+\textpreamble{\protect\isacommand{have} $\textit{fact}_0 \ldots$}\\
+$\ldots$\\
+\protect\isacommand{show}\ ?\isamath{thesis} \\
+\textsledge{\protect\hspace*{1em} \protect\isacommand{proof}\ (intro\ conjI)} \\
+\textsledge{\protect\hspace*{2em} \protect\isacommand{show}\ $\mathit{goal_1}$: "$\phi_{n+1}(f_{R_1} \StateSymbol{})$"} \textproof{\protect\isacommand{apply}(insert assms) Sledgehammer proof 1 using facts from $\{\textit{fact}_0,\ldots ,\textit{fact}_n\}$} \\
+\ldots\\
+\textsledge{\protect\hspace*{2em}\protect\isacommand{show}\ $\mathit{goal_m}$: "$\phi_{n+1}(f_{R_i} \StateSymbol{})$"}  \textproof{Sledgehammer proof n using facts from $\{\textit{fact}_0,\ldots ,\textit{fact}_n\}$} \\
+\hspace*{1em}\textsledge{\protect\isacommand{qed}}\\
+\isacommand{qed}
+\end{isabelle}
+\noindent Since the number of proof obligations in a column ($m$) is smaller than that in a row ($n$), \supersketch{} takes significantly less time to generate proofs for a conjunct lemma compared to a rule lemma, often completing in minutes rather than tens of minutes. We sometimes batch multiple conjuncts together and attempt to prove them in a single lemma, further reducing the number of iterations and saving human effort.
+
+
+% AD CUT - we essentially repeat this at the start of the next para.
+%However, despite these advantages, \supersketch{} has limitations that mean a moderate amount of human effort is still required to generate usable proof text.
+
+
+
+\subsection{Limitations of \supersketch{} and mitigations}
+Despite the significant automation provided by \supersketch{}, certain aspects prevent it from fully automating the tedious parts of our proof development.
+
+One limitation is that \supersketch{} occasionally incorporates \sledgehammer{} proofs that result in errors or 
+% \AD{This related to my previous question about what it means for proofs not to terminate. Is the idea that sledgehammer managed to find a proof and give evidence to support it, but then Isabelle gets stuck trying to confirm the evidence?} 
+nontermination during proof-checking when adopted into the proof script. 
+This issue can arise due to discrepancies between the proof context at runtime when \sledgehammer{} is invoked by \supersketch{} and the proof context in an interactive session using the actual Isar proof text. Ideally these contexts should be identical, but in practice, slight differences can lead to \sledgehammer{} generating ``bad proofs'' that fail or cause non-termination when used.
+When manually using \sledgehammer{}, the user can easily select an alternative suggested proof that works. These problematic proofs are not indicative of a soundness bug in \sledgehammer{}; rather, they suggest that a proof does exist, but the particular proof text provided is unsuitable for the goal in its current context.
+
+% AD CUT (the text followed on from what is now the next sentence, which I integrated with the following paragraph)
+%This approach seems to improve the success rate of valid \sledgehammer{} proofs not just in our rule lemmas but also in theorems involving much smaller definitions, although the exact reason for this is unclear. 
+
+
+This issue can be mitigated somewhat by the user breaking down the assumptions of the theorem into smaller named facts.
+%
+However, this does not completely eliminate the occurrence of broken proofs.
+This is a problem in our use case,
+which requires immediately-usable proof text
+if manual effort is to be avoided.
+% AD CUT
+%Even if only a small percentage of the proofs are problematic, fixing them manually would require several workdays—a significant hindrance to productivity.
+
+\section{Enhancements with \superfix{}}\label{sec:superfix}
+
+\newcommand\pred[2]{\textit{pred}_{#1\_strengthen}\;#2}
+
+
+% \AD{I would be inclined to rephrase the stuff about a project deadline, and simplifying before the deadline, to instead talk about setting ourselves an initial milestone of getting a meaningful proof completed, even if this required weakening the property being proven slightly. Then say that we achieved this milestone, and then that we revisited the weakenings to see whether we could eliminate them.}
+Before developing \superfix{}, we were constrained in the number of iterations we could perform when revising the proof obligation matrix due to limited manpower.
+During the later phases of our project, the inductive invariant $P$ had still not fully converged, so we set ourselves an initial milestone of getting a meaningful proof completed, even if this required weakening the property being proven slightly.
+
+Specifically, we modified the transition system by adding additional predicates to rule \( R_i \)'s guard, making it fire in a more restricted set of scenarios and thereby eliminating certain complex concurrent situations from consideration. This adjustment did not alter the overall coherence property but simplified the invariant by reducing the number of cases we needed to handle. 
+
+Our modified transition system was identical to the original, except for this strengthened rule. We then proved that all reachable states under this strengthening, from any initial state, satisfy the \SWMR{} property.
+
+Having achieved the milestone, we sought to drop this simplification to obtain the desired full theorem. We were uncertain about the amount of additional human resources required to achieve this by manual effort. Therefore, we concluded that an automated tool addressing the remaining scalability challenges in the proof was necessary to manage our manpower efficiently.
+
+
+
+\newcommand\pide{\texttt{PIDE}}
+
+
+% While \supersketch{} significantly improved our ability to tackle large invariants, 
+% some work remains to be done to fully automate a proof regeneration pipeline that only requires inspecting problematic proof goals. 
+
+We first identified the remaining automation challenges. The issues of \sledgehammer{} generating invalid proofs or the need to fix broken goals—such as when the transition system or invariant is updated, as described in \Cref{sec:challenges}—can often be efficiently addressed by \emph{local} fixes. By local, we mean fixes that are usually confined within the proof of a single lemma and can be derived from the current proof state.
+
+
+The key idea of the new tool is to automate the process of fixing a piece of almost-correct theory text in the same way a human user would. By \emph{almost-correct}, we mean that the definitions, functions, and datatypes are all valid—they do not raise error messages. For example, consider an error raised due to a referenced lemma being broken, a \isacommand{show} statement in an Isar proof failing to refine a goal, or a non-terminating one-liner proof.
+
+
+
+A human proof engineer would open the Isabelle/jEdit session on the theory file, scroll down to the point where the error or looping occurs, and attempt to fix it. If the issue can be resolved—for instance, by replacing the proof text with alternative text—a fix is applied; if not, a \texttt{sorry} is inserted to allow the processing to continue. If a goal is incorrect, they would try to update the goal, which is clearly displayed in the proof state.
+
+
+Our new tool, \superfix{}~\cite{zenodoRepo}, aims to emulate this behavior, automating the process of detecting and fixing such local errors, thereby significantly reducing the manual effort required.
+
+
+% Similarly, if \sledgehammer{}-generated invalid proofs are looping, the user simply replaces it with a valid proof or puts a ``sorry'' there. 
+
+% we developed additional tooling in Isabelle/ML to repair and improve \supersketch{}-generated proofs.
+
+% \paragraph{Challenges with Patching Broken Proofs}
+% Regenerating an entire proof (in our case a column or row in the matrix) from scratch is straightforward with \supersketch{},
+% but before the proof is really complete with a perfect invariant, we always update $P$, which necessitates changing the downstream proofs.
+% Each change itself is often small, only invalidating less than 1\% of the proofs scattered around in a few dozen files. 
+% But looking for these manually is time-consuming as the \pide\, requires several minutes to check one rule file. This often translates to at least half a (labour-intensive) day revising potential sites of broken proofs.
+% Moreover, these failures cascade, with subsequent proofs depending on the broken lines also failing. 
+% Hence, the checking process has to be done sequentially---only after fixing one line can we move on to the next.
+% Stocking up several updates and regenerating all the proofs when invalidated proofs accumulate to a sizeable chunk of all proofs is possible,
+% but not ideal.
+\smallskip\noindent
+\subsection{Utilising DeepIsaHOL to automate fixes}
+To implement this procedure, we leverage 
+% Isabelle/ML library functions for converting proof scripts into Isabelle's internal representations of proofs using 
+APIs from the DeepIsaHOL codebase~\cite{DeepIsaHOL_2023}
+for converting proof scripts into Isabelle's internal representations of proofs.
+%\CT{Hi Jonathan, please double check here that I am not making any mistakes in the following description of DeepIsaHOL and how it is built on top of Isabelle/ML.}
+% \JM{Done =)}
+DeepIsaHOL is a project that provides infrastructure for %performing deep learning experiments on (interactive) theorem proving by 
+extracting and feeding data to Isabelle. It has a set of APIs to manipulate terms, contexts, transitions, proof states and other Isabelle data structures. These APIs allow us, for example, to easily turn an arbitrary string into the corresponding proof command. 
+% Such infrastructure is lacking or very cumbersome to use in the plain Isabelle/ML codebase.
+% \JM{Commented it for fear of aggravating any Isabelle reviewers}
+
+We use DeepIsaHOL APIs to directly access the data-carrying states $s$ of Isabelle's script-checking algorithm. In Isabelle/ML, the type \texttt{Toplevel.state} represents these states. Among other things, they carry theory information (e.g. imported theorems), context information (e.g. current user configuration) and, when proving, a proof's proof states. Isabelle's official constructs for manipulating these states are top-level transitions $\tau$. At the user level, these correspond to the script's commands and their arguments (e.g. \isa{\isacommand{apply} auto} or \isa{\isacommand{have} "$F\, x = y$"}). Intuitively, one can view them as functions $f$ mapping a \texttt{Toplevel.state} $s_i$ to the next one $s_{i+1}$ with optional error messages $\varepsilon_{i+1}$ if the transition was not meaningful. Thus, we extensively use DeepIsaHOL's methods to parse a \texttt{.thy} file and convert it into a finite sequence $\langle \tau_i\rangle_{i\in I}$ of Isabelle \texttt{Toplevel.transition}s. 
+%\CT{Perhpas give a very brief overview of what Isabelle toplevel transition is, what a toplevel state is, and perhaps commands/outer syntax as well? Maybe  something like: The central data structure of Isabelle is a proof state. A proof state contains information about the current theorem being proved, the remaining goals to solve,.....  All constructs in an Isabelle theory file (those with a .thy extension) not enclosed in double quotes are internally represented as a ``transition''. A transition is a function from a toplevel state to a toplevel state....}
+%\JM{Not using this because transitions do not necessarily refer to the non-double-quote-enclosed text, and proof states are not really "the" central/main data structure of Isabelle.}
+Since the top-level states carry the proof states, if a transition $\tau_i$ fails with an error $\varepsilon_{i+1}$ inside a proof, we can inspect the error, backtrack, and apply a different and correct transition $\tau_i'$ based on the type of error reported.
+
+We mainly focus on three types of errors: non-terminating proofs, goal alignment errors, and incorrect applications of proof methods. We explain their relevance below and our procedures for fixing them. 
+
+% \{Repairing the goal or the proof/A more programmatic way of fixing proofs\}
+% discuss with Jonathan: should we box the tool so that the user can use it via some GUI interface? (e.g. found error with goal at line xx, fix this? found proof
+%lines that didn't go through/are looping, replace them with better proofs?)
+% We leveraged Isabelle/ML to interact programmatically with the proof environment. 
+% By accessing internal structures such as \texttt{Toplevel.transition}, 
+% we could inspect the proof state, identify exactly where proofs were failing or looping, and take appropriate action.
+% We operate at the Isabelle/ML level.
+% \begin{itemize}
+% \item Isabelle/ML can parse the proof script, turning them into "toplevel.transitions"
+% \item transitions are the internal representation of proof commands, which takes a state and returns a new state.
+% \item if a transition fails with an error, we can inspect the error and decide what we want to do accorrdingly
+% \item if it's a goal error, we generate a new goal.
+% \item if it's a proof error, we generate a new proof using sledgehammer.
+% \item if it's a loop, we replace the proof with a placeholder like "sorry", suggesting proofs via sledgehammer as well.
+% \end{itemize}
+
+
+\smallskip\noindent
+\subsection{Detecting and handling non-terminating proofs}
+% \AD{Chengsong--can you do a consistency check for capitalisation of these bold headings throughout the paper? We should either go for the "Capitalise Every Non-trivial Word" appraoch or "Only capitalise the first word"}
+% \JM{Please revise: I tried to convey what the bullet points establish, but I'm not familiar with the \supersketch{} process.}
+% \begin{itemize}
+% \item Annoying 1: cause a session build to take forever without failing.
+% \item annoying2: \supersketch{}-generated proofs needs to be cleansed before they can be used because of these non-terminating proofs.\ref{sec:limitations}
+% \item this cleansing has to be done one-by-one, sequentially because non-terminating proofs are resource intensive, blocking all subsequent proof processing.
+% \item Isabelle doesn't have a way of timing them out or cancelling them at the user level.
+% \item wrap tactics in timeout functions, and cancel them if they don't finish in time.
+% \item This required interactions with Isabelle's scheduler. 
+% We utilized Isabelle's \texttt{Future} library to manage asynchronous and
+% concurrent proof checking and implemented functions to cancel futures when timeouts occurred.%needs jonathan to write in detail about this
+% \end{itemize}
+The type of error that needs to be prioritised is non-terminating or looping proofs, which we use to refer to lines in the proof script that take an indefinite amount of time to process. Visually this is shown on the interactive editor as lines constantly marked with a purple background, indicating that the \pide\ is not done processing them. 
+Looping proofs are often caused on lines that use automated provers or SMT solvers. For instance, the \texttt{auto} prover can loop because of recursive applications of equalities or introduction rules.
+%\CT{I'm leaving more examples out for now.}
+% whereas provers like \texttt{metis} loop because they have no way of detecting whether an incorrect set of lemmas have been supplied so the proof search should stop.
+% assume that their inputs and applications are correct, and thus endlessly searching through some infinite search space, taking unreasonably long time to finish. 
+
+Looping errors lead to bottlenecks that prevent the fixing of other errors because processing tools get stuck on them.
+% Furthermore, due to this correctness assumption, these method calls can be resource-intensive, blocking processing and cleansing of all subsequent \supersketch{}-generated proofs, or delaying (theory) session builds infinitely. These calls are often Sledgehammer suggestions and their looping indicates that Isabelle could not reconstruct an SAT/SMT-solver-found proof. Alternatively, after a proof script modification, these loops indicate that Isabelle accepted a proof before but the application now requires different assumptions/inputs.
+A human user would resolve a looping error by calling \sledgehammer{} at the position of the looping line and adopting a new proof that works. If the user is confident that a proof exists, they may simply declare the subgoal as true with a \texttt{sorry} so that they can move on to fix other parts and complete that step later.
+
+We approximate this behaviour programmatically by applying the script's top-level transitions $\tau_i$ with timeouts. We sequentially compute the top-level states $s_i$ for each top-level transition $\tau_i$. If $\tau_i$ corresponds to a tactic application containing a potentially loop-prone method, we time its application. Then, if the application does not produce a new state after $90$ seconds, we replace $\tau_i$ with a \texttt{sorry}. Either way, we retrieve the new state $s_{i+1}$ and continue processing the script. 
+% After this is done, we attempt to fix our generated sorrys by calling \sledgehammer{} and substituting them with newly generated proofs.
+
+We do not fix \texttt{sorry}s immediately to ensure progress for upcoming transitions---since \sledgehammer{}'s newly-generated proofs may still loop, it may hinder producing any intermediate results. We instead construct a first version $\langle \tau_i\rangle_{i\in I}$ of the fixed proof script with some \texttt{sorry} placeholders, and then substitute them with \sledgehammer{} proofs in a second pass.
+%Future TODO: I think this is a clever technique to mention--each time sledgehammer can still produce incorrect proofs, however each iteration we only target those that do not terminate, which means after iteration $n$, only $\frac{1}{2^n}$ non-terminating proofs remain even if only $1/2$ sledgehammer proofs are terminating. For the page limit and time limit we leave it out. but should explore in another paper.
+
+For timing transitions, we take advantage of Isabelle/ML's \texttt{Future} library for multi-threaded computations. 
+For a loop-prone transition $\tau_i$, we create a new (Isabelle process) child thread (via \texttt{Future.fork}) in charge of applying the transition $\tau_i$ to state $s_i$. From the parent process, we time this child every (OS) 100 milliseconds, %\AD{is this an example of $t$ above?} 
+and await a result from this computation (of type \texttt{'a Future.future}). If there is one (\texttt{Future.is\_finished}), we extract it (\texttt{Future.get\_result}), otherwise we cancel the child thread (\texttt{Future.cancel}) and report a timeout error, which triggers our algorithm to insert a \texttt{sorry}.
+
+% fun apply_with_timeout timeout f x  = 
+%   let
+%     val future_val = Future.fork (fn () => f x)
+%     fun wait_for_future start_time =
+%       let
+%         val curr_time = Time.now ();
+%         val so_far = curr_time - start_time;
+%       in if Future.is_finished future_val 
+%           then Future.get_result future_val
+%           else if so_far > timeout then (Future.cancel future_val; Exn.capture_body (fn () => raise Timeout.TIMEOUT so_far))
+%           else (OS.Process.sleep (Time.fromMilliseconds 100); wait_for_future start_time)
+%       end;
+%   in wait_for_future (Time.now ()) end;
+
+
+\subsection{Handling misaligned proof obligation errors}
+% \AD{We have not used the paragraph environment in the paper so far. It introduces (a) and (b) headings. We could use an asterisk to get rid of these, or go with the home-made bold headings as we have done earlier in the paper.
+% My main comment about Section V is that it is a bit of a wall of text, so having some more structuring via subsections would be good.}
+After a definition modification or an edition of a proof script, some assertions in the proof must change. If this is not addressed, it can reverberate further downstream in the proof, potentially generating infinite loops. Fortunately, Isabelle warns the user when a goal asserted in a transition $\tau_i$ does not coincide with the proof obligation $\mathsf{obl}_i$ truly required to complete the proof. This is reported in the error $\varepsilon_{i+1}$ as: ``Failed to refine any pending goal''. Notice that the previous state $s_i$ contains the real proof obligation $\mathsf{obl}_i$. Thus, while processing the sequences of transitions $\langle \tau_i\rangle_{i\in I}$, we can detect if the script produces an incorrect transition by inspecting $\varepsilon_{i+1}$. If it does, we extract $\mathsf{obl}_i$ from $s_i$, generate a transition $\tau_i'$ with it (e.g. via \isa{\isacommand{show}\ "$\mathsf{obl}_i$"}), and apply it to $s_i$. Then we can continue processing the original script, and use our other error-correction methods to fix the probably incorrect upcoming method applications. 
+
+\subsection{Handling incorrect proof method application}
+If there is no timeout, but the proof method in a transition $\tau_i$ still fails, Isabelle has various messages that could be reported in $\varepsilon_{i+1}$, such as ``Illegal application\dots in state mode'' or ``Failed to apply proof method''. These errors can be consequences of previous fixes from our tool. The first arises when the script attempts a proof method in an already certified step. The second one emerges when the attempted proof method fails and it may arise due to our tools' modification of a proof obligation. In the first case, we simply delete the redundant $\tau_i$. In the second case, we call \sledgehammer{} to find a correct proof method. If it does, we replace $\tau_i$ with the \sledgehammer{}-found one. Otherwise, we write a \texttt{sorry}, indicating that the user needs to look into that proof step.
+
+\subsection{Prioritising upstream error fixes}
+% Our goal is to fix real proofs to save manual effort, so sometimes it is desirable for the tool to act in self-driving mode.
+
+Often lines directly above an error in the proof script were causing the subsequent errors or loops. 
+We want the tool to automatically generate those fixes if possible, and carry on with processing the file as if the fix has been integrated.
+By prioritizing the repair of root errors, we resolve multiple errors at once.
+% \begin{itemize}
+%   \item how we incrementally process and fix proofs via "batch mode"
+%   \item (Potentially) our collaborative effort, integration of DeepIsaHOL and supersketch
+%   \item statistics: these methods fixed e.g. 98\% of the proofs automatically, without human intervention.
+%   \item A standalone tool: superfix?
+%   \item End goal in our proof: allowed us to strengthen our formalisation of \CXLcache{}, dropping the latency/fairness assumptions, making it apply to 
+% a much more general setting with most concurrencies available.
+% \end{itemize}
+
+
+\section{Manual effort saved: some statistics}
+
+
+While it is impossible to calculate the exact amount of manual effort saved thanks to \supersketch{} and \superfix{},
+due to these tools being developed via a gradual, non-uniform process, we summarise with some data points how \supersketch{} and \superfix{} reduced the burden of manual proof maintenance and kept our verification manageable.
+
+A hybrid of scripting and manual effort produced 68 \texttt{.thy} files (one per rule) with 777 goals each. After using \supersketch{}, 18 files contained unfinished proofs. Out of these, 13 contained at most 2 unfinished proofs, while the remaining had 14, 10, 6, 6, and 4 errors.
+Then, after our fix iteration with \superfix{}, only 9
+files remained with errors, 1 per each. A second refinement
+with \superfix{} completed the proof. These \superfix{} numbers are an under-approximation of the total errors fixed since some of the non-terminating proof-error are not recorded in the processing log.
+
+\section{Extending \supersketch{}}\label{sec:doublesketch}
+The \supersketch{} tool is capable of generating quite intricate sub-proofs with multiple heuristic methods, as shown in figure~\ref{fig:before_after}. However the number of methods and the control flow these methods interact with each other and other prover tools like \sledgehammer{} had to be pre-determined when the tool is developed. The logic is hardcoded, and therefore whenever the user decided to use a different set of heuristics, they have to modify the tool, despite them using the same type of command, just with diffferent configurations.
+On the other hand, even though \supersketch{} works with subgoals and to a limited extent sub-subgoals, there are use cases where even more fine-grained breakdown and solving strategies of the proof goal are needed. For instance, \supersketch{} currently only solves the proof obligation matrix's row or column fully-automatically, not the matrix entirely. To prove the whole matrix's goals, one requires scripting and moderate human effort. It is much desired to minimise or even \textbf{eliminate} the need of human intervention by a tool which encapsulates the functionality of multiple \supersketch{} calls as a whole when generating all proofs to the obligation matrix.
+
+\subsection{The tool \doublesketch{}}
+We have first developed the fully-recursive version of \supersketch{}, which we call \doublesketch{}. It takes a list of methods and a few additional simplification and ``rescue'' methods. The list of methods is each taken to break down the proof goal into subgoals. \doublesketch{} calls ``print\_proof\_text'' (ppt) function to generate the whole proof, which looks like``proof (methodx) show goal1 proof1 show goal2 proof2 .... qed''. In a recursive call of ``ppt'', the head of the method list is used to break down the goal. The function ``print\_isar\_skeleton'' (pisk) is used together with the each subgoal to generate the structure of the sub-proof, which usually looks like ``show goali proofi ''. The subproof is generated by a child call to ppt, with the tail of the method list and the state with only the subgoal $i$.
+
+When the list of methods becomes empty, we are at a leaf call, and then the solving methods will be used to prove these leaf subgoals......
+
+\subsection{The tool \metasketch{}}
+(follow the description of metasketch in SuperSketch.thy).......
+
+\section{Generalising our model}
+\CT{TODO: New section: generalising our model to arbitrary-device version}
+We expand our model to a more general setting to test and utilise our proof-generation infrastructure. Our first step is to enable an arbitrary number of devices rather than just 2. This involves updating both our model and the proof to incorporate possible device IDs.
+Instead of hard-coding our devices as device 1 and device 2 and their associated data structures as separate fields in our system state $\Sigma$, we instead encode each channel/cache state as a function from a device ID to a list/record.
+More complicated changes are properties within the coherence invariant. Most conjuncts are simple under the two-device setting. Certain assumptions are now no longer possible to make. 
+The generalisation presented significant semantic challenges beyond simple syntactic transformations. While mechanically replacing device-specific references (e.g., \texttt{dthreqs1~T}, \texttt{dthreqs2~T}) with quantified expressions (e.g., \texttt{reqs~T~i}) appeared straightforward, there is subtlety in choosing the strength of the new formula to not exceed or degrade the strength of their two-device counterpart.
+Consider the following representative example from our invariant:
+
+\begin{isabelle}
+\textcolor{colorDELETEDfg}{\texttt{(HSTATE MB T $\land$ nextDTHDataFrom 0 T $\rightarrow$ CSTATE Modified T 1 $\lor$ ...)}}\\
+\textcolor{colorDELETEDfg}{\texttt{$\land$ (HSTATE MB T $\land$ nextDTHDataFrom 1 T $\rightarrow$ CSTATE Modified T 0 $\lor$ ...)}}
+\end{isabelle}
+
+Our initial generalisation attempt incorrectly used universal quantification over both variables:
+\begin{isabelle}
+\textcolor{red}{\texttt{($\forall$i j. i $\neq$ j $\rightarrow$ (HSTATE MB T $\land$ nextDTHDataFrom i T $\rightarrow$}}\\
+\textcolor{red}{\hspace{2em}\texttt{CSTATE Modified T j $\lor$ ...))}}
+\end{isabelle}
+
+This requires \emph{all} other devices to be owners, when the original semantic intended that there must exist \emph{exactly one} new owner. The correct generalisation should instead use existential quantification on $j$:
+\begin{isabelle}
+\textcolor{colorADDEDfg}{\texttt{($\forall$i. HSTATE MB T $\land$ nextDTHDataFrom i T $\rightarrow$}}\\
+\textcolor{colorADDEDfg}{\hspace{2em}\texttt{($\exists$j. j $\neq$ i $\land$ (CSTATE Modified T j $\lor$ ...)))}}
+\end{isabelle}
+This problem did not show up before since for two devices the two above formulas are equivalent.
+This universal-versus-existential quantifier problem occurred systematically across multiple constraints (conjunt on lines 351, 352, 353, 359, 360, 365, 382, 384, 389, 413, 417 of CoherenceProperties.thy). Additionally, many two-device assumptions became invalid with more devices. For instance, Line 413 originally assumed that if device 0 initiates a cache eviction (SIA state), then device 1's snoop channels must be empty, since only device 0 could trigger snoops. With multiple devices, however, a third device could independently trigger snoops, breaking this assumption. Some constraints proved too complex to generalise accurately while preserving intent, requiring simplification to global properties. For example, Line 407's intricate coordination semantics between a requesting device and other shared devices was simplified from device-specific implications to a global constraint: \texttt{(HSTATE SharedM T $\rightarrow$ ($\forall$i. $\neg$nextGOPendingIs GO\_WritePull T i))}. These semantic challenges required multiple iterations through our 796-conjunct invariant, with each correction potentially affecting other constraints' validity. We need a stronger tool to automate the invocation of super-sketch more robustly and effortlessly so we can quickly test the feasibility of certain generalisations.
+
+
+% In \Cref{tab:goal_occurrences}, we show the number of automatically generated and fixed goals in the penultimate and last iterations in different columns.
+% The blue bars represent the goals generated by \supersketch{}. The other bars in different colours demonstrate the fixed proofs in each iteration of running \superfix{}. 
+% The numbers shown in the third and fourth columns are actually an under-approximation of the fixed proofs, since some of the non-terminating proofs are not recorded in the processing log where we drew our data from.
+%
+% \AD{The following is a bit vague; it's not clear what "over 200" means---over 200 what? I suggest deleting from here to the end of the paragraph.}
+% We also have all the \supersketch{}-generated proof code output stored in log files towards the last few iterations, which account for over 200 files on the personal laptop of one of the authors. Such proof code would take over at least an hour each to manually generate by a human user, assuming they invoke \sledgehammer{} and adopt the proof in less than 5 seconds each.
+% \begin{figure*}
+% \centering
+% \includegraphics[width=\textwidth]{StatisticsFigure.png}
+% \caption{Occurrences of \supersketch{}, \superfix{} first version failed goals, and \superfix{} last version failed goals \JW{I made this figure bigger so that the text is readable. But I don't think it works as a graph -- there are too many bars, and everything is visually overwhelmed by the enormous blue bars. I think this is a situation where a table would be better -- see my proposal below.}}
+% \label{fig:saved}
+% \end{figure*}
+ 
+% \begin{table}
+% \caption{\CT{TODO: Caption goes here. Please check column titles. Data is currently just a placeholder to show the idea.}}
+% \centering
+% \begin{tabular}{lllll}
+% \toprule
+%      & \# goals       & \# failed goals & \# failed goals \\
+%      & generated by   & after first     & \# after last   \\
+% Rule & \supersketch{} & \superfix{}     & \superfix{}     \\
+% \midrule
+% IBData & 956 & 49 & 7 \\
+% IDData & 924 & 38 & 3 \\
+% \dots \\
+% \bottomrule
+% \end{tabular}
+% \label{tab:occurrences}
+% \end{table}
+% \begin{table}
+% \caption{
+% %Occurrences of goals (with successful proofs) generated by \supersketch{} in the penultimate iteration, the number of proofs failed (and required fixing by \superfix{}), the number of goals that remain broken after applying \superfix{} in the last iteration, the number of goals that remain broken after applying \superfix{} again. Initial number of goals is 777.
+% Effectiveness of \supersketch{} and \superfix{}. Each rule has 777 goals initially.
+% }
+% \centering
+% \renewcommand\arraystretch{0.90}
+% \begin{tabular}{lrrr}
+% \toprule
+% Rule 
+% & \rotatebox{90}{\begin{tabular}{@{}l@{}}\# goals left after \\ \supersketch{} \end{tabular}} 
+% & \rotatebox{90}{\begin{tabular}{@{}l@{}}\# goals left \\ after first \\ \superfix{} \end{tabular}} 
+% & \rotatebox{90}{\begin{tabular}{@{}l@{}}\# goals left \\ after second \\ \superfix{} \end{tabular}} 
+% \\ \midrule
+% IBData & 0 & 0 & 0 \\
+% IDData & 0 & 0 & 0 \\
+% IIAGO\_WritePull & 4 & 1 & 0 \\
+% IIAGO\_WritePullDrop & 0 & 0 & 0 \\
+% IMADData & 0 & 0 & 0 \\
+% IMADGO & 0 & 0 & 0 \\
+% IMAGO & 0 & 0 & 0 \\
+% IMDData & 6 & 0 & 0 \\
+% InvalidDirtyEvict & 0 & 0 & 0 \\
+% InvalidLoad & 0 & 0 & 0 \\
+% InvalidRdOwn & 0 & 0 & 0 \\
+% InvalidRdShared & 1 & 0 & 0 \\
+% InvalidStore & 0 & 1 & 0 \\
+% ISADData & 1 & 0 & 0 \\
+% ISADGO & 0 & 0 & 0 \\
+% ISAGO & 0 & 0 & 0 \\
+% ISDData & 10 & 1 & 0 \\
+% ISDIData & 14 & 0 & 0 \\
+% ISDSnpInv & 0 & 0 & 0 \\
+% MADData & 0 & 1 & 0 \\
+% MADRspIFwdM & 0 & 0 & 0 \\
+% MARspIFwdM & 0 & 0 & 0 \\
+% MARspIHitSE & 0 & 0 & 0 \\
+% MBData & 0 & 0 & 0 \\
+% MDData & 0 & 0 & 0 \\
+% MIAGO\_WritePull & 1 & 1 & 0 \\
+% MIASnpDataInvalid & 0 & 0 & 0 \\
+% MIASnpDataShared & 0 & 1 & 0 \\
+% MIASnpInv & 0 & 0 & 0 \\
+% ModifiedDirtyEvict & 0 & 0 & 0 \\
+% ModifiedEvict & 0 & 0 & 0 \\
+% ModifiedLoad & 1 & 0 & 0 \\
+% ModifiedRdOwn & 0 & 0 & 0 \\
+% ModifiedRdShared & 2 & 0 & 0 \\
+% ModifiedSnpDataInvalid & 0 & 0 & 0 \\
+% ModifiedSnpDataShared & 0 & 0 & 0 \\
+% ModifiedSnpInv & 0 & 0 & 0 \\
+% ModifiedStore & 1 & 0 & 0 \\
+% SADData & 0 & 0 & 0 \\
+% SADRspIFwdM & 0 & 0 & 0 \\
+% SADRspSFwdM & 0 & 0 & 0 \\
+% SARspIFwdM & 0 & 0 & 0 \\
+% SARspSFwdM & 0 & 0 & 0 \\
+% SBData & 0 & 0 & 0 \\
+% SDData & 0 & 1 & 0 \\
+% SharedDirtyEvict & 0 & 0 & 0 \\
+% SharedEvict & 0 & 0 & 0 \\
+% SharedLoad & 0 & 0 & 0 \\
+% SharedRdOwn & 0 & 0 & 0 \\
+% SharedRdOwnSelf & 0 & 0 & 0 \\
+% SharedRdShared & 2 & 0 & 0 \\
+% SharedSnpInv & 1 & 0 & 0 \\
+% SharedStore & 0 & 0 & 0 \\
+% Shared\_CE\_NoData\_Last & 0 & 0 & 0 \\
+% Shared\_CE\_NoData\_NotLast & 0 & 0 & 0 \\
+% Shared\_CE\_Last & 0 & 0 & 0 \\
+% Shared\_CE\_NotLastData & 1 & 0 & 0 \\
+% Shared\_CE\_NotLastDrop & 1 & 0 & 0 \\
+% SIAGO\_WritePull & 2 & 0 & 0 \\
+% SIAGO\_WritePullDrop & 1 & 1 & 0 \\
+% SIASnpInv & 0 & 0 & 0 \\
+% SMADData & 0 & 0 & 0 \\
+% SMADGO & 0 & 0 & 0 \\
+% SMADSnpInv & 0 & 0 & 0 \\
+% SMAGO & 2 & 0 & 0 \\
+% SMDData & 6 & 1 & 0 \\
+% \bottomrule
+% \end{tabular}
+% \label{tab:goal_occurrences}
+% \end{table}
+
+\section{Improving our tooling}
+\CT{TODO: New section about our new tools}
+We have developed recursive versions of \textit{super}\_\textit{sketch}, called
+\textit{double}\_\textit{sketch}, and more concurrent version of \textit{super}\_\textit{fix}, which we call \textit{try}\_\textit{sketch}. 
+
+
+
+
+\section{Related Work}
+Automation tools have been extensively used to enable and accelerate the development of mechanized proofs in various ITPs~\cite{leanauto,agdaauto,coqpumpkin,metisreconstruction}. 
+In Isabelle/HOL, \sledgehammer{}~\cite{sledgehammersmt,resolution,automationprototype,metisreconstruction,relevancefiltering,highertofirstorder} notably integrates automated theorem provers with the proof assistant. This integration has been instrumental in making our work possible.
+Although other ITPs do not share proof search tools as powerful as \sledgehammer{}, the ideas behind \supersketch{} and \superfix{} also serve for proof-engineering automation in other ITPs. Large parts of the capabilities of \supersketch{} do not rely on \sledgehammer{} but rather a solver that can automatically discharge simple goals. Any automation utilities in other ITPs can be encapsulated as we have done for \simp{} and \auto{}.
+
+There are other tools that do not directly rely on external provers or SMT solvers, improve the proof-engineering efficiency, and automate tedious proof-maintenance tasks.
+% JH revise
+% Other tools that do not directly rely on external provers or SMT solvers have also been developed to improve the efficiency of proof engineering and automate tedious proof maintenance tasks.
+Eisbach~\cite{EisbachITP} is an Isabelle-based proof method language that allows users to build complex proof methods from simpler ones, supporting abstraction, recursion, and pattern matching. Matichuk et al.~\cite{Eisbach} have demonstrated that applying Eisbach can reduce proof script sizes to a fraction of their original implementation in certain sections of practical formalisations such as seL4~\cite{sel4}. Eisbach could reduce code duplication in our formalisation by encapsulating frequently used compound proof methods leading to better proof automation in our work. %using the method definition mechanism. Exploring more advanced uses of Eisbach could lead to better proof automation in our work.
+
+
+
+
+Smart\_Isabelle~\cite{tryhard,selfie,smartinduction,autoinduction} is a suite of tools that leverages \sledgehammer{} and other automated provers to find proofs for harder theorems than a single \sledgehammer{} call can handle. These tools use clever heuristics that exploit the syntactic structure of problems, especially for induction problems. Its most resource-intensive tool, \texttt{tryhard}, provides Isabelle users with a command that generates proof text by automatically searching through multiple intermediate steps. During the development of our formalisation, we employed \texttt{tryhard} as a stronger alternative to \sledgehammer{}, which generates proofs for a single subgoal similar to the sub-subgoal processing triggered in \supersketch{}. However, \texttt{tryhard} proved to be overly resource-intensive and therefore unsuitable for the number of subgoals in our use case. Nevertheless, it inspired us to develop the sub-subgoal processing step in our \supersketch{} tool.
+
+Controlled automation~\cite{ControlledAutomation} is a tactic developed in HOL4~\cite{HOL4} to enhance the productivity of proof engineers and reduce the verbosity of proof scripts. It allows the user to provide minimal guidance to the prover via a mechanism called hints, and precisely control the modifications to assumptions and goals.
+
+
+
+ We have chosen to use Isabelle for its expressivity, flexibility and small trusted kernel. Our initial conjecture was that starting with two devices would allow us to scale better and obtain quick initial results, which we could generalise to arbitrary many devices. In ongoing work we are investigating this parametrisation. It would be interesting to export the model (in its two-device form) to more automated tools like IC3~\cite{IC3}, Murphi~\cite{Murphi} and IVy~\cite{IVy} and compare the results.
+
+%Mirabelle can be talked about, but not strictly necessary here.
+
+\section{Future Work}
+
+% JH revise (deleting generic intro) 
+% There are several avenues for future development of both the \supersketch{} and \superfix{} tools, as well as enhancements to the underlying project that led to their creation.
+
+We wish to make \supersketch{} more generally applicable by enabling the automatic usage of proof methods such as term-accepting induction tactics. This enhancement would allow users to avoid manually inputting heuristics, specially for induction proofs.  
+% JH revise
+% In particular, we plan to enable tactics that work on variables inside specific constructor patterns (e.g. methods that refer to the variable $as$ in the inductive case $l = a::as$ of a lemma about lists $l$) to facilitate greater automation for induction proofs.
+
+We also aim to extend \superfix{}'s capabilities by incorporating more sophisticated proof repair techniques~\cite{coqpumpkin}. This would allow it to fix proofs considerably different from their previous iterations.
+
+% JH revise
+%Managing \supersketch{} and \superfix{} to build an effective pipeline and curating their target huge proof can still require moderate human effort since careful scripting can be fragile. 
+Incorporating all our tools and scripts into a single and fully automated pipeline would improve the overall approach. %allow users to retrieve everything--the failed conjucts, counterexamples, and the partial results of successful scripts--after a model update. 
+A tighter integration of solvers (possibly bypassing \sledgehammer{}) with the ITP is needed to make such a pipeline efficient for large verifications.
+
+% Our tools have enabled us to improve our current formalisation significantly. Supported by them, 
+Finally, we intend to extend our CXL model to support more devices and memory locations. It currently has three devices %(a special device called Host in CXL terms, and two caching devices) 
+and a single memory location. While this is sufficient for verifying cache coherence, supporting more devices and locations is essential for tasks such as litmus testing and other memory consistency verification tasks. We expect to reuse the existing proof infrastructure, adapting the proofs to newer versions with more components, using \supersketch{} and \superfix{} to iterate and progress with less human effort.
+
+% JH revised (removed as tangential to the paper)
+%Furthermore, %JM{I would prefer not to say "negative" things about Isabelle because it might be easy for an insider to take offence, find some "counterexample", and I might need to collaborate with them in the future. I have rephrased it.} Isabelle lacks a user-friendly and well-documented programming interface that allows users to manipulate and process source theory code. for our use case, 
+% we benefited from the third-party library DeepIsaHOL to interface with the internals of Isabelle/ML so that Isabelle's parsers and proof checkers can be easily leveraged with a friendly programming interface. We wish to extend the infrastructure of DeepIsaHOL to make it available and useful for better proof automation in a wider variety of formalisations.
+
+
+\section*{Acknowledgements}
+We thank the anonymous reviewers for their valuable feedback.
+This work was supported by EPSRC grant EP/R006865/1 and a Horizon MCSA 2022 Postdoctoral Fellowship (project number 101102608).
+
+%AD CUT - I have summarised this more succinctly above.
+%This work was financially supported by an EPSRC Programme Grant on \emph{Interface reasoning for interacting systems} (EP/R006865/1). A Horizon MSCA 2022 Postdoctoral Fellowship (project acronym DeepIsaHOL and number 101102608) supports the third author.
+
+
+\iffalse
+\appendices
+\section{Addressing Reviewer Concerns}
+\subsection{A}
+Weaknesses:
+\begin{itemize}
+    \item While it is nice to see the before and after script changes, integrating some of these changes as running examples to the main feature descriptions could be beneficial.\CT{I am not entirely sure what this means. Maybe referring to super-sketch being not available? I have linked super-sketch non-anonymously in introduction as paper has already been accepted.}
+    \JM{This may also refer to our artefact's fixing theories. The reviewer maybe is asking for a relation between the .thy files in the artefact and the contents of the paper. The table now makes it clear that each .thy file is a rule. I will state this in the artefact.}
+    \item
+The introduction mentions "We provide statistics about how much manual effort has been saved." While there were some mentions in the text for reduction in work, those comments did not really feel like they rise to the level of this claimed contribution. 
+Tweaking this wording could help set a better expectation. Additionally, some more concrete numbers to highlight the benefit of the two tools would be nice to see, in which can the wording would not need adjusted.\CT{Done by table.}
+
+\end{itemize}
+
+
+\subsection{B}
+
+Comments for authors
+\begin{itemize}
+    \item I think it would be interesting to take the proof strategy of iteratively strengthening inductive invariants and attempt to encapsulate it completely as a tactic. \CT{[Wrote in future work.]}
+    \item Why were methods such as IC3 (for inductive invariants) or model checking not considered? I suspect it has to do with the desired generality of the proof result, but this is not clearly stated in the paper. \CT{Done. See last paragraph of related work}
+    \item 
+    It would be interesting to have a better understanding of the "resources" used in proofs and how a user might make the best use of proof techniques wrt resources (such as automated techniques taking more time - especially when rerunning a proof).\CT{Will add time taken by \supersketch{} to the statistics table if time allows}
+    \item 
+    Another related paper is: Eunsuk Kang, Mark D. Aagaard: Improving the Usability of HOL Through Controlled Automation Tactics. TPHOLs 2007: 157-172
+    \CT{Added to related work.}
+    \item I found the use of the letters "T" and "T' " for "state records" confusing b/c I kept thinking these were transitions - I suggest using "S" and "S' " and also bracketing (T -> T') when used in a conjunction.\CT{Not sure whether we should take this suggestion.} \JW{Yeah it would be a bit of a substantial find-and-replace. Probably not worth it. But I've added some parentheses as suggested by the reviewer.}
+    \item Was the "row major order" (for the proof files) also used for iterating through the proofs for the matrix? Perhaps there are some helpful strategies for choosing the order to redo proofs needed for the matrix?\CT{Added to future work to address this.}
+    \item It was not completely clear in reading the paper whether super\_sketch and super\_fix are developed completely within the Isabelle environment or partly at a meta-level to Isabelle.\CT{Done. Added in intro end saying that our tool works at the Isabelle/ML outer-syntax level, also points now to our super-sketch tool. Not entirely sure what reviewer means by "meta-level"}
+    \item At one point, it says the inductive invariant "had not fully converged" so you weakened the property slightly - do you think the original property is not valid? or that an inductive invariant does not exist for it? or that it will take more work to find the invariant?\CT{Done. It requires more work. I suspect we have addressed the point but I re-iterate this in the future work section.}
+\end{itemize}
+
+
+
+
+
+
+
+
+\subsection{C}
+The paper advances in the mechanization of proofs in Isabelle. Specifically, the paper presents tools for the management and maintenance of large-scale proofs, and another one for fixing corner cases and adapt existing scripts after changes in the definitions it operates on.
+
+Comments for authors
+\begin{itemize}
+    \item It is claimed that statistics are presented ("We provide statistics about how much manual effort has been saved"). However, I don't see these statistics, only numbers on the model and on the size of the proof are provided ("The model consists of 68 transition rules", "involved an inductive invariant comprising nearly 800 conjuncts, requiring over 54 thousand proof goals", "SWMR+ is a strengthened version of SWMR, consisting of a conjunction of 796 formulas. This amounts to proving 54,128 little lemmas"). In Section VII, plans for a more complex version of the case study are presented. A discussion on how these tools are used on other case studies may convince of the usefulness of the tools. \CT{Addressed by table}
+    \item Section II. Even though the intuition may be clear here, I think some additional info must be provided. I can understand you don’t want to go much into CXL, but a few hints must be given. The formalization of the SWMR is not obvious, and one even doubts about what a cache line is. You need to say what M is (apparently some cache line state, a set of memory cells?, core ids+memory addresses?), what {S, M} is (possibly not the union of sets S and M), and what $\not\in$ means, because depending on what M and {S, M} are will mean one thing or another. Actually, you say “Cachelines(Dev)i refers to the cacheline of device i”, which means that despite the s, M is after all the state of a single cache line, isn’t it? One doesn't learn until Section VII that you are using a simplification: "Currently, our model supports only three devices (a special device called Host in CXL terms, and two caching devices) and a single memory location."\CT{Addressed by better formatting and explicitly stating limitations. and making (in section 2) the connection with our asplos arxiv more explicit.}
+    \item I have the impression that although some of the ideas in the paper might be of use in a broader setting, most of the problems faced and the solutions provided are very specific to Isabelle. I would have liked to see a discussion on the applicability of the results presented for other theorem provers. For sure the availability of tools like sledgehammer conditions the whole thing, but also the way in which the preamble is provided ("essential at making our proof scale" page 3-4) or implemented, or the way they are used along proofs. The "Limitations of our initial solutions" is a clear evidence. The way facts and goals are handled, the use of memory by sledgehammer, the automated generation of text, limitations of Isabelle/jEdit, ... All this discussion may be of interest to Isabelle users and developers, but I wonder how much to other researchers. Indeed, the description of the super\_sketch tool in Section IV shows how specific the tool is.\CT{Fair criticism. Other tools don't have \sledgehammer{}. Not sure whether we should emphasise this point in the paper though.}
+    \item The engineering of the tools is quite illustrative. Section IV.D poses some problems with which super\_fix help in Section V. Even though the specificities I can see in these solutions procedures that might help in other contexts and other tools. Again, I've missed a more broad discussion. Even the related work section is focused on Isabelle.\CT{Done some discussion in related work.}
+\item 
+Some minor typos:
+
+In page 3, you say that your goal is InitialState(T) /\ T ->* T' => SWMR T But shouldn't it be SWRT T' in the righthand side?
+In page 2: "the SWMRproperty"
+In page 3: "in the Modified state"
+In page 4: "an m × n, where" (missing "matrix"?)
+    \CT{All done.}
+\end{itemize}
+\fi
+
+
+
+
+
+
+
+% \section{related}
+% Appendix one text goes here.
+
+% \section{}
+% Appendix two text goes here.
+
+
+% use section* for acknowledgment
+% \section*{Acknowledgment}
+
+
+% The authors would like to thank...
+
+
+
+\bibliography{super}
+\bibliographystyle{IEEEtran}
+% \begin{thebibliography}{1}
+
+% \bibitem{IEEEhowto:kopka}
+% H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%   0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+% \end{thebibliography}
+
+
+%\include{formalise_review_points}
+
+
+\end{document}
+
+

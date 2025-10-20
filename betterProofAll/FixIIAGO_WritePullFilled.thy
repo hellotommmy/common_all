@@ -5062,7 +5062,7 @@ lemma helper:"f T \<Longrightarrow>
 apply(cases "program1 T")
 apply auto
 proof (-)
-show goal1: "f (T\<lparr>buffer1 := Some (case reqresps1 T of [] \<Rightarrow> H2DResp (Utid 99999) ReqRespMadeup Invalid 999 | snoop # tail \<Rightarrow> snoop), devcache1 := devcache1 T \<lparr>CLEntry.block_state := Invalid\<rparr>, reqresps1 := case reqresps1 T of [] \<Rightarrow> [] | I # tail \<Rightarrow> tail, dthdatas1 := dthdatas1 T @ [D2HData (getGOID (reqresps1 T)) (read_from_cache (CLEntry.content (devcache1 T))) (clock T)]\<rparr>)"
+show goal1: "f (T\<lparr>buffer1 := Some (case reqresps1 T of [] \<Rightarrow> H2DResp (-1) ReqRespMadeup Invalid 999 | snoop # tail \<Rightarrow> snoop), devcache1 := devcache1 T \<lparr>CLEntry.block_state := Invalid\<rparr>, reqresps1 := case reqresps1 T of [] \<Rightarrow> [] | I # tail \<Rightarrow> tail, dthdatas1 := dthdatas1 T @ [D2HData (getGOID (reqresps1 T)) (read_from_cache (CLEntry.content (devcache1 T))) (clock T)]\<rparr>)"
  if "f T"
    and "\<And>T m dthd. f T \<and> CLEntry.block_state (devcache1 T) = IIA \<and> nextReqRespIs GO_WritePull (reqresps1 T) \<Longrightarrow> f (case program1 T of [] \<Rightarrow> T \<lparr>buffer1 := Some m, devcache1 := devcache1 T \<lparr>CLEntry.block_state := Invalid\<rparr>, reqresps1 := case reqresps1 T of [] \<Rightarrow> [] | I # tail \<Rightarrow> tail, dthdatas1 := dthdatas1 T @ [dthd]\<rparr> | Instr # tlI \<Rightarrow> T \<lparr>buffer1 := Some m, devcache1 := devcache1 T \<lparr>CLEntry.block_state := Invalid\<rparr>, reqresps1 := case reqresps1 T of [] \<Rightarrow> [] | I # tail \<Rightarrow> tail, dthdatas1 := dthdatas1 T @ [dthd], program1 := tlI\<rparr>)"
    and "program1 T = []"
@@ -5072,7 +5072,7 @@ using that
 apply  (-)
 apply (metis list.simps(4) nextGO_def)
 done
-show goal2: "f (T\<lparr>buffer1 := Some (case reqresps1 T of [] \<Rightarrow> H2DResp (Utid 99999) ReqRespMadeup Invalid 999 | snoop # tail \<Rightarrow> snoop), devcache1 := devcache1 T \<lparr>CLEntry.block_state := Invalid\<rparr>, reqresps1 := case reqresps1 T of [] \<Rightarrow> [] | I # tail \<Rightarrow> tail, dthdatas1 := dthdatas1 T @ [D2HData (getGOID (reqresps1 T)) (read_from_cache (CLEntry.content (devcache1 T))) (clock T)], program1 := list\<rparr>)"
+show goal2: "f (T\<lparr>buffer1 := Some (case reqresps1 T of [] \<Rightarrow> H2DResp (-1) ReqRespMadeup Invalid 999 | snoop # tail \<Rightarrow> snoop), devcache1 := devcache1 T \<lparr>CLEntry.block_state := Invalid\<rparr>, reqresps1 := case reqresps1 T of [] \<Rightarrow> [] | I # tail \<Rightarrow> tail, dthdatas1 := dthdatas1 T @ [D2HData (getGOID (reqresps1 T)) (read_from_cache (CLEntry.content (devcache1 T))) (clock T)], program1 := list\<rparr>)"
  if "f T"
    and "\<And>T m dthd. f T \<and> CLEntry.block_state (devcache1 T) = IIA \<and> nextReqRespIs GO_WritePull (reqresps1 T) \<Longrightarrow> f (case program1 T of [] \<Rightarrow> T \<lparr>buffer1 := Some m, devcache1 := devcache1 T \<lparr>CLEntry.block_state := Invalid\<rparr>, reqresps1 := case reqresps1 T of [] \<Rightarrow> [] | I # tail \<Rightarrow> tail, dthdatas1 := dthdatas1 T @ [dthd]\<rparr> | Instr # tlI \<Rightarrow> T \<lparr>buffer1 := Some m, devcache1 := devcache1 T \<lparr>CLEntry.block_state := Invalid\<rparr>, reqresps1 := case reqresps1 T of [] \<Rightarrow> [] | I # tail \<Rightarrow> tail, dthdatas1 := dthdatas1 T @ [dthd], program1 := tlI\<rparr>)"
    and "program1 T = a # list"

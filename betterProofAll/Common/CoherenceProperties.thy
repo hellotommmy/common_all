@@ -147,8 +147,8 @@ definition C_msg_P_oppo :: "
   "C_msg_P_oppo mesi next_msg P T = ((CSTATE mesi T 0 \<and> next_msg T 0 \<longrightarrow> P T 1 ) \<and> (CSTATE mesi T 1 \<and> next_msg T 1 \<longrightarrow> P T 0))"
 *)
 definition C_msg_P_oppo :: "
-(MESI_State) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> (Type1State \<Rightarrow> nat \Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
-  "C_msg_P_oppo mesi next_msg P T = (\<forall>i. (CSTATE mesi T i \<and> next_msg T i) \<longrightarrow> (\forall j. j \<noteq> i \<longrightarrow> P T j))"
+(MESI_State) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> (Type1State \<Rightarrow> nat \<Rightarrow> bool) \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
+  "C_msg_P_oppo mesi next_msg P T = (\<forall>i. (CSTATE mesi T i \<and> next_msg T i) \<longrightarrow> (\<forall> j. j \<noteq> i \<longrightarrow> P T j))"
   
 
 
@@ -898,46 +898,6 @@ lemma SWMR_one_singleton1: shows "\<lbrakk>SWMR_state_machine T; nextSnoopIs X T
 M: owner
 IMAD+ GO-M : owner
 \<close>
-  
-definition GOwner :: "Type1State \<Rightarrow> nat \<Rightarrow> bool"
-  where [simp]: "GOwner T i = (if i = 0 then (Owner (CLEntry.block_state (devcache1 T)) \<or> Lexists_nonEmpty (reqresps1 T) (\<lambda>m. Owner (getGrantedState m))  )
-                       else (Owner (CLEntry.block_state (devcache2 T)) \<or> Lexists_nonEmpty (reqresps2 T) (\<lambda>m. Owner (getGrantedState m))  )) "
-
-definition GReaderOnly :: "Type1State \<Rightarrow> nat \<Rightarrow> bool"
-  where [simp]: "GReaderOnly T i = (if i = 0 then (ReaderOnly (CLEntry.block_state (devcache1 T)) \<or> Lexists_nonEmpty (reqresps1 T) (\<lambda>m. ReaderOnly (getGrantedState m))  )
-                       else (ReaderOnly (CLEntry.block_state (devcache2 T)) \<or> Lexists_nonEmpty (reqresps2 T) (\<lambda>m. ReaderOnly (getGrantedState m))  )) "
-
-
-definition GReader :: "Type1State \<Rightarrow> nat \<Rightarrow> bool"
-  where [simp]: "GReader T i = (if i = 0 then (Reader (CLEntry.block_state (devcache1 T)) \<or> Lexists_nonEmpty (reqresps1 T) (\<lambda>m. Reader (getGrantedState m))  )
-                       else (Reader (CLEntry.block_state (devcache2 T)) \<or> Lexists_nonEmpty (reqresps2 T) (\<lambda>m. Reader (getGrantedState m))  )) "
-
-definition  GSWMR :: "Type1State \<Rightarrow> bool" where [simp]:
-  "GSWMR T = (( GOwner T 0  \<longrightarrow> \<not> (GReader T 1)  ) \<and> (GOwner T 1 \<longrightarrow> \<not> (GReader T 0)) )"
-
-
-\<comment>\<open>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds> host_state_configuration_reasonable begins\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds> \<close>
-definition InvalidFamily :: "MESI_State \<Rightarrow> bool" where [simp]:
-  "InvalidFamily mesi = (case mesi of Invalid \<Rightarrow> True | ISAD \<Rightarrow> True | IMAD \<Rightarrow> True | _ \<Rightarrow> False)"
-
-\<comment>\<open>if host believes everyone is Invalid, then indeed all devices don't have any permission\<close>
-definition allInvalid :: "Type1State \<Rightarrow> bool" where [simp]: "allInvalid T =   (HSTATE InvalidM T \<longrightarrow> (InvalidFamily (CLEntry.block_state (devcache1 T))  \<and>
-  InvalidFamily (CLEntry.block_state (devcache2 T)  )) 
-)"
-
-\<comment>\<open>if host believes everyone is in Shared state, then indeed at least one device is in S state, and no device is an owner \<close>
-definition allShared :: "Type1State \<Rightarrow> bool" where [simp]: "allShared T =  ( (HSTATE SharedM T 
-\<longrightarrow> (((GReader T 0) \<or> (GReader T 1)) \<and> \<not>(GOwner T 0 \<or> GOwner T 1) ) 
-))"
-
-\<comment>\<open>if host believes someone is an owner, then there should be exactly one owner\<close>
-definition oneModified :: "Type1State \<Rightarrow> bool" where [simp]: "oneModified T =  ( (HSTATE ModifiedM T \<longrightarrow> ( ((GOwner T 0) \<and> \<not>(GOwner T 1)) \<or>
-  ((GOwner T 1) \<and> \<not>(GOwner T 0)) )  ) 
-)"
-
-definition host_device_states_agree :: "Type1State \<Rightarrow> bool" where [simp]: "host_device_states_agree T = (allInvalid T \<and> allShared T \<and> oneModified T )"
-
-\<comment>\<open>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds> host_device_state_agree ends \<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds> \<close>
 
 
 
@@ -945,24 +905,8 @@ definition host_device_states_agree :: "Type1State \<Rightarrow> bool" where [si
 
 
 
-\<comment>\<open>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds> host_device_states_reasonable begins\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds>\<pounds> \<close>
-\<comment>\<open>***********************************************X_means starts****************************************************************************\<close>
-
-definition devStable :: "Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]: "devStable T i = (let ( reqs) = 
-  (if i = 0 then (reqs1 T) else (reqs2 T)) in (reqs = [] \<and> (CSTATE Invalid T i \<or> CSTATE Shared T i \<or> CSTATE Modified T i \<or> CSTATE Exclusive T i ) ))"
-
-definition devJustStarted :: "Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]: "devJustStarted T i = (let ( reqs) = 
-  (if i = 0 then (reqs1 T) else (reqs2 T)) in 
-    ((reqs \<noteq> [] \<and> \<not>(CSTATE Invalid T i \<or> CSTATE Shared T i \<or> CSTATE Modified T i \<or> CSTATE Exclusive T i ) ) \<or> (devStable T i)) )"
 
 
-
-
-definition requestorAlmostGotOwnership :: "Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]:
-  "requestorAlmostGotOwnership T i = ( CSTATE IMAD T i \<and> nextGOPendingState Modified T i \<and> nextHTDDataPending T i
-    \<or> CSTATE IMA T i \<and> nextGOPendingState Modified T i \<and> (\<not> nextHTDDataPending T 0) \<or> 
-      CSTATE IMD T i \<and> (\<not> nextGOPending T i\<comment>\<open>Not sure what predicate to put here, 
-          having a non-Modified GO would still be quite strange state\<close>) \<and> nextHTDDataPending T i)"
 
 
 
@@ -970,33 +914,15 @@ definition ownerAlreadyInvalidated :: "Type1State \<Rightarrow> nat \<Rightarrow
   "ownerAlreadyInvalidated T i = ( CSTATE Invalid T i \<and> \<not>nextSnpRespPending T i \<and> \<not> nextSnoopPending T i \<or> 
     CSTATE IIA T i \<and> nextGOPendingIs GO_WritePull T i \<and> \<not>nextSnpRespPending T i \<and> \<not> nextSnoopPending T i)"
 
-\<comment>\<open>old def of Xmeans: 
-(HSTATE ModifiedM T \<or> (HSTATE SharedM T) \<or> (HSTATE InvalidM T) ) \<longrightarrow> 
-  ( devJustStarted T 0 \<or> almostCompletion T 0) \<and> ( devJustStarted T 1 \<or> almostCompletion T 1)
-Not precise enough and too restrictive\<close>
-definition X_means_devStableOrBeginningOrEnding :: "Type1State  \<Rightarrow> bool" where [simp]: "X_means_devStableOrBeginningOrEnding T  = (
-  (HSTATE ModifiedM T \<longrightarrow> (requestorAlmostGotOwnership T 0 \<and> ownerAlreadyInvalidated T 1) \<or> (requestorAlmostGotOwnership T 1 \<and> ownerAlreadyInvalidated T 0)  ) 
-)"
+
 \<comment>\<open>***********************************************X_means ends****************************************************************************\<close>
 
 
 \<comment>\<open>***********************************************XD starts********************************************************************************\<close>
 
 
-definition aboutToGetShared :: "Type1State \<Rightarrow> nat \<Rightarrow> bool"
-  where [simp]: "aboutToGetShared T i = (if i = 0 then (CSTATE ISA T 0 \<and> (reqresps1 T) = [] \<or> 
-                                                (CSTATE ISAD T 0) \<and> Lexists_nonEmpty (reqresps1 T) (\<lambda>m. Shared = (getGrantedState m))  )
-                       else (CSTATE ISA T 1 \<and> (reqresps2 T) = [] \<or> 
-                                                (CSTATE ISAD T 1) \<and> Lexists_nonEmpty (reqresps2 T) (\<lambda>m. Shared = (getGrantedState m))  ) ) "
 
-definition GONotInflight :: "nat \<Rightarrow> Type1State \<Rightarrow> bool"
-  where [simp]: "GONotInflight i T = (if i = 0 then reqresps1 T = [] else reqresps2 T = [])"
 
-definition dthdataInflight :: "Type1State  \<Rightarrow> nat \<Rightarrow> bool" 
-   where [simp]: "dthdataInflight T i = (if i = 0 then dthdatas1 T \<noteq> [] else dthdatas2 T \<noteq> [])"
-
-definition dthdataNotInflight :: "Type1State  \<Rightarrow> nat \<Rightarrow> bool" 
-   where [simp]: "dthdataNotInflight T i = (if i = 0 then dthdatas1 T = [] else dthdatas2 T = [])"
 
 
 \<comment>\<open>For instance SD indicates that: the device has responded, with its
@@ -1004,14 +930,6 @@ SnpResp received by Host, (our transitions will always have the Data and SnpResp
 Data still inside D2HData channel (not processed), and the other device is requestor, therefore whould have its state in ISAD (before it got
 GO) or ISA (after it got GO)
 The Host-device state correspondance can be more refined, for example MD cannot have IMA, but GOwner allows that\<close>
-definition  XD_means_devSnoopRespConsumedFirst :: "Type1State  \<Rightarrow> bool" where [simp]: "XD_means_devSnoopRespConsumedFirst T  = (
-  ((HSTATE MD T) \<longrightarrow> (nextDTHDataFrom 0 T ) \<and> (GOwner T 1) \<or> (nextDTHDataFrom 1 T ) \<and> (GOwner T 0) ) \<and>
-  ((HSTATE SD T) \<longrightarrow> (nextDTHDataFrom 0 T) \<and> (aboutToGetShared T 1) \<or> (nextDTHDataFrom 1 T ) \<and> (aboutToGetShared T 0) ) \<and>
-  ((HSTATE ID T) \<longrightarrow> (((nextDTHDataFrom 0 T \<and> GONotInflight 0 T) \<or> 
-                          (nextGOPendingIs GO_WritePull T 0 \<or> nextGOPendingIs GO_WritePullDrop T 0) \<and> dthdataNotInflight T 0) \<or> 
-                       (nextDTHDataFrom 1 T \<and> GONotInflight 1 T) \<or> 
-                          (nextGOPendingIs GO_WritePull T 1 \<or> nextGOPendingIs GO_WritePullDrop T 1) \<and> dthdataNotInflight T 1) ) 
-)"
 
 \<comment>\<open>***********************************************XD ends********************************************************************************\<close>
 
@@ -1024,68 +942,15 @@ definition  XD_means_devSnoopRespConsumedFirst :: "Type1State  \<Rightarrow> boo
 
 \<comment>\<open>***********************************************XA begins********************************************************************************\<close>
 
-definition snprespInflight :: "SnpRespType \<Rightarrow> Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]: "snprespInflight snpresptype T (i::nat) = (let snpresps = (if i = (0::nat) then (snpresps1 T) else (snpresps2 T)) in
-  (Lexists_nonEmpty snpresps (\<lambda>m. snpresptype = (getSpecificTypeSnpResp m))))"
 
 
 \<comment>\<open>exists number i (the requestor), such that it either is about to get the Data or has already got the Data. But only data is forwarded to it,
 go message is not yet ready\<close>
-definition onlyDataHasBeenForwardedRdS :: "Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]:
-  "onlyDataHasBeenForwardedRdS T i = (if i = 0 then (htddatas1 T  \<noteq> [] \<and> CSTATE ISAD T 0  \<or> htddatas1 T = [] \<and> CSTATE ISA T 0 ) 
-                                               else (htddatas2 T  \<noteq> [] \<and> CSTATE ISAD T 1  \<or> htddatas2 T = [] \<and> CSTATE ISA T 1 ))"
 
 
 
-definition onlyDataHasBeenForwardedRdOwn :: "Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]:
-  "onlyDataHasBeenForwardedRdOwn T i = (if i = 0 then (htddatas1 T  \<noteq> [] \<and> (CSTATE IMAD T 0 \<or>  CSTATE SMAD T 0)  \<or> 
-                                                       htddatas1 T = [] \<and> (CSTATE IMA T 0 \<or>  CSTATE SMA T 0) ) else 
-                                                      (htddatas2 T  \<noteq> [] \<and> (CSTATE IMAD T 1  \<or> CSTATE SMAD T 1)  \<or> 
-                                                       htddatas2 T = []  \<and> (CSTATE IMA T 1 \<or> CSTATE SMA T 1) ) )"
 
 
-\<comment>\<open>3.2.4.2.6 RdCurr
-These are full cacheline read requests from the device for lines to get the most current data, 
-but not change the existing state in any cache, including in the Host. The Host does not need to track the cacheline in the device that 
-issued the RdCurr. RdCurr gets a data but no GO.
- The device receives the line in the Invalid state which means it gets one use of the line and cannot cache it\<close>
-definition onlyDataHasBeenForwardedRdCurr :: "Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]:
-  "onlyDataHasBeenForwardedRdCurr T i = (if i = 0 then    (htddatas1 T  \<noteq> []   \<and> CSTATE Invalid T 0 ) else 
-                                                      (htddatas2 T \<noteq> [] \<and> CSTATE Invalid T 1 ))"
-
-
-\<comment>\<open>See table 3-21 on page 103: CXL.cache \u00E2\u0080\u0093 Mapping of H2D Requests to D2H Responses\<close>
-definition snpRespNotProcessedData :: "Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]:
-  "snpRespNotProcessedData T i = ( snprespInflight RspIHitI T i \<and> CSTATE Invalid T i \<or> 
-                        snprespInflight RspSFwdM T i \<and> CSTATE Shared T i \<or> snprespInflight RspSHitSE T i \<and> CSTATE Shared T i \<or> 
-                        snprespInflight RspIFwdM T i \<and> CSTATE Invalid T i  )"
-
-definition snpRespNotProcessedInv :: "Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]:
-  "snpRespNotProcessedInv T i = ( snprespInflight RspIHitI T i \<and> CSTATE Invalid T i \<or> 
-                         snprespInflight RspIHitSE T i \<and> CSTATE Invalid T i \<or> 
-                        snprespInflight RspIFwdM T i \<and> CSTATE Invalid T i  )"
-
-
-definition snpRespNotProcessedCurr :: "Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]:
-  "snpRespNotProcessedCurr T i = ( snprespInflight RspIHitI T i \<and> CSTATE Invalid T i \<or> 
-                         snprespInflight RspVHitV T i \<and> \<not>(CSTATE Invalid T i) \<or> 
-                        snprespInflight RspIFwdM T i \<and> CSTATE Invalid T i \<or> 
-                        snprespInflight RspSFwdM T i \<and> CSTATE Shared T i \<or> snprespInflight RspSHitSE T i \<and> CSTATE Shared T i \<or>
-                         snprespInflight RspVFwdV T i \<and> \<not>(CSTATE Invalid T i)  )"
-
-\<comment>\<open>Host in MA state, meaning dthdata has been forwarded as htddata, and that might have been received by requestor device. 
- there exists a requestor i, such that i has its data forwarded to it by the host, and the GO response not in-flight (therefore
-we know that the SnpResp not processed)
-  These  predicates need to be augmented with multiple blocks (say, \<exists>bid msg. msg \<in> htddatas \<and> block_id msg = bid) \<close>
-definition XA_means_devDataConsumedFirst :: "Type1State \<Rightarrow> bool" where [simp]:
-  "XA_means_devDataConsumedFirst T  = (
-  ((HSTATE MA T) \<longrightarrow> ( onlyDataHasBeenForwardedRdOwn T 0 \<and>   (snpRespNotProcessedInv T 1 \<or> nextSnoopPending T 1) \<or> 
-                       onlyDataHasBeenForwardedRdOwn T 1 \<and>   (snpRespNotProcessedInv T 0 \<or> nextSnoopPending T 0)  )) 
-    \<and>
-  ((HSTATE SA T) \<longrightarrow> onlyDataHasBeenForwardedRdS T 0 \<and> (snpRespNotProcessedData T 1 \<or> nextSnoopPending T 1) \<or>
-                     onlyDataHasBeenForwardedRdS T 1 \<and> (snpRespNotProcessedData T 0 \<or> nextSnoopPending T 0)  )
- 
-)
-"
 \<comment>\<open>***********************************************XA ends********************************************************************************\<close>
 
 
@@ -1094,57 +959,20 @@ definition XA_means_devDataConsumedFirst :: "Type1State \<Rightarrow> bool" wher
 \<comment>\<open>***********************************************XAD starts********************************************************************************\<close>
 
 
-\<comment>\<open>For >1 blocks predicate needs to change to be only about a certain block \<close>
-definition snoopInflight :: "SnoopType \<Rightarrow> Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]: "snoopInflight snptype (T::Type1State) i = 
-  (let snoops = (if i = (0::nat) then (snps1 T) else (snps2 T)) in  LallNonEmpty snoops (\<lambda>m. (getSpecificTypeSnoop m = snptype)) 
-  ) "
-
 
 definition  snoopNotInflight :: "Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]:"snoopNotInflight  (T::Type1State) i = 
-  (let snoops = (if i = (0::nat) then (snps1 T) else (snps2 T)) in snoops = []  
-  ) "
+  (let snoops = (snps T i) in snoops = [])"
 
 
 
-definition snprespNotInflight :: "  Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]: "snprespNotInflight  T (i::nat) = (let snpresps = (if i = (0::nat) then (snpresps1 T) else (snpresps2 T)) in
-  snpresps = [])"
+definition snprespNotInflight :: "  Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]: "snprespNotInflight  T (i::nat) = 
+  (let snpresps = (snpresps T i) in snpresps = [])"
   
 
-\<comment>\<open>If Host is in MAD state, then one is requesting, other is being snooped, and the snoop response and data has not been received by Host yet,
-device i we are looking at is the device being snooped
-SnpCur does not require transient state changes.
-SAD meant some owner has downgraded from M state, therefore RspIHitSE and RspSHitSE might be eliminated \<close>
-definition  XAD_means_devBeingSnooped :: " Type1State  \<Rightarrow> bool" where [simp]: "XAD_means_devBeingSnooped T  = 
-   ( ( (HSTATE MAD T) \<longrightarrow> ((snoopInflight SnpInv T 0 \<and> dthdataNotInflight T 0 \<and> snprespNotInflight T 0 \<or> 
-                            (snoopNotInflight T 0 \<and> dthdataInflight T 0 \<and> snpRespNotProcessedInv T 0 )) \<and> (CSTATE IMAD T 1) \<or>
-                           ((snoopInflight SnpInv T 1 \<and> dthdataNotInflight T 1 \<and> snprespNotInflight T 1 \<or> 
-                            (snoopNotInflight T 1 \<and> dthdataInflight T 1 \<and> snpRespNotProcessedInv T 1 )) \<and> (CSTATE IMAD T 0) ))) \<and>
-     ((HSTATE SAD T) \<longrightarrow> (( (snoopInflight SnpData T 0 \<and> dthdataNotInflight T 0 \<and> snprespNotInflight T 0) \<or> 
-                           (snoopNotInflight T 0 \<and> dthdataInflight T 0 \<and> 
-                            snpRespNotProcessedData T 0) )   \<and> 
-                            (CSTATE ISAD T 1)) \<or> 
-                         (( (snoopInflight SnpData T 1 \<and> dthdataNotInflight T 1 \<and> snprespNotInflight T 1) \<or> 
-                           (snoopNotInflight T 1 \<and> dthdataInflight T 1 \<and> 
-                            snpRespNotProcessedInv T 1) )   \<and> 
-                            (CSTATE ISAD T 0))   )   
-)"
 
 
-\<comment>\<open>Note that CSTATE SMAD T i is not possible because there already is an owner\<close>
-definition implies_XAD :: " Type1State  \<Rightarrow> bool" where [simp]: "implies_XAD T  = (
- (((CSTATE Modified T 0) \<and> nextSnoopIs SnpInv T 0 \<longrightarrow> HSTATE MAD T \<and> CSTATE IMAD T 1) \<and>
-  ((CSTATE Modified T 1) \<and> nextSnoopIs SnpInv T 1 \<longrightarrow> HSTATE MAD T \<and> CSTATE IMAD T 0)) \<and>
- ((CSTATE Modified T 0 \<and> nextSnoopIs SnpData T 0 \<longrightarrow> HSTATE SAD T \<and> CSTATE ISAD T 1) \<and>
-  (CSTATE Modified T 1 \<and> nextSnoopIs SnpData T 1 \<longrightarrow> HSTATE SAD T \<and> CSTATE ISAD T 0)) \<and>
-  ((CSTATE Shared T 0) \<and> nextSnoopIs SnpInv T 0 \<longrightarrow> HSTATE MA T \<and> ( CSTATE IMAD T 1 \<and> htddatas2 T \<noteq> [] \<or>CSTATE IMA T 1 \<and> htddatas2 T = [] )) \<and>
-  ((CSTATE Shared T 1) \<and> nextSnoopIs SnpInv T 1 \<longrightarrow> HSTATE MA T \<and> ( CSTATE IMAD T 0 \<and> htddatas1 T \<noteq> [] \<or>CSTATE IMA T 0 \<and> htddatas1 T = [] ))
-) "
 \<comment>\<open>***********************************************XAD ends********************************************************************************\<close>
 
-
-
-definition host_state_configuration_reasonable :: "Type1State \<Rightarrow> bool " where [simp]: "host_state_configuration_reasonable T = 
-  (X_means_devStableOrBeginningOrEnding T \<and> XD_means_devSnoopRespConsumedFirst T \<and> XA_means_devDataConsumedFirst T \<and> XAD_means_devBeingSnooped T  )"
 \<comment>\<open>
 definition "reqAlmostComplete T i = ( (HSTATE ModifiedM T  \<or> HSTATE MD T ) \<and> (GOwner T i) \<or> (HSTATE SharedM T  \<or> HSTATE SD T ) \<and> (GReaderOnly T i) )"
 \<close>
@@ -1161,20 +989,17 @@ The host must wait until it has received both the snoop response and all IWB dat
 
 Interpretation (implies) 1: no 2 snoops\<close>
 definition no2Snoops :: "Type1State  \<Rightarrow> bool" where [simp]: "no2Snoops T  = 
-  ( (length (snps1 T) \<le> 1)  \<and>  
-    (length (snps2 T) \<le> 1))"
+  (\<forall> i. (length (snps T i) \<le> 1) )"
 
 
 \<comment>\<open>Interpretation (implies) 2: for same block no 2 snpresps can coexist\<close>
 definition no2SnpResps :: "Type1State  \<Rightarrow> bool" where [simp]: "no2SnpResps T  = 
-  ( (length (snpresps1 T) \<le> 1)  \<and>  
-    (length (snpresps2 T) \<le> 1))"
+  (\<forall> i. (length (snpresps T i) \<le> 1)  )"
 
 
 \<comment>\<open>Interpretation (implies) 3: for same block no snoops and snpresps can coexist\<close>
 definition snoopsRespsExclusive :: "Type1State  \<Rightarrow> bool" where [simp]: "snoopsRespsExclusive T  = 
-  ( (snps1 T \<noteq> [] \<longrightarrow>  snpresps1 T = []) \<and> (snpresps1 T \<noteq> [] \<longrightarrow> snps1 T = []) \<and>  
-    (snps2 T \<noteq> [] \<longrightarrow>  snpresps2 T = []) \<and> ((snpresps2 T \<noteq> [] \<longrightarrow> snps2 T = [])))"
+  (\<forall>i. (snps T i \<noteq> [] \<longrightarrow>  snpresps T i = []) \<and> (snpresps T i \<noteq> [] \<longrightarrow> snps T i = []) )"
 
 
 \<comment>\<open>Multiple read requests (cacheable or uncacheable) to the same cacheline are allowed only in the following specific cases 
@@ -1184,15 +1009,15 @@ For these commands the device ends in I-state, so there is no inconsistent state
 No 2 reqs coexist unless they are CLFlush/RdCurr
 \<close>
 definition no2Reqs :: "Type1State  \<Rightarrow> bool" where [simp]: "no2Reqs T  = 
-  ( ((length (reqs1 T) \<le> 1) \<or> Lall (reqs1 T) (\<lambda>req. getSpecificTypeReq req = RdCurr \<or>  getSpecificTypeReq req = CLFlush) \<and>  
-    ((length (reqs2 T) \<le> 1) \<or> Lall (reqs1 T) (\<lambda>req. getSpecificTypeReq req = RdCurr \<or>  getSpecificTypeReq req = CLFlush ))))"
+  ( ((length (reqs T 0) \<le> 1) \<or> Lall (reqs T 0) (\<lambda>req. getSpecificTypeReq req = RdCurr \<or>  getSpecificTypeReq req = CLFlush)) \<and>  
+    ((length (reqs T 1) \<le> 1) \<or> Lall (reqs T 1) (\<lambda>req. getSpecificTypeReq req = RdCurr \<or>  getSpecificTypeReq req = CLFlush)))"
 
 \<comment>\<open>Multiple read requests not allowed unless they are CLFlush/RdCurr
 resulting invariant 2: at most one reqresp, or all state granted is Invalid
 \<close>
 definition no2ValidGOs :: "Type1State \<Rightarrow> bool" where [simp]: "no2ValidGOs T = (
-  (length (reqresps1 T ) \<le> 1 \<or> Lall (reqresps1 T) (\<lambda>reqresp. getGrantedState reqresp = Invalid)) \<and>
-  (length (reqresps2 T ) \<le> 1 \<or> Lall (reqresps2 T) (\<lambda>reqresp. getGrantedState reqresp = Invalid)) )"
+  (length (reqresps T 0) \<le> 1 \<or> Lall (reqresps T 0) (\<lambda>reqresp. getGrantedState reqresp = Invalid)) \<and>
+  (length (reqresps T 1) \<le> 1 \<or> Lall (reqresps T 1) (\<lambda>reqresp. getGrantedState reqresp = Invalid)))"
 
 definition snpRespCState :: "Type1State \<Rightarrow> nat \<Rightarrow> bool" where [simp]: "snpRespCState T i = ((nextSnpRespIs RspIFwdM T i \<longrightarrow> CSTATE Invalid T i) \<and>
   (nextSnpRespIs RspSFwdM T i \<longrightarrow> CSTATE Shared T i) \<and> (nextSnpRespIs RspIHitSE T i \<longrightarrow> CSTATE Invalid T i) \<and> 
@@ -1219,62 +1044,38 @@ be consumed before that snoop generates a snpresp, and if snoop goes first, that
 the snpresps generated from snoop has been consumed\<close>
 
 definition snoopGORules :: "Type1State \<Rightarrow> bool" where [simp]: 
-  "snoopGORules T = ((snps1 T \<noteq> [] \<longrightarrow> (reqresps1 T = [] \<or> (snoopBehindGO (snps1 T) (reqresps1 T))))  \<and> 
-    (snps2 T \<noteq> [] \<longrightarrow> (reqresps2 T = [] \<or> snoopBehindGO (snps2 T) (reqresps2 T))) )"
-
-
-\<comment>\<open>This is a corallary of the snoop-pushes-GO rule and GO-not-tailgating snoops rule: if GO comes first, then GO will
-be consumed before that snoop generates a snpresp, and if snoop goes first, that GO should not be sent before
-the snpresps generated from snoop has been consumed\<close>
-\<comment>\<open>I thought this would be a corollary, but actually this is not--you can reach this state without violating SPG or GTS,
-this is by sending two snoops to two devices simultaneously, and then having  snpresp(dev1) first, (*here violates GTS) generating a GO(dev2) next, 
-and then having the
-other snpresp(dev2) generated: now both a snpresp and a GO (reqresp) exist for the same device\<close>
-\<comment>\<open>HostModifiedSADRspIFwdM' transaction transition not acceptable as sending the GO(dev2) is a tailgate of a snoop(resp)(dev2)\<close>
-definition snoopGORules_transitiveP1 :: "Type1State \<Rightarrow> bool" where [simp]: 
-  "snoopGORules_transitiveP1 T = ((snpresps1 T \<noteq> [] \<longrightarrow> reqresps1 T = []) \<and> (reqresps1 T \<noteq> [] \<longrightarrow> snpresps1 T = []) \<and> 
-    (snpresps2 T \<noteq> [] \<longrightarrow> reqresps2 T = []) \<and> (reqresps2 T \<noteq> [] \<longrightarrow> snpresps2 T = []))"
+  "snoopGORules T = ((snps T 0 \<noteq> [] \<longrightarrow> (reqresps T 0 = [] \<or> (snoopBehindGO (snps T 0) (reqresps T 0))))  \<and> 
+    (snps T 1 \<noteq> [] \<longrightarrow> (reqresps T 1 = [] \<or> snoopBehindGO (snps T 1) (reqresps T 1))))"
 
 
 
-\<comment>\<open>This is actually the corollary of "no 2 reqs", not used at this stage, might needed in other transition rules\<close>
-definition snoopGORules_transitiveP2 :: "Type1State \<Rightarrow> bool" where [simp]:
-  "snoopGORules_transitiveP2 T =  ((snpresps1 T \<noteq> [] \<longrightarrow> snpresps2 T = []) \<and> (snpresps2 T \<noteq> [] \<longrightarrow> snpresps1 T = []) \<and>
-      (snpresps1 T \<noteq> [] \<longrightarrow> snps2 T = []) \<and> (snps2 T \<noteq> [] \<longrightarrow> snpresps1 T = []) \<and> 
-      (snpresps2 T \<noteq> [] \<longrightarrow> snps1 T = []) \<and> (snps1 T \<noteq> [] \<longrightarrow> snpresps2 T = []))"
-\<comment>\<open>
-  "snoopGORules_transitiveP2 T = ((snpresps1 T \<noteq> [] \<longrightarrow> reqresps2 T = []) \<and> (reqresps1 T \<noteq> [] \<longrightarrow> snpresps2 T = []) \<and> 
-    (snpresps2 T \<noteq> [] \<longrightarrow> reqresps1 T = []) \<and> (reqresps2 T \<noteq> [] \<longrightarrow> snpresps1 T = []))"
-\<close>
 
 definition no2Datas :: "Type1State \<Rightarrow> bool" where [simp]:
-  "no2Datas T = (length (dthdatas1 T) \<le> 1 \<and> length (dthdatas2 T) \<le> 1 \<and> length (htddatas1 T) \<le> 1 \<and> length (htddatas2 T) \<le> 1)"
+  "no2Datas T = (length (dthdatas T 0) \<le> 1 \<and> length (dthdatas T 1) \<le> 1 \<and> length (htddatas T 0) \<le> 1 \<and> length (htddatas T 1) \<le> 1)"
 
 definition no2DSnoops :: "Type1State \<Rightarrow> bool" where [simp]:
-  "no2DSnoops T = ((snps1 T \<noteq> [] \<longrightarrow> snps2 T = []) \<and> (snps2 T \<noteq> [] \<longrightarrow> snps1 T = []))"
+  "no2DSnoops T = ((snps T 0 \<noteq> [] \<longrightarrow> snps T 1 = []) \<and> (snps T 1 \<noteq> [] \<longrightarrow> snps T 0 = []))"
 
 definition no2Owners2 :: "Type1State \<Rightarrow> bool" where [simp]:
-  "no2Owners2 T = ((CSTATE Modified T 0 \<longrightarrow> reqresps2 T = []) \<and> (CSTATE Modified T 1 \<longrightarrow> reqresps1 T = []) )"
+  "no2Owners2 T = ((CSTATE Modified T 0 \<longrightarrow> reqresps T 1 = []) \<and> (CSTATE Modified T 1 \<longrightarrow> reqresps T 0 = []))"
 
 definition transEarlyStageNoGO :: "Type1State \<Rightarrow> bool" where [simp]:
-  "transEarlyStageNoGO T = (((CSTATE Modified T 0 \<and> nextSnoopIs SnpInv T 0) \<longrightarrow> reqresps2 T = []) \<and> 
-    ((CSTATE Shared T 0 \<and> nextSnoopIs SnpInv T 0) \<longrightarrow> reqresps2 T = []) \<and>
-    ((CSTATE Modified T 1 \<and> nextSnoopIs SnpInv T 1) \<longrightarrow> reqresps1 T = []) \<and>
-    ((CSTATE Shared T 1 \<and> nextSnoopIs SnpInv T 1) \<longrightarrow> reqresps1 T = []))"
+  "transEarlyStageNoGO T = (((CSTATE Modified T 0 \<and> nextSnoopIs SnpInv T 0) \<longrightarrow> reqresps T 1 = []) \<and> 
+    ((CSTATE Shared T 0 \<and> nextSnoopIs SnpInv T 0) \<longrightarrow> reqresps T 1 = []) \<and>
+    ((CSTATE Modified T 1 \<and> nextSnoopIs SnpInv T 1) \<longrightarrow> reqresps T 0 = []) \<and>
+    ((CSTATE Shared T 1 \<and> nextSnoopIs SnpInv T 1) \<longrightarrow> reqresps T 0 = []))"
 
 definition transNoData :: "Type1State \<Rightarrow> bool" where [simp]:
-  "transNoData T = (((CSTATE Shared T 0 \<and> nextSnoopIs SnpInv T 0) \<longrightarrow> htddatas1 T = []) \<and> 
-    ((CSTATE Shared T 1 \<and> nextSnoopIs SnpInv T 1) \<longrightarrow> htddatas2 T = []))"
+  "transNoData T = (((CSTATE Shared T 0 \<and> nextSnoopIs SnpInv T 0) \<longrightarrow> htddatas T 0 = []) \<and> 
+    ((CSTATE Shared T 1 \<and> nextSnoopIs SnpInv T 1) \<longrightarrow> htddatas T 1 = []))"
 
 
 definition channel_messages_not_redundant :: "Type1State \<Rightarrow> bool" where [simp]: "channel_messages_not_redundant T = 
   (snoopsRespsExclusive T \<and> no2Snoops T \<and> no2SnpResps T \<and> no2Reqs T \<and> snpRespCorrect T \<and> 
-    snoopGORules_transitiveP1 T \<and> snoopGORules T \<and> snoopGORules_transitiveP2 T \<and> no2Datas T \<and> no2DSnoops T \<and> 
-    no2Owners2 T \<and> transEarlyStageNoGO T \<and> transNoData T) "
+    snoopGORules T \<and> no2Datas T \<and> no2DSnoops T \<and> 
+    no2Owners2 T \<and> transEarlyStageNoGO T \<and> transNoData T)"
 
 
-definition device_state_reasonable :: "Type1State \<Rightarrow> bool" where [simp]: "device_state_reasonable T = ((CSTATE Invalid T 0 \<longrightarrow> \<not>GOwner T 0) \<and> (CSTATE Invalid T 1 \<longrightarrow> \<not>GOwner T 1) \<and> (CSTATE ISAD T 0 \<longrightarrow> \<not>GOwner T 0) \<and> (CSTATE ISAD T 1 \<longrightarrow> \<not>GOwner T 1) \<and> (CSTATE ISA T 0 \<longrightarrow> \<not>GOwner T 0) \<and> (CSTATE ISA T 1 \<longrightarrow> \<not>GOwner T 1)
-  \<and> (CSTATE ISD T 0 \<longrightarrow> \<not>GOwner T 0) \<and> (CSTATE ISD T 1 \<longrightarrow> \<not>GOwner T 1) \<and> (CSTATE Shared T 0 \<longrightarrow> \<not>GOwner T 0) \<and> (CSTATE Shared T 1 \<longrightarrow> \<not>GOwner T 1) )"
 
 
 \<comment>\<open>For transitions such as IMADData. 
@@ -1301,12 +1102,11 @@ definition device_state_configuration_reasonable ::  "Type1State \<Rightarrow> b
 
 
 definition state_match_messages :: "Type1State \<Rightarrow> bool " where [simp]:
-  "state_match_messages T = ((CSTATE Invalid T 0 \<longrightarrow> htddatas1 T = [] \<and> reqresps1 T = []) \<and> 
-    (CSTATE Invalid T 1 \<longrightarrow> htddatas2 T = [] \<and> reqresps2 T = []) \<and> (CSTATE Modified T 0 \<longrightarrow> htddatas1 T = [] \<and> reqresps1 T = []) \<and>
-    (CSTATE Modified T 1 \<longrightarrow> htddatas2 T = [] \<and> reqresps2 T = []))"
+  "state_match_messages T = ((CSTATE Invalid T 0 \<longrightarrow> htddatas T 0 = [] \<and> reqresps T 0 = []) \<and> 
+    (CSTATE Invalid T 1 \<longrightarrow> htddatas T 1 = [] \<and> reqresps T 1 = []) \<and> (CSTATE Modified T 0 \<longrightarrow> htddatas T 0 = [] \<and> reqresps T 0 = []) \<and>
+    (CSTATE Modified T 1 \<longrightarrow> htddatas T 1 = [] \<and> reqresps T 1 = []))"
 
-definition state_messages_hstates :: "Type1State \<Rightarrow> bool " where [simp]:
-  "state_messages_hstates T = implies_XAD T"
+
 
 
 
@@ -1320,93 +1120,20 @@ definition instruction_correct :: "Type1State \<Rightarrow> bool" where [simp]:
 
 
 
-\<comment>\<open>SWMR_inductive, but not necessarily naturally possible. e.g. MD + dthdatas1: [D2HData (Utid 0).., D2HData (Utid 0), ...., D2HData (Utid 1)]
-This config will get stuck on this data channel, but we do not care deadlocks (i.e. no next state
-exists), we only enforce that  if a next state exists,
-then that next state shouldn't be bad.\<close>
-definition SWMR_inductive  :: "Type1State \<Rightarrow> bool" where [simp]: 
-  "SWMR_inductive T= (host_device_states_agree T \<and> GSWMR T \<and> host_state_configuration_reasonable T \<and> 
-                channel_messages_not_redundant T \<and> device_state_reasonable T \<and> device_taking_data_states T \<and> 
-                        device_state_configuration_reasonable T \<and> state_match_messages T \<and> state_messages_hstates T \<and> instruction_correct T)"
 
-
-
-
-lemma owner_properties1: shows " CSTATE Invalid T 0
-    \<Longrightarrow> Owner (CLEntry.block_state (devcache1 T)) = False"
-  unfolding CSTATE_def
-  by simp
-
-lemma owner_properties2: shows "\<lbrakk>CSTATE X T 0; X \<noteq> Modified; X \<noteq> Exclusive; X \<noteq> IMA; X \<noteq> IMD;  X \<noteq> MIA; X \<noteq> SMA; X \<noteq> SMD \<rbrakk> \<Longrightarrow> 
-  Owner (CLEntry.block_state (devcache1 T)) = False"
+lemma owner_properties2: shows "\<lbrakk>CSTATE X T i; X \<noteq> Modified; X \<noteq> Exclusive; X \<noteq> IMA; X \<noteq> IMD;  X \<noteq> MIA; X \<noteq> SMA; X \<noteq> SMD \<rbrakk> \<Longrightarrow> 
+  Owner (CLEntry.block_state (devcaches T i)) = False"
   apply(subst Owner_def)
   apply simp
   by (smt (z3) MESI_State.exhaust MESI_State.simps(603) MESI_State.simps(604) MESI_State.simps(605) MESI_State.simps(606) MESI_State.simps(607) MESI_State.simps(608) MESI_State.simps(609) MESI_State.simps(612) MESI_State.simps(613) MESI_State.simps(614) MESI_State.simps(616) MESI_State.simps(617) MESI_State.simps(618) MESI_State.simps(619) MESI_State.simps(622) MESI_State.simps(623) MESI_State.simps(624) MESI_State.simps(625))
 
-lemma nextSnpRespIs_property1: shows "nextSnpRespIs snprespX T 0 \<Longrightarrow> snpresps1 T \<noteq> []"
+lemma nextSnpRespIs_property1: shows "nextSnpRespIs snprespX T i \<Longrightarrow> snpresps T i \<noteq> []"
   unfolding nextSnpRespIs_def
   apply simp
   unfolding startsWithSnpResp_def
-  apply(case_tac "snpresps1 T = []")
+  apply(case_tac "snpresps T i = []")
    apply simp+
   done
-
-lemma nextSnpRespIs_property2: shows "nextSnpRespIs snprespX T 1 \<Longrightarrow> snpresps2 T \<noteq> []"
-  unfolding nextSnpRespIs_def
-  apply simp
-  unfolding startsWithSnpResp_def
-  apply(case_tac "snpresps2 T = []")
-   apply simp+
-  done
-
-lemma CSTATE_GOwner1: shows " \<lbrakk> channel_messages_not_redundant T; CSTATE Invalid T 0; nextSnpRespIs RspIFwdM T 0\<rbrakk> \<Longrightarrow> \<not>GOwner T 0"
-  apply(subst GOwner_def)
-  unfolding channel_messages_not_redundant_def
-  apply(subst simp_thms(6))
-  apply(subst if_True)
-  apply(subgoal_tac "Owner (CLEntry.block_state (devcache1 T)) = False")
-   apply(erule ssubst)
-   apply(subst Lattices.disj.left_neutral)
-   apply(erule conjE)+
-  unfolding snoopGORules_transitiveP1_def
-   apply(erule conjE)+
-   apply(insert nextSnpRespIs_property1)
-  using snoopGORules_transitiveP2_def
-  apply (metis Lexists_nonEmpty.simps(1))
-  using owner_properties1 by presburger
-
-
-lemma SnpRespCSTATE: shows " \<lbrakk> channel_messages_not_redundant T; nextSnpRespIs RspIFwdM T 0\<rbrakk> \<Longrightarrow> CSTATE Invalid T 0"
-  unfolding channel_messages_not_redundant_def
-  apply(erule conjE)+
-  unfolding snpRespCState_def snpRespCorrect_def
-  apply(erule conjE)+
-  by meson
-  
- 
-
-lemma CSTATE_GOwner2: shows " \<lbrakk> channel_messages_not_redundant T; nextSnpRespIs RspIFwdM T 0\<rbrakk> \<Longrightarrow> \<not>GOwner T 0"
-  apply(subst GOwner_def)
-  unfolding channel_messages_not_redundant_def
-  apply(subst simp_thms(6))
-  apply(subst if_True)
-  apply(subgoal_tac "Owner (CLEntry.block_state (devcache1 T)) = False")
-   apply(erule ssubst)
-   apply(subst Lattices.disj.left_neutral)
-   apply(erule conjE)+
-  unfolding snoopGORules_transitiveP1_def
-   apply(erule conjE)+
-   apply(insert nextSnpRespIs_property1)
-  using snoopGORules_transitiveP2_def 
-  apply (metis Lexists_nonEmpty.simps(1))
-  apply(subgoal_tac "CSTATE Invalid T 0")
-   apply(insert owner_properties2)
-  using owner_properties1 apply presburger
-  unfolding snpRespCorrect_def
-  apply(erule conjE)+
-  unfolding snpRespCState_def
-  apply(erule conjE)+
-  by meson
 
 
 

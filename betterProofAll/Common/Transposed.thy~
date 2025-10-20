@@ -786,12 +786,11 @@ definition nextSnpRespPending :: "Type1State \<Rightarrow> nat \<Rightarrow> boo
 
 definition DirM :: "Type1State \<Rightarrow> bool"
   where [simp]:
-  "DirM T = ( ((CSTATE Modified T 0 ) \<and> (CSTATE Invalid T 1)) \<or> ((CSTATE Modified T 1) \<and> (CSTATE Invalid T 0)) )"
+  "DirM T = ( \<exists>i. (CSTATE Modified T i) \<and> (\<forall>j. j \<noteq> i \<longrightarrow> CSTATE Invalid T j) )" \<comment>\<open>Original: ( ((CSTATE Modified T 0 ) \<and> (CSTATE Invalid T 1)) \<or> ((CSTATE Modified T 1) \<and> (CSTATE Invalid T 0)) ) - exactly one device is Modified and all others are Invalid\<close>
 
 definition DirI :: "Type1State \<Rightarrow> bool"
   where [simp]:
-  "DirI T =  ( (  ((CSTATE Invalid T 0 ) \<or> (CSTATE IMAD T 0) \<or> (CSTATE ISAD T 0)  ) \<and> (CSTATE Invalid T 1)) \<or> 
-                  ((CSTATE Invalid T 0) \<and> (CSTATE Invalid T 1 \<or> CSTATE IMAD T 1 \<or> CSTATE ISAD T 1))    )"
+  "DirI T =  ( \<exists>i. ((CSTATE Invalid T i) \<or> (CSTATE IMAD T i) \<or> (CSTATE ISAD T i)) \<and> (\<forall>j. j \<noteq> i \<longrightarrow> CSTATE Invalid T j) )" \<comment>\<open>Original: ( (  ((CSTATE Invalid T 0 ) \<or> (CSTATE IMAD T 0) \<or> (CSTATE ISAD T 0)  ) \<and> (CSTATE Invalid T 1)) \<or> ((CSTATE Invalid T 0) \<and> (CSTATE Invalid T 1 \<or> CSTATE IMAD T 1 \<or> CSTATE ISAD T 1))    ) - exactly one device is Invalid/IMAD/ISAD and all others are Invalid\<close>
 
 definition HSTATE :: "HOST_State \<Rightarrow> Type1State \<Rightarrow> bool" where [simp]:
   "HSTATE st T =  (block_state (hostcache T) = st)"
@@ -886,9 +885,8 @@ definition moveToBuffer :: "Type1State \<Rightarrow> Message \<Rightarrow> Type1
 IE addition: add newly consumed snoop to the message buffer
 issue: Should buffer be cleared after each run that does not involve buffer?*)
 definition sendSnpResp :: "Message \<Rightarrow> SnpRespType \<Rightarrow> MESI_State \<Rightarrow> nat \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
-  "sendSnpResp msg snpres mesi devNum T  = (let m = nextSnoop T devNum in let devid = nat_to_id devNum in if devNum = 0 then 
-    ( ( T\<lparr>buffer1 := (Some m)\<rparr>[devNum +=snpresp snpres (getTid msg) ][devNum -=snp ][devNum s= mesi]) ) else
-    ( ( T\<lparr>buffer2 := (Some m)\<rparr>[devNum +=snpresp snpres (getTid msg) ][devNum -=snp ][devNum s= mesi]) )
+  "sendSnpResp msg snpres mesi devNum T  = (let m = nextSnoop T devNum in let devid = nat_to_id devNum in  
+    ( ( T\<lparr>buffers := ((buffers T) (devNum := (Some m)))\<rparr>[devNum +=snpresp snpres (getTid msg) ][devNum -=snp ][devNum s= mesi]) ) 
 )"
 
 
@@ -901,55 +899,48 @@ definition sendSnpRespAndData :: "SnpRespType \<Rightarrow> MESI_State \<Rightar
     (let devID = nat_to_id devNum in let v = read_dev_value devNum T in let tid = nextSnoopID  T devNum in 
       let m = nextSnoop T devNum in
       let dthd = D2HData tid  v   (clock T ) in 
-        if devNum = 0 then T\<lparr>buffer1 := Some m\<rparr>[devNum +=snpresp snpres tid ][devNum -=snp ][devNum s= mesi][devID +=d2hd dthd] else
-                           T\<lparr>buffer2 := Some m\<rparr>[devNum +=snpresp snpres tid ][devNum -=snp ][devNum s= mesi][devID +=d2hd dthd]
+         T\<lparr>buffers := ((buffers T) (devNum := (Some m)))\<rparr>[devNum +=snpresp snpres tid ][devNum -=snp ][devNum s= mesi][devNum +=d2hd dthd]
     )"
 
 
 
 (*Putting m into H2DReq/Resp buffer*)
 definition consumeGOPerform :: "nat \<Rightarrow> MESI_State \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
-  "consumeGOPerform devNum mesi T = (let devid = nat_to_id devNum in let m = nextGO T devNum in if devNum = 0 then 
-    T\<lparr>buffer1 := Some m\<rparr>[devNum s= mesi][ devNum -=reqresp ][ -=i devNum] else
-    T\<lparr>buffer2 := Some m\<rparr>[devNum s= mesi][ devNum -=reqresp ][ -=i devNum]
+  "consumeGOPerform devNum mesi T = (let devid = nat_to_id devNum in let m = nextGO T devNum in 
+    T\<lparr>buffers := ((buffers T) (devNum := (Some m)))\<rparr>[devNum s= mesi][ devNum -=reqresp ][ -=i devNum]
 ) "
 
 definition consumeGODiscard :: "nat \<Rightarrow> MESI_State \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
-  "consumeGODiscard devNum mesi T = (let devid = nat_to_id devNum in let m = nextGO T devNum in if devNum = 0 then 
-    T\<lparr>buffer1 := Some m\<rparr>[devNum s= mesi][ devNum -=reqresp ][ -=i devNum] else
-    T\<lparr>buffer2 := Some m\<rparr>[devNum s= mesi][ devNum -=reqresp ][ -=i devNum]
+  "consumeGODiscard devNum mesi T = (let devid = nat_to_id devNum in let m = nextGO T devNum in  
+    T\<lparr>buffers := ((buffers T) (devNum := (Some m)))\<rparr>[devNum s= mesi][ devNum -=reqresp ][ -=i devNum] 
 ) "
 
 (*Putting m into H2DReq/Resp buffer*)
 (*only difference between consumeGO and consumeGOPerform: consumeGOPerform also performs an instruction*)
 definition consumeGO :: "nat \<Rightarrow> MESI_State \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
-  "consumeGO devNum mesi T = (let m = nextGO T devNum in let devid = nat_to_id devNum in  if devNum = 0 then 
-    T\<lparr>buffer1 := Some m\<rparr>[devNum s= mesi][ devNum -=reqresp ] else
-    T\<lparr>buffer2 := Some m\<rparr>[devNum s= mesi][ devNum -=reqresp ]
+  "consumeGO devNum mesi T = (let m = nextGO T devNum in let devid = nat_to_id devNum in  
+    T\<lparr>buffers := ((buffers T) (devNum := (Some m)))\<rparr>[devNum s= mesi][ devNum -=reqresp ]
 )"
 
 (*Putting m into H2DReq/Resp buffer*)
 (*for Evictions: GO_Writepull results in a data message send*)
 definition consumeGOSendData :: "nat \<Rightarrow> MESI_State \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
   "  consumeGOSendData devNum mesi T =  (let devID = nat_to_id devNum in let v = read_dev_value devNum T in let tid = nextGOID  T devNum in 
-      let dthd = D2HData tid v  (clock T) in let m = nextGO T devNum in if devNum = 0 then
-         T\<lparr>buffer1 := Some m\<rparr>[devNum s= mesi][ devNum -=reqresp ][devID +=d2hd dthd][ -=i 0] else
-         T\<lparr>buffer2 := Some m\<rparr>[devNum s= mesi][ devNum -=reqresp ][devID +=d2hd dthd][ -=i 1])"
+      let dthd = D2HData tid v  (clock T) in let m = nextGO T devNum in
+         T\<lparr>buffers := ((buffers T) (devNum := (Some m)))\<rparr>[devNum s= mesi][ devNum -=reqresp ][devNum +=d2hd dthd][ -=i devNum])"
 
 
 (*Perform instruction*)
 definition consumeGOSendDataPerform :: "nat \<Rightarrow> MESI_State \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
   "  consumeGOSendDataPerform devNum mesi T =  (let devID = nat_to_id devNum in let v = read_dev_value devNum T in let tid = nextGOID  T devNum in 
-      let dthd = D2HData tid v  (clock T) in let m = nextGO T devNum in if devNum = 0 then
-         T\<lparr>buffer1 := Some m\<rparr>[devNum s= mesi][ devNum -=reqresp ][devID +=d2hd dthd][ -=i devNum] else
-         T\<lparr>buffer2 := Some m\<rparr>[devNum s= mesi][ devNum -=reqresp ][devID +=d2hd dthd][ -=i devNum])"
+      let dthd = D2HData tid v  (clock T) in let m = nextGO T devNum in
+         T\<lparr>buffers := ((buffers T) (devNum := (Some m)))\<rparr>[devNum s= mesi][ devNum -=reqresp ][devNum +=d2hd dthd][ -=i devNum])"
 
 
 definition consumeGOSendDataPerformEvict :: "nat \<Rightarrow> MESI_State \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
   "  consumeGOSendDataPerformEvict devNum mesi T =  (let devID = nat_to_id devNum in let v = read_dev_value devNum T in let tid = nextGOID  T devNum in 
-      let dthd = D2HData tid v  (clock T) in let m = nextGO T devNum in if devNum = 0 then
-         T\<lparr>buffer1 := Some m\<rparr>[devNum s= mesi][ devNum -=reqresp ][devID +=d2hd dthd][ -=i devNum] else
-         T\<lparr>buffer2 := Some m\<rparr>[devNum s= mesi][ devNum -=reqresp ][devID +=d2hd dthd][ -=i devNum])"
+      let dthd = D2HData tid v  (clock T) in let m = nextGO T devNum in
+         T\<lparr>buffers := ((buffers T) (devNum := (Some m)))\<rparr>[devNum s= mesi][ devNum -=reqresp ][devNum +=d2hd dthd][ -=i devNum])"
 
 (*unnecessary
 definition perform :: "nat \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
@@ -978,31 +969,25 @@ H2DData ut v  (getTime dthd))"
 definition copyInAndForwardData :: "nat \<Rightarrow> HOST_State \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
   "copyInAndForwardData dataSenderNum hostDestState T = (let requestorNum = (dataSenderNum + 1) mod 2 in 
     let senderDev = nat_to_id dataSenderNum in
-    (let reqDev = nat_to_id requestorNum in (if dataSenderNum = 0 then 
-    let dataMsg = getDTHDataOrMakeup ((dthdatas1 T) ) in let v = getSpecificValD2H dataMsg in 
-      T [ reqDev +=h2dd DTH_HTD dataMsg][ =hv v][5 sHost= hostDestState][senderDev -=d2hdHead ] else 
-      let dataMsg = getDTHDataOrMakeup ((dthdatas2 T) ) in let v = getSpecificValD2H dataMsg in 
-      T [ reqDev +=h2dd DTH_HTD dataMsg][ =hv v][5 sHost= hostDestState][senderDev -=d2hdHead ]
+    (let reqDev = nat_to_id requestorNum in (
+    let dataMsg = getDTHDataOrMakeup ((dthdatas T) dataSenderNum) in let v = getSpecificValD2H dataMsg in 
+      T [ requestorNum +=h2dd DTH_HTD dataMsg][ =hv v][5 sHost= hostDestState][dataSenderNum -=d2hdHead ] 
 )
 ))"
 
 
 (*TODO: Check d2hdHead actually does the job of removing head of D2HData channel*)
 definition copyInDataHost :: "nat \<Rightarrow> HOST_State \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
-  "copyInDataHost dataSenderNum hostDestState T = ( let senderDev = nat_to_id dataSenderNum in if dataSenderNum = 0 then
-    ( let dataMsg = getDTHDataOrMakeup ((dthdatas1 T) ) in let v = getSpecificValD2H dataMsg in 
-      T [ =hv v][5 sHost= hostDestState][senderDev -=d2hdHead ] ) else 
-    ( let dataMsg = getDTHDataOrMakeup ((dthdatas2 T) ) in let v = getSpecificValD2H dataMsg in 
-      T [ =hv v][5 sHost= hostDestState][senderDev -=d2hdHead ] ))"
+  "copyInDataHost dataSenderNum hostDestState T = ( let senderDev = nat_to_id dataSenderNum in
+    ( let dataMsg = getDTHDataOrMakeup ((dthdatas T) dataSenderNum) in let v = getSpecificValD2H dataMsg in 
+      T [ =hv v][5 sHost= hostDestState][dataSenderNum -=d2hdHead ] ) )"
 
 
 
 definition discardDataHost :: "nat \<Rightarrow> HOST_State \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
-  "discardDataHost dataSenderNum hostDestState T = ( let senderDev = nat_to_id dataSenderNum in if dataSenderNum = 0 then
-    ( let dataMsg = getDTHDataOrMakeup ((dthdatas1 T) ) in 
-      T [5 sHost= hostDestState][senderDev -=d2hdHead ] ) else 
-    ( let dataMsg = getDTHDataOrMakeup ((dthdatas2 T) ) in 
-      T [5 sHost= hostDestState][senderDev -=d2hdHead ] ))"
+  "discardDataHost dataSenderNum hostDestState T = ( let senderDev = nat_to_id dataSenderNum in 
+    ( let dataMsg = getDTHDataOrMakeup ((dthdatas T) dataSenderNum) in 
+      T [5 sHost= hostDestState][dataSenderNum -=d2hdHead ] ) )"
 
 
 (*Send host's copy of data and GO, the transactionID is usually obtained from the request at the top of the list,
@@ -1021,10 +1006,11 @@ definition sendHostDataGO :: "TransactionID \<Rightarrow> nat \<Rightarrow> HOST
 
 
 (*20230919 TODO: added function for sending GO while in MA state *)
+(*
 definition sendGOOnly :: "TransactionID \<Rightarrow> nat \<Rightarrow> HOST_State \<Rightarrow> MESI_State \<Rightarrow> ReqRespType  \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
   "sendGOOnly tid devNum hmesi mesi reqt  T = (  
                                         T[5 sHost= hmesi][ devNum - 5 +=reqresp reqt mesi tid][devNum - 5 -=req ])"
-
+*)
 
 
 
@@ -1105,7 +1091,7 @@ definition sendEvictResp :: "ReqRespType \<Rightarrow> nat => HOST_State \<Right
 
 (*last Sharer. Once # of devices goes above 2 this needs to change (TODO)*)
 definition lastSharer :: "Type1State \<Rightarrow> bool" where [simp]:
-  "lastSharer T = (if CSTATE Invalid T 0 \<or> CSTATE Invalid T 1 then True else False)"
+  "lastSharer T = ((\<forall>i. CSTATE Invalid T i) \<or> (\<exists>j. \<forall>i. j \<noteq> i \<longrightarrow> CSTATE Invalid T j))"
 
 
 definition ISSUE_EVENT_ROW ::"nat" where "ISSUE_EVENT_ROW = 100"

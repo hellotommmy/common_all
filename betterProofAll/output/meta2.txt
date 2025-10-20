@@ -1,0 +1,1836 @@
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race] result=fail in 0.159 
+v5/order 1 -> fail in 0.159 
+v5/order 2 size=1 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+v5[race] result=fail in 0.110 
+v5/order 2 -> fail in 0.110 
+v5/order 3 size=1 
+v5[race] result=fail in 0.117 
+v5/order 1 -> fail in 0.117 
+v5/order 2 size=1 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+v5[race] result=fail in 0.160 
+v5/order 1 -> fail in 0.160 
+v5/order 2 size=1 
+v5[PLAIN]  simp -> no-close in 0.221 
+v5[race:PLAIN] finished in 0.221 -> fail 
+Sledgehammering... 
+v5[race] result=fail in 0.111 
+v5/order 2 -> fail in 0.111 
+v5/order 3 size=1 
+v5[race] result=fail in 0.184 
+v5/order 1 -> fail in 0.184 
+v5/order 2 size=1 
+v5[race] result=fail in 0.110 
+v5/order 2 -> fail in 0.110 
+v5/order 3 size=1 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+vampire found a proof... 
+vampire: Try this:
+  by (metis CSTATE_def SWMR_def devcache1_ISDIData_invariant_aux1 devcache2_copy_perform1_invariant i0) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 2.377 
+v5[race:SH] finished in 2.377 -> success 
+v5[race] result=success in 2.377 
+v5/order 1 -> success in 2.377 
+v5/total 2.377 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+v5[race] result=fail in 2.104 
+v5/order 2 -> fail in 2.104 
+v5/order 3 size=1 
+v5[race:PLAIN] finished in 2.063 -> fail 
+v5[race:SH] finished in 6.086 -> fail 
+v5[race] result=fail in 8.121 
+v5/order 1 -> fail in 8.121 
+v5/order 2 size=1 
+v5[race:PLAIN] finished in 2.070 -> fail 
+v5[race:SH] finished in 6.090 -> fail 
+v5[race] result=fail in 10.254 
+v5/order 1 -> fail in 10.254 
+v5/order 2 size=1 
+No proof found 
+v5[SH]  (cases"reqs1 T") -> fail in 22.005 
+v5[race:SH] finished in 22.005 -> fail 
+v5[race] result=fail in 22.021 
+v5/order 3 -> fail in 22.021 
+v5/total 22.290 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+No proof found 
+v5[SH]  (cases"reqs1 T") -> fail in 22.149 
+v5[race:SH] finished in 22.149 -> fail 
+v5[race] result=fail in 22.160 
+v5/order 3 -> fail in 22.160 
+v5/total 22.387 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.074 -> fail 
+No proof found 
+v5[SH]  (cases"reqs1 T") -> fail in 23.701 
+v5[race:SH] finished in 23.701 -> fail 
+v5[race] result=fail in 23.701 
+v5/order 3 -> fail in 23.701 
+v5/total 23.972 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+Sledgehammering... 
+vampire found a proof... 
+vampire: Try this: by (metis CSTATE_inequality_invariant CSTATE_remove_op MESI_State.distinct(3,97)) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 5.595 
+v5[race:SH] finished in 5.595 -> success 
+v5[race] result=success in 24.748 
+v5/order 1 -> success in 24.748 
+v5/total 24.748 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.064 -> fail 
+v5[race:SH] finished in 6.012 -> fail 
+v5[race] result=fail in 21.039 
+v5/order 2 -> fail in 21.039 
+v5/order 3 size=1 
+v5[race:SH] finished in 6.029 -> fail 
+v5[race] result=fail in 19.235 
+v5/order 2 -> fail in 19.235 
+v5/order 3 size=1 
+v5[race:SH] finished in 6.006 -> fail 
+v5[race] result=fail in 7.893 
+v5/order 1 -> fail in 7.893 
+v5/order 2 size=1 
+v5[race:PLAIN] finished in 2.075 -> fail 
+v5[race:PLAIN] finished in 2.074 -> fail 
+v5[race:SH] finished in 6.001 -> fail 
+v5[race] result=fail in 12.756 
+v5/order 1 -> fail in 12.756 
+v5/order 2 size=1 
+v5[race:SH] finished in 6.107 -> fail 
+v5[race] result=fail in 11.895 
+v5/order 1 -> fail in 11.895 
+v5/order 2 size=1 
+No proof found 
+v5[SH]  (cases"reqs1 T") -> fail in 24.122 
+v5[race:SH] finished in 24.122 -> fail 
+v5[race] result=fail in 43.835 
+v5/order 3 -> fail in 43.836 
+v5/total 46.124 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.067 -> fail 
+v5[race:SH] finished in 6.083 -> fail 
+v5[race] result=fail in 24.145 
+v5/order 1 -> fail in 24.145 
+v5/order 2 size=1 
+v5[race:SH] finished in 6.086 -> fail 
+v5[race] result=fail in 22.427 
+v5/order 3 -> fail in 22.427 
+v5/total 51.586 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race] result=fail in 21.894 
+v5/order 2 -> fail in 21.894 
+v5/order 3 size=1 
+Sledgehammering... 
+v5[race:SH] finished in 6.087 -> fail 
+v5[race] result=fail in 18.223 
+v5/order 2 -> fail in 18.223 
+v5/order 3 size=1 
+v5[race:PLAIN] finished in 2.093 -> fail 
+v5[race] result=fail in 18.147 
+v5/order 2 -> fail in 18.147 
+v5/order 3 size=1 
+v5[race:PLAIN] finished in 2.063 -> fail 
+Sledgehammering... 
+v5[race:SH] finished in 6.071 -> fail 
+v5[race] result=fail in 8.213 
+v5/order 2 -> fail in 8.213 
+v5/order 3 size=1 
+v5[race:SH] finished in 6.071 -> fail 
+v5[race] result=fail in 8.193 
+v5/order 1 -> fail in 8.193 
+v5/order 2 size=1 
+v5[race:SH] finished in 6.069 -> fail 
+v5[race] result=fail in 10.273 
+v5/order 3 -> fail in 10.273 
+v5/total 40.061 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+e found a proof... 
+e: Try this: by (metis CSTATE_inequality_invariant MESI_State.distinct(219,47) SharedSnpInv'_CSTATE_invariant5) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 12.133 
+v5[race:SH] finished in 12.133 -> success 
+v5[race] result=success in 17.795 
+v5/order 1 -> success in 17.795 
+v5/total 17.795 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+No proof found 
+v5[SH]  (cases"reqs1 T") -> fail in 29.243 
+v5[race:SH] finished in 29.243 -> fail 
+v5[race] result=fail in 45.667 
+v5/order 3 -> fail in 45.667 
+v5/total 75.156 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.061 -> fail 
+v5[race] result=fail in 25.580 
+v5/order 3 -> fail in 25.580 
+v5/total 56.558 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.049 -> fail 
+v5[race] result=fail in 25.339 
+v5/order 3 -> fail in 25.339 
+v5/total 55.381 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.051 -> fail 
+v5[race] result=fail in 20.322 
+v5/order 3 -> fail in 20.322 
+v5/total 52.680 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+v5[race] result=fail in 19.704 
+v5/order 2 -> fail in 19.704 
+v5/order 3 size=1 
+v5[race:PLAIN] finished in 2.052 -> fail 
+v5[race:PLAIN] finished in 2.051 -> fail 
+v5[race:PLAIN] finished in 2.047 -> fail 
+vampire found a proof... 
+vampire: Try this:
+  by (metis CSTATE_inequality_invariant InvalidLoad'_CSTATE_otherside MESI_State.distinct(11)
+    SharedSnpInv'_CSTATE_invariant5 hstate_invariants(24,4) i23) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 6.814 
+v5[race:SH] finished in 6.814 -> success 
+v5[race] result=success in 20.094 
+v5/order 1 -> success in 20.094 
+v5/total 20.094 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.053 -> fail 
+v5[race:PLAIN] finished in 2.051 -> fail 
+v5[race:SH] finished in 6.038 -> fail 
+v5[race] result=fail in 10.346 
+v5/order 1 -> fail in 10.346 
+v5/order 2 size=1 
+v5[race:SH] finished in 6.059 -> fail 
+v5[race] result=fail in 8.108 
+v5/order 1 -> fail in 8.108 
+v5/order 2 size=1 
+v5[race:PLAIN] finished in 2.065 -> fail 
+Sledgehammering... 
+vampire found a proof... 
+vampire: Try this:
+  by (metis CSTATE_inequality_invariant MESI_State.distinct(35) SharedSnpInv'_CSTATE_invariant5
+    SharedStore'_CSTATE_otherside hstate_invariants(24,4) i23) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 7.970 
+v5[race:SH] finished in 7.970 -> success 
+v5[race] result=success in 10.858 
+v5/order 1 -> success in 10.858 
+v5/total 10.858 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.042 -> fail 
+v5[race] result=fail in 10.612 
+v5/order 1 -> fail in 10.612 
+v5/order 2 size=1 
+e found a proof... 
+e: Try this:
+  by (metis CSTATE_inequality_invariant CSTATE_starting_transaction_otherside_invariant1 MESI_State.distinct(47)
+    SharedSnpInv'_CSTATE_invariant5 hstate_invariants(24,4) i23) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 12.470 
+v5[race:SH] finished in 12.470 -> success 
+v5[race] result=success in 27.819 
+v5/order 1 -> success in 27.819 
+v5/total 27.819 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.062 -> fail 
+Sledgehammering... 
+Sledgehammering... 
+vampire found a proof... 
+vampire: Try this:
+  apply (metis C_msg_P_oppo_def HTDDataPending_htddatas_invariant1 HTDDataPending_htddatas_invariant2
+    htddatas1_general_rule_7_0 htddatas2_ModifiedEvict i489 i920 nextHTDDataPending_def) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 8.045 
+v5[race:SH] finished in 8.045 -> success 
+v5[race] result=success in 15.310 
+v5/order 3 -> success in 15.310 
+v5/total 43.206 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+vampire found a proof... 
+vampire: Try this:
+  by (metis CSTATE_inequality_invariant InvalidLoad'_CSTATE_otherside MESI_State.distinct(11,143)
+    SharedSnpInv'_CSTATE_invariant5 hstate_invariants(24,4) i106) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 7.550 
+v5[race:SH] finished in 7.550 -> success 
+v5[race] result=success in 13.148 
+v5/order 1 -> success in 13.148 
+v5/total 13.148 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.037 -> fail 
+v5[race] result=fail in 10.935 
+v5/order 2 -> fail in 10.935 
+v5/order 3 size=1 
+v5[race:PLAIN] finished in 2.064 -> fail 
+v5[race:SH] finished in 6.073 -> fail 
+v5[race] result=fail in 10.878 
+v5/order 2 -> fail in 10.878 
+v5/order 3 size=1 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.059 -> fail 
+v5[race:PLAIN] finished in 2.062 -> fail 
+vampire found a proof... 
+vampire: Try this:
+  by (metis CSTATE_inequality_invariant MESI_State.distinct(101,11,35) SharedSnpInv'_CSTATE_invariant5
+    SharedStore'_CSTATE_otherside hstate_invariants(24,4) i106) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 7.898 
+v5[race:SH] finished in 7.898 -> success 
+v5[race] result=success in 9.961 
+v5/order 1 -> success in 9.961 
+v5/total 9.961 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.071 -> fail 
+v5[race] result=fail in 11.125 
+v5/order 2 -> fail in 11.125 
+v5/order 3 size=1 
+v5[race:PLAIN] finished in 2.065 -> fail 
+Sledgehammering... 
+v5[race:SH] finished in 6.108 -> fail 
+v5[race] result=fail in 8.941 
+v5/order 1 -> fail in 8.941 
+v5/order 2 size=1 
+Sledgehammering... 
+v5[race:SH] finished in 6.086 -> fail 
+v5[race] result=fail in 10.841 
+v5/order 3 -> fail in 10.841 
+v5/total 32.121 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.013 -> fail 
+v5[race] result=fail in 10.357 
+v5/order 3 -> fail in 10.357 
+v5/total 29.342 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.078 -> fail 
+e found a proof... 
+e: Try this:
+  by (metis CSTATE_inequality_invariant CSTATE_starting_transaction_otherside_invariant1 MESI_State.distinct(101,11,47)
+    SharedSnpInv'_CSTATE_invariant5 hstate_invariants(24,4) i106) 
+v5[race:SH] finished in 6.108 -> fail 
+v5[race] result=fail in 9.940 
+v5/order 1 -> fail in 9.940 
+v5/order 2 size=1 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 13.474 
+v5[race:SH] finished in 13.474 -> success 
+v5[race] result=success in 18.359 
+v5/order 1 -> success in 18.359 
+v5/total 18.359 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.089 -> fail 
+v5[race] result=fail in 12.883 
+v5/order 3 -> fail in 12.883 
+v5/total 34.620 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.079 -> fail 
+v5[race] result=fail in 12.048 
+v5/order 2 -> fail in 12.048 
+v5/order 3 size=1 
+No proof found 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> fail in 25.948 
+v5[race:SH] finished in 25.948 -> fail 
+v5[race] result=fail in 30.730 
+v5/order 1 -> fail in 30.730 
+v5/order 2 size=1 
+v5[race:PLAIN] finished in 2.061 -> fail 
+v5[race:PLAIN] finished in 2.066 -> fail 
+v5[race:PLAIN] finished in 2.064 -> fail 
+v5[race:SH] finished in 6.073 -> fail 
+v5[race] result=fail in 23.700 
+v5/order 1 -> fail in 23.700 
+v5/order 2 size=1 
+v5[race:SH] finished in 6.074 -> fail 
+v5[race] result=fail in 23.289 
+v5/order 1 -> fail in 23.289 
+v5/order 2 size=1 
+v5[race:SH] finished in 6.076 -> fail 
+v5[race:SH] finished in 6.076 -> fail 
+v5[race] result=fail in 22.084 
+v5/order 2 -> fail in 22.084 
+v5/order 3 size=1 
+v5[race] result=fail in 22.014 
+v5/order 1 -> fail in 22.014 
+v5/order 2 size=1 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: by (smt (verit) CSTATE_inequality_invariant CSTATE_remove_op MESI_State.distinct(101,3)) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 3.871 
+v5[race:SH] finished in 3.871 -> success 
+v5[race] result=success in 18.921 
+v5/order 1 -> success in 18.921 
+v5/total 18.921 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) HSTATE_X_Evict_invariant1 H_msg_P_same_def i23) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 3.254 
+v5[race:SH] finished in 3.254 -> success 
+v5[race] result=success in 18.744 
+v5/order 3 -> success in 18.744 
+v5/total 39.733 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.045 -> fail 
+v5[race:SH] finished in 6.047 -> fail 
+v5[race] result=fail in 6.996 
+v5/order 2 -> fail in 6.996 
+v5/order 3 size=1 
+v5[race] result=fail in 12.125 
+v5/order 2 -> fail in 12.125 
+v5/order 3 size=1 
+v5[race:SH] finished in 6.048 -> fail 
+v5[race] result=fail in 7.771 
+v5/order 2 -> fail in 7.771 
+v5/order 3 size=1 
+v5[race] result=fail in 7.133 
+v5/order 2 -> fail in 7.133 
+v5/order 3 size=1 
+v5[race:SH] finished in 6.054 -> fail 
+v5[race] result=fail in 7.180 
+v5/order 3 -> fail in 7.180 
+v5/total 39.203 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.060 -> fail 
+v5[race:PLAIN] finished in 2.068 -> fail 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: by (smt (verit) CSTATE_remove_op i22 remove_instr_HSTATE) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 4.275 
+v5[race:SH] finished in 4.275 -> success 
+v5[race] result=success in 9.254 
+v5/order 1 -> success in 9.254 
+v5/total 9.254 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+vampire found a proof... 
+vampire: Try this:
+  by (metis CSTATE_inequality_invariant MESI_State.distinct(11,27) ModifiedEvict'_CSTATE_otherside
+    SharedSnpInv'_CSTATE_invariant5 hstate_invariants(24,4) i106) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 5.505 
+v5[race:SH] finished in 5.505 -> success 
+v5[race] result=success in 10.021 
+v5/order 1 -> success in 10.021 
+v5/total 10.021 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+Sledgehammering... 
+v5[race:SH] finished in 6.103 -> fail 
+v5[race] result=fail in 8.187 
+v5/order 3 -> fail in 8.187 
+v5/total 39.247 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+vampire found a proof... 
+vampire: Try this:
+  apply (metis CSTATE_different2 CSTATE_inequality_invariant C_msg_P_oppo_def MESI_State.distinct(11)
+    SharedSnpInv'_CSTATE_invariant5 i381 reqresps1_InvalidLoad reqresps1_noGOPendingp) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 8.384 
+v5[race:SH] finished in 8.384 -> success 
+v5[race] result=success in 9.516 
+v5/order 3 -> success in 9.516 
+v5/total 52.371 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+vampire found a proof... 
+vampire: Try this:
+  apply (metis CSTATE_different2 CSTATE_inequality_invariant CSTATE_starting_transaction_otherside_invariant1
+    H_msg_P_same_def MESI_State.distinct(43,7) SharedSnpInv'_CSTATE_invariant5
+    dthdatas1_starting_transaction_otherside_invariant1 hstate_invariants(24,4) i490 i857 i898 nextDTHDataFrom_def
+    nextDTHDataPending_def nextDTHDataPending_general_rule_4_0 reqresps_empty_noGOPending2) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 8.920 
+v5[race:SH] finished in 8.920 -> success 
+v5[race] result=success in 10.005 
+v5/order 3 -> success in 10.005 
+v5/total 40.701 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.072 -> fail 
+v5[race:PLAIN] finished in 2.057 -> fail 
+vampire found a proof... 
+vampire: Try this:
+  apply (metis CSTATE_inequality_invariant CSTATE_starting_transaction_otherside_invariant1 C_msg_P_oppo_def
+    MESI_State.distinct(47) SharedSnpInv'_CSTATE_invariant5 i490 i615old nextGOPending_General_rule_5_0
+    nextGOPending_General_rule_5_1 reqresps1_noGOPendingp reqresps_empty_noGOPending2) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 8.005 
+v5[race:SH] finished in 8.005 -> success 
+v5[race] result=success in 11.197 
+v5/order 3 -> success in 11.197 
+v5/total 40.345 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  by (smt (verit) MESI_State.distinct(35) SMADSnpInv_C_msg_not_half SharedStore'_CSTATE_otherside SharedStore'_HSTATE
+    i22) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 6.753 
+v5[race:SH] finished in 6.753 -> success 
+v5[race] result=success in 12.197 
+v5/order 1 -> success in 12.197 
+v5/total 12.197 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.051 -> fail 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.053 -> fail 
+cvc5 found a proof... 
+cvc5: Try this: by (smt (verit) CSTATE_remove_op i22 remove_instr_HSTATE) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 4.922 
+v5[race:SH] finished in 4.922 -> success 
+v5[race] result=success in 10.161 
+v5/order 1 -> success in 10.161 
+v5/total 10.161 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.061 -> fail 
+v5[race:SH] finished in 6.088 -> fail 
+v5[race] result=fail in 9.518 
+v5/order 1 -> fail in 9.518 
+v5/order 2 size=1 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.072 -> fail 
+v5[race:PLAIN] finished in 2.068 -> fail 
+vampire found a proof... 
+vampire: Try this: by (metis CSTATE_inequality_invariant MESI_State.distinct(15,261) SharedSnpInv'_CSTATE_invariant5) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 6.102 
+v5[race:SH] finished in 6.102 -> success 
+v5[race] result=success in 9.127 
+v5/order 1 -> success in 9.127 
+v5/total 9.127 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.068 -> fail 
+v5[race] result=fail in 9.881 
+v5/order 1 -> fail in 9.881 
+v5/order 2 size=1 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.070 -> fail 
+v5[race:PLAIN] finished in 2.064 -> fail 
+v5[race:SH] finished in 6.097 -> fail 
+v5[race] result=fail in 9.908 
+v5/order 1 -> fail in 9.908 
+v5/order 2 size=1 
+Sledgehammering... 
+vampire found a proof... 
+vampire: Try this:
+  by (metis CSTATE_inequality_invariant MESI_State.distinct(35) SharedSnpInv'_CSTATE_invariant5
+    SharedStore'_CSTATE_otherside hstate_invariants(24,4) i22) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 6.500 
+v5[race:SH] finished in 6.500 -> success 
+v5[race] result=success in 11.334 
+v5/order 1 -> success in 11.334 
+v5/total 11.334 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.077 -> fail 
+v5[race] result=fail in 11.039 
+v5/order 1 -> fail in 11.039 
+v5/order 2 size=1 
+v5[race:PLAIN] finished in 2.070 -> fail 
+e found a proof... 
+e: Try this:
+  by (metis CSTATE_inequality_invariant CSTATE_starting_transaction_otherside_invariant1 MESI_State.distinct(101,11,43)
+    SharedSnpInv'_CSTATE_invariant5 hstate_invariants(24,4) i106) 
+v5[race:SH] finished in 6.075 -> fail 
+v5[race] result=fail in 11.447 
+v5/order 2 -> fail in 11.447 
+v5/order 3 size=1 
+Sledgehammering... 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 13.185 
+v5[race:SH] finished in 13.185 -> success 
+v5[race] result=success in 17.616 
+v5/order 1 -> success in 17.617 
+v5/total 17.617 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+cvc5 found a proof... 
+cvc5: Try this:
+  by (smt (verit) InvalidStore'_CSTATE_otherside InvalidStore'_HSTATE MESI_State.distinct(15)
+    SMADSnpInv_C_msg_not_half i22) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 6.509 
+v5[race:SH] finished in 6.509 -> success 
+v5[race] result=success in 10.316 
+v5/order 1 -> success in 10.316 
+v5/total 10.316 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.059 -> fail 
+v5[race:SH] finished in 6.104 -> fail 
+v5[race] result=fail in 12.183 
+v5/order 2 -> fail in 12.183 
+v5/order 3 size=1 
+v5[race:SH] finished in 6.097 -> fail 
+v5[race] result=fail in 11.393 
+v5/order 2 -> fail in 11.393 
+v5/order 3 size=1 
+v5[race:SH] finished in 6.105 -> fail 
+v5[race] result=fail in 8.983 
+v5/order 1 -> fail in 8.983 
+v5/order 2 size=1 
+v5[race:SH] finished in 6.092 -> fail 
+v5[race] result=fail in 9.316 
+v5/order 2 -> fail in 9.316 
+v5/order 3 size=1 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.064 -> fail 
+v5[race:PLAIN] finished in 2.077 -> fail 
+vampire found a proof... 
+vampire: Try this:
+  apply (metis CSTATE_starting_transaction_otherside_invariant1 C_msg_P_oppo_def SPG_simple_def i489 i6
+    nextGOPending_General_rule_5_1 reqresps1_ModifiedEvict reqresps1_noGOPendingp) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 5.511 
+v5[race:SH] finished in 5.511 -> success 
+v5[race] result=success in 9.552 
+v5/order 3 -> success in 9.552 
+v5/total 30.516 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+v5[race:SH] finished in 6.086 -> fail 
+v5[race] result=fail in 11.030 
+v5/order 1 -> fail in 11.030 
+v5/order 2 size=1 
+v5[race:SH] finished in 6.025 -> fail 
+v5[race] result=fail in 9.235 
+v5/order 3 -> fail in 9.235 
+v5/total 31.300 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+v5[race:SH] finished in 6.027 -> fail 
+v5[race] result=fail in 9.473 
+v5/order 2 -> fail in 9.473 
+v5/order 3 size=1 
+v5[race:PLAIN] finished in 2.066 -> fail 
+e found a proof... 
+e: Try this:
+  by (metis CSTATE_inequality_invariant MESI_State.distinct(11,289,43) SharedSnpInv'_CSTATE_invariant5
+    SharedSnpInv'_MAD_CSTATE_invariant4) 
+v5[race:SH] finished in 6.109 -> fail 
+v5[race] result=fail in 11.048 
+v5/order 3 -> fail in 11.048 
+v5/total 31.403 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 12.310 
+v5[race:SH] finished in 12.310 -> success 
+v5[race] result=success in 18.271 
+v5/order 1 -> success in 18.271 
+v5/total 18.271 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.106 -> fail 
+v5[race] result=fail in 9.832 
+v5/order 1 -> fail in 9.832 
+v5/order 2 size=1 
+v5[race:PLAIN] finished in 2.047 -> fail 
+v5[race:SH] finished in 6.068 -> fail 
+v5[race] result=fail in 11.898 
+v5/order 2 -> fail in 11.898 
+v5/order 3 size=1 
+v5[race:SH] finished in 6.068 -> fail 
+v5[race] result=fail in 11.091 
+v5/order 1 -> fail in 11.091 
+v5/order 2 size=1 
+e found a proof... 
+e: Try this:
+  apply (metis CSTATE_inequality_invariant CSTATE_starting_transaction_otherside_invariant1 HSTATE_X_Evict_invariant1
+    H_msg_P_same_def MESI_State.distinct(47) SharedSnpInv'_CSTATE_invariant5 i22) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 20.064 
+v5[race:SH] finished in 20.064 -> success 
+v5[race] result=success in 23.350 
+v5/order 3 -> success in 23.350 
+v5/total 44.651 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.053 -> fail 
+v5[race:PLAIN] finished in 2.054 -> fail 
+v5[race:SH] finished in 6.058 -> fail 
+v5[race] result=fail in 18.513 
+v5/order 3 -> fail in 18.513 
+v5/total 36.968 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.056 -> fail 
+v5[race] result=fail in 15.884 
+v5/order 1 -> fail in 15.885 
+v5/order 2 size=1 
+Sledgehammering... 
+v5[race:SH] finished in 6.598 -> fail 
+v5[race] result=fail in 16.608 
+v5/order 2 -> fail in 16.608 
+v5/order 3 size=1 
+cvc5 found a proof... 
+cvc5: Try this:
+  by (smt (verit) MESI_State.distinct(43) SMADSnpInv_C_msg_not_half SharedEvictData'_CSTATE_otherside
+    SharedEvictData'_HSTATE i22) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 8.203 
+v5[race:SH] finished in 8.203 -> success 
+v5[race] result=success in 18.547 
+v5/order 1 -> success in 18.547 
+v5/total 18.547 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.068 -> fail 
+v5[race:PLAIN] finished in 2.062 -> fail 
+v5[race:SH] finished in 6.030 -> fail 
+v5[race] result=fail in 15.753 
+v5/order 2 -> fail in 15.753 
+v5/order 3 size=1 
+Sledgehammering... 
+v5[race:SH] finished in 6.080 -> fail 
+v5[race] result=fail in 8.890 
+v5/order 1 -> fail in 8.890 
+v5/order 2 size=1 
+v5[race:SH] finished in 6.080 -> fail 
+v5[race:SH] finished in 6.078 -> fail 
+v5[race] result=fail in 12.015 
+v5/order 2 -> fail in 12.015 
+v5/order 3 size=1 
+v5[race] result=fail in 10.209 
+v5/order 3 -> fail in 10.209 
+v5/total 36.649 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.053 -> fail 
+e found a proof... 
+e: Try this:
+  by (metis CSTATE_inequality_invariant CSTATE_starting_transaction_otherside_invariant1 MESI_State.distinct(47)
+    SharedSnpInv'_CSTATE_invariant5 hstate_invariants(24,4) i22) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 12.759 
+v5[race:SH] finished in 12.759 -> success 
+v5[race] result=success in 19.356 
+v5/order 1 -> success in 19.356 
+v5/total 19.356 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.075 -> fail 
+v5[race] result=fail in 12.155 
+v5/order 1 -> fail in 12.155 
+v5/order 2 size=1 
+e found a proof... 
+e: Try this:
+  apply (metis CSTATE_disj1 C_msg_not_def H_msg_P_oppo_def InvalidStore'_nextReqIs_invariant1 MESI_State.distinct(15)
+    SharedSnpInv'_CSTATE_invariant5 i26) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 23.290 
+v5[race:SH] finished in 23.290 -> success 
+v5[race] result=success in 30.647 
+v5/order 3 -> success in 30.647 
+v5/total 53.576 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.054 -> fail 
+v5[race:SH] finished in 6.045 -> fail 
+v5[race] result=fail in 19.283 
+v5/order 3 -> fail in 19.283 
+v5/total 46.127 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.048 -> fail 
+v5[race] result=fail in 16.528 
+v5/order 2 -> fail in 16.528 
+v5/order 3 size=1 
+v5[race:SH] finished in 6.046 -> fail 
+v5[race] result=fail in 13.758 
+v5/order 3 -> fail in 13.758 
+v5/total 41.658 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: by (smt (verit) ModifiedEvict'_CSTATE_otherside ModifiedEvict'_HSTATE i22 i72) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 7.115 
+v5[race:SH] finished in 7.115 -> success 
+v5[race] result=success in 14.951 
+v5/order 1 -> success in 14.951 
+v5/total 14.951 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.073 -> fail 
+v5[race:PLAIN] finished in 2.053 -> fail 
+cvc5 found a proof... 
+cvc5: Try this: by (smt (verit) HSTATE_X_Evict_invariant1 i107) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 5.496 
+v5[race:SH] finished in 5.496 -> success 
+v5[race] result=success in 13.534 
+v5/order 1 -> success in 13.534 
+v5/total 13.534 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.072 -> fail 
+v5[race:SH] finished in 6.085 -> fail 
+v5[race] result=fail in 16.538 
+v5/order 2 -> fail in 16.538 
+v5/order 3 size=1 
+Sledgehammering... 
+v5[race:SH] finished in 6.065 -> fail 
+v5[race] result=fail in 8.137 
+v5/order 1 -> fail in 8.137 
+v5/order 2 size=1 
+v5[race:PLAIN] finished in 2.053 -> fail 
+v5[race:SH] finished in 6.016 -> fail 
+v5[race] result=fail in 8.790 
+v5/order 3 -> fail in 8.790 
+v5/total 34.209 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+vampire found a proof... 
+vampire: Try this:
+  by (metis CSTATE_disj1 C_msg_state_def InvalidStore'_CSTATE_otherside InvalidStore'_nextReqIs_invariant1
+    MESI_State.distinct(11,143) i47) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 8.430 
+v5[race:SH] finished in 8.430 -> success 
+v5[race] result=success in 13.651 
+v5/order 1 -> success in 13.651 
+v5/total 13.651 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.061 -> fail 
+v5[race:PLAIN] finished in 2.061 -> fail 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: by (smt (verit) i107 remove_instr_HSTATE) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 6.097 
+v5[race:SH] finished in 6.097 -> success 
+v5[race] result=success in 11.734 
+v5/order 1 -> success in 11.734 
+v5/total 11.734 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: by (smt (verit) HSTATE_X_Evict_invariant1 i107) 
+cvc5 found a proof... 
+cvc5: Try this: by (smt (verit) MESI_State.distinct(27) ModifiedEvict'_CSTATE_otherside SMADSnpInv_C_msg_not_half i72) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 4.545 
+v5[race:SH] finished in 4.545 -> success 
+v5[race] result=success in 10.561 
+v5/order 1 -> success in 10.561 
+v5/total 10.561 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 5.313 
+v5[race:SH] finished in 5.313 -> success 
+v5[race] result=success in 11.702 
+v5/order 1 -> success in 11.702 
+v5/total 11.702 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.038 -> fail 
+v5[race:PLAIN] finished in 2.044 -> fail 
+v5[race:SH] finished in 6.031 -> fail 
+v5[race] result=fail in 8.855 
+v5/order 2 -> fail in 8.855 
+v5/order 3 size=1 
+v5[race:SH] finished in 6.049 -> fail 
+v5[race] result=fail in 9.443 
+v5/order 1 -> fail in 9.443 
+v5/order 2 size=1 
+v5[race:PLAIN] finished in 2.042 -> fail 
+v5[race:SH] finished in 6.031 -> fail 
+v5[race] result=fail in 10.498 
+v5/order 1 -> fail in 10.498 
+v5/order 2 size=1 
+v5[race:PLAIN] finished in 2.048 -> fail 
+v5[race:PLAIN] finished in 2.046 -> fail 
+v5[race:SH] finished in 6.019 -> fail 
+v5[race] result=fail in 10.722 
+v5/order 1 -> fail in 10.722 
+v5/order 2 size=1 
+v5[race:SH] finished in 6.020 -> fail 
+v5[race] result=fail in 10.919 
+v5/order 1 -> fail in 10.919 
+v5/order 2 size=1 
+v5[race:SH] finished in 6.015 -> fail 
+v5[race] result=fail in 12.045 
+v5/order 1 -> fail in 12.045 
+v5/order 2 size=1 
+e found a proof... 
+e: Try this:
+  apply (metis CSTATE_inequality_invariant H_msg_P_oppo_def MESI_State.distinct(43) ReqType.distinct(9)
+    SharedEvictData'_nextReqIs_invariant1 SharedSnpInv'_CSTATE_invariant5 nextReqIs_invariant_variant1) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 21.925 
+v5[race:SH] finished in 21.925 -> success 
+v5[race] result=success in 24.716 
+v5/order 3 -> success in 24.716 
+v5/total 53.410 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.028 -> fail 
+v5[race] result=fail in 18.598 
+v5/order 3 -> fail in 18.598 
+v5/total 35.590 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.031 -> fail 
+v5[race] result=fail in 17.356 
+v5/order 2 -> fail in 17.356 
+v5/order 3 size=1 
+v5[race:SH] finished in 6.033 -> fail 
+v5[race] result=fail in 16.663 
+v5/order 2 -> fail in 16.663 
+v5/order 3 size=1 
+v5[race:SH] finished in 6.039 -> fail 
+v5[race:SH] finished in 6.039 -> fail 
+v5[race] result=fail in 13.937 
+v5/order 2 -> fail in 13.937 
+v5/order 3 size=1 
+v5[race] result=fail in 12.586 
+v5/order 2 -> fail in 12.586 
+v5/order 3 size=1 
+v5[race:PLAIN] finished in 2.055 -> fail 
+v5[race:PLAIN] finished in 2.055 -> fail 
+v5[race:SH] finished in 6.042 -> fail 
+v5[race] result=fail in 16.135 
+v5/order 2 -> fail in 16.135 
+v5/order 3 size=1 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: by (smt (verit) SharedEvictData'_HSTATE i107) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 6.472 
+v5[race:SH] finished in 6.472 -> success 
+v5[race] result=success in 11.706 
+v5/order 1 -> success in 11.706 
+v5/total 11.707 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.042 -> fail 
+v5[race] result=fail in 7.399 
+v5/order 1 -> fail in 7.399 
+v5/order 2 size=1 
+Sledgehammering... 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) C_msg_not_def H_msg_P_oppo_def InvalidStore'_HSTATE InvalidStore'_nextDTHDataPending
+    InvalidStore'_nextReqIs_invariant1 i13 i26) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 2.650 
+v5[race:SH] finished in 2.650 -> success 
+v5[race] result=success in 8.136 
+v5/order 3 -> success in 8.136 
+v5/total 35.297 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+Sledgehammering... 
+vampire found a proof... 
+vampire: Try this: apply (metis HSTATE_X_Evict_invariant1 H_msg_P_oppo_def i107) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 7.101 
+v5[race:SH] finished in 7.101 -> success 
+v5[race] result=success in 10.406 
+v5/order 3 -> success in 10.406 
+v5/total 37.205 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+vampire found a proof... 
+vampire: Try this: apply (metis HSTATE_X_Evict_invariant1 H_msg_P_oppo_def i107) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 4.786 
+v5[race:SH] finished in 4.786 -> success 
+v5[race] result=success in 10.455 
+v5/order 3 -> success in 10.455 
+v5/total 33.960 result=success 
+vampire found a proof... 
+vampire: Try this: apply (metis H_msg_P_same_def i107 remove_instr_HSTATE) 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Done 
+v5[SH]  (cases"program1 T") -> success in 5.786 
+v5[race:SH] finished in 5.786 -> success 
+v5[race] result=success in 10.471 
+v5/order 3 -> success in 10.472 
+v5/total 35.131 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.065 -> fail 
+v5[race:PLAIN] finished in 2.053 -> fail 
+Sledgehammering... 
+vampire found a proof... 
+vampire: Try this:
+  apply (metis HSTATE_X_Evict_invariant1 H_msg_P_oppo_def dthdatas1_starting_transaction_otherside_invariant1
+    dthdatas2_starting_transaction_otherside_invariant2 i189 i72 nextDTHDataFrom_def nextDTHDataPending_def) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 7.663 
+v5[race:SH] finished in 7.663 -> success 
+v5[race] result=success in 9.024 
+v5/order 3 -> success in 9.025 
+v5/total 37.204 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+cvc5 found a proof... 
+cvc5: Try this: by (smt (verit) SharedEvictData'_HSTATE i107) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 6.418 
+v5[race:SH] finished in 6.418 -> success 
+v5[race] result=success in 8.084 
+v5/order 1 -> success in 8.084 
+v5/total 8.084 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.070 -> fail 
+v5[race:SH] finished in 6.067 -> fail 
+v5[race] result=fail in 10.481 
+v5/order 2 -> fail in 10.481 
+v5/order 3 size=1 
+v5[race:SH] finished in 6.066 -> fail 
+v5[race] result=fail in 9.203 
+v5/order 1 -> fail in 9.203 
+v5/order 2 size=1 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: by (smt (verit) SharedStore'_HSTATE i107) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 5.161 
+v5[race:SH] finished in 5.161 -> success 
+v5[race] result=success in 8.530 
+v5/order 1 -> success in 8.530 
+v5/total 8.530 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.056 -> fail 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.053 -> fail 
+cvc5 found a proof... 
+cvc5: Try this: by (smt (verit) HSTATE_X_Evict_invariant1 i107) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 5.157 
+v5[race:SH] finished in 5.157 -> success 
+v5[race] result=success in 8.455 
+v5/order 1 -> success in 8.455 
+v5/total 8.455 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.066 -> fail 
+v5[race:PLAIN] finished in 2.059 -> fail 
+Sledgehammering... 
+v5[race:SH] finished in 6.068 -> fail 
+v5[race] result=fail in 8.898 
+v5/order 1 -> fail in 8.898 
+v5/order 2 size=1 
+v5[race:SH] finished in 6.082 -> fail 
+v5[race] result=fail in 10.164 
+v5/order 1 -> fail in 10.164 
+v5/order 2 size=1 
+v5[race:SH] finished in 6.088 -> fail 
+v5[race] result=fail in 8.476 
+v5/order 3 -> fail in 8.476 
+v5/total 26.356 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.054 -> fail 
+v5[race:SH] finished in 6.075 -> fail 
+v5[race] result=fail in 10.178 
+v5/order 2 -> fail in 10.178 
+v5/order 3 size=1 
+e found a proof... 
+e: Try this:
+  by (metis CSTATE_inequality_invariant CSTATE_remove_op MESI_State.distinct(3) i70
+    reqs1_empty_not_nextReqIs_general_invariant reqs1_remove_op) 
+v5[race:PLAIN] finished in 2.060 -> fail 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 10.895 
+v5[race:SH] finished in 10.895 -> success 
+v5[race] result=success in 16.946 
+v5/order 1 -> success in 16.946 
+v5/total 16.946 result=success 
+Sledgehammering... 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.105 -> fail 
+vampire found a proof... 
+vampire: Try this: by (metis CSTATE_inequality_invariant MESI_State.distinct(347,35) SharedSnpInv'_CSTATE_invariant5) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 8.088 
+v5[race:SH] finished in 8.088 -> success 
+v5[race] result=success in 13.006 
+v5/order 1 -> success in 13.006 
+v5/total 13.006 result=success 
+v5[race:SH] finished in 6.062 -> fail 
+v5[race] result=fail in 10.482 
+v5/order 2 -> fail in 10.482 
+v5/order 3 size=1 
+Sledgehammering... 
+v5[race:SH] finished in 6.103 -> fail 
+v5[race] result=fail in 9.603 
+v5/order 2 -> fail in 9.603 
+v5/order 3 size=1 
+e found a proof... 
+e: Try this: by (metis CSTATE_disj1 MESI_State.distinct(359,47) SharedSnpInv'_CSTATE_invariant5) 
+Sledgehammering... 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 10.344 
+v5[race:SH] finished in 10.344 -> success 
+v5[race] result=success in 16.432 
+v5/order 1 -> success in 16.432 
+v5/total 16.432 result=success 
+Sledgehammering... 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) C_msg_not_def H_msg_P_oppo_def InvalidStore'_HSTATE InvalidStore'_nextReqIs_invariant1
+    InvalidStore'_nextSnpRespIs i14 i26) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 4.948 
+v5[race:SH] finished in 4.948 -> success 
+v5[race] result=success in 8.928 
+v5/order 3 -> success in 8.928 
+v5/total 28.308 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+vampire found a proof... 
+vampire: Try this: apply (metis HSTATE_X_Evict_invariant1 H_msg_P_oppo_def i107) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 6.043 
+v5[race:SH] finished in 6.043 -> success 
+v5[race] result=success in 6.774 
+v5/order 3 -> success in 6.774 
+v5/total 26.541 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+vampire found a proof... 
+vampire: Try this:
+  apply (metis HSTATE_X_Evict_invariant1 H_msg_P_oppo_def SARspSFwdM_invariant1 i159 nextSnpRespIs_property2
+    snpresps1_ModifiedEvict snpresps2_ModifiedEvict) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 6.440 
+v5[race:SH] finished in 6.440 -> success 
+v5[race] result=success in 7.329 
+v5/order 3 -> success in 7.329 
+v5/total 26.708 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+No proof found 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> fail in 28.711 
+v5[race:SH] finished in 28.711 -> fail 
+v5[race] result=fail in 31.130 
+v5/order 1 -> fail in 31.130 
+v5/order 2 size=1 
+Sledgehammering... 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.106 -> fail 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.083 -> fail 
+v5[race:PLAIN] finished in 2.010 -> fail 
+cvc5 found a proof... 
+cvc5: Try this: by (smt (verit) SharedEvictData'_HSTATE i107) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 2.405 
+v5[race:SH] finished in 2.405 -> success 
+v5[race] result=success in 17.340 
+v5/order 1 -> success in 17.340 
+v5/total 17.340 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+e found a proof... 
+e: Try this:
+  by (metis CSTATE_disj1 C_msg_not_def C_msg_state_def C_state_not_def InvalidStore'_nextReqIs_invariant1
+    MESI_State.distinct(11,263,265,281,283,285) hstate_invariants(24,4) i144 i189 i22 i23 i25 i26 i31 i353 i417 i449
+    i450 i47 i702 nextReqIs_otherside_rule_2_0 nextSnpRespIs_general_rule_9_0) 
+cvc5 found a proof... 
+cvc5: Try this:
+  by (smt (verit) CSTATE_disj1 C_msg_not_def InvalidStore'_HSTATE InvalidStore'_nextReqIs_invariant1
+    InvalidStore'_nextSnpRespIs MESI_State.distinct(11,143,147,263,273,281,283) i115 i188 i25 i26 i334 i417 i418 i420
+    i457 i460 i462 i463 i465 i466 i509 i576 i577 i587 i592 i594 i595 i625 i631 i655 i68 i72 i724 i747 i757 i834 i841
+    i842 i843 i844 i853 i893 i895 i906 i908 i914 i944) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 6.123 
+v5[race:SH] finished in 6.123 -> success 
+v5[race] result=success in 25.225 
+v5/order 1 -> success in 25.226 
+v5/total 25.226 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.056 -> fail 
+v5[race:SH] finished in 6.102 -> fail 
+v5[race] result=fail in 6.961 
+v5/order 2 -> fail in 6.961 
+v5/order 3 size=1 
+v5[race:SH] finished in 6.063 -> fail 
+v5[race] result=fail in 8.128 
+v5/order 1 -> fail in 8.128 
+v5/order 2 size=1 
+Sledgehammering... 
+Sledgehammering... 
+No proof found 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> fail in 24.442 
+v5[race:SH] finished in 24.442 -> fail 
+v5[race] result=fail in 39.567 
+v5/order 1 -> fail in 39.567 
+v5/order 2 size=1 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.039 -> fail 
+vampire found a proof... 
+vampire: Try this:
+  by (metis CSTATE_disj1 InvalidStore'_CSTATE_otherside MESI_State.distinct(15) SharedSnpInv'_CSTATE_invariant5
+    hstate_invariants(24,4) i23) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 3.253 
+v5[race:SH] finished in 3.253 -> success 
+v5[race] result=success in 21.036 
+v5/order 1 -> success in 21.036 
+v5/total 21.036 result=success 
+v5[race:PLAIN] finished in 2.064 -> fail 
+v5[race:SH] finished in 6.044 -> fail 
+v5[race] result=fail in 19.194 
+v5/order 2 -> fail in 19.194 
+v5/order 3 size=1 
+Sledgehammering... 
+v5[race:SH] finished in 6.022 -> fail 
+v5[race] result=fail in 6.022 
+v5/order 2 -> fail in 6.022 
+v5/order 3 size=1 
+e found a proof... 
+e: Try this:
+  apply (metis HSTATE_X_Evict_invariant1 H_msg_P_oppo_def i159 i613old nextSnpRespIs_invariant1
+    nextSnpRespIs_invariant2 snpresps1_InvalidLoad snpresps2_InvalidLoad) 
+v5[race] result=fail in 6.483 
+v5/order 1 -> fail in 6.483 
+v5/order 2 size=1 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 8.230 
+v5[race:SH] finished in 8.230 -> success 
+v5[race] result=success in 24.053 
+v5/order 3 -> success in 24.053 
+v5/total 62.144 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:SH] finished in 6.093 -> fail 
+v5[race] result=fail in 7.555 
+v5/order 3 -> fail in 7.555 
+v5/total 34.876 result=fail 
+v5[race:SH] finished in 6.088 -> fail 
+v5[race] result=fail in 6.554 
+v5/order 3 -> fail in 6.554 
+v5/total 52.144 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+v5[race] result=fail in 21.087 
+v5/order 2 -> fail in 21.087 
+v5/order 3 size=1 
+Sledgehammering... 
+No proof found 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> fail in 26.874 
+v5[race:SH] finished in 26.874 -> fail 
+v5[race] result=fail in 27.716 
+v5/order 1 -> fail in 27.716 
+v5/order 2 size=1 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.014 -> fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.076 -> fail 
+cvc5 found a proof... 
+cvc5: Try this: by (smt (verit) ModifiedEvict'_CSTATE_otherside ModifiedEvict'_HSTATE i23 i72) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 2.527 
+v5[race:SH] finished in 2.527 -> success 
+v5[race] result=success in 17.045 
+v5/order 1 -> success in 17.045 
+v5/total 17.045 result=success 
+vampire found a proof... 
+vampire: Try this: by (metis CSTATE_disj1 MESI_State.distinct(11,261) SharedSnpInv'_CSTATE_invariant5) 
+Sledgehammering... 
+v5[race] result=fail in 1.179 
+v5/order 1 -> fail in 1.179 
+v5/order 2 size=1 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 3.849 
+v5[race:SH] finished in 3.849 -> success 
+v5[race] result=success in 23.533 
+v5/order 1 -> success in 23.533 
+v5/total 23.533 result=success 
+v5[race:SH] finished in 6.060 -> fail 
+v5[race] result=fail in 6.061 
+v5/order 2 -> fail in 6.061 
+v5/order 3 size=1 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race] result=fail in 20.026 
+v5/order 2 -> fail in 20.026 
+v5/order 3 size=1 
+Sledgehammering... 
+Sledgehammering... 
+No proof found 
+v5[SH]  (cases"snpresps1 T") -> fail in 23.899 
+v5[race:SH] finished in 23.899 -> fail 
+v5[race] result=fail in 23.900 
+v5/order 3 -> fail in 23.900 
+v5/total 51.470 result=fail 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.433 -> fail 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.048 -> fail 
+vampire found a proof... 
+vampire: Try this:
+  apply (metis HSTATE_X_Evict_invariant1 H_msg_P_same_def i159 nextSnpRespIs_invariant1 nextSnpRespIs_invariant2
+    snpresps1_InvalidLoad snpresps2_InvalidLoad) 
+Done 
+v5[SH]  (cases"reqs1 T") -> success in 5.127 
+v5[race:SH] finished in 5.127 -> success 
+v5[race] result=success in 21.355 
+v5/order 3 -> success in 21.355 
+v5/total 55.132 result=success 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.037 -> fail 
+v5[race:PLAIN] finished in 2.040 -> fail 
+e found a proof... 
+e: Try this: by (metis HOST_State.distinct(177,289) HSTATE_invariant3 HSTATE_invariant_ModifiedSnpInv i384) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 10.163 
+v5[race:SH] finished in 10.163 -> success 
+v5[race] result=success in 10.176 
+v5/order 1 -> success in 10.176 
+v5/total 10.176 result=success 
+v5[race:SH] finished in 6.046 -> fail 
+v5[race] result=fail in 9.117 
+v5/order 1 -> fail in 9.117 
+v5/order 2 size=1 
+v5[race:SH] finished in 6.103 -> fail 
+v5[race] result=fail in 9.760 
+v5/order 1 -> fail in 9.760 
+v5/order 2 size=1 
+e found a proof... 
+e: Try this: by (metis HOST_State.distinct(149) HSTATE_invariant3 HSTATE_invariant_ModifiedSnpInv i384 i699) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 14.146 
+v5[race:SH] finished in 14.146 -> success 
+v5[race] result=success in 14.146 
+v5/order 1 -> success in 14.146 
+v5/total 14.146 result=success 
+e found a proof... 
+e: Try this:
+  apply (metis CSTATE_inequality_invariant C_msg_P_oppo_def MESI_State.distinct(139,5) SharedSnpInv'_CSTATE_invariant5
+    getSnoops_def) 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race] result=fail in 5.669 
+v5/order 2 -> fail in 5.669 
+v5/order 3 size=1 
+Sledgehammering... 
+Done 
+v5[SH]  (cases"snpresps1 T") -> success in 18.041 
+v5[race:SH] finished in 18.041 -> success 
+v5[race] result=success in 18.211 
+v5/order 3 -> success in 18.211 
+v5/total 39.416 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.067 -> fail 
+v5[race:PLAIN] finished in 2.090 -> fail 
+v5[race:SH] finished in 6.061 -> fail 
+v5[race] result=fail in 12.096 
+v5/order 2 -> fail in 12.096 
+v5/order 3 size=1 
+Sledgehammering... 
+v5[race:PLAIN] finished in 2.027 -> fail 
+e found a proof... 
+e: Try this: by (metis HOST_State.distinct(87) HSTATE_invariant3 HSTATE_invariant_ModifiedSnpInv i384 i699) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 9.786 
+v5[race:SH] finished in 9.786 -> success 
+v5[race] result=success in 9.787 
+v5/order 1 -> success in 9.787 
+v5/total 9.787 result=success 
+v5[race:SH] finished in 6.040 -> fail 
+v5[race] result=fail in 8.824 
+v5/order 1 -> fail in 8.824 
+v5/order 2 size=1 
+spass found a proof... 
+spass: Try this: by (metis HSTATE_invariant_ModifiedSnpInv i107) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 10.120 
+v5[race:SH] finished in 10.120 -> success 
+v5[race] result=success in 10.120 
+v5/order 1 -> success in 10.121 
+v5/total 10.121 result=success 
+e found a proof... 
+e: Try this:
+  apply (metis CSTATE_inequality_invariant C_msg_P_oppo_def MESI_State.distinct(143,5) SharedSnpInv'_CSTATE_invariant5
+    getSnoops_def) 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5/start: 3 orders 
+v5/order 1 size=2 
+Sledgehammering... 
+Done 
+v5[SH]  (cases"snpresps1 T") -> success in 16.053 
+v5[race:SH] finished in 16.053 -> success 
+v5[race] result=success in 16.288 
+v5/order 3 -> success in 16.288 
+v5/total 31.717 result=success 
+v5/start: 3 orders 
+v5/order 1 size=2 
+v5[race:PLAIN] finished in 2.032 -> fail 
+v5[race:PLAIN] finished in 2.035 -> fail 
+Sledgehammering... 
+Sledgehammering... 
+v5[race:SH] finished in 6.019 -> fail 
+v5[race] result=fail in 10.770 
+v5/order 2 -> fail in 10.770 
+v5/order 3 size=1 
+v5[race:PLAIN] finished in 2.029 -> fail 
+spass found a proof... 
+spass: Try this: by (metis HSTATE_invariant_ModifiedSnpInv i107) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 8.018 
+v5[race:SH] finished in 8.018 -> success 
+v5[race] result=success in 8.707 
+v5/order 1 -> success in 8.707 
+v5/total 8.707 result=success 
+spass found a proof... 
+spass: Try this: by (metis HSTATE_invariant_ModifiedSnpInv i107) 
+Done 
+v5[SH]  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def) -> success in 7.624 
+v5[race:SH] finished in 7.624 -> success 
+v5[race] result=success in 8.735 
+v5/order 1 -> success in 8.735 
+v5/total 8.735 result=success 
+v5[race:SH] finished in 6.024 -> fail 
+v5[race] result=fail in 8.060 
+v5/order 1 -> fail in 8.060 
+v5/order 2 size=1 
+spass found a proof... 
+spass: Try this: apply (metis HSTATE_invariant_ModifiedSnpInv H_msg_P_same_def i384 i596 i600 i653 i657 i659) 
+Sledgehammering... 
+Done 
+v5[SH]  (cases"snpresps1 T") -> success in 17.240 
+v5[race:SH] finished in 17.240 -> success 
+v5[race] result=success in 26.403 
+v5/order 3 -> success in 26.403 
+v5/total 47.616 result=success 
+spass found a proof... 
+spass: Try this: apply (metis HSTATE_invariant_ModifiedSnpInv H_msg_P_oppo_def i107) 
+Done 
+v5[SH]  (cases"snpresps1 T") -> success in 3.275 
+v5[race:SH] finished in 3.275 -> success 
+v5[race] result=success in 12.679 
+v5/order 3 -> success in 12.679 
+v5/total 32.273 result=success 
+v5[race:SH] finished in 6.038 -> fail 
+v5[race] result=fail in 12.078 
+v5/order 2 -> fail in 12.078 
+v5/order 3 size=1 
+Sledgehammering... 
+No proof found 
+v5[SH]  (cases"snpresps1 T") -> fail in 23.451 
+v5[race:SH] finished in 23.451 -> fail 
+v5[race] result=fail in 23.451 
+v5/order 3 -> fail in 23.451 
+v5/total 43.589 result=fail 
+proof (introconjI)
+  show goal_1: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ SWMR ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+    proof (introimpconjI)
+    show goal1_1: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ SWMR ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+      sorry (*meta_sketch: no proof found*)
+    show goal1_2: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+      sorry (*meta_sketch: no proof found*)
+    show goal1_3: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant InvalidLoad'_CSTATE_otherside MESI_State.distinct(11)
+   SharedSnpInv'_CSTATE_invariant5 hstate_invariants(24,4) i23) done
+    show goal1_4: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant InvalidLoad'_CSTATE_otherside MESI_State.distinct(11,143)
+   SharedSnpInv'_CSTATE_invariant5 hstate_invariants(24,4) i106) done
+    show goal1_5: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+      apply  (cases"reqs1 T")
+ apply (metis CSTATE_different2 CSTATE_inequality_invariant C_msg_P_oppo_def MESI_State.distinct(11)
+   SharedSnpInv'_CSTATE_invariant5 i381 reqresps1_InvalidLoad reqresps1_noGOPendingp) done
+    show goal1_6: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+      sorry (*meta_sketch: no proof found*)
+    show goal1_7: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+      sorry (*meta_sketch: no proof found*)
+    show goal1_8: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+      sorry (*meta_sketch: no proof found*)
+    show goal1_9: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+      sorry (*meta_sketch: no proof found*)
+    show goal1_10: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+      apply  (cases"reqs1 T")
+ apply (metis HSTATE_X_Evict_invariant1 H_msg_P_oppo_def i159 i613old nextSnpRespIs_invariant1
+   nextSnpRespIs_invariant2 snpresps1_InvalidLoad snpresps2_InvalidLoad) done
+    show goal1_11: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+      apply  (cases"reqs1 T")
+ apply (metis HSTATE_X_Evict_invariant1 H_msg_P_same_def i159 nextSnpRespIs_invariant1 nextSnpRespIs_invariant2
+   snpresps1_InvalidLoad snpresps2_InvalidLoad) done
+    show goal1_12: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_disj1 MESI_State.distinct(11,261) SharedSnpInv'_CSTATE_invariant5) done
+qed
+  show goal_2: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ SWMR (T [ -=i 0]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) (T [ -=i 0]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) (T [ -=i 0]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) (T [ -=i 0]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD (T [ -=i 0])"
+    proof (introimpconjI)
+    show goal2_1: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ SWMR (T [ -=i 0])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_def SWMR_def devcache1_ISDIData_invariant_aux1 devcache2_copy_perform1_invariant i0) done
+    show goal2_2: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant CSTATE_remove_op MESI_State.distinct(3,97)) done
+    show goal2_3: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+      sorry (*meta_sketch: no proof found*)
+    show goal2_4: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+      sorry (*meta_sketch: no proof found*)
+    show goal2_5: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) CSTATE_inequality_invariant CSTATE_remove_op MESI_State.distinct(101,3)) done
+    show goal2_6: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) CSTATE_remove_op i22 remove_instr_HSTATE) done
+    show goal2_7: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) CSTATE_remove_op i22 remove_instr_HSTATE) done
+    show goal2_8: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+      sorry (*meta_sketch: no proof found*)
+    show goal2_9: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) (T [ -=i 0])"
+      sorry (*meta_sketch: no proof found*)
+    show goal2_10: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) (T [ -=i 0])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) i107 remove_instr_HSTATE) done
+    show goal2_11: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) (T [ -=i 0])"
+      apply  (cases"program1 T")
+ apply (metis H_msg_P_same_def i107 remove_instr_HSTATE) done
+    show goal2_12: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD (T [ -=i 0])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant CSTATE_remove_op MESI_State.distinct(3) i70
+   reqs1_empty_not_nextReqIs_general_invariant reqs1_remove_op) done
+qed
+  show goal_3: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ SWMR ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+    proof (introimpconjI)
+    show goal3_1: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ SWMR ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+      sorry (*meta_sketch: no proof found*)
+    show goal3_2: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+      sorry (*meta_sketch: no proof found*)
+    show goal3_3: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+      sorry (*meta_sketch: no proof found*)
+    show goal3_4: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+      sorry (*meta_sketch: no proof found*)
+    show goal3_5: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant MESI_State.distinct(15,261) SharedSnpInv'_CSTATE_invariant5) done
+    show goal3_6: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) InvalidStore'_CSTATE_otherside InvalidStore'_HSTATE MESI_State.distinct(15) SMADSnpInv_C_msg_not_half
+   i22) done
+    show goal3_7: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+      apply  (cases"reqs1 T")
+ apply (metis CSTATE_disj1 C_msg_not_def H_msg_P_oppo_def InvalidStore'_nextReqIs_invariant1 MESI_State.distinct(15)
+   SharedSnpInv'_CSTATE_invariant5 i26) done
+    show goal3_8: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_disj1 C_msg_state_def InvalidStore'_CSTATE_otherside InvalidStore'_nextReqIs_invariant1
+   MESI_State.distinct(11,143) i47) done
+    show goal3_9: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+      apply  (cases"reqs1 T")
+ apply (smt (verit) C_msg_not_def H_msg_P_oppo_def InvalidStore'_HSTATE InvalidStore'_nextDTHDataPending
+   InvalidStore'_nextReqIs_invariant1 i13 i26) done
+    show goal3_10: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+      apply  (cases"reqs1 T")
+ apply (smt (verit) C_msg_not_def H_msg_P_oppo_def InvalidStore'_HSTATE InvalidStore'_nextReqIs_invariant1
+   InvalidStore'_nextSnpRespIs i14 i26) done
+    show goal3_11: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_disj1 C_msg_not_def C_msg_state_def C_state_not_def InvalidStore'_nextReqIs_invariant1
+   MESI_State.distinct(11,263,265,281,283,285) hstate_invariants(24,4) i144 i189 i22 i23 i25 i26 i31 i353 i417 i449
+   i450 i47 i702 nextReqIs_otherside_rule_2_0 nextSnpRespIs_general_rule_9_0) done
+    show goal3_12: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_disj1 InvalidStore'_CSTATE_otherside MESI_State.distinct(15) SharedSnpInv'_CSTATE_invariant5
+   hstate_invariants(24,4) i23) done
+qed
+  show goal_4: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ SWMR ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+    proof (introimpconjI)
+    show goal4_1: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ SWMR ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+      sorry (*meta_sketch: no proof found*)
+    show goal4_2: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+      sorry (*meta_sketch: no proof found*)
+    show goal4_3: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant MESI_State.distinct(35) SharedSnpInv'_CSTATE_invariant5
+   SharedStore'_CSTATE_otherside hstate_invariants(24,4) i23) done
+    show goal4_4: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant MESI_State.distinct(101,11,35) SharedSnpInv'_CSTATE_invariant5
+   SharedStore'_CSTATE_otherside hstate_invariants(24,4) i106) done
+    show goal4_5: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+      sorry (*meta_sketch: no proof found*)
+    show goal4_6: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) MESI_State.distinct(35) SMADSnpInv_C_msg_not_half SharedStore'_CSTATE_otherside SharedStore'_HSTATE
+   i22) done
+    show goal4_7: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant MESI_State.distinct(35) SharedSnpInv'_CSTATE_invariant5
+   SharedStore'_CSTATE_otherside hstate_invariants(24,4) i22) done
+    show goal4_8: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+      sorry (*meta_sketch: no proof found*)
+    show goal4_9: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+      sorry (*meta_sketch: no proof found*)
+    show goal4_10: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+      apply  (cases"reqs1 T")
+ apply (metis HSTATE_X_Evict_invariant1 H_msg_P_oppo_def i107) done
+    show goal4_11: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) SharedStore'_HSTATE i107) done
+    show goal4_12: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant MESI_State.distinct(347,35) SharedSnpInv'_CSTATE_invariant5) done
+qed
+  show goal_5: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+    proof (introimpconjI)
+    show goal5_1: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+      sorry (*meta_sketch: no proof found*)
+    show goal5_2: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant MESI_State.distinct(219,47) SharedSnpInv'_CSTATE_invariant5) done
+    show goal5_3: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant CSTATE_starting_transaction_otherside_invariant1 MESI_State.distinct(47)
+   SharedSnpInv'_CSTATE_invariant5 hstate_invariants(24,4) i23) done
+    show goal5_4: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant CSTATE_starting_transaction_otherside_invariant1 MESI_State.distinct(101,11,47)
+   SharedSnpInv'_CSTATE_invariant5 hstate_invariants(24,4) i106) done
+    show goal5_5: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+      apply  (cases"reqs1 T")
+ apply (metis CSTATE_inequality_invariant CSTATE_starting_transaction_otherside_invariant1 C_msg_P_oppo_def
+   MESI_State.distinct(47) SharedSnpInv'_CSTATE_invariant5 i490 i615old nextGOPending_General_rule_5_0
+   nextGOPending_General_rule_5_1 reqresps1_noGOPendingp reqresps_empty_noGOPending2) done
+    show goal5_6: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+      apply  (cases"reqs1 T")
+ apply (metis CSTATE_inequality_invariant CSTATE_starting_transaction_otherside_invariant1 HSTATE_X_Evict_invariant1
+   H_msg_P_same_def MESI_State.distinct(47) SharedSnpInv'_CSTATE_invariant5 i22) done
+    show goal5_7: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant CSTATE_starting_transaction_otherside_invariant1 MESI_State.distinct(47)
+   SharedSnpInv'_CSTATE_invariant5 hstate_invariants(24,4) i22) done
+    show goal5_8: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) HSTATE_X_Evict_invariant1 i107) done
+    show goal5_9: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) HSTATE_X_Evict_invariant1 i107) done
+    show goal5_10: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+      apply  (cases"reqs1 T")
+ apply (metis HSTATE_X_Evict_invariant1 H_msg_P_oppo_def i107) done
+    show goal5_11: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) HSTATE_X_Evict_invariant1 i107) done
+    show goal5_12: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_disj1 MESI_State.distinct(359,47) SharedSnpInv'_CSTATE_invariant5) done
+qed
+  show goal_6: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+    proof (introimpconjI)
+    show goal6_1: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+      sorry (*meta_sketch: no proof found*)
+    show goal6_2: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+      sorry (*meta_sketch: no proof found*)
+    show goal6_3: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+      apply  (cases"reqs1 T")
+ apply (metis CSTATE_different2 CSTATE_inequality_invariant CSTATE_starting_transaction_otherside_invariant1
+   H_msg_P_same_def MESI_State.distinct(43,7) SharedSnpInv'_CSTATE_invariant5
+   dthdatas1_starting_transaction_otherside_invariant1 hstate_invariants(24,4) i490 i857 i898 nextDTHDataFrom_def
+   nextDTHDataPending_def nextDTHDataPending_general_rule_4_0 reqresps_empty_noGOPending2) done
+    show goal6_4: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant CSTATE_starting_transaction_otherside_invariant1 MESI_State.distinct(101,11,43)
+   SharedSnpInv'_CSTATE_invariant5 hstate_invariants(24,4) i106) done
+    show goal6_5: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant MESI_State.distinct(11,289,43) SharedSnpInv'_CSTATE_invariant5
+   SharedSnpInv'_MAD_CSTATE_invariant4) done
+    show goal6_6: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) MESI_State.distinct(43) SMADSnpInv_C_msg_not_half SharedEvictData'_CSTATE_otherside
+   SharedEvictData'_HSTATE i22) done
+    show goal6_7: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+      apply  (cases"reqs1 T")
+ apply (metis CSTATE_inequality_invariant H_msg_P_oppo_def MESI_State.distinct(43) ReqType.distinct(9)
+   SharedEvictData'_nextReqIs_invariant1 SharedSnpInv'_CSTATE_invariant5 nextReqIs_invariant_variant1) done
+    show goal6_8: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) SharedEvictData'_HSTATE i107) done
+    show goal6_9: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) SharedEvictData'_HSTATE i107) done
+    show goal6_10: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+      apply  (cases"reqs1 T")
+ apply (metis HSTATE_X_Evict_invariant1 H_msg_P_oppo_def i107) done
+    show goal6_11: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) SharedEvictData'_HSTATE i107) done
+    show goal6_12: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+      sorry (*meta_sketch: no proof found*)
+qed
+  show goal_7: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+    proof (introimpconjI)
+    show goal7_1: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+      sorry (*meta_sketch: no proof found*)
+    show goal7_2: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+      apply  (cases"reqs1 T")
+ apply (metis C_msg_P_oppo_def HTDDataPending_htddatas_invariant1 HTDDataPending_htddatas_invariant2
+   htddatas1_general_rule_7_0 htddatas2_ModifiedEvict i489 i920 nextHTDDataPending_def) done
+    show goal7_3: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+      apply  (cases"reqs1 T")
+ apply (smt (verit) HSTATE_X_Evict_invariant1 H_msg_P_same_def i23) done
+    show goal7_4: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis CSTATE_inequality_invariant MESI_State.distinct(11,27) ModifiedEvict'_CSTATE_otherside
+   SharedSnpInv'_CSTATE_invariant5 hstate_invariants(24,4) i106) done
+    show goal7_5: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+      apply  (cases"reqs1 T")
+ apply (metis CSTATE_starting_transaction_otherside_invariant1 C_msg_P_oppo_def SPG_simple_def i489 i6
+   nextGOPending_General_rule_5_1 reqresps1_ModifiedEvict reqresps1_noGOPendingp) done
+    show goal7_6: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+      sorry (*meta_sketch: no proof found*)
+    show goal7_7: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) ModifiedEvict'_CSTATE_otherside ModifiedEvict'_HSTATE i22 i72) done
+    show goal7_8: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) MESI_State.distinct(27) ModifiedEvict'_CSTATE_otherside SMADSnpInv_C_msg_not_half i72) done
+    show goal7_9: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+      apply  (cases"reqs1 T")
+ apply (metis HSTATE_X_Evict_invariant1 H_msg_P_oppo_def dthdatas1_starting_transaction_otherside_invariant1
+   dthdatas2_starting_transaction_otherside_invariant2 i189 i72 nextDTHDataFrom_def nextDTHDataPending_def) done
+    show goal7_10: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+      apply  (cases"reqs1 T")
+ apply (metis HSTATE_X_Evict_invariant1 H_msg_P_oppo_def SARspSFwdM_invariant1 i159 nextSnpRespIs_property2
+   snpresps1_ModifiedEvict snpresps2_ModifiedEvict) done
+    show goal7_11: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+      sorry (*meta_sketch: no proof found*)
+    show goal7_12: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (smt (verit) ModifiedEvict'_CSTATE_otherside ModifiedEvict'_HSTATE i23 i72) done
+qed
+  show goal_8: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+    proof (introimpconjI)
+    show goal8_1: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+      sorry (*meta_sketch: no proof found*)
+    show goal8_2: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+      apply  (cases"snpresps1 T")
+ apply (metis CSTATE_inequality_invariant C_msg_P_oppo_def MESI_State.distinct(139,5) SharedSnpInv'_CSTATE_invariant5
+   getSnoops_def) done
+    show goal8_3: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis HOST_State.distinct(177,289) HSTATE_invariant3 HSTATE_invariant_ModifiedSnpInv i384) done
+    show goal8_4: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis HOST_State.distinct(149) HSTATE_invariant3 HSTATE_invariant_ModifiedSnpInv i384 i699) done
+    show goal8_5: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+      apply  (cases"snpresps1 T")
+ apply (metis CSTATE_inequality_invariant C_msg_P_oppo_def MESI_State.distinct(143,5) SharedSnpInv'_CSTATE_invariant5
+   getSnoops_def) done
+    show goal8_6: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+      apply  (cases"snpresps1 T")
+ apply (metis HSTATE_invariant_ModifiedSnpInv H_msg_P_same_def i384 i596 i600 i653 i657 i659) done
+    show goal8_7: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis HOST_State.distinct(87) HSTATE_invariant3 HSTATE_invariant_ModifiedSnpInv i384 i699) done
+    show goal8_8: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis HSTATE_invariant_ModifiedSnpInv i107) done
+    show goal8_9: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+      apply  (cases"snpresps1 T")
+ apply (metis HSTATE_invariant_ModifiedSnpInv H_msg_P_oppo_def i107) done
+    show goal8_10: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis HSTATE_invariant_ModifiedSnpInv i107) done
+    show goal8_11: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+      apply  (insertassms,unfoldSWMR_defC_msg_P_same_defC_msg_P_oppo_defH_msg_P_same_defC_H_state_defC_msg_not_defH_msg_P_oppo_defC_msg_P_host_defC_state_not_defH_C_state_msg_same_defH_C_state_msg_oppo_defC_msg_state_defC_not_C_msg_def)
+ by (metis HSTATE_invariant_ModifiedSnpInv i107) done
+    show goal8_12: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+      sorry (*meta_sketch: no proof found*)
+qed
+qed

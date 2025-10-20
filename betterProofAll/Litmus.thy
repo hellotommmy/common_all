@@ -17,7 +17,7 @@ value "SWMR_p  \<lparr>hostcache = \<lparr>HostEntry.content = Some 0, block_sta
       devcache2 = \<lparr>CLEntry.content = Some 0, block_state = Modified\<rparr>, reqs1 = [], reqs2 = [], snpresps1 = [], snpresps2 = [],
       dthdatas1 = [], dthdatas2 = [], snps1 = [], snps2 = [], reqresps1 = [], reqresps2 = [], htddatas1 = [], htddatas2 = [],
       program1 = [], program2 = [], counter = 4, registers11 = 0, registers12 = 0, registers21 = 0, registers22 = 0,
-      clock = 21, buffer1 = Some (H2DResp (Utid 2) GO Modified 16), buffer2 = Some (H2DResp (Utid 3) GO Modified 17)\<rparr>"
+      clock = 21, buffer1 = Some (H2DResp 2 GO Modified 16), buffer2 = Some (H2DResp 3 GO Modified 17)\<rparr>"
  fun list_prop_exists :: "'a list \<Rightarrow> ('a \<Rightarrow> bool) \<Rightarrow> bool" where
   "list_prop_exists [] p  = False"
 | "list_prop_exists (a # as) p = (if p a then True else  list_prop_exists as p)"
@@ -617,7 +617,7 @@ value "GTS_all_states"
 value "  GTS_chain"
 definition "Sixth_state = \<lparr>hostcache = \<lparr>HostEntry.content = Some 0, block_state = MAD\<rparr>, devcache1 = \<lparr>CLEntry.content = Some 0, block_state = IMAD\<rparr>,
      devcache2 = \<lparr>CLEntry.content = Some 2, block_state = Modified\<rparr>, reqs1 = [], reqs2 = [], snpresps1 = [], snpresps2 = [],
-     dthdatas1 = [], dthdatas2 = [], snps1 = [], snps2 = [H2DReq (Utid 3) SnpInv Dev2 16], reqresps1 = [], reqresps2 = [],
+     dthdatas1 = [], dthdatas2 = [], snps1 = [], snps2 = [H2DReq 3 SnpInv Dev2 16], reqresps1 = [], reqresps2 = [],
      htddatas1 = [], htddatas2 = [], program1 = [Write Dev1 1], program2 = [], counter = 4, registers11 = 0, registers12 = 0,
      registers21 = 0, registers22 = 0, clock = 17, buffer1 = None, buffer2 = None\<rparr>"
 

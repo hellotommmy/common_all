@@ -1,0 +1,899 @@
+Sledgehammering... 
+Sledgehammering... 
+user method didnt solve goal 
+user method successfully solved goal 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_various_forms1 SWMR_def devcache1_ISDIData_invariant_aux1 devcache2_copy_perform1_invariant
+    i0) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) CSTATE_various_forms1 InvalidStore'_CSTATE_sameside MESI_State.distinct(105,15)) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) CSTATE_various_forms1 MESI_State.distinct(125,35) SharedStore'_CSTATE_sameside) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) CSTATE_various_forms1 MESI_State.distinct(137,47) SharedSnpInv'_CSTATE_invariant5) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) CSTATE_various_forms1 MESI_State.distinct(133,43) SharedEvictData'_CSTATE_sameside) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant InvalidLoad'_CSTATE_sameside MESI_State.distinct(11,183)) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) CSTATE_inequality_invariant CSTATE_remove_op MESI_State.distinct(3,97)) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant InvalidStore'_CSTATE_sameside MESI_State.distinct(15,187)) 
+Done 
+Sledgehammering... 
+Sledgehammering... 
+No proof found 
+[rescue] START method=" auto" timeout=5s before=1 
+No proof found 
+Sledgehammering... 
+[rescue] START method=" auto" timeout=5s before=1 
+Sledgehammering... 
+[rescue] TIMEOUT 5016 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+[rescue] TIMEOUT 5030 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant InvalidLoad'_CSTATE_otherside InvalidLoad'_CSTATE_sameside
+    InvalidLoad'_HSTATE MESI_State.distinct(11) i23) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) CSTATE_remove_op i23 remove_instr_HSTATE) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant InvalidStore'_CSTATE_otherside InvalidStore'_CSTATE_sameside
+    InvalidStore'_HSTATE MESI_State.distinct(15) i23) 
+Done 
+[rescue] [split] TIMEOUT 15054 ms before=1 
+[rescue] [split] TIMEOUT 15058 ms before=1 
+No proof found 
+Sledgehammering... 
+[rescue] START method=" auto" timeout=5s before=1 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant InvalidLoad'_CSTATE_otherside InvalidLoad'_CSTATE_sameside
+    InvalidLoad'_HSTATE MESI_State.distinct(11,143) i106) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant CSTATE_remove_op MESI_State.distinct(101,11,3) i106
+    remove_instr_HSTATE) 
+Done 
+Sledgehammering... 
+[rescue] TIMEOUT 5028 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant InvalidStore'_CSTATE_otherside InvalidStore'_CSTATE_sameside
+    InvalidStore'_HSTATE MESI_State.distinct(11,143,15) i106) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(35) SharedStore'_CSTATE_otherside
+    SharedStore'_CSTATE_sameside SharedStore'_HSTATE i23) 
+Done 
+Sledgehammering... 
+Sledgehammering... 
+[rescue] [split] TIMEOUT 15006 ms before=1 
+No proof found 
+[rescue] START method=" auto" timeout=5s before=1 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) CSTATE_inequality_invariant CSTATE_remove_op MESI_State.distinct(101,3)) 
+Done 
+No proof found 
+Sledgehammering... 
+[rescue] START method=" auto" timeout=5s before=1 
+[rescue] TIMEOUT 5007 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant InvalidStore'_CSTATE_sameside MESI_State.distinct(15,261)) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(101,11,35) SharedStore'_CSTATE_otherside
+    SharedStore'_CSTATE_sameside SharedStore'_HSTATE i106) 
+Done 
+Sledgehammering... 
+[rescue] TIMEOUT 5006 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) CSTATE_remove_op i22 remove_instr_HSTATE) 
+Done 
+[rescue] [split] OK 7466 ms before=1 after=2 (no progress) 
+Sledgehammering... 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) InvalidStore'_CSTATE_otherside InvalidStore'_HSTATE MESI_State.distinct(15)
+    SMADSnpInv_C_msg_not_half i22) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(281,35) SharedStore'_CSTATE_sameside) 
+Done 
+[rescue] [split] TIMEOUT 15058 ms before=1 
+No proof found 
+Sledgehammering... 
+[rescue] START method=" auto" timeout=5s before=1 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) CSTATE_remove_op i22 remove_instr_HSTATE) 
+Done 
+Sledgehammering... 
+No proof found 
+[rescue] [split] SH subgoal 1 -> fail in 21285 ms 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_disj2 C_msg_not_def InvalidStore'_CSTATE_sameside InvalidStore'_nextReqIs_invariant1
+    MESI_State.distinct(15) i26) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: prefer 2 apply (smt (verit) i70 list.discI) 
+Done 
+[rescue] [split] SH subgoal 2 -> success in 1501 ms 
+[rescue] [split] DONE_WITH_RESIDUALS 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) MESI_State.distinct(35) SMADSnpInv_C_msg_not_half SharedStore'_CSTATE_otherside
+    SharedStore'_HSTATE i22) 
+Done 
+Sledgehammering... 
+[rescue] TIMEOUT 5034 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) InvalidLoad'_CSTATE_otherside InvalidLoad'_HSTATE MESI_State.distinct(11)
+    SMADSnpInv_C_msg_not_half i22) 
+Done 
+Sledgehammering... 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_disj1 C_msg_not_def C_msg_state_def InvalidStore'_CSTATE_otherside
+    InvalidStore'_nextReqIs_invariant1 MESI_State.distinct(11) i26 i47) 
+Done 
+Sledgehammering... 
+[rescue] [split] TIMEOUT 15054 ms before=1 
+No proof found 
+[rescue] START method=" auto" timeout=5s before=1 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_disj2 MESI_State.distinct(35) SharedStore'_CSTATE_otherside SharedStore'_CSTATE_sameside
+    SharedStore'_HSTATE i22) 
+Done 
+[rescue] TIMEOUT 5031 ms before=1 
+[rescue] [split] START method=" (cases "program1 T")" timeout=15s before=1 
+Sledgehammering... 
+No proof found 
+[rescue] START method=" auto" timeout=5s before=1 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_disj2 C_msg_state_def InvalidLoad'_CSTATE_otherside InvalidLoad'_CSTATE_sameside
+    InvalidLoad'_HSTATE InvalidLoad'_nextReqIs_otherside i22 i47) 
+Done 
+Sledgehammering... 
+Sledgehammering... 
+[rescue] TIMEOUT 5008 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+[rescue] [split] TIMEOUT 15046 ms before=1 
+[rescue] [split] TIMEOUT 15048 ms before=1 
+No proof found 
+[rescue] START method=" auto" timeout=5s before=1 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) SharedStore'_HSTATE i107) 
+Done 
+[rescue] TIMEOUT 5026 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant C_msg_state_def InvalidLoad'_CSTATE_otherside
+    InvalidLoad'_nextReqIs_otherside MESI_State.distinct(11) SMADSnpInv_C_msg_not_half i47) 
+Done 
+No proof found 
+Sledgehammering... 
+[rescue] START method=" auto" timeout=5s before=1 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) i107 remove_instr_HSTATE) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(293,47) SharedSnpInv'_CSTATE_invariant5) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) SharedStore'_HSTATE i107) 
+Done 
+[rescue] [split] OK 6318 ms before=1 after=2 (no progress) 
+Sledgehammering... 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) C_msg_not_def H_msg_P_oppo_def InvalidStore'_HSTATE InvalidStore'_nextDTHDataPending
+    InvalidStore'_nextReqIs_invariant1 i13 i26) 
+Done 
+[rescue] [split] SH subgoal 1 -> success in 1309 ms 
+Sledgehammering... 
+[rescue] TIMEOUT 5058 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+cvc5 found a proof... 
+cvc5: Try this:
+  prefer 2 apply (smt (verit) C_msg_not_def H_msg_P_oppo_def InvalidStore'_HSTATE InvalidStore'_nextReqIs_invariant1
+    dthdatas1_starting_transaction_otherside_invariant1 i189 i26 i68 nextDTHDataPending_def) 
+Done 
+[rescue] [split] SH subgoal 2 -> success in 2299 ms 
+[rescue] [split] DONE_WITH_RESIDUALS 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) i107 remove_instr_HSTATE) 
+Done 
+Sledgehammering... 
+[rescue] [split] TIMEOUT 15059 ms before=1 
+No proof found 
+[rescue] START method=" auto" timeout=5s before=1 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) SharedStore'_HSTATE i107) 
+Done 
+[rescue] TIMEOUT 5033 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+Sledgehammering... 
+No proof found 
+[rescue] START method=" auto" timeout=5s before=1 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) i107 remove_instr_HSTATE) 
+Done 
+[rescue] TIMEOUT 5018 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+Sledgehammering... 
+[rescue] [split] TIMEOUT 15047 ms before=1 
+No proof found 
+[rescue] START method=" auto" timeout=5s before=1 
+[rescue] [split] TIMEOUT 15051 ms before=1 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) SharedStore'_HSTATE i107) 
+Done 
+[rescue] TIMEOUT 5026 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+Sledgehammering... 
+No proof found 
+[rescue] START method=" auto" timeout=5s before=1 
+Sledgehammering... 
+[rescue] TIMEOUT 5035 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+[rescue] [split] TIMEOUT 15005 ms before=1 
+No proof found 
+[rescue] START method=" auto" timeout=5s before=1 
+[rescue] [split] TIMEOUT 15040 ms before=1 
+Sledgehammering... 
+No proof found 
+[rescue] START method=" auto" timeout=5s before=1 
+[rescue] TIMEOUT 5032 ms before=1 
+[rescue] [split] START method=" (cases "program1 T")" timeout=15s before=1 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(35) SharedStore'_CSTATE_otherside
+    SharedStore'_CSTATE_sameside SharedStore'_HSTATE i23) 
+Done 
+270.653s elapsed time, 59.484s cpu time, 4.625s GC time 
+Sledgehammering... 
+[rescue] TIMEOUT 5037 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) MESI_State.distinct(43) SMADSnpInv_C_msg_not_half SharedEvictData'_CSTATE_otherside
+    SharedEvictData'_HSTATE i22) 
+Done 
+[rescue] [split] TIMEOUT 15043 ms before=1 
+283.413s elapsed time, 61.859s cpu time, 4.688s GC time 
+[rescue] [split] TIMEOUT 15023 ms before=1 
+Sledgehammering... 
+No proof found 
+[rescue] START method=" auto" timeout=5s before=1 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(43) SharedEvictData'_CSTATE_otherside
+    SharedEvictData'_CSTATE_sameside SharedEvictData'_HSTATE i22) 
+Done 
+No proof found 
+[rescue] START method=" auto" timeout=5s before=1 
+[rescue] TIMEOUT 5047 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) CSTATE_various_forms1 MESI_State.distinct(117,27) ModifiedEvict'_CSTATE_sameside) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) SharedEvictData'_HSTATE i107) 
+Done 
+[rescue] TIMEOUT 5044 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+[rescue] [split] TIMEOUT 15023 ms before=1 
+[rescue] [split] TIMEOUT 15019 ms before=1 
+Sledgehammering... 
+No proof found 
+[rescue] START method=" auto" timeout=5s before=1 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant ModifiedEvict'_CSTATE_otherside ModifiedEvict'_CSTATE_sameside
+    ModifiedEvict'_nextHTDDataPending i576 i72) 
+Done 
+Sledgehammering... 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) SharedEvictData'_HSTATE i107) 
+Done 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) HSTATE_X_Evict_invariant1 i107) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_disj1 InvalidStore'_CSTATE_otherside InvalidStore'_CSTATE_sameside InvalidStore'_HSTATE
+    InvalidStore'_nextReqIs_otherside i23 i824) 
+Done 
+320.525s elapsed time, 72.516s cpu time, 4.875s GC time 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) ModifiedEvict'_HSTATE i23) 
+Done 
+Sledgehammering... 
+[rescue] TIMEOUT 5030 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+Sledgehammering... 
+[rescue] [split] OK 833 ms before=1 after=2 (no progress) 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) SharedEvictData'_HSTATE i107) 
+Done 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) HSTATE_X_Evict_invariant1 i107) 
+Done 
+Sledgehammering... 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) HSTATE_X_Evict_invariant1 H_msg_P_same_def InvalidLoad'_nextSnpRespIs i159
+    nextSnpRespIs_invariant1 nextSnpRespIs_invariant2 snpresps2_InvalidLoad) 
+Done 
+[rescue] [split] SH subgoal 1 -> success in 2413 ms 
+Sledgehammering... 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(27) ModifiedEvict'_CSTATE_otherside
+    ModifiedEvict'_CSTATE_sameside i72) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) SharedEvictData'_HSTATE i107) 
+Done 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) HSTATE_X_Evict_invariant1 i107) 
+zipperposition found a proof... 
+zipperposition: Try this: apply (metis hstate_invariants(24,4) i107) 
+Done 
+Sledgehammering... 
+user method successfully solved goal 
+cvc5 found a proof... 
+cvc5: Try this:
+  prefer 2 apply (smt (verit) HSTATE_X_Evict_invariant1 H_msg_P_same_def InvalidLoad'_nextSnpRespIs i159 i68
+    nextSnpRespIs_property1 nextSnpRespIs_property2 snpresps2_InvalidLoad) 
+Done 
+[rescue] [split] SH subgoal 2 -> success in 4204 ms 
+[rescue] [split] DONE_WITH_RESIDUALS 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(43) SharedEvictData'_CSTATE_otherside
+    SharedEvictData'_CSTATE_sameside SharedEvictData'_HSTATE i23) 
+Done 
+Sledgehammering... 
+329.748s elapsed time, 85.828s cpu time, 7.250s GC time 
+Sledgehammering... 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) HSTATE_X_Evict_invariant1 i107) 
+Done 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) ModifiedEvict'_HSTATE i22) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_disj1 InvalidLoad'_CSTATE_otherside InvalidLoad'_CSTATE_sameside InvalidLoad'_HSTATE
+    MESI_State.distinct(11) i23) 
+Done 
+Sledgehammering... 
+332.332s elapsed time, 89.844s cpu time, 7.344s GC time 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) ModifiedEvict'_CSTATE_otherside ModifiedEvict'_HSTATE i22 i72) 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_def CSTATE_various_forms1 MESI_State.distinct(5) SharedSnpInv'_CSTATE_invariant5 i592) 
+Done 
+zipperposition found a proof... 
+zipperposition: Try this:
+  apply (metis CSTATE_inequality_invariant MESI_State.distinct(15,359,47) SharedSnpInv'_CSTATE_invariant5
+    SharedSnpInv'_MAD_CSTATE_invariant4) 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) MESI_State.distinct(27) ModifiedEvict'_CSTATE_otherside SMADSnpInv_C_msg_not_half i72) 
+Done 
+Sledgehammering... 
+user method successfully solved goal 
+Sledgehammering... 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+348.602s elapsed time, 94.344s cpu time, 7.438s GC time 
+zipperposition found a proof... 
+zipperposition: Try this:
+  apply (metis CSTATE_inequality_invariant MESI_State.distinct(5) SMADSnpInv_CSTATE SharedSnpInv'_CSTATE_invariant5
+    SharedSnpInv_HSTATE SharedSnpInv_nextSnoopIs_otherside i23 nextSnoopIs_otherside_rule_1_0) 
+Done 
+zipperposition found a proof... 
+zipperposition: Try this:
+  apply (metis dthdatas1_starting_transaction_otherside_invariant1 dthdatas2_starting_transaction_otherside_invariant2
+    hstate_invariants(24,4) i189 i73 i897 nextDTHDataPending_def) 
+verit found a proof... 
+verit: Try this:
+  apply (smt (verit) CSTATE_different1 InvalidX_HSTATE1 MESI_State.distinct(11)
+    ModifiedEvict'_nextReqIs_invariant_not_RdOwn ReqType.distinct(11) i339 i417 i419 i456 i463 i487 i594 i72 i841
+    nextReqIs_nonempty_reqs1 nextSnpRespIs_general_rule_9_0 nextStore_nextEvict_exclusive) 
+Sledgehammering... 
+Done 
+Done 
+Sledgehammering... 
+zipperposition found a proof... 
+zipperposition: Try this:
+  apply (metis HOST_State.distinct(149,85) HSTATE_invariant3 SharedSnpInv_nextSnoopIs_otherside
+    hstate_invariants(12,2,24,7) i384 nextSnoopIs_otherside_rule_1_0) 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this: apply (smt (verit) ModifiedEvict'_CSTATE_otherside ModifiedEvict'_HSTATE i23 i72) 
+Done 
+Done 
+Sledgehammering... 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(143,5) SharedSnpInv'_CSTATE_invariant5) 
+Done 
+Sledgehammering... 
+No proof found 
+[rescue] START method=" auto" timeout=5s before=1 
+zipperposition found a proof... 
+zipperposition: Try this:
+  apply (metis SharedSnpInv_C_msg_not_half2 SharedSnpInv_HSTATE i384 i600 i653 i657 i659
+    nextSnoopIs_otherside_rule_1_0) 
+zipperposition found a proof... 
+zipperposition: Try this:
+  apply (metis SharedSnpInv_C_msg_not_half2 SharedSnpInv_HSTATE i384 i600 i653 i657 i659
+    nextSnoopIs_otherside_rule_1_0) 
+[rescue] TIMEOUT 5013 ms before=1 
+[rescue] [split] START method=" (cases "reqs1 T")" timeout=15s before=1 
+[rescue] [split] OK 0 ms before=1 after=2 (no progress) 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+Done 
+Sledgehammering... 
+cvc5 found a proof... 
+cvc5: Try this:
+  apply (smt (verit) HSTATE_X_Evict_invariant1 H_msg_P_same_def ModifiedEvict'_nextSnpRespIs SARspSFwdM_invariant1
+    SARspSFwdM_invariant2 i159 i845 snpresps2_ModifiedEvict) 
+Done 
+[rescue] [split] SH subgoal 1 -> success in 3581 ms 
+Sledgehammering... 
+Sledgehammering... 
+zipperposition found a proof... 
+zipperposition: Try this:
+  apply (metis SharedSnpInv_C_msg_not_half2 SharedSnpInv_HSTATE i107 nextSnoopIs_otherside_rule_1_0) 
+cvc5 found a proof... 
+cvc5: Try this:
+  prefer 2 apply (smt (verit) HSTATE_X_Evict_invariant1 H_msg_P_same_def ModifiedEvict'_nextSnpRespIs
+    SARspSFwdM_invariant1 i159 i487 i845 nextSnpRespIs_property2 snpresps2_ModifiedEvict) 
+Done 
+[rescue] [split] SH subgoal 2 -> success in 2898 ms 
+[rescue] [split] DONE_WITH_RESIDUALS 
+114.230s elapsed time, 43.188s cpu time, 4.938s GC time 
+zipperposition found a proof... 
+zipperposition: Try this:
+  apply (metis SharedSnpInv_C_msg_not_half2 SharedSnpInv_HSTATE i107 nextSnoopIs_otherside_rule_1_0) 
+zipperposition found a proof... 
+zipperposition: Try this:
+  apply (metis SharedSnpInv_C_msg_not_half2 SharedSnpInv_HSTATE i107 nextSnoopIs_otherside_rule_1_0) 
+Done 
+Sledgehammering... 
+zipperposition found a proof... 
+zipperposition: Try this:
+  apply (metis SharedSnpInv_C_msg_not_half2 SharedSnpInv_HSTATE i107 nextSnoopIs_otherside_rule_1_0) 
+Done 
+Done 
+Sledgehammering... 
+Done 
+zipperposition found a proof... 
+zipperposition: Try this:
+  apply (metis HOST_State.distinct(177) HSTATE_invariant3 HSTATE_invariant_ModifiedSnpInv SharedSnpInv_C_msg_not_half2
+    i384 i699 nextSnoopIs_otherside_rule_1_0) 
+Done 
+98.723s elapsed time, 20.406s cpu time, 2.422s GC time 
+431.068s elapsed time, 110.328s cpu time, 9.766s GC time 
+proof (intro conjI)
+  show goal_1: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ SWMR ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+    proof (intro impconjI)
+   show goal1_1: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ SWMR ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     apply  simp done
+   show goal1_2: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant InvalidLoad'_CSTATE_sameside MESI_State.distinct(11,183)) done
+   show goal1_3: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant InvalidLoad'_CSTATE_otherside InvalidLoad'_CSTATE_sameside
+    InvalidLoad'_HSTATE MESI_State.distinct(11) i23) done
+   show goal1_4: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant InvalidLoad'_CSTATE_otherside InvalidLoad'_CSTATE_sameside
+    InvalidLoad'_HSTATE MESI_State.distinct(11,143) i106) done
+   show goal1_5: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     sorry (*failed to find proof*)
+   show goal1_6: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) InvalidLoad'_CSTATE_otherside InvalidLoad'_HSTATE MESI_State.distinct(11)
+    SMADSnpInv_C_msg_not_half i22) done
+   show goal1_7: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_disj2 C_msg_state_def InvalidLoad'_CSTATE_otherside InvalidLoad'_CSTATE_sameside
+    InvalidLoad'_HSTATE InvalidLoad'_nextReqIs_otherside i22 i47) done
+   show goal1_8: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant C_msg_state_def InvalidLoad'_CSTATE_otherside
+    InvalidLoad'_nextReqIs_otherside MESI_State.distinct(11) SMADSnpInv_C_msg_not_half i47) done
+   show goal1_9: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     sorry (*failed to find proof*)
+   show goal1_10: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     sorry (*failed to find proof*)
+   show goal1_11: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     apply  (cases "reqs1 T")
+ apply (smt (verit) HSTATE_X_Evict_invariant1 H_msg_P_same_def InvalidLoad'_nextSnpRespIs i159
+   nextSnpRespIs_invariant1 nextSnpRespIs_invariant2 snpresps2_InvalidLoad)
+  apply (smt (verit) HSTATE_X_Evict_invariant1 H_msg_P_same_def InvalidLoad'_nextSnpRespIs i159 i68
+   nextSnpRespIs_property1 nextSnpRespIs_property2 snpresps2_InvalidLoad) done
+   show goal1_12: "CSTATE Invalid T 0 ∧ nextLoad T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq RdShared] [ 0 s= ISAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_disj1 InvalidLoad'_CSTATE_otherside InvalidLoad'_CSTATE_sameside InvalidLoad'_HSTATE
+    MESI_State.distinct(11) i23) done
+qed
+  show goal_2: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ SWMR (T [ -=i 0]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) (T [ -=i 0]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) (T [ -=i 0]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) (T [ -=i 0]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) (T [ -=i 0]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD (T [ -=i 0])"
+    proof (intro impconjI)
+   show goal2_1: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ SWMR (T [ -=i 0])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_various_forms1 SWMR_def devcache1_ISDIData_invariant_aux1 devcache2_copy_perform1_invariant
+    i0) done
+   show goal2_2: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant CSTATE_remove_op MESI_State.distinct(3,97)) done
+   show goal2_3: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_remove_op i23 remove_instr_HSTATE) done
+   show goal2_4: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant CSTATE_remove_op MESI_State.distinct(101,11,3) i106
+    remove_instr_HSTATE) done
+   show goal2_5: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant CSTATE_remove_op MESI_State.distinct(101,3)) done
+   show goal2_6: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_remove_op i22 remove_instr_HSTATE) done
+   show goal2_7: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_remove_op i22 remove_instr_HSTATE) done
+   show goal2_8: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) (T [ -=i 0])"
+     sorry (*failed to find proof*)
+   show goal2_9: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) (T [ -=i 0])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) i107 remove_instr_HSTATE) done
+   show goal2_10: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) (T [ -=i 0])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) i107 remove_instr_HSTATE) done
+   show goal2_11: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) (T [ -=i 0])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) i107 remove_instr_HSTATE) done
+   show goal2_12: "CSTATE Shared T 0 ∧ nextLoad T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD (T [ -=i 0])"
+     sorry (*failed to find proof*)
+qed
+  show goal_3: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ SWMR ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+    proof (intro impconjI)
+   show goal3_1: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ SWMR ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_various_forms1 InvalidStore'_CSTATE_sameside MESI_State.distinct(105,15)) done
+   show goal3_2: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant InvalidStore'_CSTATE_sameside MESI_State.distinct(15,187)) done
+   show goal3_3: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant InvalidStore'_CSTATE_otherside InvalidStore'_CSTATE_sameside
+    InvalidStore'_HSTATE MESI_State.distinct(15) i23) done
+   show goal3_4: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant InvalidStore'_CSTATE_otherside InvalidStore'_CSTATE_sameside
+    InvalidStore'_HSTATE MESI_State.distinct(11,143,15) i106) done
+   show goal3_5: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant InvalidStore'_CSTATE_sameside MESI_State.distinct(15,261)) done
+   show goal3_6: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) InvalidStore'_CSTATE_otherside InvalidStore'_HSTATE MESI_State.distinct(15)
+    SMADSnpInv_C_msg_not_half i22) done
+   show goal3_7: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_disj2 C_msg_not_def InvalidStore'_CSTATE_sameside InvalidStore'_nextReqIs_invariant1
+    MESI_State.distinct(15) i26) done
+   show goal3_8: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_disj1 C_msg_not_def C_msg_state_def InvalidStore'_CSTATE_otherside
+    InvalidStore'_nextReqIs_invariant1 MESI_State.distinct(11) i26 i47) done
+   show goal3_9: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     apply  (cases "reqs1 T")
+ apply (smt (verit) C_msg_not_def H_msg_P_oppo_def InvalidStore'_HSTATE InvalidStore'_nextDTHDataPending
+   InvalidStore'_nextReqIs_invariant1 i13 i26)
+  apply (smt (verit) C_msg_not_def H_msg_P_oppo_def InvalidStore'_HSTATE InvalidStore'_nextReqIs_invariant1
+   dthdatas1_starting_transaction_otherside_invariant1 i189 i26 i68 nextDTHDataPending_def) done
+   show goal3_10: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     sorry (*failed to find proof*)
+   show goal3_11: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     sorry (*failed to find proof*)
+   show goal3_12: "CSTATE Invalid T 0 ∧ nextStore T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq RdOwn] [ 0 s= IMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_disj1 InvalidStore'_CSTATE_otherside InvalidStore'_CSTATE_sameside InvalidStore'_HSTATE
+    InvalidStore'_nextReqIs_otherside i23 i824) done
+qed
+  show goal_4: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ SWMR ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+    proof (intro impconjI)
+   show goal4_1: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ SWMR ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_various_forms1 MESI_State.distinct(125,35) SharedStore'_CSTATE_sameside) done
+   show goal4_2: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     sorry (*failed to find proof*)
+   show goal4_3: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(35) SharedStore'_CSTATE_otherside
+    SharedStore'_CSTATE_sameside SharedStore'_HSTATE i23) done
+   show goal4_4: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(101,11,35) SharedStore'_CSTATE_otherside
+    SharedStore'_CSTATE_sameside SharedStore'_HSTATE i106) done
+   show goal4_5: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(281,35) SharedStore'_CSTATE_sameside) done
+   show goal4_6: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) MESI_State.distinct(35) SMADSnpInv_C_msg_not_half SharedStore'_CSTATE_otherside
+    SharedStore'_HSTATE i22) done
+   show goal4_7: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_disj2 MESI_State.distinct(35) SharedStore'_CSTATE_otherside SharedStore'_CSTATE_sameside
+    SharedStore'_HSTATE i22) done
+   show goal4_8: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) SharedStore'_HSTATE i107) done
+   show goal4_9: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) SharedStore'_HSTATE i107) done
+   show goal4_10: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) SharedStore'_HSTATE i107) done
+   show goal4_11: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) SharedStore'_HSTATE i107) done
+   show goal4_12: "CSTATE Shared T 0 ∧ nextStore T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq RdOwn] [ 0 s= SMAD])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(35) SharedStore'_CSTATE_otherside
+    SharedStore'_CSTATE_sameside SharedStore'_HSTATE i23) done
+qed
+  show goal_5: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+    proof (intro impconjI)
+   show goal5_1: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_various_forms1 MESI_State.distinct(137,47) SharedSnpInv'_CSTATE_invariant5) done
+   show goal5_2: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     sorry (*failed to find proof*)
+   show goal5_3: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     apply  (cases "reqs1 T")
+sorry (*split: sledgehammer failed*)
+  apply (smt (verit) i70 list.discI) done
+   show goal5_4: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     sorry (*failed to find proof*)
+   show goal5_5: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(293,47) SharedSnpInv'_CSTATE_invariant5) done
+   show goal5_6: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     sorry (*failed to find proof*)
+   show goal5_7: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     sorry (*failed to find proof*)
+   show goal5_8: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) HSTATE_X_Evict_invariant1 i107) done
+   show goal5_9: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) HSTATE_X_Evict_invariant1 i107) done
+   show goal5_10: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) HSTATE_X_Evict_invariant1 i107) done
+   show goal5_11: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) HSTATE_X_Evict_invariant1 i107) done
+   show goal5_12: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq CleanEvictNoData] [ 0 s= SIAC])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (metis CSTATE_inequality_invariant MESI_State.distinct(15,359,47) SharedSnpInv'_CSTATE_invariant5
+    SharedSnpInv'_MAD_CSTATE_invariant4) done
+qed
+  show goal_6: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+    proof (intro impconjI)
+   show goal6_1: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_various_forms1 MESI_State.distinct(133,43) SharedEvictData'_CSTATE_sameside) done
+   show goal6_2: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     sorry (*failed to find proof*)
+   show goal6_3: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     sorry (*failed to find proof*)
+   show goal6_4: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     sorry (*failed to find proof*)
+   show goal6_5: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     sorry (*failed to find proof*)
+   show goal6_6: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) MESI_State.distinct(43) SMADSnpInv_C_msg_not_half SharedEvictData'_CSTATE_otherside
+    SharedEvictData'_HSTATE i22) done
+   show goal6_7: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(43) SharedEvictData'_CSTATE_otherside
+    SharedEvictData'_CSTATE_sameside SharedEvictData'_HSTATE i22) done
+   show goal6_8: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) SharedEvictData'_HSTATE i107) done
+   show goal6_9: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) SharedEvictData'_HSTATE i107) done
+   show goal6_10: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) SharedEvictData'_HSTATE i107) done
+   show goal6_11: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) SharedEvictData'_HSTATE i107) done
+   show goal6_12: "CSTATE Shared T 0 ∧ nextEvict T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq CleanEvict] [ 0 s= SIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(43) SharedEvictData'_CSTATE_otherside
+    SharedEvictData'_CSTATE_sameside SharedEvictData'_HSTATE i23) done
+qed
+  show goal_7: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+    proof (intro impconjI)
+   show goal7_1: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ SWMR ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_various_forms1 MESI_State.distinct(117,27) ModifiedEvict'_CSTATE_sameside) done
+   show goal7_2: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant ModifiedEvict'_CSTATE_otherside ModifiedEvict'_CSTATE_sameside
+    ModifiedEvict'_nextHTDDataPending i576 i72) done
+   show goal7_3: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) ModifiedEvict'_HSTATE i23) done
+   show goal7_4: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(27) ModifiedEvict'_CSTATE_otherside
+    ModifiedEvict'_CSTATE_sameside i72) done
+   show goal7_5: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     apply  simp done
+   show goal7_6: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) ModifiedEvict'_HSTATE i22) done
+   show goal7_7: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) ModifiedEvict'_CSTATE_otherside ModifiedEvict'_HSTATE i22 i72) done
+   show goal7_8: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) MESI_State.distinct(27) ModifiedEvict'_CSTATE_otherside SMADSnpInv_C_msg_not_half i72) done
+   show goal7_9: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (metis dthdatas1_starting_transaction_otherside_invariant1 dthdatas2_starting_transaction_otherside_invariant2
+    hstate_invariants(24,4) i189 i73 i897 nextDTHDataPending_def) done
+   show goal7_10: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_different1 InvalidX_HSTATE1 MESI_State.distinct(11)
+    ModifiedEvict'_nextReqIs_invariant_not_RdOwn ReqType.distinct(11) i339 i417 i419 i456 i463 i487 i594 i72 i841
+    nextReqIs_nonempty_reqs1 nextSnpRespIs_general_rule_9_0 nextStore_nextEvict_exclusive) done
+   show goal7_11: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     apply  (cases "reqs1 T")
+ apply (smt (verit) HSTATE_X_Evict_invariant1 H_msg_P_same_def ModifiedEvict'_nextSnpRespIs SARspSFwdM_invariant1
+   SARspSFwdM_invariant2 i159 i845 snpresps2_ModifiedEvict)
+  apply (smt (verit) HSTATE_X_Evict_invariant1 H_msg_P_same_def ModifiedEvict'_nextSnpRespIs SARspSFwdM_invariant1
+   i159 i487 i845 nextSnpRespIs_property2 snpresps2_ModifiedEvict) done
+   show goal7_12: "CSTATE Modified T 0 ∧ nextEvict T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T [ 0 +=rdreq DirtyEvict] [ 0 s= MIA])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) ModifiedEvict'_CSTATE_otherside ModifiedEvict'_HSTATE i23 i72) done
+qed
+  show goal_8: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid]) ∧ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+    proof (intro impconjI)
+   show goal8_1: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ SWMR ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_def CSTATE_various_forms1 MESI_State.distinct(5) SharedSnpInv'_CSTATE_invariant5 i592) done
+   show goal8_2: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ C_msg_P_oppo ISD nextHTDDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     apply  simp done
+   show goal8_3: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (metis CSTATE_inequality_invariant MESI_State.distinct(5) SMADSnpInv_CSTATE SharedSnpInv'_CSTATE_invariant5
+    SharedSnpInv_HSTATE SharedSnpInv_nextSnoopIs_otherside i23 nextSnoopIs_otherside_rule_1_0) done
+   show goal8_4: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SAD nextDTHDataPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (metis HOST_State.distinct(149,85) HSTATE_invariant3 SharedSnpInv_nextSnoopIs_otherside
+    hstate_invariants(12,2,24,7) i384 nextSnoopIs_otherside_rule_1_0) done
+   show goal8_5: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ C_msg_P_oppo ISAD nextGOPending (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (smt (verit) CSTATE_inequality_invariant MESI_State.distinct(143,5) SharedSnpInv'_CSTATE_invariant5) done
+   show goal8_6: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (metis SharedSnpInv_C_msg_not_half2 SharedSnpInv_HSTATE i384 i600 i653 i657 i659
+    nextSnoopIs_otherside_rule_1_0) done
+   show goal8_7: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_oppo SharedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (metis SharedSnpInv_C_msg_not_half2 SharedSnpInv_HSTATE i384 i600 i653 i657 i659
+    nextSnoopIs_otherside_rule_1_0) done
+   show goal8_8: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ CSTATE Modified T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (metis SharedSnpInv_C_msg_not_half2 SharedSnpInv_HSTATE i107 nextSnoopIs_otherside_rule_1_0) done
+   show goal8_9: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextDTHDataPending T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (metis SharedSnpInv_C_msg_not_half2 SharedSnpInv_HSTATE i107 nextSnoopIs_otherside_rule_1_0) done
+   show goal8_10: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_oppo ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (metis SharedSnpInv_C_msg_not_half2 SharedSnpInv_HSTATE i107 nextSnoopIs_otherside_rule_1_0) done
+   show goal8_11: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ H_msg_P_same ModifiedM (nextReqIs RdShared) (λT i. ¬ nextSnpRespIs RspIFwdM T i) ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (metis SharedSnpInv_C_msg_not_half2 SharedSnpInv_HSTATE i107 nextSnoopIs_otherside_rule_1_0) done
+   show goal8_12: "CXL_SPG_used T 0 ∧ CSTATE Shared T 0 ∧ nextSnoopIs SnpInv T 0 ⟶ C_H_state IMAD (nextReqIs RdOwn) Modified SD ( T ⦇buffer1 := Some (nextSnoop T 0)⦈ [0 +=snpresp RspIHitSE getTid (getSnoopOrMakeup (getSnoops 0 T))] [0 -=snp ] [ 0 s= Invalid])"
+     apply  (insert assms , unfold SWMR_def C_msg_P_same_def C_msg_P_oppo_def H_msg_P_same_def C_H_state_def C_msg_not_def H_msg_P_oppo_def C_msg_P_host_def C_state_not_def H_C_state_msg_same_def H_C_state_msg_oppo_def C_msg_state_def C_not_C_msg_def) Try this:
+  apply (metis HOST_State.distinct(177) HSTATE_invariant3 HSTATE_invariant_ModifiedSnpInv SharedSnpInv_C_msg_not_half2
+    i384 i699 nextSnoopIs_otherside_rule_1_0) done
+qed
+qed

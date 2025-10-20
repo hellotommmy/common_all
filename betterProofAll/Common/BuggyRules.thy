@@ -244,13 +244,28 @@ definition "HostIDDirtyEvict' T i = (if HSTATE ID T \<and> nextReqIs DirtyEvict 
 definition "HostModifiedRdShared' T i = (if HSTATE ModifiedM T \<and> nextReqIs RdShared T i then [clearBuffer (sendSnoop SnpData i SAD T)] else [])"
 definition "HostModifiedRdOwn' T i = (if HSTATE ModifiedM T \<and> nextReqIs RdOwn T i  then [clearBuffer (sendSnoop SnpInv i MAD T)] else [])" 
 
-\<comment>\<open>2024.10 note: (CSTATE Shared T ((i + 1) mod 2) \<or> CSTATE SMAD T ((i + 1) mod 2)) should be used in the last conjunct if we want an even more concurrent system\<close>
-definition "HostSharedRdOwn' T i = (if HSTATE SharedM T \<and> nextReqIs RdOwn T i \<and> CSTATE Shared T ((i + 1) mod 2) then
-  [clearBuffer (invalidateSharers (nextReqID T i) i T) ] else [])" \<comment>\<open>Only send data in the case the other side is a valid copy holder. TODO: add the rule where the other side is SMAD\<close>
-\<comment>\<open>3 When host got a rdreq that would require a snoop: sharers should be invalidated for RdOwn, and owners be downgraded/invalidated  for RdS/O\<close>
-(*2024.10 note: last conjunct should be replaced by a more general predicate such as almostInvalid T ((i+1)mod2) to allow even more concurrency *)
-definition "HostSharedRdOwnSelf' T i = (if HSTATE SharedM T \<and> nextReqIs RdOwn T i \<and> (CSTATE Invalid T ((i + 1) mod 2)) then
-  [clearBuffer (noInvalidateSharers (nextReqID T i) i T) ] else [])"
+\<comment>\<open>Multi-device RdOwn: invalidate ALL sharers
+Guard requires:
+1. Host is in SharedM state
+2. Device i issues RdOwn request
+3. sharersList contains ALL devices (excluding i) that are in Shared or SMAD state
+4. All other devices (not in sharersList and not i) are Invalid
+
+This ensures we send SnpInv to ALL current sharers to grant exclusive ownership to device i
+\<close>
+definition "HostSharedRdOwn' T i sharersList = (if HSTATE SharedM T \<and> nextReqIs RdOwn T i \<and> 
+    sharersList \<noteq> [] \<and>
+    (\<forall>j. j \<in> set sharersList \<longrightarrow> j \<noteq> i \<and> (CSTATE Shared T j \<or> CSTATE SMAD T j)) \<and>
+    (\<forall>k. k \<notin> set sharersList \<and> k \<noteq> i \<longrightarrow> CSTATE Invalid T k)
+  then [clearBuffer (invalidateSharers (nextReqID T i) i sharersList T)] else [])"
+\<comment>\<open>Special case: device i is the ONLY sharer (all others are Invalid)
+In this case, no snoops need to be sent - device i already has shared copy.
+Just send GO and upgrade to Modified directly.
+\<close>
+definition "HostSharedRdOwnSelf' T i = (if HSTATE SharedM T \<and> nextReqIs RdOwn T i \<and> 
+    (CSTATE Shared T i \<or> CSTATE SMAD T i) \<and>
+    (\<forall>j. j \<noteq> i \<longrightarrow> CSTATE Invalid T j)
+  then [clearBuffer (noInvalidateSharers (nextReqID T i) i T)] else [])"
 
 
 \<comment>\<open>send data to requestor, consume data and copy in to host cache, upgrade to state SharedM\<close>
@@ -299,7 +314,7 @@ definition "HostMARspIFwdM' T i = (if HSTATE MA T \<and> nextSnpRespIs RspIFwdM 
 \<close>
 (*htddats1 T = [] is really an SPG+no snoop sent between Data-GO (Data-GO atomicity) restriction, which is part of spec (3.2.5.2 paragraph 3) 
 future work: some simpler phrasing of these restrictions: e.g. double-GO not allowed*)
-definition "HostMARspIHitSE' T i = (if HSTATE MA T \<and> nextSnpRespIs RspIHitSE T i \<and> GTS T i \<and> htddatas1 T  = []
+definition "HostMARspIHitSE' T i = (if HSTATE MA T \<and> nextSnpRespIs RspIHitSE T i \<and> GTS T i \<and> htddatas T i  = []
   then [clearBuffer (sendGOFromSnpResp  (nextSnoopRespID T i) i Modified GO ModifiedM T)  ] else [])"
 
 
