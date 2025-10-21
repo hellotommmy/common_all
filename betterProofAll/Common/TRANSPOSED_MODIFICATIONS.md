@@ -129,11 +129,19 @@ definition lastSharer :: "Type1State ⇒ bool" where [simp]:
 - Correctly expresses: "exactly one device is Shared, all others Invalid"
 - **No modification needed** ✓
 
-### invalidateSharers (Lines 991-996)
+### invalidateSharers (Lines 981-1012)
 
-**Status:** VERIFIED - Already N-device compatible
+**Status:** MODIFIED for N-device compatibility (modified in commit 871b9f1)
 
-**Definition:**
+**Original 2-device version:**
+```isabelle
+definition invalidateSharers :: "TransactionID ⇒ nat ⇒ Type1State ⇒ Type1State" where [simp]:
+  "invalidateSharers tid reqNum T = (let otherNum = (reqNum + 1) mod 2 in 
+    (let T' = sendHostData reqNum MA T
+      in T'[otherNum +=snp SnpInv (nextReqID T reqNum)][reqNum -=req]))"
+```
+
+**Current N-device version:**
 ```isabelle
 definition invalidateSharers :: "TransactionID ⇒ nat ⇒ nat list ⇒ Type1State ⇒ Type1State" where [simp]:
   "invalidateSharers tid reqNum sharersList T = (
@@ -143,11 +151,12 @@ definition invalidateSharers :: "TransactionID ⇒ nat ⇒ nat list ⇒ Type1Sta
   )"
 ```
 
-**Verification:**
-- Accepts arbitrary-length `sharersList :: nat list`
-- Uses `sendSnpInvToAll` which recursively handles any list length
-- No hardcoded device assumptions
-- **No modification needed** ✓
+**Key Changes:**
+- **Before:** Computed `otherNum = (reqNum + 1) mod 2` (hardcoded 2-device)
+- **After:** Accepts `sharersList :: nat list` parameter
+- Uses `sendSnpInvToAll` to send SnpInv to ALL devices in list
+- Now N-device compatible: works with arbitrary number of sharers
+- **Modification complete** ✓
 
 ### sendSnpInvToAll (Lines 977-979)
 
@@ -208,12 +217,12 @@ definition sendSnoop :: "SnoopType ⇒ nat ⇒ HOST_State ⇒ Type1State ⇒ Typ
 
 | Item | Line | Type | Status | Notes |
 |------|------|------|--------|-------|
-| getSharersList | 1025-1029 | NEW | IMPLEMENTED | Dynamic sharer list computation |
-| lastSharer | 1018-1019 | EXISTING | VERIFIED | Already N-device compatible |
-| invalidateSharers | 991-996 | EXISTING | VERIFIED | Already N-device compatible |
+| getSharersList | 1037-1052 | NEW | IMPLEMENTED | Dynamic sharer list computation |
+| lastSharer | 1034-1035 | EXISTING | VERIFIED | Already N-device compatible |
+| invalidateSharers | 981-1012 | EXISTING | MODIFIED | Changed from 2-device to N-device (commit 871b9f1) |
 | sendSnpInvToAll | 977-979 | EXISTING | VERIFIED | Already N-device compatible |
-| noInvalidateSharers | 1000-1001 | EXISTING | NEEDS_REVIEW | Uses (i+1) mod 2 |
-| sendSnoop | 1007-1009 | EXISTING | NEEDS_ATTENTION | Assumes 2-device owner |
+| noInvalidateSharers | 1015-1021 | EXISTING | NEEDS_REVIEW | Uses (i+1) mod 2 |
+| sendSnoop | 1023-1034 | EXISTING | NEEDS_ATTENTION | Assumes 2-device owner |
 
 ---
 

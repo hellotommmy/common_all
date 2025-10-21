@@ -4,23 +4,26 @@
 # 
 # Status codes:
 # 'VERIFIED': Already N-device compatible, no changes needed
-# 'IMPLEMENTED': New function added or modification completed
+# 'IMPLEMENTED': New function added
+# 'MODIFIED': Existing function modified for N-device compatibility
 # 'NEEDS_REVIEW': Requires analysis
 # 'NEEDS_MODIFICATION': Identified for future modification
 
 # Progress data structure: [line_number, status, function_name, description]
 progress = [
     # NEW functions added
-    [1032, 'IMPLEMENTED', 'getSharersList', 'NEW function (lines 1021-1036) - dynamically computes list of sharers with detailed annotation'],
+    [1037, 'IMPLEMENTED', 'getSharersList', 'NEW function (lines 1037-1052) - dynamically computes list of sharers with detailed annotation'],
     
     # Verified N-device compatible functions
-    [1018, 'VERIFIED', 'lastSharer', 'Already N-device compatible - uses ∃/∀ quantifiers'],
-    [991, 'VERIFIED', 'invalidateSharers', 'Already N-device compatible - accepts arbitrary list'],
+    [1034, 'VERIFIED', 'lastSharer', 'Already N-device compatible - uses ∃/∀ quantifiers'],
     [977, 'VERIFIED', 'sendSnpInvToAll', 'Already N-device compatible - recursive on any list length'],
     
+    # MODIFIED functions (changed from 2-device to N-device)
+    [1007, 'MODIFIED', 'invalidateSharers', 'MODIFIED in commit 871b9f1: changed from (i+1) mod 2 to sharersList parameter'],
+    
     # Functions needing modification (ANNOTATED with warning comments 2025-10-21)
-    [1003, 'NEEDS_REVIEW', 'noInvalidateSharers', 'Uses (i+1) mod 2 but may not need it - ANNOTATED in source'],
-    [1016, 'NEEDS_MODIFICATION', 'sendSnoop', 'Assumes owner = (devNum + 1) mod 2 - ANNOTATED in source'],
+    [1015, 'NEEDS_REVIEW', 'noInvalidateSharers', 'Uses (i+1) mod 2 but may not need it - ANNOTATED in source'],
+    [1023, 'NEEDS_MODIFICATION', 'sendSnoop', 'Assumes owner = (devNum + 1) mod 2 - ANNOTATED in source'],
 ]
 
 # Summary statistics
@@ -28,15 +31,17 @@ def get_stats():
     total_items = len(progress)
     verified = len([p for p in progress if p[1] == 'VERIFIED'])
     implemented = len([p for p in progress if p[1] == 'IMPLEMENTED'])
+    modified = len([p for p in progress if p[1] == 'MODIFIED'])
     needs_review = len([p for p in progress if p[1] == 'NEEDS_REVIEW'])
     needs_modification = len([p for p in progress if p[1] == 'NEEDS_MODIFICATION'])
     
-    completed = verified + implemented
+    completed = verified + implemented + modified
     
     return {
         'total_items': total_items,
         'verified': verified,
         'implemented': implemented,
+        'modified': modified,
         'needs_review': needs_review,
         'needs_modification': needs_modification,
         'completed': completed,
@@ -51,7 +56,8 @@ def print_progress():
     print("=" * 60)
     print(f"Total items tracked: {stats['total_items']}")
     print(f"Verified (N-device compatible): {stats['verified']}")
-    print(f"Implemented (new/modified): {stats['implemented']}")
+    print(f"Implemented (new functions): {stats['implemented']}")
+    print(f"Modified (2-device → N-device): {stats['modified']}")
     print(f"Needs review: {stats['needs_review']}")
     print(f"Needs modification: {stats['needs_modification']}")
     print(f"\nCompleted: {stats['completed']}/{stats['total_items']} ({stats['progress_percentage']}%)")
@@ -78,7 +84,7 @@ def print_details():
             by_status[status] = []
         by_status[status].append(item)
     
-    for status in ['IMPLEMENTED', 'VERIFIED', 'NEEDS_REVIEW', 'NEEDS_MODIFICATION']:
+    for status in ['IMPLEMENTED', 'MODIFIED', 'VERIFIED', 'NEEDS_REVIEW', 'NEEDS_MODIFICATION']:
         if status in by_status:
             print(f"\n{status}:")
             for item in by_status[status]:

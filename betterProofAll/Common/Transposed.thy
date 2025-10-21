@@ -978,16 +978,32 @@ fun sendSnpInvToAll :: "Type1State \<Rightarrow> TransactionID \<Rightarrow> nat
   "sendSnpInvToAll T tid [] = T"
 | "sendSnpInvToAll T tid (j # js) = sendSnpInvToAll (T[j +=snp SnpInv tid]) tid js"
 
-(*Multi-device version: send snoop to ALL sharers in sharersList
-For RdOwn request from device reqNum with sharers in sharersList:
-1. Send host data to requestor
-2. Update host state to MA (waiting for snoop responses)
-3. Send SnpInv to ALL devices in sharersList
-4. Consume the request
-
-IMPORTANT: sharersList should contain all devices in Shared/SMAD state (excluding reqNum)
-This is checked in the guard of the calling rule (e.g., HostSharedRdOwn')
-*)
+\<comment>\<open>═══════════════════════════════════════════════════════════════════════════
+  MODIFIED for multi-device extension (modified in commit 871b9f1)
+  
+  ORIGINAL 2-device version (before 871b9f1):
+  ─────────────────────────────────────────────────────────────────────────
+  definition invalidateSharers :: "TransactionID ⇒ nat ⇒ Type1State ⇒ Type1State" where [simp]:
+    "invalidateSharers tid reqNum T = (let otherNum = (reqNum + 1) mod 2 in 
+      (let T' = sendHostData reqNum MA T
+        in T'[otherNum +=snp SnpInv (nextReqID T reqNum)][reqNum -=req]))"
+  ─────────────────────────────────────────────────────────────────────────
+  
+  KEY CHANGES:
+  - Added sharersList parameter (nat list) instead of computing otherNum = (reqNum + 1) mod 2
+  - Uses sendSnpInvToAll to send SnpInv to ALL devices in sharersList
+  - Now N-device compatible: works with arbitrary number of sharers
+  
+  Multi-device version: send snoop to ALL sharers in sharersList
+  For RdOwn request from device reqNum with sharers in sharersList:
+  1. Send host data to requestor
+  2. Update host state to MA (waiting for snoop responses)
+  3. Send SnpInv to ALL devices in sharersList
+  4. Consume the request
+  
+  IMPORTANT: sharersList should contain all devices in Shared/SMAD state (excluding reqNum)
+  This is checked in the guard of the calling rule (e.g., HostSharedRdOwn')
+═══════════════════════════════════════════════════════════════════════════\<close>
 definition invalidateSharers :: "TransactionID \<Rightarrow> nat \<Rightarrow> nat list \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
   "invalidateSharers tid reqNum sharersList T = (
     let T' = sendHostData reqNum MA T in

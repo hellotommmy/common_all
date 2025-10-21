@@ -330,3 +330,6 @@ transposed.thy对应的修改说明放到单独的自己的detailed modification
 
 ## 消息106 - 代码注释完整性要求
 要在 @Transposed.thy 里面写出原本实现，要不然我不知道哪些是你新加的，哪些是原本就有被改掉了的
+
+## 消息107 - invalidateSharers原版查询
+invalidateSharers的原版你不给出吗？我在Transposed.thy里面没看到
