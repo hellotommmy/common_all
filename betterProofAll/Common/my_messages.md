@@ -327,3 +327,6 @@ Transposed.thy做的修改也要记录，老版本也要comment保留
 
 ## 消息105 - 文档分离要求
 transposed.thy对应的修改说明放到单独的自己的detailed modifications/modification progress里面？
+
+## 消息106 - 代码注释完整性要求
+要在 @Transposed.thy 里面写出原本实现，要不然我不知道哪些是你新加的，哪些是原本就有被改掉了的

@@ -996,14 +996,23 @@ definition invalidateSharers :: "TransactionID \<Rightarrow> nat \<Rightarrow> n
   )"
 
 
+\<comment>\<open>ORIGINAL 2-device version - NEEDS REVIEW for N-device extension
+  Line 1000 uses: (reqNum + 1) mod 2 to compute "otherNum" but doesn't use it
+  May need removal or fix for N-device compatibility
+  Status: UNMODIFIED as of 2025-10-21\<close>
 definition noInvalidateSharers :: "TransactionID \<Rightarrow> nat   \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
   "noInvalidateSharers tid reqNum   T = (let otherNum = (reqNum + 1) mod 2 in 
     (  sendHostDataGO tid   reqNum ModifiedM Modified GO T))"
 
 
-(*send snoop to other device. devNum - 5 is the requestor, 
-  TODO: We made simplifying assumptions: (i) 2 devices (ii) no device already having M ownership should have M ownership
-IE Addition: *)
+\<comment>\<open>ORIGINAL 2-device version - NEEDS MODIFICATION for N-device extension
+  Line 1011 uses: owner = (devNum + 1) mod 2 (assumes "the other device")
+  For N-device: need dynamic owner lookup based on CSTATE (likely Modified or Exclusive)
+  Status: UNMODIFIED as of 2025-10-21
+  
+  Original comment: send snoop to other device. devNum - 5 is the requestor, 
+  TODO: We made simplifying assumptions: (i) 2 devices (ii) no device already having M ownership
+  IE Addition:\<close>
 definition sendSnoop :: "SnoopType \<Rightarrow> nat \<Rightarrow> HOST_State \<Rightarrow> Type1State \<Rightarrow> Type1State" where [simp]:
    "sendSnoop snoopt devNum mesi T = (let owner = (devNum  + 1) mod 2 in (let requestor = devNum in 
                                             T[ owner +=snp snoopt (nextReqID T requestor) ][5 sHost= mesi][ requestor -=req ]) )"
@@ -1018,15 +1027,22 @@ definition sendEvictResp :: "ReqRespType \<Rightarrow> nat => HOST_State \<Right
 definition lastSharer :: "Type1State \<Rightarrow> bool" where [simp]:
   "lastSharer T = (\<exists>j. CSTATE Shared T j \<and> (\<forall>i. i \<noteq> j \<longrightarrow> CSTATE Invalid T i))"
 
-\<comment>\<open>NEW FUNCTION added 2025-10-21 for multi-device HostSharedRdOwn' support
-Multi-device helper: get list of all sharers (devices in Shared or SMAD state) excluding device i
-Adjacent: lastSharer (above, line 1018), ISSUE_EVENT_ROW (below, line 1027)
-\<close>
+\<comment>\<open>═══════════════════════════════════════════════════════════════════════════
+  NEW FUNCTION added 2025-10-21 by Chengsong (multi-device extension)
+  
+  BEFORE: This function did NOT exist in the codebase
+  
+  PURPOSE: Dynamically compute list of all sharers for BuggyRules.thy HostSharedRdOwn'
+  Previously, HostSharedRdOwn' required explicit sharersList parameter, making
+  caller responsible for computing sharers. This helper encapsulates that logic.
+  
+  ADJACENT DEFINITIONS: lastSharer (above, line 1018), ISSUE_EVENT_ROW (below, line 1032)
+═══════════════════════════════════════════════════════════════════════════\<close>
 definition getSharersList :: "Type1State \<Rightarrow> nat \<Rightarrow> nat list" where [simp]:
   "getSharersList T i = [j. j \<leftarrow> [0..<2], j \<noteq> i \<and> (CSTATE Shared T j \<or> CSTATE SMAD T j)]"
-  \<comment>\<open>Current 2-device version: [0..<2] placeholder
-  Future N-device version will use: [0..<maxDevices]
-  Returns empty list [] if no sharers found\<close>
+  \<comment>\<open>Current 2-device version: [0..<2] is placeholder for compatibility
+  Future N-device version will use: [j. j \<leftarrow> [0..<maxDevices], ...]
+  Returns empty list [] if no sharers found (safe for guards like "sharers \<noteq> []")\<close>
 
 
 definition ISSUE_EVENT_ROW ::"nat" where "ISSUE_EVENT_ROW = 100"

@@ -11,16 +11,16 @@
 # Progress data structure: [line_number, status, function_name, description]
 progress = [
     # NEW functions added
-    [1025, 'IMPLEMENTED', 'getSharersList', 'NEW function - dynamically computes list of sharers'],
+    [1032, 'IMPLEMENTED', 'getSharersList', 'NEW function (lines 1021-1036) - dynamically computes list of sharers with detailed annotation'],
     
     # Verified N-device compatible functions
     [1018, 'VERIFIED', 'lastSharer', 'Already N-device compatible - uses ∃/∀ quantifiers'],
     [991, 'VERIFIED', 'invalidateSharers', 'Already N-device compatible - accepts arbitrary list'],
     [977, 'VERIFIED', 'sendSnpInvToAll', 'Already N-device compatible - recursive on any list length'],
     
-    # Functions needing modification
-    [1000, 'NEEDS_REVIEW', 'noInvalidateSharers', 'Uses (i+1) mod 2 but may not need it'],
-    [1007, 'NEEDS_MODIFICATION', 'sendSnoop', 'Assumes owner = (devNum + 1) mod 2 - needs dynamic lookup'],
+    # Functions needing modification (ANNOTATED with warning comments 2025-10-21)
+    [1003, 'NEEDS_REVIEW', 'noInvalidateSharers', 'Uses (i+1) mod 2 but may not need it - ANNOTATED in source'],
+    [1016, 'NEEDS_MODIFICATION', 'sendSnoop', 'Assumes owner = (devNum + 1) mod 2 - ANNOTATED in source'],
 ]
 
 # Summary statistics

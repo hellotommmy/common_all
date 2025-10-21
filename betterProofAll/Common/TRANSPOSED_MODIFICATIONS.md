@@ -27,15 +27,22 @@ Used by `HostSharedRdOwn'` rule in BuggyRules.thy to eliminate explicit `sharers
 
 **Current Implementation (2-device version):**
 ```isabelle
-⟨NEW FUNCTION added 2025-10-21 for multi-device HostSharedRdOwn' support
-Multi-device helper: get list of all sharers (devices in Shared or SMAD state) excluding device i
-Adjacent: lastSharer (above, line 1018), ISSUE_EVENT_ROW (below, line 1032)
-⟩
+⟨═══════════════════════════════════════════════════════════════════════════
+  NEW FUNCTION added 2025-10-21 by Chengsong (multi-device extension)
+  
+  BEFORE: This function did NOT exist in the codebase
+  
+  PURPOSE: Dynamically compute list of all sharers for BuggyRules.thy HostSharedRdOwn'
+  Previously, HostSharedRdOwn' required explicit sharersList parameter, making
+  caller responsible for computing sharers. This helper encapsulates that logic.
+  
+  ADJACENT DEFINITIONS: lastSharer (above, line 1018), ISSUE_EVENT_ROW (below, line 1042)
+═══════════════════════════════════════════════════════════════════════════⟩
 definition getSharersList :: "Type1State ⇒ nat ⇒ nat list" where [simp]:
   "getSharersList T i = [j. j ← [0..<2], j ≠ i ∧ (CSTATE Shared T j ∨ CSTATE SMAD T j)]"
-  ⟨Current 2-device version: [0..<2] placeholder
-  Future N-device version will use: [0..<maxDevices]
-  Returns empty list [] if no sharers found⟩
+  ⟨Current 2-device version: [0..<2] is placeholder for compatibility
+  Future N-device version will use: [j. j ← [0..<maxDevices], ...]
+  Returns empty list [] if no sharers found (safe for guards like "sharers ≠ []")⟩
 ```
 
 **Semantics:**
@@ -166,26 +173,34 @@ fun sendSnpInvToAll :: "Type1State ⇒ TransactionID ⇒ nat list ⇒ Type1State
 
 ### Functions with (i+1) mod 2 Pattern
 
-Several functions still use `(i+1) mod 2` to refer to "the other device" - these need updating:
+Several functions still use `(i+1) mod 2` to refer to "the other device" - these have been **ANNOTATED with warning comments (2025-10-21)**:
 
-1. **noInvalidateSharers (Line 1000-1001)**
+1. **noInvalidateSharers (Lines 999-1005)**
 ```isabelle
+⟨ORIGINAL 2-device version - NEEDS REVIEW for N-device extension
+  Line 1004 uses: (reqNum + 1) mod 2 to compute "otherNum" but doesn't use it
+  May need removal or fix for N-device compatibility
+  Status: UNMODIFIED as of 2025-10-21⟩
 definition noInvalidateSharers :: "TransactionID ⇒ nat ⇒ Type1State ⇒ Type1State" where [simp]:
   "noInvalidateSharers tid reqNum T = (let otherNum = (reqNum + 1) mod 2 in 
     (sendHostDataGO tid reqNum ModifiedM Modified GO T))"
 ```
 **Issue:** `otherNum` computed but not used - may need removal or fix
+**Status:** ANNOTATED - warning comment added to source code
 
-2. **sendSnoop (Line 1007-1009)**
+2. **sendSnoop (Lines 1008-1018)**
 ```isabelle
+⟨ORIGINAL 2-device version - NEEDS MODIFICATION for N-device extension
+  Line 1017 uses: owner = (devNum + 1) mod 2 (assumes "the other device")
+  For N-device: need dynamic owner lookup based on CSTATE (likely Modified or Exclusive)
+  Status: UNMODIFIED as of 2025-10-21⟩
 definition sendSnoop :: "SnoopType ⇒ nat ⇒ HOST_State ⇒ Type1State ⇒ Type1State" where [simp]:
-  "sendSnoop snoopt devNum mesi T = (let owner = (devNum + 1) mod 2 in 
-    (let requestor = devNum in 
-      T[owner +=snp snoopt (nextReqID T requestor)][5 sHost= mesi][requestor -=req]))"
+   "sendSnoop snoopt devNum mesi T = (let owner = (devNum + 1) mod 2 in 
+     (let requestor = devNum in 
+       T[owner +=snp snoopt (nextReqID T requestor)][5 sHost= mesi][requestor -=req]))"
 ```
 **Issue:** Assumes owner is `(devNum + 1) mod 2` - needs dynamic owner lookup
-
-**Status:** NEEDS_ATTENTION - marked for future work
+**Status:** ANNOTATED - warning comment added to source code with detailed explanation
 
 ---
 
@@ -207,4 +222,9 @@ definition sendSnoop :: "SnoopType ⇒ nat ⇒ HOST_State ⇒ Type1State ⇒ Typ
 - **2025-10-21:** Created document, added getSharersList (NEW function)
 - **2025-10-21:** Verified lastSharer, invalidateSharers, sendSnpInvToAll as N-device compatible
 - **2025-10-21:** Identified noInvalidateSharers and sendSnoop for future modification
+- **2025-10-21:** Added detailed annotation comments to:
+  - getSharersList: Clarified this is NEW function (did NOT exist before)
+  - noInvalidateSharers: Added "ORIGINAL 2-device version - NEEDS REVIEW" comment
+  - sendSnoop: Added "ORIGINAL 2-device version - NEEDS MODIFICATION" comment
+  - Purpose: Make it clear which functions are new, which are modified, which are unchanged
 
