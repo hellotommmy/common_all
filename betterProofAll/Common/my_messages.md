@@ -312,3 +312,18 @@ i choose option 4
 
 ## 消息100 - Lines 375-381验证与Transaction ID需求识别
 一直到380 都对。381又有之前的类似的semantics error。这里终于使得我意识到有必要引入transaction identifier了。考虑coherence transaction: i sends request of Rdown, host processes it, sends all sharers (or the sole owner) a snpinv, these snpinv(s) will have the same transaction id as the RdOwn, as well as the later snpresps/reqresps/dthdatas j (sharers/prev owners)/htddatas i .  在哪里实现这个比较方便？
+
+## 消息101 - BuggyRules.thy多设备扩展需求
+正确。所以我正在修改BuggyRules.thy以确保所有"发送到sharer（必然是对方）"的语义从二设备扩展到"发送到所有sharer（所有其他设备中状态满足sharer状态者）"。消息100就是问的BuggyRules.thy中哪些rules会被波及？第一个是什么
+
+## 消息102 - BuggyRules文档组织要求
+记得把所有消息全部记录，就像之前那样。所有修改记录也请保存到swmr_modification_progress和detailed-modifications（本次还暂时没有修改）。detailed_modifications主要保存CoherenceProperties.thy的修改。请也单开一个类似的文档记录BuggyRules.thy的修改。sharerList 帮我设计成一个尽可能简单的函数
+
+## 消息103 - HostSharedRdOwn修改实现要求
+帮我保存之前的定义，HostSharedRdOwn本身二设备版本的（用注释括起来）。每次修改行号发生变化，因此在行旁边可以简短说明附近有哪些定义。实现getSharerList
+
+## 消息104 - Transposed.thy修改记录要求
+Transposed.thy做的修改也要记录，老版本也要comment保留
+
+## 消息105 - 文档分离要求
+transposed.thy对应的修改说明放到单独的自己的detailed modifications/modification progress里面？

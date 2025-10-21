@@ -245,19 +245,25 @@ definition "HostModifiedRdShared' T i = (if HSTATE ModifiedM T \<and> nextReqIs 
 definition "HostModifiedRdOwn' T i = (if HSTATE ModifiedM T \<and> nextReqIs RdOwn T i  then [clearBuffer (sendSnoop SnpInv i MAD T)] else [])" 
 
 \<comment>\<open>Multi-device RdOwn: invalidate ALL sharers
-Guard requires:
-1. Host is in SharedM state
-2. Device i issues RdOwn request
-3. sharersList contains ALL devices (excluding i) that are in Shared or SMAD state
-4. All other devices (not in sharersList and not i) are Invalid
-
-This ensures we send SnpInv to ALL current sharers to grant exclusive ownership to device i
+Host in SharedM state, device i requests exclusive ownership.
+Computes sharers list dynamically, sends SnpInv to all current sharers.
+Adjacent definitions: HostModifiedRdOwn' (line ~245), HostSharedRdOwnSelf' (line ~265)
 \<close>
-definition "HostSharedRdOwn' T i sharersList = (if HSTATE SharedM T \<and> nextReqIs RdOwn T i \<and> 
-    sharersList \<noteq> [] \<and>
-    (\<forall>j. j \<in> set sharersList \<longrightarrow> j \<noteq> i \<and> (CSTATE Shared T j \<or> CSTATE SMAD T j)) \<and>
-    (\<forall>k. k \<notin> set sharersList \<and> k \<noteq> i \<longrightarrow> CSTATE Invalid T k)
+
+\<comment>\<open>Original 2-device version with explicit sharersList parameter:
+definition "HostSharedRdOwn' T i sharersList = (if HSTATE SharedM T ∧ nextReqIs RdOwn T i ∧ 
+    sharersList ≠ [] ∧
+    (∀j. j ∈ set sharersList → j ≠ i ∧ (CSTATE Shared T j ∨ CSTATE SMAD T j)) ∧
+    (∀k. k ∉ set sharersList ∧ k ≠ i → CSTATE Invalid T k)
   then [clearBuffer (invalidateSharers (nextReqID T i) i sharersList T)] else [])"
+\<close>
+
+\<comment>\<open>Modified N-device version: computes sharers dynamically\<close>
+definition "HostSharedRdOwn' T i = (
+  let sharers = getSharersList T i in
+  if HSTATE SharedM T \<and> nextReqIs RdOwn T i \<and> sharers \<noteq> []
+  then [clearBuffer (invalidateSharers (nextReqID T i) i sharers T)] 
+  else [])"
 \<comment>\<open>Special case: device i is the ONLY sharer (all others are Invalid)
 In this case, no snoops need to be sent - device i already has shared copy.
 Just send GO and upgrade to Modified directly.

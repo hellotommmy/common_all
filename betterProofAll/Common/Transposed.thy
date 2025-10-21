@@ -1018,6 +1018,16 @@ definition sendEvictResp :: "ReqRespType \<Rightarrow> nat => HOST_State \<Right
 definition lastSharer :: "Type1State \<Rightarrow> bool" where [simp]:
   "lastSharer T = (\<exists>j. CSTATE Shared T j \<and> (\<forall>i. i \<noteq> j \<longrightarrow> CSTATE Invalid T i))"
 
+\<comment>\<open>NEW FUNCTION added 2025-10-21 for multi-device HostSharedRdOwn' support
+Multi-device helper: get list of all sharers (devices in Shared or SMAD state) excluding device i
+Adjacent: lastSharer (above, line 1018), ISSUE_EVENT_ROW (below, line 1027)
+\<close>
+definition getSharersList :: "Type1State \<Rightarrow> nat \<Rightarrow> nat list" where [simp]:
+  "getSharersList T i = [j. j \<leftarrow> [0..<2], j \<noteq> i \<and> (CSTATE Shared T j \<or> CSTATE SMAD T j)]"
+  \<comment>\<open>Current 2-device version: [0..<2] placeholder
+  Future N-device version will use: [0..<maxDevices]
+  Returns empty list [] if no sharers found\<close>
+
 
 definition ISSUE_EVENT_ROW ::"nat" where "ISSUE_EVENT_ROW = 100"
 
